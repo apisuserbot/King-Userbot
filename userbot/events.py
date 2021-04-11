@@ -6,13 +6,11 @@
 """ Userbot module for managing events.
  One of the main components of the userbot. """
 
-import redis
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
 from time import gmtime, strftime
 from traceback import format_exc
-from redis import StrictRedis
 
 from telethon import events
 
