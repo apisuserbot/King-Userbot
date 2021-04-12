@@ -98,7 +98,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#BOT \n"
-                "`Lord-Userbot Berhasil Di Update`")
+                "`King-Userbot Berhasil Di Update`")
 
     else:
         await event.edit('`[HEROKU]:'
