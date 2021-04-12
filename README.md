@@ -19,10 +19,10 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
   > Akhirnya nyalakan aplikasi dan periksa log (pengaturan -> lihat log) nikmati :)
 ```
 
-## <p align = "center"> Deploy King Userbot </p>
+## <p align="center">DEPLOY KING-USERBOT</p>
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/alpha"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/Lord-Userbot"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-magenta?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
