@@ -151,15 +151,15 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "LORD-USERBOT",
+      "value": "KING-USERBOT",
       "required": false
     },
     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
       "required": false
     },
-    "LORD_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .lord (Isi Terserah)",
+    "KING_TEKS_KUSTOM": {
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .king (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
