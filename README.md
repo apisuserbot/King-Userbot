@@ -22,7 +22,7 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
 ## <p align = "center"> Deploy King Userbot </p>
 
 
-<p align = "center"> <a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/alpha"> <img src = "https : //img.shields.io/badge/Deploy%20To%20Heroku-blue? style = flat & logo = heroku "width =" 210 "height =" 34.45 "/> </a> </p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/alpha"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
@@ -41,7 +41,4 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
 * [༺ αиυвιѕ ༻] (https://github.com/Dark-Princ3) - X-tra-Telegram
 * [Sahyam2019] (https://github.com/sahyam2019/oub-remix) - oub-remix
 * [TeamUserge] (https://github.com/UsergeTeam/Userge) - Userge
-*   DAN LAINNYA
-
-## Lisensi
-Berlisensi di bawah [Lisensi Publik Raphielscape] (https://github.com/ximfine/XBot-Remix/blob/x-sql-extended/LICENSE) - Versi 1.d, Februari 2020
+* DAN LAINNYA
