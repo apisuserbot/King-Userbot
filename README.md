@@ -1,7 +1,17 @@
 <a href="https://cooltext.com"><img src="https://images.cooltext.com/5520759.gif" width="802" height="96" alt="King Userbot" /></a>
 
+<p align="center">
+  <a href="https://github.com/apisuserbot/King-Userbot/fork">
+    <img src="https://img.shields.io/github/forks/apisuserbot/King-Userbot?label=Fork&style=social">
+    
+  </a>
+  <a href="https://github.com/apisuserbot/King-Userbot">
+    <img src="https://img.shields.io/github/stars/apisuserbot/King-Userbot?style=social">
+  </a>
+</p>  
+
 ## King Userbot
-Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
+Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla) Untuk Hiburan Di Telegram
 
 ## Cara Deploy 👷
 
