@@ -16,8 +16,6 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla) Untuk Hiburan 
 ## Cara Deploy 👷
 
 ```
-* ** [HEROKU] (https://www.heroku.com/) King-Userbot ** 🔧
-
   > Pertama, dapatkan API_KE & API_HASH di my.telegram.org (wajib)
 
   > Dapatkan Sesi String pada perintah di bawah ini, jalankan di terminal Anda (wajib)
