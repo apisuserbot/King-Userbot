@@ -34,7 +34,7 @@ DEF_UNAPPROVED_MSG = (
     f"Tunggu {DEFAULTUSER} Menerima Pesan Anda │\n"
     "╰┈─────────────────────┈─➤\n"
     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-    "┣[○› **PESAN OTOMATIS**\n"
+     "┣[○› **PESAN OTOMATIS**\n"
     f"┣[○› **BY** @KingGithubUserbot\n"
     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
 # =================================================================
