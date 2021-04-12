@@ -27,6 +27,9 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
 <br>
 </p>
 
+## How to setup Google Drive
+<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/apisuserbot/King-Userbot/alpha/userbot/resources/gd.png" alt="haa" width="210" height="34.45" /></a></p>
+
 ## Kredit
 *   [RaphielGang] (https://github.com/RaphielGang) - Telegram-Paperplane
 *   [AvinashReddy3108] (https://github.com/AvinashReddy3108) - PaperplaneExtended
