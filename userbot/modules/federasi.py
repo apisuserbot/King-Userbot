@@ -221,6 +221,4 @@ CMD_HELP.update(
         "\n\n.delf"
         "\nPenjelasan: Menghapus grup saat ini dari federasi yang terhubung."
         "\n\n.listf"
-        "\nPenjelasan: Mencantumkan semua federasi yang terhubung dengan nama yang ditentukan."
-    }
-)
+        "\nPenjelasan: Mencantumkan semua federasi yang terhubung dengan nama yang ditentukan."})
