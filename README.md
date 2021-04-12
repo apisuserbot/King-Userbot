@@ -28,17 +28,17 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla)
 </p>
 
 ## Kredit
-*  [RaphielGang] (https://github.com/RaphielGang) - Telegram-Paperplane
-*  [AvinashReddy3108] (https://github.com/AvinashReddy3108) - PaperplaneExtended
-*  [Mkaraniya] (https://github.com/mkaraniya) & [Dev73] (https://github.com/Devp73) - OpenUserBot
-*  [Mr.Miss] (https://github.com/keselekpermen69) - UserButt
-*  [adekmaulana] (https://github.com/adekmaulana) - ProjectBish
-*  [MoveAngel] (https://github.com/MoveAngel) - One4uBot
-*  [AidilAryanto] (https://github.com/aidilaryanto) - ProjectDils
-*  [Alfianandaa] (https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
-*  [AnggaR69s] (https://github.com/GengKapak/DCLXVI) - DCLXVI
-*  [kandnub] (https://github.com/kandnub) - TG-UserBot
-*  [༺ αиυвιѕ ༻] (https://github.com/Dark-Princ3) - X-tra-Telegram
-*  [Sahyam2019] (https://github.com/sahyam2019/oub-remix) - oub-remix
-*  [TeamUserge] (https://github.com/UsergeTeam/Userge) - Userge
-*  DAN LAINNYA
+*   [RaphielGang] (https://github.com/RaphielGang) - Telegram-Paperplane
+*   [AvinashReddy3108] (https://github.com/AvinashReddy3108) - PaperplaneExtended
+*   [Mkaraniya] (https://github.com/mkaraniya) & [Dev73] (https://github.com/Devp73) - OpenUserBot
+*   [Mr.Miss] (https://github.com/keselekpermen69) - UserButt
+*   [adekmaulana] (https://github.com/adekmaulana) - ProjectBish
+*   [MoveAngel] (https://github.com/MoveAngel) - One4uBot
+*   [AidilAryanto] (https://github.com/aidilaryanto) - ProjectDils
+*   [Alfianandaa] (https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
+*   [AnggaR69s] (https://github.com/GengKapak/DCLXVI) - DCLXVI
+*   [kandnub] (https://github.com/kandnub) - TG-UserBot
+*   [༺ αиυвιѕ ༻] (https://github.com/Dark-Princ3) - X-tra-Telegram
+*   [Sahyam2019] (https://github.com/sahyam2019/oub-remix) - oub-remix
+*   [TeamUserge] (https://github.com/UsergeTeam/Userge) - Userge
+*   DAN LAINNYA
