@@ -22,6 +22,7 @@ from userbot import (
 
 # LORD USERBOT
 
+
 @bot.on(ChatAction)
 async def ANTI_SPAMBOTS(welcm):
     """Cekal pengguna yang baru bergabung jika cocok dengan algoritma pemeriksaan spammer."""
@@ -81,10 +82,12 @@ async def ANTI_SPAMBOTS(welcm):
                     check_user = await welcm.client.get_entity(user_id)
 
                     # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
-                    print(f"Pengguna Telah Bergabung: {check_user.first_name} [ID: {check_user.id}]")
+                    print(
+                        f"Pengguna Telah Bergabung: {check_user.first_name} [ID: {check_user.id}]")
                     print(f"Chat: {welcm.chat.title}")
                     print(f"Waktu: {join_time}")
-                    print(f"Pesan terkirim: {message.text}\n\n[Waktu: {message_date}]")
+                    print(
+                        f"Pesan terkirim: {message.text}\n\n[Waktu: {message_date}]")
                     ##############################################
 
                     try:
