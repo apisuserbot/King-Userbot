@@ -164,9 +164,9 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**👉**King-Userbot Versi:** \n "
+            "**☞**King-Userbot Versi:** \n "
             f"{verout}"
-            "\n**👉**Revisi:**\n "
+            "\n**☞**Revisi:**\n "
             f"{revout}"
         )
     else:
@@ -235,7 +235,7 @@ async def amireallyalive(alive):
         f"**━━━━━━━━━━━━━━━━━━━━**\n"
         f"**👑 king** \n"
         f" ⚙️ `{DEFAULTUSER}` \n"
-        f"**⚡ username** \n"
+        f"**👤 username** \n"
         f" ⚙️ `@{user.username}` \n"
         f"┏━━━━━━━━━━━━━━━━━━━\n"
         f"┣[• `Telethon :`Ver {version.__version__} \n"
@@ -268,16 +268,16 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**▬▬▬▬▬▬❙۩👑۩❙▬▬▬▬▬▬**\n"
+        f"**▬▬▬▬▬▬❙👑❙▬▬▬▬▬▬**\n"
         f"     **⚡ KING USERBOT ⚡** \n\n"
-        f"👑 **King**     \n   ⚙️ `{DEFAULTUSER}` \n"
-        f"⚡ **Username** \n   ⚙️ `@{user.username}` \n"
-        f"⚡ **Telethon** \n   ⚙️ `Versi {version.__version__}` \n"
-        f"⚡ **Python**   \n   ⚙️ `Versi {python_version()}` \n"
-        f"⚡ **Versi Bot**\n   ⚙️ `{BOT_VER}` \n"
-        f"⚡ **Modul**    \n   ⚙️ `{len(modules)}` \n\n"
+        f"👑 **King**     \n   ☞ `{DEFAULTUSER}` \n"
+        f"👤 **Username** \n   ☞ `@{user.username}` \n"
+        f"⚙️ **Telethon** \n   ☞ `Versi {version.__version__}` \n"
+        f"⚙️ **Python**   \n   ☞ `Versi {python_version()}` \n"
+        f"🤖 **Versi Bot**\n   ☞ `{BOT_VER}` \n"
+        f"⚙️ **Modul**    \n   ☞ `{len(modules)}` \n\n"
         f"🛠 **Repo Userbot:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n💭 **Grup Userbot: **[Tekan](t.me/USERBOT_GROUP)\n🤖 **Pemilik:** [Apis](t.me/PacarFerdilla)\n"
-        f"**▬▬▬▬▬▬❙۩⚡۩❙▬▬▬▬▬▬**")
+        f"**▬▬▬▬▬▬❙⚡❙▬▬▬▬▬▬**")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -308,12 +308,12 @@ async def amireallyalive(alive):
         f"**⚡ KING USERBOT ⚡** \n\n"
         f"┏━━━━━━━━━━━━━━━━━━━ \n"
         f"┣|👑 `King     :`{DEFAULTUSER} \n"
-        f"┣|⚡ `Username :`@{user.username} \n"
-        f"┣|⚡ `Telethon :`Ver {version.__version__} \n"
-        f"┣|⚡ `Python   :`Ver {python_version()} \n"
-        f"┣|⚡ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣|⚡ `Bot Ver  :`{BOT_VER} \n"
-        f"┣|⚡ `Modules  :`{len(modules)} Modules \n"
+        f"┣|👤 `Username :`@{user.username} \n"
+        f"┣|⚙️ `Telethon :`Ver {version.__version__} \n"
+        f"┣|⚙️ `Python   :`Ver {python_version()} \n"
+        f"┣|🛠️ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
+        f"┣|🤖 `Bot Ver  :`{BOT_VER} \n"
+        f"┣|⚙️ `Modules  :`{len(modules)} Modules \n"
         f"┗━━━━━━━━━━━━━━━━━━━ \n\n"
         f"[Repo](https://github.com/apisuserbot/King-Userbot) | [Grup Support](t.me/USERBOT_GROUP) | [Mastah](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
@@ -356,21 +356,21 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Berhasil mereset pengguna Alive!" "`")
 
 
-CMD_HELP.update({"sysd": "`.sysd`\
+CMD_HELP.update({"sysd": "⚡𝘾𝙈𝘿⚡`.sysd`\
     \nPenjelasan: Menampilkan informasi sistem menggunakan neofetch.\
-    \n\n.spc\
+    \n\n⚡𝘾𝙈𝘿⚡`.spc\
     \nPenjelasan: Tampilkan spesifikasi sistem.\
-    \n\n`.db`\
+    \n\n⚡𝘾𝙈𝘿⚡`.db`\
     \nPenjelasan: Menampilkan info database."})
-CMD_HELP.update({"botver": "`.botver`\
+CMD_HELP.update({"botver": "⚡𝘾𝙈𝘿⚡`.botver`\
     \nPenjelasan: Menampilkan versi userbot."})
 
-CMD_HELP.update({"pip": "`.pip <module(s)>`\
+CMD_HELP.update({"pip": "⚡𝘾𝙈𝘿⚡`.pip <module(s)>`\
     \nPenjelasan: Melakukan pencarian modul pip."})
 
-CMD_HELP.update({"alive": "`.alive` | `.on`\
+CMD_HELP.update({"alive": "⚡𝘾𝙈𝘿⚡`.alive` |⚡𝘾𝙈𝘿⚡ `.on`\
     \nPenjelasan: Ketik .alive/.on untuk melihat apakah bot Anda berfungsi atau tidak.\
     \n\n`.aliveu <text>`\
     \nPenjelasan: Mengubah 'pengguna' menjadi teks yang Anda inginkan.\
-    \n\n`.resetalive`\
+    \n\n⚡𝘾𝙈𝘿⚡`.resetalive`\
     \nPenjelasan: Mengatur ulang pengguna ke default."})
