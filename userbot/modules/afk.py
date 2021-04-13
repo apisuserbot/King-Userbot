@@ -266,7 +266,7 @@ async def afk_on_pm(sender):
 CMD_HELP.update({
     "afk":
     "**Modules: ` AFK`\
-    \n\n**⚡CMD⚡:** `.afk`\
+    \n\n⚡𝘾𝙈𝘿⚡: `.afk`\
     \n**• Penjelasan:** __Siapapun Yang Balas, Tag, Atau Chat Kamu__\
 __Mereka Akan Tau Alasan Kamu OFF__.\n\n**Note:** `AFK Bisa Dilakukan Dan Dibatalkan Dimanapun.`\
 "
