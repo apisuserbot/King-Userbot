@@ -134,9 +134,9 @@ async def filters_active(event):
     for filt in filters:
         if transact == "`Tidak Ada Filter Apapun Disini.`":
             transact = "**👑 Daftar Filter King Yang Aktif Disini:**\n"
-            transact += " 👉 `{}`\n".format(filt.keyword)
+            transact += " ☞ `{}`\n".format(filt.keyword)
         else:
-            transact += " 👉 `{}`\n".format(filt.keyword)
+            transact += " ☞ `{}`\n".format(filt.keyword)
 
     await event.edit(transact)
 
@@ -144,14 +144,14 @@ async def filters_active(event):
 # @USERBOT_GROUP
 CMD_HELP.update({
     "filter":
-    "`.filters`\
+    "⚡𝘾𝙈𝘿⚡`.filters`\
     \nPenjelasan: Melihat filter king userbot yang aktif di obrolan.\
-    \n\n`.filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
+    \n\n⚡𝘾𝙈𝘿⚡`.filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
     \nPenjelasan: Membuat filter di obrolan.\
     \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
     \nBisa dipake ke media/sticker/vn/file.\
-    \n\n`.stop` <keyword>\
+    \n\n⚡𝘾𝙈𝘿⚡`.stop` <keyword>\
     \nPenjelasan: Untuk Nonaktifkan Filter.\
-    \n\n`.bersihkanbotfilter` <rose>\
+    \n\n⚡𝘾𝙈𝘿⚡`.bersihkanbotfilter` <rose>\
     \nPenjelasan: Menghapus semua filter yang ada di bot grup (Saat ini bot yang didukung: Rose.) dalam obrolan."
 })
