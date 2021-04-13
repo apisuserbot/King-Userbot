@@ -220,7 +220,7 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": "⚡𝘾𝙈𝘿⚡: `.kuota`"
+CMD_HELP.update({"heroku": "⚡𝘾𝙈𝘿⚡: `.kuota`"
                  "\n↳ : Check Quota Dyno Heroku"
                  "\n\n⚡𝘾𝙈𝘿⚡: `.set var <NEW VAR> <VALUE>`"
                  "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
