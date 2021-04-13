@@ -27,6 +27,11 @@ Sebuah King Userbot Yang Di Buat Oleh [Apis](t.me//PacarFerdilla) Untuk Hiburan 
   > Akhirnya nyalakan aplikasi dan periksa log (pengaturan -> lihat log) nikmati :)
 ```
 
+## Group Support 🛠
+
+   <a href="https://t.me/USERBOT_GROUP"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+
+
 ## <p align="center">DEPLOY KING-USERBOT</p>
 
 
