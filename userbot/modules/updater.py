@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`King-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu King.....`")
+            await event.edit("`King-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu King.....⚡`")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n**🛠️ King-Userbot Sudah Versi Terbaru**\n')
+            f'\n**⚙️ King-Userbot Sudah Versi Terbaru**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**👷 Pembaruan Untuk King-Userbot [{ac_br}]:\n\n🛠️ Pembaruan:**\n`{changelog}`'
+        changelog_str = f'**📢 Pembaruan Untuk King-Userbot [{ac_br}]:\n\n🛠️ Pembaruan:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -219,7 +219,7 @@ async def upstream(event):
         await event.edit('`⛏️ Proses Update King-Userbot, Loading....35%`')
         await event.edit('`⛏️ Proses Update King-Userbot, Loading....77%`')
         await event.edit('`⛏️ Proses Update King-Userbot, Updating...90%`')
-        await event.edit('`🛠️ Proses Update King-Userbot, Mohon Menunggu King....100%`')
+        await event.edit('`📢 Proses Update King-Userbot, Mohon Menunggu King....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
