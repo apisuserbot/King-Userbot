@@ -34,7 +34,7 @@ DEF_UNAPPROVED_MSG = (
     f"Tunggu {DEFAULTUSER} Menerima Pesan Anda │\n"
     "╰┈─────────────────────┈─➤\n"
     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-    "┣[○› **PESAN OTOMATIS**\n"
+     "┣[○› **PESAN OTOMATIS**\n"
     f"┣[○› **BY** @KingGithubUserbot\n"
     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
 # =================================================================
@@ -408,7 +408,7 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        "pms": "⚡𝘾𝙈𝘿⚡: >`.setuju | .ok`"
+        "pm": "⚡𝘾𝙈𝘿⚡: >`.setuju | .ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
         "\n\n⚡𝘾𝙈𝘿⚡: >`.tolak | .nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
