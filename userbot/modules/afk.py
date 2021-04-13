@@ -243,7 +243,7 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)} Detik`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"**! 𝗔𝗙𝗞  ⚡**\n╭✠╼━━━━━━❖━━━━━━━✠╮\nMohon Maaf `{ALIVE_NAME}` Lagi Sibuk...**\nLama 𝗔𝗙𝗞 : {afk_since}.\
+                    await sender.reply(f"**! 𝗔𝗙𝗞  ⚡**\n╭✠╼━━━━━━❖━━━━━━━✠╮\nMohon Maaf `{ALIVE_NAME}` Lagi Sibuk...Anjg**\nLama 𝗔𝗙𝗞 : {afk_since}.\
                         \n𝘼𝙡𝙖𝙨𝙖𝙣: `{AFKREASON}`\n╰✠╼━━━━━━❖━━━━━━━✠╯")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -266,7 +266,7 @@ async def afk_on_pm(sender):
 CMD_HELP.update({
     "afk":
     "**Modules: ` AFK`\
-    \n\n**• Perintah:** `.afk`\
+    \n\n**⚡CMD⚡:** `.afk`\
     \n**• Penjelasan:** __Siapapun Yang Balas, Tag, Atau Chat Kamu__\
 __Mereka Akan Tau Alasan Kamu OFF__.\n\n**Note:** `AFK Bisa Dilakukan Dan Dibatalkan Dimanapun.`\
 "
