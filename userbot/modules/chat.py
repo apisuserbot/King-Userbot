@@ -136,7 +136,7 @@ async def mute_chat(mute_e):
         return
     await mute_e.edit(str(mute_e.chat_id))
     kread(str(mute_e.chat_id))
-    await mute_e.edit("`Ssshssh Lord Telah Membisukan Obrolan!`")
+    await mute_e.edit("`Ssshssh King Telah Membisukan Obrolan!`")
     await sleep(2)
     await mute_e.delete()
     if BOTLOG:
