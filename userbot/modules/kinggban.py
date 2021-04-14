@@ -211,7 +211,6 @@ async def gunben(userbot):
     )
 
 
-
 CMD_HELP.update({
     "globalban": "\
 ⚡𝘾𝙈𝘿⚡: `.gban`\
