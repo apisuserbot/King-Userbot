@@ -10,7 +10,7 @@ from userbot.events import register
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern=r"^\.prog (.*)")
+@register(outgoing=True, pattern=r"^\.frog (.*)")
 async def honkasays(event):
     await event.edit("`Sedang Memprosess!!!`")
     text = event.pattern_match.group(1)
