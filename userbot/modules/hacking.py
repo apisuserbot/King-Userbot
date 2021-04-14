@@ -5,20 +5,15 @@
 # Credits by @TeamUltroid, Kraken, Sawan.
 
 
-from time import sleep
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP
 from userbot.events import register
-from random import getrandbits, randint
-from re import sub
 
-import requests
 import asyncio
-import random
+
 
 @register(outgoing=True, pattern='^.hacking(?: |$)(.*)')
 async def hack(event):
-    animation_interval = 0.7
-    animation_ttl = range(0, 11)
+    range(0, 11)
     await event.edit("Installing.")
     await event.edit("Installing..")
     await event.edit("Installing...")
@@ -119,12 +114,12 @@ async def hack(event):
     await asyncio.sleep(2)
     await event.edit("`100%\n█████████HACKED███████████ `\n\n\n  TERMINAL: \nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: `")
     await asyncio.sleep(3)
-    await event.edit("`Akun diretas \ n Mengumpulkan semua data \ n mengonversi data menjadi PDF`")
+    await event.edit("`Akun diretas \\ n Mengumpulkan semua data \\ n mengonversi data menjadi PDF`")
     await asyncio.sleep(3)
     await event.edit("PDF Dibuat Klik Tautan Di Bawah Ini untuk Mengunduh Data\n\n`Jangan Khawatir Hanya Saya Bisa Buka File Ini 😎😎..\nAnda Mencoba Download 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
-    
+
 
 CMD_HELP.update({
-        "hacking": "⚡𝘾𝙈𝘿⚡: `.hacking`\
+    "hacking": "⚡𝘾𝙈𝘿⚡: `.hacking`\
         \n↳ : Untuk hacking via Termux."
 })
