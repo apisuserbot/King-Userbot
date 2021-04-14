@@ -23,7 +23,7 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`Lord, Ini Tidak Mungkin Tanpa ID Pengguna`")
+            await event.edit("`King, Ini Tidak Mungkin Tanpa ID Pengguna`")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
