@@ -1,6 +1,6 @@
 # Based Code by @adekmaulana
 # Improve by @aidilaryanto
-# Apis Ganteng Banget 
+# Apis Ganteng Banget
 # Yang Ubah Kena Azab
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
