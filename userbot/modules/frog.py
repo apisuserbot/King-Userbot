@@ -4,7 +4,6 @@
 # Gabut Doang Gw Tod
 
 
-
 from telethon.errors import ChatSendInlineForbiddenError, ChatSendStickersForbiddenError
 
 from userbot.events import register
