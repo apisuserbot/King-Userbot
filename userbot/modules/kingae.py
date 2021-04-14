@@ -1,5 +1,5 @@
 # Based Plugins
-# Ported for Lord-Userbot By liualvinas/Alvin
+# Ported for King-Userbot By liualvinas/Alvin Bau Sawi
 
 from telethon import events
 from userbot.events import register
