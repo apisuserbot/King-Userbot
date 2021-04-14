@@ -2980,67 +2980,67 @@ async def _(event):
 
 CMD_HELP.update({
     "kingmemes":
-    "`.eye`\
+    "⚡𝘾𝙈𝘿⚡`.eye`\
 \nUsage: Lihat Sendiri.\
-\n\n`.earth`\
+\n\n⚡𝘾𝙈𝘿⚡`.earth`\
 \nusage: Memutar Bumi 🌎🌎\
-\n\n`.bombs`\
+\n\n⚡𝘾𝙈𝘿⚡`.bombs`\
 \nUsage: Bom Telegram🤣🤣\
-\n\n`.think`\
+\n\n⚡𝘾𝙈𝘿⚡`.think`\
 \nUsage: hmmm berpikir\
-\n\n`.gotm` atau `.gott`\
+\n\n⚡𝘾𝙈𝘿⚡`.gotm` atau ⚡𝘾𝙈𝘿⚡`.gott`\
 \nUsage: dapatkan sucks🤣\
-\n\n`.snake`\
+\n\n⚡𝘾𝙈𝘿⚡`.snake`\
 \nUsage: Lihat Sendiri\
-\n\n`.call`\
+\n\n⚡𝘾𝙈𝘿⚡`.call`\
 \nUsage: Memanggil Owner Telegram \
-\n\n`.belo` Atau `.hp` Atau `.suits`\
+\n\n⚡𝘾𝙈𝘿⚡`.belo` Atau ⚡𝘾𝙈𝘿⚡`.hp` Atau ⚡𝘾𝙈𝘿⚡`.suits`\
 \nUsage: Macam Macam Perintah Menarik\
-\n\n`.admeme`\
+\n\n⚡𝘾𝙈𝘿⚡`.admeme`\
 \nUsage: mememememe\
-\n\n`.qs`\
+\n\n⚡𝘾𝙈𝘿⚡`.qs`\
 \nUsage: Memulai Percakapan\
-\n\n`.wtf`\
+\n\n⚡𝘾𝙈𝘿⚡`.wtf`\
 \nUsage: Lihat Sendiri\
-\n\n`.load`,`.up`,`.square`,`.round`,`.heart`,`.monkey`,`.anim`,`.hand`,`.fnl`,`.cnt`,`.kiss`\
+\n\n⚡𝘾𝙈𝘿⚡`.load`,⚡𝘾𝙈𝘿⚡`.up`,⚡𝘾𝙈𝘿⚡`.square`,⚡𝘾𝙈𝘿⚡`.round`,⚡𝘾𝙈𝘿⚡`.heart`,⚡𝘾𝙈𝘿⚡`.monkey`,⚡𝘾𝙈𝘿⚡`.anim`,⚡𝘾𝙈𝘿⚡`.hand`,⚡𝘾𝙈𝘿⚡`.fnl`,⚡𝘾𝙈𝘿⚡`.cnt`,⚡𝘾𝙈𝘿⚡`.kiss`\
 \nUsage: Lihat Sendiri\
-\n\n`.human`\
+\n\n⚡𝘾𝙈𝘿⚡`.human`\
 \nUsage: Tidak Ada Yang Menarik\
-\n\n`.wupload`\
+\n\n⚡𝘾𝙈𝘿⚡`.wupload`\
 \nUsage: meh\
-\n\n`.music`\
+\n\n⚡𝘾𝙈𝘿⚡`.music`\
 \nUsage: music player\
-\n\n`.fleave`\
+\n\n⚡𝘾𝙈𝘿⚡`.fleave`\
 \nUsage: Keluar boong an\
-\n\n`.fadmin`\
+\n\n⚡𝘾𝙈𝘿⚡`.fadmin`\
 \nUsage: Jadi Admin Fake  🤣🤣\
-\n\n`.gift`\
+\n\n⚡𝘾𝙈𝘿⚡`.gift`\
 \nUsage: Memberi Hadiah Tapi Aku Tidak Mau Member Tau Apa Dalamnya!\
-\n\n`.police`\
+\n\n⚡𝘾𝙈𝘿⚡`.police`\
 \nUsage: Waktunya Ke Penjara.\
-\n\n`.kill`\
+\n\n⚡𝘾𝙈𝘿⚡`.kill`\
 \nUsage: Untuk Membunuh Musuh Secara Online:v\
-\n\n`.os`\
+\n\n⚡𝘾𝙈𝘿⚡`.os`\
 \nUsage: Lihat Sendiri.\
-\n\n`.isro`\
+\n\n⚡𝘾𝙈𝘿⚡`.isro`\
 \nUsage: Untuk Memanggil Alien 👽\
-\n\n`.gangstar`\
+\n\n⚡𝘾𝙈𝘿⚡`.gangstar`\
 \nUsage: Anda Menjadi Gangstar.\
-\n\n`.hack`\
+\n\n⚡𝘾𝙈𝘿⚡`.hack`\
 \nUsage: Untuk Hack Telegram:v\
-\n\n`.dump`\
+\n\n⚡𝘾𝙈𝘿⚡`.dump`\
 \nUsage: xD\
-\n\n`.hypno`\
+\n\n⚡𝘾𝙈𝘿⚡`.hypno`\
 \nUsage: Ah Sial Mataku 👀\
-\n\n`.whatsapp`\
+\n\n⚡𝘾𝙈𝘿⚡`.whatsapp`\
 \nUsage: Untuk Hack Whatsapp:v \
-\n\n`.solar`\
+\n\n⚡𝘾𝙈𝘿⚡`.solar`\
 \nUsage: System Solar Kita Yang Cantik 🌞🌞\
-\n\n`.quickheal` atau `.sqh` atau `.vquickheal`\
+\n\n⚡𝘾𝙈𝘿⚡`.quickheal` atau `.sqh` atau `.vquickheal`\
 \nUsage: Virus Ditemukan, Hapus Itu Menggunakan Ini:v\
-\n\n`.plane`\
+\n\n⚡𝘾𝙈𝘿⚡`.plane`\
 \nUsage: Untuk Berkeliling Di Satu Tempat✈️\
-\n\n`.jio`\
+\n\n⚡𝘾𝙈𝘿⚡`.jio`\
 \nUsage: Jaringan Mu Lambat?? Boost Menggunakan Ini\
 \n\n\n Selamat Bersenang-Senang Kawan:v"
 })
