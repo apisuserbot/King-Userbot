@@ -21,11 +21,11 @@ from userbot.events import register
 @register(outgoing=True, pattern=r"^\.(wc)$")
 async def _(event):
     if not event.reply_to_msg_id:
-        await event.edit("`Mohon Balas Ke Media Apapun King`")
+        await event.edit("`Mohon Balas Ke Media Apapun Lord`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("`Mohon Balas Ke Gambar/Sticker/Video King`")
+        await event.edit("`Mohon Balas Ke Gambar/Sticker/Video Lord`")
         return
     await event.edit("`Mendownload Media.....`")
     if reply_message.photo:
@@ -93,5 +93,5 @@ async def _(event):
 
 
 CMD_HELP.update(
-    {"wordcloud"⚡𝘾𝙈𝘿⚡: ">`.wc`\n" "Penjelasan: membuat seni wordcloud dari media\n\n"}
+    {"wordcloud": ">⚡𝘾𝙈𝘿⚡`.wc`\n" "Usage: membuat seni wordcloud dari media\n\n"}
 )
