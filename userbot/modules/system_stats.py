@@ -278,7 +278,7 @@ async def amireallyalive(alive):
         f"╟⟩⟩ 👾 • `Bot      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
         f"╟⟩⟩ 📂 • `Module   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
         f"╚══════════╣۩ ⚡ ۩╠══════════╝ \n"
-        f"[Repo King](https://github.com/apisuserbot/King-Userbot) [Instragam](INSTRAGAM_ALIVE) [Mastah](t.me/PacarFerdilla)")
+        f"[Repo King](https://github.com/apisuserbot/King-Userbot) [Instragam Mastah](@apis_goodboy) [Mastah](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
