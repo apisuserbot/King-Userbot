@@ -263,27 +263,19 @@ async def amireallyalive(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:xalive|xon)\s?(.)?")
 async def amireallyalive(alive):
-    await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
-        f"**       ⊏┊⚡King-Userbot⚡ ⊨〛🛠 ** \n"
-        f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
-        f"╭╼════════════════════╾╮ \n"
-        f"│    ⇱ **Selamat Datang Di Sistem** ⇲ \n"
-        f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 👤  `Username :`@{user.username} \n"
-        f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
-        f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
-        f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
-        f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
-        f"┞╼════════════════════╾┤ \n"
-        f"├◈ **Kalian Harus Support Project ** \n"
-        f"│    **Userbot, Kami Dengan Dibawah Ini.** \n"
-        f"╰╼════════════════════╾╯ \n"
-        f"[Repo King](https://github.com/apisuserbot/King-Userbot) [Grup Support](t.me//USERBOT_GROUP) [Mastah](t.me/PacarFerdilla)")
+        f"**▬▬▬▬▬▬❙X❙▬▬▬▬▬▬**\n"
+        f"   **- ⚡king-Userbot⚡ -** \n\n"
+        f"👑 **King**     \n   ☞ `{DEFAULTUSER}` \n"
+        f"👤 **Username** \n   ☞ `@{user.username}` \n"
+        f"⚙️ **Telethon** \n   ☞ `Versi {version.__version__}` \n"
+        f"🐍 **Python**   \n   ☞ `Versi {python_version()}` \n"
+        f"👾 **Versi Bot**\n   ☞ `{BOT_VER}` \n"
+        f"📂 **Modul**    \n   ☞ `{len(modules)}` \n\n"
+        f"🛠 **King Repo:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n📢 **Grup Support: **[Tekan Disini](t.me/USERBOT_GROUP)\n👑 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
+        f"**▬▬▬▬▬▬❙X❙▬▬▬▬▬▬**")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -311,16 +303,23 @@ async def amireallyalive(alive):
     await alive.edit("`Sistem Menyala...⛏️!`")
     await alive.edit("⚡")
     output = (
-        f"**⚡ KING USERBOT ⚡** \n\n"
-        f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣|👑 `King     :`{DEFAULTUSER} \n"
-        f"┣|👤 `Username :`@{user.username} \n"
-        f"┣|⚙️ `Telethon :`Ver {version.__version__} \n"
-        f"┣|🐍 `Python   :`Ver {python_version()} \n"
-        f"┣|🛠️ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣|👾 `Bot Ver  :`{BOT_VER} \n"
-        f"┣|📂 `Modules  :`{len(modules)} Modules \n"
-        f"┗━━━━━━━━━━━━━━━━━━━ \n\n"
+        f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
+        f"**       ⊏┊⚡King-Userbot⚡ ⊨〛🛠 ** \n"
+        f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
+        f"╭╼════════════════════╾╮ \n"
+        f"│    ⇱ **Selamat Datang Di Sistem** ⇲ \n"
+        f"┟╼════════════════════╾┤ \n"
+        f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
+        f"╟◈ 👤  `Username :`@{user.username} \n"
+        f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
+        f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
+        f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
+        f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
+        f"┞╼════════════════════╾┤ \n"
+        f"├◈ **Kalian Harus Support Project ** \n"
+        f"│    **Userbot, Kami Dengan Dibawah Ini.** \n"
+        f"╰╼════════════════════╾╯ \n"
         f"[Repo King](https://github.com/apisuserbot/King-Userbot) | [Grup Support](t.me/USERBOT_GROUP) | [Mastah](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
