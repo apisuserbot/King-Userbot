@@ -243,12 +243,12 @@ async def amireallyalive(alive):
         f"┣[👾 • `Bot Ver  :`{BOT_VER} \n"
         f"┣[📂 • `Modules  :`{len(modules)} Modules \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
-        f"[Repo Userbot](https://github.com/apisuserbot/King-Userbot) [Grup Support](t.me//USERBOT_GROUP) [Mastah](t.me//PacarFerdilla)") 
+        f"[Repo Userbot](https://github.com/apisuserbot/King-Userbot) [Grup Support](t.me//USERBOT_GROUP) [Mastah](t.me//PacarFerdilla)")
     if ALIVE_LOGO:
         try:
-            logo = ALIVE_LOGO
+            logo=ALIVE_LOGO
             await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            msg=await bot.send_file(alive.chat_id, logo, caption = output)
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
