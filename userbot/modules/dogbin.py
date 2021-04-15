@@ -21,7 +21,7 @@ async def paste(pstl):
     reply_id = pstl.reply_to_msg_id
 
     if not (match or reply_id):
-        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan King.....⚡`")
+        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan Master....⚡.`")
 
     if match:
         message = match
@@ -42,7 +42,7 @@ async def paste(pstl):
             message = message.message
 
     # Dogbin
-    await pstl.edit("`Menempelkan teks . . .`")
+    await pstl.edit("`Menempelkan teks . . .🚀`")
     resp = post(DOGBIN_URL + "documents", data=message.encode("utf-8"))
 
     if resp.status_code == 200:
@@ -55,14 +55,14 @@ async def paste(pstl):
                 "`Berhasil ditempel!`\n\n"
                 f"[Shortened URL]({dogbin_final_url})\n\n"
                 "`Original(non-shortened) URLs`\n"
-                f"[Konten URL]({DOGBIN_URL}v/{key})\n"
-                f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
+                f"[Dogbin URL]({DOGBIN_URL}v/{key})\n"
+                f"[View RAW]({DOGBIN_URL}raw/{key})"
             )
         else:
             reply_text = (
                 "`Berhasil ditempel!`\n\n"
-                f"[Konten URL]({dogbin_final_url})\n"
-                f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
+                f"[Dogbin URL]({dogbin_final_url})\n"
+                f"[View RAW]({DOGBIN_URL}raw/{key})"
             )
     else:
         reply_text = "`Gagal menjangkau Dogbin`"
@@ -79,7 +79,7 @@ async def get_dogbin_content(dog_url):
     """ For .getpaste command, fetches the content of a dogbin URL. """
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
-    await dog_url.edit("`Mendapatkan konten dogbin...`")
+    await dog_url.edit("`Mendapatkan konten dogbin...🚀`")
 
     if textx:
         message = str(textx.message)
@@ -126,8 +126,10 @@ async def get_dogbin_content(dog_url):
         )
 
 
-CMD_HELP.update({"dogbin": "⚡𝘾𝙈𝘿⚡`.tempel`\
-    \nPenjelasan: .tempel <kata kata> untuk membuat konten dogbin URL.
-    \n\n⚡𝘾𝙈𝘿⚡`.gettempel`
-                 \nPenjelasan: Untuk Menempelkan teks dengan get."
-                 })
+CMD_HELP.update({
+    "dogbin":
+    ">⚡𝘾𝙈𝘿⚡ `.tempel <text / reply> "
+    "\nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
+    "\n\n.gettempel <reply / link>"
+    "\nPenggunaan: Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
+})
