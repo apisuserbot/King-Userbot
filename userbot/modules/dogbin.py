@@ -127,7 +127,7 @@ async def get_dogbin_content(dog_url):
 
 
 CMD_HELP.update({
-    "program":
+    "dogbin":
     ">⚡𝘾𝙈𝘿⚡ `.paste <text / reply> "
     "\\ nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
     "\\ n \\ n.getpaste <reply / link>"
