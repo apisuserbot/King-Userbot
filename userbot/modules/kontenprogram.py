@@ -55,14 +55,14 @@ async def paste(pstl):
                 "`Berhasil ditempel!`\n\n"
                 f"[Shortened URL]({dogbin_final_url})\n\n"
                 "`Original(non-shortened) URLs`\n"
-                f"[Dogbin URL]({DOGBIN_URL}v/{key})\n"
-                f"[View RAW]({DOGBIN_URL}raw/{key})"
+                f"[Konten program URL]({DOGBIN_URL}v/{key})\n"
+                f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
             )
         else:
             reply_text = (
                 "`Berhasil ditempel!`\n\n"
-                f"[Dogbin URL]({dogbin_final_url})\n"
-                f"[View RAW]({DOGBIN_URL}raw/{key})"
+                f"[Konten program URL]({dogbin_final_url})\n"
+                f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
             )
     else:
         reply_text = "`Gagal menjangkau konten URL program`"
