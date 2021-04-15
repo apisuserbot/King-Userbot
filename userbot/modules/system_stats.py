@@ -243,7 +243,6 @@ async def amireallyalive(alive):
         f"┣[👾 • `Bot Ver  :`{BOT_VER} \n"
         f"┣[📂 • `Modules  :`{len(modules)} Modules \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
-        f"[Repo Userbot](https://github.com/apisuserbot/King-Userbot) [Grup Support](t.me//USERBOT_GROUP) [Mastah](t.me//PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo=ALIVE_LOGO
