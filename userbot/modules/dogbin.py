@@ -13,7 +13,7 @@ from userbot.events import register
 DOGBIN_URL = "https://del.dog/"
 
 
-@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.tempel(?: |$)([\s\S]*)")
 async def paste(pstl):
     """ For .paste command, pastes the text directly to dogbin. """
     dogbin_final_url = ""
@@ -74,7 +74,7 @@ async def paste(pstl):
         )
 
 
-@register(outgoing=True, pattern=r"^\.getpaste(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.gettempel(?: |$)(.*)")
 async def get_dogbin_content(dog_url):
     """ For .getpaste command, fetches the content of a dogbin URL. """
     textx = await dog_url.get_reply_message()
@@ -126,10 +126,5 @@ async def get_dogbin_content(dog_url):
         )
 
 
-CMD_HELP.update({
-    "dogbin":
-    " .paste <text / reply> "
-    "\\ nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
-    "\\ n \\ n.getpaste <reply / link>"
-    "\\ nPenggunaan: Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
-})
+CMD_HELP.update({"dogbin": "⚡𝘾𝙈𝘿⚡`.tempel`\
+    \nPenjelasan: .tempel <kata kata> untuk membuat konten dogbin URL."})
