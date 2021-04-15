@@ -128,6 +128,6 @@ async def get_dogbin_content(dog_url):
 
 CMD_HELP.update({"dogbin": "⚡𝘾𝙈𝘿⚡`.tempel`\
     \nPenjelasan: .tempel <kata kata> untuk membuat konten dogbin URL.
-    \n\n⚡𝘾𝙈𝘿⚡`.gettempel`\
-    \nPenjelasan: Untuk Menempelkan teks dengan get."
-})
+    \n\n⚡𝘾𝙈𝘿⚡`.gettempel`
+                 \nPenjelasan: Untuk Menempelkan teks dengan get."
+                 })
