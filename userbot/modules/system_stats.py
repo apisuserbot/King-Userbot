@@ -228,7 +228,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f" **┗┓⚡KING USERBOT⚡┏┛** \n"
+        f" **┗┓⚡King-Userbot⚡┏┛** \n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━━━━━━**\n"
         f"**👑 king** \n"
@@ -266,7 +266,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**▬▬▬▬▬▬❙X❙▬▬▬▬▬▬**\n"
+        f"**▬▬▬▬▬▬❙👑❙▬▬▬▬▬▬**\n"
         f"   **- ⚡king-Userbot⚡ -** \n\n"
         f"👑 **King**     \n   ☞ `{DEFAULTUSER}` \n"
         f"👤 **Username** \n   ☞ `@{user.username}` \n"
@@ -274,8 +274,8 @@ async def amireallyalive(alive):
         f"🐍 **Python**   \n   ☞ `Versi {python_version()}` \n"
         f"👾 **Versi Bot**\n   ☞ `{BOT_VER}` \n"
         f"📂 **Modul**    \n   ☞ `{len(modules)}` \n\n"
-        f"🛠 **King Repo:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n📢 **Grup Support: **[Tekan Disini](t.me/USERBOT_GROUP)\n👑 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
-        f"**▬▬▬▬▬▬❙X❙▬▬▬▬▬▬**")
+        f"🤖 **King Repo:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n📢 **Grup Support: **[Tekan Disini](t.me/USERBOT_GROUP)\n👑 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
+        f"**▬▬▬▬▬▬❙⚡❙▬▬▬▬▬▬**")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
