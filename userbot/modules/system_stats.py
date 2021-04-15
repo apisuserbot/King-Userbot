@@ -245,9 +245,9 @@ async def amireallyalive(alive):
         f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption = output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
@@ -265,7 +265,7 @@ async def amireallyalive(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:xalive|xon)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
+    await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
         f"**ㅤㅤㅤㅤ ⚡【King-Userbot】⚡**\n"
