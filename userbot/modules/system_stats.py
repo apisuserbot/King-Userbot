@@ -227,8 +227,6 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("`Sistem Menyala...⛏️!`")
-    await alive.edit("⚡")
     output = (
         f" **┗┓⚡KING USERBOT⚡┏┛** \n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
@@ -268,16 +266,24 @@ async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**ㅤㅤㅤㅤ ⚡【King-Userbot】⚡**\n"
-        f"╔══════════╣۩ 👑 ۩╠══════════╗ \n"
-        f"╟⟩⟩ 👑 • `King    :`{DEFAULTUSER}`   ㅤ ║\n"
-        f"╟⟩⟩ 🖥️ • `Sistem.   :`Ubuntu 20.10            ║\n"
-        f"╟⟩⟩ ⚙️ • `Telethon  :`v.{version.__version__}                ㅤㅤ  ║\n"
-        f"╟⟩⟩ 🐍 • `Python.   :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
-        f"╟⟩⟩ 👾 • `Bot      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
-        f"╟⟩⟩ 📂 • `Module   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
-        f"╚══════════╣۩ ⚡ ۩╠══════════╝ \n"
-        f"[Repo King](https://github.com/apisuserbot/King-Userbot) [Instragam Mastah](@apis_goodboy) [Mastah](t.me/PacarFerdilla)")
+        f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
+        f"**       ⊏┊⚡King-Userbot⚡ ⊨〛🛠 ** \n"
+        f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
+        f"╭╼════════════════════╾╮ \n"
+        f"│    ⇱ **Selamat Datang Di Sistem** ⇲ \n"
+        f"┟╼════════════════════╾┤ \n"
+        f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
+        f"╟◈ 👤  `Username :`@{user.username} \n"
+        f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
+        f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
+        f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
+        f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
+        f"┞╼════════════════════╾┤ \n"
+        f"├◈ **Kalian Harus Support Project ** \n"
+        f"│    **Userbot, Kami Dengan Dibawah Ini.** \n"
+        f"╰╼════════════════════╾╯ \n"
+        f"[Repo King](https://github.com/apisuserbot/King-Userbot) [Grup Support](t.me//USERBOT_GROUP) [Mastah](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
