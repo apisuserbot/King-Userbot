@@ -21,7 +21,7 @@ async def paste(pstl):
     reply_id = pstl.reply_to_msg_id
 
     if not (match or reply_id):
-        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan King....⚡.`")
+        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan King.....⚡`")
 
     if match:
         message = match
@@ -55,17 +55,17 @@ async def paste(pstl):
                 "`Berhasil ditempel!`\n\n"
                 f"[Shortened URL]({dogbin_final_url})\n\n"
                 "`Original(non-shortened) URLs`\n"
-                f"[Konten program URL]({DOGBIN_URL}v/{key})\n"
+                f"[Konten URL]({DOGBIN_URL}v/{key})\n"
                 f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
             )
         else:
             reply_text = (
                 "`Berhasil ditempel!`\n\n"
-                f"[Konten program URL]({dogbin_final_url})\n"
+                f"[Konten URL]({dogbin_final_url})\n"
                 f"[Lihat RAW]({DOGBIN_URL}raw/{key})"
             )
     else:
-        reply_text = "`Gagal menjangkau konten URL program`"
+        reply_text = "`Gagal menjangkau Dogbin`"
 
     await pstl.edit(reply_text)
     if BOTLOG_CHATID:
@@ -79,7 +79,7 @@ async def get_dogbin_content(dog_url):
     """ For .getpaste command, fetches the content of a dogbin URL. """
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
-    await dog_url.edit("`Mendapatkan konten program...`")
+    await dog_url.edit("`Mendapatkan konten dogbin...`")
 
     if textx:
         message = str(textx.message)
@@ -94,7 +94,7 @@ async def get_dogbin_content(dog_url):
     elif message.startswith("del.dog/"):
         message = message[len("del.dog/"):]
     else:
-        return await dog_url.edit("`Apakah itu konten URL program?`")
+        return await dog_url.edit("`Apakah itu url dogbin?`")
 
     resp = get(f"{DOGBIN_URL}raw/{message}")
 
@@ -116,20 +116,20 @@ async def get_dogbin_content(dog_url):
         return
 
     reply_text = (
-        "`Berhasil mengambil konten URL program!`"
-        "\n\n`konten:` " + resp.text)
+        "`Berhasil mengambil konten URL dogbin!`"
+        "\n\n`Content:` " + resp.text)
 
     await dog_url.edit(reply_text)
     if BOTLOG_CHATID:
         await dog_url.client.send_message(
-            BOTLOG_CHATID, "Kueri konten get program telah berhasil dijalankan",
+            BOTLOG_CHATID, "Kueri konten get dogbin telah berhasil dijalankan",
         )
 
 
 CMD_HELP.update({
     "dogbin":
-    ">⚡𝘾𝙈𝘿⚡ `.paste <text / reply> "
-    "\\ nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
-    "\\ n \\ n.getpaste <reply / link>"
-    "\\ nPenggunaan: Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
+    " .paste <text / reply> "
+    "\ nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
+    "\ n \ n.getpaste <reply / link>"
+    "\ nPenggunaan: Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
 })
