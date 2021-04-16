@@ -122,11 +122,11 @@ async def repo_is_here(wannasee):
     await wannasee.edit(
         "╭─━━━━━━━━━━━━━─╮\n"
         "                  Repo\n"
-        "    [⚡King-Userbot⚡]({REPOLINK})\n"
+        "     [⚡King-Userbot⚡](https://github.com/apisuserbot/King-Userbot)\n"
         "╭─━━━━━━━━━━━━━─╯\n"
         "│👑 **Mastah :** [Apis](t.me/PacarFerdilla)\n"
         "╰━━━━━━━━━━━━━━━╯\n"
-        "  README : [Pengarah Deploy](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "  Deploy King : [Jangan Malas Deploy](https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/King-Userbot)"
     )
 
 
