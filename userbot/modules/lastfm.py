@@ -56,6 +56,8 @@ LastLog = False
 # ================================================
 
 # KING - USERBOT
+
+
 @register(outgoing=True, pattern="^.lastfm$")
 async def last_fm(lastFM):
     """ For .lastfm command, fetch scrobble data from last.fm. """
@@ -65,7 +67,9 @@ async def last_fm(lastFM):
     username = f"https://www.last.fm/user/{LASTFM_USERNAME}"
     if playing is not None:
         try:
-            image = User(LASTFM_USERNAME, lastfm).get_now_playing().get_cover_image()
+            image = User(
+                LASTFM_USERNAME,
+                lastfm).get_now_playing().get_cover_image()
         except IndexError:
             image = None
         tags = await gettags(isNowPlaying=True, playing=playing)
@@ -98,6 +102,8 @@ async def last_fm(lastFM):
         await lastFM.edit(f"{output}", parse_mode="md")
 
 # LORD USERBOT
+
+
 async def gettags(track=None, isNowPlaying=None, playing=None):
     if isNowPlaying:
         tags = playing.get_top_tags()
@@ -185,6 +191,8 @@ async def get_curr_track(lfmbio):
     RUNNING = False
 
 # LORD USERBOT
+
+
 @register(outgoing=True, pattern=r"^.lastbio (on|off)")
 async def lastbio(lfmbio):
     arg = lfmbio.pattern_match.group(1).lower()
