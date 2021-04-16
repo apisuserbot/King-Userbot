@@ -19,7 +19,10 @@ from userbot import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 # LORD USERBOT
-@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+
+
+@register(outgoing=True,
+          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     """DeezLoader by @An0nimia
     Ported for UniBorg by @SpEcHlDe"""
@@ -123,6 +126,8 @@ async def _(event):
         await event.edit(strings["wrong_cmd_syntax"])
 
 # LORD - USERBOT
+
+
 async def upload_track(track_location, message):
     metadata = extractMetadata(createParser(track_location))
     duration = 0
@@ -163,6 +168,4 @@ CMD_HELP.update(
     {
         "deezload": "**Modules:** __Deezload__\n\n⚡𝘾𝙈𝘿⚡: `.deez <spotify/deezer link> <Format>`"
         "\n**Penjelasan:** Unduh musik dari deezer."
-        "\n\n *Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
-    }
-)
+        "\n\n *Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."})
