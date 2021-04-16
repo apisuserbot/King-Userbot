@@ -18,7 +18,7 @@ from telethon.tl.types import DocumentAttributeAudio
 from userbot import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
-# LORD USERBOT
+# KING USERBOT
 
 
 @register(outgoing=True,
