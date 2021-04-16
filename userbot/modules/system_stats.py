@@ -16,7 +16,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, LYNX_TEKS_KUSTOM, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, INSTAGRAM_ALIVE, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, INSTAGRAM_ALIVE, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 
@@ -45,7 +45,7 @@ async def get_readable_time(seconds: int) -> str:
         seconds = int(remainder)
 
     for x in range(len(time_list)):
-       time_list[x] = str(time_list[x]) + time_suffix_list[x]
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
 
     if len(time_list) == 4:
         up_time += time_list.pop() + ", "
@@ -148,7 +148,7 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = str(stdout.decode().strip()) + str(stderr.decode().strip())
+        str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         rev = await asyncrunapp(
             "git",
@@ -226,7 +226,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-           f"**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** \n"
+        f"**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** \n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
         f"**══════════════════════**\n"
         f"**👑 King** \n"
@@ -261,7 +261,7 @@ async def amireallyalive(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:apis|iam)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
+    await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
         f"**ㅤㅤㅤㅤ ⚡【𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏】⚡**\n"
@@ -274,7 +274,7 @@ async def amireallyalive(alive):
         f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
         f"╚══════════╣۩ ☆ ۩╠══════════╝ \n"
         f"👑 : [𝗥𝗘𝗣𝗢-𝗞𝗶𝗻𝗴](https://github.com/apisuserbot/King-Userbot)\n👥 : [𝗞𝗜𝗡𝗚-𝗧𝗘𝗔𝗠](t.me/KingUserbotSupport)\n👩‍💻 : [𝗖𝗟𝗢𝗡𝗘-𝗘𝗗𝗜𝗧𝗢𝗥](t.me/PacarFerdilla)\n👤 : [𝗢𝗪𝗡𝗘𝗥-𝗚𝗥𝗢𝗨𝗣](t.me/lvufrvrbby)\n"
-            )
+    )
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -360,7 +360,8 @@ async def redis(alive):
         f"├◈ **Jangan lupa untuk mendukung kami** \n"
         f"│    **userbot, cara menekan di bawah ini.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | " f"[𝗠𝘆 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺]({INSTAGRAM_ALIVE}) | ")
+        f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
+        f"[𝗠𝘆 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺]({INSTAGRAM_ALIVE}) | ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -382,7 +383,7 @@ async def redis(alive):
 
 
 @register(outgoing=True, pattern="^.aliveu")
-async def amireallyaliveuser(username): 
+async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
     output = ".aliveu [new username] tidak boleh kosong"
@@ -403,27 +404,27 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update({
     "sistem":
-    "⚡𝘾𝙈𝘿⚡: `.sysd`"\
-"\n↳ : Menampilkan informasi sistem menggunakan neofetch."
-"\n\n⚡𝘾𝙈𝘿⚡: `.db`"
-"\n↳ : Menampilkan Databse Info."
-"\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
-"\n↳ : Tampilkan spesifikasi sistem."
+    "⚡𝘾𝙈𝘿⚡: `.sysd`"
+    "\n↳ : Menampilkan informasi sistem menggunakan neofetch."
+    "\n\n⚡𝘾𝙈𝘿⚡: `.db`"
+    "\n↳ : Menampilkan Databse Info."
+    "\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
+    "\n↳ : Tampilkan spesifikasi sistem."
 })
 CMD_HELP.update({
     "alive":
     "⚡𝘾𝙈𝘿⚡: `.alive` or `.on`"
-"\n↳ : Untuk melihat apakah bot Anda berfungsi atau tidak."
-"\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
-"\n↳ : Mengubah 'pengguna' hidup-hidup ke teks yang Anda inginkan."
-"\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
-"\n↳ : Mereset Pengguna."
+    "\n↳ : Untuk melihat apakah bot Anda berfungsi atau tidak."
+    "\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
+    "\n↳ : Mengubah 'pengguna' hidup-hidup ke teks yang Anda inginkan."
+    "\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
+    "\n↳ : Mereset Pengguna."
 })
 CMD_HELP.update(
-{
-    "botversion":
-    "⚡𝘾𝙈𝘿⚡: `.botver`"
-"\n↳ : Menampilkan versi userbot."
-"\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
-"\n↳ : Melakukan pencarian modul pip(s)."
-})
+    {
+        "botversion":
+        "⚡𝘾𝙈𝘿⚡: `.botver`"
+        "\n↳ : Menampilkan versi userbot."
+        "\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
+        "\n↳ : Melakukan pencarian modul pip(s)."
+    })
