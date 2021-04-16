@@ -1,11 +1,8 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
 # System Stats King-Userbot
 
 import asyncio
+import redis
+
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
@@ -19,7 +16,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, LYNX_TEKS_KUSTOM, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, INSTAGRAM_ALIVE, bot
 from userbot.events import register
 
 
@@ -48,7 +45,8 @@ async def get_readable_time(seconds: int) -> str:
         seconds = int(remainder)
 
     for x in range(len(time_list)):
-        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+       time_list[x] = str(time_list[x]) + time_suffix_list[x]
+
     if len(time_list) == 4:
         up_time += time_list.pop() + ", "
 
@@ -164,9 +162,9 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**☞**King-Userbot Versi:** \n "
-            f"{verout}"
-            "\n**☞**Revisi:**\n "
+            "**⚜-**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Versi:** \n "
+            f"heads/king-Userbot-0-x634i7u1"
+            "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
     else:
@@ -223,24 +221,24 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:king|kingon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:King|Kingon)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f" **┗┓⚡King-Userbot⚡┏┛** \n"
+           f"**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** \n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
-        f"**━━━━━━━━━━━━━━━━━━━━**\n"
-        f"**👑 king** \n"
-        f" ☞ `{DEFAULTUSER}` \n"
-        f"**👤 username** \n"
-        f" ☞ `@{user.username}` \n"
-        f"┏━━━━━━━━━━━━━━━━━━━\n"
-        f"┣[⚙️ • `Telethon :`Ver {version.__version__} \n"
-        f"┣[🐍 • `Python   :`Ver {python_version()} \n"
-        f"┣[👾 • `Bot Ver  :`{BOT_VER} \n"
-        f"┣[📂 • `Modules  :`{len(modules)} Modules \n"
-        f"┗━━━━━━━━━━━━━━━━━━━")
+        f"**══════════════════════**\n"
+        f"**👑 King** \n"
+        f" ↳ : `{DEFAULTUSER}` \n"
+        f"**👤 Username** \n"
+        f" ↳ : `@{user.username}` \n"
+        f"╔═══════════════════════\n"
+        f"╟[•⚙️ `Telethon :`Ver {version.__version__} \n"
+        f"╟[•🐍 `Python   :`Ver {python_version()} \n"
+        f"╟[•👾 `Bot Ver  :`{BOT_VER} \n"
+        f"╟[•📂 `Modules  :`{len(modules)} \n"
+        f"╚═══════════════════════")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -261,21 +259,22 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|xon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:apis|iam)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**▬▬▬▬▬▬❙👑❙▬▬▬▬▬▬**\n"
-        f"   **- ⚡king-Userbot⚡ -** \n\n"
-        f"👑 **King**     \n   ☞ `{DEFAULTUSER}` \n"
-        f"👤 **Username** \n   ☞ `@{user.username}` \n"
-        f"⚙️ **Telethon** \n   ☞ `Versi {version.__version__}` \n"
-        f"🐍 **Python**   \n   ☞ `Versi {python_version()}` \n"
-        f"👾 **Versi Bot**\n   ☞ `{BOT_VER}` \n"
-        f"📂 **Modul**    \n   ☞ `{len(modules)}` \n\n"
-        f"🤖 **King Repo:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n📢 **Grup Support: **[Tekan Disini](t.me/USERBOT_GROUP)\n👑 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
-        f"**▬▬▬▬▬▬❙⚡❙▬▬▬▬▬▬**")
+        f"**ㅤㅤㅤㅤ ⚡【𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏】⚡**\n"
+        f"╔══════════╣۩ ☆ ۩╠══════════╗ \n"
+        f"╟⟩⟩ 👑 • `ᴍᴀsᴛᴀʜ    :`[𝘈𝘗𝘐𝘚](t.me/PacarFerdilla)                 ㅤ ║\n"
+        f"╟⟩⟩ 🖥️ • `ꜱɪꜱᴛᴇᴍ.   :`Ubuntu 20.10            ║\n"
+        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__}                ㅤㅤ  ║\n"
+        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
+        f"╟⟩⟩ 👾 • `ʙᴏᴛ      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
+        f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
+        f"╚══════════╣۩ ☆ ۩╠══════════╝ \n"
+        f"👑 : [𝗥𝗘𝗣𝗢-𝗞𝗶𝗻𝗴](https://github.com/apisuserbot/King-Userbot)\n👥 : [𝗞𝗜𝗡𝗚-𝗧𝗘𝗔𝗠](t.me/KingUserbotSupport)\n👩‍💻 : [𝗖𝗟𝗢𝗡𝗘-𝗘𝗗𝗜𝗧𝗢𝗥](t.me/PacarFerdilla)\n👤 : [𝗢𝗪𝗡𝗘𝗥-𝗚𝗥𝗢𝗨𝗣](t.me/lvufrvrbby)\n"
+            )
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -297,17 +296,58 @@ async def amireallyalive(alive):
 
 
 @register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
-async def amireallyalive(alive):
+async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("`Sistem Menyala...⛏️!`")
+    await alive.edit("__X...Userbot....X__")
+    await alive.edit("__...Main..Program...__")
+    await alive.edit("__Sistem Akan Menyala...__")
+    await alive.edit("__....⚡Userbot⚡....__")
+    await alive.edit("__Connecting...Alive.....__")
+    await alive.edit("__.....Program.....__")
+    await alive.edit("__......⚡Alive⚡........__")
+    await alive.edit("__Connecting to server..__")
+    await alive.edit("__Connecting to server...__")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡              👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡             👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡            👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡           👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡          👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡         👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡        👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡       👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡      👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡     👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡  👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ 👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏👑")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊👑⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽👑𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍👑𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀👑𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎👑𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐👑𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-👑𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻👑𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶👑-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞👑𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞👑𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡👑𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("👑𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡")
+    await asyncio.sleep(3)
+    await alive.edit("👑")
+    await asyncio.sleep(3)
     output = (
         f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
-        f"**       ⊏┊⚡King-Userbot⚡ ⊨〛🛠 ** \n"
+        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛💨 ** \n"
         f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
         f"╭╼════════════════════╾╮ \n"
-        f"│    ⇱ **Selamat Datang Di Sistem** ⇲ \n"
+        f"│    ⇱  𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐢𝐯𝐞 ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
         f"╟◈ 👤  `Username :`@{user.username} \n"
@@ -317,10 +357,10 @@ async def amireallyalive(alive):
         f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
         f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **Kalian Harus Support Project ** \n"
-        f"│    **Userbot, Kami Dengan Dibawah Ini.** \n"
+        f"├◈ **Jangan lupa untuk mendukung kami** \n"
+        f"│    **userbot, cara menekan di bawah ini.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[Repo King](https://github.com/apisuserbot/King-Userbot) | [Grup Support](t.me/USERBOT_GROUP) | [Mastah](t.me/PacarFerdilla)")
+        f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | " f"[𝗠𝘆 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺]({INSTAGRAM_ALIVE}) | ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -342,40 +382,48 @@ async def amireallyalive(alive):
 
 
 @register(outgoing=True, pattern="^.aliveu")
-async def amireallyaliveuser(username):
+async def amireallyaliveuser(username): 
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
-    output = ".aliveu [username] tidak boleh kosong"
-    if not (message == ".aliveu" or message[7:8] != " "):
+    output = ".aliveu [new username] tidak boleh kosong"
+    if not (message == ".aliveu" and message[7:8] != " "):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
-        output = "Berhasil mengubah pengguna pada .alive ke " + newuser + "!"
+        output = "Successfully changed user to " + newuser + "!"
     await username.edit("`" f"{output}" "`")
 
 
-@register(outgoing=True, pattern=r"^\.resetalive$")
+@register(outgoing=True, pattern=r"^\.resetsalive$")
 async def amireallyalivereset(ureset):
     global DEFAULTUSER
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Berhasil mereset pengguna Alive!" "`")
+    await ureset.edit("`" "Berhasil Mereset Pengguna Alive!" "`")
 
 
-CMD_HELP.update({"sistem": "⚡𝘾𝙈𝘿⚡`.sysd`\
-    \nPenjelasan: Menampilkan informasi sistem menggunakan neofetch.\
-    \n\n⚡𝘾𝙈𝘿⚡`.spc\
-    \nPenjelasan: Tampilkan spesifikasi sistem.\
-    \n\n⚡𝘾𝙈𝘿⚡`.db`\
-    \nPenjelasan: Menampilkan info database."})
-CMD_HELP.update({"botver": "⚡𝘾𝙈𝘿⚡`.botver`\
-    \nPenjelasan: Menampilkan versi userbot."})
-
-CMD_HELP.update({"pip": "⚡𝘾𝙈𝘿⚡`.pip <module(s)>`\
-    \nPenjelasan: Melakukan pencarian modul pip."})
-
-CMD_HELP.update({"alive": "⚡𝘾𝙈𝘿⚡`.alive` |⚡𝘾𝙈𝘿⚡ `.on`\
-    \nPenjelasan: Ketik .alive/.on untuk melihat apakah bot Anda berfungsi atau tidak.\
-    \n\n`.aliveu <text>`\
-    \nPenjelasan: Mengubah 'pengguna' menjadi teks yang Anda inginkan.\
-    \n\n⚡𝘾𝙈𝘿⚡`.resetalive`\
-    \nPenjelasan: Mengatur ulang pengguna ke default."})
+CMD_HELP.update({
+    "sistem":
+    "⚡𝘾𝙈𝘿⚡: `.sysd`"\
+"\n↳ : Menampilkan informasi sistem menggunakan neofetch."
+"\n\n⚡𝘾𝙈𝘿⚡: `.db`"
+"\n↳ : Menampilkan Databse Info."
+"\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
+"\n↳ : Tampilkan spesifikasi sistem."
+})
+CMD_HELP.update({
+    "alive":
+    "⚡𝘾𝙈𝘿⚡: `.alive` or `.on`"
+"\n↳ : Untuk melihat apakah bot Anda berfungsi atau tidak."
+"\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
+"\n↳ : Mengubah 'pengguna' hidup-hidup ke teks yang Anda inginkan."
+"\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
+"\n↳ : Mereset Pengguna."
+})
+CMD_HELP.update(
+{
+    "botversion":
+    "⚡𝘾𝙈𝘿⚡: `.botver`"
+"\n↳ : Menampilkan versi userbot."
+"\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
+"\n↳ : Melakukan pencarian modul pip(s)."
+})
