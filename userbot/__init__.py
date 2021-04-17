@@ -385,7 +385,7 @@ ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
 
-# Import Userbot - Ported by KENZO
+# Import Userbot - Ported by apisuserbot
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
