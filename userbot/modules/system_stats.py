@@ -361,7 +361,7 @@ async def redis(alive):
         f"│    **userbot, cara menekan di bawah ini.** \n"
         f"╰╼════════════════════╾╯ \n"
         f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
-        f"[𝗠𝘆 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺]({INSTAGRAM_ALIVE}) | ")
+        f"[𝗠𝗮𝘀𝘁𝗮𝗵](t.me/PacarFerdilla) | ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
