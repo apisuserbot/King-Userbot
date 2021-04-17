@@ -6,6 +6,9 @@
 # Pengguna Lynx-Userbot
 """ Userbot initialization. """
 
+from userbot import (
+    ALIVE_NAME
+)
 import os
 import time
 import re
@@ -84,7 +87,9 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
 
 # Pm Permit Img
-PM_PERMIT_PIC = os.environ.get("PM_PERMIT_PIC", None) or "https://telegra.ph/file/49ce66ba7e0fa0ce99210.png"
+PM_PERMIT_PIC = os.environ.get(
+    "PM_PERMIT_PIC",
+    None) or "https://telegra.ph/file/49ce66ba7e0fa0ce99210.png"
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
@@ -210,7 +215,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg"
 
-# Link Instagram for CMD Alive 
+# Link Instagram for CMD Alive
 INSTAGRAM_ALIVE = os.environ.get("INSTAGRAM_ALIVE", None)
 
 # Last.fm Module
@@ -380,15 +385,11 @@ ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
 
-#Import Userbot - Ported by KENZO
-from userbot import (
-    ALIVE_NAME
-)
+# Import Userbot - Ported by KENZO
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
-
 
 
 def paginate_help(page_number, loaded_modules, prefix):
@@ -451,7 +452,9 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}"f"\n\n**Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n\n"        "◎› **Mᴏᴅᴜʟᴇꜱ :** `{}`\n◎› **Mᴇɴᴜ Bᴏᴛ :** \n".format(
+                    text="{}"
+                    f"\n\n**Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n\n"
+                    "◎› **Mᴏᴅᴜʟᴇꜱ :** `{}`\n◎› **Mᴇɴᴜ Bᴏᴛ :** \n".format(
                         "** ╔╡⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡╞╗ **",
                         len(dugmeler),
                     ),
@@ -475,8 +478,7 @@ with bot:
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
                                 "𝗠𝗮𝘀𝘁𝗮𝗵",
-                                "t.me/PacarFerdilla")] 
-                    ],
+                                "t.me/PacarFerdilla")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
