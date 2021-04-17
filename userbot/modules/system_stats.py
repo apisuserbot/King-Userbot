@@ -264,7 +264,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"*══════════════════════***\n"
+        f"══════════════════════\n"
         f"     ** ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ** \n\n"
         f"👑 **King**     \n   ↳ `{DEFAULTUSER}` \n"
         f"👤 **Username** \n   ↳ `@{user.username}` \n"
@@ -272,8 +272,8 @@ async def amireallyalive(alive):
         f"🐍 **Python**   \n   ↳ `Versi {python_version()}` \n"
         f"👾 **Versi Bot**\n   ↳ `{BOT_VER}` \n"
         f"📂 **Modul**    \n   ↳ `{len(modules)}` \n\n"
-        f"♚ **Repo King:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n🛠️ **Grup Support: **[Tekan](t.me/KingUserbotSupport)\n **Mastah:** [Apis](t.me/PacarFerdilla)\n"
-        f"**══════════════════════**")
+        f"♚ **Repo King:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n🛠️ **Grup Support: **[Tekan](t.me/KingUserbotSupport)\n👨‍💻 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
+        f"══════════════════════")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -349,7 +349,7 @@ async def redis(alive):
         f"│    ⇱  𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐢𝐯𝐞 ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 👤  `Username :`@{user.username} \n"
+        f"╟◈ 👤 `Username :`@{user.username} \n"
         f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
         f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
         f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
