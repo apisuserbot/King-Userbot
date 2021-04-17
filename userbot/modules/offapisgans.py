@@ -22,10 +22,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    f"**⚡Maaf {ALIVE_NAME} Sedang OFF!⚡**",
-    f"**⚡Maaf {ALIVE_NAME} Sedang OFF\n Tunggu Sampai Online!⚡**",
-    f"**⚡{ALIVE_NAME} Sedang OFF\n Tunggulah Sampai Online⚡**",
-    f"**⚡Maaf {ALIVE_NAME} Sedang OFF!⚡**",
+    f"**Maaf ⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Sedang 𝗢𝗙𝗙!⚡**",
+    f"**Maaf ⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggu Sampai Online!⚡**",
+    f"**⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggulah Sampai Online⚡**",
+    f"**Maaf ⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Sedang 𝗢𝗙𝗙!⚡**",
 ]
 
 
@@ -60,14 +60,14 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**⚡ {ALIVE_NAME} Telah OFF**\
+        await afk_e.edit(f"**⚡ {ALIVE_NAME} Telah 𝗢𝗙𝗙 ⚡**\
         \n☞ **Alasan:** `{string}`")
     else:
-        await afk_e.edit(f"**⚡ {ALIVE_NAME} Telah OFF ⚡**")
+        await afk_e.edit(f"**⚡ {ALIVE_NAME} Telah 𝗢𝗙𝗙 ⚡**")
     if user.last_name:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "⚡OFF⚡"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "⚡𝗢𝗙𝗙⚡"))
     else:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="⚡OFF⚡"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="⚡𝗢𝗙𝗙⚡"))
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#OFF\n**king Telah OFF!**")
     ISAFK = True
@@ -88,7 +88,7 @@ async def type_afk_is_not_true(notafk):
     global afk_end
     user = await bot.get_me()  # pylint:disable=E0602
     last = user.last_name
-    if last and last.endswith("⚡OFF⚡"):
+    if last and last.endswith("⚡𝗢𝗙𝗙⚡"):
         last1 = last[:-12]
     else:
         last1 = ""
@@ -164,7 +164,7 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)} Detik`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"**⚡ {ALIVE_NAME} Sedang OFF** {afk_since} **Yang Lalu.**\
+                    await mention.reply(f"**⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                         \n☞ **Alasan:** `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -173,7 +173,7 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"**⚡ {ALIVE_NAME} Masih OFF** {afk_since} **Yang Lalu.**\
+                        await mention.reply(f"**⚡𝗞𝗶𝗻𝗴⚡ {ALIVE_NAME} Masih 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                             \n☞ **Alasan:** `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -241,7 +241,7 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)} Detik`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"⚡ **{ALIVE_NAME} Sedang OFF** {afk_since} **Yang Lalu**.\
+                    await sender.reply(f"⚡𝗞𝗶𝗻𝗴⚡ **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu**.\
                         \n☞ **Alasan**: `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -250,7 +250,7 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"⚡ **{ALIVE_NAME} Sedang OFF** {afk_since} **Yang Lalu.**\
+                        await sender.reply(f"⚡𝗞𝗶𝗻𝗴⚡ **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                             \n☞ **Alasan**: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
