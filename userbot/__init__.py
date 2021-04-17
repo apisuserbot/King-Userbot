@@ -3,12 +3,13 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 # inline credit @keselekpermen69
-# Pengguna Lord-Userbot
+# Pengguna Lynx-Userbot
 """ Userbot initialization. """
 
 import os
 import time
 import re
+import redis
 
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
@@ -24,8 +25,9 @@ from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 
-load_dotenv("config.env")
+redis_db = None
 
+load_dotenv("config.env")
 
 StartTime = time.time()
 
@@ -78,6 +80,12 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
+# Custom Module
+CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
+
+# Pm Permit Img
+PM_PERMIT_PIC = os.environ.get("PM_PERMIT_PIC", None) or "https://telegra.ph/file/49ce66ba7e0fa0ce99210.png"
+
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
@@ -101,7 +109,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/apisuserbot/King-Userbot.git")
+    "https://github.com/apisuserbot/King-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "King-Userbot")
 
@@ -116,6 +124,26 @@ OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
 
 # remove.bg API key
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
+
+# Redis URI & Redis Password
+REDIS_URI = os.environ.get('REDIS_URI', None)
+REDIS_PASSWORD = os.environ.get('REDIS_PASSWORD', None)
+
+if REDIS_URI and REDIS_PASSWORD:
+    try:
+        REDIS_HOST = REDIS_URI.split(':')[0]
+        REDIS_PORT = REDIS_URI.split(':')[1]
+        redis_connection = redis.Redis(
+            host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PASSWORD
+        )
+        redis_connection.ping()
+    except Exception as e:
+        LOGGER.exception(e)
+        print()
+        LOGGER.error(
+            "Make sure you have the correct Redis endpoint and password "
+            "and your machine can make connections."
+        )
 
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
@@ -147,10 +175,10 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# untuk perintah .king
+# Untuk Perintah .king
 KING_TEKS_KUSTOM = os.environ.get("KING_TEKS_KUSTOM", None)
 
-# Default .alive name
+# Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Time & Date - Country and Time Zone
@@ -160,27 +188,30 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
-# Zipfile module
+# Zipfile Module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 
-# bit.ly module
+# bit.ly Module
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "King-Userbot")
 
-# Bot version
+# Bot Version
 BOT_VER = os.environ.get("BOT_VER", "4.0")
 
-# Default .alive username
+# Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Sticker Custom Pack Name
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
-# Default .alive logo
+# Default .alive Logo
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg"
+
+# Link Instagram for CMD Alive 
+INSTAGRAM_ALIVE = os.environ.get("INSTAGRAM_ALIVE", None)
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -214,11 +245,18 @@ G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
 if G_PHOTOS_AUTH_TOKEN_ID:
     G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
-# Genius lyrics  API
+# Genius Lyrics  API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
+
+# IMG Stuff
+IMG_LIMIT = os.environ.get("IMG_LIMIT") or None
+CMD_HELP = {}
 
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
+
+# Wolfram Alpha API
+WOLFRAM_ID = os.environ.get("WOLFRAM_ID") or None
 
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
@@ -319,7 +357,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```⚡King-Userbot Telah Aktif⚡```")
+    await bot.send_message(BOTLOG_CHATID, "```⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Telah Aktif```")
     return
 
 with bot:
@@ -342,6 +380,16 @@ ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
 
+#Import Userbot - Ported by KENZO
+from userbot import (
+    ALIVE_NAME
+)
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
+
+
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
@@ -349,7 +397,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} ⚡".format("⚡", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} 」◑".format("◐「", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -365,10 +413,10 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "👈", data="{}_prev({})".format(prefix, modulo_page)
+                    "⋖╯Pʀᴇᴠ", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "👉", data="{}_next({})".format(prefix, modulo_page)
+                    "Nᴇxᴛ╰⋗", data="{}_next({})".format(prefix, modulo_page)
                 )
             )
         ]
@@ -390,9 +438,9 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("King-Userbot, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/apisuserbot/King-Userbot.git)")
+                await event.reply("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/apisuserbot/King-Userbot.git)")
             else:
-                await event.reply(f"`Hai King {ALIVE_NAME}\n\nApa Kabarmu?`")
+                await event.reply(f"`Hai King {ALIVE_NAME}\n\nApa Kabarmu ? ^_^`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -403,8 +451,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**⚡ Jumlah Modul Yang Tersedia:** `{}`\n               \n**👑 Daftar Modul King Userbot:** \n".format(
-                        "**👑 king-Userbot**",
+                    text="{}"f"\n\n**Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n\n"        "◎› **Mᴏᴅᴜʟᴇꜱ :** `{}`\n◎› **Mᴇɴᴜ Bᴏᴛ :** \n".format(
+                        "** ╔╡⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡╞╗ **",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -412,22 +460,22 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan King•Userbot ",
+                    "Bantuan ╔╡⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡╞╗ ",
                     text="Daftar Modul",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "**king•Userbot**",
-                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](https://t.me/USERBOT_GROUP)""",
+                    " ╔╡⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡╞╗ ",
+                    text="""**Anda Bisa Membuat ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Anda Sendiri Dengan Cara :** __Tekan Dibawah Ini__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "Repo King-Userbot",
+                                "⚡𝗞𝗶𝗻𝗴⚡",
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
-                                "Pemilik Repo",
-                                "t.me/PacarFerdilla")],
+                                "𝗠𝗮𝘀𝘁𝗮𝗵",
+                                "t.me/PacarFerdilla")] 
                     ],
                     link_preview=False,
                 )
@@ -447,7 +495,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Harap Deploy King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}⚡"
+                reply_pop_up_alert = f"Harap Deploy Lynx-Userbot Anda Sendiri, Jangan Menggunakan Milik {ALIVE_NAME} 😼"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -465,7 +513,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Harap Deploy King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}⚡"
+                reply_pop_up_alert = f"Lynx-Userbot !!! Jangan Menggunakan Milik {ALIVE_NAME} "
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -496,7 +544,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"Harap Deploy King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}⚡"
+                reply_pop_up_alert = f"𝙀𝙧𝙤𝙧 404 𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 Dilarang Menggunakan Milik King {ALIVE_NAME} 🖕"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
