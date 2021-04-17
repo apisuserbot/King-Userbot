@@ -46,6 +46,9 @@ Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot G
 </p>
 
 ## Kredit
+  Terimakasih untuk 
+
+*   [Alvin](https://github.com/Zora24/Lord-Userbot) - Lord Userbot
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 *   [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
 *   [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - OpenUserBot
@@ -60,3 +63,8 @@ Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot G
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
 *   Dan Lainnya
+
+## Team King-Userbot
+  Kami mempunyai team yang clone dari ultroid mohon di bantu project baru kami 
+
+*   [TeamKing-Userbot](https://github.com/DoellBarr/TeamKing-Userbot) - TeamKing-Userbot
