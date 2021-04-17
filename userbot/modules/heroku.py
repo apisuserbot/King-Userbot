@@ -130,7 +130,7 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("⚡")
+    await dyno.edit("𝙈𝙚𝙣𝙜𝙚𝙘𝙚𝙠 𝙠𝙪𝙤𝙩𝙖...⚡")
     await asyncio.sleep(1)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
@@ -182,7 +182,7 @@ async def dyno_usage(dyno):
 
             await dyno.edit(
                 "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
-                "│      ⇱ **⚡King-Userbot⚡** ⇲ \n"
+                "│      ⇱ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⇲ \n"
                 "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
                 "│📱◈ 𝐏𝐞𝐧𝐠𝐠𝐮𝐧𝐚𝐚𝐧 𝐊𝐮𝐨𝐭𝐚 𝐀𝐧𝐝𝐚 : \n"
                 f"│⏳◈ {AppHours} Jam - {AppMinutes} Menit. \n"
@@ -192,7 +192,7 @@ async def dyno_usage(dyno):
                 f"│⏳◈ {hours} Jam - {minutes} Menit. \n"
                 f"│⚡◈ 𝐏𝐞𝐫𝐬𝐞𝐧𝐭𝐚𝐬𝐞 : {percentage}% Lagi. \n"
                 "╰┈───────────────────┈╯ \n"
-                f"👑 King  : {ALIVE_NAME} \n"
+                f"👑 𝗞𝗶𝗻𝗴  : {ALIVE_NAME} \n"
             )
             await asyncio.sleep(20)
             await event.delete()
@@ -216,7 +216,7 @@ async def _(dyno):
     key = (requests.post("https://nekobin.com/api/documents",
                          json={"content": data}) .json() .get("result") .get("key"))
     url = f"https://nekobin.com/raw/{key}"
-    await dyno.edit(f"`Ini Logs Heroku Anda Yang Mulia :`\n\nPaste Ke: [Nekobin]({url})")
+    await dyno.edit(f"`Ini Logs Heroku Anda King :`\n\nPaste Ke: [Nekobin]({url})")
     return os.remove("logs.txt")
 
 
