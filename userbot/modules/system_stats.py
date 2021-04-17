@@ -259,22 +259,21 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:apis|iam)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:kalive|kon)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**ㅤㅤㅤㅤ ⚡【𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏】⚡**\n"
-        f"╔══════════╣۩ ☆ ۩╠══════════╗ \n"
-        f"╟⟩⟩ 👑 • `ᴍᴀsᴛᴀʜ    :`[𝘈𝘗𝘐𝘚](t.me/PacarFerdilla)                 ㅤ ║\n"
-        f"╟⟩⟩ 🖥️ • `ꜱɪꜱᴛᴇᴍ.   :`Ubuntu 20.10            ║\n"
-        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__}                ㅤㅤ  ║\n"
-        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
-        f"╟⟩⟩ 👾 • `ʙᴏᴛ      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
-        f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
-        f"╚══════════╣۩ ☆ ۩╠══════════╝ \n"
-        f"👑 : [𝗥𝗘𝗣𝗢-𝗞𝗶𝗻𝗴](https://github.com/apisuserbot/King-Userbot)\n👥 : [𝗞𝗜𝗡𝗚-𝗧𝗘𝗔𝗠](t.me/KingUserbotSupport)\n👩‍💻 : [𝗖𝗟𝗢𝗡𝗘-𝗘𝗗𝗜𝗧𝗢𝗥](t.me/PacarFerdilla)\n👤 : [𝗢𝗪𝗡𝗘𝗥-𝗚𝗥𝗢𝗨𝗣](t.me/lvufrvrbby)\n"
-    )
+        f"*══════════════════════***\n"
+        f"     ** ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ** \n\n"
+        f"👑 **King**     \n   ↳ `{DEFAULTUSER}` \n"
+        f"👤 **Username** \n   ↳ `@{user.username}` \n"
+        f"⚙️ **Telethon** \n   ↳ `Versi {version.__version__}` \n"
+        f"🐍 **Python**   \n   ↳ `Versi {python_version()}` \n"
+        f"👾 **Versi Bot**\n   ↳ `{BOT_VER}` \n"
+        f"📂 **Modul**    \n   ↳ `{len(modules)}` \n\n"
+        f"♚ **Repo King:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n🛠️ **Grup Support: **[Tekan](t.me/KingUserbotSupport)\n **Mastah:** [Apis](t.me/PacarFerdilla)\n"
+        f"**══════════════════════**")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -344,7 +343,7 @@ async def redis(alive):
     await asyncio.sleep(3)
     output = (
         f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
-        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛💨 ** \n"
+        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨🛠️ ** \n"
         f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
         f"╭╼════════════════════╾╮ \n"
         f"│    ⇱  𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐢𝐯𝐞 ⇲ \n"
