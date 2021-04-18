@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# King - USERBOT
+# KING - USERBOT
 
 import io
 import math
