@@ -69,7 +69,7 @@ async def set_afk(afk_e):
     else:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="⚡𝗢𝗙𝗙⚡"))
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#OFF\n**king Telah OFF!**")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#OFF\n**⚡️𝗞𝗶𝗻𝗴⚡️ Telah OFF!**")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
@@ -96,7 +96,7 @@ async def type_afk_is_not_true(notafk):
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond(f"**⚡{ALIVE_NAME} Telah Kembali!⚡**")
+        msg = await notafk.respond(f"**⚡{ALIVE_NAME} `Sudah tidak off lagi...`⚡**")
         time.sleep(7)
         await msg.delete()
         await notafk.client(UpdateProfileRequest(first_name=user.first_name, last_name=last1))
