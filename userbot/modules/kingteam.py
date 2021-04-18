@@ -18,5 +18,8 @@ async def typewriter(typew):
 
 
 
-CMD_HELP.update({"kingteam": ">⚡𝘾𝙈𝘿⚡`.team`\n"
-                 "Usage: Untuk Mengetahui Creator Kami\n\n"})
+CMD_HELP.update({
+    'kingteam':
+    '⚡𝘾𝙈𝘿⚡`.team`
+        \nUsage: Untuk Melihat Creator.'
+})
