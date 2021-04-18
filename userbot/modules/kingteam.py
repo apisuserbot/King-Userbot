@@ -16,6 +16,9 @@ async def team(e):
         "**Terimakasih Telah Menggunakan Project Userbot Kami 🙏 \n"
         "═════════⚡𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════════\n"
 
-        CMD_HELP.update({'team'
-                         `.team\n
-                         \nUsage: Santet Online Buat Bercanda Doang: ).'})
+
+CMD_HELP.update({
+    'kingteam':
+    '⚡𝘾𝙈𝘿⚡`.team`\
+        \nUsage: Untuk Mengetahui Creator Kami:).'
+})
