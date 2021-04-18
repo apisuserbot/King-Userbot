@@ -1,9 +1,9 @@
 from time import sleep
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r'\.team(?: |$)(.*)')
+@register(outgoing=True, pattern=r'^\.team(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**..Terkoneksi Ke Creator..**")
