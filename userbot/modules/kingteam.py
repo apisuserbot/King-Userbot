@@ -4,8 +4,8 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.team$")
-async def event(e):
-    await e.edit(
+async def typewriter(typew):
+    await typew.edit(
         "════════⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════\n"
         "**Nama Creator Kami**\n"
         "╟◈🛠️ Developer : [Apis](t.me/PacarFerdilla) \n"
