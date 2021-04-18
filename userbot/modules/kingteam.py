@@ -16,8 +16,6 @@ async def team(e):
         "═════════⚡𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════════\n"
 
 
-CMD_HELP.update({
-    'kingteam':
-    '⚡𝘾𝙈𝘿⚡`.team`\
-        \nUsage: Untuk Mengetahui Creator Kami:).'
-})
+
+CMD_HELP.update({"kingteam": ">⚡𝘾𝙈𝘿⚡`.team`\n"
+                 "Usage: Untuk Mengetahui Creator Kami\n\n"})
