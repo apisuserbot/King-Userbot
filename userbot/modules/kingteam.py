@@ -5,6 +5,7 @@ from userbot.events import register
 
 @register(outgoing=True, pattern="^.team$")
 async def typewriter(typew):
+    typew.pattern_match.group(1)
     await typew.edit(
         "════════⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════\n"
         "**Nama Creator Kami**\n"
