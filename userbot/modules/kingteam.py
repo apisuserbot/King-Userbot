@@ -1,5 +1,5 @@
-from time import sleep 
-from userbot import CMD_HELP 
+from time import sleep
+from userbot import CMD_HELP
 from userbot.events import register
 import asyncio
 
@@ -16,6 +16,6 @@ async def team(e):
         "**Terimakasih Telah Menggunakan Project Userbot Kami 🙏 \n"
         "═════════⚡𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════════\n"
 
-CMD_HELP.update({ 'team'
-`.team\n 
-\nUsage: Santet Online Buat Bercanda Doang:).'})
+        CMD_HELP.update({'team'
+                         `.team\n
+                         \nUsage: Santet Online Buat Bercanda Doang: ).'})
