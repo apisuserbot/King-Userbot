@@ -127,19 +127,19 @@ async def fetch_info(replied_user, event):
         "Tidak Menggunakan Username")
     user_bio = "Tidak Punya Bio" if not user_bio else user_bio
 
-    caption = "<b>INFORMASI PENGGUNA:</b>\n\n"
-    caption += f"Nama Depan: {first_name}\n"
-    caption += f"Nama Belakang: {last_name}\n"
-    caption += f"Username: {username}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
-    caption += f"Total Foto Profil: {replied_user_profile_photos_count}\n"
-    caption += f"Apakah Bot: {is_bot}\n"
-    caption += f"Dibatasi: {restricted}\n"
-    caption += f"Diverifikasi Oleh Telegram: {verified}\n"
-    caption += f"ID: <code>{user_id}</code>\n\n"
-    caption += f"Bio: \n<code>{user_bio}</code>\n\n"
-    caption += f"Obrolan Umum Dengan Pengguna Ini: {common_chat}\n"
-    caption += f"Link Permanen Ke Profil: "
+    caption = "<b>⚡️𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙎𝙄 𝙋𝙀𝙉𝙂𝙂𝙐𝙉𝘼⚡️:</b>\n\n"
+    caption += f"⚡️𝙉𝘼𝙈𝘼 𝘿𝙀𝙋𝘼𝙉⚡️: {first_name}\n"
+    caption += f"⚡️𝙉𝘼𝙈𝘼 𝘽𝙀𝙇𝘼𝙆𝘼𝙉𝙂⚡️: {last_name}\n"
+    caption += f"⚡️𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀⚡️: {username}\n"
+    caption += f"⚡️𝘿𝘼𝙏𝘼 𝘾𝙀𝙉𝙏𝙍𝙀 𝙄𝘿⚡️: {dc_id}\n"
+    caption += f"⚡️𝙏𝙊𝙏𝘼𝙇 𝙁𝙊𝙏𝙊 𝙋𝙍𝙊𝙁𝙄𝙇𝙀⚡️: {replied_user_profile_photos_count}\n"
+    caption += f"⚡️𝘼𝙋𝘼𝙆𝘼𝙃 𝘽𝙊𝙏⚡️: {is_bot}\n"
+    caption += f"⚡️𝘿𝙄𝘽𝘼𝙏𝘼𝙎𝙄⚡️: {restricted}\n"
+    caption += f"⚡️𝙑𝙀𝙍𝙄𝙁𝙄𝙆𝘼𝙎𝙄 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈⚡️: {verified}\n"
+    caption += f"⚡️𝙄𝘿 𝙋𝙀𝙉𝙂𝙂𝙐𝙉𝘼⚡️: <code>{user_id}</code>\n\n"
+    caption += f"⚡️𝘽𝙄𝙊 𝙋𝙀𝙉𝙂𝙂𝙐𝙉𝘼⚡️: \n<code>{user_bio}</code>\n\n"
+    caption += f"⚡️𝙊𝘽𝙍𝙊𝙇𝘼𝙉 𝙐𝙈𝙐𝙈 𝙋𝙀𝙉𝙂𝙂𝙐𝙉𝘼⚡️: {common_chat}\n"
+    caption += f"⚡️𝙇𝙄𝙉𝙆 𝙋𝙀𝙍𝙈𝘼𝙉𝙀𝙉 𝙆𝙀 𝙋𝙍𝙊𝙁𝙄𝙇𝙀⚡️: "
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
 
     return photo, caption
@@ -147,6 +147,6 @@ async def fetch_info(replied_user, event):
 
 CMD_HELP.update({
     "whois":
-    ">`.whois <username> Atau Balas Ke Pesan Pengguna Ketik .whois`"
+    ">⚡️𝘾𝙈𝘿⚡️`.whois <username> Atau Balas Ke Pesan Pengguna Ketik .whois`"
     "\nUsage: Mendapatkan Informasi Pengguna."
 })
