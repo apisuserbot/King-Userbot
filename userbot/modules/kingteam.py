@@ -5,7 +5,7 @@ from userbot.events import register
 
 @register(outgoing=True, pattern="^.team$")
 async def reedme(e):
-    await event.edit(
+    await e.edit(
         "════════⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════\n"
         "**Nama Creator Kami**\n"
         "╟◈🛠️ Developer : [Apis](t.me/PacarFerdilla) \n"
