@@ -17,5 +17,5 @@ async def _(event):
 
 
 
-CMD_HELP.update({"kingteam": ">⚡️𝘾𝙈𝘿⚡️`.team`"
-                 "\nUsage: Nama creator"
+CMD_HELP.update({"kingteam": ">⚡️𝘾𝙈𝘿⚡️`.team`\
+                 \nUsage: Nama creator"})
