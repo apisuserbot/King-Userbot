@@ -296,7 +296,7 @@ async def amireallyalive(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:team|teamon)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
+    await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("..⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡..")
     output = (
