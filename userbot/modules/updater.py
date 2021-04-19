@@ -67,7 +67,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nDyno King-Userbot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
+                         '\nDyno ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`King-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu King.....⚡`")
+            await event.edit("`⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu King.....⚡`")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**🛠️ King-Userbot** `Berhasil Di Update!`')
+    await event.edit('**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**🛠️ King-Userbot** `Di Restart....`')
+    await event.edit('**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik King`')
     await asyncio.sleep(10)
@@ -139,7 +139,7 @@ async def update(event, repo, ups_rem, ac_br):
 @ register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
+    await event.edit("`Mengecek Pembaruan, Silakan Menunggu....⚡`")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n**⚙️ King-Userbot Sudah Versi Terbaru**\n')
+            f'\n**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sudah Versi Terbaru**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**📢 Pembaruan Untuk King-Userbot [{ac_br}]:\n\n🛠️ Pembaruan:**\n`{changelog}`'
+        changelog_str = f'**🛠️ Pembaruan Untuk ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ [{ac_br}]:\n\n🛠️ Pembaruan:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -208,18 +208,18 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update King Userbot**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari King Userbot.__')
+        return await event.respond('**Perintah Untuk Update King Userbot**\n >⚡𝘾𝙈𝘿⚡`.update now`\n >⚡𝘾𝙈𝘿⚡`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari King Userbot Jangan Malas Update Anjenggg.__')
 
     if force_update:
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('`⛏️ Proses Update King-Userbot, Loading....1%`')
-        await event.edit('`⛏️ Proses Update King-Userbot, Loading....20%`')
-        await event.edit('`⛏️ Proses Update King-Userbot, Loading....35%`')
-        await event.edit('`⛏️ Proses Update King-Userbot, Loading....77%`')
-        await event.edit('`⛏️ Proses Update King-Userbot, Updating...90%`')
-        await event.edit('`📢 Proses Update King-Userbot, Mohon Menunggu King....100%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....1%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....20%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....35%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....77%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Updating...90%`')
+        await event.edit('`🛠️ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Mohon Menunggu King....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
@@ -234,9 +234,9 @@ async def upstream(event):
 CMD_HELP.update({
     'update':
     ".update"
-    "\n⚡𝘾𝙈𝘿⚡: Untuk Melihat Pembaruan Terbaru King-Userbot."
+    "\n⚡𝘾𝙈𝘿⚡: Untuk Melihat Pembaruan Terbaru ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡."
     "\n\n.update now"
-    "\n⚡𝘾𝙈𝘿⚡: Memperbarui King-Userbot."
+    "\n⚡𝘾𝙈𝘿⚡: Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡."
     "\n\n.update deploy"
-    "\n⚡𝘾𝙈𝘿⚡: Memperbarui King-Userbot Dengan Cara Deploy Ulang."
+    "\n⚡𝘾𝙈𝘿⚡: Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Dengan Cara Deploy Ulang."
 })

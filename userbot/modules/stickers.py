@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# LORD - USERBOT
+# KING - USERBOT
 
 import io
 import math
@@ -27,7 +27,7 @@ from userbot.events import register
 
 KANGING_STR = [
     "Mengambil Sticker Ini Ke Pack King",
-    "king Telag Mengambil Sticker Ini Ke Pack",
+    "king Telah Mengambil Sticker Ini Ke Pack",
 ]
 
 
@@ -219,7 +219,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     return await args.edit(
-                        "`Mohon Maaf Lord, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker.`"
+                        "`Mohon Maaf King, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker.`"
                     )
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
@@ -351,10 +351,10 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": "**Modules:** __Stickers__\n\n**Perintah:** `.kang` | `.tikel (emoji) [nomer]`"
+        "stickers": "**Modules:** __Stickers__\n\n⚡️𝘾𝙈𝘿⚡️: `.kang` | ⚡️𝘾𝙈𝘿⚡️`.tikel (emoji) [nomer]`"
         "\n**Penjelasan:** Balas ke sticker atau gambar `.tikel`  untuk menjadikannya sebagai sticker Anda "
         "\nBisa memilih emoji sesuai pilihan Anda, dan bisa memilih nomer pack."
-        "\n\n**Perintah:** `.stkrinfo`"
+        "\n\n⚡️𝘾𝙈𝘿⚡️: `.stkrinfo`"
         "\n**Penjelasan:** Balas ke sticker, untuk mendapatkan informasi pack sticker."
-        "\n\n**Perintah:**`.getsticker`"
+        "\n\n⚡️𝘾𝙈𝘿⚡️: `.getsticker`"
         "\n**Penjelasan:** Balas ke sticker untuk mendapatkan File 'PNG' Sticker."})

@@ -88,10 +88,10 @@ async def on_delete_blacklist(rmbl):
         await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
 
-CMD_HELP.update({"blacklist": ">`.listbl`"
+CMD_HELP.update({"blacklist": ">⚡𝘾𝙈𝘿⚡`.listbl`"
                  "\nUsage: Melihat daftar blacklist yang aktif di obrolan."
-                 "\n\n>`.addbl <kata>`"
+                 "\n\n>⚡𝘾𝙈𝘿⚡`.addbl <kata>`"
                  "\nUsage: Memasukan pesan ke blacklist 'kata blacklist'."
                  "\nlord bot akan otomatis menghapus 'kata blacklist'."
-                 "\n\n>`.rmbl <kata>`"
+                 "\n\n>⚡𝘾𝙈𝘿⚡`.rmbl <kata>`"
                  "\nUsage: Menghapus kata blacklist."})

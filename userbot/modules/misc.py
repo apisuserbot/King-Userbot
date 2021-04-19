@@ -51,7 +51,7 @@ async def randomise(items):
 async def sleepybot(time):
     """ For .sleep command, let the userbot snooze for a few second. """
     counter = int(time.pattern_match.group(1))
-    await time.edit("`I am sulking and snoozing...`")
+    await time.edit("`Saya tidur dulu King...⚡️`")
     if BOTLOG:
         str_counter = time_formatter(counter)
         await time.client.send_message(
@@ -59,7 +59,7 @@ async def sleepybot(time):
             f"You put the bot to sleep for {str_counter}.",
         )
     sleep(counter)
-    await time.edit("`OK, I'm awake now.`")
+    await time.edit("`⚡️𝗢𝗙𝗙⚡️.`")
 
 
 @register(outgoing=True, pattern="^.shutdown$")
@@ -93,7 +93,7 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Beberapa Repo Dan File:\n"
-        "\n[King-Userbot Repo](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "\n[⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ Repo](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
@@ -120,7 +120,14 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "👑 **Repo Userbot:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n🤖 **Pemilik:** [Apis](t.me//PacarFerdilla)"
+        "╭─━━━━━━━━━━━━━─╮\n"
+        "                  Repo\n"
+        "     [⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡](https://github.com/apisuserbot/King-Userbot)\n"
+        "╭─━━━━━━━━━━━━━─╯\n"
+        "│👨‍💻 **Mastah :** [Apis](t.me/PacarFerdilla)\n"
+        "╰━━━━━━━━━━━━━━━╯\n"
+        "  Tutorial    : [Tutorial Deploy](https://telegra.ph/Deploy-04-06)"
+        "  Deploy King : [Tekan Disini](https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/King-Userbot)"
     )
 
 

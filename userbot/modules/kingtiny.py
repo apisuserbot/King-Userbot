@@ -16,10 +16,10 @@ from userbot import CMD_HELP, bot
 
 
 @register(outgoing=True, pattern="^.tiny(?: |$)(.*)", disable_errors=True)
-async def ultiny(event):
+async def _(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
-        await event.edit("`King, Mohon Balas Ke Sticker`")
+        await event.edit("`Mohon Balas Ke Sticker`")
         return
     xx = await event.edit("`Memproses Tiny....`")
     ik = await bot.download_media(reply)
@@ -87,8 +87,9 @@ async def ultiny(event):
     os.remove(file)
     os.remove(ik)
 
-# Port By Apis Ganteng/qurtubi
-# King - Userbot
+# Port By Alvin Ganteng/liualvinas
+# king - Userbot
 
-CMD_HELP.update({"tiny": "⚡𝘾𝙈𝘿⚡`.tiny`\
-    \nPenjelasan: Untuk Memperkecil Sticker."})
+CMD_HELP.update({
+    "tiny": "⚡𝘾𝙈𝘿⚡: `.tiny`\
+    \n↳ : Untuk Memperkecil Sticker."})
