@@ -38,7 +38,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.team(?: |$)(.*)')
+@register(outgoing=True, pattern='^.creator(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
