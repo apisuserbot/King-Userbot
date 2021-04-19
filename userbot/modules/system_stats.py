@@ -298,16 +298,16 @@ async def amireallyalive(alive):
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("..⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡..")
+    await alive.edit("..⚡𝗞𝗶𝗻𝗴-𝙏𝙀𝘼𝙈⚡..")
     output = (
-        f"════════⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════\n"
+        f"════════⚡𝗞𝗶𝗻𝗴-𝙏𝙀𝘼𝙈⚡═════════\n"
         f"**Nama Creator Kami**\n"
         f"╟◈🛠️ Developer : [Apis](t.me/PacarFerdilla) \n"
         f"╟◈🛠️ Developer : [Abdul](t.me/lvufrvrbby) \n"
         f"╟◈👤 Contributor : [Rimuru](t.me/imbakaaaaa) \n"
         f"╰╼═══════════════════╾╯\n"
-        f"**Terimakasih Telah Menggunakan Project Userbot Kami 🙏 \n"
-        f"═════════⚡𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡═════════════")
+        f"**Terimakasih Telah Menggunakan Project Userbot Kami** 🙏 \n"
+        f"═════════⚡𝙏𝙀𝘼𝙈⚡═════════════")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
