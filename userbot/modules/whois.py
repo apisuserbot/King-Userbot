@@ -21,7 +21,7 @@ from userbot.events import register
 async def who(event):
 
     await event.edit(
-        "`Mengambil Informasi Pengguna Ini...`")
+        "`𝙈𝙚𝙣𝙘𝙖𝙧𝙞 𝙞𝙣𝙛𝙤𝙧𝙢𝙖𝙨𝙞 𝙥𝙚𝙣𝙜𝙜𝙪𝙣𝙖 𝙞𝙣𝙞...🔍`")
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
