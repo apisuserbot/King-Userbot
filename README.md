@@ -10,6 +10,10 @@
   </a>
 </p>  
 
+<a href="https://hub.docker.com/r/apiskinguserbot/kingubot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kingubot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
+<a href="https://hub.docker.com/r/apiskinguserbot/kingubot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kingubot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
+</p>
+
 ![King Userbot Logo](https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg)
 
 <h3 align="center">Userbot Yang Digunakan Untuk Bersenang-Senang Di Telegram</h3>
