@@ -8,13 +8,17 @@
   <a href="https://github.com/apisuserbot/King-Userbot">
     <img src="https://img.shields.io/github/stars/apisuserbot/King-Userbot?style=social">
   </a>
-</p>  
+</p>
 
 <p align="left">
   <a href="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE"><img src="https://img.shields.io/github/license/apisuserbot/King-Userbot?&style=social&logo=github">
   </a></p>
 
-
+![Repo Size](https://img.shields.io/github/repo-size/apisuserbot/King-Userbot?&style=plastic&logo=github)
+[![GitHub issues](https://img.shields.io/github/issues/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/issues)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/graphs/commit-activity)
+[![GitHub contributors](https://img.shields.io/github/contributors/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://GitHub.com/apisuserbot/King-Userbot/graphs/contributors/)
+<p align="justify">
 <a href="https://hub.docker.com/r/apiskinguserbot/kingubot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kingubot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
 <a href="https://hub.docker.com/r/apiskinguserbot/kingubot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kingubot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
