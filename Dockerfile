@@ -1,8 +1,8 @@
-# LORD USERBOT
-FROM koala21/kampangbot:buster
+# KING USERBOT
+FROM apiskinguserbot/kingubot:Buster
 
 #
-# LORD
+# KING
 #
 RUN git clone -b King-Userbot https://github.com/apisuserbot/King-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin

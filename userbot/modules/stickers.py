@@ -26,8 +26,8 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "Mengambil Sticker Ini Ke Pack King",
-    "king Telah Mengambil Sticker Ini Ke Pack",
+    "𝙎𝙖𝙖𝙩𝙣𝙮𝙖 𝙢𝙚𝙣𝙘𝙤𝙡𝙤𝙣𝙜 𝙨𝙩𝙞𝙘𝙠𝙚𝙧 𝙤𝙧𝙖𝙣𝙜...:𝙫",
+    "𝙉𝙮𝙪𝙧𝙞 𝙢𝙪𝙡𝙪 𝙖𝙣𝙟𝙣𝙜 𝙖𝙬𝙖𝙨 𝙠𝙚𝙣𝙖 𝙖𝙯𝙖𝙗 🐨",
 ]
 
 
@@ -177,7 +177,7 @@ async def kang(args):
                         return await args.edit(
                             "`Sticker ditambahkan ke pack yang berbeda !"
                             "\nIni pack yang baru saja Lord buat!"
-                            f"\nTekan [King Sticker](t.me/addstickers/{packname}) Untuk Melihat Sticker King",
+                            f"\nTekan [𝙏𝙪𝙠𝙖𝙣𝙜 𝙉𝙮𝙤𝙡𝙤𝙣𝙜](t.me/addstickers/{packname}) Untuk Melihat Sticker Colongan Lu",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -189,7 +189,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     return await args.edit(
-                        "`Maaf King, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker Anda.`"
+                        "`Maaf King, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker Colongan Anda.`"
                     )
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
@@ -200,7 +200,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Membuat Pack Sticker Baru`")
+            await args.edit("`Membuat Colongan Sticker Baru`")
             async with bot.conversation("Stickers") as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -219,7 +219,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     return await args.edit(
-                        "`Mohon Maaf King, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker.`"
+                        "`Mohon Maaf King, Saya Gagal Menambahkan Sticker, Gunakan` @Stickers ` Bot Untuk Menambahkan Sticker Colongan Anda.`"
                     )
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
@@ -244,7 +244,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**Berhasil Menambahkan Sticker Ke Pack, Tekan** **[King Sticker](t.me/addstickers/{packname})** **Untuk Melihat Pack Anda**",
+            f"**Sukses Nyolong Sticker, Tekan** **[𝙏𝙪𝙠𝙖𝙣𝙜 𝙉𝙮𝙤𝙡𝙤𝙣𝙜](t.me/addstickers/{packname})** **Untuk Melihat Sticker Colongan Anda**",
             parse_mode="md",
         )
 
@@ -282,7 +282,7 @@ async def get_pack_info(event):
 
     rep_msg = await event.get_reply_message()
     if not rep_msg.document:
-        return await event.edit("`Balas ke sticker untuk melihat detail pack`")
+        return await event.edit("`Balas ke sticker untuk melihat detail Colongan Lu`")
 
     try:
         stickerset_attr = rep_msg.document.attributes[1]
@@ -311,8 +311,8 @@ async def get_pack_info(event):
         f"**Nama Pendek Sticker:** `{get_stickerset.set.short_name}`\n"
         f"**Official:** `{get_stickerset.set.official}`\n"
         f"**Arsip:** `{get_stickerset.set.archived}`\n"
-        f"**Sticker Dalam Pack:** `{len(get_stickerset.packs)}`\n"
-        f"**Emoji Dalam Pack:**\n{' '.join(pack_emojis)}"
+        f"**Sticker Dalam Colongan:** `{len(get_stickerset.packs)}`\n"
+        f"**Emoji Dalam Colongan:**\n{' '.join(pack_emojis)}"
     )
 
     await event.edit(OUTPUT)
@@ -347,12 +347,12 @@ async def sticker_to_png(sticker):
             await sticker.delete()
     return
 
-# LORD - USERBOT
+# KING - USERBOT
 
 CMD_HELP.update(
     {
         "stickers": "**Modules:** __Stickers__\n\n⚡️𝘾𝙈𝘿⚡️: `.kang` | ⚡️𝘾𝙈𝘿⚡️`.tikel (emoji) [nomer]`"
-        "\n**Penjelasan:** Balas ke sticker atau gambar `.tikel`  untuk menjadikannya sebagai sticker Anda "
+        "\n**Penjelasan:** Balas ke sticker atau gambar `.tikel`  untuk menjadikannya sebagai sticker Colongan Anda "
         "\nBisa memilih emoji sesuai pilihan Anda, dan bisa memilih nomer pack."
         "\n\n⚡️𝘾𝙈𝘿⚡️: `.stkrinfo`"
         "\n**Penjelasan:** Balas ke sticker, untuk mendapatkan informasi pack sticker."
