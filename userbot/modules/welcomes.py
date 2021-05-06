@@ -114,8 +114,8 @@ async def save_welcome(event):
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID, f"#WELCOME \nID GRUP: {event.chat_id}"
-                "\n⚡️𝗞𝗶𝗻𝗴⚡️ Memasang Pesan Perintah Welcome Digrup, Ini Adalah Catatan Pesan Welcome "
-                "Mohon Jangan Dihapus ⚡️𝗞𝗶𝗻𝗴⚡️!"
+                "\nKing Memasang Pesan Perintah Welcome Digrup, Ini Adalah Catatan Pesan Welcome "
+                "Mohon Jangan Dihapus King!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -130,7 +130,7 @@ async def save_welcome(event):
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Berhasil Menyimpan Pesan Welcome {}`"
+    success = "`Sukses Menyimpan Pesan Welcome {}`"
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         await event.edit(success.format('Disini'))
     else:
@@ -165,21 +165,22 @@ async def del_welcome(event):
     except AttributeError:
         return await event.edit("`Running on Non-SQL mode!`")
     if rm_welcome_setting(event.chat_id) is True:
-        await event.edit("`Menghapus Pesan Welcome Berhasil Dilakukan`")
+        await event.edit("`Sukses Menghapus Pesan Welcome`")
     else:
         await event.edit("`Anda Tidak Menyimpan Pesan Welcome Apapun Disini King`")
 
 
-CMD_HELP.update({
-    "welcome":
-    ">`.setwelcome` <pesan welcome> atau balas ke pesan ketik `.setwelcome`"
-    "\nUsage: Menyimpan pesan welcome digrup."
-    "\n\nFormat Variabel yang bisa digunakan dipesan welcome:"
-    "\n`{mention}, {title}, {count}, {first}, {last}, {fullname}, "
-    "{userid}, {username}, {my_first}, {my_fullname}, {my_last}, "
-    "{my_mention}, {my_username}`"
-    "\n\n>`.checkwelcome`"
-    "\nUsage: Check pesan welcome yang anda simpan."
-    "\n\n>`.rmwelcome`"
-    "\nUsage: Menghapus pesan welcome yang anda simpan."
-})
+CMD_HELP.update(
+    {
+        "welcome": "**Plugin : **`welcome`\
+        \n\n  •  **Perintah :** `.setwelcome` <pesan welcome> atau balas ke pesan ketik `.setwelcome`\
+        \n  •  **Function : **Menyimpan pesan welcome digrup.\
+        \n\n  •  **Perintah :** `.checkwelcome`\
+        \n  •  **Function : **Check pesan welcome yang anda simpan.\
+        \n\n  •  **Perintah :** `.rmwelcome`\
+        \n  •  **Function : **Menghapus pesan welcome yang anda simpan.\
+        \n\n  •  **Format Variabel yang bisa digunakan di setwelcome :**\
+        \n`{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`\
+    "
+    }
+)
