@@ -223,14 +223,14 @@ async def pingme(pong):
     await pong.edit("⎚⎆ __King__ **Test Ping!**\n`%sms`" % (duration))
 
 CMD_HELP.update(
-    {"ping": "⚡𝘾𝙈𝘿⚡`.ping` ; ⚡𝘾𝙈𝘿⚡`.kping` ; ⚡𝘾𝙈𝘿⚡`.xping` ; ⚡𝘾𝙈𝘿⚡`.fping`\
-    \nPenjelasan: Untuk menunjukkan ping bot.\
-    \n\n⚡𝘾𝙈𝘿⚡`.speed`\
-    \nPenjelasan: Untuk menunjukkan kecepatan.\
-    \n\n⚡𝘾𝙈𝘿⚡`.pong`\
-    \nPenjelasan: sama kaya perintah ping."
-     })
-CMD_HELP.update(
-    {"sinyal": "**Modules:** `Sinyal`\
-    \n\n**⚡𝘾𝙈𝘿⚡: `.sinyal`\
-    \n  •**Penjelasan :** __Untuk melihat sinyal bot__"})
+    {
+        "ping": "**✘ Plugin : **`ping`\
+        \n\n  •  **Perintah :** `.ping` ; `kping` ; `.xping` ; `.sinyal`\
+        \n  •  **Function : **Untuk menunjukkan ping userbot.\
+        \n\n  •  **Perintah :** `.pong`\
+        \n  •  **Function : **Sama seperti perintah ping\
+        \n\n  •  **Perintah :** `.speed`\
+        \n  •  **Function : **Untuk Mengetes kecepatan server userbot.\
+    "
+    }
+)
