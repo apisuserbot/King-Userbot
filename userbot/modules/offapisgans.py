@@ -96,7 +96,7 @@ async def type_afk_is_not_true(notafk):
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond(f"**✘ {ALIVE_NAME} `kembali ada yang kangen gak?...`✘**")
+        msg = await notafk.respond(f"`✘ {ALIVE_NAME} Telah kembali ada yang kangen gak?...✘`")
         time.sleep(7)
         await msg.delete()
         await notafk.client(UpdateProfileRequest(first_name=user.first_name, last_name=last1))
