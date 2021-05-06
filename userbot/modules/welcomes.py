@@ -172,7 +172,7 @@ async def del_welcome(event):
 
 CMD_HELP.update(
     {
-        "welcome": "**Plugin : **`welcome`\
+        "welcome": "**✘ Plugin : **`welcome`\
         \n\n  •  **Perintah :** `.setwelcome` <pesan welcome> atau balas ke pesan ketik `.setwelcome`\
         \n  •  **Function : **Menyimpan pesan welcome digrup.\
         \n\n  •  **Perintah :** `.checkwelcome`\
