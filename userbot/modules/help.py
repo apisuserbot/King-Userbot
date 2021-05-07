@@ -12,7 +12,7 @@ from platform import uname
 
 modules = CMD_HELP
 
-# Ported by KENZO (Lynx-Userbot)
+# Ported by apisuserbot (King-Userbot)
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
@@ -35,7 +35,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t|  "
         await event.edit("**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n\n"
-                         f"**◑» Kɪɴɢ {DEFAULTUSER}**\n**◑» Pʟᴜɢɪɴ : {len(plugin)}**\n\n"
+                         f"**◑» Kɪɴɢ {DEFAULTUSER}**\n**◑» Pʟᴜɢɪɴ : {len(modules)}**\n\n"
                          "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"╰►| {string} ◄─\n\n")
         await event.reply(f"\n**✘ Contoh** : **Ketik** `.help afk` **Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik** `.helpme` **Untuk Main Menu Yang Lain-Nya.** ✘")
