@@ -75,7 +75,7 @@ async def add_new_filter(new_handler):
     elif new_handler.reply_to_msg_id and not string:
         rep_msg = await new_handler.get_reply_message()
         string = rep_msg.text
-    success = "`Berhasil Menambahkan Filter` **{}** `{}`."
+    success = "`Sukses Menambahkan Filter` **{}** `{}`."
     if add_filter(str(new_handler.chat_id), keyword, string, msg_id) is True:
         await new_handler.edit(success.format(keyword, 'Disini'))
     else:
@@ -94,7 +94,7 @@ async def remove_a_filter(r_handler):
         await r_handler.edit("`Filter` **{}** `Tidak Ada Disini`.".format(filt))
     else:
         await r_handler.edit(
-            "`Berhasil Menghapus Filter` **{}** `Disini`.".format(filt))
+            "`Sukses Menghapus Filter` **{}** `Disini`.".format(filt))
 
 
 @register(outgoing=True, pattern="^.bersihkanbotfilter (.*)")
@@ -116,7 +116,7 @@ async def kick_marie_filter(event):
             await event.reply("/stop %s" % (i.strip()))
         await sleep(0.3)
     await event.respond(
-        "```Berhasil Menghapus Semua Filter Bot!```")
+        "```Sukses Menghapus Semua Filter Bot!```")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "Saya Membersihkan Semua Filter Bot Di " + str(event.chat_id))
@@ -133,25 +133,26 @@ async def filters_active(event):
     filters = get_filters(event.chat_id)
     for filt in filters:
         if transact == "`Tidak Ada Filter Apapun Disini.`":
-            transact = "**👑 Daftar Filter King Yang Aktif Disini:**\n"
-            transact += " ☞ `{}`\n".format(filt.keyword)
+            transact = "**✘ Daftar Filter King Yang Aktif Disini:**\n"
+            transact += " ➜ `{}`\n".format(filt.keyword)
         else:
-            transact += " ☞ `{}`\n".format(filt.keyword)
+            transact += " ➜ `{}`\n".format(filt.keyword)
 
     await event.edit(transact)
 
 # KING USERBOT
-# @USERBOT_GROUP
-CMD_HELP.update({
-    "filter":
-    "⚡𝘾𝙈𝘿⚡`.filters`\
-    \nPenjelasan: Melihat filter king userbot yang aktif di obrolan.\
-    \n\n⚡𝘾𝙈𝘿⚡`.filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
-    \nPenjelasan: Membuat filter di obrolan.\
-    \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
-    \nBisa dipake ke media/sticker/vn/file.\
-    \n\n⚡𝘾𝙈𝘿⚡`.stop` <keyword>\
-    \nPenjelasan: Untuk Nonaktifkan Filter.\
-    \n\n⚡𝘾𝙈𝘿⚡`.bersihkanbotfilter` <rose>\
-    \nPenjelasan: Menghapus semua filter yang ada di bot grup (Saat ini bot yang didukung: Rose.) dalam obrolan."
-})
+
+CMD_HELP.update(
+    {
+        "filter": "**✘ Plugin : **`filter`\
+        \n\n  •  **Perintah :** `.filters`\
+        \n  •  **Function : **Melihat filter king yang aktif di obrolan.\
+        \n\n  •  **Perintah :** `.filter` <keyword> <balasan> atau balas ke pesan ketik `.filter` <keyword>\
+        \n  •  **Function : **Membuat filter di obrolan, Bot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat. Bisa dipakai ke media/sticker/vn/file.\
+        \n\n  •  **Perintah :** `.stop` <keyword>\
+        \n  •  **Function : **Untuk Nonaktifkan Filter.\
+        \n\n  •  **Perintah :** `.delfilterbot` <marie/rose>\
+        \n  •  **Function : **Menghapus semua filter yang ada di bot grup (Saat ini bot yang didukung: Marie, Rose.) dalam obrolan.\
+    "
+    }
+)
