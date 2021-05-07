@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya @PacarFerdilla di telegram",
+      "description": "Dapatkan String Session di repl caranya ada di repo, jika tidak tau bisa ke @KingUserbotSupport lalu ketik #string",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -151,7 +151,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "KING-USERBOT",
+      "value": "⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️",
       "required": false
     },
     "ALIVE_NAME": {
@@ -198,7 +198,7 @@
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
-      "value": "Batam",
+      "value": "Jakarta",
       "required": false
     },
     "LOGSPAMMER": {
