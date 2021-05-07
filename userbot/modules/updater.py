@@ -208,7 +208,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**✘ 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 ✘ Untuk Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n >• Perintah`.update now`\n >• Perintah`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡.__')
+        return await event.respond('**Perintah Untuk Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n >• Perintah`.update now`\n >• Perintah`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡.__')
 
     if force_update:
         await event.edit(
