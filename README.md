@@ -19,8 +19,8 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://GitHub.com/apisuserbot/King-Userbot/graphs/contributors/)
 <p align="justify">
-<a href="https://hub.docker.com/r/apiskinguserbot/kingubot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kingubot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
-<a href="https://hub.docker.com/r/apiskinguserbot/kingubot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kingubot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
+<a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kinguserbot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
+<a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kinguserbot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
 
 ![King Userbot Logo](https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg)
