@@ -113,7 +113,7 @@ async def gben(userbot):
     if user:
         if user.id == 1682708454:
             return await dark.edit(
-                f"`Anda Tidak Bisa Melakukan Global Banned Ke Mastah Apis, Dia Adalah Pembuat Saya 😈`"
+                f"`Anda Tidak Bisa Melakukan Global Banned Ke King Apis, Dia Adalah Pembuat Saya 😈`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -143,7 +143,7 @@ async def gben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**⊙ Perintah :** `{ALIVE_NAME}`\n**⊙ Pengguna :** [{user.first_name}](tg://user?id={user.id})\n**⊙ Aksi :** `Global Banned`"
+        f"**✘ Perintah :** `{ALIVE_NAME}`\n**✘ Pengguna :** [{user.first_name}](tg://user?id={user.id})\n**✘ Aksi :** `Global Banned`"
     )
 
 
@@ -196,7 +196,7 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`Membatalkan Global Banned... Memproses....⚡ `")
+                await dark.edit(f"`Membatalkan Global Banned Sedang Memproses....⚡ `")
             except BaseException:
                 b += 1
     else:
@@ -207,13 +207,17 @@ async def gunben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**⊙ Perintah :** `{ALIVE_NAME}`\n**⊙ Pengguna :** [{user.first_name}](tg://user?id={user.id})\n**⊙ Aksi :** `Membatalkan Global Banned`"
+        f"**✘ Perintah :** `{ALIVE_NAME}`\n**✘ Pengguna :** [{user.first_name}](tg://user?id={user.id})\n**✘ Aksi :** `Membatalkan Global Banned`"
     )
 
 
-CMD_HELP.update({
-    "globalban": "\
-⚡𝘾𝙈𝘿⚡: `.gban`\
-\n↳ : Melakukan Banned Secara Global Ke Semua Grup Dimana Anda Sebagai Admin.\
-\n\n⚡𝘾𝙈𝘿⚡: `.ungban`\
-\n↳ : Membatalkan Banned Secara Global."})
+CMD_HELP.update(
+    {
+        "gban": "**✘ Plugin : **`Global Banned`\
+        \n\n  •  **Perintah :** `.gban` <username>\
+        \n  •  **Function : **Melakukan Banned Secara Global Ke Semua Grup Dimana King Sebagai Admin.\
+        \n\n  •  **Perintah :** `.ungban` <username>\
+        \n  •  **Function : **Membatalkan Global Banned\
+    "
+    }
+)
