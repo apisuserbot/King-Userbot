@@ -220,14 +220,17 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"heroku": "⚡𝘾𝙈𝘿⚡: `.kuota`"
-                 "\n↳ : Check Quota Dyno Heroku"
-                 "\n\n⚡𝘾𝙈𝘿⚡: `.set var <NEW VAR> <VALUE>`"
-                 "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
-                 "\nSetelah Menyetel Variabel Tersebut, King-Userbot Akan Di Restart."
-                 "\n\n⚡𝘾𝙈𝘿⚡: `.get var atau .get var <VAR>`"
-                 "\n↳ : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda."
-                 "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
-                 "\n\n⚡𝘾𝙈𝘿⚡: `.del var <VAR>`"
-                 "\n↳ : Menghapus Variabel Yang Ada"
-                 "\nSetelah Menghapus Variabel, Bot Akan Di Restart."})
+CMD_HELP.update(
+    {
+        "heroku": "**Plugin : **`heroku`\
+        \n\n  •  **Perintah :** `.kuota`\
+        \n  •  **Function : **Check Kouta Dyno Heroku\
+        \n\n  •  **Perintah :** `.set var <nama var> <value>`\
+        \n  •  **Function : **Tambahkan Variabel Baru Atau Memperbarui Variabel\n Setelah Menyetel Variabel ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ Akan Di Restart.\
+        \n\n  •  **Perintah :** `.get var or .get var <nama var>`\
+        \n  •  **Function : **Dapatkan Variabel Yang Ada,Harap Gunakan Di Grup Private Anda! Ini Untuk Mengembalikan Informasi Heroku Pribadi Anda.\
+        \n\n  •  **Perintah :** `.del var <nama var>`\
+        \n  •  **Function : **Untuk Menghapus var heroku\
+    "
+    }
+)
