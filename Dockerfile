@@ -1,5 +1,5 @@
 # KING USERBOT
-FROM apiskinguserbot/kinguserbot:Buster
+FROM biansepang/weebproject:buster
 
 # Dockerfile
 # KING
