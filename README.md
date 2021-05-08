@@ -47,7 +47,7 @@ Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot G
 
 ## Group Support 🛠
 
-   <a href="https://t.me/USERBOT_GROUP"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/KingUserbotSupport"><img src="https://img.shields.io/badge/Grup%20Support%3F-King-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
 
 ## <p align="center">DEPLOY KING-USERBOT</p>
