@@ -206,7 +206,7 @@ async def _(dyno):
         app = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
         return await dyno.reply(
-            "`Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var.`"
+            "`Pastikan Kunci API Heroku Anda, Nama App Anda dikonfigurasi dengan benar di heroku var.`"
         )
     await dyno.edit("`Sedang Mengambil Logs Anda King`")
     with open("logs.txt", "w") as log:
@@ -222,7 +222,7 @@ async def _(dyno):
 
 CMD_HELP.update(
     {
-        "heroku": "**Plugin : **`heroku`\
+        "heroku": "**✘ Plugin : **`heroku`\
         \n\n  •  **Perintah :** `.kuota`\
         \n  •  **Function : **Check Kouta Dyno Heroku\
         \n\n  •  **Perintah :** `.set var <nama var> <value>`\
