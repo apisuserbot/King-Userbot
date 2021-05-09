@@ -252,7 +252,7 @@ CMD_HELP.update(
     {
         "afk": "**✘ Plugin : **`afk`\
         \n\n  •  **Perintah :** `.afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n  •  **Function : **Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
+        \n  •  **Function : **Memberi tahu kalau King sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
         \n\n  •  **Perintah :** `.off`\
         \n  •  **Function : **Memberi tahu kalau King sedang OFFLINE, dan menguubah nama belakang menjadi ⚡️𝙊𝙁𝙁⚡️\
     "
