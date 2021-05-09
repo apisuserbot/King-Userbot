@@ -26,7 +26,7 @@ from userbot import (
 )
 from userbot.events import register
 from userbot.utils import chrome, progress
-from userbot.utils.FastTelethon import upload_file
+from userbot.utils import upload_file
 
 
 async def getmusic(cat):
