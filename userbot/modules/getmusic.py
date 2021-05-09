@@ -225,17 +225,16 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.songn` <Artis - Nama Lagu>\
         \n  •  **Function : **Untuk Mencari dan mendownload lagu dari youtube menggunakan bot @WooMaiBot.\
         \n\n  •  **Perintah :** `.songl` <Spotify - Deezer Link>\
-        \n  •  **Function : **Untuk Mencari dan mendownload lagu  dari youtube menggunakan bot @MusicsHunterBot.\n\n 
-        \n\n  •  **Perintah : ** `.songf` <Artis - Nama Lagu>
-        \n  • ** Function: **Untuk Mencari dan mendownload lagu dari youtube menggunakan bot @ SpotifyMusicDownloaderBot.
+ n  •  **Function : **Untuk Mencari dan mendownload lagu  dari youtube me nggunakan bot @MusicsHunterBot.\n\n
+        \n\n  • ** Perintah: ** `.songf` < Artis - Nama Lagu > n  • ** Function: **Untuk Mencari dan mendownload lagu dari youtube menggunakan bot @ SpotifyMusicDownloaderBot.
         \n\n  • ** Perintah: ** `.songn now`
         \n  • ** Function: **Mendownload Lagu LastFM menggunakan bot @ WooMaiBot.
         \n\n  • ** Perintah: ** `.songf now`
         \n  • ** Function: **Mendownload Lagu LastFM menggunakan bot @ SpotifyMusicDownloaderBot.
-        \n\n  • ** Perintah: ** `.vsong` < Artis - Nama Lagu > n 
+        \n\n  • ** Perintah: ** `.vsong` < Artis - Nama Lagu > n
         \n  • ** Function: **Mengupload Sebuah Video Lagu Dari youtube.
-        \n\n  ✘ 𝙋𝙚𝙨𝙖𝙣 𝙋𝙚𝙣𝙩𝙞𝙣𝙜: **Memakai lagu yang bener ya jangan terlalu spam nanti bisa error userbotmu\
-        \n  ➜  **Semoga Harimu Menyenangkan :** Apis.\
+        \n\n  ✘ 𝙋𝙚𝙨𝙖𝙣 𝙋𝙚𝙣𝙩𝙞𝙣𝙜: **Memakai lagu yang bener ya jangan terlalu spam nanti bisa error userbotmu
+        \n  ➜ ** Semoga Harimu Menyenangkan: ** Apis.
         "
     }
 )
