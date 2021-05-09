@@ -219,15 +219,22 @@ async def _(event):
         return
 
 
-CMD_HELP.update({"getmusic": ">`.songn <Artist - Song Title>`"
-                 "\nUsage: Download music by name (@WooMaiBot)"
-                 "\n\n>`.songl <Spotify/Deezer Link>`"
-                 "\nUsage: Download music by link (@MusicsHunterBot)"
-                 "\n\n>`.songf <Artist - Song Title>`"
-                 "\nUsage: Download music by name (@SpotifyMusicDownloaderBot)"
-                 "\n\n>`.songn now`"
-                 "\nUsage: Download current LastFM scrobble with @WooMaiBot"
-                 "\n\n>`.songf now`"
-                 "\nUsage: Download current LastFM scrobble with @SpotifyMusicDownloaderBot"
-                 "\n\n>`.vsong` <Artist - Song Title>"
-                 "\nUsage: Finding and uploading videoclip.\n"})
+CMD_HELP.update(
+    {
+        "getmusic": "**✘ Plugin : **`getmusic`\
+        \n\n  •  **Perintah :** `.songn` <Artis - Nama Lagu>\
+        \n  •  **Function : **Untuk Mencari dan mendownload lagu dari youtube menggunakan bot @WooMaiBot.\
+        \n\n  •  **Perintah :** `.songl` <Spotify - Deezer Link>\
+        \n  •  **Function : **Untuk Mencari dan mendownload lagu  dari youtube menggunakan bot @MusicsHunterBot.\
+        \n\n  •  **Perintah :** `.songf` <Artis - Nama Lagu>
+        \n  •  **Function : **Untuk Mencari dan mendownload lagu dari youtube menggunakan bot @SpotifyMusicDownloaderBot.\
+        \n\n  •  **Perintah :** `.songn now`\
+        \n  •  **Function : **Mendownload Lagu LastFM menggunakan bot @WooMaiBot.\
+        \n\n  •  **Perintah :** `.songf now`\
+        \n  •  **Function : **Mendownload Lagu LastFM menggunakan bot @SpotifyMusicDownloaderBot.\
+        \n\n  •  **Perintah :** `.vsong` <Artis - Nama Lagu>\
+        \n  •  **Function : **Mengupload Sebuah Video Lagu Dari youtube.\
+        \n\n  ✘ 𝙋𝙚𝙨𝙖𝙣 𝙋𝙚𝙣𝙩𝙞𝙣𝙜 :**Memakai lagu yang bener ya jangan terlalu spam nanti bisa error userbotmu\n➜ `Semoga Harimu Menyenangkan` : Apis
+    "
+    }
+)
