@@ -378,8 +378,8 @@ async def add_pmsg(cust_msg):
                 f"Masih Menggunakan Pesan PM Default: \n\n`{DEF_UNAPPROVED_MSG}`"
             )
 
-# Ported by Alvin/@liualvinas
-# Lord Userbot
+# Ported by Apis/@PacarFerdilla
+# King Userbot
 
 
 @register(incoming=True,
@@ -393,32 +393,34 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, "`Mastah Apis Telah Mengirimi Anda Pesan 😯`")
+                chats.id, "`King Apis Telah Mengirimi Anda Pesan 😯`")
             await borg.send_message(
-                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Mastah Apis**"
+                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah King Apis**"
             )
 
 
 CMD_HELP.update(
     {
-        "pm": "⚡𝘾𝙈𝘿⚡: >`.setuju | .ok`"
-        "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.tolak | .nopm`"
-        "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.block`"
-        "\n↳ : Memblokir Orang Di PM."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.unblock`"
-        "\n↳ : Membuka Blokir."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.notifoff`"
-        "\n↳ : Mematikan notifikasi pesan yang belum diterima."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.notifon`"
-        "\n↳ : Menghidupkan notifikasi pesan yang belum diterima."
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.set pm_msg` <balas ke pesan>"
-        "\n↳ : Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima"
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.get pm_msg`"
-        "\n↳ : Mendapatkan Custom pesan PM mu"
-        "\n\n⚡𝘾𝙈𝘿⚡: >`.reset pm_msg`"
-        "\n↳ : Menghapus pesan PM ke default"
-        "\n\nPesan Pribadi yang belum diterima saat ini tidak dapat disetel"
-        "\nke teks format kaya bold, underline, link, dll."
-        "\nPesan akan terkirim normal saja"})
+        "pms": "**✘ Plugin : **`pms`\
+        \n\n  •  **Perintah :** `.setuju` atau `.ok`\
+        \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
+        \n\n  •  **Perintah :** `.tolak` atau `.nopm`\
+        \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
+        \n\n  •  **Perintah :** `.block`\
+        \n  •  **Function : **Memblokir Orang Di PM.\
+        \n\n  •  **Perintah :** `.unblock`\
+        \n  •  **Function : **Membuka Blokir.\
+        \n\n  •  **Perintah :** `.notifoff`\
+        \n  •  **Function : **Menghidupkan notifikasi pesan yang belum diterima.\
+        \n\n  •  **Perintah :** `.notifon`\
+        \n  •  **Function : **Menghidupkan notifikasi pesan yang belum diterima.\
+        \n\n  •  **Perintah :** `.set pm_msg` <balas ke pesan>\
+        \n  •  **Function : **Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima.\
+        \n\n  •  **Perintah :** `.get pm_msg`\
+        \n  •  **Function : **Mendapatkan Custom pesan PM mu.\
+        \n\n  •  **Perintah :** `.reset pm_msg`\
+        \n  •  **Function : **Menghapus pesan PM ke default.\
+        \n\n  •  **Pesan Pribadi yang belum diterima saat ini tidak dapat disetel ke teks format kaya bold, underline, link, dll. Pesan akan terkirim normal saja**\
+    "
+    }
+)
