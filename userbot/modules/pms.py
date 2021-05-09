@@ -27,16 +27,10 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"◄┈─╼━━━━━━━━━━━━━━━━━━╾─┈╮\n"
-    "ㅤ  “`Selamat Datang Di Room Chat`.”\n"
-    "╭┈─╼━━━━━━━━━━━━━━━━━━╾─┈╯\n"
-    "│❗𝘿𝙄𝙇𝘼𝙍𝘼𝙉𝙂 𝙈𝙀𝙇𝘼𝙆𝙐𝙆𝘼𝙉 𝙎𝙋𝘼𝙈❗\n│\n"
-    f"Tunggu {DEFAULTUSER} Menerima Pesan Anda │\n"
-    "╰┈─────────────────────┈─➤\n"
-    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-    "┣[○› **PESAN OTOMATIS**\n"
-    f"┣[○› **BY** @KingGithubUserbot\n"
-    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
+    f"Hallo Kawan , Saya King **{DEFAULTUSER} Yang Menjaga Room Chat Ini**\n\n"
+    f"__SAYA ADALAH BOT YANG MENJAGA ROOM CHAT INI MOHON JANGAN MELAKUKAN SPAM SAMPAI 8 CHAT, KARNA SAYA OTOMATIS AKAN MEMBLOKIR ANDA, TUNGGU SAMPAI KING__ **{DEFAULTUSER}** __MENERIMA PESAN ANDA__\n\n"
+    "✘ `PESAN OTOMATIS BY KING-USERBOT` ✘\n"
+)
 # =================================================================
 
 
@@ -95,7 +89,7 @@ async def permitpm(event):
             if COUNT_PM[event.chat_id] > 5:
                 await event.respond(
                     "`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
-                    "`Ke Room Chat King 👷`"
+                    "`Ke Room Chat King`"
                 )
 
                 try:
