@@ -1,3 +1,5 @@
+# Recode by @PacarFerdilla
+
 from datetime import datetime
 import time
 from random import choice, randint
@@ -22,10 +24,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    f"**Maaf ✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Sedang 𝗢𝗙𝗙!**",
-    f"**Maaf ✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggu Sampai Online!**",
-    f"**✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggulah Sampai Online**",
-    f"**Maaf ✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Sedang 𝗢𝗙𝗙!**",
+    f"**✘ Maaf King {ALIVE_NAME} Sedang 𝗢𝗙𝗙 ✘**",
+    f"**✘ Maaf King {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggu Sampai Online ✘**",
+    f"**✘ King {ALIVE_NAME} Sedang 𝗢𝗙𝗙\n Tunggulah Sampai Online ✘**",
+    f"**✘ Maaf King {ALIVE_NAME} Sedang 𝗢𝗙𝗙 ✘**",
 ]
 
 
@@ -60,10 +62,10 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**✘ {ALIVE_NAME} Telah 𝗢𝗙𝗙 **\
+        await afk_e.edit(f"**✘ King {ALIVE_NAME} Telah 𝗢𝗙𝗙 ✘**\
         \n➜ **Alasan:** `{string}`")
     else:
-        await afk_e.edit(f"**✘ {ALIVE_NAME} Telah 𝗢𝗙𝗙 **")
+        await afk_e.edit(f"**✘ King {ALIVE_NAME} Telah 𝗢𝗙𝗙 ✘**")
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "⚡𝗢𝗙𝗙⚡"))
     else:
@@ -96,7 +98,7 @@ async def type_afk_is_not_true(notafk):
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond(f"`✘ {ALIVE_NAME} Telah kembali ada yang kangen gak?...✘`")
+        msg = await notafk.respond(f"`King {ALIVE_NAME} Sudah Kembali Online...`")
         time.sleep(7)
         await msg.delete()
         await notafk.client(UpdateProfileRequest(first_name=user.first_name, last_name=last1))
@@ -164,7 +166,7 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)} Detik`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"**✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
+                    await mention.reply(f"**✘ King {ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                         \n➜ **Alasan:** `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -173,7 +175,7 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"**✘ 𝗞𝗶𝗻𝗴 {ALIVE_NAME} Masih 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
+                        await mention.reply(f"**✘ King {ALIVE_NAME} Masih 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                             \n➜ **Alasan:** `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -241,7 +243,7 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)} Detik`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"✘ 𝗞𝗶𝗻𝗴 **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu**.\
+                    await sender.reply(f"✘ King **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu**.\
                         \n➜ **Alasan**: `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -250,7 +252,7 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"✘ 𝗞𝗶𝗻𝗴 **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
+                        await sender.reply(f"✘ King **{ALIVE_NAME} Sedang 𝗢𝗙𝗙** {afk_since} **Yang Lalu.**\
                             \n➜ **Alasan**: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -264,10 +266,8 @@ async def afk_on_pm(sender):
 CMD_HELP.update(
     {
         "off": "**✘ Plugin : **`off`\
-        \n\n  •  **Perintah :** `.off` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n  •  **Function : **Memberi tahu kalau King sedang off bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
-        \n\n  •  **Perintah :** `.afk`\
-        \n  •  **Function : **Memberi tahu kalau King sedang AFK, dan menguubah nama belakang menjadi ⚡️𝗔𝗙𝗞⚡️ \
+        \n\n  •  **Perintah :** `.off`\
+        \n  •  **Function : **Memberi tahu kalau King sedang OFF, dan menguubah nama belakang menjadi ⚡️𝗢𝗙𝗙⚡️ \
     "
     }
 )
