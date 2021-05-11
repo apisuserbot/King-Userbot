@@ -279,9 +279,9 @@ async def amireallyalive(alive):
         f" • KING : `{DEFAULTUSER}`"
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
@@ -295,43 +295,9 @@ async def amireallyalive(alive):
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
+    
 
-
-@ register(outgoing=True, pattern=r"^\.(?:team|teamon)\s?(.)?")
-async def amireallyalive(alive):
-    await bot.get_me()
-    await get_readable_time((time.time() - StartTime))
-    await alive.edit("..⚡𝗞𝗶𝗻𝗴-𝙏𝙀𝘼𝙈⚡..")
-    output=(
-        f"════════⚡𝗞𝗶𝗻𝗴-𝙏𝙀𝘼𝙈⚡═════════\n"
-        f"**Nama Creator Kami**\n"
-        f"╟◈🛠️ Developer : [Apis](t.me/PacarFerdilla) \n"
-        f"╟◈🛠️ Developer : [Abdul](t.me/lvufrvrbby) \n"
-        f"╟◈👤 Contributor : [Rimuru](t.me/imbakaaaaa) \n"
-        f"╰╼═══════════════════╾╯\n"
-        f"**Terimakasih Telah Menggunakan Project Userbot Kami** 🙏 \n"
-        f"═════════⚡𝙏𝙀𝘼𝙈⚡═════════════")
-    if ALIVE_LOGO:
-        try:
-            logo=ALIVE_LOGO
-            await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(200)
-            await msg.delete()
-        except BaseException:
-            await alive.edit(
-                output + "\n\n *`The provided logo is invalid."
-                "\nMake sure the link is directed to the logo picture`"
-            )
-            await asyncio.sleep(100)
-            await alive.delete()
-    else:
-        await alive.edit(output)
-        await asyncio.sleep(100)
-        await alive.delete()
-
-
-@ register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
 async def redis(alive):
     user=await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -400,9 +366,9 @@ async def redis(alive):
         f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
@@ -418,7 +384,7 @@ async def redis(alive):
         await alive.delete()
 
 
-@ register(outgoing=True, pattern="^.aliveu")
+@register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message=username.text
@@ -431,10 +397,10 @@ async def amireallyaliveuser(username):
     await username.edit("`" f"{output}" "`")
 
 
-@ register(outgoing=True, pattern=r"^\.resetsalive$")
+@register(outgoing=True, pattern=r"^\.resetsalive$")
 async def amireallyalivereset(ureset):
     global DEFAULTUSER
-    DEFAULTUSER=str(ALIVE_NAME) if ALIVE_NAME else uname().node
+    DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
     await ureset.edit("`" "Berhasil Mereset Pengguna Alive!" "`")
 
 
