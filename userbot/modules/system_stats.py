@@ -268,8 +268,8 @@ async def amireallyalive(alive):
     output = (
         f"𝗫⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵𝗫 \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[◈ 👤 KING     : {DEFAULTUSER}\n"
-        f"┣[◈ 👁‍🗨 Username : @{user.username}\n"
+        f"┣[ 🤴 KING     : {DEFAULTUSER}\n"
+        f"┣[ 🔎 Username : @{user.username}\n"
         f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
         f"┣[◈ ⚙️ `Telethon :`v {version.__version__} \n"
         f"┣[◈ 🐍 `Python   :`v {python_version()} \n"
@@ -277,10 +277,10 @@ async def amireallyalive(alive):
         f"┣[◈ 🛠 `Version  :`{BOT_VER} \n"
         f"┣[◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"┣◈ 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 : [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
-        f"┣◈ 𝗞𝗜𝗡𝗚     : [PEMILIK](https://t.me/PacarFerdilla) \n"
-        f"┣◈ 𝗥𝗘𝗣𝗢     : [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
-        f"┣◈ 𝗕𝗢𝗧 𝗕𝗬   : {DEFAULTUSER} \n"
+        f"┣◈ [𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗧𝗘𝗔𝗠](https://t.me/KingUserbotSupport) \n"
+        f"┣◈ [𝗣𝗘𝗠𝗜𝗟𝗜𝗞](https://t.me/PacarFerdilla) \n"
+        f"┣◈ [𝗥𝗘𝗣𝗢](https://github.com/apisuserbot/King-Userbot) \n"
+        f"┣◈ 𝗕𝗢𝗧 𝗕𝗬 {DEFAULTUSER} \n"
         f"╰━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
