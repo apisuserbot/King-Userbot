@@ -1,22 +1,24 @@
-# System Stats King-Userbot
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+""" Userbot module for getting information about the server. """
+
 
 import asyncio
-import redis
-
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
-from telethon import version
 from telethon import __version__, version
 import platform
 import sys
 import time
 from datetime import datetime
 import psutil
-
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, LYNX_TEKS_KUSTOM, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, INSTAGRAM_ALIVE, bot
 from userbot.events import register
 
 
@@ -45,7 +47,7 @@ async def get_readable_time(seconds: int) -> str:
         seconds = int(remainder)
 
     for x in range(len(time_list)):
-        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+       time_list[x] = str(time_list[x]) + time_suffix_list[x]
 
     if len(time_list) == 4:
         up_time += time_list.pop() + ", "
@@ -148,7 +150,7 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        str(stdout.decode().strip()) + str(stderr.decode().strip())
+        verout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         rev = await asyncrunapp(
             "git",
@@ -163,7 +165,7 @@ async def bot_ver(event):
 
         await event.edit(
             "**⚜-**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Versi:** \n "
-            f"heads/king-Userbot-0-x634i7u1"
+            f"heads/King-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -221,23 +223,23 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:king|kingon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:King|Kingon)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** \n"
+           f"**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡** \n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
         f"**══════════════════════**\n"
-        f"**👑 King** \n"
+        f"**🤴 King** \n"
         f" ↳ : `{DEFAULTUSER}` \n"
-        f"**👤 Username** \n"
+        f"**🔎 Username** \n"
         f" ↳ : `@{user.username}` \n"
         f"╔═══════════════════════\n"
         f"╟[•⚙️ `Telethon :`Ver {version.__version__} \n"
         f"╟[•🐍 `Python   :`Ver {python_version()} \n"
         f"╟[•👾 `Bot Ver  :`{BOT_VER} \n"
-        f"╟[•📂 `Modules  :`{len(modules)} \n"
+        f"╟[•📂 `Plugins  :`{len(modules)} \n"
         f"╚═══════════════════════")
     if ALIVE_LOGO:
         try:
@@ -259,29 +261,27 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:xalive|)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝\n \n"
-        f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
-        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
-        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-        f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
-        f"┣[•🐍 `Python   :`v {python_version()} \n"
-        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣[•🛠 `Version  :`{BOT_VER} \n"
-        f"┣[•🗃 `Plugins  :`{len(modules)} Loaded\n"
-        f"┣[•🕒 `Waktu   :`{uptime} \n"
-        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
-        f" • KING : `{DEFAULTUSER}`"
+        f"**ㅤㅤㅤㅤ ⚡【𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏】⚡**\n"
+        f"╔══════════╣۩ ✞ ۩╠══════════╗ \n"
+        f"╟⟩⟩ 🤴 • `ᴋɪɴɢ    :`[ᴀ ᴘ ɪ s](t.me/PacarFerdilla)                ㅤ ║\n"
+        f"╟⟩⟩ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10            ║\n"
+        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__}                ㅤㅤ  ║\n"
+        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
+        f"╟⟩⟩ 👾 • `ʙᴏᴛ      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
+        f"╟⟩⟩ 📂 • `ᴘʟᴜɢɪɴ   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
+        f"╚══════════╣۩ ✞ ۩╠══════════╝ \n"
+        f"😼 : [𝗥𝗘𝗣𝗢](https://github.com/apisuserbot/King-Userbot)\n👥 : [𝗞𝗜𝗡𝗚-𝗧𝗘𝗔𝗠](t.me/KingUserbotSupport)\n👩‍💻 : [𝗙𝗢𝗥𝗞-𝗘𝗗𝗜𝗧𝗢𝗥](t.me/PacarFerdilla)\n👤 : [𝗢𝗪𝗡𝗘𝗥-𝗚𝗥𝗢𝗨𝗣](t.me/PacarFerdilla)\n"
+            )
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
@@ -297,78 +297,77 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@ register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
 async def redis(alive):
-    user=await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐗...𝐒𝐈𝐒𝐓𝐄𝐌...𝐗__")
+    await alive.edit("__Connecting to server.__")
+    await alive.edit("__Connecting to server..__")
+    await alive.edit("__Connecting to server...__")
+    await alive.edit("__Connecting to server.__")
+    await alive.edit("__Connecting to server..__")
+    await alive.edit("__Connecting to server...__")
+    await alive.edit("__Connecting to server.__")
+    await alive.edit("__Connecting to server..__")
+    await alive.edit("__Connecting to server...__")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡              👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡             👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡            👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡           👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡          👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡         👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡        👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡       👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡      👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡     👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡  👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ 👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏👑")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊👑⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽👑𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍👑𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀👑𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎👑𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐👑𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻𝗴-👑𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶𝗻👑𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞𝗶👑-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞👑𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡𝗞👑𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("⚡👑𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("👑𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡              🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡             🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡            🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡           🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡          🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡         🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡        🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡       🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡      🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡     🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡  🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ 🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏🐈")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊🐈⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽🐈𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍🐈𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀🐈𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎🐈𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐🐈𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴-🐈𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻𝗴🐈𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞𝗶𝗻🐈-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡𝗞🐈𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡🐈𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("⚡🐈𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+    await alive.edit("🐈𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡")
     await asyncio.sleep(3)
-    await alive.edit("👑")
+    await alive.edit("😼")
     await asyncio.sleep(3)
-    output=(
+    output = (
         f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
-        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨🛠️ ** \n"
+        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛💨 ** \n"
         f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
         f"╭╼════════════════════╾╮ \n"
-        f"│    ⇱  𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐢𝐯𝐞 ⇲ \n"
+        f"│    ⇱  𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗗𝗶 𝗔𝗹𝗶𝘃𝗲 ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 👤  `Username :`@{user.username} \n"
+        f"╟◈ 😼  `King     :`{DEFAULTUSER} \n"
+        f"╟◈ 🔎  `Username :`@{user.username} \n"
         f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
         f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
         f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
         f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **Jangan lupa untuk mendukung kami** \n"
-        f"│    **userbot, cara menekan di bawah ini.** \n"
+        f"├◈ **Don't forget to support our** \n"
+        f"│    **userbot, how to press below.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
-        f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
+        f"| [𝗥𝗲𝗽𝗼](https://apisuserbot.github.io/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | " f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
@@ -384,46 +383,49 @@ async def redis(alive):
         await alive.delete()
 
 
-@ register(outgoing=True, pattern="^.aliveu")
-async def amireallyaliveuser(username):
+@register(outgoing=True, pattern="^.aliveu")
+async def amireallyaliveuser(username): 
     """ For .aliveu command, change the username in the .alive command. """
-    message=username.text
-    output=".aliveu [new username] tidak boleh kosong"
+    message = username.text
+    output = ".aliveu [new username] tidak boleh kosong"
     if not (message == ".aliveu" and message[7:8] != " "):
-        newuser=message[8:]
-        global DEFAULTUSER
-        DEFAULTUSER=newuser
-        output="Successfully changed user to " + newuser + "!"
+        newuser = message[8:]
+        global DEFAULTUSER # global statement
+        DEFAULTUSER = username
+        output = "Successfully changed user to " + newuser + "!"
     await username.edit("`" f"{output}" "`")
 
 
-@ register(outgoing=True, pattern=r"^\.resetsalive$")
+@register(outgoing=True, pattern=r"^\.resetalive$")
 async def amireallyalivereset(ureset):
-    global DEFAULTUSER
-    DEFAULTUSER=str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Berhasil Mereset Pengguna Alive!" "`")
+    global DEFAULTUSER # global statement
+    DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node 
+    await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
 CMD_HELP.update({
-    "sistem":
-    "⚡𝘾𝙈𝘿⚡: `.sysd`"
-    "\n↳ : Menampilkan informasi sistem menggunakan neofetch."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.db`"
-    "\n↳ : Menampilkan Databse Info."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
-    "\n↳ : Tampilkan spesifikasi sistem."
+    "system":
+    "⚡𝘾𝙈𝘿⚡: `.sysd`"\
+"\n↳ : Shows system information using neofetch."
+"\n\n⚡𝘾𝙈𝘿⚡: `.db`"
+"\n↳ : Shows database related info."
+"\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
+"\n↳ : Show system specification."
 })
-CMD_HELP.update({"alive": "⚡𝘾𝙈𝘿⚡: `.alive` atau `.on` dan `.team`"
-                 "\n↳ : Untuk melihat apakah bot Anda berfungsi atau tidak dan team untuk mengetahui creator."
-                 "\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
-                 "\n↳ : Mengubah 'pengguna' hidup-hidup ke teks yang Anda inginkan."
-                 "\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
-                 "\n↳ : Mereset Pengguna."})
+CMD_HELP.update({
+    "alive":
+    "⚡𝘾𝙈𝘿⚡: `.alive` or `.on`"
+"\n↳ : To see whether your bot is working or not."
+"\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
+"\n↳ : Changes the 'user' in alive to the text you want."
+"\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
+"\n↳ : Resets the user to default."
+})
 CMD_HELP.update(
-    {
-        "botversion":
-        "⚡𝘾𝙈𝘿⚡: `.botver`"
-        "\n↳ : Menampilkan versi userbot."
-        "\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
-        "\n↳ : Melakukan pencarian modul pip(s)."
-    })
+{
+    "botversion":
+    "⚡𝘾𝙈𝘿⚡: `.botver`"
+"\n↳ : Shows the userbot version."
+"\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
+"\n↳ : Does a search of pip modules(s)."
+})
