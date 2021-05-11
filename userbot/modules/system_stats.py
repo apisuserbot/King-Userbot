@@ -261,22 +261,24 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:xalive|on)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**ㅤㅤㅤㅤ ⚡【𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏】⚡**\n"
-        f"╔══════════╣۩ ✞ ۩╠══════════╗ \n"
-        f"╟⟩⟩ 🤴 • `ᴋɪɴɢ    :`[ᴀ ᴘ ɪ s](t.me/PacarFerdilla)                ㅤ ║\n"
-        f"╟⟩⟩ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10            ║\n"
-        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__}                ㅤㅤ  ║\n"
-        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
-        f"╟⟩⟩ 👾 • `ʙᴏᴛ      :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
-        f"╟⟩⟩ 📂 • `ᴘʟᴜɢɪɴ   :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
-        f"╚══════════╣۩ ✞ ۩╠══════════╝ \n"
-        f"😼 : [𝗥𝗘𝗣𝗢](https://github.com/apisuserbot/King-Userbot)\n👥 : [𝗞𝗜𝗡𝗚-𝗧𝗘𝗔𝗠](t.me/KingUserbotSupport)\n👩‍💻 : [𝗙𝗢𝗥𝗞-𝗘𝗗𝗜𝗧𝗢𝗥](t.me/PacarFerdilla)\n👤 : [𝗢𝗪𝗡𝗘𝗥-𝗚𝗥𝗢𝗨𝗣](t.me/PacarFerdilla)\n"
-    )
+        f"۝⩵►KING USERBOT◄⩵۝\n \n"
+        f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
+        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
+        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
+        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
+        f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
+        f"┣[•🐍 `Python   :`v {python_version()} \n"
+        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH}\n"
+        f"┣[•🛠 `Version  :`{BOT_VER} \n"
+        f"┣[•📂 `Plugins  :`{len(modules)} Loaded\n"
+        f"┣[•🕒 `Uptime   :`{uptime} \n"
+        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
+        f" • KING BY : `{DEFAULTUSER}`"
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -359,8 +361,8 @@ async def redis(alive):
         f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
         f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **Don't forget to support our** \n"
-        f"│    **userbot, how to press below.** \n"
+        f"├◈ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗧𝗲𝗿𝘂𝘀 𝗥𝗲𝗽𝗼 𝗞𝗮𝗺𝗶** \n"
+        f"│    **𝗗𝗲𝗻𝗴𝗮𝗻 𝗟𝗶𝗻𝗸 𝗗𝗶 𝗕𝗮𝘄𝗮𝗵 𝗜𝗻𝗶.** \n"
         f"╰╼════════════════════╾╯ \n"
         f"| [𝗥𝗲𝗽𝗼](https://apisuserbot.github.io/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
         f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
