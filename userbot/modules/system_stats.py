@@ -261,22 +261,21 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|aktif)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:xalive|on)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝\n \n"
+        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝ \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
         f"┣[•👤 `KING     :`{DEFAULTUSER}\n"
         f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
         f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
         f"┣[•🐍 `Python   :`v {python_version()} \n"
-        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH}\n"
+        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
         f"┣[•🛠 `Version  :`{BOT_VER} \n"
-        f"┣[•📂 `Plugins  :`{len(modules)} Loaded\n"
-        f"┣[•🕒 `Uptime   :`{uptime} \n"
+        f"┣[•📂 `Plugins  :`{len(modules)} Plugin \n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
         f"┣[ •𝗦𝗨𝗣𝗣𝗢𝗥𝗧• [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
         f"┣[ •𝗞𝗜𝗡𝗚• [PEMILIK](https://t.me/PacarFerdilla) \n"
