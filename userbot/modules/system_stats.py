@@ -276,7 +276,7 @@ async def amireallyalive(alive):
         f"╟◈ 💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
-        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n
+        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
         f"◈ 𝗣𝗘𝗠𝗜𝗟𝗜𝗞 : [Apis](https://t.me/PacarFerdilla) \n"
         f"◈ 𝗥𝗘𝗣𝗢   : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         f"◈ 𝗧𝗘𝗔𝗠   : [Grup Support](https://t.me/KingUserbotSupport) \n"
