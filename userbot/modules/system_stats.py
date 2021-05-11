@@ -264,16 +264,19 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"══════════════════════\n"
-        f"     ** ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ** \n\n"
-        f"👑 **King**     \n   ↳ `{DEFAULTUSER}` \n"
-        f"👤 **Username** \n   ↳ `@{user.username}` \n"
-        f"⚙️ **Telethon** \n   ↳ `Versi {version.__version__}` \n"
-        f"🐍 **Python**   \n   ↳ `Versi {python_version()}` \n"
-        f"👾 **Versi Bot**\n   ↳ `{BOT_VER}` \n"
-        f"📂 **Modul**    \n   ↳ `{len(modules)}` \n\n"
-        f"♚ **Repo King:** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n🛠️ **Grup Support: **[Tekan](t.me/KingUserbotSupport)\n👨‍💻 **Mastah:** [Apis](t.me/PacarFerdilla)\n"
-        f"══════════════════════")
+        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝\n \n"
+        f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
+        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
+        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
+        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
+        f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
+        f"┣[•🐍 `Python   :`v {python_version()} \n"
+        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
+        f"┣[•🛠 `Version  :`{BOT_VER} 🔥\n"
+        f"┣[•🗃 `Plugins  :`{len(modules)} Loaded\n"
+        f"┣[•🕒 `Waktu   :`{uptime} \n"
+        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
+        f" • KING : `{DEFAULTUSER}`"
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -332,15 +335,15 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__X...Userbot....X__")
-    await alive.edit("__...Main..Program...__")
-    await alive.edit("__Sistem Akan Menyala...__")
-    await alive.edit("__....⚡Userbot⚡....__")
-    await alive.edit("__Connecting...Alive.....__")
-    await alive.edit("__.....Program.....__")
-    await alive.edit("__......⚡Alive⚡........__")
-    await alive.edit("__Connecting to server..__")
-    await alive.edit("__Connecting to server...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
+    await alive.edit("__𝐗...𝐒𝐈𝐒𝐓𝐄𝐌...𝐗__")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡              👑")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡             👑")
@@ -383,7 +386,7 @@ async def redis(alive):
         f"│    ⇱  𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠 𝐃𝐢 𝐀𝐥𝐢𝐯𝐞 ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 👑  `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 👤 `Username :`@{user.username} \n"
+        f"╟◈ 👤  `Username :`@{user.username} \n"
         f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
         f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
         f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
@@ -394,7 +397,7 @@ async def redis(alive):
         f"│    **userbot, cara menekan di bawah ini.** \n"
         f"╰╼════════════════════╾╯ \n"
         f"| [𝗥𝗲𝗽𝗼](https://github.com/apisuserbot/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
-        f"[𝗠𝗮𝘀𝘁𝗮𝗵](t.me/PacarFerdilla) | ")
+        f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
