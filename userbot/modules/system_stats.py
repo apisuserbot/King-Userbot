@@ -280,7 +280,7 @@ async def amireallyalive(alive):
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
         f"┣[ •𝗦𝗨𝗣𝗣𝗢𝗥𝗧• [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
         f"┣[ •𝗞𝗜𝗡𝗚• [PEMILIK](https://t.me/PacarFerdilla) \n"
-        f"┣[ •𝗥𝗘𝗣𝗢• [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"  
+        f"┣[ •𝗥𝗘𝗣𝗢• [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
         f"╰━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
