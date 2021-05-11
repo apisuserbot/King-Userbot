@@ -277,10 +277,10 @@ async def amireallyalive(alive):
         f"┣[◈ 🛠 `Version  :`{BOT_VER} \n"
         f"┣[◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"┣[◈ 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
-        f"┣[◈ 𝗞𝗜𝗡𝗚 [PEMILIK](https://t.me/PacarFerdilla) \n"
-        f"┣[◈ 𝗥𝗘𝗣𝗢 [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
-        f"┣[◈ 𝗕𝗢𝗧 𝗕𝗬 {DEFAULTUSER} \n"
+        f"┣◈ 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
+        f"┣◈ 𝗞𝗜𝗡𝗚 [PEMILIK](https://t.me/PacarFerdilla) \n"
+        f"┣◈ 𝗥𝗘𝗣𝗢 [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
+        f"┣◈ 𝗕𝗢𝗧 𝗕𝗬 {DEFAULTUSER} \n"
         f"╰━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
