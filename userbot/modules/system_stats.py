@@ -266,20 +266,21 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝ \n"
+        f"𝗫⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵𝗫 \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[•👤 `KING     :`{DEFAULTUSER}\n"
-        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
+        f"┣[◈ 👤 KING     : {DEFAULTUSER}\n"
+        f"┣[◈ 👁‍🗨 Username : @{user.username}\n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-        f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
-        f"┣[•🐍 `Python   :`v {python_version()} \n"
-        f"┣[•💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣[•🛠 `Version  :`{BOT_VER} \n"
-        f"┣[•📂 `Plugins  :`{len(modules)} Plugin \n"
+        f"┣[◈ ⚙️ `Telethon :`v {version.__version__} \n"
+        f"┣[◈ 🐍 `Python   :`v {python_version()} \n"
+        f"┣[◈ 💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
+        f"┣[◈ 🛠 `Version  :`{BOT_VER} \n"
+        f"┣[◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-        f"┣[ •𝗦𝗨𝗣𝗣𝗢𝗥𝗧• [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
-        f"┣[ •𝗞𝗜𝗡𝗚• [PEMILIK](https://t.me/PacarFerdilla) \n"
-        f"┣[ •𝗥𝗘𝗣𝗢• [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
+        f"┣[◈ 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
+        f"┣[◈ 𝗞𝗜𝗡𝗚 [PEMILIK](https://t.me/PacarFerdilla) \n"
+        f"┣[◈ 𝗥𝗘𝗣𝗢 [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"
+        f"┣[◈ 𝗕𝗢𝗧 𝗕𝗬 {DEFAULTUSER} \n"
         f"╰━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -405,12 +406,12 @@ async def amireallyaliveuser(username):
 async def amireallyalivereset(ureset):
     global DEFAULTUSER  # global statement
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Successfully reset user for alive!" "`")
+    await ureset.edit("`" "Sukses Mereset Pengguna Alive!" "`")
 
 
 CMD_HELP.update(
     {
-        "system": "**Plugin : **`system`.\
+        "sistem": "**✘ Plugin : **`sistem`.\
         \n\n  •  **Perintah :** `.sysd`\
         \n  •  **Function : **Menampilkan informasi sistem menggunakan neofetch\
         \n\n\n  •  **Perintah :** `.botver`\
