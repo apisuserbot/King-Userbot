@@ -223,7 +223,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:King|Kingon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:king|kingon)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -261,14 +261,14 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:xalive|aktif)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵►KING USERBOT◄⩵۝\n \n"
+        f"۝⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵۝\n \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
+        f"┣[•👤 `KING     :`{DEFAULTUSER}\n"
         f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
         f"┣[•⚙️ `Telethon :`v {version.__version__} \n"
@@ -277,8 +277,11 @@ async def amireallyalive(alive):
         f"┣[•🛠 `Version  :`{BOT_VER} \n"
         f"┣[•📂 `Plugins  :`{len(modules)} Loaded\n"
         f"┣[•🕒 `Uptime   :`{uptime} \n"
-        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
-        f" • KING BY : `{DEFAULTUSER}`")
+        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
+        f"┣[ •𝗦𝗨𝗣𝗣𝗢𝗥𝗧• [TEAM KAMI](https://t.me/KingUserbotSupport) \n"
+        f"┣[ •𝗞𝗜𝗡𝗚• [PEMILIK](https://t.me/PacarFerdilla) \n"
+        f"┣[ •𝗥𝗘𝗣𝗢• [KING-USERBOT](https://github.com/apisuserbot/King-Userbot) \n"  
+        f"╰━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -303,15 +306,15 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__Connecting to server.__")
-    await alive.edit("__Connecting to server..__")
-    await alive.edit("__Connecting to server...__")
-    await alive.edit("__Connecting to server.__")
-    await alive.edit("__Connecting to server..__")
-    await alive.edit("__Connecting to server...__")
-    await alive.edit("__Connecting to server.__")
-    await alive.edit("__Connecting to server..__")
-    await alive.edit("__Connecting to server...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
+    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
+    await alive.edit("__𝐗...𝐒𝐈𝐒𝐓𝐄𝐌...𝐗__")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡              🐈")
     await alive.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡             🐈")
@@ -351,7 +354,7 @@ async def redis(alive):
         f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛💨 ** \n"
         f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
         f"╭╼════════════════════╾╮ \n"
-        f"│    ⇱  𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗗𝗶 𝗔𝗹𝗶𝘃𝗲 ⇲ \n"
+        f"│    ⇱  𝗦𝗜𝗦𝗧𝗘𝗠 𝗔𝗟𝗜𝗩𝗘 ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 😼  `King     :`{DEFAULTUSER} \n"
         f"╟◈ 🔎  `Username :`@{user.username} \n"
@@ -361,8 +364,8 @@ async def redis(alive):
         f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
         f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗧𝗲𝗿𝘂𝘀 𝗥𝗲𝗽𝗼 𝗞𝗮𝗺𝗶** \n"
-        f"│    **𝗗𝗲𝗻𝗴𝗮𝗻 𝗟𝗶𝗻𝗸 𝗗𝗶 𝗕𝗮𝘄𝗮𝗵 𝗜𝗻𝗶.** \n"
+        f"├◈ **Support Terus Repo Kami** \n"
+        f"│    **Dengan Link Di Bawah Ini.** \n"
         f"╰╼════════════════════╾╯ \n"
         f"| [𝗥𝗲𝗽𝗼](https://apisuserbot.github.io/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
         f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
@@ -406,29 +409,23 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
-CMD_HELP.update({
-    "system":
-    "⚡𝘾𝙈𝘿⚡: `.sysd`"
-    "\n↳ : Shows system information using neofetch."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.db`"
-    "\n↳ : Shows database related info."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.spc`"
-    "\n↳ : Show system specification."
-})
-CMD_HELP.update({
-    "alive":
-    "⚡𝘾𝙈𝘿⚡: `.alive` or `.on`"
-    "\n↳ : To see whether your bot is working or not."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.aliveu` <text>"
-    "\n↳ : Changes the 'user' in alive to the text you want."
-    "\n\n⚡𝘾𝙈𝘿⚡: `.restalive`"
-    "\n↳ : Resets the user to default."
-})
 CMD_HELP.update(
     {
-        "botversion":
-        "⚡𝘾𝙈𝘿⚡: `.botver`"
-        "\n↳ : Shows the userbot version."
-        "\n\n⚡𝘾𝙈𝘿⚡: `.pip` <module(s)>"
-        "\n↳ : Does a search of pip modules(s)."
-    })
+        "system": "**Plugin : **`system`.\
+        \n\n  •  **Perintah :** `.sysd`\
+        \n  •  **Function : **Menampilkan informasi sistem menggunakan neofetch\
+        \n\n\n  •  **Perintah :** `.botver`\
+        \n  •  **Function : **Menampilkan versi userbot\
+        \n\n  •  **Perintah :** `.pip` <module(s)>\
+        \n  •  **Function : **Melakukan pencarian modul pip\
+        \n\n  •  **Perintah :** `.alive` atau `.on`\
+        \n  •  **Function : **Ketik .alive untuk melihat apakah bot Anda berfungsi atau tidak.\
+        \n\n  •  **Peeintah :** `.resetalive`\
+        \n  •  **Function : **Untuk Membanned Akun yang sedang online\
+        \n\n  •  **Perintah :** `.db`\
+        \n  •  **Function : **Menampilkan info terkait database.\
+        \n\n  •  **Perintah :** `.spc`\
+        \n  •  **Function : **Show system specification\
+    "
+    }
+)
