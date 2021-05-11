@@ -268,19 +268,19 @@ async def amireallyalive(alive):
     output = (
         f"𝗫⩵►⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡◄⩵𝗫 \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[ 🤴 KING     : {DEFAULTUSER}\n"
-        f"┣[ 🔎 Username : @{user.username}\n"
-        f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"┣[◈ ⚙️ `Telethon :`v {version.__version__} \n"
-        f"┣[◈ 🐍 `Python   :`v {python_version()} \n"
-        f"┣[◈ 💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣[◈ 🛠 `Version  :`{BOT_VER} \n"
-        f"┣[◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
-        f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"◈ [𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗧𝗘𝗔𝗠](https://t.me/KingUserbotSupport) \n"
-        f"◈ [𝗣𝗘𝗠𝗜𝗟𝗜𝗞](https://t.me/PacarFerdilla) \n"
-        f"◈ [𝗥𝗘𝗣𝗢](https://github.com/apisuserbot/King-Userbot) \n"
-        f"◈ 𝗕𝗢𝗧 𝗕𝗬 {DEFAULTUSER} \n"
+        f"╟ 🤴 KING     : {DEFAULTUSER}\n"
+        f"╟ 🔎 Username : @{user.username}\n"
+        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+        f"╟◈ ⚙️ `Telethon :`v {version.__version__} \n"
+        f"╟◈ 🐍 `Python   :`v {python_version()} \n"
+        f"╟◈ 💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
+        f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
+        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n
+        f"◈ 𝗣𝗘𝗠𝗜𝗟𝗜𝗞 : [Apis](https://t.me/PacarFerdilla) \n"
+        f"◈ 𝗥𝗘𝗣𝗢   : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+        f"◈ 𝗧𝗘𝗔𝗠   : [Grup Support](https://t.me/KingUserbotSupport) \n"
+        f"◈ 𝗕𝗢𝗧 𝗕𝗬 : {DEFAULTUSER} \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -343,7 +343,6 @@ async def redis(alive):
     await alive.edit("⚡𝗞𝗶𝗻👑-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡𝗞👑𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡👑𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
-    await alive.edit("👑𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("👑𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
     await alive.edit("⚡")
     await asyncio.sleep(3)
