@@ -346,7 +346,7 @@ async def redis(alive):
     await asyncio.sleep(3)
     await alive.edit("😼")
     await asyncio.sleep(3)
-    output=(
+    output = (
         f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
         f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛💨 ** \n"
         f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
