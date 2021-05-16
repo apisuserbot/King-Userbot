@@ -181,17 +181,17 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "**✘ 𝙆𝙐𝙊𝙏𝘼 𝙆𝙄𝙉𝙂**:\n\n╭╼═══════════════════╾╮\n"
-                f"✿͜͡ঔৣ͜͡  `Penggunaan Kuota` **{app.name}**:\n"
-                f"  ➟ **{AppHours} Jam - "
-                f"{AppMinutes} Menit  -  {AppPercentage}%**"
-                "\n  ⇱ 𝗫─━━═━═━═━═━━─𝗫 ⇲\n"
-                "✿͜͡ঔৣ͜͡  `Sisa Kuota Bulan Ini`:\n"
-                f"  ➟ **{hours} Jam - {minutes} Menit  "
-                f"-  {percentage}%**\n"
-                "╰╼═══════════════════╾╯"
-                f"◈ 𝗞𝗶𝗻𝗴  : {ALIVE_NAME} \n"
-                f"◈ 𝗥𝗲𝗽𝗼 : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+                f"◈ 𝗞𝗨𝗢𝗧𝗔 : {ALIVE_NAME}\n╔══════━━━━━━━══════╗ \n"
+                f" ➠ **Penggunaan Kuota {app.name} :**\n"
+                f"•**Hasil** :  `{AppHours}` **Jam** - `{AppMinutes}` **Menit**  "
+                f"•**Persen** : `{AppPercentage}`**%**\n"
+                f"◖═══════════════════◗ \n"
+                f" ➠ **Sisa Kuota Bulan Ini :**\n"
+                f"•**Sisa** :  `{hours}` **Jam** - `{minutes}` **Menit**  "
+                f"•**Persen** :  `{percentage}`**%**\n"
+                f"╚══════━━━━━━━══════╝ \n"
+                f"◈ **KING**  : {ALIVE_NAME} \n"
+                f"◈ **REPO** : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
             )
             await asyncio.sleep(20)
             await event.delete()
