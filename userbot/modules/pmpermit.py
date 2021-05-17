@@ -27,13 +27,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"╔══════ 👑 ══════╗\n**ROOM CHAT KING**\n╚══════ 〠 ══════╝  \n"
-    f"⎆ _Halo kawan , saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan block!_ \n"
+    f"╔══════ 👑 ══════╗\n **ROOM CHAT KING** \n╚══════ 〠 ══════╝  \n"
+    f"⎆ __Halo kawan , saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"⎆**DILARANG SPAM 1/3** \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"◈ **KING** : {DEFAULTUSER}\n"
-    f"◈ **SUPPORT ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
+    f"◈ **SUPPORT** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
 # =================================================================
 
 
@@ -378,7 +378,7 @@ async def add_pmsg(cust_msg):
             )
         else:
             await cust_msg.edit(
-                "*Anda Belum Menyetel Pesan PM*\n"
+                "**Anda Belum Menyetel Pesan PM**\n"
                 f"Masih Menggunakan Pesan PM Default: \n\n`{DEF_UNAPPROVED_MSG}`"
             )
 
@@ -405,7 +405,7 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        "pms": "**✘ Plugin : **`pms`\
+        "pm": "**✘ Plugin : **`pm`\
         \n\n  •  **Perintah :** `.setuju` atau `.ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Perintah :** `.tolak` atau `.nopm`\
