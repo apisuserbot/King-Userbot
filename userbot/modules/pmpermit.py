@@ -27,9 +27,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"Hallo Kawan , Saya King **{DEFAULTUSER} Yang Menjaga Room Chat Ini**\n\n"
-    f"__SAYA ADALAH BOT YANG MENJAGA ROOM CHAT INI MOHON JANGAN MELAKUKAN SPAM SAMPAI 8 CHAT, KARNA SAYA OTOMATIS AKAN MEMBLOKIR ANDA, TUNGGU SAMPAI KING__ **{DEFAULTUSER}** __MENERIMA PESAN ANDA__\n\n"
-    "✘ `PESAN OTOMATIS BY KING-USERBOT` ✘\n")
+    f"╔══════ 👑 ══════╗\n**ROOM CHAT KING**\n╚══════ 〠 ══════╝  \n"
+    f"⎆ _Halo kawan , saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan block!_ \n"
+     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
+    f"⎆**DILARANG SPAM 1/3** \n"
+     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
+    f"◈ **KING** : {DEFAULTUSER}\n"
+    f"◈ **SUPPORT ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
 # =================================================================
 
 
@@ -85,7 +89,7 @@ async def permitpm(event):
             else:
                 COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
-            if COUNT_PM[event.chat_id] > 5:
+            if COUNT_PM[event.chat_id] > 3:
                 await event.respond(
                     "`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
                     "`Ke Room Chat King`"
@@ -100,7 +104,7 @@ async def permitpm(event):
                             BOTLOG_CHATID,
                             "king, Terjadi Masalah Saat Menghitung Private Message, Mohon Restart Bot!",
                         )
-                    return LOGS.info("CountPM wen't rarted boi")
+                    return LOGS.info("CountPM tidak dibunyikan king")
 
                 await event.client(BlockRequest(event.chat_id))
                 await event.client(ReportSpamRequest(peer=event.chat_id))
