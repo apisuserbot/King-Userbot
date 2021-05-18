@@ -13,10 +13,10 @@ async def usit(e):
     await e.edit(
         f"      ╔════════════╗\n     ⚡️𝘽𝘼𝙉𝙏𝙐𝘼𝙉⚡️     \n╚════════════╝ \n"
         f"**Hai King {DEFAULTUSER} Kalau Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "═⎆ Pemilik : [King Apis](t.me/PacarFerdilla)")
-        "═⎆ Repo    : [Repo](https://github.com/apisuserbot/King-Userbot)")
-        "═⎆ Instragam : [Instagram King Apis](Instagram.com/apis_goodboy)"
-        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport")
+        "═⎆ Pemilik : [King Apis](t.me/PacarFerdilla) \n"
+        "═⎆ Repo    : [Repo](https://github.com/apisuserbot/King-Userbot) \n"
+        "═⎆ Instragam : [Instagram King Apis](Instagram.com/apis_goodboy) \n"
+        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport) \n"
 
 
 @ register(outgoing=True, pattern="^.vars$")
