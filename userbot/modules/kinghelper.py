@@ -22,14 +22,14 @@ async def usit(e):
 @register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
-        f"      ╔════════════╗\n     ⚡️𝘿𝘼𝙁𝙏𝘼𝙍 𝙑𝘼𝙍𝙎⚡️     \n╚════════════╝ \n"
+        f"      ╔════════════╗\n    ⚡️𝘿𝘼𝙁𝙏𝘼𝙍 𝙑𝘼𝙍𝙎⚡️     \n╚════════════╝ \n"
         f"**Disini Daftar Vars Dari King {DEFAULTUSER}:**\n"
         "═⎆ Daftar Vars : [DAFTAR VARS](https://raw.githubusercontent.com/apisuserbot/King-Userbot/King-Userbot/varshelper.txt)")
 
 
 CMD_HELP.update(
     {
-        "kinghelp": "**✘ Plugin : **`kinghelp`\
+        "helper": "**✘ Plugin : **`helper`\
         \n\n  •  **Perintah :** `.khelp`\
         \n  •  **Function : **Bantuan Untuk ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️.\
         \n\n  •  **Perintah :** `.vars`\
