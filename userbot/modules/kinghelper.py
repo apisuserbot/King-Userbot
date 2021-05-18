@@ -19,7 +19,7 @@ async def usit(e):
         "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport)")
 
 
-@register(outgoing=True, pattern="^.vars$")
+@ register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
         f"      ╔════════════╗\n     ⚡️𝘿𝘼𝙁𝙏𝘼𝙍 𝙑𝘼𝙍𝙎⚡️     \n╚════════════╝ \n"
