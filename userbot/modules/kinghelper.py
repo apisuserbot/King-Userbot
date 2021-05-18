@@ -16,10 +16,10 @@ async def usit(e):
         "═⎆ Pemilik : [King Apis](t.me/PacarFerdilla) \n"
         "═⎆ Repo    : [Repo](https://github.com/apisuserbot/King-Userbot) \n"
         "═⎆ Instragam : [Instagram King Apis](Instagram.com/apis_goodboy) \n"
-        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport) \n"
+        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport)")
 
 
-@ register(outgoing=True, pattern="^.vars$")
+@register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
         f"      ╔════════════╗\n     ⚡️𝘿𝘼𝙁𝙏𝘼𝙍 𝙑𝘼𝙍𝙎⚡️     \n╚════════════╝ \n"
