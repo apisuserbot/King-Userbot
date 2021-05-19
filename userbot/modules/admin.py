@@ -36,7 +36,7 @@ from userbot.events import register
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`Gambar Terlalu Kecil`"
 PP_ERROR = "`Gagal Memproses Gambar`"
-NO_ADMIN = "`King Bukan Admin 🙃`"
+NO_ADMIN = "`King Bukan Admin Disini:)`"
 NO_PERM = "`King Tidak Mempunyai Izin!`"
 NO_SQL = "`Berjalan Pada Mode Non-SQL`"
 
@@ -134,7 +134,7 @@ async def promote(promt):
         pin_messages=True,
     )
 
-    await promt.edit("`Promosikan Pengguna Sebagai Admin... Mohon Menunggu`")
+    await promt.edit("`Mempromosikan Pengguna Sebagai Admin... Mohon Menunggu King`")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Admin"  # Just in case.
@@ -198,7 +198,7 @@ async def demote(dmod):
     # Assume we don't have permission to demote
     except BadRequestError:
         return await dmod.edit(NO_PERM)
-    await dmod.edit("`Admin Berhasil Dilepas!`")
+    await dmod.edit("`Admin Sukses Dilepas!`")
     await sleep(5)
     await dmod.delete()
 
@@ -286,7 +286,7 @@ async def nothanos(unbon):
 
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await unbon.edit("```Unban Berhasil Dilakukan!```")
+        await unbon.edit("```Unban Sukses Dilakukan!```")
         await sleep(3)
         await unbon.delete()
 
@@ -339,7 +339,7 @@ async def spider(spdr):
 
             # Announce that the function is done
             if reason:
-                await spdr.edit(f"**Telah Dibisukan!**\n**Alasan:** `{reason}`")
+                await spdr.edit(f"**Telah Dibisukan!**\n◈ **Alasan:** `{reason}`")
             else:
                 await spdr.edit("`Telah Dibisukan!`")
 
@@ -385,7 +385,7 @@ async def unmoot(unmot):
 
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-            await unmot.edit("```Berhasil Melakukan Unmute! Pengguna Sudah Tidak Lagi Dibisukan```")
+            await unmot.edit("```Sukses Melakukan Unmute! Pengguna Sudah Tidak Lagi Dibisukan```")
             await sleep(3)
             await unmot.delete()
         except UserIdInvalidError:
@@ -460,7 +460,7 @@ async def ungmoot(un_gmute):
         await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
     else:
         # Inform about success
-        await un_gmute.edit("```Berhasil! Pengguna Sudah Tidak Lagi Dibisukan```")
+        await un_gmute.edit("**Ungmute Global!\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {un_gmute.chat.title}(`{un_gmute.chat_id}`)")
         await sleep(3)
         await un_gmute.delete()
 
@@ -468,6 +468,7 @@ async def ungmoot(un_gmute):
             await un_gmute.client.send_message(
                 BOTLOG_CHATID,
                 "#UNGMUTE\n"
+                f"PERINTAH: `{ALIVE_NAME}`\n"
                 f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {un_gmute.chat.title}(`{un_gmute.chat_id}`)",
             )
@@ -495,21 +496,23 @@ async def gspider(gspdr):
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`Berhasil Membisukan Pengguna!`")
+    await gspdr.edit("`Melakukan Global Mute Pengguna...`")
     if gmute(user.id) is False:
         await gspdr.edit("`Kesalahan! Pengguna Sudah Dibisukan.`")
     else:
         if reason:
-            await gspdr.edit(f"**Dibisukan Secara Global!**\n**Alasan:** `{reason}`")
+            await gspdr.edit(f"**Global Mute!**\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {gspdr.chat.title}(`{gspdr.chat_id}`)\n✘ **Aksi :** `Global Mute!`\n◈ **Alasan:** `{reason}`")
         else:
-            await gspdr.edit("`Berhasil Membisukan Pengguna Secara Global!`")
+            await gspdr.edit(f"**Global Mute!**\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {gspdr.chat.title}(`{gspdr.chat_id}`)\n✘ **Aksi :** `Global Mute!`")
 
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID,
                 "#GLOBALMUTE\n"
+                f"PERINTAH: `{ALIVE_NAME}`\n"
                 f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
-                f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
+                f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)\n"
+                f"ALASAN: `{reason}`",
             )
 
 
@@ -540,9 +543,9 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        return await show.edit("`King Bukan Admin Disini! 🙃`")
+        return await show.edit("`King Bukan Admin Disini!`")
 
-    await show.edit("`Menghapus Akun Terhapus...\nMohon Menunggu Lord Sedang Dalam Proses`")
+    await show.edit("`Menghapus Akun Terhapus...\nMohon Menunggu King Sedang Dalam Proses`")
     del_u = 0
     del_a = 0
 
@@ -553,7 +556,7 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                return await show.edit("`Lord Tidak Memiliki Izin Banned Dalam Grup Ini`")
+                return await show.edit("`King Tidak Memiliki Izin Banned Dalam Grup Ini`")
             except UserAdminInvalidError:
                 del_u -= 1
                 del_a += 1
@@ -585,14 +588,14 @@ async def rm_deletedacc(show):
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
-    mentions = f"<b>✥ Daftar Admin Grup {title}:</b> \n"
+    mentions = f"<b>⎆ Daftar Admin Grup {title}:</b> \n"
     try:
         async for user in show.client.iter_participants(
             show.chat_id, filter=ChannelParticipantsAdmins
         ):
             if not user.deleted:
                 link = f'<a href="tg://user?id={user.id}">{user.first_name}</a>'
-                mentions += f"\n➤ {link}"
+                mentions += f"\n═⎆ {link}"
             else:
                 mentions += f"\nAkun Terhapus <code>{user.id}</code>"
     except ChatAdminRequiredError as err:
@@ -628,7 +631,7 @@ async def pin(msg):
     except BadRequestError:
         return await msg.edit(NO_PERM)
 
-    await msg.edit("`Berhasil Melakukan Pin!`")
+    await msg.edit("`Sukses Melakukan Pin!`")
     await sleep(2)
     await msg.delete()
 
@@ -905,32 +908,45 @@ async def get_bots(show):
 
 CMD_HELP.update(
     {
-        "admin": ">`.promote <username/balas ke pesan> <nama title (optional)>`"
-        "\nPenjelasan: Mempromosikan member sebagai admin."
-        "\n\n>`.demote <username/balas ke pesan>`"
-        "\nPenjelasan: Menurunkan admin sebagai member."
-        "\n\n>`.ban <username/balas ke pesan> <alasan (optional)>`"
-        "\nPenjelasan: Banned pengguna dari grup."
-        "\n\n>`.unban <username/reply>`"
-        "\nPenjelasan: Membatalkan perintah banned."
-        "\n\n>`.mute <username/balas ke pesan> <alasan (optional)>`"
-        "\nPenjelasan: Membisukan Seseorang Di Grup, Bisa Ke Admin Juga."
-        "\n\n>`.unmute <username/balas ke pesan>`"
-        "\nPenjelasan: Membuka bisu orang yang dibisukan."
-        "\n\n>`.gmute <username/balas ke pesan> <alasan (optional)>`"
-        "\nPenjelasan: Membisukan ke semua grup yang kamu punya sebagai admin."
-        "\n\n>`.ungmute <username/balas ke pesan>`"
-        "\nPenjelasan: Membatalkan perintah Global Mute."
-        "\n\n>`.zombies`"
-        "\nPenjelasan: Untuk mencari akun terhapus dalam grup. "
-        "Gunakan `.zombies clean` untuk menghapus Akun Terhapus dari grup."
-        "\n\n>`.all`"
-        "\nPenjelasan: Tag member dalam grup."
-        "\n\n>`.admins`"
-        "\nPenjelasan: Melihat daftar admin di grup."
-        "\n\n>`.bots`"
-        "\nPenjelasan: Melihat daftar bot dalam grup."
-        "\n\n>`.users` Atau >`.users <nama member>`"
-        "\nPenjelasan: Mendapatkan daftar pengguna daam grup."
-        "\n\n>`.setgpic <balas ke gambar>`"
-        "\nPenjelasan: Mengganti foto profil grup."})
+        "admin": "**Plugin : **`admin`\
+        \n\n  •  **Perintah :** `.promote <username/reply> <nama title (optional)>`\
+        \n  •  **Function : **Mempromosikan member sebagai admin.\
+        \n\n  •  **Perintah :** `.demote <username/balas ke pesan>`\
+        \n  •  **Function : **Menurunkan admin sebagai member.\
+        \n\n  •  **Perintah :** `.ban <username/balas ke pesan> <alasan (optional)>`\
+        \n  •  **Function : **Membanned Pengguna dari grup.\
+        \n\n  •  **Perintah :** `.unban <username/reply>`\
+        \n  •  **Function : **Unbanned pengguna jadi bisa join grup lagi.\
+        \n\n  •  **Perintah :** `.mute <username/reply> <alasan (optional)>`\
+        \n  •  **Function : **Membisukan Seseorang Di Grup dengan menghapus pesannya, Bisa Ke Admin Juga.\
+        \n\n  •  **Perintah :** `.unmute <username/reply>`\
+        \n  •  **Function : **Membuka bisu orang yang dibisukan.\
+        \n\n  •  **Perintah :** `.gmute <username/reply> <alasan (optional)>`\
+        \n  •  **Function : **Membisukan Pengguna ke semua grup yang kamu punya sebagai admin.\
+        \n\n  •  **Perintah :** `.ungmute <username/reply>`\
+        \n  •  **Function : ** Membuka global mute orang yang dibisukan.\
+        \n\n  •  **Perintah :** `.setgpic <balas ke gambar>`\
+        \n  •  **Function : **Mengganti foto profil grup.\
+        \n\n  •  **Perintah :** `.all`\
+        \n  •  **Function : **Tag semua member dalam grup.\
+        \n\n  •  **Perintah :** `.admins`\
+        \n  •  **Function : **Melihat daftar admin di grup.\
+        \n\n  •  **Perintah :** `.bots`\
+        \n  •  **Function : **Melihat daftar bot dalam grup.\
+        \n\n  •  **Perintah :** `.users` Atau `.users <nama member>`\
+        \n  •  **Function : **Mendapatkan daftar pengguna daam grup.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "zombies": "**Plugin : **`zombies`\
+        \n\n  •  **Perintah :** `.zombies`\
+        \n  •  **Function : **Untuk mencari akun terhapus dalam grup\
+        \n\n  •  **Perintah :** `.zombies clean`\
+        \n  •  **Function : **untuk menghapus Akun Terhapus dari grup.\
+    "
+    }
+)
