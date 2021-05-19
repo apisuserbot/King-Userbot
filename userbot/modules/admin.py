@@ -460,7 +460,7 @@ async def ungmoot(un_gmute):
         await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
     else:
         # Inform about success
-        await un_gmute.edit("**Ungmute Global!\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {un_gmute.chat.title}(`{un_gmute.chat_id}`)")
+        await un_gmute.edit("     ╔════════════╗\n  ⚡𝙐𝙉𝙂𝙈𝙐𝙏𝙀 𝙈𝙐𝙏𝙀⚡️   \n╚════════════╝\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Aksi :** `Membuka Global Mute!`")
         await sleep(3)
         await un_gmute.delete()
 
@@ -468,7 +468,6 @@ async def ungmoot(un_gmute):
             await un_gmute.client.send_message(
                 BOTLOG_CHATID,
                 "#UNGMUTE\n"
-                f"PERINTAH: `{ALIVE_NAME}`\n"
                 f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {un_gmute.chat.title}(`{un_gmute.chat_id}`)",
             )
@@ -501,18 +500,16 @@ async def gspider(gspdr):
         await gspdr.edit("`Kesalahan! Pengguna Sudah Dibisukan.`")
     else:
         if reason:
-            await gspdr.edit(f"**Global Mute!**\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {gspdr.chat.title}(`{gspdr.chat_id}`)\n✘ **Aksi :** `Global Mute!`\n◈ **Alasan:** `{reason}`")
+            await gspdr.edit(f"     ╔════════════╗\n  ⚡️𝙂𝙇𝙊𝘽𝘼𝙇 𝙈𝙐𝙏𝙀⚡️  \n╚════════════╝\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Aksi :** `Global Mute!`\n◈ **Alasan:** `{reason}`")
         else:
-            await gspdr.edit(f"**Global Mute!**\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Pengguna :** [{user.first_name}](tg://user?id={user.id})\n✘ **Grup :** {gspdr.chat.title}(`{gspdr.chat_id}`)\n✘ **Aksi :** `Global Mute!`")
+            await gspdr.edit("     ╔════════════╗\n  ⚡️𝙂𝙇𝙊𝘽𝘼𝙇 𝙈𝙐𝙏𝙀⚡️  \n╚════════════╝")
 
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID,
                 "#GLOBALMUTE\n"
-                f"PERINTAH: `{ALIVE_NAME}`\n"
                 f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
-                f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)\n"
-                f"ALASAN: `{reason}`",
+                f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
             )
 
 
