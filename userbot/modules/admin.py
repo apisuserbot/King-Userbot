@@ -460,7 +460,7 @@ async def ungmoot(un_gmute):
         await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
     else:
         # Inform about success
-        await un_gmute.edit("     ╔════════════╗\n  ⚡𝙐𝙉𝙂𝙈𝙐𝙏𝙀 𝙈𝙐𝙏𝙀⚡️   \n╚════════════╝\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Aksi :** `Membuka Global Mute!`")
+        await un_gmute.edit("     ╔════════════╗\n  ⚡𝙐𝙉𝙂𝙈𝙐𝙏𝙀⚡️   \n╚════════════╝\n✘ **Perintah :** `{DEFAULTUSER}`\n✘ **Aksi :** `Membuka Global Mute!`")
         await sleep(3)
         await un_gmute.delete()
 
@@ -500,7 +500,7 @@ async def gspider(gspdr):
         await gspdr.edit("`Kesalahan! Pengguna Sudah Dibisukan.`")
     else:
         if reason:
-            await gspdr.edit(f"     ╔════════════╗\n  ⚡️𝙂𝙇𝙊𝘽𝘼𝙇 𝙈𝙐𝙏𝙀⚡️  \n╚════════════╝\n✘ **Perintah :** `{ALIVE_NAME}`\n✘ **Aksi :** `Global Mute!`\n◈ **Alasan:** `{reason}`")
+            await gspdr.edit(f"     ╔════════════╗\n  ⚡️𝙂𝙇𝙊𝘽𝘼𝙇 𝙈𝙐𝙏𝙀⚡️  \n╚════════════╝\n✘ **Perintah :** `{DEFAULTUSER}`\n✘ **Aksi :** `Global Mute!`\n◈ **Alasan:** `{reason}`")
         else:
             await gspdr.edit("     ╔════════════╗\n  ⚡️𝙂𝙇𝙊𝘽𝘼𝙇 𝙈𝙐𝙏𝙀⚡️  \n╚════════════╝")
 
