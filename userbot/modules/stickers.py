@@ -26,8 +26,10 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "𝙎𝙖𝙖𝙩𝙣𝙮𝙖 𝙢𝙚𝙣𝙘𝙤𝙡𝙤𝙣𝙜 𝙨𝙩𝙞𝙘𝙠𝙚𝙧 𝙤𝙧𝙖𝙣𝙜...:𝙫",
-    "𝙉𝙮𝙪𝙧𝙞 𝙢𝙪𝙡𝙪 𝙖𝙣𝙟𝙣𝙜 𝙖𝙬𝙖𝙨 𝙠𝙚𝙣𝙖 𝙖𝙯𝙖𝙗 🐨",
+    "**King Sedang Mencolong Sticker 😳**",
+    "**Saatnya Beraksi , Mencolong Sticker**",
+    "**Waduh Sticker Lu Bagus Bro , Gw Curi Ya**",
+    "**Wahaha Saatnya Maling Sticker**",
 ]
 
 
@@ -175,9 +177,9 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         return await args.edit(
-                            "`Sticker ditambahkan ke pack yang berbeda !"
-                            "\nIni pack yang baru saja Lord buat!"
-                            f"\nTekan [𝙏𝙪𝙠𝙖𝙣𝙜 𝙉𝙮𝙤𝙡𝙤𝙣𝙜](t.me/addstickers/{packname}) Untuk Melihat Sticker Colongan Lu",
+                            "`Sticker sukses tercolong di tambahkan ke Anda King !"
+                            "\nIni Sticker yang baru saja King Colong!"
+                            f"\nTekan **[Tukang Colong](t.me/addstickers/{packname})** Untuk Melihat Sticker Colongan Anda",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -244,7 +246,8 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**Sukses Nyolong Sticker, Tekan** **[𝙏𝙪𝙠𝙖𝙣𝙜 𝙉𝙮𝙤𝙡𝙤𝙣𝙜](t.me/addstickers/{packname})** **Untuk Melihat Sticker Colongan Anda**",
+            "**Sukses Mencolong Sticker!\n**❗️TEKAN❗️**"
+            f"\n**[Tukang Colong](t.me/addstickers/{packname})**\nUntuk Melihat Sticker Colongan Anda",
             parse_mode="md",
         )
 
@@ -307,7 +310,8 @@ async def get_pack_info(event):
             pack_emojis.append(document_sticker.emoticon)
 
     OUTPUT = (
-        f"**Sticker Title:** `{get_stickerset.set.title}\n`"
+        f"     ╔════════════╗\n    ⚡️**COLONGAN**⚡️    \n╚════════════╝ \n"
+        f"**Nama Stciker:** `{get_stickerset.set.title}\n`"
         f"**Nama Pendek Sticker:** `{get_stickerset.set.short_name}`\n"
         f"**Official:** `{get_stickerset.set.official}`\n"
         f"**Arsip:** `{get_stickerset.set.archived}`\n"
@@ -351,10 +355,15 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": "**Modules:** __Stickers__\n\n⚡️𝘾𝙈𝘿⚡️: `.kang` | ⚡️𝘾𝙈𝘿⚡️`.tikel (emoji) [nomer]`"
-        "\n**Penjelasan:** Balas ke sticker atau gambar `.tikel`  untuk menjadikannya sebagai sticker Colongan Anda "
-        "\nBisa memilih emoji sesuai pilihan Anda, dan bisa memilih nomer pack."
-        "\n\n⚡️𝘾𝙈𝘿⚡️: `.stkrinfo`"
-        "\n**Penjelasan:** Balas ke sticker, untuk mendapatkan informasi pack sticker."
-        "\n\n⚡️𝘾𝙈𝘿⚡️: `.getsticker`"
-        "\n**Penjelasan:** Balas ke sticker untuk mendapatkan File 'PNG' Sticker."})
+        "stickers": "**✘ Plugin : **`stickers`\
+        \n\n  •  **Perintah :** `.kang` atau `.tikel` [emoji]?\
+        \n  •  **Function : **Balas .kang Ke Sticker Atau Gambar Untuk Menambahkan Ke Sticker Colongan Mu\
+        \n\n  •  **Perintah :** `.kang` [emoji] atau `.tikel` `[emoji]`\
+        \n  •  **Function : **Balas .kang emoji Ke Sticker Atau Gambar Untuk mencolong dan costum emoji sticker Ke Colongan Mu\
+        \n\n  •  **Perintah :** `.stkrinfo`\
+        \n  •  **Function : **Dapatkan Informasi Sticker Colongan.\
+        \n\n  •  **Perintah :** `.getsticker` <nama pack sticker>\
+        \n  •  **Function : **Untuk Mencari Sticker Colongan.\
+    "
+    }
+)
