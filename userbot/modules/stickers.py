@@ -6,6 +6,8 @@
 
 # KING - USERBOT
 
+# APIS GANTENG
+
 import io
 import math
 import random
@@ -26,10 +28,10 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "**King Sedang Mencolong Sticker 😳**",
-    "**Saatnya Beraksi , Mencolong Sticker**",
-    "**Waduh Sticker Lu Bagus Bro , Gw Curi Ya**",
-    "**Wahaha Saatnya Maling Sticker**",
+    "`King Sedang Mencolong Sticker...😳`",
+    "`Saatnya Beraksi , Mencolong Sticker...`",
+    "`Waduh Sticker Lu Bagus Bro , Gw Curi Ya`",
+    "`Wahaha Saatnya Maling Sticker...`",
 ]
 
 
@@ -179,7 +181,7 @@ async def kang(args):
                         return await args.edit(
                             "`Sticker sukses tercolong di tambahkan ke Anda King !"
                             "\nIni Sticker yang baru saja King Colong!"
-                            f"\nTekan **[Tukang Colong](t.me/addstickers/{packname})** Untuk Melihat Sticker Colongan Anda",
+                            f"\nTekan [Tukang Colong](t.me/addstickers/{packname}) Untuk Melihat Sticker Colongan Anda",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -246,8 +248,8 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            "**Sukses Mencolong Sticker!\n**❗️TEKAN❗️**"
-            f"\n**[Tukang Colong](t.me/addstickers/{packname})**\nUntuk Melihat Sticker Colongan Anda",
+            "**Sukses Mencolong Sticker!**\n     **⇓ TEKAN ⇓**"
+            f"\n    ✘ [Tukang Colong](t.me/addstickers/{packname}) ✘\n**Untuk Melihat Sticker Colongan Anda**",
             parse_mode="md",
         )
 
