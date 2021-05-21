@@ -223,7 +223,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:king|kingon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:kingalive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -250,8 +250,8 @@ async def amireallyalive(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`The provided logo is invalid."
-                "\nMake sure the link is directed to the logo picture`"
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -261,7 +261,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:xalive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:xalive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -277,10 +277,10 @@ async def amireallyalive(alive):
         f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"◈ 𝗣𝗘𝗠𝗜𝗟𝗜𝗞 : [Apis](https://t.me/PacarFerdilla) \n"
-        f"◈ 𝗥𝗘𝗣𝗢   : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"◈ 𝗧𝗘𝗔𝗠   : [Grup Support](https://t.me/KingUserbotSupport) \n"
-        f"◈ 𝗕𝗢𝗧 𝗕𝗬 : {DEFAULTUSER} \n"
+        f"◈ **PEMILIK :** [Apis](https://t.me/PacarFerdilla) \n"
+        f"◈ **REPO   :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+        f"◈ **TEAM   :** [Grup Support](https://t.me/KingUserbotSupport) \n"
+        f"◈ **KING BY :** {DEFAULTUSER} \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -291,8 +291,8 @@ async def amireallyalive(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`The provided logo is invalid."
-                "\nMake sure the link is directed to the logo picture`"
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -349,25 +349,25 @@ async def redis(alive):
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"**ㅤㅤ  ╭─━━═━═━═━═━━─╮** \n"
-        f"**       ⊏┊⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ⊨〛𝗫 ** \n"
-        f"**ㅤㅤ  ╰─━━═━═━═━═━━─╯** \n"
+        f"**   ╔══════━━━━━━━══════╗ ** \n"
+        f"** X-|   ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   |-X  ** \n"
+        f"**   ╚══════━━━━━━━══════╝ ** \n"
         f"╭╼════════════════════╾╮ \n"
-        f"│    ⇱  𝗦𝗜𝗦𝗧𝗘𝗠 𝗔𝗟𝗜𝗩𝗘 𝗕𝗢𝗧 ⇲ \n"
+        f"│  ⇱ **SISTEM ALIVE BOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 🤴  `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 🔎  `Username :`@{user.username} \n"
-        f"╟◈ ⚙️  `Telethon :`v. {version.__version__} \n"
-        f"╟◈ 🐍  `Python   :`v. {python_version()} \n"
-        f"╟◈ 🛠️  `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"╟◈ 👾  `Bot Ver  :`v. {BOT_VER} \n"
-        f"╟◈ 📂  `Plugins  :`{len(modules)} Plugins \n"
+        f"╟◈ 🤴 `King     :`{DEFAULTUSER} \n"
+        f"╟◈ 🔎 `Username :`@{user.username} \n"
+        f"╟◈ ⚙️ `Telethon :`v. {version.__version__} \n"
+        f"╟◈ 🐍 `Python   :`v. {python_version()} \n"
+        f"╟◈ 🛠️ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 👾 `Bot Ver  :`v. {BOT_VER} \n"
+        f"╟◈ 📂 `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
         f"├◈ **Support Terus Repo Kami** \n"
         f"│    **Dengan Link Di Bawah Ini.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"| [𝗥𝗲𝗽𝗼](https://apisuserbot.github.io/King-Userbot) | [𝗞𝗶𝗻𝗴-𝗧𝗲𝗮𝗺](t.me/KingUserbotSupport) | "
-        f"[𝗞𝗶𝗻𝗴](t.me/PacarFerdilla) | ")
+        f"| [Repo](https://apisuserbot.github.io/King-Userbot) | [King-Team](t.me/KingUserbotSupport) | "
+        f"[Pemilik](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -397,7 +397,7 @@ async def amireallyaliveuser(username):
         newuser = message[8:]
         global DEFAULTUSER  # global statement
         DEFAULTUSER = username
-        output = "Successfully changed user to " + newuser + "!"
+        output = "Sukses mengubah pengguna menjadi " + newuser + "!"
     await username.edit("`" f"{output}" "`")
 
 
