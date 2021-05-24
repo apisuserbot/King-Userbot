@@ -26,13 +26,13 @@ async def _(event):
     result = result.decode()
 
     result = json.loads(result)
-    result["type"]
-    result["country_code"]
-    result["region_name"]
-    result["city"]
-    result["zip"]
-    result["latitude"]
-    result["longitude"]
+    king1 = result["type"]
+    king2 = resut["country_code"]
+    king3 = result["region_name"]
+    king4 = result["city"]
+    king5 = result["zip"]
+    king6 = result["latitude"]
+    king7 = result["longitude"]
     await event.edit(
         f"<b><u>INFORMASI BERHASIL DIKUMPULKAN</b></u>\n\n<b>Ip type :-</b><code>{king1}</code>\n<b>Country code:- </b> <code>{king2}</code>\n<b>State name :-</b><code>{king3}</code>\n<b>City name :- </b><code>{king4}</code>\n<b>zip :-</b><code>{king5}</code>\n<b>Latitude:- </b> <code>{king6}</code>\n<b>Longitude :- </b><code>{king7}</code>\n",
         parse_mode="HTML",
