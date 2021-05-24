@@ -3,7 +3,7 @@ from userbot import CMD_HELP
 
 # Ported By @VckyouuBitch From GeezProject
 # Devoted To GeezProject
-# Recode by Apis 
+# Recode by Apis
 
 
 @register(outgoing=True, pattern=r"^\.(?:dm)\s?(.*)?")
