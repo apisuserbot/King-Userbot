@@ -181,8 +181,8 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                f"◈ **KUOTA** : {ALIVE_NAME}\n╔══════━━━━━━━══════╗ \n"
-                f" ➠ **Penggunaan Kuota {app.name} :**\n"
+                f"★ **INFO KUOTA KING** ★\n╔══════━━━━━━━══════╗ \n"
+                f" ➠ **Penggunaan Kuota :** `{app.name}` \n"
                 f"• **Hasil** :  `{AppHours}` **Jam** - `{AppMinutes}` **Menit**\n"
                 f"• **Persen** : `{AppPercentage}`**%**\n"
                 f"◖═══════════════════◗ \n"
