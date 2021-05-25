@@ -53,13 +53,13 @@ async def typewriter(typew):
 CMD_HELP.update(
     {
         "salam": "**✘ Plugin : **`salam`\
-        \n\n  •  **Perintah :** `.P` `.p`\
+        \n\n  •  **Perintah :** `.P` | `.p`\
         \n  •  **Function :** Untuk salam ke semua orang\
         \n\n  •  **Perintah :** `.Ass`\
         \n  •  **Function :** Salam kenal dan salam\
         \n\n  •  **Perintah :** `.Waa`\
         \n  •  **Function :** Menjawab salam panjang\
-        \n\n  •  **Perintah :** `.L` `.l`\
+        \n\n  •  **Perintah :** `.L` | `.l`\
         \n  •  **Function :** Untuk menjawab salam\
         \n\n\n  •  **Pesan untuk salam dan menjawab salam ke semua orang , dimanapun king berada.**\n**Pesan dari Apis , enjoy userbot:D**\
     "
