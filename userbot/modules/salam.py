@@ -14,13 +14,13 @@ async def typewriter(typew):
     await typew.edit("`Assalamu'alaikum...`")
 
 
-@register(outgoing=True, pattern='^.p(?: |$)(.*)')
+@register(outgoing=True, pattern=r"^\.p(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Assalamu'alaikum...`")
 
 
-@register(outgoing=True, pattern=r"^\.Ass(?: |$)(.*)')
+@register(outgoing=True, pattern='^.Ass(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -29,7 +29,7 @@ async def typewriter(typew):
     await typew.edit("`Assalamualaikum Waruhmatulahi Wabarukatuh`...")
 
 
-@register(outgoing=True, pattern=r"^\.Waa(?: |$)(.*)')
+@register(outgoing=True, pattern='^.Waa(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
