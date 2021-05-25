@@ -23,19 +23,22 @@ async def remoteaccess(event):
     mssg = await event.get_reply_message()
     if event.reply_to_msg_id:
         await event.client.send_message(chat_id, mssg)
-        await event.edit("`Sukses Mengirim Pesan Anda.`")
+        await event.edit("`Sukses Mengirim Pesan Anda!`")
     for i in m[1:]:
         msg += i + " "
     if msg == "":
         return
     try:
         await event.client.send_message(chat_id, msg)
-        await event.edit("`Sukses Mengirim Pesan Anda.`")
+        await event.edit("`Sukses Mengirim Pesan Anda!`")
     except BaseException:
-        await event.edit("**Terjadi Error. Gagal Mengirim Pesan.**")
+        await event.edit("**Terjadi Error , Gagal Mengirim Pesan King !.**")
 
 CMD_HELP.update(
     {
-        "message": "`.dm`\
-    \nMengirim Pesan Dengan Jarak Jauh Dengan .dm <username> <pesan>."
-    })
+        "dm": "**✘ Plugin : **`dm`\
+        \n\n  •  **Perintah :** `.dm`\
+        \n  •  **Function :** Mengirim Pesan Dengan Jarak Jauh Dengan `.dm` <username> <pesan> \
+    "
+    }
+)
