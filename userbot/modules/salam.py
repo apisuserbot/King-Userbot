@@ -23,19 +23,17 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.Ass(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit(f"**Halo bro saya {DEFAULTUSER} salam kenal 😁**")
     sleep(2)
-    await typew.edit("`Assalamualaikum Waruhmatulahi Wabarukatuh`...")
+    await typew.edit("`Assalamualaikum Waruhmatulahi Wabarukatuh...`")
 
 
 @register(outgoing=True, pattern="^.Waa(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit("**iyaa bro**")
     sleep(2)
-    await typew.edit("`Walaikumsalam Waruhmatulahi Wabarukatuh`...")
+    await typew.edit("`Walaikumsalam Waruhmatulahi Wabarukatuh...`")
 
 
 @register(outgoing=True, pattern="^.L(?: |$)(.*)")
@@ -61,7 +59,7 @@ CMD_HELP.update(
         \n  •  **Function :** Menjawab salam panjang\
         \n\n  •  **Perintah :** `.L` | `.l`\
         \n  •  **Function :** Untuk menjawab salam\
-        \n\n\n  •  **Pesan untuk salam dan menjawab salam ke semua orang , dimanapun king berada.**\n**Pesan dari Apis , enjoy userbot:D**\
+        \n\n\n  •  **Pesan untuk salam dan menjawab salam ke semua orang , dimanapun king berada.**\n➠ **Pesan dari developer king Apis , enjoy userbot:D**\
     "
     }
 )
