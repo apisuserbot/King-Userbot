@@ -1,4 +1,5 @@
 from platform import uname
+
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 
@@ -22,7 +23,8 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.Ass(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Halo bro saya {DEFAULTUSER} salam kenal 😁**")
+    sleep(1)
+    await typew.edit("**Halo bro saya {ALIVE_NAME} salam kenal 😁**")
     sleep(3)
     await typew.edit("`Assalamualaikum Waruhmatulahi Wabarukatuh`...")
 
@@ -30,8 +32,9 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.Waa(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**iyaa bro**")
     sleep(1)
+    await typew.edit("**iyaa bro**")
+    sleep(2)
     await typew.edit("`Walaikumsalam Waruhmatulahi Wabarukatuh`...")
 
 
