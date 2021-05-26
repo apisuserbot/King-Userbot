@@ -62,8 +62,8 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Telah Sibuk!**\
-            \n➳ **Alasan :** `{string}`\n╰╼═════════╾")
+        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Telah Sibuk!**\
+        \n╰► **Alasan :** `{string}`\n╰╼═════════╾")
     else:
         await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Telah Sibuk!**\n╰╼═════════╾")
     if user.last_name:
@@ -166,8 +166,8 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)} Detik`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Sedang SIBUK!**\n**Sejak :** `{afk_since}` **Yang Lalu**\
-                        \n➳ **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                    await mention.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Sedang SIBUK!**\n**Sejak :** {afk_since} Yang Lalu\
+                        \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -175,8 +175,8 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Masih SIBUK**\n**Sejak :** `{afk_since}` **Yang Lalu**\
-                            \n➳ **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                        await mention.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Masih SIBUK**\n**Sejak :** {afk_since} Yang Lalu\
+                            \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -243,8 +243,8 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)} Detik`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Masih SIBUK Mohon Tunggu!**\n**Sejak :** `{afk_since}` **Yang Lalu**\
-                        \n➳ **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                    await sender.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Masih SIBUK Mohon Tunggu!**\n**Sejak :** {afk_since} Yang Lalu\
+                        \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -252,8 +252,8 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**• {ALIVE_NAME} Di Bilang Masih SIBUK**\n**Sejak :** `{afk_since}` **Yang Lalu**\
-                            \n➳ **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                        await sender.reply(f"**🔥 PESAN**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Di Bilang Masih SIBUK**\n**Sejak :** {afk_since} Yang Lalu\
+                            \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -267,7 +267,8 @@ CMD_HELP.update(
     {
         "sibuk": "**✘ Plugin : **`sibuk`\
         \n\n  •  **Perintah :** `.sibuk`\
-        \n  •  **Function : **Memberi tahu kalau King sedang SIBUK, dan menguubah nama belakang menjadi ⚡️𝗦𝗜𝗕𝗨𝗞⚡️ \
+        \n  •  **Function : **Memberi tahu kalau King sedang SIBUK, dan menguubah nama belakang menjadi ⚡️𝗦𝗜𝗕𝗨𝗞⚡️\
+        \n\n  •  **Notes :** __Bila ada orang spam berlebihan ke Anda , tinggal ketik__ `.block`\
     "
     }
 )
