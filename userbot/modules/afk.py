@@ -253,8 +253,9 @@ CMD_HELP.update(
         "afk": "**✘ Plugin : **`afk`\
         \n\n  •  **Perintah :** `.afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
         \n  •  **Function : **Memberi tahu kalau King sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
-        \n\n  •  **Perintah :** `.off`\
-        \n  •  **Function : **Memberi tahu kalau King sedang OFF, dan menguubah nama belakang menjadi ⚡️𝗢𝗙𝗙⚡️\
+        \n\n  •  **Perintah :** `.sibuk`\
+        \n  •  **Function : **Memberi tahu kalau King sedang SIBUK , dan menguubah nama belakang menjadi ⚡️𝗦𝗜𝗕𝗨𝗞⚡️\
+        \n\n  •  **Notes :** __Bila ada orang spam berlebihan ke Anda , tinggal ketik__ `.block`\
     "
     }
 )
