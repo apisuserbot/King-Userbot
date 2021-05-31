@@ -122,7 +122,9 @@ async def kickme(leave):
 @register(outgoing=True, pattern="^.keluar$")
 async def kickme(leave):
     """ Basically it's .keluar command """
-    await leave.edit("`Keluar ajalah anjg , GC AMPAS ...`")
+    await leave.edit("`Keluar ajalah anjg , GC AMPAS GAK GUNA INI ...`")
+    sleep(2)
+    await leave.edit("`⚡️ King Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -238,7 +240,7 @@ async def get_chatinfo(event):
             await event.edit("`Grup/Channel Tidak Valid`")
             return None
         except ChannelPrivateError:
-            await event.edit("`Ini Adalah Grup/Channel Privasi Atau Lord Dibanned Dari Sana`")
+            await event.edit("`Ini Adalah Grup/Channel Privasi Atau King Dibanned Dari Sana`")
             return None
         except ChannelPublicGroupNaError:
             await event.edit("`Channel Atau Supergrup Tidak Ditemukan`")
@@ -440,7 +442,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "chat": "**Plugin : **`chat`\
+        "chat": "**✘ Plugin : **`chat`\
         \n\n  •  **Perintah :** `.getid`\
         \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
         \n\n  •  **Perintah :** `.getbot`\
@@ -470,13 +472,13 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "kickme": "**Plugin : **`kickme`\
+        "kickme": "**✘ Plugin : **`kickme`\
         \n\n  •  **Perintah :** `.kickme`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Meninggalkan Grup...`\
         \n\n  •  **Perintah :** `.leave`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Keluar Grup...`\
         \n\n  •  **Perintah :** `.keluar`\
-        \n  •  **Function : **Keluar grup dengan menampilkan pesan `Keluar ajalah anjg , GC AMPAS ...`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
     "
     }
 )
