@@ -65,7 +65,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "Bot Dalam {} Channel: \n".format(input_str)
+        mentions = "👑 Bot Dalam {} Channel Ini: \n".format(input_str)
         try:
             chat = await bot.get_entity(input_str)
         except Exception as e:
@@ -74,7 +74,7 @@ async def _(event):
     try:
         async for x in bot.iter_participants(chat, filter=ChannelParticipantsBots):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n ⎆ [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id)
             else:
                 mentions += "\n [{}](tg://user?id={}) `{}`".format(
@@ -98,7 +98,7 @@ async def log(log_text):
         else:
             await log_text.edit("`Apa Yang Harus Saya Log?`")
             return
-        await log_text.edit("`Logged Berhasil!`")
+        await log_text.edit("`Logged Sukses!`")
     else:
         await log_text.edit("`Fitur Ini Mengharuskan Loging Diaktifkan!`")
     await sleep(2)
@@ -108,7 +108,21 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit("`King Telah Meninggalkan Grup`")
+    await leave.edit("`⚡️ King Telah Meninggalkan Grup...`")
+    await leave.client.kick_participant(leave.chat_id, 'me')
+
+
+@register(outgoing=True, pattern="^.leave$")
+async def kickme(leave):
+    """ Basically it's .leave command """
+    await leave.edit("`⚡️ King Telah Keluar Grup...`")
+    await leave.client.kick_participant(leave.chat_id, 'me')
+
+
+@register(outgoing=True, pattern="^.keluar$")
+async def kickme(leave):
+    """ Basically it's .keluar command """
+    await leave.edit("`Keluar ajalah anjg , GC AMPAS ...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -121,7 +135,7 @@ async def unmute_chat(unm_e):
         await unm_e.edit('`Running on Non-SQL Mode!`')
         return
     unkread(str(unm_e.chat_id))
-    await unm_e.edit("```Berhasil Dibuka, Obrolan Tidak Lagi Dibisukan```")
+    await unm_e.edit("```Sukses Dibuka, Obrolan Tidak Lagi Dibisukan```")
     await sleep(2)
     await unm_e.delete()
 
@@ -177,12 +191,12 @@ async def sedNinjaToggle(event):
     global regexNinja
     if event.pattern_match.group(1) == "on":
         regexNinja = True
-        await event.edit("`Berhasil Mengaktifkan Mode Regex Ninja.`")
+        await event.edit("`Sukses Mengaktifkan Mode Regex Ninja.`")
         await sleep(1)
         await event.delete()
     elif event.pattern_match.group(1) == "off":
         regexNinja = False
-        await event.edit("`Berhasil Menonaktifkan Mode Regez Ninja.`")
+        await event.edit("`Sukses Menonaktifkan Mode Regez Ninja.`")
         await sleep(1)
         await event.delete()
 
@@ -321,7 +335,7 @@ async def fetch_info(chat, event):
         for bot in bots_list:
             bots += 1
 
-    caption = "<b>INFORMASI OBROLAN:</b>\n"
+    caption = "<b>🤖 INFORMASI OBROLAN:</b>\n"
     caption += f"ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
         caption += f"{chat_type} Nama: {chat_title}\n"
@@ -411,7 +425,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`Berhasil Menambahkan Pengguna Ke Obrolan`")
+            await event.edit("`Sukses Menambahkan Pengguna Ke Obrolan`")
         else:
             # https://lonamiwebs.github.io/Telethon/methods/channels/invite_to_channel.html
             for user_id in to_add_users.split(" "):
@@ -422,32 +436,47 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`Berhasil Menambahkan Pengguna Ke Obrolan`")
+            await event.edit("`Sukses Menambahkan Pengguna Ke Obrolan`")
 
-CMD_HELP.update({
-    "chat":
-    "`.getid`\
-\nPenjelasan: Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
-\n\n`.getbot`\
-\nPenjelasan: Dapatkan Bot dalam obrolan apa pun.\
-\n\n`.logit`\
-\nPenjelasan: Meneruskan pesan yang telah Anda balas di grup log bot Anda.\
-\n\n`.kickme`\
-\nPenjelasan: Keluar dari grup.\
-\n\n`.link` <username/userid>: <opsional teks> (atau) balas pesan seseorang dengan .link <teks opsional>\
-\nPenjelasan: Buat tautan permanen ke profil pengguna dengan teks ubahsuaian opsional.\
-\n\n`.regexninja` enable/disabled\
-\nPenjelasan: Mengaktifkan/menonaktifkan modul ninja regex secara global.\
-\nModul Regex Ninja membantu menghapus pesan pemicu bot regex.\
-\n\n`.chatinfo [opsional: <reply/tag/chat/id/invite link>]`\
-\nPenjelasan: Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang..\
-\n\n`.invite` \
-\nPenjelasan: Menambahkan pengguna ke obrolan, bukan ke pesan pribadi. "
-})
+CMD_HELP.update(
+    {
+        "chat": "**Plugin : **`chat`\
+        \n\n  •  **Perintah :** `.getid`\
+        \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
+        \n\n  •  **Perintah :** `.getbot`\
+        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
+        \n\n  •  **Perintah :** `.logit`\
+        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda.\
+        \n\n  •  **Perintah :** `.mutechat`\
+        \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin).\
+        \n\n  •  **Perintah :** `.unmutechat`\
+        \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin).\
+        \n\n  •  **Perintah :** `.getbot`\
+        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
+        \n\n  •  **Perintah :** `.logit`\
+        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda.\
+        \n\n  •  **Perintah :** `.link` <username/userid>: <opsional teks> (atau) Reply pesan .link <teks opsional>\
+        \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional.\
+        \n\n  •  **Perintah :** `.regexninja` enable/disabled\
+        \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. Modul Regex Ninja membantu menghapus pesan pemicu bot regex.\
+        \n\n  •  **Perintah :** `.chatinfo [opsional: <reply/tag/chat id/invite link>]`\
+        \n  •  **Function : **Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang.\
+        \n\n  •  **Perintah :** `.invite`\
+        \n  •  **Function : **Menambahkan pengguna ke obrolan, bukan ke pesan pribadi.\
+    "
+    }
+)
 
-# King Userbot
-CMD_HELP.update({"mutechat": "**Modules:** __Mute Chat__\
-\n\n**Perintah:** `.mutechat`\
-\n**Penjelasan:** Memungkinkan Anda Membisukan Obrolan Apapun.\
-\n\n**Perintah:** `.unmutechat`\
-\n**Penjelasan:** Membuka obrolan yang dibisukan."})
+
+CMD_HELP.update(
+    {
+        "kickme": "**Plugin : **`kickme`\
+        \n\n  •  **Perintah :** `.kickme`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Meninggalkan Grup...`\
+        \n\n  •  **Perintah :** `.leave`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Keluar Grup...`\
+        \n\n  •  **Perintah :** `.keluar`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan `Keluar ajalah anjg , GC AMPAS ...`\
+    "
+    }
+)
