@@ -349,7 +349,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} ⚡".format("⚡", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} |".format("|", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -365,10 +365,10 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "☜", data="{}_prev({})".format(prefix, modulo_page)
+                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "☞", data="{}_next({})".format(prefix, modulo_page)
+                    "⌦", data="{}_next({})".format(prefix, modulo_page)
                 )
             )
         ]
@@ -390,9 +390,9 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/apisuserbot/King-Userbot.git)")
+                await event.reply("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Buat Userbot Mu Sendiri Dengan cara [Tekan Disini](https://github.com/apisuserbot/King-Userbot.git)")
             else:
-                await event.reply(f"`Hai King {ALIVE_NAME}\n\nApa Kabarmu? ^_^`")
+                await event.reply(f"`👋🏻 Hai King {ALIVE_NAME}\n\nApa Kabarmu? ^_^`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -403,7 +403,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**☯ Jumlah Modul Yang Tersedia:** `{}`\n               \n**☯ Daftar Modul King Userbot:** \n".format(
+                    text="{}\n\n**✘ Jumlah Plugin Yang Tersedia:** `{}`\n               \n**✘ Daftar Plugin King Userbot:** \n".format(
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
@@ -412,21 +412,21 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Lord✗Userbot ",
-                    text="Daftar Modul",
+                    "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
+                    text="✘ Daftar Plugin",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
                     "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
-                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/USERBOT_GROUP)""",
+                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "⚡𝗞𝗶𝗻𝗴⚡",
+                                "King-Userbot",
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
-                                "𝗠𝗮𝘀𝘁𝗮𝗵",
+                                "Pemilik",
                                 "t.me/PacarFerdilla")],
                     ],
                     link_preview=False,
@@ -447,7 +447,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"𝙀𝙧𝙤𝙧 404 𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -465,7 +465,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"𝙀𝙧𝙤𝙧 404 𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -496,7 +496,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"𝙀𝙧𝙤𝙧 404 𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
