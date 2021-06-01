@@ -6,9 +6,7 @@
 # Pengguna King-Userbot
 """ Userbot initialization. """
 
-from userbot import (
-    ALIVE_NAME
-)
+
 import os
 import time
 import re
@@ -346,6 +344,7 @@ AFKREASON = None
 ZALG_LIST = {}
 
 # Import Userbot - Ported by Apis
+from userbot import ALIVE_NAME
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -412,7 +411,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}"f"\n\n**◎› Plugins :** `{}`\n\n"              "**◎› King: ** {DEFAULTUSER} \n **◎› Menu Plugins: **\n ".format(
+                    text="{}"\n\n**◎› Plugins :** `{}`\n"             f"**◎› King: ** {DEFAULTUSER} \n **◎› Menu Plugins: **\n ".format(
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
