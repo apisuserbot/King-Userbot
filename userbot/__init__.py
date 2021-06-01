@@ -412,7 +412,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}"f"\n\n**◎› Plugins :** `{}`\n"              \n **◎› King: ** {DEFAULTUSER} \n **◎› Menu Plugins: **\n ".format(
+                    text="{}"f"\n\n**◎› Plugins :** `{}`\n\n"              "**◎› King: ** {DEFAULTUSER} \n **◎› Menu Plugins: **\n ".format(
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
