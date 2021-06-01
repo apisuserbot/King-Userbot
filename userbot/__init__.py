@@ -342,6 +342,16 @@ ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
 
+# Import Userbot - Ported by Apis
+from userbot import (
+    ALIVE_NAME
+)
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
+
+
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
@@ -403,7 +413,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**✘ Jumlah Plugin Yang Tersedia:** `{}`\n               \n**✘ Daftar Plugin King Userbot:** \n".format(
+                    text="{}\n\n**◎› Plugins :** `{}`\n               \n**◎› King :** {DEFAULTUSER} \n".format(
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
@@ -413,7 +423,7 @@ with bot:
             elif query.startswith("tb_btn"):
                 result = builder.article(
                     "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
-                    text="✘ Daftar Plugin",
+                    text="◎› Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
