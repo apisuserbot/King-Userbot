@@ -6,6 +6,9 @@
 # Pengguna King-Userbot
 """ Userbot initialization. """
 
+from userbot import (
+    ALIVE_NAME
+)
 import os
 import time
 import re
@@ -343,14 +346,10 @@ AFKREASON = None
 ZALG_LIST = {}
 
 # Import Userbot - Ported by Apis
-from userbot import (
-    ALIVE_NAME
-)
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
-
 
 
 def paginate_help(page_number, loaded_modules, prefix):
