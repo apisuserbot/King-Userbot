@@ -85,5 +85,6 @@ CMD_HELP.update(
         "fakeaction": "**✘ Plugin :** `fakeaction`\
         \n\n  •  **Perintah :** `.ftyping` | `.faudio` | `.fvideo` | `.fgame` <jumlah text>\
         \n  •  **Function :** Fake typing ini Berfungsi dalam group\
-}
+    "
+    }
 )
