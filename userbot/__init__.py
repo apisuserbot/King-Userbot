@@ -410,14 +410,10 @@ with bot:
             if event.query.user_id == uid and query.startswith("@UserButt"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
-                    "Harap Gunakan .help Untuk Perintah",
-                    text="{}"f"\n\n**King :** {DEFAULTUSER}\n\n"        "◎› **Plugins :** `{}`\n◎› **Menu Plugins ↯** \n".format(
-                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
-                        len(dugmeler),
-                    ),
-                    buttons=buttons,
-                    link_preview=False,
-                )
+                    "Harap Gunakan .help Untuk Perintah", text="{}"
+                    f"\n\n**King :** {DEFAULTUSER}\n\n"
+                    "◎› **Plugins :** `{}`\n◎› **Menu Plugins ↯** \n".format(
+                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**", len(dugmeler), ), buttons=buttons, link_preview=False, )
             elif query.startswith("tb_btn"):
                 result = builder.article(
                     "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
