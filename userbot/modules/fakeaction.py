@@ -7,6 +7,8 @@ import asyncio
 # Languange en to id from King-Userbot
 # edit by Apis
 # Thanks Vicky
+
+
 @register(outgoing=True, pattern="^.ftyping(?: |$)(.*)")
 async def _(event):
     t = event.pattern_match.group(1)
@@ -83,5 +85,5 @@ CMD_HELP.update(
         "fakeaction": "**✘ Plugin :** `fakeaction`\
         \n\n  •  **Perintah :** `.ftyping` | `.faudio` | `.fvideo` | `.fgame` <jumlah text>\
         \n  •  **Function :** Fake typing ini Berfungsi dalam group\
-    }
+}
 )
