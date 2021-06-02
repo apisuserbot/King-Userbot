@@ -59,7 +59,7 @@ async def sleepybot(time):
             f"You put the bot to sleep for {str_counter}.",
         )
     sleep(counter)
-    await time.edit("`⚡️𝗢𝗙𝗙⚡️.`")
+    await time.edit("`Oke , saya sudah bangun`")
 
 
 @register(outgoing=True, pattern="^.shutdown$")
@@ -76,12 +76,12 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
-    await event.edit("`Restarting King-Userbot...`")
+    await event.edit("`Memulai ulang King-Userbot...`")
     await asyncio.sleep(10)
     await event.delete()
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTARTBOT \n"
-                                        "`King-Userbot Telah Di Restart`")
+                                        "`King-Userbot Telah Di Mulai Ulang`")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -92,14 +92,14 @@ async def killdabot(event):
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
-        "Beberapa Repo Dan File:\n"
-        "\n[⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ Repo](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
-        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-        "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
-        "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
-        "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
-        "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
-        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
+        "★**Repo dan file userbot :** ★\n"
+        "\n☇ [Repo ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "\n☇ [Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
+        "\n☇ [Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
+        "\n☇ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
+        "\n☇ [Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
+        "\n☇ [Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
+        "\n☇ [Special - Note](https://telegra.ph/Special-Note-11-02)")
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")
@@ -120,15 +120,28 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "╭─━━━━━━━━━━━━━─╮\n"
-        "                  Repo\n"
-        "     [⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡](https://github.com/apisuserbot/King-Userbot)\n"
-        "╭─━━━━━━━━━━━━━─╯\n"
-        "│👨‍💻 **Mastah :** [Apis](t.me/PacarFerdilla)\n"
-        "╰━━━━━━━━━━━━━━━╯\n"
-        "  Tutorial    : [Tutorial Deploy](https://telegra.ph/Deploy-04-06)"
-        "  Deploy King : [Tekan Disini](https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/King-Userbot)"
-    )
+        " ★ Repo ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ ★\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "   ✘ i'm using userbot ✘   \n"
+       f"       {DEFAULTUSER}      \n"
+        "━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
+        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
+        "━━━━━━━━━━━━━━━━━━━━━━━\n"
+        " ★ **USERBOT TELEGRAM** ★ \n"
+        "━━━━━━━━━━━━━━━━━━━━━━━")
+
+
+@register(outgoing=True, pattern="^.string$")
+async def repo_is_here(wannasee):
+    """ For .string command, just returns the string URL. """
+    await wannasee.edit(
+        "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n"
+        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
+        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla)")
 
 
 @register(outgoing=True, pattern="^.raw$")
@@ -145,14 +158,14 @@ async def raw(event):
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
         await event.edit(
-            "`Check the userbot log for the decoded message data !!`")
+            "`Periksa log userbot untuk data pesan yang didekodekan !!`")
         await event.client.send_file(
             BOTLOG_CHATID,
             out_file,
             force_document=True,
             allow_cache=False,
             reply_to=reply_to_id,
-            caption="`Here's the decoded message data !!`")
+            caption="`Inilah data pesan yang didekodekan !!`")
 
 
 @register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
@@ -170,7 +183,7 @@ async def okgoogle(img):
         return
 
     if photo:
-        await img.edit("`Processing...`")
+        await img.edit("`Sedang Memproses...`")
         try:
             image = Image.open(photo)
         except OSError:
@@ -191,10 +204,10 @@ async def okgoogle(img):
         fetchUrl = response.headers['Location']
 
         if response != 400:
-            await img.edit("`Image successfully uploaded to Google. Maybe.`"
-                           "\n`Parsing source now. Maybe.`")
+            await img.edit("`Gambar berhasil diunggah ke Google. Mungkin.`"
+                           "\n`Sumber parsing sekarang. Mungkin.`")
         else:
-            await img.edit("`Google told me to fuck off.`")
+            await img.edit("`Google menyuruhku pergi.`")
             return
 
         os.remove(name)
@@ -204,9 +217,9 @@ async def okgoogle(img):
         imgspage = match['similar_images']
 
         if guess and imgspage:
-            await img.edit(f"[{guess}]({fetchUrl})\n\n`Looking for images...`")
+            await img.edit(f"[{guess}]({fetchUrl})\n\n`Sedang Mencari gambar...`")
         else:
-            await img.edit("`Couldn't find anything for your uglyass.`")
+            await img.edit("`Tidak dapat menemukan apa pun untuk pantat jelekmu.`")
             return
 
         if img.pattern_match.group(1):
@@ -273,29 +286,91 @@ async def scam(results, lim):
     return imglinks
 
 
-CMD_HELP.update({
-    "random":
-    ">`.random <item1> <item2> ... <itemN>`\
-    \nUsage: Get a random item from the list of items.",
-    "sleep":
-    ">`.sleep <seconds>`\
-    \nUsage: Let yours snooze for a few seconds.",
-    "shutdown":
-    ">`.shutdown`\
-    \nUsage: Shutdown bot",
-    "repo":
-    ">`.repo`\
-    \nUsage: Github Repo of this bot",
-    "readme":
-    ">`.readme`\
-    \nUsage: Provide links to setup the userbot and it's modules.",
-    "repeat":
-    ">`.repeat <no> <text>`\
-    \nUsage: Repeats the text for a number of times. Don't confuse this with spam tho.",
-    "restart":
-    ">`.restart`\
-    \nUsage: Restarts the bot !!",
-    "raw":
-    ">`.raw`\
-    \nUsage: Get detailed JSON-like formatted data about replied message."
-})
+CMD_HELP.update(
+    {
+        "send": "**✘ Plugin : **`send`\
+        \n\n  •  **Perintah :** `.send`\
+        \n  •  **Function : **Meneruskan pesan balasan ke obrolan tertentu tanpa tag Forwarded from. \
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "random": "**✘ Plugin : **`random`\
+        \n\n  •  **Perintah :** `.random`\
+        \n  •  **Function : **Dapatkan item acak dari daftar item. \
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "sleep": "**✘ Plugin : **`sleep`\
+        \n\n  •  **Perintah :** `.sleep`\
+        \n  •  **Function : **Biarkan ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ tidur selama beberapa detik \
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "repo": "**✘ Plugin : **`Repository` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        \n\n  •  **Perintah :** `.repo`\
+        \n  •  **Function : **Menampilan link Repository ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        \n\n  •  **Perintah :** `.string`\
+        \n  •  **Function : **Menampilan link String ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "readme": "**✘ Plugin : **`Panduan Menggunakan userbot`\
+        \n\n  •  **Perintah :** `.readme`\
+        \n  •  **Function : **Menyediakan tautan untuk mengatur userbot dan pluginnya\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "restart": "**✘ Plugin : **`Restart` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        \n\n  •  **Perintah :** `.restart`\
+        \n  •  **Function : **Untuk Merestart userbot.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "shutdown": "**✘ Plugin : **`shutdown`\
+        \n\n  •  **Perintah :** `.shutdown`\
+        \n  •  **Function : **Mematikan Userbot.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "raw": "**✘ Plugin : **`raw`\
+        \n\n  •  **Perintah :** `.raw`\
+        \n  •  **Function : **Dapatkan data berformat seperti JSON terperinci tentang pesan yang dibalas.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "repeat": "**✘ Plugin : **`repeat`\
+        \n\n  •  **Perintah :** `.repeat`\
+        \n  •  **Function : **Mengulangi teks untuk beberapa kali , Jangan bingung ini dengan spam.\
+    "
+    }
+)
