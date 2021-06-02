@@ -229,13 +229,13 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"┗┓ ★ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ★ ┏┛\n"
+        f"┗┓ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ┏┛\n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━━━━━━━**\n"
-        f"[• **🤴 King** \n"
-        f"[• : `{DEFAULTUSER}` \n"
-        f"[• **🔎 Username** \n"
-        f"[• : `@{user.username}` \n"
+        f"★ **🤴 King** \n"
+        f"• : `{DEFAULTUSER}` \n"
+        f"★ **🔎 Username** \n"
+        f"• : `@{user.username}` \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━\n"
         f"╟[•⚙️ `Telethon :`Ver {version.__version__} \n"
         f"╟[•🐍 `Python   :`Ver {python_version()} \n"
@@ -391,11 +391,13 @@ async def redis(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:onalive|onuserbot)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:calive|con)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("`★ USERBOT HAS BEEN ACTIVE! ★`")
+    await asyncio.sleep(3)
+    await alive.edit("⚡")
     await asyncio.sleep(3)
     output = (
         f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) Running Userbot Active! ★\n"
@@ -407,7 +409,7 @@ async def amireallyalive(alive):
         f"{ALIVE_EMOJI} `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
         f"{ALIVE_EMOJI} `Version  :`{BOT_VER} \n"
         f"{ALIVE_EMOJI} `Plugins  :`{len(modules)} Plugin \n"
-        f"[Developer King](https://t.me/PacarFerdilla) | [King-Userbot](https://github.com/apisuserbot/King-Userbot) | "
+        f"[Developer King](https://t.me/PacarFerdilla) | [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         f"[Group Support](https://t.me/KingUserbotSupport) \n"
         f"★ **USERBOT TELEGRAM** ★")
     if ALIVE_LOGO:
