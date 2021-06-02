@@ -18,7 +18,7 @@ import sys
 import time
 from datetime import datetime
 import psutil
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, KING_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, KING_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 
@@ -302,7 +302,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -386,6 +386,46 @@ async def redis(alive):
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
+
+
+@register(outgoing=True, pattern=r"^\.(?:on|onuserbot)\s?(.)?")
+async def amireallyalive(alive):
+    user = await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
+    output = (
+        f"━━━━━━━━━━━━━━━━━━━━━\n"
+        f"★  ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   ★\n"
+        f"━━━━━━━━━━━━━━━━━━━━━\n"
+        f"{ALIVE_EMOJI}  King    : {DEFAULTUSER}\n"
+        f"{ALIVE_EMOJI}  Username : @{user.username}\n"
+        f"{ALIVE_EMOJI} `Telethon :`v {version.__version__} \n"
+        f"{ALIVE_EMOJI} `Python   :`v {python_version()} \n"
+        f"{ALIVE_EMOJI} `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
+        f"{ALIVE_EMOJI} `Version  :`{BOT_VER} \n"
+        f"{ALIVE_EMOJI} `Plugins  :`{len(modules)} Plugin \n"
+        f"{ALIVE_EMOJI} **PEMILIK :** [Apis](https://t.me/PacarFerdilla) | {ALIVE_EMOJI} **REPO   :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) | {ALIVE_EMOJI} **GROUP SUPPORT :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        f"━━━━━━━━━━━━━━━━━━━━━\n"
+        f"★ **USERBOT TELEGRAM** ★\n"
+        f"━━━━━━━━━━━━━━━━━━━━━")
+    if ALIVE_LOGO:
+        try:
+            logo = ALIVE_LOGO
+            await alive.delete()
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(200)
+            await msg.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+            )
+            await asyncio.sleep(100)
+            await alive.delete()
+    else:
+        await alive.edit(output)
+        await asyncio.sleep(100)
+        await alive.delete()
+
 
 
 @register(outgoing=True, pattern="^.aliveu")
