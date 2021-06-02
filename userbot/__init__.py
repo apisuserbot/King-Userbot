@@ -154,6 +154,9 @@ KING_TEKS_KUSTOM = os.environ.get("KING_TEKS_KUSTOM", None)
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
+# Custom Emoji Alive
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
+
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
