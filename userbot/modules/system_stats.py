@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Sistem (King-Userbot)
+# Ported and bug fixes by Apis 
 """ Userbot module for getting information about the server. """
 
 
@@ -165,9 +165,9 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Versi:** \n "
+            "**★-**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Versi:** \n "
             f"heads/King-Userbot-0-x634i7u1"
-            "\n**⚜-**Revisi:**\n "
+            "\n**★-**Revisi:**\n "
             f"{revout}"
         )
     else:
