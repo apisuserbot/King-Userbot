@@ -232,19 +232,19 @@ async def amireallyalive(alive):
         f"┗┓ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ┏┛\n"
         f"\n__**{KING_TEKS_KUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━━━━━━━**\n"
-        f"★ **🤴 King** \n"
-        f"• : `{DEFAULTUSER}` \n"
-        f"★ **🔎 Username** \n"
-        f"• : `@{user.username}` \n"
+        f"★ **✭ King ✭** \n"
+        f"☇ : `{DEFAULTUSER}` \n"
+        f"★ **✭ Username ✭** \n"
+        f"☇ : `@{user.username}` \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━\n"
-        f"╟[•⚙️ `Telethon :`Ver {version.__version__} \n"
-        f"╟[•🐍 `Python   :`Ver {python_version()} \n"
-        f"╟[•👾 `Bot Ver  :`{BOT_VER} \n"
-        f"╟[•📂 `Plugins  :`{len(modules)} \n"
+        f"|✶ ⚙️ `Telethon :`Ver {version.__version__} \n"
+        f"|✶ 🐍 `Python   :`Ver {python_version()} \n"
+        f"|✶ 👾 `Bot Ver  :`{BOT_VER} \n"
+        f"|✶ 📂 `Plugins  :`{len(modules)} \n"
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
-        f"{ALIVE_EMOJI} **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"{ALIVE_EMOJI} **Group Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
-        f"{ALIVE_EMOJI} **Pemilik :** [Developer King](https://t.me/PacarFerdilla)")
+        f"⚡ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+        f"⚡ **Group Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        f"⚡ **Pemilik :** [Developer King](https://t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -305,7 +305,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -391,7 +391,7 @@ async def redis(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:calive|con)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:ualive|uon)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -400,18 +400,15 @@ async def amireallyalive(alive):
     await alive.edit("⚡")
     await asyncio.sleep(3)
     output = (
-        f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) Running Userbot Active! ★\n"
-        f"__**{KING_TEKS_KUSTOM}**__\n"
-        f"{ALIVE_EMOJI}  King    : {DEFAULTUSER}\n"
-        f"{ALIVE_EMOJI}  Username : @{user.username}\n"
-        f"{ALIVE_EMOJI} `Telethon :`v {version.__version__} \n"
-        f"{ALIVE_EMOJI} `Python   :`v {python_version()} \n"
-        f"{ALIVE_EMOJI} `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
-        f"{ALIVE_EMOJI} `Version  :`{BOT_VER} \n"
-        f"{ALIVE_EMOJI} `Plugins  :`{len(modules)} Plugin \n"
-        f"[Developer King](https://t.me/PacarFerdilla) | [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"[Group Support](https://t.me/KingUserbotSupport) \n"
-        f"★ **USERBOT TELEGRAM** ★")
+        f"★ **[King-Userbot](https://github.com/apisuserbot/King-Userbot) Running Userbot Active!** ★\n\n"
+        f"__**{KING_TEKS_KUSTOM}**__\n\n"
+        f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
+        f"{ALIVE_EMOJI} **Plugins :** `{len(modules)} Plugin` \n"
+        f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
+        f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
+        f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
+        f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
+        " [𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/KingUserbotSupport) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/TeamKingUserbot) | [𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗞𝗶𝗻𝗴](t.me/PacarFerdilla)"
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
