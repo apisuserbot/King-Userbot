@@ -162,10 +162,10 @@ async def pingme(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.speed$")
+@register(outgoing=True, pattern="^.jaringan$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Menjalankan Tes Kecepatan Tinggi...🚀`")
+    await spd.edit("`Mengecek Tes jaringan...🚀`")
     test = Speedtest()
 
     test.get_best_server()
@@ -174,19 +174,66 @@ async def speedtst(spd):
     test.results.share()
     result = test.results.dict()
 
-    await spd.edit("**Hasil Tes:\n**"
+    await spd.edit("**Hasil jaringan:\n**"
                    "🛠 **Dimulai Pada:** "
                    f"`{result['timestamp']}` \n"
                    f" **━━━━━━━━━━━━━━━━━**\n\n"
-                   "⚙️ **Download:** "
+                   "• **Download:** "
                    f"`{speed_convert(result['download'])}` \n"
-                   "⚙️ **Upload:** "
+                   "• **Upload:** "
                    f"`{speed_convert(result['upload'])}` \n"
-                   "⚙️ **Ping:** "
+                   "• **Ping:** "
                    f"`{result['ping']}` \n"
-                   "⚙️ **ISP:** "
+                   "• **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "⚙️ **BOT:** `⚡King Userbot⚡`")
+                   "• **BOT:** `⚡King Userbot⚡`")
+
+
+# Port WeebProject
+@register(outgoing=True, pattern=r"^\.speedtest$")
+async def speedtst(spd):
+    """For .speed command, use SpeedTest to check server speeds."""
+    await spd.edit("`Menjalankan Speed Test...🚀`")
+
+    test = Speedtest()
+    test.get_best_server()
+    test.download()
+    test.upload()
+    test.results.share()
+    result = test.results.dict()
+
+    msg = (
+        f"**Dimulai pada {result['timestamp']}**\n\n"
+        "**Klien**\n"
+        f"**ISP :** `{result['client']['isp']}`\n"
+        f"**Negara :** `{result['client']['country']}`\n\n"
+        "**Server**\n"
+        f"**Nama :** `{result['server']['name']}`\n"
+        f"**Negara :** `{result['server']['country']}`\n"
+        f"**Sponsor :** `{result['server']['sponsor']}`\n\n"
+        f"**Ping :** `{result['ping']}`\n"
+        f"**Upload :** `{humanbytes(result['upload'])}/s`\n"
+        f"**Download :** `{humanbytes(result['download'])}/s`"
+    )
+
+    await spd.delete()
+    await spd.client.send_file(
+        spd.chat_id,
+        result["share"],
+        caption=msg,
+        force_document=False,
+    )
+
+
+@register(outgoing=True, pattern=r"^\.dc$")
+async def neardc(event):
+    """For .dc command, get the nearest datacenter information."""
+    result = await event.client(functions.help.GetNearestDcRequest())
+    await event.edit(
+        f"Negara : `{result.country}`\n"
+        f"Pusat Data Terdekat : `{result.nearest_dc}`\n"
+        f"Pusat Data ini : `{result.this_dc}`"
+    )
 
 
 def speed_convert(size):
@@ -225,12 +272,14 @@ async def pingme(pong):
 CMD_HELP.update(
     {
         "ping": "**✘ Plugin : **`ping`\
-        \n\n  •  **Perintah :** `.ping` ; `kping` ; `.xping` ; `.sinyal`\
-        \n  •  **Function : **Untuk menunjukkan ping userbot.\
+        \n\n  •  **Perintah :** `.ping` | `kping` | `.xping` | `.sinyal` | `.uping`\
+        \n  •  **Function :** Untuk menunjukkan ping userbot.\
         \n\n  •  **Perintah :** `.pong`\
-        \n  •  **Function : **Sama seperti perintah ping\
-        \n\n  •  **Perintah :** `.speed`\
-        \n  •  **Function : **Untuk Mengetes kecepatan server userbot.\
+        \n  •  **Function :** Sama seperti perintah ping\
+        \n\n  •  **Perintah :** `.jaringan`\
+        \n  •  **Function :** Untuk Mengetes jaringan userbot.\
+        \n\n  •  **Perintah :** `.speedtest` | `.dc`\
+        \n  •  **Function :** Untuk Mengetes Server Userbot\
     "
     }
 )
