@@ -393,8 +393,12 @@ async def redis(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:ualive|uon)\s?(.)?")
 async def amireallyalive(alive):
-    await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
+    await alive.edit("`★ USERBOT HAS BEEN ACTIVE! ★`")
+    await asyncio.sleep(3)
+    await alive.edit("⚡")
+    await asyncio.sleep(3)
     output = (
         f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) **Running Userbot Active!** ★\n\n"
         f"__**{KING_TEKS_KUSTOM}**__\n\n"
@@ -403,7 +407,6 @@ async def amireallyalive(alive):
         f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
-        f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
         f"[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/KingUserbotSupport) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/TeamKingUserbot) | [𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗞𝗶𝗻𝗴](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
