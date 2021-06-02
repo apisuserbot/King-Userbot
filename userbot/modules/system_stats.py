@@ -408,12 +408,12 @@ async def amireallyalive(alive):
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
         f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
-        " [𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/KingUserbotSupport) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/TeamKingUserbot) | [𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗞𝗶𝗻𝗴](t.me/PacarFerdilla)"
+        f" [𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/KingUserbotSupport) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/TeamKingUserbot) | [𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗞𝗶𝗻𝗴](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
-            logo=ALIVE_LOGO
+            logo = ALIVE_LOGO
             await alive.delete()
-            msg=await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
@@ -429,23 +429,23 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@ register(outgoing=True, pattern="^.aliveu")
+@register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
-    message=username.text
-    output=".aliveu [new username] tidak boleh kosong"
+    message = username.text
+    output = ".aliveu [new username] tidak boleh kosong"
     if not (message == ".aliveu" and message[7:8] != " "):
-        newuser=message[8:]
+        newuser = message[8:]
         global DEFAULTUSER  # global statement
-        DEFAULTUSER=username
-        output="Sukses mengubah pengguna menjadi " + newuser + "!"
+        DEFAULTUSER = username
+        output = "Sukses mengubah pengguna menjadi " + newuser + "!"
     await username.edit("`" f"{output}" "`")
 
 
-@ register(outgoing=True, pattern=r"^\.resetalive$")
+@register(outgoing=True, pattern=r"^\.resetalive$")
 async def amireallyalivereset(ureset):
     global DEFAULTUSER  # global statement
-    DEFAULTUSER=str(ALIVE_NAME) if ALIVE_NAME else uname().node
+    DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
     await ureset.edit("`" "Sukses Mereset Pengguna Alive!" "`")
 
 
