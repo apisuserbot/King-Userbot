@@ -393,12 +393,10 @@ async def redis(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:ualive|uon)\s?(.)?")
 async def amireallyalive(alive):
-    await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("`★ USERBOT HAS BEEN ACTIVE! ★`")
-    await alive.edit("⚡")
     output = (
-        f"★ **[King-Userbot](https://github.com/apisuserbot/King-Userbot) Running Userbot Active!** ★\n\n"
+        f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) **Running Userbot Active!** ★\n\n"
         f"__**{KING_TEKS_KUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
         f"{ALIVE_EMOJI} **Plugins :** `{len(modules)} Plugin` \n"
