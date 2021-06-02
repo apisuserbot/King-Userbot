@@ -955,7 +955,7 @@ async def get_bots(show):
 
 CMD_HELP.update(
     {
-        "admin": "**Plugin : **`admin`\
+        "admin": "**✘ Plugin : **`admin`\
         \n\n  •  **Perintah :** `.promote <username/reply> <nama title (optional)>`\
         \n  •  **Function : **Mempromosikan member sebagai admin.\
         \n\n  •  **Perintah :** `.demote <username/balas ke pesan>`\
@@ -989,7 +989,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "zombies": "**Plugin : **`zombies`\
+        "zombies": "**✘ Plugin : **`zombies`\
         \n\n  •  **Perintah :** `.zombies`\
         \n  •  **Function : **Untuk mencari akun terhapus dalam grup\
         \n\n  •  **Perintah :** `.zombies clean`\
