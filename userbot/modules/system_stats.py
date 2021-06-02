@@ -17,6 +17,7 @@ from telethon import __version__, version
 import platform
 import sys
 import time
+import sleep
 from datetime import datetime
 import psutil
 from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, KING_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
@@ -393,12 +394,12 @@ async def redis(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:ualive|uon)\s?(.)?")
 async def amireallyalive(alive):
-    await bot.get_me()
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("`★ USERBOT HAS BEEN ACTIVE! ★`")
-    await asyncio.sleep(3)
+    sleep(3)
     await alive.edit("⚡")
-    await asyncio.sleep(3)
+    sleep(3)
     output = (
         f"★ **[King-Userbot](https://github.com/apisuserbot/King-Userbot) Running Userbot Active!** ★\n\n"
         f"__**{KING_TEKS_KUSTOM}**__\n\n"
