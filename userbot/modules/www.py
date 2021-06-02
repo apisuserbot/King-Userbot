@@ -6,9 +6,7 @@
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
-import asyncio
 import time
-import redis
 
 from datetime import datetime
 from telethon import functions
