@@ -393,7 +393,7 @@ async def redis(alive):
 
 @register(outgoing=True, pattern=r"^\.(?:ualive|uon)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
+    await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("`★ USERBOT HAS BEEN ACTIVE! ★`")
     await asyncio.sleep(3)
