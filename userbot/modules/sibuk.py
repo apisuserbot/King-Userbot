@@ -1,4 +1,4 @@
-# Recode by @PacarFerdilla
+# Ported by @PacarFerdilla - (King-Userbot)
 
 from datetime import datetime
 import time
@@ -26,7 +26,7 @@ from userbot.events import register
 AFKSTR = [
     f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
     f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n**Tunggu Sampai Online Kembali**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Sedang SIBUK\n**Tunggulah Sampai Online**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Sedang SIBUK**\n**Tunggulah Sampai Online**\n╰╼═════════╾",
     f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
 ]
 
