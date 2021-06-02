@@ -6,12 +6,17 @@
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
+import asyncio
+import time
+import redis
+
 from datetime import datetime
+from telethon import functions
 
 from speedtest import Speedtest
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
-import time
+from userbot.utils import humanbytes
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -43,7 +48,7 @@ async def get_readable_time(seconds: int) -> str:
 
 @register(outgoing=True, pattern="^.fping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .fping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit(".                       /¯ )")
@@ -66,7 +71,7 @@ async def pingme(pong):
 
 @register(outgoing=True, pattern="^.kping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .kping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit("⚡")
@@ -90,7 +95,7 @@ async def pingme(pong):
 
 @register(outgoing=True, pattern="^.xping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .xping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit("`.....⚡King⚡.....`")
@@ -127,7 +132,7 @@ async def pingme(pong):
 
 @register(outgoing=True, pattern="^.sinyal$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .sinyal command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit("`Mengecek Sinyal...`")
@@ -149,10 +154,11 @@ async def pingme(pong):
 
 @register(outgoing=True, pattern="^.uping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """ For .uping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("`.....☞KING Userbot☜.....`")
+    await pong.edit("__KING__")
+    await pong.edit("__PONG__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"┏━━| **KING PONG** |━━卍\n"
@@ -162,9 +168,24 @@ async def pingme(pong):
                     f"`{uptime}` \n" % (duration))
 
 
+@register(outgoing=True, pattern="^!ping$")
+async def pingme(pong):
+    """ For !ping command, ping the userbot from any chat.  """
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    await pong.edit("`Pinging...`")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await pong.edit(f"**King** {ALIVE_NAME}\n"
+                    f"**Pong!!** "
+                    f"`%sms` \n"
+                    f"**Uptime!!** "
+                    f"`{uptime}` \n" % (duration))
+
+
 @register(outgoing=True, pattern="^.jaringan$")
 async def speedtst(spd):
-    """ For .speed command, use SpeedTest to check server speeds. """
+    """ For .jaringan command, use SpeedTest to check server speeds. """
     await spd.edit("`Mengecek Tes jaringan...🚀`")
     test = Speedtest()
 
@@ -177,16 +198,17 @@ async def speedtst(spd):
     await spd.edit("**Hasil jaringan:\n**"
                    "🛠 **Dimulai Pada:** "
                    f"`{result['timestamp']}` \n"
-                   f" **━━━━━━━━━━━━━━━━━**\n\n"
-                   "• **Download:** "
+                   f" ━━━━━━━━━━━━━━━━━\n\n"
+                   "✧ **Download:** "
                    f"`{speed_convert(result['download'])}` \n"
-                   "• **Upload:** "
+                   "✧ **Upload:** "
                    f"`{speed_convert(result['upload'])}` \n"
-                   "• **Ping:** "
+                   "✧ **Ping:** "
                    f"`{result['ping']}` \n"
-                   "• **ISP:** "
+                   "✧ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "• **BOT:** `⚡King Userbot⚡`")
+                   "✧ **BOT:** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n\n"
+                   f" ━━━━━━━━━━━━━━━━━ ")
 
 
 # Port WeebProject
