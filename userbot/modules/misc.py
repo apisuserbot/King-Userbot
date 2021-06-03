@@ -39,7 +39,7 @@ async def randomise(items):
     itemo = (items.text[8:]).split()
     if len(itemo) < 2:
         await items.edit(
-            "`2 or more items are required! Check .help random for more info.`"
+            "`2 atau lebih item yang diperlukan! Periksa .help random untuk info lebih lanjut.`"
         )
         return
     index = randint(1, len(itemo) - 1)
@@ -92,7 +92,7 @@ async def killdabot(event):
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
-        "★**Repo dan file userbot :** ★\n"
+        "★ **Repo dan file userbot** ★\n"
         "\n☇ [Repo ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
         "\n☇ [Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n☇ [Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
@@ -284,6 +284,25 @@ async def scam(results, lim):
             break
 
     return imglinks
+
+
+@register(outgoing=True, pattern=r"^\.send (.*)")
+async def send(event):
+    await event.edit("`Sedang Memproses...`")
+
+    if not event.is_reply:
+        return await event.edit("`Mohon Balas ke pesan King!`")
+
+    chat = event.pattern_match.group(1)
+    try:
+        chat = await event.client.get_entity(chat)
+    except (TypeError, ValueError):
+        return await event.edit("`Link yang diberikan tidak valid!`")
+
+    message = await event.get_reply_message()
+
+    await event.client.send_message(entity=chat, message=message)
+    await event.edit(f"`Mengirim pesan ini ke` `{chat.title}``!`")
 
 
 CMD_HELP.update(
