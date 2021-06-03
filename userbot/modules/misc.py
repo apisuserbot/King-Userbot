@@ -120,28 +120,39 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        " ★ Repo ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ ★\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "   ✘ i'm using userbot ✘   \n"
-        f"       {DEFAULTUSER}      \n"
-        "━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"   ✘ **i'm** {DEFAULTUSER} **using userbot** ✘   \n"
+        "         🔥 __Thanks for userbot__ 🔥   \n"
         "✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
         "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
         "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
-        "━━━━━━━━━━━━━━━━━━━━━━━\n"
-        " ★ **USERBOT TELEGRAM** ★ \n"
-        "━━━━━━━━━━━━━━━━━━━━━━━")
+        "         ✘ **USERBOT TELEGRAM** ✘ ")
 
 
 @register(outgoing=True, pattern="^.string$")
 async def repo_is_here(wannasee):
     """ For .string command, just returns the string URL. """
     await wannasee.edit(
+        "         ✘ **String Session Userbot** ✘   \n"
+        "          🔥 __Thanks for userbot__ 🔥  \n"
         "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n"
         "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
         "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla)")
+        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
+        "         ✘ **USERBOT TELEGRAM** ✘ ")
+
+
+@register(outgoing=True, pattern="^.tutorial$")
+async def repo_is_here(wannasee):
+    """ For .tutorial command, just returns the tutorial URL. """
+    await wannasee.edit(
+        "         ✘ **Tutorial Using Userbot** ✘   \n"
+        "          🔥 __Thanks for userbot__ 🔥  \n"
+        "✣ **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n"
+        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
+        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
+        "          ✘ **USERBOT TELEGRAM** ✘ ")
 
 
 @register(outgoing=True, pattern="^.raw$")
@@ -340,6 +351,8 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilan link Repository ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.string`\
         \n  •  **Function : **Menampilan link String ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        \n\n  • **Perintah :"* `.tutorial`\
+        \n  •  **Function : **Menampilkan link Tutorial ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
     "
     }
 )
