@@ -192,7 +192,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "xiaomi": "**Plugin : **`xiaomi`\
+        "xiaomi": "**✘ Plugin : **`xiaomi`\
         \n\n  •  **Perintah :** `.firmware` (codename)\
         \n  •  **Function : **Dapatkan yang terbaru Firmware.\
         \n\n  •  **Perintah :** `.pb` (codename)\
