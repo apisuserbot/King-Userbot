@@ -47,12 +47,12 @@ Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mung
 
 ### Group Support 🇮🇩
 `
-Klik tombol di samping untuk join ke group support kami`
+Klik tombol di bawah untuk join ke group support kami`
    <a href="https://t.me/KingUserbotSupport"><img src="https://img.shields.io/badge/Grup%20Support%3F-King-green?&style=flat-square?&logo=telegram" width=165px></a></p>
 
 ### String Session 🖇
 `
-Klik tombol dibawah untuk membuat string milikmu`
+Klik tombol di samping untuk membuat string milikmu`
    [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://replit.com/@apisuserbot/String-Session?v=1)
 
 ### <p align="left">DEPLOY KING-USERBOT 🛰</p>
