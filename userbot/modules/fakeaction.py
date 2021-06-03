@@ -84,19 +84,20 @@ async def _(event):
 
 @register(outgoing=True, pattern="^.fkuota(?: |$)(.*)")
 async def _(event):
+    event.pattern_match.group(1)
     await event.edit("`Mengecek kuota...⚡️`")
     sleep(1)
     await event.edit(
         f"★ **INFO KUOTA KING** ★\n╔══════━━━━━━━══════╗ \n"
-        f"➠ **Penggunaan Kuota :** `{app.name}` \n"
-        f"   • **Hasil :** `00` **Jam** - `00` **Menit** \n"
-        f"   • **Persen :** `00`% \n"
+        f"➠ **Penggunaan Kuota :** `{ALIVE_NAME}` \n"
+        f"• **Hasil :** `00` **Jam** - `00` **Menit** \n"
+        f"• **Persen :** `00`% \n"
         f"◖═══════════════════◗ \n"
         f"➠ **Sisa Kuota Bulan Ini :** \n"
-        f"   • **Sisa :**  `1000` **Jam** - `10` **Menit** \n"
-        f"   • **Persen :** `00`% \n"
+        f"• **Sisa :**  `1000` **Jam** - `10` **Menit** \n"
+        f"• **Persen :** `00`% \n"
         f"╚══════━━━━━━━══════╝ \n"
-        f"◈ **KING  :** {ALIVE_NAME} \n"
+        f"◈ **KING :** {ALIVE_NAME} \n"
         f"◈ **REPO :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)")
 
 CMD_HELP.update(
