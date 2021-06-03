@@ -1,7 +1,7 @@
 # Port By @VckyouuBitch From Geez-Projects
 # Copyright (C) 2021 Geez-Project
 from userbot.events import register
-from userbot import CMD_HELP, HEROKU_APP_NAME, ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from time import sleep
 import asyncio
 
