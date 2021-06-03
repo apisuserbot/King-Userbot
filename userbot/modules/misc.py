@@ -351,9 +351,9 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilan link Repository ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.string`\
         \n  •  **Function : **Menampilan link String ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
-        \n\n  • **Perintah :"* `.tutorial`\
-        \n  •  **Function : **Menampilkan link Tutorial ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
-    "
+        \n\n  • **Perintah :" * `.tutorial`
+        \n  • ** Function: **Menampilkan link Tutorial ⚡️𝗞𝗶𝗻𝗴 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️
+        "
     }
 )
 
