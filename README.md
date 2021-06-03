@@ -1,4 +1,4 @@
-<a href="https://cooltext.com"><img src="https://images.cooltext.com/5520759.gif" width="802" height="96" alt="King Userbot" /></a>
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5533549.gif" width="802" height="96" alt="King Userbot" /></a>
 
 <p align="center">
   <a href="https://github.com/apisuserbot/King-Userbot/fork">
@@ -19,19 +19,19 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://GitHub.com/apisuserbot/King-Userbot/graphs/contributors/)
 <p align="justify">
+
+![King Userbot Logo](https://telegra.ph/file/8eb368517a8d3933c05d9.jpg)
+
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kinguserbot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kinguserbot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
 
-![King Userbot Logo](https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg)
+### Repo King Userbot 🚀
+Repo Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot yg ada diGithub 
+`
+Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mungkin dapat membantu kamu tanpa harus mengakses apk lain`
 
-<h3 align="center">Userbot Yang Digunakan Untuk Bersenang-Senang Di Telegram</h3>
-<p align="center">&nbsp;</p>
-
-### Repo King Userbot
-Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot Github 
-
-## Cara Deploy 👷
+### Cara Deploy 📝
 
 ```
   > Pertama, dapatkan API_KE & API_HASH di my.telegram.org (wajib)
@@ -45,15 +45,21 @@ Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot G
   > Akhirnya nyalakan aplikasi dan periksa log (pengaturan -> lihat log) nikmati :)
 ```
 
-## Group Support 🛠
+### Group Support 🇮🇩
+`
+Klik tombol di samping untuk join ke group support kami`
+   <a href="https://t.me/KingUserbotSupport"><img src="https://img.shields.io/badge/Grup%20Support%3F-King-green?&style=flat-square?&logo=telegram" width=165px></a></p>
 
-   <a href="https://t.me/KingUserbotSupport"><img src="https://img.shields.io/badge/Grup%20Support%3F-King-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+### String Session 🖇
+`
+Klik tombol dibawah untuk membuat string milikmu`
+   [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://replit.com/@apisuserbot/String-Session?v=1)
 
+### <p align="left">DEPLOY KING-USERBOT 🛰</p>
+`
+Klik tombol dibawah untuk deploy King Userbot milikmu`
 
-## <p align="center">DEPLOY KING-USERBOT</p>
-
-
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/King-Userbot"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-magenta?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/apisuserbot/King-Userbot/tree/King-Userbot"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-black?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
@@ -76,8 +82,3 @@ Repo Yang Dibuat [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot G
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
 *   Dan Lainnya
-
-## Team King-Userbot
-  Kami mempunyai team yang clone dari ultroid mohon di bantu project baru kami 
-
-*   [TeamKing-Userbot](https://github.com/DoellBarr/TeamKing-Userbot) - TeamKing-Userbot
