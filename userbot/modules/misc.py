@@ -4,6 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 # You can find misc modules, which dont fit in anything xD
+#
+# Userbot (King-Userbot) edit by Apis
 """ Userbot module for other small commands. """
 
 from random import randint
@@ -56,7 +58,7 @@ async def sleepybot(time):
         str_counter = time_formatter(counter)
         await time.client.send_message(
             BOTLOG_CHATID,
-            f"You put the bot to sleep for {str_counter}.",
+            f"Anda membuat bot tidur untuk bot {str_counter}.",
         )
     sleep(counter)
     await time.edit("`Oke , saya sudah bangun`")
@@ -351,9 +353,9 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilan link Repository ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.string`\
         \n  •  **Function : **Menampilan link String ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
-        \n\n  • **Perintah :" * `.tutorial`
-        \n  • ** Function: **Menampilkan link Tutorial ⚡️𝗞𝗶𝗻𝗴 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️
-        "
+        \n\n  • **Perintah :** `.tutorial`\
+        \n  •  **Function : **Menampilkan link Tutorial ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+    "
     }
 )
 
