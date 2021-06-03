@@ -281,9 +281,9 @@ async def amireallyalive(alive):
         f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"◈ **PEMILIK       :** [Apis](https://t.me/PacarFerdilla) \n"
         f"◈ **REPO USERBOT  :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"◈ **GROUP SUPPORT :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        f"◈ **GRUP SUPPORT :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
+        f"◈ **PEMILIK :** [Developer King](https://t.me/PacarFerdilla) \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -352,9 +352,9 @@ async def redis(alive):
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"** ╔══════━━━━━━━══════╗ ** \n"
-        f"** |   ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡   | ** \n"
-        f"** ╚══════━━━━━━━══════╝ ** \n"
+        f"**╭╼═✯══════════════✯═╾╮**\n"
+        f" ㅤ**★ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ★** \n"
+        f"**╰╼═✯══════════════✯═╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE BOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
@@ -369,7 +369,7 @@ async def redis(alive):
         f"├◈ **Support Terus Repo Kami** \n"
         f"│    **Dengan Link Di Bawah Ini.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[Repo](https://apisuserbot.github.io/King-Userbot) | [Group Support](t.me/KingUserbotSupport) | "
+        f"[Repo Userbot](https://apisuserbot.github.io/King-Userbot) | [Grup Support](t.me/KingUserbotSupport) | "
         f"[Developer King](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
