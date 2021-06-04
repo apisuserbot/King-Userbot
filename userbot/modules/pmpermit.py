@@ -91,8 +91,8 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 3:
                 await event.respond(
-                    "`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
-                    "`Ke Room Chat King`"
+                    "🔥 **BLOKIR OTOMATIS**\n\n`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
+                    f"`Ke Room Chat King {DEFAULTUSER}`"
                 )
 
                 try:
@@ -167,8 +167,8 @@ async def auto_accept(event):
                 if is_approved(event.chat_id) and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "#AUTO-APPROVED\n"
-                        + "Pengguna: "
+                        "#DITERIMA\n"
+                        + "Pengguna : "
                         + f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
 
@@ -195,7 +195,7 @@ async def notifon(non_event):
     await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
 
 
-@register(outgoing=True, pattern=r"^\.(?:setuju|ok)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:terima|ok)\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -233,18 +233,18 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima`")
 
-    await apprvpm.edit(f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima`")
+    await apprvpm.edit(f"`Oke` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima...`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
     if BOTLOG:
         await apprvpm.client.send_message(
             BOTLOG_CHATID,
-            "#DITERIMA\n" + "User: " + f"[{name0}](tg://user?id={uid})"
+            "#DITERIMA\n" + "Pengguna : " + f"[{name0}](tg://user?id={uid})"
         )
 
 
-@register(outgoing=True, pattern=r"^\.(?:tolak|nopm)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:tidak|tolak)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -263,14 +263,14 @@ async def disapprovepm(disapprvpm):
         name0 = str(aname.first_name)
 
     await disapprvpm.edit(
-        f"`Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!`"
+        f"`Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat King!`"
     )
 
     if BOTLOG:
         await disapprvpm.client.send_message(
             BOTLOG_CHATID,
             f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-            " `Berhasil Ditolak` !",
+            " `Sukses Ditolak` !",
         )
 
 
@@ -302,7 +302,7 @@ async def blockpm(block):
     if BOTLOG:
         await block.client.send_message(
             BOTLOG_CHATID,
-            "#BLOKIR\n" + "Pengguna: " + f"[{name0}](tg://user?id={uid})",
+            "#BLOKIR\n" + "Pengguna : " + f"[{name0}](tg://user?id={uid})",
         )
 
 
@@ -357,11 +357,11 @@ async def add_pmsg(cust_msg):
         else:
             return await cust_msg.edit("`Mohon Balas Ke Pesan`")
 
-        await cust_msg.edit("`Pesan Berhasil Disimpan Ke Room Chat`")
+        await cust_msg.edit("`Pesan Sukses Disimpan Ke Room Chat`")
 
         if BOTLOG:
             await cust_msg.client.send_message(
-                BOTLOG_CHATID, f"**{status} PM Yang Tersimpan Dalam Room Chat Anda:** \n\n{msg}"
+                BOTLOG_CHATID, f"**{status} PM Yang Tersimpan Dalam Room Chat Anda :** \n\n{msg}"
             )
 
     if conf.lower() == "reset":
@@ -374,12 +374,12 @@ async def add_pmsg(cust_msg):
     if conf.lower() == "get":
         if custom_message is not None:
             await cust_msg.edit(
-                "**Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda:**" f"\n\n{custom_message}"
+                "**Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda :**" f"\n\n{custom_message}"
             )
         else:
             await cust_msg.edit(
                 "**Anda Belum Menyetel Pesan PM**\n"
-                f"Masih Menggunakan Pesan PM Default: \n\n`{DEF_UNAPPROVED_MSG}`"
+                f"Masih Menggunakan Pesan PM Default : \n\n`{DEF_UNAPPROVED_MSG}`"
             )
 
 # Ported by Apis/@PacarFerdilla
@@ -397,18 +397,18 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, "`King Apis Telah Mengirimi Anda Pesan 😯`")
+                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan 😯`")
             await borg.send_message(
-                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah King Apis**"
+                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**"
             )
 
 
 CMD_HELP.update(
     {
         "pm": "**✘ Plugin : **`pm`\
-        \n\n  •  **Perintah :** `.setuju` atau `.ok`\
+        \n\n  •  **Perintah :** `.terima` atau `.ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
-        \n\n  •  **Perintah :** `.tolak` atau `.nopm`\
+        \n\n  •  **Perintah :** `.tidak` atau `.tolak`\
         \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Perintah :** `.block`\
         \n  •  **Function : **Memblokir Orang Di PM.\
