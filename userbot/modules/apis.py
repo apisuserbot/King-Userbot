@@ -496,12 +496,12 @@ CMD_HELP.update(
         \n  •  **Function : **Ntahlah gabut doang\
         \n\n  •  **Perintah :** `.sayang`\
         \n  •  **Function : **Mengatakan sayang ke seseorang\
-n\n  •  **Perintah : ** `.cinta`
-        \n  • ** Function: **Mengirim cinta ke seseorang
-        \n\n  • ** Perintah: ** `.gombal`
-        \n  • ** Function: **Jadi buaya kang gombal
-        \n\n  • ** Perintah: ** `.terkadang`
-        \n  • ** Function: **Hanya bercanda
+        \n\n  •  **Perintah : ** `.cinta`\
+        \n  • ** Function : **Mengirim cinta ke seseorang\
+        \n\n  • ** Perintah :** `.gombal`\
+        \n  • ** Function : **Jadi buaya kang gombal\
+        \n\n  • ** Perintah :** `.terkadang`\
+        \n  • ** Function : **Hanya bercanda\
         "
     }
 )
