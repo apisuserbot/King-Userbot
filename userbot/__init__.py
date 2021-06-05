@@ -378,9 +378,6 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    '☒', b'close'
-                ),
-                custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
                 )
             )
@@ -435,7 +432,7 @@ with bot:
                                 "King-Userbot",
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
-                                "Pemilik",
+                                "Developer",
                                 "t.me/PacarFerdilla")],
                     ],
                     link_preview=False,
