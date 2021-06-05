@@ -378,7 +378,7 @@ async def typewriter(typew):
     await typew.edit("`🏃            🐅`")
     await typew.edit("`🏃           🐅`")
     await typew.edit("`ANJIR MAKIN DEKET:)`")
-    await typew.edit("`🏃  HUH-HUH   🐅`")  
+    await typew.edit("`🏃  HUH-HUH   🐅`")
     await typew.edit("`🏃             🐅`")
     await typew.edit("`🏃              🐅`")
     await typew.edit("`🏃               🐅`")
@@ -401,7 +401,7 @@ async def typewriter(typew):
     await typew.edit("`😵`")
     await typew.edit("`😵\n👕\n👖\n🩲\n👟`")
     await typew.edit("`-TAMAT DEH-`")
-# Dibuat oleh Apis 
+# Dibuat oleh Apis
 
 
 @register(outgoing=True, pattern='^.terkadang(?: |$)(.*)')
@@ -490,19 +490,18 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 CMD_HELP.update(
-    { 
+    {
         "gabut": "**✘ Plugin :** `gabut`\
         \n\n  •  **Perintah :** `.gabut` | `.dino` | `.macan`\
         \n  •  **Function : **Ntahlah gabut doang\
         \n\n  •  **Perintah :** `.sayang`\
         \n  •  **Function : **Mengatakan sayang ke seseorang\
-        \n\n  •  **Perintah :** `.cinta`
-        \n  •  **Function : **Mengirim cinta ke seseorang\
-        \n\n  •  **Perintah :** `.gombal`\
-        \n  •  **Function : **Jadi buaya kang gombal\
-        \n\n  •  **Perintah :** `.terkadang`\
-        \n  •  **Function : **Hanya bercanda\
-    "
+n\n  •  **Perintah : ** `.cinta`
+        \n  • ** Function: **Mengirim cinta ke seseorang
+        \n\n  • ** Perintah: ** `.gombal`
+        \n  • ** Function: **Jadi buaya kang gombal
+        \n\n  • ** Perintah: ** `.terkadang`
+        \n  • ** Function: **Hanya bercanda
+        "
     }
- )
-    
+)
