@@ -61,5 +61,5 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.buat c` <nama channel> \
         \n  •  **Function : **Membuat sebuah channel\
    "
-   }
+    }
 )
