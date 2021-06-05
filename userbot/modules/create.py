@@ -52,8 +52,8 @@ async def telegraphs(grop):
                 await grop.edit(str(e))
 
 CMD_HELP.update({
-    }
-        "membuat": "**✘ Plugin :** `membuat`\
+}
+    "membuat": "**✘ Plugin :** `membuat`\
         \n\n  •  **Perintah :** `.buat g` <nama grupmu>\
         \n  •  **Function : **Membuat grupmu\
         \n\n  •  **Perintah :** `.buat gb` <nama grupmu>\
@@ -61,4 +61,4 @@ CMD_HELP.update({
         \n\n  •  **Perintah :** `.buat c` <nama channel>\
         \n  •  **Function : **Membuat sebuah channel\
    "
- )
+)
