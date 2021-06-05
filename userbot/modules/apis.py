@@ -349,6 +349,61 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
+@register(outgoing=True, pattern='^.macan(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    await typew.edit("🚶‍♂")
+    sleep(1)
+    await typew.edit("🚶‍♂     `rawwwhhh 💢`    🐅")
+    sleep(1)
+    await typew.edit("`ANJIR ADA MACAN!!!`")
+    await typew.edit("`🏃  LARI-LARI       🐅`")
+    await typew.edit("`🏃  WADUH          🐅`")
+    await typew.edit("`🏃                🐅`")
+    await typew.edit("`🏃               🐅`")
+    await typew.edit("`🏃              🐅`")
+    await typew.edit("`🏃             🐅`")
+    await typew.edit("`🏃            🐅`")
+    await typew.edit("`🏃           🐅`")
+    await typew.edit("`ANJIR MAKIN DEKET:)`")
+    await typew.edit("`🏃  HUH-HUH   🐅`")  
+    await typew.edit("`🏃             🐅`")
+    await typew.edit("`🏃              🐅`")
+    await typew.edit("`🏃               🐅`")
+    await typew.edit("`🏃                🐅`")
+    await typew.edit("`🏃                 🐅`")
+    await typew.edit("`🏃                  🐅`")
+    await typew.edit("`🏃                   🐅`")
+    await typew.edit("`🏃                    🐅`")
+    await typew.edit("`🏃                     🐅`")
+    await typew.edit("`🏃                      🐅`")
+    await typew.edit("`🏃                     🐅`")
+    await typew.edit("`🏃                    🐅`")
+    await typew.edit("`🏃                   🐅`")
+    await typew.edit("`🏃          🐅  < --- `")
+    await typew.edit("`🏃    🐅`")
+    await typew.edit("`Dah lah pasrah saja:)`")
+    sleep(3)
+    await typew.edit("`...`")
+    sleep(1)
+    await typew.edit("`😵`")
+    await typew.edit("`😵\n👕\n👖\n🩲\n👟`")
+    await typew.edit("`-TAMAT DEH-`")
+# Dibuat oleh Apis 
+
+
 @register(outgoing=True, pattern='^.terkadang(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -434,16 +489,20 @@ async def typewriter(typew):
     await typew.edit("`Tapi Bo'ong`")
 # Create by myself @localheart
 
-CMD_HELP.update({
-    "gabut":
-    "⚡𝘾𝙈𝘿⚡`.gabut` ;⚡𝘾𝙈𝘿⚡ `.dino`\
-    \nPenjelasan: ntahlah gabut doang.\
-    \n\n⚡𝘾𝙈𝘿⚡`.gombal`\
-    \nPenjelasan: buat bercanda\
-    \n\n⚡𝘾𝙈𝘿⚡`.cinta`\
-    \nPenjelasan: mengirim cintamu ke seseorang.\
-    \n\n⚡𝘾𝙈𝘿⚡`.sayang`\
-    \nPenjelasan: untuk jadi buaya.\
-    \n\n⚡𝘾𝙈𝘿⚡`.terkadang`\
-    \nPenjelasan: Auk dah iseng doang."
-})
+CMD_HELP.update(
+    { 
+        "gabut": "**✘ Plugin :** `gabut`\
+        \n\n  •  **Perintah :** `.gabut` | `.dino` | `.macan`\
+        \n  •  **Function : **Ntahlah gabut doang\
+        \n\n  •  **Perintah :** `.sayang`\
+        \n  •  **Function : **Mengatakan sayang ke seseorang\
+        \n\n  •  **Perintah :** `.cinta`
+        \n  •  **Function : **Mengirim cinta ke seseorang\
+        \n\n  •  **Perintah :** `.gombal`\
+        \n  •  **Function : **Jadi buaya kang gombal\
+        \n\n  •  **Perintah :** `.terkadang`\
+        \n  •  **Function : **Hanya bercanda\
+    "
+    }
+ )
+    
