@@ -51,7 +51,7 @@ async def telegraphs(grop):
             except Exception as e:  # pylint:disable=C0103,W0703
                 await grop.edit(str(e))
 
-CMD_HELP.update({
+CMD_HELP.update(
     }
         "membuat": "**✘ Plugin :** `membuat`\
         \n\n  •  **Perintah :** `.buat g` <nama grupmu> \
