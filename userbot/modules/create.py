@@ -54,11 +54,11 @@ async def telegraphs(grop):
 CMD_HELP.update({
     }
         "membuat": "**✘ Plugin :** `membuat`\
-        \n\n  •  **Perintah :** `.buat g` <nama grupmu>\
+        \n\n  •  **Perintah :** `.buat g` <nama grupmu> \
         \n  •  **Function : **Membuat grupmu\
-        \n\n  •  **Perintah :** `.buat gb` <nama grupmu>\
+        \n\n  •  **Perintah :** `.buat gb` <nama grupmu> \
         \n  •  **Function : **Membuat grup bersama bot\
-        \n\n  •  **Perintah :** `.buat c` <nama channel>\
+        \n\n  •  **Perintah :** `.buat c` <nama channel> \
         \n  •  **Function : **Membuat sebuah channel\
    "
    }
