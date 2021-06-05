@@ -6,7 +6,7 @@
 # (c) Spechide - UniBorg
 # Port From UniBorg to UserBot by @afdulfauzan
 
-# LORD - USERBOT
+# KING - USERBOT
 
 from telethon.tl import functions
 from userbot.events import register
@@ -33,7 +33,7 @@ async def telegraphs(grop):
                 result = await grop.client(functions.messages.ExportChatInviteRequest(
                     peer=created_chat_id,
                 ))
-                await grop.edit("King, Grup/Channel {} Berhasil Dibuat. Tekan [{}]({}) Untuk Melihatnya".format(group_name, group_name, result.link))
+                await grop.edit("King, Grup/Channel {} Sukses Dibuat. Tekan [{}]({}) Untuk Melihatnya".format(group_name, group_name, result.link))
             except Exception as e:  # pylint:disable=C0103,W0703
                 await grop.edit(str(e))
         elif type_of_group == "g" or type_of_group == "c":
@@ -47,18 +47,18 @@ async def telegraphs(grop):
                 result = await grop.client(functions.messages.ExportChatInviteRequest(
                     peer=created_chat_id,
                 ))
-                await grop.edit("King, Grup/Channel {} Berhasil Dibuat. Tekan [{}]({}) Untuk Melihatnya".format(group_name, group_name, result.link))
+                await grop.edit("King, Grup/Channel {} Sukses Dibuat. Tekan [{}]({}) Untuk Melihatnya".format(group_name, group_name, result.link))
             except Exception as e:  # pylint:disable=C0103,W0703
                 await grop.edit(str(e))
 
 CMD_HELP.update({
-    "membuat": "\
-Membuat\
-\nPenjelasan: Untuk membuat Channel, Grup dan Grup bersama Bot.\
-\n\n`.buat g` <nama grup>\
-\nPenjelasan: Membuat grup mu.\
-\n\n`.buat gb` <nama grup>\
-\nPenjelasan: Membuat Grup bersama bot.\
-\n\n`.buat c` <nama channel>\
-\nPenjelasan: Membuat sebuah Channel.\
-"})
+    }
+        "membuat": "**✘ Plugin :** `membuat`\
+        \n\n  •  **Perintah :** `.buat g` <nama grupmu>\
+        \n  •  **Function : **Membuat grupmu\
+        \n\n  •  **Perintah :** `.buat gb` <nama grupmu>\
+        \n  •  **Function : **Membuat grup bersama bot\
+        \n\n  •  **Perintah :** `.buat c` <nama channel>\
+        \n  •  **Function : **Membuat sebuah channel\
+   "
+ )
