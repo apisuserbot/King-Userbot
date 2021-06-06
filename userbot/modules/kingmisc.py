@@ -1100,7 +1100,7 @@ CMD_HELP.update(
 # KING USERBOT
 
 CMD_HELP.update(
-    {  
+    {
         "glitch": "**✘ Plugin :** __Glitch__\
         \n\n  •  **Perintah :** `.glitch` <level>\
         \n  •  **Function : **Balas Ke Media, Memberikan Efek Glicth Ke Media, Level 1 - 8\
@@ -1111,7 +1111,7 @@ CMD_HELP.update(
     }
 )
 
-# KING USERBOT 
+# KING USERBOT
 
 CMD_HELP.update(
     {
