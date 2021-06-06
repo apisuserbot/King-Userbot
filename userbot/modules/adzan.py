@@ -13,7 +13,7 @@ async def get_adzan(adzan):
     if not adzan.pattern_match.group(1):
         LOCATION = PLACE
         if not LOCATION:
-            await adzan.edit("`Harap Menentukan Kota Atau Negara.`")
+            await adzan.edit("**Error!**Harap Menentukan Kota Atau Negara Anda")
             return
     else:
         LOCATION = adzan.pattern_match.group(1)
@@ -53,5 +53,11 @@ async def get_adzan(adzan):
     await adzan.edit(result)
 
 
-CMD_HELP.update({"adzan": "\n\n`>.adzan <kota>`"
-                 "\nPenjelasan: Memberikan Informasi Waktu Sholat."})
+CMD_HELP.update(
+    {
+        "adzan": "**✘ Plugin :** `adzan`\
+        \n\n  •  **Perintah :** `.adzan` <nama kota atau provinsi>\
+        \n  •  **Function : **Memberikan Informasi Waktu Sholat Anda\
+    "
+    }
+)
