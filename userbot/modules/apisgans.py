@@ -316,7 +316,7 @@ async def typewriter(typew):
     await typew.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
 
 CMD_HELP.update(
-    {  
+    {
         "vip": "**✘ Plugin :** `vip`\
         \n\n  •  **Perintah :** `.bulan` | `.helikopter` | `.tembak`\
         \n  •  **Function : **Untuk animasi gabungan dalam userbot\
@@ -338,5 +338,4 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk animasi fuck\
     "
     }
- )
-    
+)
