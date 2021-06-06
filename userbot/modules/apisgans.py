@@ -114,7 +114,7 @@ async def typewriter(typew):
                      "　　　　　 Ｕ Ｕ\n")
 
 
-@register(outgoing=True, pattern='^.awkwok(?: |$)(.*)')
+@register(outgoing=True, pattern='^.awokwok(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("────██──────▀▀▀██\n"
@@ -214,7 +214,7 @@ async def typewriter(typew):
                      "░░░░░░░░░░░░░░░░░░░\n")
 
 
-@register(outgoing=True, pattern='^.y(?: |$)(.*)')
+@register(outgoing=True, pattern='^.sip(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("‡‡‡‡‡‡‡‡‡‡‡‡▄▄▄▄\n"
@@ -315,16 +315,28 @@ async def typewriter(typew):
     await typew.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (")
     await typew.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
 
-CMD_HELP.update({
-    "vip":
-    "`.bulan` ; `.hati` ; `.bernyanyi`\
-    \n⚡𝘾𝙈𝘿⚡: liat aja.\
-    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
-    \n⚡𝘾𝙈𝘿⚡: liat sendiri\
-    \n\n`.y`\
-    \n⚡𝘾𝙈𝘿⚡: jempol\
-    \n\n`.awkwok`\
-    \n⚡𝘾𝙈𝘿⚡: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.foff` ; `.foto` ; `.ajg`\
-    \n⚡𝘾𝙈𝘿⚡: liat sendiri."
-})
+CMD_HELP.update(
+    {  
+        "vip": "**✘ Plugin :** `vip`\
+        \n\n  •  **Perintah :** `.bulan` | `.helikopter` | `.tembak`\
+        \n  •  **Function : **Untuk animasi gabungan dalam userbot\
+        \n\n  •  **Perintah :** `.bundir`\
+        \n  •  **Function : **Untuk animasi bundir\
+        \n\n  •  **Perintah :** `.awokwok`\
+        \n  •  **Function : **Untuk animasi tertawa\
+        \n\n  •  **Perintah :** `.ular`\
+        \n  •  **Function : **Untuk animasi ular melingkar\
+        \n\n  •  **Perintah :** `.sip`\
+        \n  •  **Function : **Untuk animasi tangan jempol\
+        \n\n  •  **Perintah :** `.tank`\
+        \n  •  **Function : **Untuk animasi tank\
+        \n\n  •  **Perintah :** `.babi` | `.ajg`\
+        \n  •  **Function : **Untuk animasi hewan\
+        \n\n  •  **Perintah :** `.bernyanyi`\
+        \n  •  **Function : **Untuk animasi lagu bernyanyi\
+        \n\n  •  **Perintah :** `.foff`\
+        \n  •  **Function : **Untuk animasi fuck\
+    "
+    }
+ )
+    
