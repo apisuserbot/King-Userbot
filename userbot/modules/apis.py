@@ -420,7 +420,7 @@ async def typewriter(typew):
 # Dibuat oleh Apis
 
 
-@register(outgoing,True, pattern="^.userbot(?: |$)(.*)") 
+@register(outgoing, True, pattern="^.userbot(?: |$)(.*)")
 async def _(event):
     event.pattern_match.group(1)
     await event.edit(
