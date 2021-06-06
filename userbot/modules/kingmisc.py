@@ -1,5 +1,6 @@
 # imported from github.com/ravana69/PornHub to userbot by @heyworld
 # please don't nuke my credits 😓
+# Edit by Apis
 import requests
 import bs4
 import os
@@ -143,7 +144,7 @@ async def _(event):
         for i in a:
             await event.reply(i.original.action.message)
     else:
-        await event.edit("Lord Anda memerlukan izin Admin untuk melakukan perintah ini")
+        await event.edit("King Anda memerlukan izin Admin untuk melakukan perintah ini")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -416,7 +417,7 @@ async def _(event):
             ms_two = (end_two - end).seconds
             await event.edit("Download Dalam {} Detik. Upload Dalam {} Detik.".format(ms_one, ms_two))
         else:
-            await event.edit("File Tidak ditemukan{}".format(input_str))
+            await event.edit("File Tidak ditemukan {}".format(input_str))
     else:
         await event.edit("`Mohon Balas Ke Media King`")
 
@@ -467,7 +468,7 @@ async def _(event):
         return
     chat = "@CheckRestrictionsBot"
     reply_message.sender
-    await event.edit("```Memproses....```")
+    await event.edit("```Sedang Memproses....```")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -541,7 +542,7 @@ async def _(event):
     await event.delete()
     await bot.send_message(
         event.chat_id,
-        "`Clone Berhasil Dilakukan`",
+        "`Clone Sukses Dilakukan`",
         reply_to=reply_message
     )
 
@@ -710,7 +711,7 @@ async def _(event):
 # credits:
 # Ported from Saitama Bot.
 # By :- @PhycoNinja13b
-# Modified by :- @kirito6969,@deleteduser420
+# Modified by :- @PacarFerdilla
 
 
 @register(outgoing=True, pattern="^.weeb(?: |$)(.*)")
@@ -1024,47 +1025,99 @@ async def _(event):
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
-    await event.edit("`Berhasil Mengembalikan Akun Anda`")
+    await event.edit("`Sukses Mengembalikan Akun Anda`")
 
-CMD_HELP.update({
-    "misc":
-    "⚡𝘾𝙈𝘿⚡`.calc`\
-\nPenjelasan: .calc <term1><operator><term2>\nUntuk eg .calc 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
-\n\n⚡𝘾𝙈𝘿⚡`.remove`\
-\nPenjelasan: gunakan di grup .remove d atau y atau m atau w atau o atau q atau r.\n(d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
-\n\n⚡𝘾𝙈𝘿⚡`.xcd`\
-\nPenjelasan: Ketik xcd <query>.ps:Aku Sangat Bosan:v\
-\n\n⚡𝘾𝙈𝘿⚡`.rnupload` filename.extenstion\
-\nPenjelasan: Balas Ke Sticker Dan Ketik .rnupload xyz.jpg\
-\n\n⚡𝘾𝙈𝘿⚡`.res`\
-\nPenjelasan: Ketik Username Akun,Channel,Group Atau Bot Bersama .res Dan Check Batasan\
-\n\n⚡𝘾𝙈𝘿⚡`.watch` <movie/tv>\
-\nPenjelasan: Mengetahui Detail Tentang Film.\
-\n\n⚡𝘾𝙈𝘿⚡`.weeb` <text>\
-\nPenjelasan: Teks Weebify\
-\n\n(⚡𝘾𝙈𝘿⚡`.bold <Teks>`,⚡𝘾𝙈𝘿⚡`.cur <Teks>`,⚡𝘾𝙈𝘿⚡`.curbold <Teks>`,⚡𝘾𝙈𝘿⚡`.medi <Teks>`,⚡𝘾𝙈𝘿⚡`.medibold <Teks>`,⚡𝘾𝙈𝘿⚡`.doublestruck <Teks>`)\
-\nPenjelasan: Buat Teks <Bold,Cursive,Cursivebold,Medival,Medivalbold,Gayishbold>"})
-# KING USERBOT
-CMD_HELP.update({"app": "**Modules:** __App__\n\n⚡𝘾𝙈𝘿⚡: `.app <nama app>`"
-                 "\n**Penjelasan:** Dapatkan Detail Informasi Applikasi"})
-# KING USERBOT
-CMD_HELP.update({"undelete": "**Modules:** __Undelete__\n\n⚡𝘾𝙈𝘿⚡: `.undlt`"
-                 "\n**Penjelasan:** Urungkan Pesan Yang Dihapus Tapi Anda Harus Menjadi Admin"})
-# KING USERBOT
-CMD_HELP.update({"grab": "**Modules:** __Grab__\n\n⚡𝘾𝙈𝘿⚡: `.grab <jumlah>`"
-                 "\n**Penjelasan:** Mengambil Profil, Bisa Balas Ke Pesan Pengguna Lain Untuk Mengambil Profilnya\n\n**WARN:** JANGAN MENYALAH GUNAKAN PERINTAH INI"})
-# KING USERBOT
 CMD_HELP.update(
     {
-        "clone": "**Modules:** __Clone__\n\n⚡𝘾𝙈𝘿⚡: `.clone <username/balas pesan>`"
-        "\n**Penjelasan:** Clone Akun Seseorang, Tapi Username Tidak di Clone"
-        "\n\n**Perintah:** `.rclone`"
-        "\n**Penjelasan:** Mengembalikan Akun Anda Seperti Semula"})
+        "misc": "**✘ Plugin :**`.calc`\
+        \n\n  •  **Perintah :** `.calc`\
+        \n  •  **Function : **Untuk sistem term operator <term1><operator><term2> eg `.calc` 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
+        \n\n  •  **Perintah :** `.remove`\
+        \n  •  **Function : **gunakan di grup `.remove` d atau y atau m atau w atau o atau q atau r (d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
+        \n\n  •  **Perintah :**`.xcd` <query>\
+        \n  •  **Function : **Ketik `.xcd` <query> ps:Aku Sangat Bosan:v\
+        \n\n  •  **Perintah :** `.rnupload` filename\
+        \n  •  **Funtion : **Balas Ke Sticker Dan Ketik `.rnupload` xyz.jpg\
+        \n\n  •  **Perintah :** `.res`\
+        \n  •  **Function : **Ketik Username Akun,Channel,Grup Atau Bot Bersama `.res` Dan Check Batasan\
+        \n\n  •  **Perintah :** `.watch` <movie/tv>\
+        \n  •  **Function : **Mengetahui Detail Tentang Film.\
+        \n\n  •  **Perintah :** `.weeb` <text>\
+        \n  •  **Function : **Teks Weebify\
+        \n\n  •  **Perintah :** `.bold` <Teks> | `.cur` <Teks> | `.curbold` <Teks> | `.medi` <Teks> | `.medibold` <Teks> | `.doublestruck` <Teks>\
+        \n  •  **Function : **Buat Teks <Bold,Cursive,Cursivebold,Medival,Medivalbold,Gayishbold>\
+    "
+    }
+)
+
 # KING USERBOT
-CMD_HELP.update({"glitch": "**Modules:** __Glitch__\n\n⚡𝘾𝙈𝘿⚡: `.glitch <level>`"
-                 "\n**Penjelasan:** Balas Ke Media, Memberikan Efek Glicth Ke Media, Level 1 - 8"
-                 "\n\n**Perintah:** `.glitchs <level>`"
-                 "\n**Penjelasan:** Balas Ke Media, Memberikan Efek Glitch Ke Media, Level 1 - 8\n\n**NOTE:** Jika Tidak Memberikan Level Maka Otomatis Default Memilih Level 2"})
-# KING USERBOT # APIS GANTENG
-CMD_HELP.update({"randomprofil": "**Modules:** __Random Profil__\n\n⚡𝘾𝙈𝘿⚡: `.randompp`"
-                 "\n**Penjelasan:** Mengganti Foto Profil Anda Secara Otomatis, Untuk Menghentikan Perintah Ini Gunakan Perintah `.restart`"})
+
+CMD_HELP.update(
+    {
+        "app": "**✘ Plugin :** __App__\
+        \n\n  •  **Perintah :** `.app` <nama app>\
+        \n  •  **Function : **Dapatkan Detail Informasi App Anda\
+    "
+    }
+)
+
+# KING USERBOT
+
+CMD_HELP.update(
+    {
+        "undelete": "**✘ Plugin :** __Undelete__\
+        \n\n  •  **Perintah :** `.undlt`\
+        \n  •  **Function :** Urungkan Pesan Yang Dihapus Tapi Anda Harus Menjadi Admin\
+    "
+    }
+)
+
+# KING USERBOT
+
+CMD_HELP.update(
+    {
+        "grab": "**✘ Plugin :** __Grab__\
+        \n\n  •  **Perintah :** `.grab` <jumlah>\
+        \n  •  **Function : **Mengambil Profil, Bisa Balas Ke Pesan Pengguna Lain Untuk Mengambil Profilnya\
+        \n\n  •  **Notes :** JANGAN MENYALAH GUNAKAN PERINTAH INI\
+    "
+    }
+)
+
+# KING USERBOT
+
+CMD_HELP.update(
+    {
+        "clone": "**✘ Plugin :** __Clone__\
+        \n\n  •  **Perintah :** `.clone` <username/balas pesan>\
+        \n  •  **Function : **Clone Akun Seseorang, Tapi Username Tidak di Clone\
+        \n\n  •  **Perintah :** `.rclone`\
+        \n  •  **Function : **Mengembalikan Akun Anda Seperti Semula\
+    "
+    }
+)
+
+# KING USERBOT
+
+CMD_HELP.update(
+    {  
+        "glitch": "**✘ Plugin :** __Glitch__\
+        \n\n  •  **Perintah :** `.glitch` <level>\
+        \n  •  **Function : **Balas Ke Media, Memberikan Efek Glicth Ke Media, Level 1 - 8\
+        \n\n  •  **Perintah :** `.glitchs` <level>\
+        \n  •  **Function : **Balas Ke Media, Memberikan Efek Glitch Ke Media, Level 1 - 8\
+        \n\n  •  **Notes :** Jika Tidak Memberikan Level Maka Otomatis Default Memilih Level 2\
+    "
+    }
+)
+
+# KING USERBOT 
+
+CMD_HELP.update(
+    {
+        "randomprofil": "**✘ Plugin :** __Random Profil__\
+        \n\n  •  **Perintah :** `.randompp`\
+        \n  •  **Function : **Mengganti Foto Profil Anda Secara Otomatis, Untuk Menghentikan Perintah Ini Gunakan Perintah `.restart`\
+    "
+    }
+)
