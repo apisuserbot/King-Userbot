@@ -122,7 +122,7 @@ async def on_snip_delete(event):
 
 CMD_HELP.update(
     {
-        "costum": "**Plugin : **`costum`\
+        "costum": "**✘ Plugin : **`costum`\
         \n\n  •  **Perintah :** `.costum` <nama> <data> atau membalas pesan dengan .costum <nama>\
         \n  •  **Function : **Menyimpan pesan costum (catatan global) dengan nama. (bisa dengan gambar, docs, dan stickers!)\
         \n\n  •  **Perintah :** `.costums`\
