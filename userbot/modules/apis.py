@@ -502,6 +502,6 @@ CMD_HELP.update(
         \n  • ** Function : **Jadi buaya kang gombal\
         \n\n  • ** Perintah :** `.terkadang`\
         \n  • ** Function : **Hanya bercanda\
-        "
+    "
     }
 )
