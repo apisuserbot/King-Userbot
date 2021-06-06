@@ -57,18 +57,18 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"🔥 **ONLINE**\n**King {ALIVE_NAME} Kembali Online Untuk Chat Telegram**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                    f"🔥 **ONLINE**\n**Lord {ALIVE_NAME} Sudah kembali kebumi**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
                 )
             else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"**King {ALIVE_NAME} Sedang AFK!**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                    f"**Lord {ALIVE_NAME} Sedang AFK!**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
                     file=pic,
                 )
         except BaseException:
             shite = await bot.send_message(
                 event.chat_id,
-                f"🔥 **ONLINE**\n**King {ALIVE_NAME} Kembali Online**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                f"🔥 **ONLINE**\n**Lord {ALIVE_NAME} Kembali kebumi**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
             )
 
         except BaseException:
@@ -114,7 +114,7 @@ async def on_afk(event):
                 f"**Karena :** `{reason}`")
         else:
             message_to_reply = (
-                f"**Maaf King {ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**"
+                f"**Maaf Lord {ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**"
             )
         try:
             if pic.endswith((".tgs", ".webp")):
@@ -180,18 +180,18 @@ async def _(event):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
                         event.chat_id,
-                        f"**King {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
+                        f"**Lord {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
                     )
                 else:
                     await bot.send_message(
                         event.chat_id,
-                        f"**King {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
+                        f"**Lord {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await bot.send_message(
                     event.chat_id,
-                    f"**King {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
+                    f"**Lord {ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
                 )
         else:
             try:
@@ -203,11 +203,11 @@ async def _(event):
                 else:
                     await bot.send_message(
                         event.chat_id,
-                        f"**King {ALIVE_NAME} Telah AFK...**",
+                        f"**Lord {ALIVE_NAME} Telah AFK...**",
                         file=pic,
                     )
             except BaseException:
-                await bot.send_message(event.chat_id, f"**King {ALIVE_NAME} Telah AFK...**")
+                await bot.send_message(event.chat_id, f"**Lord {ALIVE_NAME} Telah AFK...**")
         await event.delete()
         try:
             if reason and pic:
@@ -215,34 +215,34 @@ async def _(event):
                     await bot.send_message(BOTLOG_CHATID, file=pic)
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"#AFK\n**{ALIVE_NAME} Telah AFK**\n**Karena :** `{reason}`",
+                        f"#AFK\n**{ALIVE_NAME} Telah AFK dari dunia**\n**Karena :** `{reason}`",
                     )
                 else:
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"#AFK\n**{ALIVE_NAME} Sedang AFK**\n**Karena :** `{reason}`",
+                        f"#AFK\n**{ALIVE_NAME} Sedang AFK dari dunia**\n**Karena :** `{reason}`",
                         file=pic,
                     )
             elif reason:
                 await bot.send_message(
                     BOTLOG_CHATID,
-                    f"#AFK\n**{ALIVE_NAME} Sedang AFK**\n**Karena :** `{reason}`",
+                    f"#AFK\n**{ALIVE_NAME} Sedang AFK dari dunia**\n**Karena :** `{reason}`",
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(BOTLOG_CHATID, file=pic)
                     await bot.send_message(
-                        BOTLOG_CHATID, f"#AFK\n**{ALIVE_NAME} Telah AFK**"
+                        BOTLOG_CHATID, f"#AFK\n**{ALIVE_NAME} Telah AFK dari dunia**"
                     )
                 else:
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"#AFK\n**{ALIVE_NAME} Sedang AFK**",
+                        f"#AFK\n**{ALIVE_NAME} Sedang AFK dari dunia**",
                         file=pic,
                     )
             else:
                 await bot.send_message(
-                    BOTLOG_CHATID, f"#AFK\n**{ALIVE_NAME} Masih aja AFK**"
+                    BOTLOG_CHATID, f"#AFK\n**{ALIVE_NAME} Masih aja AFK karna dia sibuk**"
                 )
         except Exception as e:
             BOTLOG_CHATIDger.warn(str(e))
