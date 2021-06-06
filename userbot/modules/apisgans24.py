@@ -130,7 +130,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@register(outgoing=True, pattern='^.nah(?: |$)(.*)')
+@register(outgoing=True, pattern='^.ini(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`\n(\\_/)`"
@@ -173,19 +173,21 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 6])
-# Alvin Imut
-# Alvin Gans
-# Lord
-CMD_HELP.update({
-    "animasi":
-    "`.nah` ; `.huh` ; `.owner`\
-    \n⚡𝘾𝙈𝘿⚡: cobain.\
-    \n\n`.bunga` ; `.buah`\
-    \n⚡𝘾𝙈𝘿⚡: animasi.\
-    \n\n`.waktu`\
-    \n⚡𝘾𝙈𝘿⚡: animasi.\
-    \n\n`.hua`\
-    \n⚡𝘾𝙈𝘿⚡: nangis.\
-    \n\n`.ceritacinta` ; `.canda`\
-    \n⚡𝘾𝙈𝘿⚡: liat sendiri"
-})
+# Apis Gans
+
+CMD_HELP.update(
+    {
+        "animasi": "**✘ Plugin :** `animasi`\
+        \n\n  •  **Perintah :** `.hua`\
+        \n  •  **Function : **Untuk animasi sedih\
+        \n\n  •  **Perintah :** `.ceritacinta`\
+        \n  •  **Function : **Untuk animasi cerita cinta\
+        \n\n  •  **Perintah :** `.canda`\
+        \n  •  **Function : **Untuk animasi canda\
+        \n\n  •  **Perintah :** `.ini`\
+        \n  •  **Function : **Untuk animasi ini atau bisa lihat sendiri\
+        \n\n  •  **Perintah :** `.owner`\
+        \n  •  **Function : **Untuk animasi owner\
+    "
+    }
+)
