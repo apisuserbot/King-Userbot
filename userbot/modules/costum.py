@@ -3,20 +3,17 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Recode by @mrismanaziz
-# t.me/SharingUserbot
-# RecodeV2 by Apis
+# Recode by @mrismanaziz kanger
+# t.me/SharingUserbot 
+# RecodeV2 by @PacarFerdilla kanger
 # t.me/KingUserbotSupport
 """ Userbot module containing commands for keeping costum global notes. """
 
-from userbot.events import register
 from userbot import BOTLOG_CHATID, CMD_HELP
+from userbot.events import register
 
 
-@register(outgoing=True,
-          pattern=r"\.\w*",
-          ignore_unsafe=True,
-          disable_errors=True)
+@register(outgoing=True, pattern=r"\.\w*", ignore_unsafe=True, disable_errors=True)
 async def on_snip(event):
     """costums logic."""
     try:
@@ -97,7 +94,7 @@ async def on_snip_list(event):
     all_snips = get_snips()
     for a_snip in all_snips:
         if message == "`Tidak ada kostum yang tersedia saat ini.`":
-            message = "👑 **Daftar Costum yang tersedia :**\n"
+            message = "👑 **Daftar Costum yang tersedia:**\n"
             message += f"⎆ `.{a_snip.snip}`\n"
         else:
             message += f"⎆ `.{a_snip.snip}`\n"
