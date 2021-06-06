@@ -230,7 +230,7 @@ Year: {}""".format(img, input_str, xkcd_link, safe_title, alt, day, month, year)
         await event.edit("xkcd n.{} not found!".format(xkcd_id))
 
 
-@register(outgoing=True, pattern="^.remove(?: |$)(.*)")
+@register(outgoing=True, pattern="^.cek(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -254,7 +254,7 @@ async def _(event):
     o = 0
     q = 0
     r = 0
-    await event.edit("`Mencari Daftar Peserta....`")
+    await event.edit("`Mengecek data Pengguna....`")
     async for i in bot.iter_participants(event.chat_id):
         p = p + 1
         #
@@ -269,7 +269,7 @@ async def _(event):
             if "y" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -279,7 +279,7 @@ async def _(event):
             if "m" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -289,7 +289,7 @@ async def _(event):
             if "w" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -299,7 +299,7 @@ async def _(event):
             if "o" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -309,7 +309,7 @@ async def _(event):
             if "q" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -319,7 +319,7 @@ async def _(event):
             if "r" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -329,7 +329,7 @@ async def _(event):
             if "b" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                     break
                 else:
@@ -339,14 +339,14 @@ async def _(event):
             if "d" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("I need admin priveleges to perform this action!")
+                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
                     e.append(str(e))
                 else:
                     c = c + 1
         elif i.status is None:
             n = n + 1
     if input_str:
-        required_string = """Kicked {} / {} users
+        required_string = """Kicked {} / {} Pengguna
 Deleted Accounts: {}
 UserStatusEmpty: {}
 UserStatusLastMonth: {}
@@ -358,16 +358,16 @@ Bots: {}
 None: {}"""
         await event.edit(required_string.format(c, p, d, y, m, w, o, q, r, b, n))
         await asyncio.sleep(5)
-    await event.edit("""Total= {} users
-Number Of Deleted Accounts= {}
-Status: Empty= {}
-      : Last Month= {}
-      : Last Week= {}
+    await event.edit("""Total= {} Pengguna
+Jumlah Akun yang Dihapus= {}
+Status: Kosong= {}
+      : Bulan lalu= {}
+      : Minggu lalu= {}
       : Offline= {}
       : Online= {}
-      : Recently= {}
-Number Of Bots= {}
-Unidentified= {}""".format(p, d, y, m, w, o, q, r, b, n))
+      : Baru saja= {}
+Jumlah Bot= {}
+Tidak dikenal= {}""".format(p, d, y, m, w, o, q, r, b, n))
 
 
 async def ban_user(chat_id, i, rights):
@@ -672,7 +672,7 @@ async def _(event):
     if event.fwd_from:
         return
     query = event.pattern_match.group(1)
-    await event.edit("Finding Sites...")
+    await event.edit("Sedang Memproses...")
     streams = get_stream_data(query)
     title = streams['title']
     thumb_link = streams['movie_thumb']
@@ -693,13 +693,13 @@ async def _(event):
     if release_date is None:
         release_date = release_year
 
-    output_ = f"**Movie:**\n`{title}`\n**Release Date:**\n`{release_date}`"
+    output_ = f"**Film :**\n`{title}`\n**Tanggal rilis :**\n`{release_date}`"
     if imdb_score:
         output_ = output_ + f"\n**IMDB: **{imdb_score}"
     if tmdb_score:
         output_ = output_ + f"\n**TMDB: **{tmdb_score}"
 
-    output_ = output_ + "\n\n**Available on:**\n"
+    output_ = output_ + "\n\n**Tersedia di :**\n"
     for provider, link in stream_providers.items():
         if 'sonyliv' in link:
             link = link.replace(" ", "%20")
@@ -1029,11 +1029,11 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "misc": "**✘ Plugin :**`.calc`\
+        "misc": "**✘ Plugin :** `calc`\
         \n\n  •  **Perintah :** `.calc`\
         \n  •  **Function : **Untuk sistem term operator <term1><operator><term2> eg `.calc` 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
-        \n\n  •  **Perintah :** `.remove`\
-        \n  •  **Function : **gunakan di grup `.remove` d atau y atau m atau w atau o atau q atau r (d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
+        \n\n  •  **Perintah :** `.cek`\
+        \n  •  **Function : **gunakan di grup `.cek` d atau y atau m atau w atau o atau q atau r (d=AkunTerhapus y=PenggunaKosong m=PenggunaBulanLalu w=PenggunaMingguLalu o=PenggunaOffline q=PenggunaOnline r=PenggunaTidakDikenal).\
         \n\n  •  **Perintah :**`.xcd` <query>\
         \n  •  **Function : **Ketik `.xcd` <query> ps:Aku Sangat Bosan:v\
         \n\n  •  **Perintah :** `.rnupload` filename\
