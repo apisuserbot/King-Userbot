@@ -230,7 +230,7 @@ Year: {}""".format(img, input_str, xkcd_link, safe_title, alt, day, month, year)
         await event.edit("xkcd n.{} not found!".format(xkcd_id))
 
 
-@register(outgoing=True, pattern="^.cek(?: |$)(.*)")
+@register(outgoing=True, pattern="^.remove(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -254,7 +254,7 @@ async def _(event):
     o = 0
     q = 0
     r = 0
-    await event.edit("`Mengecek data Pengguna....`")
+    await event.edit("`Memeriksa daftar peserta ....`")
     async for i in bot.iter_participants(event.chat_id):
         p = p + 1
         #
@@ -346,7 +346,7 @@ async def _(event):
         elif i.status is None:
             n = n + 1
     if input_str:
-        required_string = """Kicked {} / {} Pengguna
+        required_string = """Kicked {} / {} users
 Deleted Accounts: {}
 UserStatusEmpty: {}
 UserStatusLastMonth: {}
@@ -1032,8 +1032,8 @@ CMD_HELP.update(
         "misc": "**✘ Plugin :** `calc`\
         \n\n  •  **Perintah :** `.calc`\
         \n  •  **Function : **Untuk sistem term operator <term1><operator><term2> eg `.calc` 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
-        \n\n  •  **Perintah :** `.cek`\
-        \n  •  **Function : **gunakan di grup `.cek` d atau y atau m atau w atau o atau q atau r (d=AkunTerhapus y=PenggunaKosong m=PenggunaBulanLalu w=PenggunaMingguLalu o=PenggunaOffline q=PenggunaOnline r=PenggunaTidakDikenal).\
+        \n\n  •  **Perintah :** `.remove`\
+        \n  •  **Function : **gunakan di grup `.remove` d atau y atau m atau w atau o atau q atau r (d=AkunTerhapus y=PenggunaKosong m=PenggunaBulanLalu w=PenggunaMingguLalu o=PenggunaOffline q=PenggunaOnline r=PenggunaTidakDikenal).\
         \n\n  •  **Perintah :**`.xcd` <query>\
         \n  •  **Function : **Ketik `.xcd` <query> ps:Aku Sangat Bosan:v\
         \n\n  •  **Perintah :** `.rnupload` filename\
