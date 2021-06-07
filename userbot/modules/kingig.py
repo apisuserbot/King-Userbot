@@ -57,7 +57,7 @@ async def insta(event):
             await event.client.send_file(
                 event.chat_id,
                 response.message.media,
-                caption=f"**Download By @USEEBOT_GROUP**",
+                caption=f"**Download By @KingUserbotSupport**",
             )
             await event.client.send_read_acknowledge(conv.chat_id)
             await bot(functions.messages.DeleteHistoryRequest(peer=chat, max_id=0))
@@ -67,5 +67,11 @@ async def insta(event):
 # By King - Userbot
 # Apis Gansssssss Mksh Sma Sma
 # Apis Gans
-CMD_HELP.update({"instagram": "**Modules:** __Instagram__\n\n⚡𝘾𝙈𝘿⚡: `.ig`"
-                 "\n**Penjelasan:** Download Media di Postingan Instagram, Balas ke link instagram ketik `.ig`"})
+CMD_HELP.update(
+    {
+        "instagram": "**✘ Plugin :** __Instagram__\
+        \n\n  •  **Perintah :** `.ig`\
+        \n  •  **Function : **Download Media di Postingan Instagram, Balas ke link instagram ketik `.ig`\
+    "
+    }
+)
