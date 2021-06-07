@@ -174,10 +174,10 @@ async def pingme(pong):
     await pong.edit("`Pinging...`")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**King** {ALIVE_NAME}\n"
-                    f"**Pong!!** "
+    await pong.edit(f"**King** - {ALIVE_NAME}\n\n"
+                    f"**Pong !!** "
                     f"`%sms` \n"
-                    f"**Uptime!!** "
+                    f"**Uptime** - "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -300,6 +300,8 @@ CMD_HELP.update(
         \n  •  **Function :** Untuk Mengetes jaringan userbot.\
         \n\n  •  **Perintah :** `.speedtest` | `.dc`\
         \n  •  **Function :** Untuk Mengetes Server Userbot\
+        \n\n  •  **Perintah :** `!ping`\
+        \n  •  **Function : **Pingnya hampir sama dengan ultroid namun ini versi king!\
     "
     }
 )
