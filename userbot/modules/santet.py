@@ -319,7 +319,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.psikopat(?: |$)(.*)")
 async def typewriter(typew):
     typewriter.pattern_match.group(1)
-    await typew.edit("`Mau gw bunuh loe?`)
+    await typew.edit("`Mau gw bunuh loe?`")
     sleep(3)
     await typew.edit("`Sini share lock kalo berani`")
     sleep(3)
