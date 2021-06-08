@@ -1,5 +1,7 @@
+# import userbot by apis
+
 from time import sleep
-from userbot import CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 
 
@@ -12,6 +14,7 @@ async def typewriter(typew):
     await typew.edit("`Kedua kamu manis`")
     sleep(1)
     await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
+
 # Create by myself @localheart
 
 
@@ -43,16 +46,33 @@ async def typewriter(typew):
 
 # Create by myself @localheart
 
-CMD_HELP.update({
-    "King":
-    "⚡𝘾𝙈𝘿⚡`.king`\
-    \nUsage: alive bot.\
-    \n\n⚡𝘾𝙈𝘿⚡`.sadboy`\
-    \nUsage: hiks\
-    \n\n⚡𝘾𝙈𝘿⚡`.punten` ; ⚡𝘾𝙈𝘿⚡`.pantau`\
-    \nUsage: coba aja.\
-    \n\n⚡𝘾𝙈𝘿⚡`kosong`\
-    \nUsage: tunggu update selanjutnya.\
-    \n\n⚡𝘾𝙈𝘿⚡`kosong`\
-    \nUsage: tunggu update selanjutnya."
-})
+
+@register(outgoing=True, pattern="^.king(?: |$)(.*)")
+async def _(event):
+    event.pattern_match.group(1)
+    await event.edit(
+        " - - - - **K** - - - - \n"
+        " - - - - **I** - - - - \n"
+        " - - - - **N** - - - - \n"
+        " - - - - **G** - - - - \n"
+        "__**USERBOT TELEGRAM**__ \n\n"
+        "━━━━━━━━━━━━━━━━━━━━━\n\n"  
+        f"__**Hai aku adalah bot king assisten {ALIVE_NAME} yang menjaga akun ini \n"
+        "__**Terimakasih**__ ")   
+
+CMD_HELP.update(
+    {
+        "king": "**✘ Plugin :** `king`\
+        \n\n  •  **Perintah :** `.king`\
+        \n  •  **Function : **Untuk melihat sesuatu yang menarik\
+        \n\n  •  **Perintah :** `.sadboy`\
+        \n  •  **Function : **Jadi sadboy:)\
+        \n\n  •  **Perintah :** `.punten` | `.pantau`\
+        \n  •  **Function : **Untuk punten dan pantau\
+        \n\n  ** Perintah kosong **\
+        \n  ** Harap chat developer king @PacarFerdilla Jika ingin mengidekan sesuatu yang menarik\
+        \n\n  ** Perintah kosong **\
+        \n  ** Harap chat developer king @PacarFerdilla Jika ingin mengidekan sesuatu yang menarik\
+    "
+    }
+)
