@@ -3,6 +3,7 @@
 # Licensed under the General Public License, Version 3.0;
 # you may not use this file except in compliance with the License.
 #
+# Modified by Apis
 
 import os
 
@@ -92,5 +93,11 @@ async def _(event):
         return await event.edit(str(e))
 
 
-CMD_HELP.update({"wordcloud": ">⚡𝘾𝙈𝘿⚡`.wc`\n"
-                 "Usage: membuat seni wordcloud dari media\n\n"})
+CMD_HELP.update(
+    {
+        "wordcloud": "**✘ Plugin :** `wc`\
+        \n\n  •  **Perintah :** `.wc`\
+        \n  •  **Function : **membuat seni wordcloud dari media\
+    "
+    }
+)
