@@ -316,8 +316,11 @@ async def typewriter(typew):
     await typew.edit("`Target Berhasil Tersantet Online,Maap Cuman Bercanda:v`")
 
 
-CMD_HELP.update({
-    'santetonline':
-    '⚡𝘾𝙈𝘿⚡`.santet`\
-        \nUsage: Santet Online Buat Bercanda Doang:).'
-})
+CMD_HELP.update(
+    {
+        "santet": "**✘ Plugin :** `santet\
+        \n\n  •  **Perintah :** `.santet`\
+        \n  •  **Function : **Santet Online Buat Bercanda Doang:)\
+    "
+    }
+)
