@@ -60,7 +60,7 @@ async def _(event):
         f"__**Hai aku adalah bot king assisten {ALIVE_NAME} yang menjaga akun ini**__ \n"
         "__**Terimakasih**__ \n"
         "`Enjoy:)` \n"
-        "__**Developer by :**__ [Apis](https://t.me/PacarFerdilla) ") 
+        "__**Developer by :**__ [Apis](https://t.me/PacarFerdilla) ")
 
 CMD_HELP.update(
     {
