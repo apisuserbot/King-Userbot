@@ -16,7 +16,7 @@ async def mim(event):
         return
     if not event.reply_to_msg_id:
         await event.edit(
-            "Mohon Balas Ke Gambar Ketik `.mmf 'Teks Atas' ; 'Teks Bawah'` "
+            "Mohon Balas Ke Gambar Ketik `.mmf 'Teks Atas' | 'Teks Bawah'` "
         )
         return
     reply_message = await event.get_reply_message()
@@ -30,7 +30,7 @@ async def mim(event):
         return
     else:
         await event.edit(
-            "```𝙈𝙚𝙣𝙜𝙪𝙗𝙖𝙝 𝙢𝙚𝙙𝙞𝙖 𝙞𝙣𝙞 𝙝𝙖𝙝𝙖𝙝𝙖 𝙨𝙖𝙖𝙩𝙣𝙮𝙖 𝙢𝙚𝙣𝙜𝙪𝙗𝙖𝙝...⚡️ ```"
+            "```Mengubah Gambar/Sticker/Gif Ini...⚡️ ```"
         )
         await asyncio.sleep(5)
         text = event.pattern_match.group(1)
@@ -172,7 +172,7 @@ async def mim(event):
         return
     if not event.reply_to_msg_id:
         await event.edit(
-            "Mohon Balas Ke Gambar Ketik `.mmf2 'Teks Atas' ; 'Teks Bawah'` "
+            "Mohon Balas Ke Gambar Ketik `.mmf2 'Teks Atas' | 'Teks Bawah'` "
         )
         return
     reply_message = await event.get_reply_message()
@@ -186,7 +186,7 @@ async def mim(event):
         return
     else:
         await event.edit(
-            "```𝙈𝙚𝙣𝙜𝙪𝙗𝙖𝙝 𝙢𝙚𝙙𝙞𝙖 𝙞𝙣𝙞 𝙝𝙖𝙝𝙖𝙝𝙖 𝙨𝙖𝙖𝙩𝙣𝙮𝙖 𝙢𝙚𝙣𝙜𝙪𝙗𝙖𝙝...⚡️```"
+            "```Mengubah Gambar/Sticker/Gif Ini...⚡️```"
         )
         await asyncio.sleep(5)
         text = event.pattern_match.group(1)
@@ -317,10 +317,13 @@ async def draw_meme_text(image_path, text):
     return webp_file
 
 
-CMD_HELP.update({
-    "memify":
-        "⚡𝘾𝙈𝘿⚡`.mmf Teks Atas ; Teks Bawah`\
-        \nPenjelasan: Balas Ke Sticker/Gambar/Gif.\n"
-        "⚡𝘾𝙈𝘿⚡`.mmf2 Teks Atas ; Teks Bawah`\
-        \nPenjelasan: Balas Ke Sticker/Gambar/Gif."
-})
+CMD_HELP.update(
+    {
+        "memify": "**✘ Plugin :** `memify`\
+        \n\n  •  **Perintah :** `.mmf Teks Atas | Teks Bawah`\
+        \n  •  **Function : **Balas Ke Sticker/Gambar/Gif\
+        \n\n  •  **Perintah :** `.mmf2 Teks Atas | Teks Bawah`\
+        \n  •  **Function : **Balas Ke Sticker/Gambar/Gif\
+    "
+    }
+)
