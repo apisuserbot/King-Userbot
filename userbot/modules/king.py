@@ -56,9 +56,9 @@ async def _(event):
         " - - - - **N** - - - - \n"
         " - - - - **G** - - - - \n"
         "__**USERBOT TELEGRAM**__ \n\n"
-        "━━━━━━━━━━━━━━━━━━━━━\n\n"  
+        "━━━━━━━━━━━━━━━━━━━━━\n\n"
         f"__**Hai aku adalah bot king assisten {ALIVE_NAME} yang menjaga akun ini \n"
-        "__**Terimakasih**__ ")   
+        "__**Terimakasih**__ ")
 
 CMD_HELP.update(
     {
