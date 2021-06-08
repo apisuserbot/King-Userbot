@@ -4,6 +4,7 @@
 # you may not use this file except in compliance with the License.
 
 # port to userbot from uniborg by @keselekpermen69
+# Modified by Apis
 
 
 import io
@@ -85,13 +86,19 @@ async def on_delete_blacklist(rmbl):
     if not successful:
         await rmbl.edit("`King,` **{}** `Tidak Ada Di Blacklist`".format(text))
     else:
-        await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
+        await rmbl.edit("`Sukses Menghapus` **{}** `Di Blacklist`".format(text))
 
 
-CMD_HELP.update({"blacklist": ">⚡𝘾𝙈𝘿⚡`.listbl`"
-                 "\nUsage: Melihat daftar blacklist yang aktif di obrolan."
-                 "\n\n>⚡𝘾𝙈𝘿⚡`.addbl <kata>`"
-                 "\nUsage: Memasukan pesan ke blacklist 'kata blacklist'."
-                 "\nlord bot akan otomatis menghapus 'kata blacklist'."
-                 "\n\n>⚡𝘾𝙈𝘿⚡`.rmbl <kata>`"
-                 "\nUsage: Menghapus kata blacklist."})
+CMD_HELP.update(
+    {
+        "blacklist": "**✘ Plugin :** `blacklist`\
+        \n\n  •  **Perintah :** `.listbl`\
+        \n  •  **Function : **Melihat daftar blacklist yang aktif di obrolan\
+        \n\n  •  **Perintah :** `.addbl <kata>`\
+        \n  •  **Function : **Memasukan pesan ke blacklist 'kata blacklist'\
+        \n\n\n King bot akan otomatis menghapus `kata blacklist`\
+        \n\n  •  **Perintah :** `.rmbl <kata>`\
+        \n  •  **Function : **Menghapus kata blacklist\
+    "
+    }
+)
