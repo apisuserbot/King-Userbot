@@ -74,7 +74,7 @@ async def magnet_download(event):
         download = aria2.add_magnet(magnet_uri)
     except Exception as e:
         LOGS.info(str(e))
-        return await event.edit("Error:\n`" + str(e) + "`")
+        return await event.edit("Error :\n`" + str(e) + "`")
     gid = download.gid
     await check_progress_for_dl(gid=gid, event=event, previous=None)
     await sleep(5)
@@ -123,7 +123,7 @@ async def remove_all(event):
         subprocess_run("aria2p remove-all")
     await event.edit("`Menghapus unduhan yang sedang berjalan... `")
     await sleep(2.5)
-    await event.edit("`Berhasil menghapus semua unduhan.`")
+    await event.edit("`Sukses menghapus semua unduhan.`")
     await sleep(2.5)
 
 
@@ -133,7 +133,7 @@ async def pause_all(event):
     await event.edit("`Menjeda unduhan...`")
     aria2.pause_all(force=True)
     await sleep(2.5)
-    await event.edit("`Berhasil menjeda unduhan yang sedang berjalan.`")
+    await event.edit("`Sukses menjeda unduhan yang sedang berjalan.`")
     await sleep(2.5)
 
 
@@ -154,17 +154,17 @@ async def show_all(event):
     for download in downloads:
         msg = (
             msg
-            + "File: `"
+            + "File : `"
             + str(download.name)
-            + "`\nSpeed: "
+            + "`\nSpeed : "
             + str(download.download_speed_string())
-            + "\nProgress: "
+            + "\nProgress : "
             + str(download.progress_string())
-            + "\nTotal Size: "
+            + "\nTotal Size : "
             + str(download.total_length_string())
-            + "\nStatus: "
+            + "\nStatus : "
             + str(download.status)
-            + "\nETA:  "
+            + "\nETA :  "
             + str(download.eta_string())
             + "\n\n"
         )
@@ -222,9 +222,9 @@ async def check_progress_for_dl(gid, event, previous):
                 msg = (
                     f"{file.name} - Downloading\n"
                     f"{prog_str}\n"
-                    f"`Size:` {humanbytes(downloaded)} of {file.total_length_string()}\n"
-                    f"`Speed:` {file.download_speed_string()}\n"
-                    f"`ETA:` {file.eta_string()}\n")
+                    f"`Size` : {humanbytes(downloaded)} of {file.total_length_string()}\n"
+                    f"`Speed` : {file.download_speed_string()}\n"
+                    f"`ETA` : {file.eta_string()}\n")
                 if msg != previous:
                     await event.edit(msg)
                     msg = previous
@@ -236,20 +236,20 @@ async def check_progress_for_dl(gid, event, previous):
             complete = file.is_complete
             if complete:
                 return await event.edit(
-                    f"`Name`: `{file.name}`\n"
-                    f"`Size`: `{file.total_length_string()}`\n"
-                    f"`Path`: `{TEMP_DOWNLOAD_DIRECTORY + file.name}`\n"
-                    "`Resp`: **OK** - Successfully downloaded..."
+                    f"`Name` : `{file.name}`\n"
+                    f"`Size` : `{file.total_length_string()}`\n"
+                    f"`Path` : `{TEMP_DOWNLOAD_DIRECTORY + file.name}`\n"
+                    "`Resp` : **OK** - Sukses di download..."
                 )
         except Exception as e:
             if " not found" in str(e) or "'file'" in str(e):
-                await event.edit("Download Canceled :\n`{}`".format(file.name))
+                await event.edit("Download Dibatalkan :\n`{}`".format(file.name))
                 await sleep(2.5)
                 return await event.delete()
             elif " depth exceeded" in str(e):
                 file.remove(force=True)
                 await event.edit(
-                    "Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead.".format(
+                    "Download Auto Dibatalkan :\n`{}`\nAnda Torrent/Tautan Mati.".format(
                         file.name
                     )
                 )
@@ -257,11 +257,15 @@ async def check_progress_for_dl(gid, event, previous):
 
 CMD_HELP.update(
     {
-        "aria": ">`.aurl [URL]` (or) >`.amag [Tautan Magnet]` (or) >`.ator [jalur ke file torrent]`"
-        "\nUsage: Unduh file ke penyimpanan server bot pengguna Anda."
-        "\n\n>`.apause (or) .aresume`"
-        "\nUsage: Menjeda / melanjutkan unduhan yang sedang berlangsung."
-        "\n\n>`.aclear`"
-        "\nUsage: Menghapus antrian unduhan, menghapus semua unduhan yang sedang berjalan."
-        "\n\n>`.ashow`"
-        "\nUsage: Menunjukkan kemajuan unduhan yang sedang berlangsung."})
+        "aria": "**✘ Plugin :** `aria`\
+        \n\n  •  **Perintah :** `.aurl` [URL] (or) `.amag` [Tautan Magnet] (or) `.ator` [jalur ke file torrent]\
+        \n  •  **Function : **Unduh file ke penyimpanan server bot pengguna Anda\
+        \n\n  •  **Perintah :** `.apause` (or) `.aresume`\
+        \n  •  **Function : **Menjeda atau melanjutkan unduhan yang sedang berlangsung\
+        \n\n  •  **Perintah :** `.aclear`\
+        \n  •  **Function : **Menghapus antrian unduhan, menghapus semua unduhan yang sedang berjalan\
+        \n\n  •  **Perintah :** `.ashow`\
+        \n  •  **Function : **Menunjukkan kemajuan unduhan yang sedang berlangsung\
+    "
+    }
+)
