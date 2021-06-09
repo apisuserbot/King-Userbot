@@ -316,7 +316,7 @@ async def typewriter(typew):
     await typew.edit("`Target Sukses Tersantet Online,Maap Cuman Bercanda:v`")
 
 
-@register(outgoing=True, pattern="^.psikopat(?: |$)(.*)")
+@register(outgoing=True, pattern=r'^\.psikopat(?: |$)(.*)')
 async def typewriter(typew):
     typewriter.pattern_match.group(1)
     await typew.edit("`Mau gw bunuh loe?`")
