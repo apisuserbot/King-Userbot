@@ -182,5 +182,5 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.cekhttp` <domain hosts>\
         \n  •  **Function : **to cek respons bug/host\
    "
-   }
+    }
 )
