@@ -166,7 +166,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "bin": "**Plugin :** `bin`\
+        "bin": "**✘ Plugin :** `bin`\
         \n\n  •  **Perintah :** `.gen` <bin>\
         \n  •  **Function : **to generate cc with bin\
         \n\n  •  **Perintah :**  `.chk` <cc>\
@@ -181,6 +181,6 @@ CMD_HELP.update(
         \n  •  **Function : **to get subdomain bug/host\
         \n\n  •  **Perintah :** `.cekhttp` <domain hosts>\
         \n  •  **Function : **to cek respons bug/host\
-   "
+    "
     }
 )
