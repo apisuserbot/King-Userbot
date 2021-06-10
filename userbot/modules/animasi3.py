@@ -1,4 +1,5 @@
-# Apis Gans
+# Ported by Apis (King-Userbot)
+# animasi 3 file
 
 from time import sleep
 from userbot import CMD_HELP, bot
@@ -140,7 +141,7 @@ async def typewriter(typew):
     await typew.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💖<\\  *Tapi Bo'ong`")
-# Alpinnnn Gans
+# Apis Gans
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
