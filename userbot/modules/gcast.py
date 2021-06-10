@@ -1,6 +1,6 @@
-# ©Copyright King-Userbot (Apis) USERBOT TELEGRAM 
+# ©Copyright King-Userbot (Apis) USERBOT TELEGRAM
 # Ported by Apis
-# Thanks for ultroid 
+# Thanks for ultroid
 
 from userbot.events import register
 from userbot import CMD_HELP, bot
