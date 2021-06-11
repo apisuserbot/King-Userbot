@@ -174,7 +174,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "King-Userbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "4.0")
+BOT_VER = os.environ.get("BOT_VER", "0.5.2")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
