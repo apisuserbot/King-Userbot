@@ -184,7 +184,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -453,7 +453,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan King Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -471,7 +471,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan Milik King {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -502,7 +502,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"❗️PERINGATAN❗️ Buatlah King Userbot Anda Sendiri, Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan Milik King {ALIVE_NAME}"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
