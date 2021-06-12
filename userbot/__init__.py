@@ -79,6 +79,11 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
+# Pm Permit Img
+PM_PERMIT_PIC = os.environ.get(
+    "PM_PERMIT_PIC",
+    None) or "https://telegra.ph/file/fe3eda23ca3667a65eeda.jpg"
+
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
