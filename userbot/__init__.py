@@ -458,7 +458,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan King Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -476,7 +476,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -507,7 +507,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"**Perintah Helpme**\n\n| Buatlah King Userbot Anda Sendiri\n| Jangan Menggunakan Milik King {ALIVE_NAME}"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
