@@ -21,7 +21,7 @@ async def paste(pstl):
     reply_id = pstl.reply_to_msg_id
 
     if not (match or reply_id):
-        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan Master....⚡.`")
+        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan king....⚡.`")
 
     if match:
         message = match
@@ -52,7 +52,7 @@ async def paste(pstl):
 
         if response["isUrl"]:
             reply_text = (
-                "`Berhasil ditempel!`\n\n"
+                "`Sukses ditempel!`\n\n"
                 f"[Shortened URL]({dogbin_final_url})\n\n"
                 "`Original(non-shortened) URLs`\n"
                 f"[Dogbin URL]({DOGBIN_URL}v/{key})\n"
@@ -60,7 +60,7 @@ async def paste(pstl):
             )
         else:
             reply_text = (
-                "`Berhasil ditempel!`\n\n"
+                "`Sukses ditempel!`\n\n"
                 f"[Dogbin URL]({dogbin_final_url})\n"
                 f"[View RAW]({DOGBIN_URL}raw/{key})"
             )
@@ -70,7 +70,7 @@ async def paste(pstl):
     await pstl.edit(reply_text)
     if BOTLOG_CHATID:
         await pstl.client.send_message(
-            BOTLOG_CHATID, "Kueri tempel berhasil dijalankan",
+            BOTLOG_CHATID, "Kueri tempel Sukses dijalankan",
         )
 
 
@@ -102,7 +102,7 @@ async def get_dogbin_content(dog_url):
         resp.raise_for_status()
     except exceptions.HTTPError as HTTPErr:
         await dog_url.edit(
-            "Permintaan mengembalikan kode status tidak berhasil.\n\n" + str(HTTPErr)
+            "Permintaan mengembalikan kode status tidak sukses.\n\n" + str(HTTPErr)
         )
         return
     except exceptions.Timeout as TimeoutErr:
@@ -116,7 +116,7 @@ async def get_dogbin_content(dog_url):
         return
 
     reply_text = (
-        "`Berhasil mengambil konten URL dogbin!`"
+        "`Sukses mengambil konten URL dogbin!`"
         "\n\n`Content:` " + resp.text)
 
     await dog_url.edit(reply_text)
@@ -126,10 +126,13 @@ async def get_dogbin_content(dog_url):
         )
 
 
-CMD_HELP.update({
-    "dogbin":
-    ">⚡𝘾𝙈𝘿⚡ `.tempel <text / reply> "
-    "\nPenggunaan: Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)"
-    "\n\n.gettempel <reply / link>"
-    "\nPenggunaan: Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
-})
+CMD_HELP.update(
+    {
+        "dogbin": "**✘ Plugin :** `dogbin`\
+        \n\n  •  **Perintah :** `.tempel` <text / reply>\
+        \n  •  **Function : **Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)\
+        \n\n  •  **Perintah :** `.gettempel` <reply / link>\
+        \n  •  **Function : **Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
+    "
+    }
+)
