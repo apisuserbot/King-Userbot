@@ -132,7 +132,7 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.tempel` <text / reply>\
         \n  •  **Function : **Buat tempel atau url yang dipersingkat menggunakan dogbin (https://del.dog/)\
         \n\n  •  **Perintah :** `.gettempel` <reply / link>\
-        \n  •  **Function : **Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)"
-        "
+        \n  •  **Function : **Mendapat konten tempel atau url yang dipersingkat dari dogbin (https://del.dog/)\
+    "
     }
 )
