@@ -475,8 +475,8 @@ with bot:
                 await event.edit(
                     link_preview=True,
                     buttons=[
-                          Button.url("Support Chat", "t.me/KingUserbotSupport"),
-                          Button.inline("• Buka Menu • ", data="open")
+                        Button.url("Support Chat", "t.me/KingUserbotSupport"),
+                        Button.inline("• Buka Menu • ", data="open")
                     ]
                 )
 
