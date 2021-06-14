@@ -481,11 +481,11 @@ with bot:
             if event.query.user_id == uid:  # King-Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=kinglogo
+                    file=kinglogo,
                     link_preview=True,
                     buttons=[
                         [Button.url("Support Chat", "t.me/KingUserbotSupport")],
-                        [Button.url("Developer", "t.me / PacarFerdilla")],
+                        [Button.url("Developer", "t.me/PacarFerdilla")],
                     ]
                 )
 
