@@ -485,7 +485,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [Button.url("Support Chat", "t.me/KingUserbotSupport")],
-                        [Button.url("Developer", "t.me/PacarFerdilla)],
+                        [Button.url("Developer", "t.me / PacarFerdilla)],
                     ]
                 )
 
