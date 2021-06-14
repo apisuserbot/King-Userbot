@@ -405,6 +405,9 @@ with bot:
         me = bot.get_me()
         uid = me.id
 
+        kinglogo = "resource/logo/King_Userbot_Button.jpg"
+        plugins = CMD_HELP
+
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -419,11 +422,11 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@UserButt"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.article(
+                result = builder.photo(
                     "Harap Gunakan .help Untuk Perintah", text="{}"
                     f"\n\n◎› **King** {DEFAULTUSER}\n\n"
                     "◎› **Plugins :** `{}`\n◎› **Menu Plugins ↯** \n".format(
-                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**", len(dugmeler), ), buttons=buttons, link_preview=False, )
+                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**", len(dugmeler), ), buttons=buttons, file=kinglogo, link_preview=False, )
             elif query.startswith("tb_btn"):
                 result = builder.article(
                     "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
@@ -473,11 +476,12 @@ with bot:
             if event.query.user_id == uid:  # King-Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
+                    file=kinglogo
                     link_preview=True,
                     buttons=[
-                        Button.url("Support Chat", "t.me/KingUserbotSupport"),
-                        Button.inline("• Buka Menu • ", data="open")
-                    ]
+                        [Button.url("Support Chat", "t.me/KingUserbotSupport")],
+                        [Button.inline("• Buka Menu • ", data="open")],
+                    )
                 )
 
         @tgbot.on(
