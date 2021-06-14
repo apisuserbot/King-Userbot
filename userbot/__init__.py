@@ -420,8 +420,10 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
-                buttons = paginate_help(0, dugmeler, "helpme") # King - Userbot # Thanks Lynx
+            if event.query.user_id == uid and query.startswith(
+                    "@KingUserbotSupport"):
+                # King - Userbot # Thanks Lynx
+                buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=kinglogo,
                     link_preview=False,
