@@ -97,7 +97,7 @@ async def on_snip_list(event):
     all_snips = get_snips()
     for a_snip in all_snips:
         if message == "`Tidak ada kostum yang tersedia saat ini.`":
-            message = "👑 **Daftar Costum yang tersedia:**\n"
+            message = "**Daftar Costum yang tersedia :**\n"
             message += f"⎆ `.{a_snip.snip}`\n"
         else:
             message += f"⎆ `.{a_snip.snip}`\n"
