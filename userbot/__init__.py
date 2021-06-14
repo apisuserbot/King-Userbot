@@ -420,19 +420,15 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@UserButt"):
-                buttons = paginate_help(0, dugmeler, "helpme")
+            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
+                buttons = paginate_help(0, dugmeler, "helpme") # King - Userbot # Thanks Lynx
                 result = builder.photo(
-                    "Harap Gunakan .help Untuk Perintah",
-                    text="{}"
-                    f"\n\n◎› **King** {DEFAULTUSER}\n\n"
-                    "◎› **Plugins :** `{}`\n◎› **Menu Plugins ↯** \n".format(
-                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
+                    file=kinglogo,
+                    link_preview=False,
+                    text=f"\n**King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n◎› **Menu Plugins**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
-                    file=kinglogo,
-                    link_preview=False,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
@@ -488,7 +484,7 @@ with bot:
                     buttons=[
                         [Button.url("Support Chat", "t.me/KingUserbotSupport")],
                         [Button.inline("• Buka Menu • ", data="open")],
-                    )
+                    ]
                 )
 
         @tgbot.on(
