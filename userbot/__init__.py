@@ -383,7 +383,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "☒", b'close'
+                    '☒', b'close'
                 ),
                 custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
@@ -481,6 +481,14 @@ with bot:
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
+            else:
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                await event.edit("**• Menu Telah Ditutup •**")
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
