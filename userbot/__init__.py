@@ -383,7 +383,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "☒",b'close'
+                    "☒", b'close'
                 ),
                 custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
@@ -405,7 +405,6 @@ with bot:
         me = bot.get_me()
         uid = me.id
         logo = ALIVE_LOGO
-
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
