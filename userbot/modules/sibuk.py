@@ -24,10 +24,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n**Tunggu Sampai Online Kembali**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Sedang SIBUK**\n**Tunggulah Sampai Online**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf Orang paling Tampan Sedunia {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf Orang paling Tampan Sedunia{ALIVE_NAME} Sedang SIBUK**\n**Tunggu Sampai Online Kembali**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Tampan Sedang SIBUK**\n**Tunggulah Sampai Online**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Orang paling Tampan Sedunia {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
 ]
 
 
@@ -62,10 +62,10 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Telah Sibuk!**\
+        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Tampan Telah Sibuk!**\
         \n╰► **Alasan :** `{string}`\n╰╼═════════╾")
     else:
-        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Telah Sibuk!**\n╰╼═════════╾")
+        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Tampan Telah Sibuk!**\n╰╼═════════╾")
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "⚡𝗦𝗜𝗕𝗨𝗞⚡"))
     else:
@@ -243,7 +243,7 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)} Detik`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Masih SIBUK Mohon Tunggu!**\n**Sejak :** {afk_since} Yang Lalu\
+                    await sender.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Tampan Masih SIBUK Mohon Tunggu!**\n**Sejak :** {afk_since} Yang Lalu\
                         \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
