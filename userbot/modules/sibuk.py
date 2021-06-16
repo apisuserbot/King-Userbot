@@ -24,10 +24,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n**Tunggu Sampai Online Kembali**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Sedang SIBUK**\n**Tunggulah Sampai Online**\n╰╼═════════╾",
-    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**King {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Maaf Orang paling Tampan Sedunia {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Orang Tampan {ALIVE_NAME} Sedang SIBUK**\n**Tunggu Sampai Online Kembali**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Tampan Sedang SIBUK**\n**Tunggulah Sampai Online**\n╰╼═════════╾",
+    f"__🔥 SIBUK__\n\n╭╼══════════════╾\n**Orang Tampan {ALIVE_NAME} Sedang SIBUK**\n╰╼═════════╾",
 ]
 
 
@@ -62,7 +62,7 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Telah Sibuk!**\
+        await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**Orang Tampan{ALIVE_NAME} Telah Sibuk!**\
         \n╰► **Alasan :** `{string}`\n╰╼═════════╾")
     else:
         await afk_e.edit(f"**🔥 Sibuk**\n\n╭╼══════════════╾\n**{ALIVE_NAME} Telah Sibuk!**\n╰╼═════════╾")
