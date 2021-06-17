@@ -1,5 +1,6 @@
 # Copyright (C) 2020 King - Userbot
 # Created by Apis
+# Jangan hapus credit asu!!!
 
 from random import choice
 
@@ -43,26 +44,26 @@ XBOT_STRINGS = [
     "Gw kenzo",
     "Bego amat",
     "Sawadikap tod",
-    "when",
+    "Kenapa?",
     "Poci...",
     "mtk",
     "Asu capek:)",
-    "bad rom",
-    "dot",
-    "rr",
-    "linage",
-    "arrows",
+    "Ke kamar yuk",
+    "Gosok gigi",
+    "Gak bisa ngomong r",
+    "Upin dan ipin",
+    "Python",
     "Ceunah",
 ]
 
 
 @register(outgoing=True, pattern="^.xbot$")
-async def xbot(xbotboi):
-    await xdaboi.edit(choice(XBOT_STRINGS))
+async def xbot(xbotpis):
+    await xbotpis.edit(choice(XBOT_STRINGS))
 
 CMD_HELP.update(
     {
-        "xbot": "**Plugin :** `xbot`\
+        "xbot": "**✘ Plugin :** `xbot`\
         \n\n  •  **Perintah :** `.xbot`\
         \n  •  **Function : **Xbot random untuk bersenang senang saja\
     "
