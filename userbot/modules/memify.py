@@ -61,8 +61,8 @@ async def draw_meme_text(image_path, text):
         "userbot/utils/styles/MutantAcademyStyle.ttf", int(
             (70 / 640) * i_width)
     )
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
+    if "|" in text:
+        upper_text, lower_text = text.split("|")
     else:
         upper_text = text
         lower_text = ""
@@ -216,8 +216,8 @@ async def draw_meme_text(image_path, text):
     m_font = ImageFont.truetype(
         "userbot/utils/styles/FontKing.ttf", int((95 / 730) * i_width)
     )
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
+    if "|" in text:
+        upper_text, lower_text = text.split("|")
     else:
         upper_text = text
         lower_text = ""
