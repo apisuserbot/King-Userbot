@@ -84,7 +84,7 @@ async def git_commit(file_name, mone):
             print("Committed File")
             ccess = GIT_REPO_NAME
             ccess = ccess.strip()
-            await mone.edit(f"`Commited On Your Github Repo`\n\n[Your Modules](https://github.com/{ccess}/tree/sql-extended/userbot/modules/)")
+            await mone.edit(f"`Commited On Your Github Repo`\n\n[Your Plugins](https://github.com/{ccess}/tree/King-Userbot/userbot/modules/)")
         except BaseException:
             print("Cannot Create Plugin")
             await mone.edit("Cannot Upload Plugin")
@@ -94,7 +94,7 @@ async def git_commit(file_name, mone):
 
 CMD_HELP.update(
     {
-        "gcommit": "**Plugin :** `gcommit`\
+        "gcommit": "**✘ Plugin :** `gcommit`\
         \n\n  •  **Perintah :** `.gcommit`\
         \n  •  **Function : **GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy , For lazy people\
         \n\n  •  **Instructions :- **Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
