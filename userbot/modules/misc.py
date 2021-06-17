@@ -5,7 +5,7 @@
 #
 # You can find misc modules, which dont fit in anything xD
 #
-# Userbot (King-Userbot) edit by Apis
+# Repository (King-Userbot)
 """ Userbot module for other small commands. """
 
 from random import randint
@@ -94,14 +94,9 @@ async def killdabot(event):
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
-        "★ **Repo dan file userbot** ★\n"
-        "\n☇ [Repo ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
-        "\n☇ [Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-        "\n☇ [Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
-        "\n☇ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
-        "\n☇ [Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
-        "\n☇ [Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
-        "\n☇ [Special - Note](https://telegra.ph/Special-Note-11-02)")
+        "✘ **My Repository dan file :** \n"
+        "\n☇ [Repo Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "\n☇ [Spesial Userbot](https://github.com/apisuserbot/WeebProject-Apis)")
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")
@@ -122,39 +117,35 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"   ✘ **i'm** {DEFAULTUSER} **using userbot** ✘   \n"
-        "         🔥 __Thanks for userbot__ 🔥   \n"
+        f"  ✘ __**My Repository :**__ \n\n"
+        f"**Hay**, __saya {DEFAULTUSER} pengguna__ userbot\n\n"
+        "         🔥 __Terimkasih untuk userbot__ 🔥   \n\n"
         "✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
         "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
-        "         ✘ **USERBOT TELEGRAM** ✘ ")
+        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
 
 
 @register(outgoing=True, pattern="^.string$")
 async def repo_is_here(wannasee):
     """ For .string command, just returns the string URL. """
     await wannasee.edit(
-        "         ✘ **String Session Userbot** ✘   \n"
-        "          🔥 __Thanks for userbot__ 🔥  \n"
+        f"__Halo {DEFAULTUSER} ini string session king , jika Anda ingin memakainya , klik link string sessionnya disini ya!__ \n\n"
         "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n"
         "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
         "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
-        "         ✘ **USERBOT TELEGRAM** ✘ ")
+        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
 
 
 @register(outgoing=True, pattern="^.tutorial$")
 async def repo_is_here(wannasee):
     """ For .tutorial command, just returns the tutorial URL. """
     await wannasee.edit(
-        "         ✘ **Tutorial Using Userbot** ✘   \n"
-        "          🔥 __Thanks for userbot__ 🔥  \n"
+        "           🔥 __**TUTORIAL USERBOT**__ 🔥 \n\n"
         "✣ **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n"
         "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
         "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Pemilik :** [Developer King](https://t.me/PacarFerdilla) \n"
-        "          ✘ **USERBOT TELEGRAM** ✘ ")
+        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
 
 
 @register(outgoing=True, pattern="^.raw$")
