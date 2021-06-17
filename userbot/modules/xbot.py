@@ -10,13 +10,13 @@ from userbot.events import register
 XBOT_STRINGS = [
     "Aku userbot",
     "Jangan main main ya!",
-    "Gw gban mampus lu", 
+    "Gw gban mampus lu",
     "Gw pake King-Userbot",
     "Tidak",
     "Awas aja sampe ngelawan ama gw",
     "Bacot kau",
     "Hilih",
-    "Bicit banget lu",    
+    "Bicit banget lu",
     "Apis developer king",
     "Hahahaha",
     "Stres",
@@ -54,6 +54,7 @@ XBOT_STRINGS = [
     "arrows",
     "Ceunah",
 ]
+
 
 @register(outgoing=True, pattern="^.xbot$")
 async def xbot(xbotboi):
