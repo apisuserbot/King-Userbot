@@ -80,7 +80,7 @@ async def git_commit(file_name, mone):
                 file_name,
                 "Uploaded New Plugin",
                 commit_data,
-                branch="master")
+                branch="King-Userbot")
             print("Committed File")
             ccess = GIT_REPO_NAME
             ccess = ccess.strip()
@@ -97,8 +97,8 @@ CMD_HELP.update(
         "gcommit": "**Plugin :** `gcommit`\
         \n\n  •  **Perintah :** `.gcommit`\
         \n  •  **Function : **GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy , For lazy people\
-        \n  •  **Instructions :- **Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
-        \n\n commit reply_to_any_plugin can be any type of file too. but for plugin must be in .py\
+        \n\n  •  **Instructions :- **Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
+        \n  commit reply_to_any_plugin can be any type of file too. but for plugin must be in .py\
     "
     }
 )
