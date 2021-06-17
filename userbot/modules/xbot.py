@@ -1,4 +1,4 @@
-# Copyright (C) 2020 King - Userbot
+# Copyright (C) 2021 King - Userbot
 # Created by Apis
 # Jangan hapus credit asu!!!
 
