@@ -28,14 +28,14 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "`King Sedang Mencolong Sticker...😳`",
-    "`Saatnya Beraksi , Mencolong Sticker...`",
-    "`Waduh Sticker Lu Bagus Bro , Gw Curi Ya`",
-    "`Wahaha Saatnya Maling Sticker...`",
+    "King Sedang Mencolong Sticker...😳",
+    "Saatnya Beraksi , Mencolong Sticker...",
+    "Waduh Sticker Lu Bagus Bro , Gw Curi Ya",
+    "Wahaha Saatnya Maling Sticker...",
 ]
 
 
-@register(outgoing=True, pattern=r"^\.(?:tikel|kang)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:colong|kang)\s?(.)?")
 async def kang(args):
     user = await bot.get_me()
     if not user.username:
@@ -181,7 +181,7 @@ async def kang(args):
                         return await args.edit(
                             "`Sticker sukses tercolong di tambahkan ke Anda King !"
                             "\nIni Sticker yang baru saja King Colong!"
-                            f"\nTekan [Tukang Colong](t.me/addstickers/{packname}) Untuk Melihat Sticker Colongan Anda",
+                            f"\n[TEKAN DISINI](t.me/addstickers/{packname}) Untuk Melihat Sticker Colongan Anda",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -248,8 +248,8 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            "**Sukses Mencolong Sticker!**\n     **⇓ TEKAN ⇓**"
-            f"\n    ✘ [Tukang Colong](t.me/addstickers/{packname}) ✘\n**Untuk Melihat Sticker Colongan Anda**",
+            "**Sukses Mencolong Sticker!**"
+            f"\n       - [TEKAN DISINI](t.me/addstickers/{packname}) -\n**Untuk Melihat Sticker Colongan Anda**",
             parse_mode="md",
         )
 
@@ -358,9 +358,9 @@ async def sticker_to_png(sticker):
 CMD_HELP.update(
     {
         "stickers": "**✘ Plugin : **`stickers`\
-        \n\n  •  **Perintah :** `.kang` atau `.tikel` [emoji]?\
+        \n\n  •  **Perintah :** `.kang` atau `.colong` [emoji]?\
         \n  •  **Function : **Balas .kang Ke Sticker Atau Gambar Untuk Menambahkan Ke Sticker Colongan Mu\
-        \n\n  •  **Perintah :** `.kang` [emoji] atau `.tikel` `[emoji]`\
+        \n\n  •  **Perintah :** `.kang` [emoji] atau `.colong` `[emoji]`\
         \n  •  **Function : **Balas .kang emoji Ke Sticker Atau Gambar Untuk mencolong dan costum emoji sticker Ke Colongan Mu\
         \n\n  •  **Perintah :** `.stkrinfo`\
         \n  •  **Function : **Dapatkan Informasi Sticker Colongan.\
