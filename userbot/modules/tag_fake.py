@@ -22,7 +22,7 @@ async def all(event):
 
 CMD_HELP.update(
     {
-        "tag_fake": "**Plugin :** `tag_fake`\
+        "tag_fake": "**✘ Plugin :** `tag_fake`\
         \n\n  •  **Perintah :** `.all`\
         \n  •   **Function : **Untuk Fake Mengetag Semua Anggota Yang Ada Di Grup\
     "
