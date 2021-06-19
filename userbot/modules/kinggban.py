@@ -111,7 +111,7 @@ async def gban(event):
         return
     if user.id == (await event.client.get_me()).id:
         await gbun.edit("**Anda ceroboh!**\n__Anda Gbanned diri anda sendiri:)...__")
-        return 
+        return
     if user.id in DEVS:
         await gbun.edit("**Anda Tidak Bisa Melakukan Perintah Gban Ke Pengguna Itu , Karena Dia Adalah Pembuat Saya 😈**")
         return
@@ -120,7 +120,7 @@ async def gban(event):
         await event.client(ImportChatInviteRequest(hmm))
     except BaseException:
         pass
-    if gban_sql.is_gbanned(user.id): #fixes languange by Apis
+    if gban_sql.is_gbanned(user.id):  # fixes languange by Apis
         await gbun.edit(
             f"**Pengguna** [Ini](tg://user?id={user.id}) **sudah ada di daftar gbanned**"
         )
@@ -197,7 +197,7 @@ async def ungban(event):
     user, reason = await get_user_from_event(event, ungbun)
     if not user:
         return
-    if gban_sql.is_gbanned(user.id): #fixes languange by Apis
+    if gban_sql.is_gbanned(user.id):  # fixes languange by Apis
         gban_sql.freakungban(user.id)
     else:
         await ungbun.edit(
@@ -261,7 +261,7 @@ async def ungban(event):
 
 @register(outgoing=True, pattern=r"^\.gbans$")
 async def gablist(event):
-    if event.fwd_from: #This is created by catuserbot
+    if event.fwd_from:  # This is created by catuserbot
         return
     gbanned_users = gban_sql.get_all_gbanned()
     GBANNED_LIST = "**Daftar Global Banned Saat Ini :**\n"
