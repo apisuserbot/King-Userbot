@@ -50,7 +50,7 @@ async def on_add_black_list(addbl):
 @register(outgoing=True, pattern=r"^\.listbl(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = sql.get_chat_blacklist(listbl.chat_id)
-    OUT_STR = "Blacklists in the Current Chat:\n"
+    OUT_STR = "**Daftar Blacklist Dalam Chat :**\n"
     if len(all_blacklisted) > 0:
         for trigger in all_blacklisted:
             OUT_STR += f"`{trigger}`\n"
