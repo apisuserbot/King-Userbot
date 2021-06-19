@@ -10,7 +10,7 @@ from userbot.events import register
 
 @register(outgoing=True, pattern="^.covid (.*)")
 async def corona(event):
-    await event.edit("`Memproses Informasi....`")
+    await event.edit("`Sedang Memproses Informasi....`")
     country = event.pattern_match.group(1)
     covid = Covid(source="worldometers")
     country_data = covid.get_status_by_country_name(country)
@@ -32,7 +32,7 @@ async def corona(event):
 
 @register(outgoing=True, pattern="^.covid$")
 async def corona(event):
-    await event.edit("`Memproses...`")
+    await event.edit("`Sedang Memproses...`")
     country = "World"
     covid = Covid(source="worldometers")
     country_data = covid.get_status_by_country_name(country)
@@ -52,7 +52,13 @@ async def corona(event):
     await event.edit(f"`Info Virus corona di {country}:`\n\n{output_text}")
 
 
-CMD_HELP.update({"covid": "`.covid` **<negara>**"
-                 "\nPenjelasan: Dapatkan informasi tentang data covid-19 di suatu Negara.`\n\n"
-                 "`.covid`"
-                 "\nPenjelasan: Dapatkan informasi tentang data covid-19 di Seluruh Dunia.\n"})
+CMD_HELP.update(
+    {
+        "covid": "**✘ Plugin :** `covid`\
+        \n\n  •  **Perintah :** `.covid` <negara>\
+        \n  •  **Function : **Dapatkan informasi tentang data covid-19 di suatu Negara\
+        \n\n  •  **Perintah :** `.covid`\
+        \n  •  **Function : **Dapatkan informasi tentang data covid-19 di Seluruh Dunia\
+    "
+    }
+)
