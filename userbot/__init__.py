@@ -409,7 +409,6 @@ with bot:
         me = bot.get_me()
         uid = me.id
         logo = ALIVE_LOGO
-        logoking = str(ALIVE_LOGO)
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -447,6 +446,7 @@ with bot:
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
+                    file=logo,
                     buttons=buttons,
                     link_preview=False,
                 )
@@ -493,7 +493,11 @@ with bot:
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                await event.edit("**• Menu Telah Ditutup •**")
+                await event.edit(
+                    "__**Menu Ditutup**__"
+                    "• **Support Chat** [KLIK DISINI](https://t.me/KingUserbotSupport)"
+                    "• **Support Channel** [KLIK DISINI](https://t.me/TeamKingUserbot)"
+                    "__**- Help Button -**__ ")
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
