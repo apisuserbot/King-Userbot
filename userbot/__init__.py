@@ -409,6 +409,7 @@ with bot:
         me = bot.get_me()
         uid = me.id
         logo = ALIVE_LOGO
+        logoking = str(ALIVE_LOGO)
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
