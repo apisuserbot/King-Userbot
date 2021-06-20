@@ -166,6 +166,9 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 # Custom Emoji Alive
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
 
+# Custom Umur
+UMUR = os.environ.get("UMUR", "15 Tahun")
+
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
