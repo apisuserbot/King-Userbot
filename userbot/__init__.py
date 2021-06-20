@@ -496,9 +496,9 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 await event.edit(
-                    "__**- Menu Ditutup -**__"
-                    "• **Support Chat** [KLIK DISINI](https://t.me/KingUserbotSupport)"
-                    "• **Support Channel** [KLIK DISINI](https://t.me/TeamKingUserbot)"
+                    "__**- Menu Ditutup -**__ \n\n"
+                    "• **Support Chat** [KLIK DISINI](https://t.me/KingUserbotSupport) \n"
+                    "• **Support Channel** [KLIK DISINI](https://t.me/TeamKingUserbot) \n\n"
                     "__**- Help Button -**__ ")
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
