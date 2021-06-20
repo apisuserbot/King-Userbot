@@ -32,6 +32,8 @@ KANGING_STR = [
     "Saatnya Beraksi , Mencolong Sticker...",
     "Waduh Sticker Lu Bagus Bro , Gw Curi Ya",
     "Wahaha Saatnya Maling Sticker...",
+    "Yahahaha bagus nih , curi ah...",
+    "King memaksa untuk mengambil stiker",
 ]
 
 
@@ -312,7 +314,7 @@ async def get_pack_info(event):
             pack_emojis.append(document_sticker.emoticon)
 
     OUTPUT = (
-        f"     ╔════════════╗\n    ⚡️**COLONGAN**⚡️    \n╚════════════╝ \n"
+        f"     ╔════════════╗\n    ⚡️__**STICKER**__⚡️    \n╚════════════╝ \n"
         f"**Nama Stciker:** `{get_stickerset.set.title}\n`"
         f"**Nama Pendek Sticker:** `{get_stickerset.set.short_name}`\n"
         f"**Official:** `{get_stickerset.set.official}`\n"
