@@ -449,7 +449,6 @@ with bot:
                         "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                         len(dugmeler),
                     ),
-                    file=logo,
                     buttons=buttons,
                     link_preview=False,
                 )
@@ -497,7 +496,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 await event.edit(
-                    "__**Menu Ditutup**__"
+                    "__**- Menu Ditutup -**__"
                     "• **Support Chat** [KLIK DISINI](https://t.me/KingUserbotSupport)"
                     "• **Support Channel** [KLIK DISINI](https://t.me/TeamKingUserbot)"
                     "__**- Help Button -**__ ")
