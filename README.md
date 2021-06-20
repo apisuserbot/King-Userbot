@@ -10,7 +10,7 @@
   </a>
 </p>
 
-<p align="left">
+<p align="center">
   <a href="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE"><img src="https://img.shields.io/github/license/apisuserbot/King-Userbot?&style=social&logo=github">
   </a></p>
 
@@ -18,7 +18,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/issues)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://GitHub.com/apisuserbot/King-Userbot/graphs/contributors/)
-<p align="justify">
+<p align="center">
 
 ![King Userbot Logo](https://telegra.ph/file/8eb368517a8d3933c05d9.jpg)
 
