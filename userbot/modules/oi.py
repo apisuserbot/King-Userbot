@@ -5,12 +5,11 @@ from userbot.events import register
 @register(outgoing=True, pattern='^.apis(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(3)
     await typew.edit("`Hai Perkenalkan Namaku Apis`")
     sleep(3)
-    await typew.edit("`14 Tahun`")
+    await typew.edit("`15 Tahun`")
     sleep(1)
-    await typew.edit("`Tinggal Di Jakarta, Salam Kenal:)`")
+    await typew.edit("`Tinggal Di Jakarta, Salam Kenal :)`")
 # Create by myself @localheart
 
 
@@ -29,7 +28,6 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.semangat(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(3)
     await typew.edit("`Apapun Yang Terjadi`")
     sleep(3)
     await typew.edit("`Tetaplah Bernapas`")
@@ -38,13 +36,12 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.creator(?: |$)(.*)')
+@register(outgoing=True, pattern='^.aku(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
+    await typew.edit("`Aku Userbot`")
     sleep(3)
-    await typew.edit("`Apis Mastah`")
-    sleep(3)
-    await typew.edit("`Abdul Manager`")
-    sleep(1)
-    await typew.edit("`Rimuru Contributor`")
+    await typew.edit("`Jangan Main Main`")
+    sleep(2)
+    await typew.edit("`Gw Gban Nanti Nangesss`")
 # Create by myself @localheart
