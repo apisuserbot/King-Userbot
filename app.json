@@ -158,6 +158,11 @@
       "description": "Nama untuk menunjukan pesan .alive",
       "required": false
     },
+    "UMUR": {
+      "description": "Isi Umur Anda Sekarang (15 Tahun Adalah Umur Developer King Saat Ini)",
+      "value": "15 Tahun",
+      "required": false
+    },
     "KING_TEKS_KUSTOM": {
       "description": "Kustom Pesan Alive Mu Untuk Perintah .king (Isi Terserah)",
       "required": false
