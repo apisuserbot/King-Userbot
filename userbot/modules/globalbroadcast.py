@@ -51,7 +51,7 @@ async def gucast(event):
 
 CMD_HELP.update(
     {
-        "globalbroadcast": "**✘ Plugin :** `Global Broadcast`\
+        "bcast": "**✘ Plugin :** `Global Broadcast`\
         \n\n  •  **Perintah :** `.ggcast` <Text>\
         \n  •  **Function : **Global Group Broadcast , Mengirim Pesan Global Broadcast pesan ke Seluruh Grup Yang King Masuki\
         \n\n  •  **Perintah :** `.pcast` <Text>\
