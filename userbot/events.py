@@ -3,22 +3,24 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for managing events.
- One of the main components of the userbot. """
+"""Userbot module for managing events. One of the main components of the userbot."""
 
+import codecs
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
+from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
 
+import requests
 from telethon import events
 
-from userbot import LOGSPAMMER, bot
+from userbot import bot, BOTLOG_CHATID, LOGSPAMMER
 
 
 def register(**args):
-    """ Register a new event. """
+    """Register a new event."""
     pattern = args.get('pattern', None)
     disable_edited = args.get('disable_edited', False)
     ignore_unsafe = args.get('ignore_unsafe', False)
@@ -60,9 +62,9 @@ def register(**args):
                 # Ignore edits that take place in channels.
                 return
             if not LOGSPAMMER:
-                check.chat_id
+                send_to = check.chat_id
             else:
-                pass
+                send_to = BOTLOG_CHATID
 
             if not trigger_on_fwd and check.fwd_from:
                 return
@@ -70,6 +72,15 @@ def register(**args):
             if groups_only and not check.is_group:
                 await check.respond("`I don't think this is a group.`")
                 return
+
+            try:
+                from userbot.modules.sql_helper.blacklist_sql import get_blacklist
+
+                for blacklisted in get_blacklist():
+                    if str(check.chat_id) == blacklisted.chat_id:
+                        return
+            except Exception:
+                pass
 
             if check.via_bot_id and not insecure and check.out:
                 return
@@ -96,28 +107,25 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**King-Userbot ERROR**\n"
-                    link = "Silahkan chat: @PacarFerdilla"
-                    text += "Untuk melaporkan kesalahan"
-                    text += f"- tinggal teruskan pesan ini {link}.\n"
-                    text += "Apis Siap Membantu Kamu\n"
+                    text = "**KING USERBOT ERROR REPORT**\n"
+                    text += "Tidak ada yang dicatat kecuali fakta kesalahan dan tanggal\n\n"
 
                     ftext = "========== DISCLAIMER =========="
-                    ftext += "\nThis file uploaded ONLY here,"
-                    ftext += "\nwe logged only fact of error and date,"
-                    ftext += "\nwe respect your privacy,"
+                    ftext += "\nFile ini HANYA diunggah di sini,"
+                    ftext += "\nkami hanya mencatat fakta kesalahan dan tanggal,"
+                    ftext += "\nkami menghormati privasi Anda,"
                     ftext += "\nyou may not report this error if you've"
-                    ftext += "\nany confidential data here, no one will see your data\n"
+                    ftext += "\ndata rahasia apa pun di sini, tidak ada yang mau lihat datamu\n"
                     ftext += "================================\n\n"
                     ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
-                    ftext += "\nDate: " + date
-                    ftext += "\nChat ID: " + str(check.chat_id)
-                    ftext += "\nSender ID: " + str(check.sender_id)
-                    ftext += "\n\nEvent Trigger:\n"
+                    ftext += "\nTanggal : " + date
+                    ftext += "\nObrolan ID : " + str(check.chat_id)
+                    ftext += "\nPengirim ID : " + str(check.sender_id)
+                    ftext += "\n\nPemicu Acara :\n"
                     ftext += str(check.text)
-                    ftext += "\n\nTraceback info:\n"
+                    ftext += "\n\nMelacak kembali info :\n"
                     ftext += str(format_exc())
-                    ftext += "\n\nError text:\n"
+                    ftext += "\n\nError text :\n"
                     ftext += str(sys.exc_info()[1])
                     ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
 
@@ -134,10 +142,31 @@ def register(**args):
 
                     ftext += result
 
-                    file = open("error.log", "w+")
-                    file.write(ftext)
-                    file.close()
+                    with open("error.txt", "w+") as file:
+                        file.write(ftext)
 
+                    if LOGSPAMMER:
+                        await check.respond(
+                            "`Maaf , bot pengguna saya crashed.\
+                        \nLog kesalahan disimpan di userbot obrolan log.`"
+                        )
+
+                        log = codecs.open("error.txt", "r", encoding="utf-8")
+                        data = log.read()
+                        key = (
+                            requests.post(
+                                "https://nekobin.com/api/documents",
+                                json={"content": data},
+                            )
+                            .json()
+                            .get("result")
+                            .get("key")
+                        )
+                        url = f"https://nekobin.com/raw/{key}"
+                        anu = f"{text}Pasted to: [Nekobin]({url})"
+
+                        await check.client.send_file(send_to, "error.txt", caption=anu)
+                        remove("error.txt")
             else:
                 pass
 
@@ -145,4 +174,5 @@ def register(**args):
             bot.add_event_handler(wrapper, events.MessageEdited(**args))
         bot.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
+
     return decorator
