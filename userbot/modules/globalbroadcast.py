@@ -7,7 +7,7 @@ from userbot.events import register
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern="^.gcast (.*)")
+@register(outgoing=True, pattern="^.ggcast (.*)")
 async def gcast(event):
     kinguser = event.pattern_match.group(1)
     if not kinguser:
@@ -51,7 +51,7 @@ async def gucast(event):
 
 CMD_HELP.update(
     {
-        "bcast": "**✘ Plugin :** `Global Broadcast`\
+        "gcast": "**✘ Plugin :** `Global Broadcast`\
         \n\n  •  **Perintah :** `.ggcast` <Text>\
         \n  •  **Function : **Global Group Broadcast , Mengirim Pesan Global Broadcast pesan ke Seluruh Grup Yang King Masuki\
         \n\n  •  **Perintah :** `.pcast` <Text>\
