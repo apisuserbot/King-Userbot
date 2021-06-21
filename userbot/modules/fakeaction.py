@@ -193,9 +193,9 @@ async def ungbun(event):
             elif usname != "None":
                 jnl += "**Username** : @{}\n".format(usname)
             if len(gbunVar) > 0:
-                "`{}`".format(gbunVar)
-                ungbunr = "**Reason: **" + gbunm
-                jnl += gbunr
+                ungbunm = "`{}`".format(ungbunVar)
+                ungbunr = "**Reason: **" + ungbunm
+                jnl += ungbunr
             else:
                 jnl += no_reason
             await reply_message.reply(jnl)
