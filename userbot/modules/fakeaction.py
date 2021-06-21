@@ -192,7 +192,7 @@ async def ungbun(event):
                 jnl += "**Username: ** `Doesn't own a username!`\n"
             elif usname != "None":
                 jnl += "**Username** : @{}\n".format(usname)
-            if len(gbunVar) > 0:
+            if len(ungbunVar) > 0:
                 ungbunm = "`{}`".format(ungbunVar)
                 ungbunr = "**Reason: **" + ungbunm
                 jnl += ungbunr
