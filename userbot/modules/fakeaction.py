@@ -84,6 +84,7 @@ async def _(event):
 
 # created by Apis
 
+
 @register(outgoing=True, pattern="^.fkuota(?: |$)(.*)")
 async def _(event):
     event.pattern_match.group(1)
