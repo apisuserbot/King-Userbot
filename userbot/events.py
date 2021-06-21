@@ -114,7 +114,7 @@ def register(**args):
                     ftext += "\nFile ini HANYA diunggah di sini,"
                     ftext += "\nkami hanya mencatat fakta kesalahan dan tanggal,"
                     ftext += "\nkami menghormati privasi Anda,"
-                    ftext += "\nyou may not report this error if you've"
+                    ftext += "\nAnda tidak boleh melaporkan kesalahan ini jika kamu sudah login group support"
                     ftext += "\ndata rahasia apa pun di sini, tidak ada yang mau lihat datamu\n"
                     ftext += "================================\n\n"
                     ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
