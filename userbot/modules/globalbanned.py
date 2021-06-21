@@ -162,8 +162,8 @@ async def gban(event):
         if reason:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#GBAN\
-                \nGlobal Ban\
+                f"#GBANNED\
+                \nGlobal Banned\
                 \n**Pengguna : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n**Karena :** `{reason}`\
@@ -173,8 +173,8 @@ async def gban(event):
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#GBAN\
-                \nGlobal Ban\
+                f"#GBANNED\
+                \nGlobal Banned\
                 \n**Pengguna : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n__Banned dalam {count} grup__\
@@ -239,8 +239,8 @@ async def ungban(event):
         if reason:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#UNGBAN\
-                \nGlobal Unban\
+                f"#UNGBANNED\
+                \nGlobal Unbanned\
                 \n**Pengguna : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n**Karena :** `{reason}`\
@@ -250,8 +250,8 @@ async def ungban(event):
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#UNGBAN\
-                \nGlobal Unban\
+                f"#UNGBANNED\
+                \nGlobal Unbaned\
                 \n**Pengguna : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n__Unbanned dalam {count} grup__\
@@ -283,7 +283,7 @@ async def gablist(event):
 
 CMD_HELP.update(
     {
-        "gban": "**✘ Plugin : **`gban`\
+        "globalbanned": "**✘ Plugin : **`gban`\
         \n\n  •  **Perintah :** `.gban` <username/id>\
         \n  •  **Function : **Melakukan Banned Secara Global Ke Semua Grup Dimana anda Sebagai Admin\
         \n\n  •  **Perintah :** `.ungban` <username/id>\
