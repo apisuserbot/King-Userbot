@@ -4,13 +4,9 @@
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot import DEFAULTUSER, CMD_HELP, bot
 from time import sleep
 import asyncio
-
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
 
 # Languange en to id from King-Userbot
 # edit by Apis
@@ -98,7 +94,7 @@ async def _(event):
     sleep(1)
     await event.edit(
         f"★ **INFO KUOTA KING** ★\n╔══════━━━━━━━══════╗ \n"
-        f"➠ **Penggunaan Kuota :** `{ALIVE_NAME}` \n"
+        f"➠ **Penggunaan Kuota :** `{DEFAULTUSER}` \n"
         f"• **Hasil :** `00` **Jam** - `00` **Menit** \n"
         f"• **Persen :** `00`% \n"
         f"◖═══════════════════◗ \n"
@@ -106,7 +102,7 @@ async def _(event):
         f"• **Sisa :**  `1000` **Jam** - `00` **Menit** \n"
         f"• **Persen :** `10`% \n"
         f"╚══════━━━━━━━══════╝ \n"
-        f"◈ **KING :** {ALIVE_NAME} \n"
+        f"◈ **KING :** {DEFAULTUSER} \n"
         f"◈ **REPO :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)")
 
 
