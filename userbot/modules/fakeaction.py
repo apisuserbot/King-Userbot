@@ -108,6 +108,7 @@ async def _(event):
 
 @register(outgoing=True, pattern="^.fgban(?: |$)(.*)")
 async def gbun(event):
+    event.pattern_match.group(1)
     if event.fwd_from:
         return
     gbunVar = event.text
@@ -156,6 +157,7 @@ async def gbun(event):
 
 @register(outgoing=True, pattern="^.fungban(?: |$)(.*)")
 async def gbun(event):
+    event.pattern_match.group(1)
     if event.fwd_from:
         return
     gbunVar = event.text
