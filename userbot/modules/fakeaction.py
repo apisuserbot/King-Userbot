@@ -1,5 +1,6 @@
 # Port By @VckyouuBitch From Geez-Projects
 # Copyright (C) 2021 Geez-Project
+
 from userbot.events import register
 from userbot import ALIVE_NAME, CMD_HELP
 from time import sleep
@@ -81,6 +82,7 @@ async def _(event):
     async with event.client.action(event.chat_id, "game"):
         await asyncio.sleep(t)
 
+# created by Apis
 
 @register(outgoing=True, pattern="^.fkuota(?: |$)(.*)")
 async def _(event):
@@ -94,8 +96,8 @@ async def _(event):
         f"• **Persen :** `00`% \n"
         f"◖═══════════════════◗ \n"
         f"➠ **Sisa Kuota Bulan Ini :** \n"
-        f"• **Sisa :**  `1000` **Jam** - `10` **Menit** \n"
-        f"• **Persen :** `00`% \n"
+        f"• **Sisa :**  `1000` **Jam** - `00` **Menit** \n"
+        f"• **Persen :** `10`% \n"
         f"╚══════━━━━━━━══════╝ \n"
         f"◈ **KING :** {ALIVE_NAME} \n"
         f"◈ **REPO :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)")
