@@ -283,7 +283,7 @@ async def gablist(event):
 
 CMD_HELP.update(
     {
-        "globalbanned": "**✘ Plugin : **`gban`\
+        "gban": "**✘ Plugin :** `Global Banned`\
         \n\n  •  **Perintah :** `.gban` <username/id>\
         \n  •  **Function : **Melakukan Banned Secara Global Ke Semua Grup Dimana anda Sebagai Admin\
         \n\n  •  **Perintah :** `.ungban` <username/id>\
