@@ -51,16 +51,27 @@ async def typewriter(typew):
 async def _(event):
     event.pattern_match.group(1)
     await event.edit(
-        " -^-^-^- **K** -^-^-^- \n"
-        " -^-^-^- **I** -^-^-^- \n"
-        " -^-^-^- **N** -^-^-^- \n"
-        " -^-^-^- **G** -^-^-^- \n"
-        "__**USERBOT TELEGRAM**__ \n"
-        "━━━━━━━━━━━━━━━━━━━━━\n"
-        f"__**Hai aku adalah bot king assisten {ALIVE_NAME} yang menjaga akun ini**__ \n"
-        "__**Terimakasih**__ \n"
-        "`Enjoy:)` \n"
-        "__**Developer by :**__ [Apis](https://t.me/PacarFerdilla) ")
+        "...................\n"
+        "......... .........\n"
+        "........   ........\n"
+        ".......     .......\n"
+        "......       ......\n"
+        ".....         .....\n"
+        "....           ....\n"
+        "...             ...\n"
+        "..               ..\n"
+        ".   **K I N G**   .\n"
+        "..               ..\n"
+        "...             ...\n"
+        "....           ....\n"
+        ".....         .....\n"
+        "......       ......\n"  
+        ".......     .......\n"   
+        "........   ........\n"
+        "......... .........\n"
+        "...................\n"
+        " **- U S E R B O T -** \n"
+        "...................\n"
 
 CMD_HELP.update(
     {
