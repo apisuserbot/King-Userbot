@@ -1,8 +1,10 @@
 # Port By @VckyouuBitch From Geez-Projects
 # Copyright (C) 2021 Geez-Project
 
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, bot
 from time import sleep
 import asyncio
 
