@@ -8,10 +8,13 @@ from userbot import ALIVE_NAME, CMD_HELP, bot
 from time import sleep
 import asyncio
 
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
+
 # Languange en to id from King-Userbot
 # edit by Apis
 # Thanks Vicky
-
 
 @register(outgoing=True, pattern="^.ftyping(?: |$)(.*)")
 async def _(event):
@@ -108,7 +111,6 @@ async def _(event):
 
 @register(outgoing=True, pattern="^.fgban(?: |$)(.*)")
 async def gbun(event):
-    event.pattern_match.group(1)
     if event.fwd_from:
         return
     gbunVar = event.text
@@ -156,12 +158,11 @@ async def gbun(event):
 
 
 @register(outgoing=True, pattern="^.fungban(?: |$)(.*)")
-async def gbun(event):
-    event.pattern_match.group(1)
+async def ungbun(event):
     if event.fwd_from:
         return
-    gbunVar = event.text
-    gbunVar = gbunVar[6:]
+    ungbunVar = event.text
+    ungbunVar = ungbunVar[6:]
     mentions = f"`Warning!! User 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n"
     no_reason = "No Reason Given "
     await event.edit("**Summoning out the mighty ungban hammer ☠️**")
@@ -191,8 +192,8 @@ async def gbun(event):
             elif usname != "None":
                 jnl += "**Username** : @{}\n".format(usname)
             if len(gbunVar) > 0:
-                gbunm = "`{}`".format(gbunVar)
-                gbunr = "**Reason: **" + gbunm
+                ungbunm = "`{}`".format(gbunVar)
+                ungbunr = "**Reason: **" + gbunm
                 jnl += gbunr
             else:
                 jnl += no_reason
