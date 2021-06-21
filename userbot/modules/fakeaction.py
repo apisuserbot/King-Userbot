@@ -16,6 +16,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # edit by Apis
 # Thanks Vicky
 
+
 @register(outgoing=True, pattern="^.ftyping(?: |$)(.*)")
 async def _(event):
     t = event.pattern_match.group(1)
@@ -192,7 +193,7 @@ async def ungbun(event):
             elif usname != "None":
                 jnl += "**Username** : @{}\n".format(usname)
             if len(gbunVar) > 0:
-                ungbunm = "`{}`".format(gbunVar)
+                "`{}`".format(gbunVar)
                 ungbunr = "**Reason: **" + gbunm
                 jnl += gbunr
             else:
