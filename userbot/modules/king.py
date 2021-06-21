@@ -51,33 +51,18 @@ async def typewriter(typew):
 async def _(event):
     event.pattern_match.group(1)
     await event.edit(
-        "...................\n"
-        "......... .........\n"
-        "........   ........\n"
-        ".......     .......\n"
-        "......       ......\n"
-        ".....         .....\n"
-        "....           ....\n"
-        "...             ...\n"
-        "..               ..\n"
-        ".   **K I N G**   .\n"
-        "..               ..\n"
-        "...             ...\n"
-        "....           ....\n"
-        ".....         .....\n"
-        "......       ......\n"
-        ".......     .......\n"
-        "........   ........\n"
-        "......... .........\n"
-        "...................\n"
-        " **- U S E R B O T -** \n"
-        "...................\n"
+        f"`Halo {ALIVE_NAME} Saya Adalah Bot King Yang Menjaga Akun ini`"
+        f"`Agar Terhindar Dari Orang Orang Jahat Di Telegram`"
+        f"---------------------------------------------------"
+        f"\n\n__**(c) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
+        f"**My King :** `{ALIVE_NAME}`")
+
 
 CMD_HELP.update(
     {
         "king": "**✘ Plugin :** `king`\
         \n\n  •  **Perintah :** `.king`\
-        \n  •  **Function : **Untuk melihat sesuatu yang menarik\
+        \n  •  **Function : **Perkenalan Userbot King\
         \n\n  •  **Perintah :** `.sadboy`\
         \n  •  **Function : **Jadi sadboy:)\
         \n\n  •  **Perintah :** `.punten` | `.pantau`\
