@@ -24,7 +24,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`I LOVE YOU 💞`")
     sleep(1)
-    await typew.edit("`ILOVE YOU SO MUCH🦄`")
+    await typew.edit("`I LOVE YOU SO MUCH 🥰`")
 # Create by myself @localheart
 
 
@@ -48,5 +48,5 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("`Jangan Main Main`")
     sleep(2)
-    await typew.edit("`Gw Gban Nanti Nangesss`")
+    await typew.edit("`Aku Gban Nanti Nangesss`")
 # Create by myself @localheart
