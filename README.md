@@ -26,6 +26,22 @@
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kinguserbot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
 
+<h4 align="center"> Disclaimer </p>
+
+```
+             ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
+       Akun Telegram Anda mungkin diblokir.
+   Saya tidak bertanggung jawab atas penyalahgunaan bot ini
+Bot ini dimaksudkan untuk tujuan bersenang-senang dengan meme,
+      serta mengelola kelompok secara efisien.
+Anda akhirnya mengirim spam ke grup, dilaporkan ke kiri dan ke kanan,
+dan Anda berakhir di Finale Battle dengan Telegram dan pada akhirnya
+       Tim Telegram menghapus akun Anda?
+  Dan setelah itu, lalu kamu mengarahkan jarimu ke kami
+        untuk mendapatkan akun Anda dihapus?
+    Aku akan berguling-guling di lantai menertawakanmu.
+```
+
 ### Repo King Userbot 🚀
 Repo Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot yg ada diGithub 
 `
