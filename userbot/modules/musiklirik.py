@@ -152,9 +152,9 @@ async def original(event):
     dc = random.randrange(1, 3)
     if dc == 1:
         kInG = a1
-    if dc == 2:
+    elif dc == 2:
         kInG = a2
-    if dc == 3:
+    elif dc == 3:
         kInG = a3
     extract_lyrics = sl(f"{kInG}", "15b9fb6193efd5d90")
     k3nz = extract_lyrics.get_lyrics(f"{kenzo}")
