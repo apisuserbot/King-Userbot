@@ -54,8 +54,8 @@ async def _(event):
         f"`Halo {ALIVE_NAME} Saya Adalah Bot King Yang Menjaga Akun ini`"
         f"`Agar Terhindar Dari Orang Orang Jahat Di Telegram`"
         f"\n---------------------------------------------------"
-        f"\n\n__**(c) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
-        f"\n**My King :** `{ALIVE_NAME}`")
+        f"\n__**(c) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
+        f"\n\n**My King :** `{ALIVE_NAME}`")
 
 
 CMD_HELP.update(
