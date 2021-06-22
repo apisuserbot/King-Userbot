@@ -26,7 +26,8 @@
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kinguserbot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
 
-<h4 align="center"> Disclaimer </p>
+
+<h4 align="center"> DISCLAIMER </p>
 
 ```
              ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
@@ -41,6 +42,7 @@ dan Anda berakhir di Finale Battle dengan Telegram dan pada akhirnya
         untuk mendapatkan akun Anda dihapus?
     Aku akan berguling-guling di lantai menertawakanmu.
 ```
+
 
 ### Repo King Userbot 🚀
 Repo Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot yg ada diGithub 
@@ -83,7 +85,7 @@ Klik tombol dibawah untuk deploy King Userbot milikmu`
 ## Kredit
   Terimakasih untuk 
 
-*   [Alvin](https://github.com/Zora24/Lord-Userbot) - Lord Userbot
+*   [Alvin](https://github.com/Zora24) - Lord Userbot
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 *   [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
 *   [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - OpenUserBot
@@ -98,3 +100,10 @@ Klik tombol dibawah untuk deploy King Userbot milikmu`
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
 *   Dan Lainnya
+
+
+## Contributor 
+
+*  [Alvin](https://github.com/Zora24)
+*  [Axel](https://github.com/KENZO-404) 
+*  [Yunus](https://github.com/Yunus-Zend)
