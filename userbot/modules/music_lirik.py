@@ -42,10 +42,10 @@ async def download_video(event):
     a = event.text
     if len(a) >= 5 and a[5] == "s":
         return
-    await event.edit("`Sedang Memproses Music, Mohon Tunggu Sebentar...`")
+    await event.edit("`Sedang Memproses Music , Mohon Tunggu Sebentar...`")
     url = event.pattern_match.group(1)
     if not url:
-        return await event.edit("**List Error**\nCara Penggunaan : -`.music <Judul Lagu>`")
+        return await event.edit("**Daftar Error**\nCara Penggunaan : -`.music` <Judul Lagu>")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
@@ -165,11 +165,11 @@ async def original(event):
 
 CMD_HELP.update(
     {
-        "musiklirik": "**✘ Plugin :** Musik & Lirik\
-         \n\n  •  **Perintah :** `.musik` <Penyanyi/Band - Judul Lagu>\
-         \n↳  •  **Function :** Mengunduh Sebuah Lagu Yang Anda Inginkan.\
-         \n\n  •  **Perintah :** `.lirik` <Penyanyi/Band - Judul Lagu>\
-         \n  •  **Function :** Mencari Lirik Lagu Yang Anda Inginkan.\
+        "music": "**✘ Plugin :** Musik & Lirik\
+        \n\n  •  **Perintah :** `.musik` <Penyanyi/Band - Judul Lagu>\
+        \n  •  **Function :** Mengunduh Sebuah Lagu Yang Anda Inginkan.\
+        \n\n  •  **Perintah :** `.lirik` <Penyanyi/Band - Judul Lagu>\
+        \n  •  **Function :** Mencari Lirik Lagu Yang Anda Inginkan.\
     "
     }
 )
