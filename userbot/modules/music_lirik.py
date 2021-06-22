@@ -37,7 +37,7 @@ a3 = base64.b64decode(
     "QUl6YVN5RGRPS253blB3VklRX2xiSDVzWUU0Rm9YakFLSVFWMERR").decode("ascii")
 
 
-@register(outgoing=True, pattern=r"^\.musik (.*)")
+@register(outgoing=True, pattern=r"^\.music (.*)")
 async def download_video(event):
     a = event.text
     if len(a) >= 5 and a[5] == "s":
@@ -146,7 +146,7 @@ Connected to server...
 @register(outgoing=True, pattern=r"^\.lirik (.*)")
 async def original(event):
     if not event.pattern_match.group(1):
-        return await event.edit("Beri Saya Sebuah Judul Lagu Untuk Mencari Lirik.\n**Contoh** : `.lyrics` <Judul Lagu>")
+        return await event.edit("King , Beri Saya Sebuah Judul Lagu Untuk Mencari Lirik.\n**Contoh** : `.lyrics` <Judul Lagu>")
     kenzo = event.pattern_match.group(1)
     event = await event.edit("`🔍 Sedang Mencari Lirik Lagu...`")
     dc = random.randrange(1, 3)
@@ -165,8 +165,8 @@ async def original(event):
 
 CMD_HELP.update(
     {
-        "music": "**✘ Plugin :** Musik & Lirik\
-        \n\n  •  **Perintah :** `.musik` <Penyanyi/Band - Judul Lagu>\
+        "music": "**✘ Plugin :** Music & Lirik\
+        \n\n  •  **Perintah :** `.music` <Penyanyi/Band - Judul Lagu>\
         \n  •  **Function :** Mengunduh Sebuah Lagu Yang Anda Inginkan.\
         \n\n  •  **Perintah :** `.lirik` <Penyanyi/Band - Judul Lagu>\
         \n  •  **Function :** Mencari Lirik Lagu Yang Anda Inginkan.\
