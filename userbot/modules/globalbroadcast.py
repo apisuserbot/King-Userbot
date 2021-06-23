@@ -1,4 +1,4 @@
-# (c) Copyright King-Userbot (Apis) USERBOT TELEGRAM
+# Copyright (C) 2021 King-Userbot (Apis) USERBOT TELEGRAM
 # Ported by Apis
 # Thanks for ultroid
 # Thanks for ᴀxᴇʟ.ᴀʟ/ᴄᴏɴᴛʀɪʙᴜᴛᴏʀ
@@ -7,7 +7,7 @@ from userbot.events import register
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern="^.ggcast (.*)")
+@register(outgoing=True, pattern="^.gcast (.*)")
 async def gcast(event):
     kinguser = event.pattern_match.group(1)
     if not kinguser:
@@ -52,7 +52,7 @@ async def gucast(event):
 CMD_HELP.update(
     {
         "gcast": "**✘ Plugin :** `Global Broadcast`\
-        \n\n  •  **Perintah :** `.ggcast` <Text>\
+        \n\n  •  **Perintah :** `.gcast` <Text>\
         \n  •  **Function : **Global Group Broadcast , Mengirim Pesan Global Broadcast pesan ke Seluruh Grup Yang King Masuki\
         \n\n  •  **Perintah :** `.pcast` <Text>\
         \n  •  **Function : **Global Pengguna Broadcast , Kirim Pesan itu Secara Global ke Semua Pengguna Atau Anggota Grup Anda\
