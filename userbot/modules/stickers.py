@@ -32,8 +32,8 @@ KANGING_STR = [
     "Saatnya Beraksi , Mencolong Sticker...",
     "Waduh Sticker Lu Bagus Bro , Gw Curi Ya",
     "Wahaha Saatnya Maling Sticker...",
-    "Yahahaha bagus nih , curi ah...",
-    "King memaksa untuk mengambil stiker",
+    "Yahahaha bagus nih , colong ah...",
+    "King memaksa untuk mencolong stiker",
 ]
 
 
@@ -293,7 +293,7 @@ async def get_pack_info(event):
 
     try:
         stickerset_attr = rep_msg.document.attributes[1]
-        await event.edit("`Fetching details of the sticker pack, please wait..`")
+        await event.edit("`Mengecek Informasi Sticker..`")
     except BaseException:
         return await event.edit("`Ini bukan sticker, Mohon balas ke sticker.`")
 
@@ -314,13 +314,13 @@ async def get_pack_info(event):
             pack_emojis.append(document_sticker.emoticon)
 
     OUTPUT = (
-        f"     ╔════════════╗\n    ⚡️__**STICKER**__⚡️    \n╚════════════╝ \n"
-        f"**Nama Stciker:** `{get_stickerset.set.title}\n`"
-        f"**Nama Pendek Sticker:** `{get_stickerset.set.short_name}`\n"
-        f"**Official:** `{get_stickerset.set.official}`\n"
-        f"**Arsip:** `{get_stickerset.set.archived}`\n"
-        f"**Sticker Dalam Colongan:** `{len(get_stickerset.packs)}`\n"
-        f"**Emoji Dalam Colongan:**\n{' '.join(pack_emojis)}"
+        f"     ╔════════════╗\n      ⚡️__**STICKER**__⚡️    \n╚════════════╝ \n"
+        f"**Nama Stciker :** `{get_stickerset.set.title}\n`"
+        f"**Nama Pendek :** `{get_stickerset.set.short_name}`\n"
+        f"**Official :** `{get_stickerset.set.official}`\n"
+        f"**Arsip :** `{get_stickerset.set.archived}`\n"
+        f"**Sticker Dalam :** `{len(get_stickerset.packs)}`\n"
+        f"**Emoji Sticker ↯**\n{' '.join(pack_emojis)}"
     )
 
     await event.edit(OUTPUT)
@@ -329,7 +329,7 @@ async def get_pack_info(event):
 @register(outgoing=True, pattern=r"^\.getsticker$")
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
-        await sticker.edit("`NULL information to fetch...`")
+        await sticker.edit("`Informasi NULL untuk diambil...`")
         return False
 
     img = await sticker.get_reply_message()
@@ -365,9 +365,9 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.kang` [emoji] atau `.colong` `[emoji]`\
         \n  •  **Function : **Balas .kang emoji Ke Sticker Atau Gambar Untuk mencolong dan costum emoji sticker Ke Colongan Mu\
         \n\n  •  **Perintah :** `.stkrinfo`\
-        \n  •  **Function : **Dapatkan Informasi Sticker Colongan.\
-        \n\n  •  **Perintah :** `.getsticker` <nama pack sticker>\
-        \n  •  **Function : **Untuk Mencari Sticker Colongan.\
+        \n  •  **Function : **Dapatkan Informasi Sticker\
+        \n\n  •  **Perintah :** `.getsticker` <nama colongan sticker>\
+        \n  •  **Function : **Untuk Mencari Sticker Colongan\
     "
     }
 )
