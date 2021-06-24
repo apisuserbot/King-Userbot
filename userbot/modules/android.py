@@ -303,17 +303,19 @@ async def twrp(request):
 
 CMD_HELP.update(
     {
-        "android": ">`.magisk`"
-        "\nUntuk Mendapatkan rilis MAGISK terbaru"
-        "\n\n>`.device <codename>`"
-        "\nPenjelasan: Get info about android device codename or model."
-        "\n\n>`.codename <brand> <device>`"
-        "\nPenjelasan: Cari perangkat Android codename."
-        "\n\n>`.pixeldl` **<download.pixelexperience.org>**"
-        "\nPenjelasan: Download pixel experience ROM ke server userbot anda."
-        "\n\n>`.specs <brand> <device>`"
-        "\nPenjelasan: Untuk mendapatkan info spesifikasi perangkat."
-        "\n\n>`.twrp <codename>`"
-        "\nPenjelasan: Mendapatkan versi terbaru twrp download untuk perangkat android."
+        "android": "**✘ Plugin :** `android`\
+        \n\n  •  **Perintah :** `.magisk`\
+        \n  •  **Function : **Untuk Mendapatkan rilis MAGISK terbaru\
+        \n\n  •  **Perintah :** `.device` <codename>\
+        \n  •  **Function : **Get info about android device codename or model\
+        \n\n  •  **Perintah :** `.codename` <brand> <device>\
+        \n  •  **Function : **Cari perangkat Android codename\
+        \n\n  •  **Perintah :** `.pixeldl` <download.pixelexperience.org>\
+        \n  •  **Function : **Download pixel experience ROM ke server userbot anda\
+        \n\n  •  **Perintah :** `.specs` <brand> <device>\
+        \n  •  **Function : **Untuk mendapatkan info spesifikasi perangkat\
+        \n\n  •  **Perintah :** `.twrp` <codename>\
+        \n  •  **Function : **Mendapatkan versi terbaru twrp download untuk perangkat android\
+    "
     }
 )
