@@ -124,7 +124,7 @@ async def kickme(leave):
     """ Basically it's .keluar command """
     await leave.edit("`Keluar ajalah anjg , GC AMPAS GAK GUNA INI ...`")
     sleep(7)
-    await leave.edit("`⚡️ King {ALIVE_NAME} Telah Keluar Grup...`")
+    await leave.edit(f"`⚡️ King {ALIVE_NAME} Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
