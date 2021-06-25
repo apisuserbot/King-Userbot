@@ -16,7 +16,7 @@ import sys
 import os
 import io
 import sys
-from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, BOT_VER, CMD_HELP, bot
 from userbot.events import register
 from userbot.utils import time_formatter
 import urllib
@@ -92,11 +92,11 @@ async def killdabot(event):
 
 
 @register(outgoing=True, pattern="^.readme$")
-async def reedme(e):
+async def readme(e):
     await e.edit(
-        "✘ **My Repository dan file :** \n"
-        "\n☇ [Repo Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
-        "\n☇ [Spesial Userbot](https://github.com/apisuserbot/WeebProject-Apis)")
+        "✘ **My Repository Userbot** \n"
+        "\n☇ [King-Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "\n☇ [WeebProject-Apis](https://github.com/apisuserbot/WeebProject-Apis)")
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")
@@ -117,35 +117,29 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"  ✘ __**My Repository :**__ \n\n"
-        f"**Hay**, __saya {DEFAULTUSER} pengguna__ userbot\n\n"
-        "         🔥 __Terimkasih untuk userbot__ 🔥   \n\n"
+        f"  ✘ __**My Repository King**__ \n\n"
         "✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
-        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
+       f"✣ **Versi Userbot :** `{BOT_VER}` \n"
+        "✣ **Developer Project :** [Apis](https://t.me/PacarFerdilla) \n\n"
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
 @register(outgoing=True, pattern="^.string$")
-async def repo_is_here(wannasee):
+async def string_is_here(wannasee):
     """ For .string command, just returns the string URL. """
     await wannasee.edit(
         f"__Halo {DEFAULTUSER} ini string session king , jika Anda ingin memakainya , klik link string sessionnya disini ya!__ \n\n"
-        "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n"
-        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
-        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
+        "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n\n"
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
 @register(outgoing=True, pattern="^.tutorial$")
-async def repo_is_here(wannasee):
+async def tutorial_is_here(wannasee):
     """ For .tutorial command, just returns the tutorial URL. """
     await wannasee.edit(
         "           🔥 __**TUTORIAL USERBOT**__ 🔥 \n\n"
-        "✣ **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n"
-        "✣ **Grup Support :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
-        "✣ **Channel Support :** [Klik Disini](https://t.me/TeamKingUserbot) \n"
-        "✣ **Developer :** [Apis](https://t.me/PacarFerdilla) ")
+        "✣ **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n\n"
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
 @register(outgoing=True, pattern="^.raw$")
