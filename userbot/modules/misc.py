@@ -94,9 +94,9 @@ async def killdabot(event):
 @register(outgoing=True, pattern="^.readme$")
 async def readme(e):
     await e.edit(
-        "✘ **My Repository Userbot** \n"
-        "\n☇ [King-Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
-        "\n☇ [WeebProject-Apis](https://github.com/apisuserbot/WeebProject-Apis)")
+        "   **Readme Userbot** \n\n"
+        "\n• **Repo** [King-Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
+        "\n• **Repo** [WeebProject-Apis](https://github.com/apisuserbot/WeebProject-Apis/blob/WeebProject-Apis/README.md)")
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")
@@ -117,10 +117,11 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"  ✘ __**My Repository King**__ \n\n"
-        "✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"✣ **Versi Userbot :** `{BOT_VER}` \n"
-        "✣ **Developer Project :** [Apis](https://t.me/PacarFerdilla) \n\n"
+        f"   **Repository** \n\n"
+        "• **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
+        f"• **Versi Userbot :** `{BOT_VER}` \n"
+        "• **License :** [Raphielscape Public Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
+        "• **Developer Project :** [Apis](https://t.me/PacarFerdilla) \n\n"
         "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
@@ -128,8 +129,8 @@ async def repo_is_here(wannasee):
 async def string_is_here(wannasee):
     """ For .string command, just returns the string URL. """
     await wannasee.edit(
-        f"__Halo {DEFAULTUSER} ini string session king , jika Anda ingin memakainya , klik link string sessionnya disini ya!__ \n\n"
-        "✣ **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n\n"
+        f"   **String Session** \n\n"
+        "• **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n\n"
         "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
@@ -137,8 +138,8 @@ async def string_is_here(wannasee):
 async def tutorial_is_here(wannasee):
     """ For .tutorial command, just returns the tutorial URL. """
     await wannasee.edit(
-        "           🔥 __**TUTORIAL USERBOT**__ 🔥 \n\n"
-        "✣ **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n\n"
+        "    **Tutorial Userbot** \n\n"
+        "• **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n\n"
         "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
 
@@ -347,7 +348,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "readme": "**✘ Plugin : **`Panduan Menggunakan userbot`\
+        "readme": "**✘ Plugin :** `Readme Pada Repository`\
         \n\n  •  **Perintah :** `.readme`\
         \n  •  **Function : **Menyediakan tautan untuk mengatur userbot dan pluginnya\
     "
@@ -357,9 +358,9 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "restart": "**✘ Plugin : **`Restart` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        "restart": "**✘ Plugin :** `Memulai Ulang` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.restart`\
-        \n  •  **Function : **Untuk Merestart userbot.\
+        \n  •  **Function : **Untuk Memulai Ulang userbot.\
     "
     }
 )
@@ -367,7 +368,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "shutdown": "**✘ Plugin : **`shutdown`\
+        "shutdown": "**✘ Plugin :** `shutdown`\
         \n\n  •  **Perintah :** `.shutdown`\
         \n  •  **Function : **Mematikan Userbot.\
     "
@@ -377,7 +378,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "raw": "**✘ Plugin : **`raw`\
+        "raw": "**✘ Plugin :** `raw`\
         \n\n  •  **Perintah :** `.raw`\
         \n  •  **Function : **Dapatkan data berformat seperti JSON terperinci tentang pesan yang dibalas.\
     "
@@ -387,7 +388,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repeat": "**✘ Plugin : **`repeat`\
+        "repeat": "**✘ Plugin :** `repeat`\
         \n\n  •  **Perintah :** `.repeat`\
         \n  •  **Function : **Mengulangi teks untuk beberapa kali , Jangan bingung ini dengan spam.\
     "
