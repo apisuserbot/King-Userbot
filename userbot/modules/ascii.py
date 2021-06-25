@@ -139,11 +139,13 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "ascii": "`.ascii`\n"
-        "Usage: Buat Ascii Art Dari Media\n\n"
-        "`.asciis`\n"
-        "Usage: Sama Tapi Unggah Hasilnya Sebagai Sticker\n\n"
-        "`.asciibg <color>`\n"
-        "Usage: Untuk Mengubah Warna Background Dari Modul Ascii Contoh `.asciibg black`"
+        "ascii": "**Plugin :** `ascii`\
+        \n\n  •  **Perintah :** `.ascii`\
+        \n  •  **Function : **Buat Ascii Art Dari Media\
+        \n\n  •  **Perintah :** `.asciis`\
+        \n  •  **Function : **Sama Tapi Unggah Hasilnya Sebagai Sticker\
+        \n\n  •  **Perintah :** `.asciibg` <color>\
+        \n  •  **Function : **Untuk Mengubah Warna Background Dari Plugin Ascii Contoh `.asciibg black`\
+    "
     }
 )
