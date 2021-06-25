@@ -10,6 +10,7 @@ from userbot import CMD_HELP
 # Buat Kamu Yang Hapus Credits. Intinya Kamu Anjing:)
 # Recode Lynx-Userbot dari King-Userbot
 # Dari Apis Terimakasih Vicky
+
 @register(outgoing=True, pattern="^.ip(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -41,8 +42,9 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "fakeaddress": "**IP HACK**\
-\n\n**Syntax : **`.ip <ip address>`\
-\n**Usage :** Memberikan detail tentang alamat ip."
+        "fakeaddress": "**✘ Plugin :** `Fake Ip`\
+        \n\n  •  **Perintah : **`.ip <ip address>`\
+        \n  •  **Function : **Memberikan detail tentang alamat ip\
+    "
     }
 )
