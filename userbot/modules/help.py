@@ -42,6 +42,7 @@ async def help(event):
             f"\n**◑» Perintah Plugin**\n\n"
             f"**Contoh** : **Ketik** `.help afk` **Untuk Informasi Pengunaan Plugin Afk\nAtau Bisa Juga Ketik** `.helpme` **Untuk Help Button Lain-Nya**\n\n"
             f"• **LICENSE :** [Raphielscape Public Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-            f"• **Copyright (C) 2021 [King-Userbot Company LLC](https://github.com/apisuserbot/King-Userbot.git) ")
+            f"• **Copyright (C) 2021** [King-Userbot Company LLC](https://github.com/apisuserbot/King-Userbot.git) ")
         await asyncio.sleep(1000)
         await event.delete()
+# fixes by apis
