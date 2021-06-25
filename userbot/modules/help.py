@@ -38,8 +38,8 @@ async def help(event):
                          f"**◑» King** {DEFAULTUSER}\n**◑» Plugins :** `{len(modules)}`\n\n"
                          "**❒ Main Menu ↯**\n"
                          f"╰►| {string} ◄─\n\n"
-                         "**LICENSE :** [GNU GPL v3.0](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE)\n"
-                         "**Copyright (C) 2021 King-Userbot USERBOT TELEGRAM**")
+                         f"**License : [GNU GPL v3.0](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE)**\n"
+                         f"**Copyright (C) 2021 [King-Userbot](https://github.com/apisuserbot/King-Userbot.git)**")
         await event.reply(f"\n**◑» Perintah Plugin**\n\n**Contoh** : **Ketik** `.help afk` **Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik** `.helpme` **Untuk Main Menu Yang Lain-Nya.**")
         await asyncio.sleep(1000)
         await event.delete()
