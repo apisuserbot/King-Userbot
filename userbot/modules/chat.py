@@ -5,7 +5,7 @@
 """ Userbot module containing userid, chatid and log commands"""
 
 from asyncio import sleep
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from datetime import datetime
 from telethon import functions
 from emoji import emojize
@@ -33,11 +33,11 @@ async def _(event):
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await event.edit("ID Grup: `{}`\nID Dari Pengguna: `{}`\nID Bot File API: `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
+            await event.edit("ID Grup : `{}`\nID Dari Pengguna : `{}`\nID Bot File API : `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
         else:
-            await event.edit("ID Grup: `{}`\nID Dari Pengguna: `{}`".format(str(event.chat_id), str(r_msg.from_id)))
+            await event.edit("ID Grup : `{}`\nID Dari Pengguna : `{}`".format(str(event.chat_id), str(r_msg.from_id)))
     else:
-        await event.edit("ID Grup: `{}`".format(str(event.chat_id)))
+        await event.edit("ID Grup : `{}`".format(str(event.chat_id)))
 
 
 @register(outgoing=True, pattern="^.link(?: |$)(.*)")
@@ -58,14 +58,14 @@ async def permalink(mention):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Bot Di Channel Ini:** \n"
+    mentions = "**Bot Di Channel Ini :** \n"
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "👑 Bot Dalam {} Channel Ini: \n".format(input_str)
+        mentions = "Bot Dalam {} Channel Ini : \n".format(input_str)
         try:
             chat = await bot.get_entity(input_str)
         except Exception as e:
@@ -108,14 +108,14 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit("`⚡️ King Telah Meninggalkan Grup...`")
+    await leave.edit(f"`⚡️ King {ALIVE_NAME} Telah Meninggalkan Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
 @register(outgoing=True, pattern="^.leave$")
 async def kickme(leave):
     """ Basically it's .leave command """
-    await leave.edit("`⚡️ King Telah Keluar Grup...`")
+    await leave.edit(f"`⚡️ King {ALIVE_NAME} Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -123,8 +123,8 @@ async def kickme(leave):
 async def kickme(leave):
     """ Basically it's .keluar command """
     await leave.edit("`Keluar ajalah anjg , GC AMPAS GAK GUNA INI ...`")
-    sleep(2)
-    await leave.edit("`⚡️ King Telah Keluar Grup...`")
+    sleep(7)
+    await leave.edit("`⚡️ King {ALIVE_NAME} Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -442,29 +442,29 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "chat": "**✘ Plugin : **`chat`\
+        "chat": "**✘ Plugin :** `Global Chat`\
         \n\n  •  **Perintah :** `.getid`\
         \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
         \n\n  •  **Perintah :** `.getbot`\
-        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
+        \n  •  **Function : **Dapatkan List Bot dalam grup caht\
         \n\n  •  **Perintah :** `.logit`\
-        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda.\
+        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
         \n\n  •  **Perintah :** `.mutechat`\
-        \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin).\
+        \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin)\
         \n\n  •  **Perintah :** `.unmutechat`\
-        \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin).\
+        \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin)\
         \n\n  •  **Perintah :** `.getbot`\
-        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
+        \n  •  **Function : **Dapatkan Daftar Bot dalam grup chat\
         \n\n  •  **Perintah :** `.logit`\
-        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda.\
-        \n\n  •  **Perintah :** `.link` <username/userid>: <opsional teks> (atau) Reply pesan .link <teks opsional>\
-        \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional.\
+        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
+        \n\n  •  **Perintah :** `.link` <username/userid>: <opsional teks> (atau) Reply pesan `.link` <teks opsional>\
+        \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional\
         \n\n  •  **Perintah :** `.regexninja` enable/disabled\
-        \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. Modul Regex Ninja membantu menghapus pesan pemicu bot regex.\
-        \n\n  •  **Perintah :** `.chatinfo [opsional: <reply/tag/chat id/invite link>]`\
-        \n  •  **Function : **Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang.\
+        \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. Modul Regex Ninja membantu menghapus pesan pemicu bot regex\
+        \n\n  •  **Perintah :** `.chatinfo` [opsional: <reply/tag/chat id/invite link>]\
+        \n  •  **Function : **Mendapatkan info obrolan, Beberapa info mungkin dibatasi karena izin yang hilang\
         \n\n  •  **Perintah :** `.invite`\
-        \n  •  **Function : **Menambahkan pengguna ke obrolan, bukan ke pesan pribadi.\
+        \n  •  **Function : **Menambahkan pengguna ke obrolan, bukan ke pesan pribadi\
     "
     }
 )
@@ -472,11 +472,11 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "kickme": "**✘ Plugin : **`kickme`\
+        "kickme": "**✘ Plugin :** `Kickme Userbot`\
         \n\n  •  **Perintah :** `.kickme`\
-        \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Meninggalkan Grup...`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
         \n\n  •  **Perintah :** `.leave`\
-        \n  •  **Function : **Keluar grup dengan menampilkan pesan `⚡️ King Telah Keluar Grup...`\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
         \n\n  •  **Perintah :** `.keluar`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
     "
