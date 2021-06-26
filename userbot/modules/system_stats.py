@@ -422,14 +422,13 @@ CMD_HELP.update(
     {
         "sistem": "**✘ Plugin :** `Sistem Userbot`.\
         \n\n  •  **Perintah :** `.sysd`\
-        \n  •  **Function : **Menampilkan informasi sistem menggunakan neofetch\ 
-        \n\n  •  **Perintah :** `.pip` <module(s)>\
-        \n  •  **Function : **Melakukan pencarian modul pip\
-        \n\n  •  **Perintah :** `.db`\
-        \n  •  **Function : **Menampilkan info terkait database.\
-        \n\n  •  **Perintah :** `.spc`\
-        \n  •  **Function : **Show system specification\
-    "
+        \n  • **Fu nction: **Menampilkan informasi sis tem menggunak an neofetch
+        \n\n  • ** Perintah: ** `.pip` < module(s) > n  • ** Function: **Melakukan pencarian modul pip
+        \n\n  • ** Perintah: ** `.db`
+        \n  • ** Function: **Menampilkan info terkait database.
+        \n\n  • ** Perintah: ** `.spc`
+        \n  • ** Function: **Show system specification
+        "
     }
 )
 
@@ -444,7 +443,7 @@ CMD_HELP.update(
         \n`.kingalive` | `.kingon`\
         \n   `.xalive` | `.xon`\
         \n   `.ualive` | `.uon`\
-        \n\n  **Dingunakan Untuk Bersenang Senang Saja**\ 
+ n\n  **Dingunakan Untuk Bersenang Senang Saja**
     "
     }
 )
@@ -456,4 +455,4 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilkan versi userbot\
     "
     }
-)  
+)
