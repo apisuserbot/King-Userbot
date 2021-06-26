@@ -5,13 +5,13 @@
   "keywords": [
     "telegram",
     "userbot",
-    "plugin",
+    "king-userbot",
     "modular",
     "productivity"
   ],
   "repository": "https://github.com/apisuserbot/King-Userbot",
   "telegram": "https://t.me/PacarFerdilla",
-  "success_url": "https://t.me/PacarFerdilla",
+  "success_url": "https://t.me/KingUserbotSupport",
   "stack": "container",
   "env": {
     "API_KEY": {
