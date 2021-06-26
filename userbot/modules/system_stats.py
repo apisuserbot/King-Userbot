@@ -243,7 +243,7 @@ async def amireallyalive(alive):
         f"|✶ 📂 `Plugins  :`{len(modules)} \n"
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
-        f"• **License :** [Raphielscape Public Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
         f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
     if ALIVE_LOGO:
         try:
@@ -281,9 +281,7 @@ async def amireallyalive(alive):
         f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"◈ **REPO USERBOT  :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        f"◈ **GRUP SUPPORT :** [Klik Disini](https://t.me/KingUserbotSupport) \n"
-        f"◈ **PEMILIK :** [Developer King](https://t.me/PacarFerdilla) \n"
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -324,7 +322,7 @@ async def redis(alive):
     await asyncio.sleep(3)
     output = (
         f"**╭╼═✯══════════════✯═╾╮**\n"
-        f" ㅤ**★ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ★** \n"
+        f" ㅤ ** ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ** \n"
         f"**╰╼═✯══════════════✯═╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE BOT** ⇲ \n"
@@ -340,8 +338,8 @@ async def redis(alive):
         f"├◈ **Support Terus Repo Kami** \n"
         f"│    **Dengan Link Di Bawah Ini.** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[Repo Userbot](https://apisuserbot.github.io/King-Userbot) | [Grup Support](t.me/KingUserbotSupport) | "
-        f"[Developer King](t.me/PacarFerdilla)")
+        f"• [License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | • [Support Chat](t.me/KingUserbotSupport) | "
+        f"• [Developer King](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -379,7 +377,7 @@ async def redis(alive):
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
         f"{ALIVE_EMOJI} **Userbot Uptime :** `{uptime}` \n"
-        f"[Support](https://t.me/KingUserbotSupport) | [Channel](https://t.me/TeamKingUserbot) | [Developer King](t.me/PacarFerdilla)")
+        f"• [Support Chat](https://t.me/KingUserbotSupport) | • [Channel Support](https://t.me/TeamKingUserbot) | • [Developer King](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -424,9 +422,7 @@ CMD_HELP.update(
     {
         "sistem": "**✘ Plugin :** `Sistem Userbot`.\
         \n\n  •  **Perintah :** `.sysd`\
-        \n  •  **Function : **Menampilkan informasi sistem menggunakan neofetch\
-        \n\n\n  •  **Perintah :** `.botver`\
-        \n  •  **Function : **Menampilkan versi userbot\
+        \n  •  **Function : **Menampilkan informasi sistem menggunakan neofetch\ 
         \n\n  •  **Perintah :** `.pip` <module(s)>\
         \n  •  **Function : **Melakukan pencarian modul pip\
         \n\n  •  **Perintah :** `.db`\
@@ -439,11 +435,25 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "alive": "**Plugin :** `Alive Userbot`\
+        "alive": "**✘ Plugin :** `Alive Userbot`\
         \n\n  •  **Perintah :** `.alive` atau `.on`\
         \n  •  **Function : **Ketik `.alive` untuk melihat apakah bot Anda berfungsi atau tidak\
         \n\n  •  **Peeintah :** `.resetalive`\
-        \n  •  **Function : **Untuk Membanned Akun yang sedang online\
+        \n  •  **Function : **Untuk Mereset Pengguna Alive\
+        \n\n  **Animasi Alive Lainnya :**\
+        \n`.kingalive` | `.kingon`\
+        \n   `.xalive` | `.xon`\
+        \n   `.ualive` | `.uon`\
+        \n\n  **Dingunakan Untuk Bersenang Senang Saja**\ 
     "
     }
 )
+
+CMD_HELP.update(
+    {
+        "botver": "**✘ Plugin :** `Versi Userbot`\
+        \n\n  •  **Perintah :** `.botver`\
+        \n  •  **Function : **Menampilkan versi userbot\
+    "
+    }
+)  
