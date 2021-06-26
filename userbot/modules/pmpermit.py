@@ -31,7 +31,7 @@ CUSTOM_TEXT = str(
     PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Halo kawan, saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 DEF_UNAPPROVED_MSG = (
     f"╔══════ 👑 ══════╗\n      **ROOM CHAT KING**     \n╚══════ 〠 ══════╝  \n"
-    f"⎆ {CUSTOM_TEXT} \n"
+    f"⎆ __{CUSTOM_TEXT}__ \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"⎆ **Dilarang Spam** \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
