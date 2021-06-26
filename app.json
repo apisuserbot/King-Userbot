@@ -7,7 +7,7 @@
     "userbot",
     "king-userbot",
     "modular",
-    "productivity"
+    "python"
   ],
   "repository": "https://github.com/apisuserbot/King-Userbot",
   "telegram": "https://t.me/PacarFerdilla",
@@ -66,7 +66,7 @@
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
-      "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
+      "description": "Isi GITHUB_ACCESS_TOKEN, Dapatkan dari 'https://github.com/settings/tokens'",
       "required": false
     },
     "GIT_REPO_NAME": {
@@ -134,11 +134,11 @@
       "required": true
     },
     "LASTFM_API": {
-      "description": "Last API untuk plugin Last.FM. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "Last API untuk plugin Last.FM. [Dapatkan kode pertama di - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_SECRET": {
-      "description": "SECRET Key untuk plugin Last.FM  [Get one from - https://www.last.fm/api/account/create]",
+      "description": "SECRET Key untuk plugin Last.FM [Dapatkan kode pertama di - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_USERNAME": {
@@ -168,7 +168,7 @@
       "required": false
     },
     "KING_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .king (Isi Terserah)",
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .kingon (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
