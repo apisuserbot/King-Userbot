@@ -50,11 +50,11 @@
       "value": "False"
     },
     "QUOTES_API_TOKEN": {
-      "description": "Dapatkan Token Dari http://antiddos.systems",
+      "description": "Dapatkan Quotes TOKEN caranya @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
-      "description": "Client Access Token from https://genius.com/api-clients.",
+      "description": "Dapatkan Genius Acces TOKEN caranya @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "MONGO_URI": {
@@ -62,7 +62,7 @@
       "required": false
     },
     "GENIUS": {
-      "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
+      "description": "Dapatkan GENIUS caranya @KingUserbotSupport lalu ketik #apikey.",
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -74,34 +74,39 @@
       "required": false
     },
     "COUNTRY": {
-      "description": "Set your Country to be used in the .time and .date commands.",
+      "description": "Atur Negara Anda untuk digunakan di perintah waktu dan tanggal",
       "value": "ID",
       "required": true
     },
     "TZ_NUMBER": {
-      "description": "Change this value in case your country has multiple Time Zones.",
+      "description": "Ubah nilai ini jika negara Anda memiliki beberapa Zona Waktu.",
       "value": "1",
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
-      "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "description": "Dapatkan Open Weather Map APID caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "required": false
+    },
+    "PMPERMIT_TEXT": {
+      "description": "Isi Pesan Untuk Pmpermit Anda Sendiri (Isi Sesuka Anda)",
+      "value": "Halo Kamu, Jangan Spam Yah!",
       "required": false
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
+      "description": "Pengalihan Fitur Larangan Otomatis PM, Pilih True Jika Ingin Mengaktifkan, Pilih False Jika Ingin Nonaktifkan",
       "value": "False",
       "required": true
     },
     "YOUTUBE_API_KEY": {
-      "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "description": "Dapatkan Youtube APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey ",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
+      "description": "Dapatkan Ocr APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "REM_BG_API_KEY": {
-      "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "description": "Dapatkan Rem Bg APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "ANTI_SPAMBOT": {
@@ -189,7 +194,7 @@
       "required": false
     },
     "BITLY_TOKEN": {
-      "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
+      "description": "Dapatkan Bitly TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
       "value": "",
       "required": false
     },
@@ -198,33 +203,33 @@
       "required": false
     },
     "LYDIA_API_KEY": {
-      "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
+      "description": "Plugin Ini Membutuhkan CoffeeHouse API agak berhasil, bergabung https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
       "required": false
     },
     "WEATHER_DEFCITY": {
-      "description": "Set the default city for the userbot's weather module.",
+      "description": "Isi Asalmu (Nama Kotamu)",
       "value": "Jakarta",
       "required": false
     },
     "LOGSPAMMER": {
-      "description": "Set this to True in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
+      "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, alih-alih mengeluarkan file di saat ini chat, requires harus valid BOTLOG_CHATID untuk diatur.",
       "value": "True",
       "required": true
     },
     "DEEZER_ARL_TOKEN": {
-      "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
+      "description": "Masukkan DEEZER ARL TOKEN dari https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
       "required": false
     },
     "UPSTREAM_REPO_URL": {
-      "description": "In case you maintain a fork, add your repo URL here.",
+      "description": "Untuk repo fork mu, Tambahkan repo url fork mu.",
       "required": false
     },
     "BOT_TOKEN": {
-      "description": "Set this to enable inline bot helper. get the token from @BotFather",
+      "description": "Setel ini untuk mengaktifkan pembantu bot sebaris. Token dari @BotFather",
       "required": false
     },
     "BOT_USERNAME": {
-      "description": "Username of the bot you created with @BotFather",
+      "description": "username bot yang Anda buat di @BotFather",
       "required": false
     }
   },
