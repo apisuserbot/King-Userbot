@@ -420,15 +420,16 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update(
     {
-        "sistem": "**✘ Plugin :** `Sistem Userbot`.\
+        "sistem": "**✘ Plugin :** `Sistem Userbot`\
         \n\n  •  **Perintah :** `.sysd`\
-        \n  • **Fu nction: **Menampilkan informasi sis tem menggunak an neofetch
-        \n\n  • ** Perintah: ** `.pip` < module(s) > n  • ** Function: **Melakukan pencarian modul pip
-        \n\n  • ** Perintah: ** `.db`
-        \n  • ** Function: **Menampilkan info terkait database.
-        \n\n  • ** Perintah: ** `.spc`
-        \n  • ** Function: **Show system specification
-        "
+        \n  •  **Function : **Menampilkan informasi sis tem menggunak an neofetch\
+        \n\n  •  **Perintah :** `.pip` <plugin(s)>\
+        \n  •  **Function : **Melakukan pencarian modul pip\
+        \n\n  •  **Perintah :** `.db`\
+        \n  •  **Function : **Menampilkan info terkait database\
+        \n\n  •  **Perintah :** `.spc`\
+        \n  •  **Function : **Show system specification\
+    "
     }
 )
 
@@ -437,13 +438,11 @@ CMD_HELP.update(
         "alive": "**✘ Plugin :** `Alive Userbot`\
         \n\n  •  **Perintah :** `.alive` atau `.on`\
         \n  •  **Function : **Ketik `.alive` untuk melihat apakah bot Anda berfungsi atau tidak\
-        \n\n  •  **Peeintah :** `.resetalive`\
+        \n\n  •  **Perintah :** `.resetalive`\
         \n  •  **Function : **Untuk Mereset Pengguna Alive\
         \n\n  **Animasi Alive Lainnya :**\
-        \n`.kingalive` | `.kingon`\
-        \n   `.xalive` | `.xon`\
-        \n   `.ualive` | `.uon`\
- n\n  **Dingunakan Untuk Bersenang Senang Saja**
+        \n `.kingalive` | `.kingon` | `.ualive` | `.uon` | `.xalive` | `.xon`\
+        \n\n  **Dingunakan Untuk Bersenang Senang Saja**\
     "
     }
 )
