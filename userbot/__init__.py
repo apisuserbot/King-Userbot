@@ -2,9 +2,9 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-# inline credit @keselekpermen69 
+# inline credit @keselekpermen69
 #
-# Ported by Apis @PacarFerdilla 
+# Ported by Apis @PacarFerdilla
 # Repository (King - Userbot)
 """ Userbot initialization. """
 
@@ -559,6 +559,5 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variabel bukan "
-            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file."
-        )
+            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
         quit(1)
