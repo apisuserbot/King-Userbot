@@ -18,19 +18,22 @@ from userbot import (
     LASTMSG,
     LOGS,
     PM_AUTO_BAN,
+    PMPERMIT_TEXT,
     ALIVE_NAME,
 )
 
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+CUSTOM_TEXT = str(
+    PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Halo kawan, saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 DEF_UNAPPROVED_MSG = (
     f"╔══════ 👑 ══════╗\n      **ROOM CHAT KING**     \n╚══════ 〠 ══════╝  \n"
-    f"⎆ __Halo kawan , saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
+    f"⎆ {CUSTOM_TEXT} \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
-    f"⎆**DILARANG SPAM 1/3** \n"
+    f"⎆ **Dilarang Spam** \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"◈ **KING** : {DEFAULTUSER}\n"
     f"◈ **SUPPORT** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
@@ -91,8 +94,8 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 3:
                 await event.respond(
-                    "🔥 **BLOKIR OTOMATIS**\n\n`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
-                    f"`Ke Room Chat King {DEFAULTUSER}`"
+                    "✣ __**SISTEM BLOKIR OTOMATIS**__\n\n__Mohon Maaf Nomor Anda Telah Di Blokir Karena Spam Pesan__\n"
+                    f"__Ke Room Chat King {DEFAULTUSER}__"
                 )
 
                 try:
@@ -397,7 +400,7 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan 😯`")
+                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan :"`")
             await borg.send_message(
                 chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**"
             )
@@ -405,7 +408,7 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        "pm": "**✘ Plugin : **`pm`\
+        "pmpermit": "**✘ Plugin :** `Pesan Pribadi`\
         \n\n  •  **Perintah :** `.terima` atau `.ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Perintah :** `.tidak` atau `.tolak`\
