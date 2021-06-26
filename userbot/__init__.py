@@ -2,8 +2,10 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-# inline credit @keselekpermen69
-# Pengguna King-Userbot
+# inline credit @keselekpermen69 
+#
+# Ported by Apis @PacarFerdilla 
+# Repository (King - Userbot)
 """ Userbot initialization. """
 
 
@@ -83,12 +85,10 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
-# Pm Permit Img
-PM_PERMIT_PIC = os.environ.get(
-    "PM_PERMIT_PIC",
-    None) or "https://telegra.ph/file/fe3eda23ca3667a65eeda.jpg"
+# Custom Pmpermit
+PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
-# Bleep Blop, this is a bot ;)
+# Bleep Blop, this is a bot :)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
 # Send .chatid in any group with all your administration bots (added)
@@ -303,13 +303,13 @@ else:
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
         LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
+            "Anda harus menyiapkan BOTLOG_CHATID variabel di config.env atau environment variabel, agar penyimpanan log kesalahan pribadi berfungsi."
         )
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
+            "Anda harus menyiapkan BOTLOG_CHATID variabel di config.env atau environment variabel, agar penyimpanan log kesalahan pribadi berfungsi."
         )
         quit(1)
 
@@ -319,8 +319,8 @@ async def check_botlog_chatid():
     entity = await bot.get_entity(BOTLOG_CHATID)
     if entity.default_banned_rights.send_messages:
         LOGS.info(
-            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
-            "group. Check if you typed the Chat ID correctly.")
+            "Akun Anda tidak memiliki hak untuk mengirim pesan ke BOTLOG_CHATID "
+            "kelompok. Periksa apakah Anda mengetik ID Obrolan benar.")
         quit(1)
 
 
@@ -329,8 +329,8 @@ with bot:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID environment variabel bukan "
+            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
         quit(1)
 
 
@@ -343,8 +343,8 @@ with bot:
         bot.loop.run_until_complete(check_alive())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID environment variabel bukan "
+            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
         quit(1)
 
 # Global Variables
@@ -541,7 +541,7 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang ditulis dari plugin.".format(
                         modul_name
                     )
                 )
@@ -558,7 +558,7 @@ with bot:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file."
+            "BOTLOG_CHATID environment variabel bukan "
+            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file."
         )
         quit(1)
