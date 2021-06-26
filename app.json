@@ -1,7 +1,7 @@
 {
   "name": "King-Userbot",
   "description": "[King-Userbot] USERBOT TELEGRAM.",
-  "logo": "https://telegra.ph/file/1bf2eacc0f1aaca83eaa5.jpg",
+  "logo": "https://telegra.ph/file/632a843c5fbb0756e5b4e.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -46,23 +46,23 @@
       "required": true
     },
     "CONSOLE_LOGGER_VERBOSE": {
-      "description": "If you need verbosity on the console logging",
+      "description": "Jika Anda membutuhkan verbositas di console logging",
       "value": "False"
     },
     "QUOTES_API_TOKEN": {
-      "description": "Dapatkan Quotes TOKEN caranya @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan Quotes TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
-      "description": "Dapatkan Genius Acces TOKEN caranya @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan Genius Acces TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "MONGO_URI": {
-      "description": "Your MongoDB Atlas URL, Get your guide from https://telegra.ph/Mongo-DB-12-24.",
+      "description": "URL Atlas MongoDB Anda, Dapatkan API URL dari https://telegra.ph/Mongo-DB-12-24.",
       "required": false
     },
     "GENIUS": {
-      "description": "Dapatkan GENIUS caranya @KingUserbotSupport lalu ketik #apikey.",
+      "description": "Dapatkan GENIUS caranya ke @KingUserbotSupport lalu ketik #apikey.",
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -70,7 +70,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Add the GIT_REPO_NAME here. It helps with commit on GitHub.",
+      "description": "Tambahkan GIT_REPO_NAME di sini. Ini membantu dengan komit di GitHub.",
       "required": false
     },
     "COUNTRY": {
@@ -89,7 +89,6 @@
     },
     "PMPERMIT_TEXT": {
       "description": "Isi Pesan Untuk Pmpermit Anda Sendiri (Isi Sesuka Anda)",
-      "value": "Halo Kamu, Jangan Spam Yah!",
       "required": false
     },
     "PM_AUTO_BAN": {
@@ -110,36 +109,36 @@
       "required": false
     },
     "ANTI_SPAMBOT": {
-      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
+      "description": "Menendang robot spam dari grup setelah mereka bergabung. [Requires kekuatan admin dalam kelompok untuk menendang.]",
       "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
-      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
+      "description": "Laporkan robot spam ke @admin dalam grup setelah bergabung, kalau-kalau Anda tidak memiliki admin kekuatan untuk menendang omong kosong itu sendiri.",
       "value": "False"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Download location for many modules (GDrive, .download etc..)",
+      "description": "Unduh lokasi untuk banyak plugin (GDrive, .download etc..)",
       "value": "./downloads/"
     },
     "CLEAN_WELCOME": {
-      "description": "When a new person joins, the old welcome message is deleted.",
+      "description": "Ketika orang baru bergabung, pesan selamat datang yang lama dihapus.",
       "value": "True"
     },
     "G_DRIVE_FOLDER_ID": {
-      "description": "Create a folder and put that folder's id here.check folder link for id.",
+      "description": "Buat folder dan letakkan itu id folder di sini. periksa tautan folder untuk id.",
       "required": false
     },
     "HEROKU_MEMEZ": {
-      "description": "This should be True if the userbot is running on a Heroku Dyno.",
+      "description": "Ini seharusnya Benar jika bot pengguna sedang berjalan di Heroku Dyno.",
       "value": "True",
       "required": true
     },
     "LASTFM_API": {
-      "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "Last API untuk plugin Last.FM. [Get one from - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_SECRET": {
-      "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "SECRET Key untuk plugin Last.FM  [Get one from - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_USERNAME": {
@@ -151,7 +150,7 @@
       "required": false
     },
     "BIO_PREFIX": {
-      "description": "Prefix for Last.FM Module Bio.",
+      "description": "Awalan untuk Bio Plugin Last.FM.",
       "required": false
     },
     "DEFAULT_BIO": {
@@ -182,15 +181,15 @@
       "required": false
     },
     "G_DRIVE_DATA": {
-      "description": "Enter the Google Drive authentication data, as a JSON structure.",
+      "description": "Masukkan otentikasi Google Drive data, adalah JSON struktur.",
       "required": false
     },
     "G_PHOTOS_CLIENT_ID": {
-      "description": "get the client id from https://j.mp/39lWQQm",
+      "description": "Dapatkan di https://j.mp/39lWQQm",
       "required": false
     },
     "G_PHOTOS_CLIENT_SECRET": {
-      "description": "get the client secret from https://j.mp/39lWQQm",
+      "description": "Dapatkan di https://j.mp/39lWQQm",
       "required": false
     },
     "BITLY_TOKEN": {
