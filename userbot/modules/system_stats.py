@@ -244,7 +244,7 @@ async def amireallyalive(alive):
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
         f"• **License :** [Raphielscape Public Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupoort) ")
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -429,14 +429,21 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilkan versi userbot\
         \n\n  •  **Perintah :** `.pip` <module(s)>\
         \n  •  **Function : **Melakukan pencarian modul pip\
-        \n\n  •  **Perintah :** `.alive` atau `.on`\
-        \n  •  **Function : **Ketik .alive untuk melihat apakah bot Anda berfungsi atau tidak.\
-        \n\n  •  **Peeintah :** `.resetalive`\
-        \n  •  **Function : **Untuk Membanned Akun yang sedang online\
         \n\n  •  **Perintah :** `.db`\
         \n  •  **Function : **Menampilkan info terkait database.\
         \n\n  •  **Perintah :** `.spc`\
         \n  •  **Function : **Show system specification\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "alive": "**Plugin :** `Alive Userbot`\
+        \n\n  •  **Perintah :** `.alive` atau `.on`\
+        \n  •  **Function : **Ketik `.alive` untuk melihat apakah bot Anda berfungsi atau tidak\
+        \n\n  •  **Peeintah :** `.resetalive`\
+        \n  •  **Function : **Untuk Membanned Akun yang sedang online\
     "
     }
 )
