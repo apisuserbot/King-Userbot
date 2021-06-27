@@ -281,6 +281,8 @@ async def amireallyalive(alive):
         f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+        f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
         f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
@@ -335,11 +337,11 @@ async def redis(alive):
         f"╟◈ 👾 `Bot Ver  :`v. {BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :`{len(modules)} Plugins \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **Support Terus Repo Kami** \n"
-        f"│    **Dengan Link Di Bawah Ini.** \n"
+        f"├◈ **{KING_TEKS_KUSTOM}** \n"
+        f"│  ** USERBOT TELEGRAM ** \n"
         f"╰╼════════════════════╾╯ \n"
-        f"• [License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | • [Support Chat](t.me/KingUserbotSupport) | "
-        f"• [Developer King](t.me/PacarFerdilla)")
+        f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
+        f"[Developer King](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -376,8 +378,7 @@ async def redis(alive):
         f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
-        f"{ALIVE_EMOJI} **Userbot Uptime :** `{uptime}` \n"
-        f"• [Support Chat](https://t.me/KingUserbotSupport) | • [Channel Support](https://t.me/TeamKingUserbot) | • [Developer King](t.me/PacarFerdilla)")
+        f"[Support Chat](https://t.me/KingUserbotSupport) | [Channel Support](https://t.me/TeamKingUserbot) | [Developer King](t.me/PacarFerdilla)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
