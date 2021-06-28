@@ -42,7 +42,7 @@ qrcode
 requests>=2.18.4
 search-engine-parser>=0.6.1
 speedtest-cli>=2.0.2
-sqlalchemy<1.4.20
+sqlalchemy<1.4.21
 telethon>=1.14.0 
 telethon-session-sqlalchemy>=0.2.6
 urbandict>=0.5
