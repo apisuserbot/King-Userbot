@@ -124,10 +124,6 @@
       "description": "Ketika orang baru bergabung, pesan selamat datang yang lama dihapus.",
       "value": "True"
     },
-    "G_DRIVE_FOLDER_ID": {
-      "description": "Buat folder dan letakkan itu id folder di sini. periksa tautan folder untuk id.",
-      "required": false
-    },
     "HEROKU_MEMEZ": {
       "description": "Ini seharusnya Benar jika bot pengguna sedang berjalan di Heroku Dyno.",
       "value": "True",
@@ -168,28 +164,16 @@
       "required": false
     },
     "KING_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .kingon (Isi Terserah)",
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .kingalive atau .kingon (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
-      "description": "Nama Sticker Pack Mu",
+      "description": "Nama Sticker Colongan Mu",
       "required": false
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Private/Public Lalu Masukkan Bot Rose Lalu Ketik /id.",
       "value": "Isi id grup mu",
-      "required": false
-    },
-    "G_DRIVE_DATA": {
-      "description": "Masukkan otentikasi Google Drive data, adalah JSON struktur.",
-      "required": false
-    },
-    "G_PHOTOS_CLIENT_ID": {
-      "description": "Dapatkan di https://j.mp/39lWQQm",
-      "required": false
-    },
-    "G_PHOTOS_CLIENT_SECRET": {
-      "description": "Dapatkan di https://j.mp/39lWQQm",
       "required": false
     },
     "BITLY_TOKEN": {
@@ -202,7 +186,7 @@
       "required": false
     },
     "LYDIA_API_KEY": {
-      "description": "Plugin Ini Membutuhkan CoffeeHouse API agak berhasil, bergabung https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
+      "description": "Plugin Ini Membutuhkan CoffeeHouse API agak sukses, (gak di isi gapapa)",
       "required": false
     },
     "WEATHER_DEFCITY": {
@@ -212,7 +196,7 @@
     },
     "LOGSPAMMER": {
       "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, alih-alih mengeluarkan file di saat ini chat, requires harus valid BOTLOG_CHATID untuk diatur.",
-      "value": "True",
+      "value": "False",
       "required": true
     },
     "DEEZER_ARL_TOKEN": {
