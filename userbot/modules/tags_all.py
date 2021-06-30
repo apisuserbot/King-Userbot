@@ -14,7 +14,7 @@ from userbot import CMD_HELP
 
 @register(
     outgoing=True,
-    pattern=r"^\.tag(on|off|all|bots|rec|admins|owner)?(.*)",
+    pattern=r"^\.tags(on|off|all|bots|rec|admins|owner)?(.*)",
     disable_errors=True,
 )
 async def _(e):
@@ -65,20 +65,20 @@ async def _(e):
 
 CMD_HELP.update(
     {
-        "tags": "**✘ Plugin :** `tag all`\
-        \n\n  •  **Perintah :** `.tag all`\
+        "tags": "**✘ Plugin :** `Tags all`\
+        \n\n  •  **Perintah :** `.tags all`\
         \n  •  **Function : **Tag 100 Anggota obrolan teratas\
-        \n\n  •  **Perintah :** `.tag admin`\
+        \n\n  •  **Perintah :** `.tags admin`\
         \n  •  **Function : **Tag Admin obrolan itu\
-        \n\n  •  **Perintah :** `.tag owner`\
+        \n\n  •  **Perintah :** `.tags owner`\
         \n  •  **Function : **Tag Owner obrolan itu\
-        \n\n  •  **Perintah :** `.tag bot`\
+        \n\n  •  **Perintah :** `.tags bot`\
         \n  •  **Function : **Tag Bots of obrolan itu\
-        \n\n  •  **Perintah :** `.tag rec`\
+        \n\n  •  **Perintah :** `.tags rec`\
         \n  •  **Function : **Tag Anggota Aktif baru-baru ini\
-        \n\n  •  **Perintah :** `.tag on`\
+        \n\n  •  **Perintah :** `.tags on`\
         \n  •  **Function : **Tag online Anggota (bekerja hanya jika privasi tidak aktif)\
-        \n\n  •  **Perintah :** `.tag off`\
+        \n\n  •  **Perintah :** `.tags off`\
         \n  •  **Function : **Tag Offline Anggota (bekerja hanya jika privasi tidak aktif)\
     "
     }
