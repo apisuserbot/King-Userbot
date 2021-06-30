@@ -22,9 +22,10 @@ async def all(event):
 
 CMD_HELP.update(
     {
-        "tag_fake": "**✘ Plugin :** `tag_fake`\
+        "tag": "**✘ Plugin :** `Tag All`\
         \n\n  •  **Perintah :** `.all`\
-        \n  •   **Function : **Untuk Fake Mengetag Semua Anggota Yang Ada Di Grup\
+        \n  •   **Function : **Untuk Mengetag Semua Anggota Yang Ada Di Grup\
+        \n\n  **Notes :** __Di haruskan grup anda memiliki mention bot, jika tidak, perintah ini tidak berfungsi!__\
     "
     }
 )
