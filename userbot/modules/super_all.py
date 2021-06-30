@@ -56,9 +56,9 @@ CMD_HELP.update(
         "xall": "**✘ Plugin :** `Super All`\
         \n\n  •  **Perintah :** `.xban`\
         \n  •  **Function : **banned semua member dalam satu perintah\
-n\n  •  **Perintah : ** `.xkick
-        \n  • ** Function: **Mengeluarkan semua member dalam satu perintah
-        \n\n ** Peringatan: ** __**Hati hati dalam penggunaan perintah ini, karena dalam sekejap perintah ini aktif semua member anda akan terbannned atau terkeluarkan**__
-        "
+        \n\n  •  **Perintah :** `.xkick`\
+        \n  •  **Function : **Mengeluarkan semua member dalam satu perintah\
+        \n\n   **Peringatan :** __**Hati hati dalam penggunaan perintah ini, karena dalam sekejap perintah ini aktif semua member anda akan terbannned atau terkeluarkan**__\
+    "
     }
 )
