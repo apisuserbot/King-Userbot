@@ -10,10 +10,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE"><img src="https://img.shields.io/github/license/apisuserbot/King-Userbot?&style=social&logo=github">
-  </a></p>
-
 ![Repo Size](https://img.shields.io/github/repo-size/apisuserbot/King-Userbot?&style=plastic&logo=github)
 [![GitHub issues](https://img.shields.io/github/issues/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/issues)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://github.com/apisuserbot/King-Userbot/graphs/commit-activity)
