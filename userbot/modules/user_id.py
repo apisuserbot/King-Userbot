@@ -18,7 +18,7 @@ async def _(event):
     chat = "@getidsbot"
     reply_message.sender
     if reply_message.sender.bot:
-        await event.edit("`Mohon Balas Ke Pesan Lord`")
+        await event.edit("`Mohon Balas Ke Pesan King`")
         return
     await event.edit("`Mencari ID.......`")
     async with bot.conversation(chat) as conv:
@@ -38,8 +38,11 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-CMD_HELP.update({
-    "getid":
-    ">⚡𝘾𝙈𝘿⚡`.gid`"
-    "\nUsage: Balas Ke Pesan Pengguna Untuk Mendapatkan ID Nya."
-})
+CMD_HELP.update(
+    {
+        "getid": "**✘ Plugin :** `ID Pengguna`\
+        \n\n  •  **Perintah :** `.getid`\
+        \n  •  **Function : **Balas Ke Pesan Pengguna Untuk Mendapatkan ID Nya\
+    "
+    }
+)
