@@ -451,6 +451,7 @@ with bot:
                         len(dugmeler),
                     ),
                     buttons=buttons,
+                    logo,
                     link_preview=False,
                 )
             elif query.startswith("tb_btn"):
