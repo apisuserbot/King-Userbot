@@ -51,19 +51,19 @@ else:
                 level=INFO)
 LOGS = getLogger(__name__)
 
-if version_info[0] < 3 or version_info[1] < 8:
-    LOGS.info("You MUST have a python version of at least 3.8."
-              "Multiple features depend on this. Bot quitting.")
+if version_info[0] < 3 or version_info[1] < 9:
+    LOGS.info("Anda HARUS memiliki versi python minimal 3.9"
+              "Beberapa fitur bergantung pada ini, Bot berhenti.")
     quit(1)
 
-# Check if the config was edited by using the already used variable.
-# Basically, its the 'virginity check' for the config file ;)
+# Periksa apakah konfigurasi telah diedit dengan menggunakan variabel yang sudah digunakan.
+# Pada dasarnya, ini adalah 'pemeriksaan keperawanan' untuk file konfigurasi :)
 CONFIG_CHECK = os.environ.get(
     "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Please remove the line mentioned in the first hashtag from the config.env file"
+        "Harap hapus baris yang disebutkan dalam tagar pertama dari file config.env"
     )
     quit(1)
 
@@ -451,7 +451,6 @@ with bot:
                         len(dugmeler),
                     ),
                     buttons=buttons,
-                    file=logo,
                     link_preview=False,
                 )
             elif query.startswith("tb_btn"):
