@@ -28,7 +28,7 @@ async def github(event):
                 f"`URL           :` {url} \n"
                 f"`Perusahaan    :` {company}\n"
                 f"`Dibuat pada   :` {created_at} \n"
-                f"`Info lainnya  : [Disini](https://api.github.com/users/{event.pattern_match.group(1)}")
+                f"`Info lainnya  :` [Disini](https://api.github.com/users/{event.pattern_match.group(1)}")
 
             if not result.get("repos_url", None):
                 return await event.edit(REPLY)
