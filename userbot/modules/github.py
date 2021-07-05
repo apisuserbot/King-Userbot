@@ -22,13 +22,12 @@ async def github(event):
             created_at = result.get("created_at", "Not Found")
 
             REPLY = (
-                f"Info Akun GitHub `{event.pattern_match.group(1)}` \n"
+                f"**Info Akun GitHub {event.pattern_match.group(1)}** \n\n"
                 f"`Nama Pengguna :` {name} \n"
                 f"`Bio           :` {bio} \n"
                 f"`URL           :` {url} \n"
                 f"`Perusahaan    :` {company}\n"
-                f"`Dibuat pada   :` {created_at} \n"
-                f"`Info lainnya  :` [Disini](https://api.github.com/users/{event.pattern_match.group(1)}")
+                f"`Dibuat pada   :` {created_at} ")
 
             if not result.get("repos_url", None):
                 return await event.edit(REPLY)
@@ -39,10 +38,10 @@ async def github(event):
 
                 result = await request.json()
 
-                REPLY += "\nRepo:\n"
+                REPLY += "\n**Repo :**\n"
 
                 for nr in range(len(result)):
-                    REPLY += f"[{result[nr].get('name', None)}]({result[nr].get('html_url', None)})\n"
+                    REPLY += f"⎆ [{result[nr].get('name', None)}]({result[nr].get('html_url', None)})\n"
 
                 await event.edit(REPLY)
 
