@@ -1,9 +1,13 @@
 ## King-Userbot
 
-King-Userbot adalah sebuah repository yang di rancang untuk membantu akun pengguna telegram dalam menjalankan aktifitas di dalamnya
-Dengan memiliki berbagai fitur yang menarik dan menyenangkan 
-Bahasa code ini adalah [Python](https://python.com) - Project
+King-Userbot adalah sebuah repository yang di rancang untuk membantu akun pengguna telegram dalam menjalankan aktifitas di dalamnya.
+
+Dengan memiliki berbagai fitur yang menarik dan menyenangkan.
+
+Bahasa code ini adalah [Python](https://www.python.org/) - Project
+
 Terimakasih telah menggunakan repository ini!
+
 
 <a href="https://cooltext.com"><img src="https://images.cooltext.com/5533549.gif" width="802" height="96" alt="King Userbot" /></a>
 
@@ -39,7 +43,7 @@ Terimakasih telah menggunakan repository ini!
       ! Hati hati dalam penggunaan pada repository ini !
    Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda
 
-  Salam developer!
+Salam developer!
 ```
 
 
