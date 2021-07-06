@@ -117,10 +117,10 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"   **Repository** \n\n"
+        f"   **Repository Userbot** \n\n"
         "• **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         f"• **Versi Userbot :** `{BOT_VER}` \n"
-        "• **License :** [Raphielscape Public Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
+        "• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
         "• **Developer Project :** [Apis](https://t.me/PacarFerdilla) \n\n"
         "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
@@ -129,7 +129,7 @@ async def repo_is_here(wannasee):
 async def string_is_here(wannasee):
     """ For .string command, just returns the string URL. """
     await wannasee.edit(
-        f"   **String Session** \n\n"
+        f"   **String Session Userbot** \n\n"
         "• **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n\n"
         "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
 
@@ -306,7 +306,7 @@ async def send(event):
 
 CMD_HELP.update(
     {
-        "send": "**✘ Plugin : **`send`\
+        "send": "**✘ Plugin :** `send`\
         \n\n  •  **Perintah :** `.send`\
         \n  •  **Function : **Meneruskan pesan balasan ke obrolan tertentu tanpa tag Forwarded from. \
     "
@@ -315,7 +315,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "random": "**✘ Plugin : **`random`\
+        "random": "**✘ Plugin :** `random`\
         \n\n  •  **Perintah :** `.random`\
         \n  •  **Function : **Dapatkan item acak dari daftar item. \
     "
@@ -324,7 +324,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "sleep": "**✘ Plugin : **`sleep`\
+        "sleep": "**✘ Plugin :** `sleep`\
         \n\n  •  **Perintah :** `.sleep`\
         \n  •  **Function : **Biarkan ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️ tidur selama beberapa detik \
     "
@@ -334,7 +334,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repo": "**✘ Plugin : **`Repository` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
+        "repo": "**✘ Plugin :** `Repository` ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.repo`\
         \n  •  **Function : **Menampilan link Repository ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\
         \n\n  •  **Perintah :** `.string`\
