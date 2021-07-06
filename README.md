@@ -1,3 +1,10 @@
+## King-Userbot
+
+King-Userbot adalah sebuah repository yang di rancang untuk membantu akun pengguna telegram dalam menjalankan aktifitas di dalamnya
+Dengan memiliki berbagai fitur yang menarik dan menyenangkan 
+Bahasa code ini adalah [Python](https://python.com) - Project
+Terimakasih telah menggunakan repository ini!
+
 <a href="https://cooltext.com"><img src="https://images.cooltext.com/5533549.gif" width="802" height="96" alt="King Userbot" /></a>
 
 <p align="center">
@@ -27,16 +34,12 @@
 
 ```
              ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
-       Akun Telegram Anda mungkin diblokir.
-   Saya tidak bertanggung jawab atas penyalahgunaan bot ini
-Bot ini dimaksudkan untuk tujuan bersenang-senang dengan meme,
-      serta mengelola kelompok secara efisien.
-Anda akhirnya mengirim spam ke grup, dilaporkan ke kiri dan ke kanan,
-dan Anda berakhir di Finale Battle dengan Telegram dan pada akhirnya
-       Tim Telegram menghapus akun Anda?
-  Dan setelah itu, lalu kamu mengarahkan jarimu ke kami
-        untuk mendapatkan akun Anda dihapus?
-    Aku akan berguling-guling di lantai menertawakanmu.
+   King-Userbot digunakan untuk membantu aktivitas akun anda di telegram
+   Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini
+      ! Hati hati dalam penggunaan pada repository ini !
+   Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda
+
+  Salam developer!
 ```
 
 
@@ -99,7 +102,11 @@ Klik tombol dibawah untuk deploy King Userbot milikmu`
 
 
 ## Contributor 
+   Team Kami
 
 *  [Alvin](https://github.com/Zora24)
 *  [Axel](https://github.com/KENZO-404) 
 *  [Yunus](https://github.com/Yunus-Zend)
+
+## License
+Licensed under [Raphielscape Public License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) - Version 1.d, February 2020
