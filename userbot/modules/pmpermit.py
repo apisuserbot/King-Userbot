@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
-
+from userbot.events import register
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -19,10 +19,15 @@ from userbot import (
     LOGS,
     PM_AUTO_BAN,
     PMPERMIT_TEXT,
+    PMPERMIT_PIC,
     ALIVE_NAME,
 )
 
-from userbot.events import register
+
+if PMPERMIT_PIC is None:
+    CUSTOM_PIC = "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
+else:
+    CUSTOM_PIC = str(PMPERMIT_PIC)
 
 # ========================= CONSTANTS ============================
 
@@ -65,8 +70,10 @@ async def permitpm(event):
         getmsg = gvarstatus("unapproved_msg")
         if getmsg is not None:
             UNAPPROVED_MSG = getmsg
+            CUSTOM_PIC = getmsg
         else:
             UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
+            CUSTOM_PIC = PMPERMIT_PIC
 
         # This part basically is a sanity check
         # If the message that sent before is Unapproved Message
@@ -78,12 +85,12 @@ async def permitpm(event):
                 # Send the Unapproved Message again
                 if event.text != prevmsg:
                     async for message in event.client.iter_messages(
-                        event.chat_id, from_user="me", search=UNAPPROVED_MSG
+                        event.chat_id, from_user="me", search=UNAPPROVED_MSG, file=CUSTOM_PIC
                     ):
                         await message.delete()
-                    await event.reply(f"{UNAPPROVED_MSG}")
+                    await event.reply(f" {CUSTOM_PIC} \n\n {UNAPPROVED_MSG} ")
             else:
-                await event.reply(f"{UNAPPROVED_MSG}")
+                await event.reply(f" {CUSTOM_PIC} \n\n {UNAPPROVED_MSG} ")
             LASTMSG.update({event.chat_id: event.text})
             if notifsoff:
                 await event.client.send_read_acknowledge(event.chat_id)
