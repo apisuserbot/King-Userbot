@@ -2,7 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-# inline credit @keselekpermen69 
+# inline credit @keselekpermen69
 #
 # Ported by Apis @PacarFerdilla
 # Repository (King - Userbot)
@@ -88,8 +88,10 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 # Custom Pmpermit text
 PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
-#Custom Pmpermit pic
-PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None) or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
+# Custom Pmpermit pic
+PMPERMIT_PIC = os.environ.get(
+    "PMPERMIT_PIC",
+    None) or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
 
 # Bleep Blop, this is a bot :)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
