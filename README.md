@@ -41,9 +41,8 @@ Terimakasih telah menggunakan repository ini!
    King-Userbot digunakan untuk membantu aktivitas akun anda di telegram
    Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini
       ! Hati hati dalam penggunaan pada repository ini !
-   Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda
-
-Salam developer!
+   Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda 
+  Jangan pernah sekali sekali menyalah gunakan repository ini
 ```
 
 
@@ -106,11 +105,13 @@ Klik tombol dibawah untuk deploy King Userbot milikmu`
 
 
 ## Contributor 
-   Team Kami
+   Team Project Kami
 
-*  [Alvin](https://github.com/Zora24)
-*  [Axel](https://github.com/KENZO-404) 
-*  [Yunus](https://github.com/Yunus-Zend)
+*  [Apis](https://github.com/apisuserbot) - DEV
+*  [Alvin](https://github.com/Zora24) - Contributor
+*  [Axel](https://github.com/KENZO-404) - Contributor
+*  [Yunus](https://github.com/Yunus-Zend) - Contributor
+*  [Ridho](httpz://github.com/ridho17-ind) - Contributor
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) - Version 1.d, February 2020
