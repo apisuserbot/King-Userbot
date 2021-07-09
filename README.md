@@ -4,10 +4,11 @@ King-Userbot adalah sebuah repository yang di rancang untuk membantu akun penggu
 
 Dengan memiliki berbagai fitur yang menarik dan menyenangkan.
 
-Bahasa code ini adalah [Python](https://www.python.org/) - Project
+Bahasa code ini adalah [Python](https://www.python.org/)
 
 Terimakasih telah menggunakan repository ini!
 
+<a href="https://t.me/TeamKingUserbot/16"><img src="https://img.shields.io/badge/Tutorial%20Deploy%3F-King-green?&style=flat-square?&logo=telegram" width=165px></a></p>
 
 <a href="https://cooltext.com"><img src="https://images.cooltext.com/5533549.gif" width="802" height="96" alt="King Userbot" /></a>
 
@@ -33,7 +34,6 @@ Terimakasih telah menggunakan repository ini!
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot/tags"> <img src="https://img.shields.io/docker/v/apiskinguserbot/kinguserbot/Buster?label=docker%20version&logo=docker&style=for-the-badge" /></a>
 </p>
 
-
 <h4 align="center"> DISCLAIMER </p>
 
 ```
@@ -45,9 +45,9 @@ Terimakasih telah menggunakan repository ini!
   Jangan pernah sekali sekali menyalah gunakan repository ini
 ```
 
-
 ### Repo King Userbot 🚀
 Repo Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot yg ada diGithub 
+
 `
 Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mungkin dapat membantu kamu tanpa harus mengakses apk lain`
 
@@ -60,9 +60,9 @@ Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mung
 
   > Selanjutnya klik Deploy tombol di bawah ini.
 
-  > Isi bidang wajib di heroku
+  > Isi vars wajib di heroku
 
-  > Akhirnya nyalakan aplikasi dan periksa log (pengaturan -> lihat log) nikmati :)
+  > Akhirnya nyalakan app dan periksa log (pengaturan -> lihat log) nikmati :)
 ```
 
 ### Group Support 🇮🇩
