@@ -18,7 +18,7 @@ async def typewriter(typew):
     await typew.edit("__Mengsedih__")
     sleep(1)
     await typew.edit("🥺")
- 
+
 
 # Create by myself @localheart
 
