@@ -14,6 +14,11 @@ async def typewriter(typew):
     await typew.edit("`Kedua kamu manis`")
     sleep(1)
     await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
+    sleep(2)
+    await typew.edit("__Mengsedih__")
+    sleep(1)
+    await typew.edit("🥺")
+ 
 
 # Create by myself @localheart
 
@@ -28,7 +33,7 @@ async def typewriter(typew):
                      "`\n┻┳|￣  )`"
                      "`\n┳ﾐ(￣ ／`"
                      "`\n┻┳T￣|`"
-                     "\n**Punten**")
+                     "\n**Punten Kak**")
 
 
 @register(outgoing=True, pattern='^.pantau(?: |$)(.*)')
