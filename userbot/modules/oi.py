@@ -48,5 +48,5 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("`Jangan Main Main`")
     sleep(2)
-    await typew.edit("`Aku Gban Nanti Nangesss`")
+    await typew.edit("`Aku Gban Nanti Nangesss Lu`")
 # Create by myself @localheart
