@@ -17,6 +17,7 @@ from userbot import (
     COUNT_PM,
     LASTMSG,
     LOGS,
+    ALIVE_LOGO,
     PM_AUTO_BAN,
     PMPERMIT_TEXT,
     PMPERMIT_PIC,
@@ -25,7 +26,7 @@ from userbot import (
 
 
 if PMPERMIT_PIC is None:
-    CUSTOM_PIC = "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
+    CUSTOM_PIC = ALIVE_LOGO
 else:
     CUSTOM_PIC = str(PMPERMIT_PIC)
 
