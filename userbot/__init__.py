@@ -479,7 +479,6 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"opener")
@@ -492,7 +491,6 @@ with bot:
                 buttons=buttons,
                 link_preview=False,
             )
-
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -513,7 +511,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid: 
+            if event.query.user_id == uid:
                 text = (
                     f"Copyright © 2021 King-Userbot\nLicense: Raphielscape Public License v1.d")
                 await event.edit(
@@ -522,7 +520,7 @@ with bot:
                         [
                             Button.inline("ᴏᴘᴇɴ ᴍᴇɴᴜ ᴀɢᴀɪɴ",
                                           data="opener"
-                            )
+                                          )
                         ]
                     ]
                 )
