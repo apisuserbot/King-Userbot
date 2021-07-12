@@ -307,13 +307,7 @@ else:
 
 
 async def check_botlog_chatid():
-    if not BOTLOG_CHATID and LOGSPAMMER:
-        LOGS.info(
-            "Anda harus menyiapkan BOTLOG_CHATID variabel di config.env atau environment variabel, agar penyimpanan log kesalahan pribadi berfungsi."
-        )
-        quit(1)
-
-    elif not BOTLOG_CHATID and BOTLOG:
+    if not BOTLOG_CHATID and LOGSPAMMER or not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
             "Anda harus menyiapkan BOTLOG_CHATID variabel di config.env atau environment variabel, agar penyimpanan log kesalahan pribadi berfungsi."
         )
