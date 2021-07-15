@@ -437,16 +437,16 @@ with king:
                     f"and For Maintaining Your Group 🛠️.\n"
                     f"I was **Created by :** @PacarFerdilla For Various Userbots on Github\n")
                 await king.tgbot.send_file(event.chat_id, logo,
-                                      caption=text,
-                                      buttons=[
-                                          [
-                                              custom.Button.url(
-                                                  text="Support Chat",
-                                                  url="https://t.me/KingUserbotSupport"
-                                              )
-                                          ]
-                                      ]
-                                      )
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Support Chat",
+                                                       url="https://t.me/KingUserbotSupport"
+                                                   )
+                                               ]
+                                           ]
+                                           )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -455,7 +455,7 @@ with king:
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@KingUserbotSupport"):
-                buttons=paginate_help(0, dugmeler, "helpme")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoking,
                     link_preview=False,
@@ -494,9 +494,9 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
@@ -519,9 +519,9 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
@@ -537,11 +537,11 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name=event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
-                    help_string=(
+                    help_string = (
                         str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
