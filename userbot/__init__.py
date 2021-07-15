@@ -458,8 +458,8 @@ with king:
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
                     f"👇🏻 `Klik button url di bawah ini` 👇🏻\n\n"
                     f"**USERBOT TELEGRAM**\n",
-                buttons = [
-                    [
+                    buttons=[
+                        [
                             Button.url("Repository",
                                        "https://github.com/apisuserbot/King-Userbot"),
                             Button.url("Cara Deploy",
@@ -470,9 +470,9 @@ with king:
         @king.tgbot.on(events.NewMessage(pattern=r"/ping"))
         async def handler(event):
             if event.message.from_id != uid:
-                start=datetime.now()
-                end=datetime.now()
-                ms=(end - start).microseconds / 1000
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
                 await king.tgbot.send_message(
                     event.chat_id,
                     f"**PONG !!**\n `{ms}ms`",
@@ -480,31 +480,31 @@ with king:
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
-            builder=event.builder
-            result=None
-            query=event.text
+            builder = event.builder
+            result = None
+            query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@KingUserbotSupport"):
-                buttons=paginate_help(0, dugmeler, "helpme")
-                result=builder.photo(
-                    file = logoking,
-                    link_preview = False,
-                    text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
+                buttons = paginate_help(0, dugmeler, "helpme")
+                result = builder.photo(
+                    file=logoking,
+                    link_preview=False,
+                    text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
                     ),
-                    buttons = buttons,
+                    buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
-                result=builder.article(
+                result = builder.article(
                     "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
-                    text = "◎› Daftar Plugins",
-                    buttons = [],
-                    link_preview = True)
+                    text="◎› Daftar Plugins",
+                    buttons=[],
+                    link_preview=True)
             else:
-                result=builder.article(
+                result = builder.article(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    text = """**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
-                    buttons = [
+                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
+                    buttons=[
                         [
                             custom.Button.url(
                                 "King-Userbot",
@@ -513,7 +513,7 @@ with king:
                                 "Developer",
                                 "t.me/PacarFerdilla")],
                     ],
-                    link_preview = False,
+                    link_preview=False,
                 )
             await event.answer([result] if result else None)
 
@@ -524,23 +524,23 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
-                await event.edit(buttons = buttons)
+                await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 await event.edit("__**- Help Button Ditutup -**__")
             else:
-                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
