@@ -422,7 +422,7 @@ with king:
         uid = me.id
 
         logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
-        logo = ALIVE_LOGO 
+        logo = ALIVE_LOGO
         plugins = CMD_HELP
 # --------------------------->
 
@@ -452,7 +452,8 @@ with king:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
+            if event.query.user_id == uid and query.startswith(
+                    "@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoking,
