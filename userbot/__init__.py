@@ -448,6 +448,27 @@ with king:
                                            ]
                                            )
 
+        @king.tgbot.on(events.NewMessage(pattern=r"/repo"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"Ingin melihat repository ini\n\n"
+                    f"👇🏻 `Klik button url di bawah ini` 👇🏻\n\n"
+                    f"**USERBOT TELEGRAM**")
+                await king.tgbot.send_file(event.chat_id, caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Repository",
+                                                       url="https://github.com/apisuserbot/King-Userbot"
+                                                   )
+                                               ]
+                                           ]
+                                           )
+
         @king.tgbot.on(events.NewMessage(pattern=r"/ping"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -483,8 +504,8 @@ with king:
                     link_preview=True)
             else:
                 result = builder.article(
-                    "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
-                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/KingUserbotSupport)""",
+                    "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
+                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
