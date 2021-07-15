@@ -367,7 +367,9 @@ ZALG_LIST = {}
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
-#--------------------------------------------InlineBot---------------------------------->
+# --------------------------------------------InlineBot---------------------------------->
+
+
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
@@ -402,7 +404,8 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
-#-----------------------------------------------Bot------------------------------------>
+
+# -----------------------------------------------Bot------------------------------------>
 king = bot
 
 with king:
