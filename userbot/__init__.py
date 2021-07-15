@@ -376,7 +376,9 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} |".format("|", x), data="ub_modul_{}".format(x))
+        custom.Button.inline(
+    "{} {} |".format(
+        "|", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -443,15 +445,15 @@ with king:
                                   ]
                                   )
 
-        @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @ king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
-            builder = event.builder
-            result = None
-            query = event.text
+            builder=event.builder
+            result=None
+            query=event.text
             if event.query.user_id == uid and query.startswith(
                     "@KingUserbotSupport"):
-                buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
+                buttons=paginate_help(0, dugmeler, "helpme")
+                result=builder.photo(
                     file=logoking,
                     link_preview=False,
                     text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
@@ -460,13 +462,13 @@ with king:
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
-                result = builder.article(
+                result=builder.article(
                     "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
                     text="◎› Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
-                result = builder.article(
+                result=builder.article(
                     "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
                     text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
@@ -482,70 +484,71 @@ with king:
                 )
             await event.answer([result] if result else None)
 
-        @king.tgbot.on(
+        @ king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
+                current_page_number=int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
+                buttons=paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @ king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 await event.edit("__**- Help Button Ditutup -**__")
             else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(
+        @ king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
+                current_page_number=int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
+                buttons=paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(
+        @ king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(b"ub_modul_(.*)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name = event.data_match.group(1).decode("UTF-8")
+                modul_name=event.data_match.group(1).decode("UTF-8")
 
-                cmdhel = str(CMD_HELP[modul_name])
+                cmdhel=str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
-                    help_string = (
-                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
+                    help_string=(
+                        str(CMD_HELP[modul_name]).replace(
+                            '`', '')[:150] + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string=str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert = (
+                reply_pop_up_alert=(
                     help_string
                     if help_string is not None
                     else "{} Tidak ada dokumen yang ditulis dari plugin.".format(
@@ -553,7 +556,7 @@ with king:
                     )
                 )
             else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
