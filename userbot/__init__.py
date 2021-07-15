@@ -28,6 +28,7 @@ from dotenv import load_dotenv
 from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
+from telethon import Button, functions, types
 from telethon.utils import get_display_name
 
 load_dotenv("config.env")
@@ -373,9 +374,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(
-    "{} {} |".format(
-        "|", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} |".format("|", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -454,7 +453,7 @@ with king:
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
-                await event.reply
+                await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
                     f"👇🏻 `Klik button url di bawah ini` 👇🏻\n\n"
@@ -468,7 +467,7 @@ with king:
                     ]
                 )
 
-        @ king.tgbot.on(events.NewMessage(pattern=r"/ping"))
+        @king.tgbot.on(events.NewMessage(pattern=r"/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start=datetime.now()
@@ -479,7 +478,7 @@ with king:
                     f"**PONG !!**\n `{ms}ms`",
                 )
 
-        @ king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder=event.builder
             result=None
@@ -518,7 +517,7 @@ with king:
                 )
             await event.answer([result] if result else None)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -535,7 +534,7 @@ with king:
                 reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
 
-        @ king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 await event.edit("__**- Help Button Ditutup -**__")
@@ -543,7 +542,7 @@ with king:
                 reply_pop_up_alert=f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
