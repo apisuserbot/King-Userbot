@@ -437,16 +437,16 @@ with king:
                     f"and For Maintaining Your Group 🛠️.\n"
                     f"I was **Created by :** @PacarFerdilla For Various Userbots on Github\n")
                 await king.tgbot.send_file(event.chat_id, logo,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Support Chat",
-                                                       url="https://t.me/KingUserbotSupport"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                                      caption=text,
+                                      buttons=[
+                                          [
+                                              custom.Button.url(
+                                                  text="Support Chat",
+                                                  url="https://t.me/KingUserbotSupport"
+                                              )
+                                          ]
+                                      ]
+                                      )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
