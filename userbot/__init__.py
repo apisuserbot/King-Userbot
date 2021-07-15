@@ -436,7 +436,7 @@ with king:
                     f"King Used For Fun On Telegram,\n"
                     f"and For Maintaining Your Group 🛠️.\n"
                     f"I was **Created by :** @PacarFerdilla For Various Userbots on Github\n")
-                await king.tgbot.send_file(event.chat_id, logo,
+                await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
                                            buttons=[
                                                [
