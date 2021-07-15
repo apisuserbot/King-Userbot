@@ -416,10 +416,15 @@ with king:
             api_hash=API_HASH).start(
             bot_token=BOT_TOKEN)
 
+# ------------------------------------->
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = ALIVE_LOGO
+
+        logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
+        logo = ALIVE_LOGO 
+        plugins = CMD_HELP
+# --------------------------->
 
         @king.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -447,19 +452,15 @@ with king:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@KingUserbotSupport"):
+            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.article(
-                    "Harap Gunakan .help Untuk Perintah",
-                    text="{}"
-                    f"\n\n◎› **King** {DEFAULTUSER}\n\n"
-                    "◎› **Plugins :** `{}`\n◎› **Menu Plugins ↯** \n".format(
-                        "**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**",
+                result = builder.photo(
+                    file=logoking,
+                    link_preview=False,
+                    text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
-                    link_preview=False,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
