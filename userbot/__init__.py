@@ -427,21 +427,35 @@ with king:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"Haii 😼 [{get_display_name(u)}](tg://user?id={u.id}) My Name is King\n"
-                    f"King Used For Fun On Telegram,\n"
-                    f"and For Maintaining Your Group 🛠️.\n"
-                    f"I was **Created by :** @PacarFerdilla For Various Userbots on Github\n")
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Saya adalah bot\n"
+                    f"Yang dibikin oleh pembuat saya,\n"
+                    f"dan Untuk Mempersantai Grup Anda\n"
+                    f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku\n")
                 await king.tgbot.send_file(event.chat_id, logo,
                                            caption=text,
                                            buttons=[
                                                [
                                                    custom.Button.url(
                                                        text="Support Chat",
-                                                       url="https://t.me/KingUserbotSupport"
+                                                       url="https://t.me/KingUserbotSupport"),
+                                                   custom.Button.url(
+                                                       text="Support Channel",
+                                                       url="https://t.me/TeamKingUserbot"
                                                    )
                                                ]
                                            ]
                                            )
+
+        @king.tgbot.on(events.NewMessage(pattern=r"/ping"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
+                await king.tgbot.send_message(
+                    event.chat_id,
+                    f"**PONG !!**\n `{ms}ms`",
+                )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -454,7 +468,7 @@ with king:
                 result = builder.photo(
                     file=logoking,
                     link_preview=False,
-                    text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
+                    text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
