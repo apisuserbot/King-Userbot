@@ -426,17 +426,13 @@ with king:
         plugins = CMD_HELP
 # --------------------------->
 
-        @king.tgbot.on(events.NewMessage(pattern="/start"))
+        @king.tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
-            await event.message.get_sender()
-            text = (
-                f"**Hay**, __saya pengguna__ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n"
-                f"       __Terimakasih Untuk Userbot__\n\n"
-                f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-                f"✣ **Grup Support :** [Support Chat](t.me/KingUserbotSupport)\n"
-                f"✣ **Pemilik Repo :** [Developer](t.me/PacarFerdilla)\n"
-                f"✣ **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)\n")
-            await tgbot.send_file(event.chat_id, logo, caption=text,
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"**Hai** [{get_display_name(u)}](tg://user?id={u.id})"
+                await king.tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           custom.Button.url(
