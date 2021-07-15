@@ -365,11 +365,9 @@ ZALG_LIST = {}
 
 # Import Userbot - Ported by Apis
 
-# ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
 
-
+#--------------------------------------------InlineBot---------------------------------->
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
@@ -404,10 +402,12 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
+#-----------------------------------------------Bot------------------------------------>
+king = bot
 
-with bot:
+with king:
     try:
-        tgbot = TelegramClient(
+        king.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
             api_hash=API_HASH).start(
