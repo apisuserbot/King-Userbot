@@ -420,9 +420,9 @@ with king:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+        logo = ALIVE_LOGO
 
         logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
-        logo = ALIVE_LOGO
         plugins = CMD_HELP
 # --------------------------->
 
@@ -436,17 +436,17 @@ with king:
                     f"King Used For Fun On Telegram,\n"
                     f"and For Maintaining Your Group 🛠️.\n"
                     f"I was **Created by :** @PacarFerdilla For Various Userbots on Github\n")
-                await king.tgbot.send_file(event.chat_id, file=logo,
+                await king.tgbot.send_file(event.chat_id, logo,
                                            caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Support Chat",
-                                                       url="https://t.me/KingUserbotSupport"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                                      buttons=[
+                                          [
+                                              custom.Button.url(
+                                                  text="Support Chat",
+                                                  url="https://t.me/KingUserbotSupport"
+                                              )
+                                          ]
+                                      ]
+                                      )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
