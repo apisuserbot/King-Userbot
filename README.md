@@ -28,6 +28,10 @@ Terimakasih telah menggunakan repository ini!
 [![GitHub contributors](https://img.shields.io/github/contributors/apisuserbot/King-Userbot?&style=plastic&logo=github)](https://GitHub.com/apisuserbot/King-Userbot/graphs/contributors/)
 <p align="center">
 
+<p align="center">
+<a href="https://www.codefactor.io/repository/github/apisuserbot/king-userbot"><img src="https://www.codefactor.io/repository/github/apisuserbot/king-userbot/badge?style=for-the-badge" alt="CodeFactor" /></a>
+</p>
+
 ![King Userbot Logo](https://telegra.ph/file/8eb368517a8d3933c05d9.jpg)
 
 <a href="https://hub.docker.com/r/apiskinguserbot/kinguserbot"> <img src="https://img.shields.io/docker/image-size/apiskinguserbot/kinguserbot/Buster?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
@@ -97,13 +101,14 @@ Klik tombol dibawah untuk deploy King Userbot milikmu`
 *   [Alfianandaa](https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
 *   [AnggaR69s](https://github.com/GengKapak/DCLXVI) - DCLXVI
 *   [kandnub](https://github.com/kandnub) - TG-UserBot
-*   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix Dan Lainnya
+*   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix 
+DAN LAINNYA
 
 
 ## Contributor 
    Team Project Kami
 
-*  [Apis](https://github.com/apisuserbot) - DEV
+*  [Apis](https://github.com/apisuserbot) - Developer
 *  [Alvin](https://github.com/Zora24) - Contributor
 *  [Axel](https://github.com/KENZO-404) - Contributor
 *  [Yunus](https://github.com/Yunus-Zend) - Contributor
