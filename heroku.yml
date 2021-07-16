@@ -2,4 +2,4 @@ build:
   docker:
       worker: Dockerfile
 run:
-   worker: bash resource/deploy/deploy.sh
+   worker: bash resource/startup/startup.sh
