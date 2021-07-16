@@ -22,4 +22,3 @@ TG_BOT_TOKEN.session
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-
