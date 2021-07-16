@@ -487,7 +487,7 @@ with king:
                     "@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=logoking,
+                    logo,
                     link_preview=False,
                     text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Versi Bot :** `v.{BOT_VER}`\n◎› **Plugin :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
@@ -501,8 +501,9 @@ with king:
                     buttons=[],
                     link_preview=True)
             else:
-                result = builder.article(
+                result = builder.photo(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
+                    file=logoking,
                     text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
