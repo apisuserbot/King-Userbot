@@ -514,8 +514,7 @@ with king:
                             custom.Button.url(
                                 "Developer",
                                 "t.me/PacarFerdilla")],
-                    ]
-                )
+                    ])
             await event.answer([result] if result else None)
 
         @king.tgbot.on(
