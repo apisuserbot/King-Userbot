@@ -25,13 +25,13 @@ elif [ ${1} == "-h" ] || [ ${1} == "--help" ] ; then
 	echo -e  "Licensed under Raphielscape Public License"
 	echo -e "\nUsage:"
 	echo -e "[no arguments] || -x -- Run in the foreground, stdout is the logcat"
-	echo -e "--daemonize    || -d -- Run in the background, logs will be saved in *-lynxproject.log"
+	echo -e "--daemonize    || -d -- Run in the background, logs will be saved in *-kingproject.log"
 	exit 0
 else
 	echo -e  "King-Userbot"
         echo -e  "Licensed under Raphielscape Public License"
         echo -e  "\nUsage:"
         echo -e  "[no arguments] || -x -- Run in the foreground, stdout is the logcat"
-        echo -e  "--daemonize    || -d -- Run in the background, logs will be saved in *-lynxproject.log"
+        echo -e  "--daemonize    || -d -- Run in the background, logs will be saved in *-kingproject.log"
 	exit 127
 fi
