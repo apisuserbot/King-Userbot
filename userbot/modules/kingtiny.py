@@ -1,7 +1,5 @@
-# Port By LiuAlvinas/Alvin For Lord Userbot From Ultroid, Thanks
-# Based Plugins
-# Fixed By ManusiaRakitann/Koala
-# Dont Remove
+# Tiny stickers
+# Ported by Apis (King-Userbot)
 
 
 # Apis Ganteng
@@ -11,8 +9,6 @@ import cv2
 import os
 from userbot.events import register
 from userbot import CMD_HELP, bot
-
-# Ngapain Kesini Ajg Hus
 
 
 @register(outgoing=True, pattern="^.tiny(?: |$)(.*)", disable_errors=True)
@@ -87,9 +83,13 @@ async def _(event):
     os.remove(file)
     os.remove(ik)
 
-# Port By Alvin Ganteng/liualvinas
-# king - Userbot
+# USERBOT TELEGRAM
 
-CMD_HELP.update({
-    "tiny": "⚡𝘾𝙈𝘿⚡: `.tiny`\
-    \n↳ : Untuk Memperkecil Sticker."})
+CMD_HELP.update(
+    {
+        "tiny": "**✘ Plugin :** `Memperkecil Sticker`\
+        \n\n  •  **Perintah :** `.tiny`\
+        \n  •  **Function : **Untuk Memperkecil Sticker\
+    "
+    }
+)
