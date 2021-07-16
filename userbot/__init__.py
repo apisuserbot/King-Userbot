@@ -503,7 +503,8 @@ with king:
             else:
                 result = builder.photo(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    file=logoking,
+                    logo,
+                    link_preview=False,
                     text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
@@ -513,8 +514,7 @@ with king:
                             custom.Button.url(
                                 "Developer",
                                 "t.me/PacarFerdilla")],
-                    ],
-                    link_preview=False,
+                    ]
                 )
             await event.answer([result] if result else None)
 
