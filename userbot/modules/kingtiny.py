@@ -87,7 +87,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "tiny": "**✘ Plugin :** `Memperkecil Sticker`\
+        "tiny": "**✘ Plugin :** `Tiny Stickers`\
         \n\n  •  **Perintah :** `.tiny`\
         \n  •  **Function : **Untuk Memperkecil Sticker\
     "
