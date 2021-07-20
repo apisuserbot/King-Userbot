@@ -417,21 +417,23 @@ async def lang(value):
 
 
 @register(outgoing=True, pattern=r"^\.yt (\d*) *(.*)")
-async def yt_search(video_q):
+async def yt_search(event):
     """For .yt command, do a YouTube search from Telegram."""
-    if video_q.pattern_match.group(1) != "":
-        counter = int(video_q.pattern_match.group(1))
+
+    if event.pattern_match.group(1) != "":
+        counter = int(event.pattern_match.group(1))
         if counter > 10:
             counter = int(10)
         if counter <= 0:
             counter = int(1)
     else:
-        counter = int(5)
+        counter = int(3)
 
-    query = video_q.pattern_match.group(2)
+    query = event.pattern_match.group(2)
+
     if not query:
-        await video_q.edit("`Enter query to search`")
-    await video_q.edit("`Processing...`")
+        return await event.edit("`Enter a query to search.`")
+    await event.edit("`Processing...`")
 
     try:
         results = json.loads(
@@ -439,9 +441,11 @@ async def yt_search(video_q):
                 query,
                 max_results=counter).to_json())
     except KeyError:
-        return await video_q.edit("`Youtube Search gone retard.\nCan't search this query!`")
+        return await event.edit(
+            "`Youtube Search gone retard.\nCan't search this query!`"
+        )
 
-    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n"
+    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n"
 
     for i in results["videos"]:
         try:
@@ -454,7 +458,7 @@ async def yt_search(video_q):
         except IndexError:
             break
 
-    await video_q.edit(output, link_preview=False)
+    await event.edit(output, link_preview=False)
 
 
 @register(outgoing=True, pattern=r".rip(audio|video( \d{0,4})?) (.*)")
@@ -1391,11 +1395,14 @@ CMD_HELP.update(
 \nUsage:Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)",
         "translate": "`.tr` <text> [or reply]\
 \nUsage: Translates text to the language which is set.\nUse .lang tr <language code> to set language for tr. (Default is English)",
-        "youtube": "`.yt` <count> <query>\
+        "youtube": ">`.yt` `<Count> <Query>`\
 \nUsage: Does a YouTube search.\
-\n\nCan specify the number of results needed (default is 5).",
-        "rip": "`.ripaudio` <url> or ripvideo <url>\
-\nUsage: Download videos and songs from YouTube.",
+\n\n>`.ripaudio <url>`\
+\nUsage: Download Videos from YouTube and Convert to Audio.\
+\n\n>`.ripvideo <quality> <url>` (Quality is Optional)\
+\nQuality Examples : `144` `240` `360` `480` `720` `1080` `2160`\
+\nUsage: Download Videos from YouTube\
+\n\n[Other supported sites](https://ytdl-org.github.io/youtube-dl/supportedsites.html)",
         "removebg": "`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
 \nUsage: Removes the background of images, using remove.bg API.",
         "ocr": "`.ocr` <language>\
