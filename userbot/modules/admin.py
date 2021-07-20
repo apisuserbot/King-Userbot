@@ -30,7 +30,7 @@ from telethon.tl.types import (
     PeerChat,
 )
 
-from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, DEVS
 from userbot.events import register
 
 # =================== CONSTANT ===================
@@ -333,7 +333,7 @@ async def spider(spdr):
     if user.id == self_user.id:
         return await spdr.edit("`Tidak Bisa Membisukan Diri Sendiri:)`")
 
-    if user.id == 1682708454:
+    if user.id in DEVS:
         return await spdr.edit("`Sepertinya Anda Tidak Bisa Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`")
 
     # If everything goes well, do announcing and mute
@@ -523,7 +523,7 @@ async def gspider(gspdr):
     if user.id == self_user.id:
         return await gspdr.edit("`Tidak Bisa Membisukan Diri Sendiri:)`")
 
-    if user.id == 1682708454:
+    if user.id in DEVS:
         return await gspdr.edit("`Sepertinya Anda Tidak Bisa Gloabl Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`")
 
     # If pass, inform and start gmuting
@@ -627,7 +627,7 @@ async def rm_deletedacc(show):
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
-    mentions = f"<b>👑 Daftar Admin Grup {title}:</b> \n"
+    mentions = f"<b>Daftar Admin Grup {title} :</b> \n"
     try:
         async for user in show.client.iter_participants(
             show.chat_id, filter=ChannelParticipantsAdmins
