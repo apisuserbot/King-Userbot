@@ -424,6 +424,13 @@ with king:
         plugins = CMD_HELP
 # --------------------------->
 
+        @king.tgbot.on(events.ChatAction)
+        async def handler(event):
+            if event.user_joined:
+                u = await event.client.get_entity(event.chat_id)
+                c = await event.client.get_entity(event.user_id)
+                await event.reply(f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n\nSemoga betah 😉")
+
         @king.tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
             if event.message.from_id != uid:
