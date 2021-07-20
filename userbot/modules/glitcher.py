@@ -247,7 +247,7 @@ async def check_media(reply_message):
 
 CMD_HELP.update(
     {
-        "glitch": "**✘ Plugin :** `Level sticker`\
+        "glitch": "**✘ Plugin :** __Glitch__\
         \n\n  •  **Perintah :** `.glitch` <1-8>\
         \n  •  **Function : **Balas Ke Sticker/Gambar.\nGlitch Level 1-8 Jika Tidak Membuat Level Maka Otomatis Default Level 2\
     "
