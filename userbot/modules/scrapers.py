@@ -549,7 +549,11 @@ async def download_video(v_url):
             f"`Preparing to upload song:`\n**{rip_data.get('title')}**"
             f"\nby **{rip_data.get('uploader')}**"
         )
-        f_name = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+        f_name = glob(
+            os.path.join(
+                TEMP_DOWNLOAD_DIRECTORY,
+                str(s_time),
+                "*"))[0]
         with open(f_name, "rb") as f:
             result = await upload_file(
                 client=v_url.client,
@@ -590,12 +594,20 @@ async def download_video(v_url):
             f"`Preparing to upload video:`\n**{rip_data.get('title')}**"
             f"\nby **{rip_data.get('uploader')}**"
         )
-        f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+        f_path = glob(
+            os.path.join(
+                TEMP_DOWNLOAD_DIRECTORY,
+                str(s_time),
+                "*"))[0]
         # Noob way to convert from .mkv to .mp4
         if f_path.endswith(".mkv"):
             base = os.path.splitext(f_path)[0]
             os.rename(f_path, base + ".mp4")
-            f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+            f_path = glob(
+                os.path.join(
+                    TEMP_DOWNLOAD_DIRECTORY,
+                    str(s_time),
+                    "*"))[0]
         f_name = os.path.basename(f_path)
         with open(f_path, "rb") as f:
             result = await upload_file(
@@ -702,10 +714,10 @@ async def ReTrieveFile(input_file_name):
         "image_file": (input_file_name, open(input_file_name, "rb")),
     }
     return requests.post("https://api.remove.bg/v1.0/removebg",
-                      headers=headers,
-                      files=files,
-                      allow_redirects=True,
-                      stream=True)
+                         headers=headers,
+                         files=files,
+                         allow_redirects=True,
+                         stream=True)
 
 
 async def ReTrieveURL(input_url):
@@ -714,10 +726,10 @@ async def ReTrieveURL(input_url):
     }
     data = {"image_url": input_url}
     return requests.post("https://api.remove.bg/v1.0/removebg",
-                      headers=headers,
-                      data=data,
-                      allow_redirects=True,
-                      stream=True)
+                         headers=headers,
+                         data=data,
+                         allow_redirects=True,
+                         stream=True)
 
 
 @register(pattern=r".ocr (.*)", outgoing=True)
@@ -831,7 +843,9 @@ async def make_qr(makeqr):
             m_list = None
             with open(downloaded_file_name, "rb") as file:
                 m_list = file.readlines()
-            message = "".join(media.decode("UTF-8") + "\r\n" for media in m_list)
+            message = "".join(
+                media.decode("UTF-8") +
+                "\r\n" for media in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
