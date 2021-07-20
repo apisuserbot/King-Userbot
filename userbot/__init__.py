@@ -356,6 +356,7 @@ USERS = {}
 COUNT_PM = {}
 ENABLE_KILLME = True
 LASTMSG = {}
+king = bot
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
@@ -408,7 +409,7 @@ king = bot
 
 with king:
     try:
-        king.tgbot = TelegramClient(
+        king.tgbot = tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
             api_hash=API_HASH).start(
