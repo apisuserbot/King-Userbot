@@ -403,7 +403,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     return pairs
 
 
-# -----------------------------------------------Bot------------------------------------>
+# -----------------------------------------------File------------------------------------>
 king = bot
 
 with king:
@@ -414,7 +414,7 @@ with king:
             api_hash=API_HASH).start(
             bot_token=BOT_TOKEN)
 
-# ------------------------------------->
+# -----------------------------------------------File------------------------------------>
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
@@ -422,7 +422,7 @@ with king:
 
         logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
         plugins = CMD_HELP
-# --------------------------->
+# ------------------------------ChatAction--------------->
 
         @king.tgbot.on(events.ChatAction)
         async def handler(event):
@@ -430,6 +430,8 @@ with king:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n\nSemoga betah 😉")
+
+# ====================================InlineHandler===================================== #
 
         @king.tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
@@ -523,6 +525,8 @@ with king:
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
+
+# =============================================Button========================================= #
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
