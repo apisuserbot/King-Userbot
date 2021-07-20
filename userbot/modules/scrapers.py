@@ -457,71 +457,62 @@ async def yt_search(video_q):
     await video_q.edit(output, link_preview=False)
 
 
-@register(outgoing=True, pattern=r".rip(audio|video) (.*)")
+@register(outgoing=True, pattern=r".rip(audio|video( \d{0,4})?) (.*)")
 async def download_video(v_url):
-    """ For .rip command, download media from YouTube and many other sites. """
-    url = v_url.pattern_match.group(2)
-    type = v_url.pattern_match.group(1).lower()
+    """For .rip command, download media from YouTube and many other sites."""
+    dl_type = v_url.pattern_match.group(1).lower()
+    reso = v_url.pattern_match.group(2)
+    reso = reso.strip() if reso else None
+    url = v_url.pattern_match.group(3)
 
-    await v_url.edit("`Preparing to download...`")
+    await v_url.edit("`Preparing to Download...`")
+    s_time = time.time()
+    video = False
+    audio = False
 
-    if type == "audio":
+    if "audio" in dl_type:
         opts = {
-            'format':
-            'bestaudio',
-            'addmetadata':
-            True,
-            'key':
-            'FFmpegMetadata',
-            'writethumbnail':
-            True,
-            'prefer_ffmpeg':
-            True,
-            'geo_bypass':
-            True,
-            'nocheckcertificate':
-            True,
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '320',
-            }],
-            'outtmpl':
-            '%(id)s.mp3',
-            'quiet':
-            True,
-            'logtostderr':
-            False
+            "format": "bestaudio/best",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "writethumbnail": True,
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "328",
+                }
+            ],
+            "outtmpl": os.path.join(
+                TEMP_DOWNLOAD_DIRECTORY, str(s_time), "%(title)s.%(ext)s"
+            ),
+            "quiet": True,
+            "logtostderr": False,
         }
-        video = False
-        song = True
+        audio = True
 
-    elif type == "video":
+    elif "video" in dl_type:
+        quality = (
+            f"bestvideo[height<={reso}]+bestaudio/best[height<={reso}]"
+            if reso
+            else "bestvideo+bestaudio/best"
+        )
         opts = {
-            'format':
-            'best',
-            'addmetadata':
-            True,
-            'key':
-            'FFmpegMetadata',
-            'prefer_ffmpeg':
-            True,
-            'geo_bypass':
-            True,
-            'nocheckcertificate':
-            True,
-            'postprocessors': [{
-                'key': 'FFmpegVideoConvertor',
-                'preferedformat': 'mp4'
-            }],
-            'outtmpl':
-            '%(id)s.mp4',
-            'logtostderr':
-            False,
-            'quiet':
-            True
+            "format": quality,
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "outtmpl": os.path.join(
+                TEMP_DOWNLOAD_DIRECTORY, str(s_time), "%(title)s.%(ext)s"
+            ),
+            "logtostderr": False,
+            "quiet": True,
         }
-        song = False
         video = True
 
     try:
@@ -550,37 +541,94 @@ async def download_video(v_url):
     except Exception as e:
         return await v_url.edit(f"{str(type(e)): {str(e)}}")
     c_time = time.time()
-    if song:
+    if audio:
         await v_url.edit(
-            f"`Preparing to upload song:`\n**{rip_data['title']}**")
+            f"`Preparing to upload song:`\n**{rip_data.get('title')}**"
+            f"\nby **{rip_data.get('uploader')}**"
+        )
+        f_name = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+        with open(f_name, "rb") as f:
+            result = await upload_file(
+                client=v_url.client,
+                file=f,
+                name=f_name,
+                progress_callback=lambda d, t: get_event_loop().create_task(
+                    progress(
+                        d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp3"
+                    )
+                ),
+            )
+
+        thumb_image = [
+            x
+            for x in glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))
+            if not x.endswith(".mp3")
+        ][0]
+        metadata = extractMetadata(createParser(f_name))
+        duration = 0
+        if metadata.has("duration"):
+            duration = metadata.get("duration").seconds
         await v_url.client.send_file(
             v_url.chat_id,
-            f"{rip_data['id']}.mp3",
+            result,
             supports_streaming=True,
             attributes=[
-                DocumentAttributeAudio(duration=int(rip_data['duration']),
-                                       title=str(rip_data['title']),
-                                       performer=str(rip_data['uploader']))
+                DocumentAttributeAudio(
+                    duration=duration,
+                    title=rip_data.get("title"),
+                    performer=rip_data.get("uploader"),
+                )
             ],
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{rip_data['title']}.mp3")))
-        os.remove(f"{rip_data['id']}.mp3")
+            thumb=thumb_image,
+        )
         await v_url.delete()
     elif video:
         await v_url.edit(
-            f"`Preparing to upload video:`\n**{rip_data['title']}**")
+            f"`Preparing to upload video:`\n**{rip_data.get('title')}**"
+            f"\nby **{rip_data.get('uploader')}**"
+        )
+        f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+        # Noob way to convert from .mkv to .mp4
+        if f_path.endswith(".mkv"):
+            base = os.path.splitext(f_path)[0]
+            os.rename(f_path, base + ".mp4")
+            f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
+        f_name = os.path.basename(f_path)
+        with open(f_path, "rb") as f:
+            result = await upload_file(
+                client=v_url.client,
+                file=f,
+                name=f_name,
+                progress_callback=lambda d, t: get_event_loop().create_task(
+                    progress(d, t, v_url, c_time, "Uploading..", f_name)
+                ),
+            )
+        thumb_image = await get_video_thumb(f_path, "thumb.png")
+        metadata = extractMetadata(createParser(f_path))
+        duration = 0
+        width = 0
+        height = 0
+        if metadata.has("duration"):
+            duration = metadata.get("duration").seconds
+        if metadata.has("width"):
+            width = metadata.get("width")
+        if metadata.has("height"):
+            height = metadata.get("height")
         await v_url.client.send_file(
             v_url.chat_id,
-            f"{rip_data['id']}.mp4",
-            supports_streaming=True,
-            caption=rip_data['title'],
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{rip_data['title']}.mp4")))
-        os.remove(f"{rip_data['id']}.mp4")
+            result,
+            thumb=thumb_image,
+            attributes=[
+                DocumentAttributeVideo(
+                    duration=duration,
+                    w=width,
+                    h=height,
+                    supports_streaming=True,
+                )
+            ],
+            caption=f"[{rip_data.get('title')}]({url})",
+        )
+        os.remove(thumb_image)
         await v_url.delete()
 
 
