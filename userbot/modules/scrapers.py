@@ -272,9 +272,8 @@ async def wiki(wiki_q):
         return
     result = summary(match)
     if len(result) >= 4096:
-        file = open("output.txt", "w+")
-        file.write(result)
-        file.close()
+        with open("output.txt", "w+") as file:
+            file.write(result)
         await wiki_q.client.send_file(
             wiki_q.chat_id,
             "output.txt",
@@ -702,12 +701,11 @@ async def ReTrieveFile(input_file_name):
     files = {
         "image_file": (input_file_name, open(input_file_name, "rb")),
     }
-    r = requests.post("https://api.remove.bg/v1.0/removebg",
+    return requests.post("https://api.remove.bg/v1.0/removebg",
                       headers=headers,
                       files=files,
                       allow_redirects=True,
                       stream=True)
-    return r
 
 
 async def ReTrieveURL(input_url):
@@ -715,12 +713,11 @@ async def ReTrieveURL(input_url):
         "X-API-Key": REM_BG_API_KEY,
     }
     data = {"image_url": input_url}
-    r = requests.post("https://api.remove.bg/v1.0/removebg",
+    return requests.post("https://api.remove.bg/v1.0/removebg",
                       headers=headers,
                       data=data,
                       allow_redirects=True,
                       stream=True)
-    return r
 
 
 @register(pattern=r".ocr (.*)", outgoing=True)
@@ -795,9 +792,7 @@ async def bq(event):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8") + "\r\n"
+            message = "".join(m.decode("UTF-8") + "\r\n" for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
@@ -836,9 +831,7 @@ async def make_qr(makeqr):
             m_list = None
             with open(downloaded_file_name, "rb") as file:
                 m_list = file.readlines()
-            message = ""
-            for media in m_list:
-                message += media.decode("UTF-8") + "\r\n"
+            message = "".join(media.decode("UTF-8") + "\r\n" for media in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
@@ -1183,9 +1176,7 @@ async def paste(pstl):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            message = "".join(m.decode("UTF-8") for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = message.message
@@ -1298,9 +1289,7 @@ async def neko(nekobin):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            message = "".join(m.decode("UTF-8") for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = message.text
