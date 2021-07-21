@@ -14,7 +14,7 @@ from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import __version__, version
-from telethon.sync import custom 
+from telethon.sync import custom
 import platform
 import sys
 import time
@@ -250,20 +250,20 @@ async def amireallyalive(alive):
         try:
             logo = ALIVE_LOGO
             await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, 
-                                     caption=output,
-                                     buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Support Chat",
-                                                       url="https://t.me/KingUserbotSupport"),
-                                                   custom.Button.url(
-                                                       text="Support Channel",
-                                                       url="https://t.me/TeamKingUserbot"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+            msg = await bot.send_file(alive.chat_id, logo,
+                                      caption=output,
+                                      buttons=[
+                                          [
+                                              custom.Button.url(
+                                                  text="Support Chat",
+                                                  url="https://t.me/KingUserbotSupport"),
+                                              custom.Button.url(
+                                                  text="Support Channel",
+                                                  url="https://t.me/TeamKingUserbot"
+                                              )
+                                          ]
+                                      ]
+                                      )
             await asyncio.sleep(200)
             await msg.delete()
         except BaseException:
