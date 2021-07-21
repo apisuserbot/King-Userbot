@@ -274,7 +274,7 @@ async def amireallyalive(alive):
             await asyncio.sleep(100)
             await alive.delete()
     else:
-        await alive.edit(output)
+        await alive.edit(output + buttons)
         await asyncio.sleep(100)
         await alive.delete()
 
