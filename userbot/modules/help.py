@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 from platform import uname
 
-modules = CMD_HELP
+plugins = CMD_HELP
 
 # Ported by apisuserbot (King-Userbot)
 # ================= CONSTANT =================
@@ -35,7 +35,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t|  "
         await event.edit("**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n\n"
-                         f"**◑» King** {DEFAULTUSER}\n**◑» Plugins :** `{len(modules)}`\n\n"
+                         f"**◑» King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n\n"
                          "**❒ Main Menu ↯**\n"
                          f"╰►| {string} ◄─")
         await event.reply(
