@@ -112,7 +112,7 @@ DAN LAINNYA
 *  [Alvin](https://github.com/Zora24) - Contributor
 *  [Axel](https://github.com/KENZO-404) - Contributor
 *  [Yunus](https://github.com/Yunus-Zend) - Contributor
-*  [Ridho](https://github.com/ridho17-ind) - Contributor
+*  [Skyzo](https://github.com/ridho17-ind) - Contributor
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) - Version 1.d, February 2020
