@@ -15,4 +15,4 @@ RUN pip3 install -r https://raw.githubusercontent.com/apisuserbot/King-Userbot/K
 WORKDIR /home/King-Userbot/
 
 # Finishim
-CMD ["python3","-m","userbot"]
+CMD ["bash","./resource/startup/startup.sh"]
