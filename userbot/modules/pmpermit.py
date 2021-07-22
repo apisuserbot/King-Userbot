@@ -30,6 +30,10 @@ if PMPERMIT_PIC is None:
 else:
     CUSTOM_PIC = str(PMPERMIT_PIC)
 
+COUNT_PM = {}
+LASTMSG = {}
+
+
 # ========================= CONSTANTS ============================
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -158,6 +162,7 @@ async def auto_accept(event):
             UNAPPROVED_MSG = get_message
         else:
             UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
+            UNAPPROVED_MSG = PM_PERMIT_PC
 
         chat = await event.get_chat()
         if isinstance(chat, User):
