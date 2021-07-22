@@ -162,7 +162,7 @@ async def auto_accept(event):
             UNAPPROVED_MSG = get_message
         else:
             UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
-            UNAPPROVED_MSG = PM_PERMIT_PC
+            UNAPPROVED_MSG = PMPERMIT_PC
 
         chat = await event.get_chat()
         if isinstance(chat, User):
