@@ -350,7 +350,7 @@ with bot:
             "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
         quit(1)
 
-# Global Variables
+# ==================================GlobalVariables================================= #
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
