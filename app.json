@@ -41,7 +41,7 @@
       "required": true
     },
     "BOTLOG_CHATID": {
-      "description": "Buatlah sebuah grup private/public masukan bot rose lalu ketik /id.",
+      "description": "Buatlah sebuah grup private/public masukan bot rose lalu ketik /id",
       "value": "Isi id grup mu",
       "required": true
     },
@@ -58,11 +58,11 @@
       "required": false
     },
     "MONGO_URI": {
-      "description": "URL Atlas MongoDB Anda, Dapatkan API URL dari https://telegra.ph/Mongo-DB-12-24.",
+      "description": "URL Atlas MongoDB Anda, Dapatkan API URL dari (https://telegra.ph/Mongo-DB-12-24) - telegram",
       "required": false
     },
     "GENIUS": {
-      "description": "Dapatkan GENIUS caranya ke @KingUserbotSupport lalu ketik #apikey.",
+      "description": "Dapatkan GENIUS caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -70,7 +70,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Tambahkan GIT_REPO_NAME di sini. Ini membantu dengan komit di GitHub.",
+      "description": "Tambahkan GIT_REPO_NAME di sini, Ini membantu dengan commit di GitHub",
       "required": false
     },
     "COUNTRY": {
@@ -79,7 +79,7 @@
       "required": true
     },
     "TZ_NUMBER": {
-      "description": "Ubah nilai ini jika negara Anda memiliki beberapa Zona Waktu.",
+      "description": "Pilih angka waktu ini jika negara Anda memiliki beberapa Zona Waktu",
       "value": "1",
       "required": false
     },
@@ -88,11 +88,11 @@
       "required": false
     },
     "PMPERMIT_TEXT": {
-      "description": "Isi Pesan Untuk Pmpermit Anda Sendiri (Isi Sesuka Anda)",
+      "description": "Isi Pesan Untuk Pesan Pribadi Anda Sendiri (Isi Sesuka Anda) Kalau Tidak Tau Bisa Ke @KingUserbotSupport",
       "required": false
     },
     "PM_AUTO_BAN": {
-      "description": "Pengalihan Fitur Larangan Otomatis PM, Pilih True Jika Ingin Mengaktifkan, Pilih False Jika Ingin Nonaktifkan",
+      "description": "Fitur Block Otomatis PM, Pilih True Jika Ingin Mengaktifkan, Pilih False Jika Ingin Nonaktifkan",
       "value": "False",
       "required": true
     },
@@ -109,19 +109,19 @@
       "required": false
     },
     "ANTI_SPAMBOT": {
-      "description": "Menendang robot spam dari grup setelah mereka bergabung. [Requires kekuatan admin dalam kelompok untuk menendang.]",
+      "description": "Menendang robot spam dari grup setelah mereka bergabung, [Required kekuatan admin dalam grup untuk menendang]",
       "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
-      "description": "Laporkan robot spam ke @admin dalam grup setelah bergabung, kalau-kalau Anda tidak memiliki admin kekuatan untuk menendang omong kosong itu sendiri.",
+      "description": "Laporkan robot spam ke @admin dalam grup setelah bergabung, kalau-kalau Anda tidak memiliki admin kekuatan untuk menendang",
       "value": "False"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Unduh lokasi untuk banyak plugin (GDrive, .download etc..)",
+      "description": "Download directory untuk banyak plugin (GDrive, download etc)",
       "value": "./downloads/"
     },
     "CLEAN_WELCOME": {
-      "description": "Ketika orang baru bergabung, pesan selamat datang yang lama dihapus.",
+      "description": "Ketika orang baru bergabung, pesan selamat datang yang lama dihapus",
       "value": "True"
     },
     "HEROKU_MEMEZ": {
@@ -130,23 +130,23 @@
       "required": true
     },
     "LASTFM_API": {
-      "description": "Last API untuk plugin Last.FM. [Dapatkan kode pertama di - https://www.last.fm/api/account/create]",
+      "description": "Last API untuk plugin Last.FM [Dapatkan kode pertama di - (https://www.last.fm/api/account/create)",
       "required": false
     },
     "LASTFM_SECRET": {
-      "description": "SECRET Key untuk plugin Last.FM [Dapatkan kode pertama di - https://www.last.fm/api/account/create]",
+      "description": "SECRET Key untuk plugin Last.FM [Dapatkan kode pertama di - (https://www.last.fm/api/account/create)",
       "required": false
     },
     "LASTFM_USERNAME": {
-      "description": "Last.FM Username",
+      "description": "Username Last.FM",
       "required": false
     },
     "LASTFM_PASSWORD": {
-      "description": "Last.FM Password",
+      "description": "Paswword Last.FM",
       "required": false
     },
     "BIO_PREFIX": {
-      "description": "Awalan untuk Bio Plugin Last.FM.",
+      "description": "Awalan untuk Bio Plugin Last.FM",
       "required": false
     },
     "DEFAULT_BIO": {
@@ -172,7 +172,7 @@
       "required": false
     },
     "G_BAN_LOGGER_GROUP": {
-      "description": "Buatlah Sebuah Grup Private/Public Lalu Masukkan Bot Rose Lalu Ketik /id.",
+      "description": "Buatlah Sebuah Grup Private/Public Lalu Masukkan Bot Rose Lalu Ketik /id",
       "value": "Isi id grup mu",
       "required": false
     },
@@ -182,7 +182,7 @@
       "required": false
     },
     "UB_BLACK_LIST_CHAT": {
-      "description": "Isi Apa Aja",
+      "description": "Untuk Blacklist (Isi Apa Aja)",
       "required": false
     },
     "LYDIA_API_KEY": {
@@ -195,7 +195,7 @@
       "required": false
     },
     "LOGSPAMMER": {
-      "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, alih-alih mengeluarkan file di saat ini chat, requires harus valid BOTLOG_CHATID untuk diatur.",
+      "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, alih-alih mengeluarkan file di saat ini chat, required harus valid BOTLOG_CHATID untuk diatur",
       "value": "False",
       "required": true
     },
@@ -208,11 +208,11 @@
       "required": false
     },
     "BOT_TOKEN": {
-      "description": "Setel ini untuk mengaktifkan pembantu bot sebaris. Token dari @BotFather",
+      "description": "Setel ini untuk mengaktifkan pembantu bot sebaris, Token dari @BotFather",
       "required": false
     },
     "BOT_USERNAME": {
-      "description": "username bot yang Anda buat di @BotFather",
+      "description": "username bot Anda yang di buat di @BotFather",
       "required": false
     }
   },
