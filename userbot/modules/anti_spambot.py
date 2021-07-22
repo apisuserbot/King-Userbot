@@ -83,11 +83,11 @@ async def ANTI_SPAMBOTS(welcm):
 
                     # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
                     print(
-                        f"Pengguna Telah Bergabung: {check_user.first_name} [ID: {check_user.id}]")
-                    print(f"Chat: {welcm.chat.title}")
-                    print(f"Waktu: {join_time}")
+                        f"Pengguna Telah Bergabung : {check_user.first_name} [ID: {check_user.id}]")
+                    print(f"Chat : {welcm.chat.title}")
+                    print(f"Waktu : {join_time}")
                     print(
-                        f"Pesan terkirim: {message.text}\n\n[Waktu: {message_date}]")
+                        f"Pesan terkirim : {message.text}\n\nWaktu : {message_date}")
                     ##############################################
 
                     try:
@@ -133,7 +133,7 @@ async def ANTI_SPAMBOTS(welcm):
                                 spambot = True
 
                     if spambot:
-                        print(f"Potensi Pesan Spam: {message.text}")
+                        print(f"Potensi Pesan Spam : {message.text}")
                         await message.delete()
                         break
 
@@ -149,7 +149,7 @@ async def ANTI_SPAMBOTS(welcm):
                             "@admins\n"
                             "`ANTI SPAMBOT DETECTOR!\n"
                             "PENGGUNA INI SESUAI DENGAN ALGORITMA SAYA SEBAGAI SPAMBOT!`"
-                            f"ALASAN: {reason}"
+                            f"ALASAN : {reason}"
                         )
                         kicked = False
                         reported = True
@@ -157,7 +157,7 @@ async def ANTI_SPAMBOTS(welcm):
                     try:
 
                         await welcm.reply(
-                            "`Potensi Spambot Terdeteksi.!!`\n"
+                            "`Potensi Spambot Terdeteksi!!`\n"
                             f"`ALASAN   :` {reason}\n"
                             "Mengeluarkan dia untuk saat ini.\n"
                             f"`PENGGUNA :` [{check_user.first_name}](tg://user?id={check_user.id})"
@@ -195,13 +195,14 @@ async def ANTI_SPAMBOTS(welcm):
     except ValueError:
         pass
 
-# KING USERBOT
-# APIS GANTENG
+# Ported by Apis (King-Userbot)
 
 CMD_HELP.update(
     {
-        "anti_spambot": "Jika diaktifkan di config.env atau env var,\
-        \nmodul ini akan melarang (atau memberi tahu admin grup tentang)\
-        \npelaku spam jika cocok dengan algoritm anti-spam bot pengguna."
+        "anti_spambot": "**✘ Plugin :** `Anti Spambot`\
+        \n\n  •  **Notes :** Jika diaktifkan di config.env atau env var\
+        \n  ⎆  plugin ini akan melarang (atau memberi tahu admin grup tentang)\
+        \n  ⎆  pelaku spam jika cocok dengan algoritm anti-spam bot pengguna\
+    "
     }
 )
