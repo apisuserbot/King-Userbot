@@ -396,7 +396,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "☒", data="{}_close({})".format(prefix, modulo_page)
+                    '☒', b'close'
                 ),
                 custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
@@ -567,11 +567,7 @@ with king:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_close\((.+?)\)")
-            )
-        )
+        @king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons = [
