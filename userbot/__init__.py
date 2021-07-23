@@ -372,12 +372,12 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
+    global unpage
+    looters = page_number
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(
-    "{} {} |".format(
-        "|", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} |".format("|", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -538,7 +538,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                current_page_number = int(unpage)
+                current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, plugins, "helpme")
                 text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __{repo.active_branch.name}__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
