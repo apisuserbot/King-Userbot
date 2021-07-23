@@ -542,7 +542,7 @@ with king:
                 buttons = paginate_help(current_page_number, plugins, "helpme")
                 text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
-                                 logo,
+                                 file=logoking,
                                  buttons=buttons,
                                  link_preview=False,
                                  )
