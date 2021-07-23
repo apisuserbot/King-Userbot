@@ -573,7 +573,7 @@ with king:
                 buttons = [
                     (custom.Button.inline("Buka Kembali", data="opener"),),
                 ]
-                await event.edit("__**- Help Button Ditutup -**__")
+                await event.edit("__**- Help Button Ditutup -**__", logo, buttons=buttons)
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
