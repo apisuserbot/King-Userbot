@@ -97,13 +97,13 @@ NEKOBIN_URL = "https://nekobin.com/"
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
-    await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
+    await prog.edit(f"Bahasa untuk carbon.now.sh set ke {CARBONLANG}")
 
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
-    await e.edit("`Processing..`")
+    await e.edit("`Sedang Memproses..`")
     CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
     global CARBONLANG
     textx = await e.get_reply_message()
@@ -113,7 +113,7 @@ async def carbon_api(e):
     elif textx:
         pcode = str(textx.message)  # Importing message to module
     code = quote_plus(pcode)  # Converting to urlencoded
-    await e.edit("`Processing..\n25%`")
+    await e.edit("`Memproses..\n25%`")
     if os.path.isfile("/root/userbot/.bin/carbon.png"):
         os.remove("/root/userbot/.bin/carbon.png")
     url = CARBON.format(code=code, lang=CARBONLANG)
@@ -129,7 +129,7 @@ async def carbon_api(e):
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER,
                               options=chrome_options)
     driver.get(url)
-    await e.edit("`Processing..\n50%`")
+    await e.edit("`Memproses..\n50%`")
     download_path = '/root/userbot/.bin'
     driver.command_executor._commands["send_command"] = (
         "POST", '/session/$sessionId/chromium/send_command')
@@ -144,18 +144,18 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`Processing..\n75%`")
+    await e.edit("`Memproses..\n75%`")
     # Waiting for downloading
     while not os.path.isfile("/root/userbot/.bin/carbon.png"):
         await sleep(0.5)
-    await e.edit("`Processing..\n100%`")
+    await e.edit("`Memproses..\n100%`")
     file = '/root/userbot/.bin/carbon.png'
-    await e.edit("`Uploading..`")
+    await e.edit("`Mengupload..`")
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Dawn Labs](https://dawnlabs.io/)",
+        caption="Dibuat menggunakan [Carbon](https://carbon.now.sh/about/),\
+        \nproject userbot by [Developer](https://t.me/PacarFerdilla)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -169,7 +169,7 @@ async def carbon_api(e):
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("`Mohon Menunggu Lord, Sedang Mencari Gambar Yang Anda Cari...`")
+    await event.edit("`Mohon Menunggu King, Sedang Mencari Gambar Yang Anda Cari...`")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -216,12 +216,12 @@ async def moni(event):
                     number, currency_from, rebmun, currency_to))
             else:
                 await event.edit(
-                    "`This seems to be some alien currency, which I can't convert right now.`"
+                    "`Ini sepertinya mata uang asing, yang tidak dapat saya konversi sekarang.`"
                 )
         except Exception as e:
             await event.edit(str(e))
     else:
-        await event.edit("`Invalid syntax.`")
+        await event.edit("`Sintaks tidak valid.`")
         return
 
 
@@ -248,13 +248,13 @@ async def gsearch(q_event):
         except IndexError:
             break
     await q_event.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+        "**Search Query :**\n`" + match + "`\n\n**Results :**\n" + msg, link_preview=False
     )
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
+            "Google Search query `" + match + "` sukses dieksekusi",
         )
 
 
@@ -265,10 +265,10 @@ async def wiki(wiki_q):
     try:
         summary(match)
     except DisambiguationError as error:
-        await wiki_q.edit(f"Disambiguated page found.\n\n{error}")
+        await wiki_q.edit(f"Halaman tersamar ditemukan\n\n{error}")
         return
     except PageError as pageerror:
-        await wiki_q.edit(f"Page not found.\n\n{pageerror}")
+        await wiki_q.edit(f"halaman tidak ditemukan\n\n{pageerror}")
         return
     result = summary(match)
     if len(result) >= 4096:
@@ -283,24 +283,24 @@ async def wiki(wiki_q):
         if os.path.exists("output.txt"):
             os.remove("output.txt")
         return
-    await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
+    await wiki_q.edit("**Search :**\n`" + match + "`\n\n**Result :**\n" + result)
     if BOTLOG:
         await wiki_q.client.send_message(
-            BOTLOG_CHATID, f"Wiki query `{match}` was executed successfully")
+            BOTLOG_CHATID, f"Wiki query `{match}` sukses dieksekusi")
 
 
 @register(outgoing=True, pattern="^.ud (.*)")
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("processing...")
+    await event.edit("Sedang Memproses...")
     word = event.pattern_match.group(1)
     urban = asyncurban.UrbanDictionary()
     try:
         mean = await urban.get_word(word)
-        await event.edit("Text: **{}**\n\nMeaning: **{}**\n\nExample: __{}__".format(mean.word, mean.definition, mean.example))
+        await event.edit("Text : **{}**\n\nBerarti : **{}**\n\nContoh : __{}__".format(mean.word, mean.definition, mean.example))
     except asyncurban.WordNotFoundError:
-        await event.edit("No result found for **" + word + "**")
+        await event.edit("Tidak ada hasil yang ditemukan untuk **" + word + "**")
 
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
@@ -359,7 +359,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await event.edit("`.tr LanguageCode` as reply to a message")
+        await event.edit("`.tr bahasaCode` sebagai balasan pesan")
         return
     text = emoji.demojize(text.strip())
     lan = lan.strip()
@@ -369,7 +369,7 @@ async def _(event):
         after_tr_text = translated.text
         # TODO: emojify the :
         # either here, or before translation
-        output_str = """**TRANSLATED** from {} to {}
+        output_str = """**DITERJEMAHKAN** dari {} ke {}
 {}""".format(
             translated.src,
             lan,
