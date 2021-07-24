@@ -396,7 +396,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    '☒', b'close'
+                    "☒", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
@@ -542,7 +542,7 @@ with king:
                 buttons = paginate_help(current_page_number, plugins, "helpme")
                 text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
-                                 file=logoking,
+                                 file=logo,
                                  buttons=buttons,
                                  link_preview=False,
                                  )
@@ -567,16 +567,33 @@ with king:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                buttons = [
-                    (custom.Button.inline("Buka Kembali", data="opener"),),
-                ]
-                await event.edit("__**- Help Button Ditutup -**__", file=logoking, buttons=buttons)
-            else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            if event.query.user_id == uid:  
+                # https://t.me/TelethonChat/115200
+                await event.edit(
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Channel Support",
+                                       "t.me/TeamKingUserbot"),
+                            Button.url("Group support",
+                                       "t.me/KingUserbotSupport")],
+                           [Button.url("Donasi Developer",
+                                       "t.me/PacarFerdilla")],
+                        [Button.inline("Buka Menu", data="opener")],
+                        [custom.Button.inline(
+                            "Tutup", b"close")],
+                    ]
+                )
+             else:
+                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
