@@ -129,7 +129,7 @@ async def upload_google_photos(event):
 
     if not event.reply_to_msg_id and not input_str:
         await event.edit(
-            "(C) <b>[King]</b>\nTidak Ada Yang Akan Membantu Anda", parse_mode="html"
+            "(C) <b>King-Userbot</b>\nTidak Ada Yang Akan Membantu Anda", parse_mode="html"
         )
         return
 
@@ -165,7 +165,7 @@ async def upload_google_photos(event):
     logger.info(file_path)
 
     if not file_path:
-        await event.edit("<b>[BERHENTI MELAKUKAN SPAM]</b>", parse_mode="html")
+        await event.edit("<b>BERHENTI MELAKUKAN SPAM</b>", parse_mode="html")
         return
 
     file_name, mime_type, file_size = file_ops(file_path)
@@ -279,7 +279,7 @@ async def upload_google_photos(event):
             .get("mediaItem")
             .get("productUrl")
         )
-        await event.edit(f"`[BERHASIL]`\n\nMengunggah Foto Ke Google [Lihat]({photo_url})")
+        await event.edit(f"`Sukses`\n\nMengunggah Foto Ke Google [Lihat Disini]({photo_url})")
     except Exception as e:
         await event.edit(str(e))
 
@@ -296,8 +296,10 @@ def file_ops(file_path):
 CMD_HELP.update(
     {
         "gphotos": "**✘ Plugin :** `Google Photo`\
-        \n\n  •  **Perintah :** `.gp`\
-        \n  •  **Function : **Untuk Menggunggah Photo Dari Google\
+        \n\n  •  **Perintah :** `.gpsetup` <link>\
+        \n  •  **Function : **Untuk Membuat CREDS\
+        \n\n  •  **Perintah :** `.gp` <link google photo>\
+        \n  •  **Function : **Untuk Mengunggah Photo Dari Google\
     "
     }
 )
