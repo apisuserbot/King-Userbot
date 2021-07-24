@@ -353,7 +353,7 @@ async def carbon_api(e):
 
 CMD_HELP.update(
     {
-        "carbon": "**✘ Plugin :** `Carbon`\
+        "carbon_value": "**✘ Plugin :** `Carbon Value`\
         \n\n  •  **Perintah :** `.carbon` value <value=1,2,3,4,5>\
         \n  •  **Function : **balas atau ketik `.carbon1` atau 2,3,4,5 value dan mempercantik teks Anda\
     "
