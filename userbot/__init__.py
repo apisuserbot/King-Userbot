@@ -525,8 +525,8 @@ with king:
                                 "Developer",
                                 "t.me/PacarFerdilla")],
                         [custom.Button.url(
-                             "Tutorial Deploy",
-                             "https://t.me/TeamKingUserbot/16")],
+                            "Tutorial Deploy",
+                            "https://t.me/TeamKingUserbot/16")],
                     ],
                     link_preview=False,
                 )
