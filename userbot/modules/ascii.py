@@ -1,5 +1,5 @@
 # based on https://gist.github.com/wshanshan/c825efca4501a491447056849dd207d6
-# Ported for ProjectAlf by Alfiananda P.A
+# Ported by Apis (King-Userbot)
 
 import os
 import random
@@ -139,7 +139,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "ascii": "**Plugin :** `ascii`\
+        "ascii": "**✘ Plugin :** `ascii`\
         \n\n  •  **Perintah :** `.ascii`\
         \n  •  **Function : **Buat Ascii Art Dari Media\
         \n\n  •  **Perintah :** `.asciis`\
