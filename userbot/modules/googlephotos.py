@@ -7,7 +7,7 @@
 # unless you know the two prime factors to the number below" license
 #
 # 114994699218449095458463470499996630
-# 
+#
 # gphotos
 
 import asyncio
