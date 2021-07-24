@@ -11,6 +11,7 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.events import register
+from userbot import CMD_HELP
 
 
 @register(outgoing=True, pattern="^.cs(?: |$)(.*)")
@@ -56,7 +57,7 @@ async def sticklet(event):
             B))
 
     image_stream = io.BytesIO()
-    image_stream.name = "@lord.webp"
+    image_stream.name = "@king.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
 
@@ -86,3 +87,13 @@ async def get_font_file(client, channel_id):
     font_file_message = random.choice(font_file_message_s)
     # download and return the file path
     return await client.download_media(font_file_message)
+
+
+CMD_HELP.update(
+    {
+        "createstickers": "**✘ Plugin :** `Create Stickers`\
+        \n\n  •  **Perintah :** `.cs`\
+        \n  •  **Function : **Untuk Font Sticker\
+    "
+    }
+)
