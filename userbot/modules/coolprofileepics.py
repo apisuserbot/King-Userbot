@@ -12,7 +12,7 @@ from telethon.tl import functions
 
 import asyncio
 
-
+from userbot import CMD_HELP
 from userbot.events import register
 
 COLLECTION_STRING = [
@@ -124,3 +124,13 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(3600)  # Edit this to your required needs
+
+
+CMD_HELP.update(
+    {
+        "random_pp": "**✘ Plugin :** `Random PP`\
+        \n\n  •  **Perintah :** `.randompp`\
+        \n  •  **Function : **Mengubah Foto Profil Anda Secara Acak\
+    "
+    }
+)
