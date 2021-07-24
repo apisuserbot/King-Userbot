@@ -584,8 +584,8 @@ with king:
                                        "t.me/TeamKingUserbot"),
                             Button.url("Group support",
                                        "t.me/KingUserbotSupport")],
-                           [Button.url("Donasi Developer",
-                                       "t.me/PacarFerdilla")],
+                        [Button.url("Donasi Developer",
+                                    "t.me/PacarFerdilla")],
                         [custom.Button.inline("Buka Menu", data="opener")],
                         [custom.Button.inline(
                             "☒", b"close")],
