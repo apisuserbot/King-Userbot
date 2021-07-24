@@ -1,5 +1,5 @@
-# fix by @heyworld for OUB
-# bug fixed by @d3athwarrior
+# fix by @PacarFerdilla for OUB
+# remove and fixed
 
 from telethon.tl.types import InputMediaDice
 from userbot.events import register
@@ -56,8 +56,12 @@ async def _(event):
         except BaseException:
             pass
 
-CMD_HELP.update({
-    "emojigames":
-    "`.dice` 1-6 or `.dart`1-6 or `.ball`1-5\
-\nUsage: hahaha just a magic.\nWarning:`Don't use any other values or bot will crash`"
-})
+CMD_HELP.update(
+    {
+        "emojigames": "**✘ Plugin :** `Emoji Games`\
+        \n\n  •  **Perintah :** `.dice` 1-6 atau `.dart` 1-6 atau `.ball` 1-5\
+        \n  •  **Function : **Emoji Games Hanya Untuk Bersenang Senang
+        \n  **WARNING :** __Jangan Di Salah Gunakan, Karena Userbot Bisa Crash__\
+    "
+    }
+)
