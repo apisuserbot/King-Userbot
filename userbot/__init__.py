@@ -499,7 +499,7 @@ with king:
                     "@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    logo,
+                    file=logo,
                     link_preview=False,
                     text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
@@ -515,7 +515,7 @@ with king:
             else:
                 result = builder.article(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    text="""**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
@@ -524,6 +524,9 @@ with king:
                             custom.Button.url(
                                 "Developer",
                                 "t.me/PacarFerdilla")],
+                        [custom.Button.url(
+                             "Tutorial Deploy",
+                             "https://t.me/TeamKingUserbot/16")],
                     ],
                     link_preview=False,
                 )
@@ -574,21 +577,22 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                # https://t.me/TelethonChat/115200
+                text = f"\n**USERBOT TELEGRAM**"
                 await event.edit(
+                    text,
                     file=logo,
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Channel Support",
+                            Button.url("Support Channel",
                                        "t.me/TeamKingUserbot"),
-                            Button.url("Group support",
+                            Button.url("Support Chat",
                                        "t.me/KingUserbotSupport")],
                         [Button.url("Donasi Developer",
-                                    "t.me/PacarFerdilla")],
+                                    "https://saweria.co/DonasiDeveloper")],
                         [custom.Button.inline("Buka Menu", data="opener")],
                         [custom.Button.inline(
-                            "☒", b"close")],
+                            "Tutup Menu", b"close")],
                     ]
                 )
             else:
@@ -618,7 +622,7 @@ with king:
             buttons = [
                 (custom.Button.inline("Buka Menu", data="opener"),),
             ]
-            await event.edit("Menu Ditutup", file=logo, buttons=buttons)
+            await event.edit("**Menu Ditutup**", file=logo, buttons=buttons)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
