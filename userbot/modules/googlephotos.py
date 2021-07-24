@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#  -*- coding: utf-8 -*-
 #  UniBorg Telegram UseRBot
 #  Copyright (C) 2020 @UniBorg
 #
@@ -8,8 +7,8 @@
 # unless you know the two prime factors to the number below" license
 #
 # 114994699218449095458463470499996630
-#
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
+# 
+# gphotos
 
 import asyncio
 import logging
@@ -30,6 +29,7 @@ from userbot import (
     G_PHOTOS_CLIENT_ID,
     G_PHOTOS_CLIENT_SECRET,
     TEMP_DOWNLOAD_DIRECTORY,
+    CMD_HELP,
 )
 from userbot.events import register
 from userbot.utils import progress
@@ -76,7 +76,7 @@ async def create_token_file(token_file, event):
         await conv.send_message(
             "Pergi Ke "
             "Linknya Dan Ikuti "
-            f"Browser Anda Lord: {authorize_url} Dan "
+            f"Browser Anda King : {authorize_url} Dan "
             "Balas Kode"
         )
         response = await conv.wait_event(
@@ -89,7 +89,7 @@ async def create_token_file(token_file, event):
         storage.put(credentials)
         imp_gsem = await conv.send_message(file=token_file)
         await imp_gsem.reply(
-            "Mohon Setel Heroku ENV "
+            "Mohon Setel Ke Vars Heroku "
             "<code>G_PHOTOS_AUTH_TOKEN_ID</code> "
             "= "
             f"<u>{imp_gsem.id}</u> ..!"
@@ -129,7 +129,7 @@ async def upload_google_photos(event):
 
     if not event.reply_to_msg_id and not input_str:
         await event.edit(
-            "©️ <b>[King]</b>\nTidak Ada Yang Akan Membantu Anda", parse_mode="html"
+            "(C) <b>[King]</b>\nTidak Ada Yang Akan Membantu Anda", parse_mode="html"
         )
         return
 
@@ -239,8 +239,8 @@ async def upload_google_photos(event):
             logger.info(number_of_req_s)
             headers = {
                 "Content-Length": str(len(current_chunk)),
-                "Lord-Goog-Upload-Command": "upload, finalize",
-                "Lord-Goog-Upload-Offset": str(number_of_req_s * upload_granularity),
+                "King-Goog-Upload-Command": "upload, finalize",
+                "King-Goog-Upload-Offset": str(number_of_req_s * upload_granularity),
                 "Authorization": "Bearer " + creds.access_token,
             }
             logger.info(headers)
@@ -291,3 +291,13 @@ def file_ops(file_path):
     mime_type = mime_type if mime_type else "text/plain"
     file_name = file_path.split("/")[-1]
     return file_name, mime_type, file_size
+
+
+CMD_HELP.update(
+    {
+        "gphotos": "**✘ Plugin :** `Google Photo`\
+        \n\n  •  **Perintah :** `.gp`\
+        \n  •  **Function : **Untuk Menggunggah Photo Dari Google\
+    "
+    }
+)
