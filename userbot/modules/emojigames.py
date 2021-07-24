@@ -61,7 +61,7 @@ CMD_HELP.update(
         "emojigames": "**✘ Plugin :** `Emoji Games`\
         \n\n  •  **Perintah :** `.dice` 1-6 atau `.dart` 1-6 atau `.ball` 1-5\
         \n  •  **Function : **Emoji Games Hanya Untuk Bersenang Senang\
-        \n ** WARNING: ** __Jangan Di Salah Gunakan, Karena Userbot Bisa Crash__\
+        \n **WARNING :** __Jangan Di Salah Gunakan, Karena Userbot Bisa Crash__\
     "
     }
 )
