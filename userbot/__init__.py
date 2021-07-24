@@ -596,7 +596,7 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
@@ -619,10 +619,14 @@ with king:
 
         @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("Buka Menu", data="opener"),),
-            ]
-            await event.edit("**Menu Ditutup**", file=logo, buttons=buttons)
+            if event.query.user_id == uid:
+                buttons = [
+                    (custom.Button.inline("Buka Menu", data="opener"),),
+                ]
+                await event.edit("**Menu Ditutup**", file=logo, buttons=buttons)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
