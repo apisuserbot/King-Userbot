@@ -20,10 +20,10 @@ async def evaluate(query):
     if query.pattern_match.group(1):
         expression = query.pattern_match.group(1)
     else:
-        return await query.edit("``` Give an expression to evaluate. ```")
+        return await query.edit("`Berikan ekspresi untuk dievaluasi`")
 
     if expression in ("userbot.session", "config.env"):
-        return await query.edit("`That's a dangerous operation! Not Permitted!`")
+        return await query.edit("`Itu evaluasi yang berbahaya! Tidak diperbolehkan!`")
 
     try:
         evaluation = str(eval(expression))
@@ -37,31 +37,31 @@ async def evaluate(query):
                         query.chat_id,
                         "output.txt",
                         reply_to=query.id,
-                        caption="`Output too large, sending as file`",
+                        caption="`Output terlalu besar, mengirim sebagai file`",
                     )
                     remove("output.txt")
                     return
                 await query.edit(
-                    "**Query: **\n`"
+                    "**Query : **\n`"
                     f"{expression}"
-                    "`\n**Result: **\n`"
+                    "`\n**Result : **\n`"
                     f"{evaluation}"
                     "`"
                 )
         else:
             await query.edit(
-                "**Query: **\n`"
+                "**Query : **\n`"
                 f"{expression}"
-                "`\n**Result: **\n`No Result Returned/False`"
+                "`\n**Result : **\n`Tidak Ada Hasil yang Dikembalikan/Salah`"
             )
     except Exception as err:
         await query.edit(
-            "**Query: **\n`" f"{expression}" "`\n**Exception: **\n" f"`{err}`"
+            "**Query : **\n`" f"{expression}" "`\n**Exception : **\n" f"`{err}`"
         )
 
     if BOTLOG:
         await query.client.send_message(
-            BOTLOG_CHATID, f"Eval query {expression} was executed successfully"
+            BOTLOG_CHATID, f"Kueri evaluasi {expression} sukses dieksekusi"
         )
 
 
@@ -70,16 +70,16 @@ async def run(run_q):
     code = run_q.pattern_match.group(1)
 
     if run_q.is_channel and not run_q.is_group:
-        return await run_q.edit("`Exec isn't permitted on channels!`")
+        return await run_q.edit("`Exec tidak diizinkan di saluran!`")
 
     if not code:
         return await run_q.edit(
-            "``` At least a variable is required to"
-            "execute. Use .help exec for an example.```"
+            "```Setidaknya variabel diperlukan untuk"
+            "execute Menggunakan help exec untuk contoh```"
         )
 
     if code in ("userbot.session", "config.env"):
-        return await run_q.edit("`That's a dangerous operation! Not Permitted!`")
+        return await run_q.edit("`Itu exec yang berbahaya! Tidak diperbolehkan!`")
 
     if len(code.splitlines()) <= 5:
         codepre = code
@@ -95,7 +95,7 @@ async def run(run_q):
             clines[3] +
             "...")
 
-    command = "".join(f"\n {l}" for l in code.split("\n.strip()"))
+    command = "".join(f"\n {l}" from l in code.split("\n.strip()"))
     process = await asyncio.create_subprocess_exec(
         executable,
         "-c",
@@ -120,16 +120,16 @@ async def run(run_q):
             remove("output.txt")
             return
         await run_q.edit(
-            "**Query: **\n`" f"{codepre}" "`\n**Result: **\n`" f"{result}" "`"
+            "**Query : **\n`" f"{codepre}" "`\n**Result : **\n`" f"{result}" "`"
         )
     else:
         await run_q.edit(
-            "**Query: **\n`" f"{codepre}" "`\n**Result: **\n`No Result Returned/False`"
+            "**Query : **\n`" f"{codepre}" "`\n**Result : **\n`Tidak Ada Hasil yang Dikembalikan/Salah`"
         )
 
     if BOTLOG:
         await run_q.client.send_message(
-            BOTLOG_CHATID, "Exec query " + codepre + " was executed successfully"
+            BOTLOG_CHATID, "kueri exec " + codepre + " sukses dieksekusi"
         )
 
 
@@ -142,18 +142,18 @@ async def terminal_runner(term):
 
         uid = geteuid()
     except ImportError:
-        uid = "This ain't it chief!"
+        uid = "Ini bukan kepala!"
 
     if term.is_channel and not term.is_group:
-        return await term.edit("`Term commands aren't permitted on channels!`")
+        return await term.edit("`Perintah istilah tidak diizinkan di saluran!`")
 
     if not command:
         return await term.edit(
-            "``` Give a command or use .help term for an example.```"
+            "```Berikan perintah atau gunakan .help term untuk contoh```"
         )
 
     if command in ("userbot.session", "config.env"):
-        return await term.edit("`That's a dangerous operation! Not Permitted!`")
+        return await term.edit("`Itu term yang berbahaya! Tidak diperbolehkan!`")
 
     process = await asyncio.create_subprocess_shell(
         command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -169,29 +169,47 @@ async def terminal_runner(term):
             term.chat_id,
             "output.txt",
             reply_to=term.id,
-            caption="`Output too large, sending as file`",
+            caption="`Output terlalu besar, mengirim sebagai file`",
         )
         remove("output.txt")
         return
 
     if uid == 0:
-        await term.edit("`" f"{curruser}:~# {command}" f"\n{result}" "`")
+        await term.edit("`" f"{curruser} :~# {command}" f"\n{result}" "`")
     else:
-        await term.edit("`" f"{curruser}:~$ {command}" f"\n{result}" "`")
+        await term.edit("`" f"{curruser} :~$ {command}" f"\n{result}" "`")
 
 
 """
     if BOTLOG:
         await term.client.send_message(
             BOTLOG_CHATID,
-            "Terminal Command " + command + " was executed sucessfully",
+            "Terminal Perintah " + command + " sukses dieksekusi",
         )
 """
 
-CMD_HELP.update({"eval": ">`.eval 2 + 3`"
-                 "\nUsage: Evalute mini-expressions.",
-                 "exec": ">`.exec print('hello')`"
-                 "\nUsage: Execute small python scripts.",
-                 "term": ">`.term <cmd>`"
-                 "\nUsage: Run bash commands and scripts on your server.",
-                 })
+CMD_HELP.update(
+    {   "eval": "**✘ Plugin :** `Eval Teks`\
+        \n\n  •  **Perintah :** `.eval` 2 + 3\
+        \n  •  **Function : Evaluasi ekspresi mini\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {   
+        "exec": "**✘ Plugin :** `Exec Teks`\
+        \n\n  •  **Perintah :** `.exec` `print('hello')`\
+        \n  •  **Function : **Jalankan skript python kecil\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {            
+        "term": "**✘ Plugin :** `Term Teks`\
+        \n\n  •  **Perintah :** `.term` <cmd>\
+        \n  •  **Function : **Jalankan perintah dan skript bash di server Anda\
+    "
+    }
+)
