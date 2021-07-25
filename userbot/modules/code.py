@@ -95,7 +95,7 @@ async def run(run_q):
             clines[3] +
             "...")
 
-    command = "".join(f"\n {l}" from l in code.split("\n.strip()"))
+    command = "".join(f"\n {l}" for l in code.split("\n.strip()"))
     process = await asyncio.create_subprocess_exec(
         executable,
         "-c",
@@ -189,11 +189,12 @@ async def terminal_runner(term):
 """
 
 CMD_HELP.update(
-    {"eval": "**✘ Plugin :** `Eval Teks`\
+    {
+        "eval": "**✘ Plugin :** `Eval Teks`\
         \n\n  •  **Perintah :** `.eval` 2 + 3\
         \n  •  **Function : Evaluasi ekspresi mini\
     "
-     }
+    }
 )
 
 CMD_HELP.update(
