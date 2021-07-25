@@ -179,20 +179,18 @@ async def terminal_runner(term):
     else:
         await term.edit("`" f"{curruser} :~$ {command}" f"\n{result}" "`")
 
-
-"""
     if BOTLOG:
         await term.client.send_message(
             BOTLOG_CHATID,
-            "Terminal Perintah " + command + " sukses dieksekusi",
+            "Terminal Perintah " + command + " sukses dieksekusi"
         )
-"""
+
 
 CMD_HELP.update(
     {
         "eval": "**✘ Plugin :** `Eval Teks`\
         \n\n  •  **Perintah :** `.eval` 2 + 3\
-        \n  •  **Function : Evaluasi ekspresi mini\
+        \n  •  **Function : **Evaluasi ekspresi mini\
     "
     }
 )
