@@ -189,15 +189,15 @@ async def terminal_runner(term):
 """
 
 CMD_HELP.update(
-    {   "eval": "**✘ Plugin :** `Eval Teks`\
+    {"eval": "**✘ Plugin :** `Eval Teks`\
         \n\n  •  **Perintah :** `.eval` 2 + 3\
         \n  •  **Function : Evaluasi ekspresi mini\
     "
-    }
+     }
 )
 
 CMD_HELP.update(
-    {   
+    {
         "exec": "**✘ Plugin :** `Exec Teks`\
         \n\n  •  **Perintah :** `.exec` `print('hello')`\
         \n  •  **Function : **Jalankan skript python kecil\
@@ -206,7 +206,7 @@ CMD_HELP.update(
 )
 
 CMD_HELP.update(
-    {            
+    {
         "term": "**✘ Plugin :** `Term Teks`\
         \n\n  •  **Perintah :** `.term` <cmd>\
         \n  •  **Function : **Jalankan perintah dan skript bash di server Anda\
