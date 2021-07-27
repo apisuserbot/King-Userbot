@@ -18,7 +18,7 @@ from telethon.tl.types import DocumentAttributeAudio
 from userbot import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
-# KING USERBOT
+# run
 
 
 @register(outgoing=True,
@@ -125,7 +125,7 @@ async def _(event):
     else:
         await event.edit(strings["wrong_cmd_syntax"])
 
-# LORD - USERBOT
+# run
 
 
 async def upload_track(track_location, message):
@@ -162,10 +162,15 @@ async def upload_track(track_location, message):
     )
     os.remove(track_location)
 
-# LORD USERBOT
-# @LORDUSERBOT_GROUP
+# run
+# end
+
 CMD_HELP.update(
     {
-        "deezload": "**Modules:** __Deezload__\n\n⚡𝘾𝙈𝘿⚡: `.deez <spotify/deezer link> <Format>`"
-        "\n**Penjelasan:** Unduh musik dari deezer."
-        "\n\n *Format= `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."})
+        "deezload": "**✘ Plugin :** __Deezload__\
+        \n\n  •  **Perintah :** `.deez` <spotify/deezer link> <Format>\
+        \n  •  **Function : **Unduh musik dari deezer\
+        \n\n **Format Dengan Link =** `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`\
+    "
+    }
+)
