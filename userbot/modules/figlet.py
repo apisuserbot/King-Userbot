@@ -51,10 +51,10 @@ async def figlet(e):
 CMD_HELP.update(
     {
         "figlet": "**✘ Plugin :** `Figlet`\
-        \n\n  •  **Perintah : `.fg`\
+        \n\n  •  **Perintah :** `.fg`\
         \n  •  **Function : **Tingkatkan teks Anda menjadi garis strip dengan landasan\
-        \n\n  **Confoh :** `.figlet` (TEXT STYLE)\
-        \n  **Daftar TEXT STYLE :** `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`\
+        \n\n  **Contoh :** `.fg` (TEXT)\
+        \n\n\n  __Contoh TEXT :__ `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`\
     "
     }
 )
