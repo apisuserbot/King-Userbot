@@ -48,10 +48,13 @@ async def figlet(e):
     await e.respond("‌‌‎`{}`".format(result))
     await e.delete()
 
-CMD_HELP.update({
-    "figlet":
-        ">`.fg`"
-    "\nUsage: Enhance ur text to strip line with anvil."
-    "\n\nExample: `.figlet TEXT.STYLE`"
-    "\nSTYLE LIST: `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`"
-})
+CMD_HELP.update(
+    {
+        "figlet": "**✘ Plugin :** `Figlet`\
+        \n\n  •  **Perintah : `.fg`\
+        \n  •  **Function : **Tingkatkan teks Anda menjadi garis strip dengan landasan\
+        \n\n  **Confoh :** `.figlet` (TEXT STYLE)\
+        \n  **Daftar TEXT STYLE :** `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`\
+    "
+    }
+)
