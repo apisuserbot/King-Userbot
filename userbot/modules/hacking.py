@@ -1,7 +1,5 @@
-# © Copyright 2021 King-Userbot LLC Company.
+# (C) Copyright 2021 King-Userbot LLC Company
 # GPL-3.0 License From Github
-# Ported by @TeamSecret_Kz (KENZO)
-# WARNING !!
 # Credits by @TeamUltroid, Kraken, Sawan.
 
 
@@ -119,7 +117,11 @@ async def hack(event):
     await event.edit("PDF Dibuat Klik Tautan Di Bawah Ini untuk Mengunduh Data\n\n`Jangan Khawatir Hanya Saya Bisa Buka File Ini 😎😎..\nAnda Mencoba Download 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
 
 
-CMD_HELP.update({
-    "hacking": "⚡𝘾𝙈𝘿⚡: `.hacking`\
-        \n↳ : Untuk hacking via Termux."
-})
+CMD_HELP.update(
+    {
+        "hacking": "**✘ Plugin :** `Hacking`\
+        \n\n  •  **Perintah :** `.hacking`\
+        \n  •  **Function : **Untuk Hacking Via Termux Dalam Telegram\
+    "
+    }
+)
