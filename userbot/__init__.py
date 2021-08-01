@@ -550,9 +550,9 @@ with king:
                 text = f"==================================\n`Pengguna  :` {DEFAULTUSER}\n`Branch    :` {UPSTREAM_REPO_BRANCH}\n`Versi Bot :` {BOT_VER}\n`Bahasa    :` Python\n================================== "
                 await event.edit(
                     text,
-                    file = logo,
-                    link_preview = True,
-                    buttons = [
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
                         [
                             Button.url("Repo Userbot",
                                        "https://github.com/apisuserbot/King-Userbot"),
@@ -563,8 +563,8 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -573,17 +573,17 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                current_page_number=int(looters)
-                buttons=paginate_help(current_page_number, plugins, "helpme")
-                text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
-                                 file = logo,
-                                 buttons = buttons,
-                                 link_preview = False,
+                                 file=logo,
+                                 buttons=buttons,
+                                 link_preview=False,
                                  )
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
