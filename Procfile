@@ -1,1 +1,1 @@
-worker: resource/startup/startup.sh
+worker: bash resource/startup/startup.sh
