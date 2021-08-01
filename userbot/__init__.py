@@ -547,15 +547,14 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                output = (
-                    f"================================== \n"
-                    f"`Pengguna  :` {DEFAULTUSER} \n"
-                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
-                    f"`Versi Bot :` {BOT_VER} \n"
-                    f"`Bahasa    :` Python  \n"
-                    f"================================== ")
+                text = f"\n ================================== \n"
+                       f"`Pengguna  :` {DEFAULTUSER} \n"
+                       f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                       f"`Versi Bot :` {BOT_VER} \n"
+                       f"`Bahasa    :` Python \n"
+                       f"================================== "
                 await event.edit(
-                    caption=output,
+                    text,
                     file=logo,
                     link_preview=True,
                     buttons=[
