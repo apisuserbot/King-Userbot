@@ -548,13 +548,13 @@ with king:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = f"================================== \n"
-                       f"       **Alive-Userbot** \n"
-                       f"================================== \n"
-                       f"`Pengguna  :` {DEFAULTUSER} \n"
-                       f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
-                       f"`Versi Bot :` {BOT_VER} \n"
-                       f"`Bahasa    :` Python  \n"
-                       f"================================== "
+                f"       **Alive-Userbot** \n"
+                f"================================== \n"
+                f"`Pengguna  :` {DEFAULTUSER} \n"
+                f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                f"`Versi Bot :` {BOT_VER} \n"
+                f"`Bahasa    :` Python  \n"
+                f"================================== "
                 await event.edit(
                     text,
                     file=logo,
