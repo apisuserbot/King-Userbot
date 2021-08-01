@@ -430,6 +430,8 @@ with king:
 
         logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
         plugins = CMD_HELP
+# -------------------------------Branch----------------------------------->
+        BRANCH = "King-Userbot"
 # ------------------------------ChatAction--------------->
 
         @king.tgbot.on(events.ChatAction)
@@ -541,6 +543,39 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive_inline\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = f"================================== \n"
+                       f"       **Alive-Userbot** \n"
+                       f"================================== \n"
+                       f"`Pengguna  :` {DEFAULTUSER} \n"
+                       f"`Branch    :` {BRANCH} \n"
+                       f"`Versi Bot :` {BOT_VER} \n"
+                       f"`Python    :` v.{python_version} \n"
+                       f"================================== "
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Repo Userbot",
+                                       "https://github.com/apisuserbot/King-Userbot"),
+                            Button.url("License",
+                                       "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+                        [custom.Button.inline(
+                            "Buka Menu", data="opener")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"opener")
             )
         )
@@ -626,7 +661,8 @@ with king:
         async def close(event):
             if event.query.user_id == uid:
                 buttons = [
-                    (custom.Button.inline("Buka Menu", data="opener"),),
+                    (custom.Button.inline("Buka Menu", data="opener"),
+                    (custom.Button.inline("Alive", data="alive_inline"),),
                 ]
                 await event.edit("**Menu Ditutup**", file=logo, buttons=buttons)
             else:
