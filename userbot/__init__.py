@@ -379,17 +379,17 @@ def alive_inline():
     uname = platform.uname()
     cpufreq = psutil.cpu_freq()
     text = f"`Userbot` **Telah Berjalan** `King-Userbot`\
-           \n=====================================\         
-           \n           **Alive Userbot** \
-           \n ======================================\        
-           \n💻 `OS : ` Debian GNU / {uname.system} 10 {uname.machine}\
-           \n💻 `Kernel : ` {uname.release}\
-           \n💻 `CPU : ` Intel Xeon E5-2670 @ {cpufreq.current: .2f}Ghz\
-           \n🐍 `Python : ` v.{python_version()}\
-           \n⚙️ `Telethon : ` v.{version.__version__}\
-           \n👨‍💻 `Pengguna : ` {DEFAULTUSER}\
-           \n`==========================================`\
-           \n (C) Copyright 2021 King - Userbot: Raphielscape Public License v1.d"
+            \n=====================================\         
+            \n           **Alive Userbot** \
+            \n ======================================\        
+            \n💻 `OS : ` Debian GNU / {uname.system} 10 {uname.machine}\
+            \n💻 `Kernel : ` {uname.release}\
+            \n💻 `CPU : ` Intel Xeon E5-2670 @ {cpufreq.current: .2f}Ghz\
+            \n🐍 `Python : ` v.{python_version()}\
+            \n⚙️ `Telethon : ` v.{version.__version__}\
+            \n👨‍💻 `Pengguna : ` {DEFAULTUSER}\
+            \n`==========================================`\
+            \n (C) Copyright 2021 King - Userbot: Raphielscape Public License v1.d"
     buttons = [
         (custom.Button.url(
             "Support Chat",
