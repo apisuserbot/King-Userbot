@@ -549,13 +549,13 @@ with king:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = f"================================== \n"
-                       f"       **Alive-Userbot** \n"
-                       f"================================== \n"
-                       f"`Pengguna  :` {DEFAULTUSER} \n"
-                       f"`Branch    :` {BRANCH} \n"
-                       f"`Versi Bot :` {BOT_VER} \n"
-                       f"`Bahasa    :` Python  \n"
-                       f"================================== "
+                f"       **Alive-Userbot** \n"
+                f"================================== \n"
+                f"`Pengguna  :` {DEFAULTUSER} \n"
+                f"`Branch    :` {BRANCH} \n"
+                f"`Versi Bot :` {BOT_VER} \n"
+                f"`Bahasa    :` Python  \n"
+                f"================================== "
                 await event.edit(
                     text,
                     file=logo,
@@ -673,7 +673,7 @@ with king:
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -682,9 +682,9 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name=event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel=str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
