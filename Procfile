@@ -1,1 +1,1 @@
-userbot: python3 -m userbot
+worker: resource/startup/startup.sh
