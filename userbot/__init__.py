@@ -452,7 +452,7 @@ with king:
                     f"Yang dibikin oleh pembuat saya,\n"
                     f"dan Untuk Mempersantai Grup Anda\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku\n")
-                await king.tgbot.send_file(event.chat_id, logo,
+                await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
                                            buttons=[
                                                [
@@ -495,6 +495,34 @@ with king:
                     event.chat_id,
                     f"**PONG !!**\n `{ms}ms`",
                 )
+
+        @king.tgbot.on(events.NewMessage(pattern=r"/alive"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
+                    f"Halo [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
+                    "==================================\n"
+                    f"`Pengguna  :` {DEFAULTUSER} \n"
+                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                    f"`Versi Bot :` {BOT_VER} \n"
+                    f"`Bahasa    :` Python \n"
+                    "==================================")
+                await king.tgbot.send_file(event.chat_id, file=logo,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Repo Userbot",
+                                                       url="https://github.com/apisuserbot/King-Userbot"),
+                                                   custom.Button.url(
+                                                       text="License",
+                                                       url="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE"
+                                                   )
+                                               ]
+                                           ]
+                                           )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
