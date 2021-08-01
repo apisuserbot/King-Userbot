@@ -430,8 +430,7 @@ with king:
 
         logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
         plugins = CMD_HELP
-# -------------------------------Branch----------------------------------->
-        BRANCH = "King-Userbot"
+
 # ------------------------------ChatAction--------------->
 
         @king.tgbot.on(events.ChatAction)
@@ -543,7 +542,7 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"alive_inline\((.+?)\)")
+                data=re.compile(rb"alive\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -552,7 +551,7 @@ with king:
                 f"       **Alive-Userbot** \n"
                 f"================================== \n"
                 f"`Pengguna  :` {DEFAULTUSER} \n"
-                f"`Branch    :` {BRANCH} \n"
+                f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                 f"`Versi Bot :` {BOT_VER} \n"
                 f"`Bahasa    :` Python  \n"
                 f"================================== "
@@ -667,8 +666,7 @@ with king:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline(
-                            "Alive", data="alive_inline")],
+                        [custom.Button.inline("Menu Alive", data="alive")],
                     ]
                 )
             else:
