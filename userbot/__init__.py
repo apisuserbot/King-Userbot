@@ -12,8 +12,12 @@
 import os
 import time
 import re
+import platform
+import psutil
 
+from platform import python_version, uname
 from datetime import datetime
+from git import Repo
 from time import sleep
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
@@ -368,6 +372,41 @@ ZALG_LIST = {}
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 # --------------------------------------------InlineBot---------------------------------->
+
+
+def alive_inline():
+    repo = Repo()
+    uname = platform.uname()
+    cpufreq = psutil.cpu_freq()
+    text = f"`Userbot` **Telah Berjalan** `King-Userbot`\
+            \n=====================================
+            \n           **Alive Userbot** \
+            \n=====================================
+            \n💻 `OS          :` Debian GNU/{uname.system} 10 {uname.machine}\
+            \n💻 `Kernel      :` {uname.release}\
+            \n💻 `CPU         :` Intel Xeon E5-2670 @ {cpufreq.current:.2f}Ghz\
+            \n🐍 `Python      :` v.{python_version()}\
+            \n⚙️ `Telethon    :` v.{version.__version__}\
+            \n👨‍💻 `Pengguna        :` {DEFAULTUSER}\
+            \n`====================================`\
+            \n (C) Copyright 2021 King-Userbot : Raphielscape Public License v1.d"
+    buttons = [
+        (custom.Button.url(
+            "Support Chat",
+            "https://KingUserbotSupport",
+        ),
+            custom.Button.url(
+            "Support Channel",
+            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+        ),
+        ),
+        (custom.Button.inline(
+            "Menu Kembali",
+            data="opener",
+        ),
+        ),
+    ]
+    return text, buttons
 
 
 def paginate_help(page_number, loaded_modules, prefix):
