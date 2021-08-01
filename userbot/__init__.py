@@ -547,7 +547,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = 
+                text =
                 f"\n ================================== "
                 f"\n `Pengguna  :` {DEFAULTUSER} "
                 f"\n `Branch    :` {UPSTREAM_REPO_BRANCH} "
