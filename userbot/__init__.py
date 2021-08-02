@@ -428,7 +428,7 @@ with king:
         uid = me.id
         logo = ALIVE_LOGO
 
-        logoking = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
+        donasi = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -449,7 +449,7 @@ with king:
                 await event.message.get_sender()
                 text = (
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Saya adalah bot\n"
-                    f"Yang dibikin oleh pembuat saya,\n"
+                    f"Yang dibikin oleh pembuat saya\n"
                     f"dan Untuk Mempersantai Grup Anda\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku\n")
                 await king.tgbot.send_file(event.chat_id, file=logo,
@@ -474,7 +474,7 @@ with king:
                 await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
-                    f"👇🏻 `Klik button url di bawah ini` 👇🏻\n\n"
+                    f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
                     f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
@@ -530,6 +530,22 @@ with king:
                                                ]
                                            ]
                                            )
+        
+        @king.tgbot.on(events.NewMessage(pattern=r"/donasi"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"Ingin melihat donasi atau menyumbang uang ini ke developer kami\n\n"
+                    f"• **Notes : Donasi Seikhlasnya** \n\n"
+                    f"**Terimakasih**\n",
+                    buttons=[
+                        [
+                            Button.url("Donasi Developer",
+                                       "https://saweria.co/DonasiDeveloper")],
+                    ]
+                )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -577,6 +593,25 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"opener")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
+                await event.edit(text,
+                                 file=logo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
+            else:
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings\((.+?)\)")
             )
         )
@@ -599,25 +634,6 @@ with king:
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @king.tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"opener")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                current_page_number = int(looters)
-                buttons = paginate_help(current_page_number, plugins, "helpme")
-                text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
-                await event.edit(text,
-                                 file=logo,
-                                 buttons=buttons,
-                                 link_preview=False,
-                                 )
-            else:
-                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
