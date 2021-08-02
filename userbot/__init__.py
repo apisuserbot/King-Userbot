@@ -503,11 +503,18 @@ with king:
                 await event.message.get_sender()
                 text = (
                     f"Halo [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
+                    f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
-                    f"`Pengguna  :` {DEFAULTUSER} \n"
+                    f"         **Alive-Bot** \n"
+                    "=================================\n"
+                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
+                    f"`Database  :` Mongo db \n\n"
+                    f"• **Bot By :** {DEFAULTUSER} \n\n"
+                    "==================================\n"
+                    f"       **USERBOT TELEGRAM** \n"
                     "==================================")
                 await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
@@ -570,18 +577,12 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"alive\((.+?)\)")
+                data=re.compile(rb"settings\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = (
-                    "==================================\n"
-                    f"`Pengguna  :` {DEFAULTUSER} \n"
-                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
-                    f"`Versi Bot :` {BOT_VER} \n"
-                    f"`Bahasa    :` Python \n"
-                    "==================================")
+                text = f"\n**🛠 Pengaturan Bot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
                 await event.edit(
                     text,
                     file=logo,
@@ -693,7 +694,7 @@ with king:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline("Menu Alive", data="alive")],
+                        [custom.Button.inline("Pengaturan", data="settings")],
                     ]
                 )
             else:
