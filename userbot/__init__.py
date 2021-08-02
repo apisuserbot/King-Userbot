@@ -458,7 +458,7 @@ with king:
                                                [
                                                    custom.Button.url(
                                                        text="Tambahkan Bot Ini Ke Grup",
-                                                       url=f"http://t.me/{BOT_USERNAME}?startgroup=true")],
+                                                       url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                                                [custom.Button.url(
                                                    text="Support Chat",
                                                    url="https://t.me/KingUserbotSupport"),
@@ -540,7 +540,7 @@ with king:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
-                    f"Ingin melihat donasi atau menyumbang uang ini ke developer kami\n\n"
+                    f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih**\n",
                     buttons=[
