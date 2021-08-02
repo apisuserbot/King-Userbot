@@ -553,9 +553,9 @@ with king:
                                                        url="https://saweria.co/DonasiDeveloper"
                                                    )
                                                ]
-                                          ]
-                                          ) 
-                                       
+                                           ]
+                                           )
+
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
