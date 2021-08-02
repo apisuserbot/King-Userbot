@@ -428,7 +428,7 @@ with king:
         uid = me.id
         logo = ALIVE_LOGO
 
-        donasi = "https://telegra.ph/file/8b22cf95865c7ee798f7e.jpg"
+        donasi = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -538,18 +538,24 @@ with king:
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
-                await event.reply(
+                await event.message.get_sender()
+                text = (
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
-                    f"**Terimakasih**\n",
-                    buttons=[
-                        [
-                            Button.url("Donasi Developer",
-                                       "https://saweria.co/DonasiDeveloper")],
-                    ]
-                )
-
+                    f"**Terimakasih** ")
+                await king.tgbot.send_file(event.chat_id, file=donasi,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Donasi Developer",
+                                                       url="https://saweria.co/DonasiDeveloper"
+                                                   )
+                                               ]
+                                          ]
+                                          ) 
+                                       
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
