@@ -208,19 +208,21 @@
       "required": false
     },
     "BOT_TOKEN": {
-      "description": "Setel ini untuk mengaktifkan pembantu bot sebaris, Token dari @BotFather",
-      "required": false
+      "description": "Setel ini untuk mengaktifkan pembantu bot inline sebaris, Token dari @BotFather",
+      "value": "Isi Token Bot mu",
+      "required": true
     },
     "BOT_USERNAME": {
-      "description": "username bot Anda yang di buat di @BotFather",
-      "required": false
+      "description": "username bot Anda yang di buat di @BotFather tanpa harus menggunakan (@)",
+      "value": "Isi Username Bot mu Tanpa Harus Menggunakan @",
+      "required": true
     }
   },
   "addons": [
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
+        "version": "13"
       }
     }
   ],"buildpacks": [{
