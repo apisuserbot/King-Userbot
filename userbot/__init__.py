@@ -530,7 +530,7 @@ with king:
                                                ]
                                            ]
                                            )
-        
+
         @king.tgbot.on(events.NewMessage(pattern=r"/donasi"))
         async def handler(event):
             if event.message.from_id != uid:
