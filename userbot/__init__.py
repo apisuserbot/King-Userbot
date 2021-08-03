@@ -505,7 +505,7 @@ with king:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"Halo [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
                     f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
                     f"         **Alive-Bot** \n"
@@ -524,7 +524,7 @@ with king:
                                            buttons=[
                                                [
                                                    custom.Button.url(
-                                                       text="Repo Userbot",
+                                                       text="Repository",
                                                        url="https://github.com/apisuserbot/King-Userbot"),
                                                    custom.Button.url(
                                                        text="License",
@@ -556,6 +556,28 @@ with king:
                                            ]
                                            )
 
+        @king.tgbot.on(events.NewMessage(pattern=r"/string"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"Ingin Mengambil String Session Ini Di Bot\n\n"
+                    f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
+                    f"**Terimakasih** ")
+                await king.tgbot.send_file(event.chat_id, file=logo,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="String Session",
+                                                       url="https://replit.com/@apisuserbot/String-Session?v=1"
+                                                   )
+                                               ]
+                                           ]
+                                           )
+
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
@@ -581,7 +603,7 @@ with king:
             else:
                 result = builder.article(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**Anda Bisa Membuat King Userbot Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/KingUserbotSupport)""",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun [Disini](t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
