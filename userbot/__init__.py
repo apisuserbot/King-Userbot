@@ -428,8 +428,9 @@ with king:
         uid = me.id
         logo = ALIVE_LOGO
 
-        donasi = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
+        donate = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
         string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
+        welcome = "https://telegra.ph/file/d841d96b707c26b6c3b26.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -439,7 +440,19 @@ with king:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **ID Pengguna :** {c.id}\n\nSemoga betah 😉")
+                await event.message.get_sender()
+                text = (f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **ID Pengguna :** {c.id}\n\nSemoga betah 😉")
+                await king.tgbot.send_file(event.chat_id, file=welcome,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Tutorial Userbot",
+                                                       url="https://t.me/KingUserbotSupport"
+                                               )
+                                               ]
+                                           ]
+                                           )
 
 # ====================================InlineHandler===================================== #
 
@@ -545,7 +558,7 @@ with king:
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
-                await king.tgbot.send_file(event.chat_id, file=donasi,
+                await king.tgbot.send_file(event.chat_id, file=donate,
                                            caption=text,
                                            buttons=[
                                                [
