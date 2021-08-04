@@ -444,7 +444,7 @@ with king:
                 text = (
                     f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
                     f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
-                    f"📌 ** ID Pengguna : ** {c.id} \n"
+                    f"📌 ** ID Pengguna :** {c.id} \n"
                     f"__Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__")
                 await king.tgbot.send_file(event.chat_id, file=welcome,
                                            caption=text,
@@ -453,7 +453,7 @@ with king:
                                                    custom.Button.url(
                                                        text="Tutorial Userbot",
                                                        url="https://t.me/KingUserbotSupport"
-                                                   )
+                                               )
                                                ]
                                            ]
                                            )
@@ -470,7 +470,7 @@ with king:
                     f"Yang dibikin oleh pembuat saya \n"
                     f"dan Untuk Mempersantai Grup Anda \n\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku \n"
-                    f"**Plugins :** `{len(plugins)}` \n"
+                    f"**Plugins :** `{len(plugins)}` \n\n"
                     f"**Database :** Mongo db \n"
                     f"**Bahasa :** Python")
                 await king.tgbot.send_file(event.chat_id, file=logo,
