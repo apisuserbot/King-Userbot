@@ -658,7 +658,7 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"settings\((.+?)\)")
+                data=re.compile(rb"settings")
             )
         )
         async def on_plug_in_callback_query_handler(event):
