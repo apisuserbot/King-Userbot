@@ -522,11 +522,12 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
                     f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
-                    f"         **Alive-Bot** \n"
+                    f"          **Alive Bot** \n"
                     "=================================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
+                    f"`Plugins   :` {len(plugins)} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n\n"
                     f"• **Bot By :** {DEFAULTUSER} \n\n"
@@ -616,8 +617,8 @@ with king:
                     link_preview=True)
             else:
                 result = builder.article(
-                    "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://t.me/KingUserbotSupport)""",
+                    "USERBOT TELEGRAM",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
