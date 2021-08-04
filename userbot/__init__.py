@@ -442,8 +442,8 @@ with king:
                 await event.reply(
                     f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
                     f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
-                    f"📌 **ID Pengguna :** {c.id} \n"
-                    f"__Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__\n",
+                    f"📌 **ID Pengguna :** {c.id} \n\n"
+                    f"🤖 __Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__\n",
                     buttons=[
                         [
                             Button.url("Tutorial Userbot",
