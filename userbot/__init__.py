@@ -694,7 +694,7 @@ with king:
                     "==================================\n"
                     f"           **Alive Inline** \n"
                     "=================================\n"
-                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
+                    f"`Pengguna  :` {DEFAULTUSER} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
