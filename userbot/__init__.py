@@ -522,7 +522,7 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
                     f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
-                    f"          **Alive Bot** \n"
+                    f"           **Alive Bot** \n"
                     "=================================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
@@ -663,19 +663,85 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**🛠 Pengaturan Bot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
+                text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Repo Userbot",
+                            custom.Button.inline(
+                               "Menu Alive", data="alive_inline"),
+                            custom.Button.inline(
+                               "Menu Database", data="database_inline")],
+                        [custom.Button.inline(
+                            "Buka Menu", data="opener")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"__**{KING_TEKS_KUSTOM}**__ \n\n"
+                    "==================================\n"
+                    f"           **Alive Inline** \n"
+                    "=================================\n"
+                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
+                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                    f"`Versi Bot :` {BOT_VER} \n"
+                    f"`Plugins   :` {len(plugins)} \n"
+                    f"`Bahasa    :` Python \n"
+                    f"`Database  :` Mongo db \n\n"
+                    f"• **Bot By :** {DEFAULTUSER} \n\n"
+                    "==================================\n"
+                    f"       **USERBOT TELEGRAM** \n"
+                    "==================================")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Repository",
                                        "https://github.com/apisuserbot/King-Userbot"),
                             Button.url("License",
                                        "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "Buka Menu", data="opener")],
+                            "Menu Kembali", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"database_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**Database Mongo db** \n"
+                    f"**Pengguna :** {DEFAULTUSER} \n"
+                    f"**Branch :** {UPSTREAM_REPO_BRANCH} \n"
+                    f"**Versi Userbot :** {BOT_VER} ")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                               "Menu Kembali", data="settings")],
                     ]
                 )
             else:
