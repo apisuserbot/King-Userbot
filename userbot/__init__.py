@@ -430,7 +430,6 @@ with king:
 
         donate = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
         string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
-        welcome = "https://telegra.ph/file/d841d96b707c26b6c3b26.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -440,23 +439,17 @@ with king:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.message.get_sender()
-                text = (
+                await event.reply(
                     f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
                     f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
                     f"📌 **ID Pengguna :** {c.id} \n"
-                    f"__Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__")
-                await king.tgbot.send_file(event.chat_id, event.user_id, file=welcome,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Tutorial Userbot",
-                                                       url="https://t.me/KingUserbotSupport"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                    f"__Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__\n",
+                    buttons=[
+                        [
+                            Button.url("Tutorial Userbot",
+                                       "https://t.me/KingUserbotSupport")],
+                    ]
+                )                                                  
 
 # ====================================InlineHandler===================================== #
 
