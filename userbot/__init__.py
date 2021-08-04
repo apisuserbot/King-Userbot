@@ -429,6 +429,7 @@ with king:
         logo = ALIVE_LOGO
 
         donasi = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
+        string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -483,7 +484,7 @@ with king:
                         [
                             Button.url("Repository",
                                        "https://github.com/apisuserbot/King-Userbot"),
-                            Button.url("Cara Deploy",
+                            Button.url("Tutorial Deploy",
                                        "https://t.me/TeamKingUserbot/16")],
                     ]
                 )
@@ -565,8 +566,8 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin Mengambil String Session Ini Di Bot\n\n"
                     f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
-                    f"**Terimakasih** ")
-                await king.tgbot.send_file(event.chat_id, file=logo,
+                    f"⚠️ **Gunakan String Session Dengan Bijak")
+                await king.tgbot.send_file(event.chat_id, file=string,
                                            caption=text,
                                            buttons=[
                                                [
@@ -603,7 +604,7 @@ with king:
             else:
                 result = builder.article(
                     "⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun [Disini](t.me/KingUserbotSupport)""",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://t.me/KingUserbotSupport)""",
                     buttons=[
                         [
                             custom.Button.url(
