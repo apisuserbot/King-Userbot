@@ -449,7 +449,7 @@ with king:
                             Button.url("Tutorial Userbot",
                                        "https://t.me/KingUserbotSupport")],
                     ]
-                )                                                  
+                )
 
 # ====================================InlineHandler===================================== #
 
