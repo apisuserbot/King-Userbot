@@ -671,9 +671,9 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                               "Menu Alive", data="alive_inline"),
+                                "Menu Alive", data="alive_inline"),
                             custom.Button.inline(
-                               "Menu Database", data="database_inline")],
+                                "Menu Database", data="database_inline")],
                         [custom.Button.inline(
                             "Buka Menu", data="opener")],
                     ]
@@ -741,7 +741,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                               "Menu Kembali", data="settings")],
+                                "Menu Kembali", data="settings")],
                     ]
                 )
             else:
