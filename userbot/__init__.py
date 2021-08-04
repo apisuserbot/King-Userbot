@@ -566,7 +566,7 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin Mengambil String Session Ini Di Bot\n\n"
                     f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
-                    f"⚠️ **Gunakan String Session Dengan Bijak")
+                    f"⚠️ **Gunakan String Session Dengan Bijak**")
                 await king.tgbot.send_file(event.chat_id, file=string,
                                            caption=text,
                                            buttons=[
