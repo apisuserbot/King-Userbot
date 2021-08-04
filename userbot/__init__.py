@@ -446,7 +446,7 @@ with king:
                     f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
                     f"📌 ** ID Pengguna :** {c.id} \n"
                     f"__Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__")
-                await king.tgbot.send_file(event.chat_id, event.user_id, 
+                await king.tgbot.send_file(event.chat_id, event.user_id,
                                            file=welcome,
                                            caption=text,
                                            buttons=[
