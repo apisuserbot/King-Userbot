@@ -596,6 +596,13 @@ with king:
                                            ]
                                            )
 
+        @king.tgbot.on(events.NewMessage(pattern=r"/id"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                c = await event.client.get_entity(event.user_id)
+                await event.reply(
+                    f"id kamu adalah {c.id} ")
+
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
