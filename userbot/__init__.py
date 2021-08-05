@@ -463,9 +463,12 @@ with king:
                     f"Yang dibikin oleh pembuat saya \n"
                     f"dan Untuk Mempersantai Grup Anda \n\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku \n\n"
+                    "========================================\n"
                     f"**Plugins :** `{len(plugins)}` \n"
                     f"**Database :** Mongo db \n"
-                    f"**Bahasa :** Python")
+                    f"**Bahasa :** Python \n"
+                    f"**Daftar Perintah Bot :** [KLIK DISINI](https://telegra.ph/Perintah-Penggunaan-08-05) \n"
+                    "========================================")
                 await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
                                            buttons=[
@@ -522,7 +525,7 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
                     f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
-                    f"           **Alive Bot** \n"
+                    f"            **Alive Bot** \n"
                     "=================================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
@@ -532,7 +535,7 @@ with king:
                     f"`Database  :` Mongo db \n\n"
                     f"• **Bot By :** {DEFAULTUSER} \n\n"
                     "==================================\n"
-                    f"       **USERBOT TELEGRAM** \n"
+                    f"        **USERBOT TELEGRAM** \n"
                     "==================================")
                 await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
@@ -618,7 +621,7 @@ with king:
             else:
                 result = builder.article(
                     "USERBOT TELEGRAM",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)""",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n=======================================\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)\n\n=======================================\n\n**USERBOT TELEGRAM**""",
                     buttons=[
                         [
                             custom.Button.url(
@@ -628,8 +631,8 @@ with king:
                                 "Developer",
                                 "t.me/PacarFerdilla")],
                         [custom.Button.url(
-                            "Tutorial Deploy",
-                            "https://t.me/TeamKingUserbot/16")],
+                            "License",
+                            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                     ],
                     link_preview=False,
                 )
@@ -699,8 +702,7 @@ with king:
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
                     f"`Bahasa    :` Python \n"
-                    f"`Database  :` Mongo db \n\n"
-                    f"• **Bot By :** {DEFAULTUSER} \n\n"
+                    f"`Database  :` Mongo db \n"
                     "==================================\n"
                     f"       **USERBOT TELEGRAM** \n"
                     "==================================")
