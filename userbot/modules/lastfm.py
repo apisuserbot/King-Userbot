@@ -34,12 +34,12 @@ LFM_BIO_DISABLED = (
     "```last.fm current music to bio is now disabled. Bio reverted to default.```"
 )
 
-LFM_BIO_RUNNING = "````Lord, last.fm musik saat ini ke bio sudah berjalan.```"
+LFM_BIO_RUNNING = "````King, lastfm musik saat ini ke bio sudah berjalan.```"
 LFM_BIO_ERR = "```Tidak ada opsi yang ditentukan.``` "
-LFM_LOG_ENABLED = "```last.fm logging ke bot log sekarang diaktifkan.``` "
-LFM_LOG_DISABLED = "```last.fm logging ke bot log sekarang dinonaktifkan.``` "
+LFM_LOG_ENABLED = "```lastfm logging ke bot log sekarang diaktifkan.``` "
+LFM_LOG_DISABLED = "```lastfm logging ke bot log sekarang dinonaktifkan.``` "
 LFM_LOG_ERR = "```Tidak ada opsi yang ditentukan.```"
-ERROR_MSG = "```Lord, modul last.fm dihentikan, mendapat kesalahan tak terduga.``` "
+ERROR_MSG = "```King, plugin lastfm dihentikan, mendapat kesalahan tak terduga.``` "
 
 ARTIST = 0
 SONG = 0
@@ -61,7 +61,7 @@ LastLog = False
 @register(outgoing=True, pattern="^.lastfm$")
 async def last_fm(lastFM):
     """ For .lastfm command, fetch scrobble data from last.fm. """
-    await lastFM.edit("`Memprosesss...`")
+    await lastFM.edit("`Sedang Memproses...`")
     preview = None
     playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
     username = f"https://www.last.fm/user/{LASTFM_USERNAME}"
@@ -190,7 +190,7 @@ async def get_curr_track(lfmbio):
         await sleep(2)
     RUNNING = False
 
-# LORD USERBOT
+# run
 
 
 @register(outgoing=True, pattern=r"^.lastbio (on|off)")
@@ -231,15 +231,17 @@ async def lastlog(lstlog):
     else:
         await lstlog.edit(LFM_LOG_ERR)
 
-# LORD USERBOT
-# @LORDUSERBOT_GROUP
+# end
+
 CMD_HELP.update(
     {
-        "lastfm": "⚡𝘾𝙈𝘿⚡`.lastfm\
-    \nPenjelasan: Menampilkan trek scrobbling saat ini atau scrobbles terbaru jika tidak ada yang diputar.\
-    \n\nlastbio: ⚡𝘾𝙈𝘿⚡`.lastbio <on/off>\
-    \nPenjelasan: Mengaktifkan/Menonaktifkan pemutaran last.fm saat ini ke bio.\
-    \n\nlastlog: ⚡𝘾𝙈𝘿⚡`.lastlog <on/off>\
-    \nPenjelasan: Aktifkan/Nonaktifkan log bio last.fm di grup bot-log."
+        "lastfm": "**✘ Plugin :** `Lastfm`\
+        \n\n  •  **Perintah :** `.lastfm`\
+        \n  •  **Function : **Menampilkan trek scrobbling saat ini atau scrobbles terbaru jika tidak ada yang diputar\
+        \n\n  •  **Perintah :** `.lastbio` <on/off>\
+        \n  •  **Function : **Mengaktifkan/Menonaktifkan pemutaran last.fm saat ini ke bio\
+        \n\n  •  **Perintah :** `.lastlog` <on/off>\
+        \n  •  **Function : **Aktifkan/Nonaktifkan log bio lastfm di grup bot-log\
+    "
     }
 )
