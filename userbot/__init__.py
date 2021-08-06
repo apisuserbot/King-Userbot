@@ -694,7 +694,7 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
@@ -743,7 +743,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Database Mongo db** \n"
                     f"**Pengguna :** {DEFAULTUSER} \n"
                     f"**Branch :** {UPSTREAM_REPO_BRANCH} \n"
@@ -769,9 +769,9 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number= int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons= paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
@@ -786,7 +786,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= f"\n**Menu Lainnya!**"
+                text = f"\n**Menu Lainnya!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -808,9 +808,9 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number= int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons= paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
@@ -826,7 +826,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= f"\n**USERBOT TELEGRAM**"
+                text = f"\n**USERBOT TELEGRAM**"
                 await event.edit(
                     text,
                     file=logo,
@@ -847,7 +847,7 @@ with king:
         @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
-                text= f"\n**Menu Ditutup!**"
+                text = f"\n**Menu Ditutup!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -868,7 +868,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name= event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
