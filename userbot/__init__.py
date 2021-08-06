@@ -596,12 +596,14 @@ with king:
                                            ]
                                            )
 
-        @king.tgbot.on(events.NewMessage(pattern=r"/id"))
+        @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
             if event.message.from_id != uid:
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"id kamu adalah (tg://user?id={c.id}) ")
+                    f"**Profile Pengguna** \n"
+                    f"**Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
+                    f"**ID Pengguna :** {c.id} ")
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
