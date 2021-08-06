@@ -599,7 +599,7 @@ with king:
         @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id or event.user_id)
+                u = await event.client.get_entity(event.user_id)
                 await event.reply(f"**Profile Pengguna**\n\n**Pengguna :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Pengguna :** {u.id}")
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -672,19 +672,25 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
+                text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**King** {DEFAULTUSER}"
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
                         [
+                            custom.Button.url("Support Chat",
+                                              "https://t.me/KingUserbotSupport),
+                            custom.Button.url("Support Channel",
+                                              "https://t.me/TeamKingUserbot"),
+                            custom.Button.url("Donasi Developer",
+                                              "https://saweria.co/DonasiDeveloper"),
                             custom.Button.inline(
                                 "Menu Alive", data="alive_inline"),
-                            custom.Button.inline(
-                                "Menu Database", data="database_inline")],
                         [custom.Button.inline(
-                            "Buka Menu", data="opener")],
+                            "Menu Database", data="database_inline")],
+                        [custom.Button.inline(
+                            "Menu Kembali", data="helpme_close")],
                     ]
                 )
             else:
@@ -787,15 +793,11 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Support Channel",
-                                       "t.me/TeamKingUserbot"),
-                            Button.url("Support Chat",
-                                       "t.me/KingUserbotSupport")],
-                        [Button.url("Donasi Developer",
-                                    "https://saweria.co/DonasiDeveloper")],
-                        [custom.Button.inline("Buka Menu", data="opener")],
+                            custom.Button.inline(
+                                "Menu Pengaturan", data="settings")],
+                        [custom.Button.inline("Menu Kembali", data="opener")],
                         [custom.Button.inline(
-                            "Tutup Menu", b"close")],
+                            "Menu Tutup", b"close")],
                     ]
                 )
             else:
@@ -829,8 +831,7 @@ with king:
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline("Pengaturan", data="settings")],
+                        [custom.Button.inline("Menu Kembali", data="helpme_close")],
                     ]
                 )
             else:
