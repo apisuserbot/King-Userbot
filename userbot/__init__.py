@@ -736,7 +736,7 @@ with king:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"database_inline")
             )
@@ -762,7 +762,7 @@ with king:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -779,7 +779,7 @@ with king:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -804,7 +804,7 @@ with king:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -822,7 +822,7 @@ with king:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(events.CallbackQuery(data=b"close"))
+        @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
                 text = f"\n**Menu Ditutup!**"
@@ -839,7 +839,7 @@ with king:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(b"ub_modul_(.*)")
             )
@@ -851,8 +851,7 @@ with king:
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:150] + "..."
+                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
