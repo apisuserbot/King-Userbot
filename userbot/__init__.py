@@ -382,9 +382,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(
-    "{} {} |".format(
-        "|", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} |".format("|", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -688,9 +686,9 @@ with king:
                         [Button.url("Donasi Developer",
                                     "https://saweria.co/DonasiDeveloper")],
                         [custom.Button.inline(
-                            "Menu Alive", data="alive_inline"),
-                            custom.Button.inline(
-                                "Menu Database", data="database_inline"),
+                            "Menu Alive", data="alive_inline")],
+                        [custom.Button.inline(
+                            "Menu Database", data="database_inline")],
                         [custom.Button.inline(
                             "Menu Kembali", data="menu_inline")],
                     ]
@@ -699,14 +697,14 @@ with king:
                 reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"alive_inline")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"__**{KING_TEKS_KUSTOM}**__ \n\n"
                     "==================================\n"
                     f"           **Alive Inline** \n"
@@ -735,10 +733,10 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"database_inline")
             )
@@ -761,10 +759,10 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -778,10 +776,10 @@ with king:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert= f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -800,10 +798,10 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -818,10 +816,10 @@ with king:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert= f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"menu_inline")
             )
@@ -843,10 +841,10 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(events.CallbackQuery(data=b"close"))
+        @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
                 text= f"\n**Menu Ditutup!**"
@@ -860,10 +858,10 @@ with king:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ king.tgbot.on(
+        @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(b"ub_modul_(.*)")
             )
@@ -872,19 +870,18 @@ with king:
             if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name= event.data_match.group(1).decode("UTF-8")
 
-                cmdhel= str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
-                    help_string= (
-                        str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:150] + "..."
+                    help_string = (
+                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string= str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert= (
+                reply_pop_up_alert = (
                     help_string
                     if help_string is not None
                     else "{} Tidak ada dokumen yang ditulis dari plugin.".format(
@@ -892,7 +889,7 @@ with king:
                     )
                 )
             else:
-                reply_pop_up_alert= f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
