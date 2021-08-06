@@ -598,9 +598,9 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
-            if event.message.user_id != uid:
-                u = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Profile Pengguna**\n\n**Pengguna :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Pengguna :** {u.id}")
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(f"**Profile Chat**\n\n**Nama Chat :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Chat :** {u.id}")
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -686,9 +686,9 @@ with king:
                         [Button.url("Donasi Developer",
                                     "https://saweria.co/DonasiDeveloper")],
                         [custom.Button.inline(
-                            "Menu Alive", data="alive_inline")],
-                        [custom.Button.inline(
-                            "Menu Database", data="database_inline")],
+                            "Menu Alive", data="alive_inline"),
+                            custom.Button.inline(
+                                "Menu Database", data="database_inline"),
                         [custom.Button.inline(
                             "Menu Kembali", data="menu_inline")],
                     ]
@@ -786,7 +786,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**BUKA MENU LAINNYA!**"
+                text = f"\n**Menu Lainnya!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -794,7 +794,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Buka Menu", data="menu_inline")],
+                                "Menu Lainnya", data="menu_inline")],
                     ]
                 )
             else:
@@ -835,7 +835,7 @@ with king:
                         [
                             custom.Button.inline(
                                 "Menu Pengaturan", data="settings")],
-                        [custom.Button.inline("Menu Kembali", data="opener")],
+                        [custom.Button.inline("Menu Buka", data="opener")],
                         [custom.Button.inline(
                             "Menu Tutup", b"close")],
                     ]
