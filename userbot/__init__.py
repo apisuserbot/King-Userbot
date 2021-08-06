@@ -316,7 +316,7 @@ else:
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER or not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
-            "Anda harus menyiapkan BOTLOG_CHATID variabel di config.env atau environment variabel, agar penyimpanan log kesalahan pribadi berfungsi."
+            "Anda Harus Menyiapkan Id Grup Pribadi Di Vars BOTLOG_CHATID, Agar Penyimpanan Log Kesalahan Grup Pribadi Anda Berfungsi"
         )
         quit(1)
 
@@ -326,8 +326,8 @@ async def check_botlog_chatid():
     entity = await bot.get_entity(BOTLOG_CHATID)
     if entity.default_banned_rights.send_messages:
         LOGS.info(
-            "Akun Anda tidak memiliki hak untuk mengirim pesan ke BOTLOG_CHATID "
-            "kelompok. Periksa apakah Anda mengetik ID Obrolan benar.")
+            "Akun Anda Tidak Memiliki Hak Untuk Mengirim Pesan Ke BOTLOG_CHATID "
+            "Grup Pribadi Periksa apakah Anda mengetik ID Obrolan benar")
         quit(1)
 
 
@@ -336,8 +336,8 @@ with bot:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variabel bukan "
-            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
+            "Vars BOTLOG_CHATID Yang Anda Masukan"
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
         quit(1)
 
 
@@ -350,8 +350,8 @@ with bot:
         bot.loop.run_until_complete(check_alive())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variabel bukan "
-            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
+            "Vars BOTLOG_CHATID Yang Anda Masukan"
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
         quit(1)
 
 # ==================================GlobalVariables================================= #
@@ -884,7 +884,7 @@ with king:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} Tidak ada dokumen yang ditulis dari plugin.".format(
+                    else "{} Tidak ada dokumen yang ditulis dari plugin".format(
                         modul_name
                     )
                 )
@@ -895,12 +895,13 @@ with king:
 
     except BaseException:
         LOGS.info(
-            "Mode Inline Bot Mu Nonaktif. "
-            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot > pilih mode inline > Turn On. ")
+            "Mode Inline Bot Mu Nonaktif"
+            "Harap Anda Mengaktifkannya"
+            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot >> pilih mode inline >> Turn On")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variabel bukan "
-            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
+            "Vars BOTLOG_CHATID Yang Anda Masukan"
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
         quit(1)
