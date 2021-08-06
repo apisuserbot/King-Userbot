@@ -598,7 +598,7 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
-            if event.message.from_id != uid:
+            if event.message.user_id != uid:
                 u = await event.client.get_entity(event.user_id)
                 await event.reply(f"**Profile Pengguna**\n\n**Pengguna :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Pengguna :** {u.id}")
 
@@ -690,7 +690,7 @@ with king:
                         [custom.Button.inline(
                             "Menu Database", data="database_inline")],
                         [custom.Button.inline(
-                            "Menu Kembali", data="helpme_close")],
+                            "Menu Kembali", data="menu_inline")],
                     ]
                 )
             else:
@@ -786,7 +786,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**USERBOT TELEGRAM**"
+                text = f"\n**BUKA MENU LAINNYA!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -794,10 +794,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Menu Pengaturan", data="settings")],
-                        [custom.Button.inline("Menu Kembali", data="opener")],
-                        [custom.Button.inline(
-                            "Menu Tutup", b"close")],
+                                "Buka Menu", data="menu_inline")],
                     ]
                 )
             else:
@@ -822,6 +819,31 @@ with king:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"menu_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = f"\n**USERBOT TELEGRAM**"
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "Menu Pengaturan", data="settings")],
+                        [custom.Button.inline("Menu Kembali", data="opener")],
+                        [custom.Button.inline(
+                            "Menu Tutup", b"close")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
@@ -832,7 +854,7 @@ with king:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline(
-                            "Menu Kembali", data="helpme_close")],
+                            "Menu Kembali", data="menu_inline")],
                     ]
                 )
             else:
