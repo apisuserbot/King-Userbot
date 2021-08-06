@@ -101,7 +101,7 @@ async def last_fm(lastFM):
     else:
         await lastFM.edit(f"{output}", parse_mode="md")
 
-# LORD USERBOT
+# run
 
 
 async def gettags(track=None, isNowPlaying=None, playing=None):
