@@ -50,11 +50,11 @@
       "value": "False"
     },
     "QUOTES_API_TOKEN": {
-      "description": "Dapatkan Quotes TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan QUOTES_API_TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
-      "description": "Dapatkan Genius Acces TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan GENIUS_ACCES_TOKEN caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "MONGO_URI": {
@@ -84,7 +84,7 @@
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
-      "description": "Dapatkan Open Weather Map APID caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan OPEN_WEATHER_MAP_APPID caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "PMPERMIT_TEXT": {
@@ -97,15 +97,15 @@
       "required": true
     },
     "YOUTUBE_API_KEY": {
-      "description": "Dapatkan Youtube APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey ",
+      "description": "Dapatkan YOUTUBE_API_KEY caranya ke @KingUserbotSupport lalu ketik #apikey ",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "Dapatkan Ocr APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan OCR_SPACE_API_KEY caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "REM_BG_API_KEY": {
-      "description": "Dapatkan Rem Bg APIKEY caranya ke @KingUserbotSupport lalu ketik #apikey",
+      "description": "Dapatkan REM_BG_API_KEY caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "ANTI_SPAMBOT": {
@@ -130,23 +130,23 @@
       "required": true
     },
     "LASTFM_API": {
-      "description": "Last API untuk plugin Last.FM [Dapatkan kode pertama di - (https://www.last.fm/api/account/create)",
+      "description": "Dapatkan LASTFM_API caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "LASTFM_SECRET": {
-      "description": "SECRET Key untuk plugin Last.FM [Dapatkan kode pertama di - (https://www.last.fm/api/account/create)",
+      "description": "SECRET KEY untuk plugin LASTFM [Dapatkan kode pertama di - (https://www.last.fm/api/account/create)",
       "required": false
     },
     "LASTFM_USERNAME": {
-      "description": "Username Last.FM",
+      "description": "Username LASTFM",
       "required": false
     },
     "LASTFM_PASSWORD": {
-      "description": "Paswword Last.FM",
+      "description": "Paswword LASTFM",
       "required": false
     },
     "BIO_PREFIX": {
-      "description": "Awalan untuk Bio Plugin Last.FM",
+      "description": "Awalan untuk Bio Plugin LASTFM",
       "required": false
     },
     "DEFAULT_BIO": {
@@ -186,7 +186,7 @@
       "required": false
     },
     "LYDIA_API_KEY": {
-      "description": "Plugin Ini Membutuhkan CoffeeHouse API agak sukses, (gak di isi gapapa)",
+      "description": "Dapatkan LYDIA_API_KEY caranya ke @KingUserbotSupport lalu ketik #apikey",
       "required": false
     },
     "WEATHER_DEFCITY": {
@@ -195,7 +195,7 @@
       "required": false
     },
     "LOGSPAMMER": {
-      "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, alih-alih mengeluarkan file di saat ini chat, required harus valid BOTLOG_CHATID untuk diatur",
+      "description": "Setel ini ke True jika Anda mau log kesalahan yang akan disimpan di dalam log grup, untuk mengeluarkan kesalahan file saat ini chat, required harus valid BOTLOG_CHATID untuk diatur",
       "value": "False",
       "required": true
     },
@@ -213,8 +213,8 @@
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "username bot Anda yang di buat di @BotFather tanpa harus menggunakan (@)",
-      "value": "Isi Username Bot mu Tanpa Harus Menggunakan @",
+      "description": "Username bot Anda yang di buat di @BotFather tanpa harus menggunakan (@)",
+      "value": "Isi Tanpa @",
       "required": true
     }
   },
