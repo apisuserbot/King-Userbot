@@ -57,18 +57,18 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"🔥 **ONLINE**\n**King {ALIVE_NAME} Kembali Online Untuk Chat Telegram**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                    f"🔥 __**Sudah Kembali Online...**__\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
                 )
             else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"**King {ALIVE_NAME} Sedang AFK!**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                    f"🔥 __**Sudah Kembali Online...**__\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
                     file=pic,
                 )
         except BaseException:
             shite = await bot.send_message(
                 event.chat_id,
-                f"🔥 **ONLINE**\n**King {ALIVE_NAME} Kembali Online**\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                f"🔥 __**Sudah Kembali Online...**__\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
             )
 
         except BaseException:
@@ -173,7 +173,7 @@ async def _(event):
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             afk_time = datetime.datetime.now()
-        USER_AFK = f"yes: {reason} {pic}"
+        USER_AFK = f"ya : {reason} {pic}"
         if reason:
             try:
                 if pic.endswith((".tgs", ".webp")):
