@@ -12,9 +12,9 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
 
-INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
-             '\n Tip: Use Country Code along with number.' \
-             '\n or check your phone number and try again !'
+INVALID_PH = '\nERROR : Nomor Telepon yang Anda dimasukkan Tidak Valid' \
+             '\n Tips : Gunakan Kode Negara beserta nomornya dengan benar' \
+             '\n atau periksa nomor telepon Anda dan coba lagi !'
 
 try:
     bot.start()
