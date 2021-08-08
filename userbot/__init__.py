@@ -71,7 +71,7 @@ CONFIG_CHECK = os.environ.get(
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Harap hapus baris yang disebutkan dalam tagar pertama dari file config.env"
+        "Harap hapus baris yang disebutkan dalam tagar pertama dari vars"
     )
     quit(1)
 
@@ -327,7 +327,7 @@ async def check_botlog_chatid():
     if entity.default_banned_rights.send_messages:
         LOGS.info(
             "Akun Anda Tidak Memiliki Hak Untuk Mengirim Pesan Ke BOTLOG_CHATID "
-            "Grup Pribadi Periksa apakah Anda mengetik ID Obrolan benar")
+            "Grup Pribadi Periksa Apakah Anda Mengetik ID Obrolan Benar")
         quit(1)
 
 
@@ -337,7 +337,8 @@ with bot:
     except BaseException:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
-            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
+            "Masukan ID BOTLOG_CHATID Dengan Benar")
         quit(1)
 
 
@@ -351,7 +352,8 @@ with bot:
     except BaseException:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
-            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
+            "Masukan ID BOTLOG_CHATID Dengan Benar")
         quit(1)
 
 # ==================================GlobalVariables================================= #
@@ -523,10 +525,10 @@ with king:
                 await event.message.get_sender()
                 text = (
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
-                    f"• __**Pesan : {KING_TEKS_KUSTOM}**__ \n\n"
-                    "==================================\n"
-                    f"            **Alive Bot** \n"
-                    "=================================\n"
+                    f"__**{KING_TEKS_KUSTOM}**__ \n\n"
+                    "=============================\n"
+                    f"     **Alive Bot** \n"
+                    "=============================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
@@ -534,9 +536,9 @@ with king:
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n\n"
                     f"• **Bot By :** {DEFAULTUSER} \n\n"
-                    "==================================\n"
-                    f"        **USERBOT TELEGRAM** \n"
-                    "==================================")
+                    "=============================\n"
+                    f"    **USERBOT TELEGRAM** \n"
+                    "=============================")
                 await king.tgbot.send_file(event.chat_id, file=logo,
                                            caption=text,
                                            buttons=[
@@ -627,11 +629,11 @@ with king:
             else:
                 result = builder.article(
                     "USERBOT TELEGRAM",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n=======================================\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)\n\n=======================================\n\n**USERBOT TELEGRAM**""",
+                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n=============================\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)\n\n=============================\n\n**USERBOT TELEGRAM**""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "King-Userbot",
+                                "Repository",
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
                                 "Developer",
@@ -706,18 +708,18 @@ with king:
             if event.query.user_id == uid:
                 text = (
                     f"__**{KING_TEKS_KUSTOM}**__ \n\n"
-                    "==================================\n"
-                    f"           **Alive Inline** \n"
-                    "=================================\n"
+                    "============================\n"
+                    f"      **Alive Inline** \n"
+                    "============================\n"
                     f"`Pengguna  :` {DEFAULTUSER} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n"
-                    "==================================\n"
-                    f"       **USERBOT TELEGRAM** \n"
-                    "==================================")
+                    "============================\n"
+                    f"    **USERBOT TELEGRAM** \n"
+                    "============================")
                 await event.edit(
                     text,
                     file=logo,
@@ -903,5 +905,6 @@ with king:
     except BaseException:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
-            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID")
+            "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
+            "Masukan ID BOTLOG_CHATID Dengan Benar")
         quit(1)
