@@ -59,10 +59,10 @@ async def set_not_afk(event):
                     event.chat_id,
                     f"🔥 {ALIVE_NAME} __**Sudah Kembali Online...**__\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
                 )
-            else reason:
+            else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"🔥 __**Sudah Kembali Online...**__\n**Karena :** {reason}\n**Sejak :** `{total_afk_time}` **Yang Lalu**",
+                    f"🔥 __**Sudah Kembali Online...**__\n**Ada Sejak :** `{total_afk_time}` **Yang Lalu**",
                     file=pic,
                 )
         except BaseException:
