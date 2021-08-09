@@ -173,7 +173,7 @@ async def _(event):
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             afk_time = datetime.datetime.now()
-        USER_AFK = f"ya : {reason} {pic}"
+        USER_AFK = f"yes : {reason} {pic}"
         if reason:
             try:
                 if pic.endswith((".tgs", ".webp")):
@@ -252,9 +252,7 @@ CMD_HELP.update(
     {
         "afk": "**✘ Plugin : **`afk`\
         \n\n  •  **Perintah :** `.afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n  •  **Function : **Memberi tahu kalau King sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
-        \n\n  •  **Perintah :** `.sibuk`\
-        \n  •  **Function : **Memberi tahu kalau King sedang SIBUK , dan menguubah nama belakang menjadi ⚡️𝗦𝗜𝗕𝗨𝗞⚡️\
+        \n  •  **Function : **Memberi tahu kalau King sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda\
         \n\n  •  **Notes :** __Bila ada orang spam berlebihan ke Anda , tinggal ketik__ `.block`\
     "
     }
