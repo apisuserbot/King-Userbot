@@ -157,7 +157,8 @@ async def echo(event):  # sourcery no-metrics
     await edit_or_reply(event, output_str)
 
 
-@register(outgoing=True, edited=False)
+@bot.on(events.NewMessage(outgoing=True))
+@bot.on(events.MessageEdited(outgoing=True))
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker
