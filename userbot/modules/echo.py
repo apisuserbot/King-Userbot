@@ -40,7 +40,13 @@ async def echo(event):
     if is_echo(chat_id, user_id):
         return await edit_or_reply(event, "The user is already enabled with echo ")
     try:
-        addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
+        addecho(
+            chat_id,
+            user_id,
+            chat_name,
+            user_name,
+            user_username,
+            chat_type)
     except Exception as e:
         await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
     else:
