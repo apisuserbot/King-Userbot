@@ -14,16 +14,16 @@ from userbot.modules.sql_helper.echo_sql import (
     remove_echo,
     remove_echos,
 )
-from userbot.utils.events import get_user_from_event
+from userbot.utils.event import get_user_from_event
 
 
 @register(outgoing=True, pattern=r"^\.addecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(
-            event, "`Reply to a User's message to echo his messages`"
+            event, "`Balas pesan Pengguna untuk mengikuti pesannya`"
         )
-    kingevent = await edit_or_reply(event, "`Adding Echo to user...`")
+    kingevent = await edit_or_reply(event, "`Menambahkan Echo ke pengguna...`")
     user, rank = await get_user_from_event(event, kingevent, nogroup=True)
     if not user:
         return
@@ -39,7 +39,7 @@ async def echo(event):
     user_name = user.first_name
     user_username = user.username
     if is_echo(chat_id, user_id):
-        return await edit_or_reply(event, "The user is already enabled with echo ")
+        return await edit_or_reply(event, "**Pengguna sudah diaktifkan dengan echo**")
     try:
         addecho(
             chat_id,
@@ -49,16 +49,16 @@ async def echo(event):
             user_username,
             chat_type)
     except Exception as e:
-        await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
+        await edit_delete(kingevent, f"**Error :**\n`{str(e)}`")
     else:
-        await edit_or_reply(kingevent, "Hi")
+        await edit_or_reply(kingevent, "Sukses")
 
 
 @register(outgoing=True, pattern=r"^\.rmecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(
-            event, "Reply to a User's message to echo his messages"
+            event, "`Balas pesan Pengguna untuk mengikuti pesannya`"
         )
     reply_msg = await event.get_reply_message()
     user_id = reply_msg.sender_id
@@ -67,11 +67,11 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
+            await edit_delete(kingevent, f"**Error :**\n`{str(e)}`")
         else:
-            await edit_or_reply(event, "Echo has been stopped for the user")
+            await edit_or_reply(event, "Mengikuti telah dihentikan untuk pengguna")
     else:
-        await edit_or_reply(event, "The user is not activated with echo")
+        await edit_or_reply(event, "Pengguna tidak diaktifkan dengan mengikuti")
 
 
 @register(outgoing=True, pattern=r"^\.delecho(?: |$)(.*)")
@@ -81,29 +81,29 @@ async def echo(event):
         lecho = get_all_echos()
         if len(lecho) == 0:
             return await edit_delete(
-                event, "You havent enabled echo atleast for one user in any chat."
+                event, "Anda belum mengaktifkan pengikut pengguna setidaknya untuk satu pengguna di obrolan apa pun"
             )
         try:
             remove_all_echos()
         except Exception as e:
-            await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
+            await edit_delete(event, f"**Error :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "Deleted echo for all enabled users in all chats."
+                event, "**mengikuti pengguna telah dihapus untuk semua pengguna yang diaktifkan di semua obrolan**"
             )
     else:
         lecho = get_echos(event.chat_id)
         if len(lecho) == 0:
             return await edit_delete(
-                event, "You havent enabled echo atleast for one user in this chat."
+                event, "Anda belum mengaktifkan pengikut pengguna setidaknya untuk satu pengguna dalam obrolan ini"
             )
         try:
             remove_echos(event.chat_id)
         except Exception as e:
-            await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
+            await edit_delete(event, f"**Error :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "Deleted echo for all enabled users in this chat"
+                event, "**mengikuti pengguna telah dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini**"
             )
 
 
@@ -111,7 +111,7 @@ async def echo(event):
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    output_str = "**Echo enabled users:**\n\n"
+    output_str = "**Echo pengguna yang diaktifkan :**\n\n"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -131,16 +131,16 @@ async def echo(event):  # sourcery no-metrics
                         group_chats += f"☞ [{echos.user_name}](tg://user?id={echos.user_id}) in chat {echos.chat_name} of chat id `{echos.chat_id}`\n"
 
         else:
-            return await edit_or_reply(event, "There are no echo enabled users")
+            return await edit_or_reply(event, "**Tidak ada pengguna yang mengaktifkan pengikut pengguna**")
         if private_chats != "":
-            output_str += "**Private Chats**\n" + private_chats + "\n\n"
+            output_str += "**Chat Pribadi**\n" + private_chats + "\n\n"
         if group_chats != "":
-            output_str += "**Group Chats**\n" + group_chats
+            output_str += "**Group Chat**\n" + group_chats
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
             return await edit_or_reply(
-                event, "There are no echo enabled users in this chat"
+                event, "**Tidak ada pengguna yang mengaktifkan pengikut pengguna dalam obrolan ini**"
             )
 
         for echos in lsts:
@@ -152,7 +152,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = f"**Echo enabled users in this chat are:**\n" + private_chats
+        output_str = f"**Pengguna yang mengaktifkan pengikut pengguna dalam obrolan ini adalah :**\n" + private_chats
 
     await edit_or_reply(event, output_str)
 
@@ -166,9 +166,15 @@ async def samereply(event):
 
 CMD_HELP.update(
     {
-        "echo": "**Plugin :** `Echos`\
+        "echo": "**✘ Plugin :** `Echos`\
         \n\n  •  **Perintah :** `.addecho`\
         \n  •  **Function : **Untuk Menambahkan Follower Chat Pengguna\
+        \n\n  •  **Perintah :** `.rmecho`\
+        \n  •  **Function : **Untuk Menghentikan Echo Sementara\
+        \n\n  •  **Perintah :** `.delecho`\
+        \n  •  **Function : **Untuk Menghentikan Echo Di Semua Chat\
+        \n\n  •  **Perintah :** `.listecho`\
+        \n  •  **Function : **Untuk Melihat Daftar Pengguna Echo Anda\
     "
     }
 )
