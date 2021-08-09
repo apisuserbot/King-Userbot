@@ -1,7 +1,8 @@
 # Thanks Sandy
 # Recode By Apis
 
-from userbot import register, CMD_HELP
+from userbot import CMD_HELP
+from userbot.events import register
 
 from userbot.utils import edit_delete, edit_or_reply
 from sql_helper.echo_sql import (
