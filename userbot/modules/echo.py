@@ -3,7 +3,6 @@
 
 from userbot import CMD_HELP
 from userbot.events import register
-from telethon import events
 
 from userbot.utils import edit_delete, edit_or_reply
 from userbot.modules.sql_helper.echo_sql import (
