@@ -5,7 +5,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 from userbot.utils import edit_delete, edit_or_reply
-from sql_helper.echo_sql import (
+from userbot.modules.sql_helper.echo_sql import (
     addecho,
     get_all_echos,
     get_echos,
@@ -14,7 +14,7 @@ from sql_helper.echo_sql import (
     remove_echo,
     remove_echos,
 )
-from utils.events import get_user_from_event
+from userbot.utils.events import get_user_from_event
 
 
 @register(outgoing=True, pattern=r"^\.addecho(?: |$)(.*)")
