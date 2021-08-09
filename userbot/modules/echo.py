@@ -25,7 +25,7 @@ async def echo(event):
             event, "`Reply to a User's message to echo his messages`"
         )
     kingevent = await edit_or_reply(event, "`Adding Echo to user...`")
-    user, rank = await get_user_from_event(event, drgevent, nogroup=True)
+    user, rank = await get_user_from_event(event, kingevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -68,7 +68,7 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(drgevent, f"**Error:**\n`{str(e)}`")
+            await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
         else:
             await edit_or_reply(event, "Echo has been stopped for the user")
     else:
@@ -158,8 +158,7 @@ async def echo(event):  # sourcery no-metrics
     await edit_or_reply(event, output_str)
 
 
-@bot.on(events.NewMessage(outgoing=True))
-@bot.on(events.MessageEdited(outgoing=True))
+@bot.on(events.NewMessage(incoming=True, edited=False)
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker
