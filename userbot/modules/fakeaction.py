@@ -88,7 +88,7 @@ async def _(event):
 
 
 @register(outgoing=True, pattern="^.fkuota(?: |$)(.*)")
-async def _(event):
+async def kuota(event):
     event.pattern_match.group(1)
     await event.edit("`Mengecek kuota...⚡️`")
     sleep(1)
@@ -203,10 +203,10 @@ async def ungbun(event):
 
 
 @register(outgoing=True, pattern="^.fstop(?: |$)(.*)")
-async def stop(e):
-    async with e.client.action(e.chat_id, "cancel"):
+async def do_it(event):
+    async with event.client.action(event.chat_id, "cancel"):
         pass
-    await e.reply("Fake Action Di Berhentikan")
+    await event.reply("Fake Action Di Berhentikan")
 
 
 CMD_HELP.update(
