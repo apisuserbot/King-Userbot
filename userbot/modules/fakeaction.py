@@ -1,5 +1,5 @@
-# Port By @VckyouuBitch From Geez-Projects
-# Copyright (C) 2021 Geez-Project
+# Port By @not From King-Userbot
+# Copyright (C) 2021 King-Userbot
 
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -10,7 +10,7 @@ import asyncio
 
 # Languange en to id from King-Userbot
 # edit by Apis
-# Thanks Vicky
+# Thanks Ultroid
 
 
 @register(outgoing=True, pattern="^.ftyping(?: |$)(.*)")
@@ -200,6 +200,13 @@ async def ungbun(event):
             f"Warning!! User 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
         await event.reply(mention)
     await event.delete()
+
+
+@register(outgoing=True, pattern="^.stopaction(?: |$)(.*)")
+async def stop(e):
+    async with e.client.action(e.chat_id, "cancel"):
+        pass
+    await e.reply("Fake Action Di Berhentikan")
 
 
 CMD_HELP.update(
