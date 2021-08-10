@@ -202,7 +202,7 @@ async def ungbun(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.stopaction(?: |$)(.*)")
+@register(outgoing=True, pattern="^.fstop(?: |$)(.*)")
 async def stop(e):
     async with e.client.action(e.chat_id, "cancel"):
         pass
@@ -220,6 +220,8 @@ CMD_HELP.update(
         \n  •  **Function : **Fake global banned\
         \n\n  •  **Perintah :** `.fungban`\
         \n  •  **Function : **Fake unglobal banned\
+        \n\n  •  **Perintah :** `.fstop`\
+        \n  •  **Function : **Untuk Menghentikan Semua Fake Action Yang Anda Lakukan Di Semua Chat\
     "
     }
 )
