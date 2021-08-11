@@ -6,7 +6,7 @@ from userbot.modules.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
-from userbot.utils import edit_or_delete, edit_or_reply
+from userbot.utils import edit_delete, edit_or_reply
 from telethon.utils import get_display_name
 from telethon import events
 
@@ -79,7 +79,7 @@ async def lstecho(event):
             ok = await event.client.get_entity(int(x))
             kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
             user += "•" + kk + "\n"
-        await edit_or_delete(event, user)
+        await edit_delete(event, user)
     else:
         await edit_or_reply(event, "`List is Empty, For echo`")
 
