@@ -63,7 +63,7 @@ async def rm(event):
 async def okk(event):
     if is_echo(event.chat_id, event.sender_id):
         try:
-            ok = await event.client.get_messages(event.chat_id, ids=e.id)
+            ok = await event.client.get_messages(event.chat_id, ids=event.id)
             return await event.client.send_message(event.chat_id, ok)
         except Exception as er:
             LOGS.info(er)
