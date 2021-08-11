@@ -13,7 +13,7 @@ from userbot.events import register
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern="^.addchat(?: $)(.*)")
+@register(outgoing=True, pattern="^.addchat(?: |$)(.*)")
 async def echo(event):
     r = await event.get_reply_message()
     if r:
@@ -36,7 +36,7 @@ async def echo(event):
     await eor(event, f"Activated Echo For {user}.")
 
 
-@register(outgoing=True, pattern="^.rmchat(?: $)(.*)")
+@register(outgoing=True, pattern="^.rmchat(?: |$)(.*)")
 async def rm(event):
     r = await event.get_reply_message()
     if r:
@@ -69,7 +69,7 @@ async def okk(event):
             LOGS.info(er)
 
 
-@register(outgoing=True, pattern="^.listchat(?: $)(.*)")
+@register(outgoing=True, pattern="^.listchat(?: |$)(.*)")
 async def lstecho(event):
     k = get_all_echos(event.chat_id)
     if k:
