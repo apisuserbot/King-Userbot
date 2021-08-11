@@ -3,11 +3,8 @@
 from userbot.modules.sql_helper.echo_sql import (
     addecho,
     get_all_echos,
-    get_echos,
     is_echo,
-    remove_all_echos,
     remove_echo,
-    remove_echos,
 )
 from telethon.utils import get_display_name
 
