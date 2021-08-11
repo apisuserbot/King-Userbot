@@ -1,6 +1,7 @@
 # Based Plugins
 # Ported For King-Userbot By PacarFerdilla/Apis
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini Anjenggg!!!
+# Done!
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
@@ -47,13 +48,17 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-# Ported For King-Userbot By PacarFerdilla/Apis
+# Ported For King-Userbot By Apis
 
-CMD_HELP.update({
-    "kingfun": "\
-`.xogame`\
-\nUsage: Mainkan game XO bersama temanmu.\
-\n\n`.mod <nama app>`\
-\nUsage: Dapatkan applikasi mod\
-\n\n`.wp <teks> <username/ID>`\
-\nUsage: Berikan pesan rahasia"})
+CMD_HELP.update(
+    {
+        "fun": "**✘ Plugin :** `Fun`\
+        \n\n  •  **Perintah :** `.xogame`\
+        \n  •  **Function : **Mainkan game XO bersama temanmu\
+        \n\n  •  **Perintah :** `.mod` <nama app>\
+        \n  •  **Function : **Dapatkan applikasi mod\
+        \n\n  •  **Perintah :** `.wp` <teks> <username/ID>\
+        \n  •  **Function : **Berikan pesan rahasia\
+    "
+    }
+)
