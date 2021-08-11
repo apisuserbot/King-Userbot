@@ -9,10 +9,10 @@ from userbot.events import register
 from userbot.utils import edit_or_reply
 
 
-@register(outgoing=True, pattern="^.app(?: |$)(.*)")
+@register(outgoing=True, pattern="^.aplikasi(?: |$)(.*)")
 async def app_search(event):
     app_name = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "`Searching!..`")
+    event = await edit_or_reply(event, "`Sedang Mencari!..`")
     try:
         remove_space = app_name.split(" ")
         final_name = "+".join(remove_space)
@@ -76,7 +76,7 @@ async def app_search(event):
         app_details += (
             "\n<code>Fitur :</code> <a href='"
             + app_link
-            + "'>Dilihat Dalam PlayStore</a>"
+            + "'>lihat Dalam PlayStore</a>"
         )
         app_details += f"\n\n===> {ALIVE_NAME} <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
@@ -87,9 +87,9 @@ async def app_search(event):
 
 CMD_HELP.update(
     {
-        "app": "**Plugin :** `App`\
-        \n\n  •  **Perintah :** `.app`\
-        \n  •  **Function : **Untuk Mencari App Di PlayStore\
+        "aplikasi": "**✘ Plugin :** `Aplikasi`\
+        \n\n  •  **Perintah :** `.aplikasi` <nama aplikasi>\
+        \n  •  **Function : **Untuk Mencari Informasi nama aplikasi Di PlayStore\
     "
     }
 )
