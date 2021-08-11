@@ -3,7 +3,7 @@ from userbot.modules.sql_helper import SESSION
 try:
     eval(SESSION.get("ECHO"))
 except BaseException:
-    SESSION.set("ECHO", "{}")
+    SESSION.get("ECHO", "{}")
 
 
 def add_echo(chat, user):
@@ -15,7 +15,7 @@ def add_echo(chat, user):
         x.update({chat: k})
     except BaseException:
         x.update({chat: [user]})
-    return SESSION.set("ECHO", str(x))
+    return SESSION.get("ECHO", str(x))
 
 
 def rem_echo(chat, user):
@@ -27,7 +27,7 @@ def rem_echo(chat, user):
         x.update({chat: k})
     except BaseException:
         pass
-    return SESSION.set("ECHO", str(x))
+    return SESSION.get("ECHO", str(x))
 
 
 def check_echo(chat, user):
