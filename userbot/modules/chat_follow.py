@@ -7,6 +7,7 @@ from userbot.modules.sql_helper.echo_sql import (
     remove_echo,
 )
 from telethon.utils import get_display_name
+from telethon import events
 
 from userbot.events import register
 from userbot import CMD_HELP, bot
