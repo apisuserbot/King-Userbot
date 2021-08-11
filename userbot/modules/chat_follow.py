@@ -57,7 +57,7 @@ async def rm(event):
         ok = await event.client.get_entity(user)
         user = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
         return await edit_or_reply(event, f"Deactivated Echo For {user}.")
-    await eor(event, "Echo not activated for this user")
+    await edit_or_reply(event, "Echo not activated for this user")
 
 
 @bot.on(events.NewMessage(incoming=True))
