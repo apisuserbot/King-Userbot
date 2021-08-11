@@ -6,6 +6,7 @@ from userbot.modules.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
+from userbot.utils import edit_or_delete, edit_or_reply
 from telethon.utils import get_display_name
 from telethon import events
 
@@ -27,13 +28,13 @@ async def echo(event):
             else:
                 user = int(user)
         except BaseException:
-            return await eod(event, "Reply To A user.")
+            return await edit_or_reply(event, "Reply To A user.")
     if is_echo(event.chat_id, user):
-        return await eod(event, "Echo already activated for this user")
+        return await edit_or_reply(event, "Echo already activated for this user")
     addecho(event.chat_id, user)
     ok = await event.client.get_entity(user)
     user = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
-    await eor(event, f"Activated Echo For {user}.")
+    await edit_or_reply(event, f"Activated Echo For {user}.")
 
 
 @register(outgoing=True, pattern="^.rmchat(?: |$)(.*)")
@@ -50,12 +51,12 @@ async def rm(event):
             else:
                 user = int(user)
         except BaseException:
-            return await eod(event, "Reply To A User.")
+            return await edit_or_reply(event, "Reply To A User.")
     if is_echo(event.chat_id, user):
         remove_echo(event.chat_id, user)
         ok = await event.client.get_entity(user)
         user = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
-        return await eor(event, f"Deactivated Echo For {user}.")
+        return await edit_or_reply(event, f"Deactivated Echo For {user}.")
     await eor(event, "Echo not activated for this user")
 
 
@@ -78,9 +79,9 @@ async def lstecho(event):
             ok = await event.client.get_entity(int(x))
             kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
             user += "•" + kk + "\n"
-        await eor(event, user)
+        await edit_or_delete(event, user)
     else:
-        await eod(event, "`List is Empty, For echo`")
+        await edit_or_reply(event, "`List is Empty, For echo`")
 
 
 CMD_HELP.update(
