@@ -1,6 +1,14 @@
 # recoding...
 
-from userbot.modules.sql_helper.chat_sql import add_echo, check_echo, rem_echo, list_echo
+from userbot.modules.sql_helper.echo_sql import (
+    addecho,
+    get_all_echos,
+    get_echos,
+    is_echo,
+    remove_all_echos,
+    remove_echo,
+    remove_echos,
+)
 from telethon.utils import get_display_name
 
 from userbot.events import register
@@ -22,9 +30,9 @@ async def echo(event):
                 user = int(user)
         except BaseException:
             return await eod(event, "Reply To A user.")
-    if check_echo(event.chat_id, user):
+    if is_echo(event.chat_id, user):
         return await eod(event, "Echo already activated for this user")
-    add_echo(event.chat_id, user)
+    addecho(event.chat_id, user)
     ok = await event.client.get_entity(user)
     user = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
     await eor(event, f"Activated Echo For {user}.")
@@ -45,8 +53,8 @@ async def rm(event):
                 user = int(user)
         except BaseException:
             return await eod(event, "Reply To A User.")
-    if check_echo(event.chat_id, user):
-        rem_echo(event.chat_id, user)
+    if is_echo(event.chat_id, user):
+        remove_echo(event.chat_id, user)
         ok = await event.client.get_entity(user)
         user = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
         return await eor(event, f"Deactivated Echo For {user}.")
@@ -55,7 +63,7 @@ async def rm(event):
 
 @bot.on(events.NewMessage(incoming=True))
 async def okk(event):
-    if check_echo(event.chat_id, event.sender_id):
+    if is_echo(event.chat_id, event.sender_id):
         try:
             ok = await event.client.get_messages(event.chat_id, ids=e.id)
             return await event.client.send_message(event.chat_id, ok)
@@ -65,7 +73,7 @@ async def okk(event):
 
 @register(outgoing=True, pattern="^.listchat(?: $)(.*)")
 async def lstecho(event):
-    k = list_echo(event.chat_id)
+    k = get_all_echos(event.chat_id)
     if k:
         user = "**Activated Echo For Users :**\n\n"
         for x in k:
