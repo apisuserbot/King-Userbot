@@ -78,7 +78,7 @@ async def lstecho(event):
 
 
 CMD_HELP.update(
-    {  
+    {
         "chat_follow": "**✘ Plugin :** `Chat Follow`\
         \n\n  •  **Perintah :** `.addchat`\
         \n  •  **Function : **Hampir Sama Dengan Echo , Cuman Ini Tidak Reply Pengguna\
