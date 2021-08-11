@@ -1,6 +1,6 @@
 # recoding...
 
-from userbot.modules.sql_helper.chat_sql import add_echo, check_echo, list_echo
+from userbot.modules.sql_helper.chat_sql import add_echo, check_echo, rem_echo, list_echo
 from telethon.utils import get_display_name
 
 from userbot.events import register
@@ -30,7 +30,7 @@ async def echo(event):
     await eor(event, f"Activated Echo For {user}.")
 
 
-@register(outgoing=True, pattern="^.remecho(?: $)(.*)")
+@register(outgoing=True, pattern="^.rmchat(?: $)(.*)")
 async def rm(event):
     r = await event.get_reply_message()
     if r:
@@ -63,7 +63,7 @@ async def okk(event):
             LOGS.info(er)
 
 
-@register(outgoing=True, pattern="^.listecho(?: $)(.*)")
+@register(outgoing=True, pattern="^.listchat(?: $)(.*)")
 async def lstecho(event):
     k = list_echo(event.chat_id)
     if k:
