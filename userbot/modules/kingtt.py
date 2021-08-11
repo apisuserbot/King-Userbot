@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
 
-# Alvin Gans
+# tiktok
 
 
 @register(outgoing=True, pattern="^.tiktok(?: |$)(.*)")
@@ -20,7 +20,7 @@ async def _(event):
     if ".com" not in d_link:
         await event.edit("`Mohon Maaf King, Saya Membutuhkan Link Video Tiktok Untuk Download Video Tiktok` **(._.)**")
     else:
-        await event.edit("```Video Sedang Diproses.....```")
+        await event.edit("`Video Sedang Diproses.....`")
     chat = "@ttsavebot"
     async with bot.conversation(chat) as conv:
         try:
@@ -32,15 +32,18 @@ async def _(event):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await event.edit("**Kesalahan:** `King Mohon Buka Blokir` @ttsavebot `Dan Coba Lagi!`")
+            await event.edit("**Error :** `King Mohon Buka Blokir` @ttsavebot `Dan Coba Lagi!`")
             return
         await bot.send_file(event.chat_id, video)
         await event.client.delete_messages(conv.chat_id,
                                            [msg_start.id, r.id, msg.id, details.id, video.id])
         await event.delete()
 
-# Apis Gans
 CMD_HELP.update(
     {
-        "tiktok": "**Modules:** __Tik Tok__\n\n⚡𝘾𝙈𝘿⚡: `.tiktok <Link Tiktok>`"
-        "\n**Penjelasan:** Download Video Tiktok Tanpa Watermark"})
+        "tiktok": "**✘ Plugin :** __Tiktok__\
+        \n\n  •  **Perintah :** `.tiktok` <Link Tiktok>\
+        \n  •  **Function : **Download Video Tiktok Tanpa Watermark\
+    "
+    }
+)
