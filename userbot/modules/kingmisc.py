@@ -1,7 +1,6 @@
 # fixes by Apis
 
 import requests
-import bs4
 import os
 import asyncio
 import time
