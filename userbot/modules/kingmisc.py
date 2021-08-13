@@ -1052,14 +1052,3 @@ CMD_HELP.update(
     "
     }
 )
-
-# KING USERBOT
-
-CMD_HELP.update(
-    {
-        "randomprofil": "**✘ Plugin :** __Random Profil__\
-        \n\n  •  **Perintah :** `.randompp`\
-        \n  •  **Function : **Mengganti Foto Profil Anda Secara Otomatis, Untuk Menghentikan Perintah Ini Gunakan Perintah `.restart`\
-    "
-    }
-)
