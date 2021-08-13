@@ -128,9 +128,9 @@ async def main(event):
 
 CMD_HELP.update(
     {
-        "random_pp": "**✘ Plugin :** `Random PP`\
+        "randompp": "**✘ Plugin :** `Random PP`\
         \n\n  •  **Perintah :** `.randompp`\
-        \n  •  **Function : **Mengubah Foto Profil Anda Secara Acak\
+        \n  •  **Function : **Mengubah Foto Profile Anda Secara Acak\
     "
     }
 )
