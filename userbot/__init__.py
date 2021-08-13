@@ -476,7 +476,7 @@ with king:
                                            buttons=[
                                                [
                                                    custom.Button.url(
-                                                       text="Tambahkan Bot Ini Ke Grup",
+                                                       text="➕ Tambahkan Bot Ini Ke Grup ➕",
                                                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                                                [custom.Button.url(
                                                    text="Support Chat",
