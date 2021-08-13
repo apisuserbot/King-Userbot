@@ -674,7 +674,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**King** {DEFAULTUSER}"
+                text = f"\n**Menu Pengaturan!**\n\n__Mode Inline__"
                 await event.edit(
                     text,
                     file=logo,
@@ -686,11 +686,11 @@ with king:
                             Button.url("Support Chat",
                                        "t.me/KingUserbotSupport")],
                         [Button.url("Donasi Developer",
-                                    "https://saweria.co/DonasiDeveloper")],
-                        [custom.Button.inline(
-                            "Menu Alive", data="alive_inline")],
-                        [custom.Button.inline(
-                            "Menu Database", data="database_inline")],
+                                    "https://saweria.co/DonasiDeveloper"),
+                            custom.Button.inline(
+                                "Menu Alive", data="alive_inline"),
+                            custom.Button.inline(
+                                "Menu Database", data="database_inline")],
                         [custom.Button.inline(
                             "Menu Kembali", data="menu_inline")],
                     ]
