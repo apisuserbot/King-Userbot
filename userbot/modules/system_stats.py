@@ -28,7 +28,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-modules = CMD_HELP
+plugins = CMD_HELP
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -165,9 +165,10 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**★-**⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Versi :** \n "
-            f"heads/King-Userbot-0-x634i7u1"
-            "\n**★-**Revisi :**\n "
+            " ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ \n\n"
+            f"**★ Versi Userbot :** v{BOT_VER} \n"
+            f"**★ heads :** heads/King-Userbot-0-x634i7u1 \n"
+            f"**★Revisi :**\n"
             f"{revout}"
         )
     else:
@@ -208,17 +209,17 @@ async def pipcheck(pip):
                 remove("output.txt")
                 return
             await pip.edit(
-                "**Query: **\n`"
+                "**Query :**\n`"
                 f"pip3 search {pipmodule}"
-                "`\n**Result: **\n`"
+                "`\n**Result :**\n`"
                 f"{pipout}"
                 "`"
             )
         else:
             await pip.edit(
-                "**Query: **\n`"
+                "**Query :**\n`"
                 f"pip3 search {pipmodule}"
-                "`\n**Result: **\n`No Result Returned/False`"
+                "`\n**Result :**\n`No Result Returned/False`"
             )
     else:
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
@@ -237,10 +238,10 @@ async def amireallyalive(alive):
         f"★ ** Username ** \n"
         f"☇ : `@{user.username}` \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━\n"
-        f"|✶ ⚙️ `Telethon :`Ver {version.__version__} \n"
-        f"|✶ 🐍 `Python   :`Ver {python_version()} \n"
-        f"|✶ 👾 `Bot Ver  :`{BOT_VER} \n"
-        f"|✶ 📂 `Plugins  :`{len(modules)} \n"
+        f"|✶ ⚙️ `Telethon       :` v.{version.__version__} \n"
+        f"|✶ 🐍 `Python         :` v.{python_version()} \n"
+        f"|✶ 👾 `Versi Userbot  :` v{BOT_VER} \n"
+        f"|✶ 📂 `Plugins        :` {len(plugins)} Plugin\n"
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
         f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
@@ -275,11 +276,11 @@ async def amireallyalive(alive):
         f"╟ 🤴 KING     : {DEFAULTUSER}\n"
         f"╟ 🔎 Username : @{user.username}\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"╟◈ ⚙️ `Telethon :`v {version.__version__} \n"
-        f"╟◈ 🐍 `Python   :`v {python_version()} \n"
-        f"╟◈ 💻 `Branch  :`{UPSTREAM_REPO_BRANCH} \n"
-        f"╟◈ 🛠 `Version  :`{BOT_VER} \n"
-        f"╟◈ 📂 `Plugins  :`{len(modules)} Plugin \n"
+        f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
+        f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
+        f"╟◈ 💻 `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 🛠 `Version  :` v{BOT_VER} \n"
+        f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
         f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
         f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
@@ -324,24 +325,24 @@ async def redis(alive):
     await asyncio.sleep(3)
     output = (
         f"**╭╼═✯══════════════✯═╾╮**\n"
-        f" ㅤ ** ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ** \n"
+        f" ㅤ     ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
         f"**╰╼═✯══════════════✯═╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE BOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 🤴 `King     :`{DEFAULTUSER} \n"
-        f"╟◈ 🔎 `Username :`@{user.username} \n"
-        f"╟◈ ⚙️ `Telethon :`v. {version.__version__} \n"
-        f"╟◈ 🐍 `Python   :`v. {python_version()} \n"
-        f"╟◈ 🛠️ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"╟◈ 👾 `Bot Ver  :`v. {BOT_VER} \n"
-        f"╟◈ 📂 `Plugins  :`{len(modules)} Plugins \n"
+        f"╟◈ 🤴 `King     :` {DEFAULTUSER} \n"
+        f"╟◈ 🔎 `Username :` @{user.username} \n"
+        f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
+        f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
+        f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
+        f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
+        f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **{KING_TEKS_KUSTOM}** \n"
-        f"│  ** USERBOT TELEGRAM ** \n"
+        f"├◈ **{KING_TEKS_KUSTOM}** \n\n"
+        f"│   **USERBOT TELEGRAM** \n"
         f"╰╼════════════════════╾╯ \n"
         f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
-        f"[Developer King](t.me/PacarFerdilla)")
+        f"[Support Channel](t.me/TeamKingUserbot)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -374,11 +375,11 @@ async def redis(alive):
         f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) **Running Userbot Active!** ★\n\n"
         f"__**{KING_TEKS_KUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
-        f"{ALIVE_EMOJI} **Plugins :** `{len(modules)} Plugin` \n"
+        f"{ALIVE_EMOJI} **Plugins :** `{len(plugins)} Plugin` \n"
         f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
-        f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
-        f"[Support Chat](https://t.me/KingUserbotSupport) | [Channel Support](https://t.me/TeamKingUserbot) | [Developer King](t.me/PacarFerdilla)")
+        f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n\n"
+        f"[Support Chat](https://t.me/KingUserbotSupport) | [Support Channel](https://t.me/TeamKingUserbot) | [License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -426,8 +427,6 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilkan informasi sis tem menggunak an neofetch\
         \n\n  •  **Perintah :** `.pip` <plugin(s)>\
         \n  •  **Function : **Melakukan pencarian modul pip\
-        \n\n  •  **Perintah :** `.db`\
-        \n  •  **Function : **Menampilkan info terkait database\
         \n\n  •  **Perintah :** `.spc`\
         \n  •  **Function : **Show system specification\
     "
@@ -442,15 +441,15 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.resetalive`\
         \n  •  **Function : **Untuk Mereset Pengguna Alive\
         \n\n  **Animasi Alive Lainnya :**\
-        \n `.kingalive` | `.kingon` | `.ualive` | `.uon` | `.xalive` | `.xon`\
-        \n\n  **Dingunakan Untuk Bersenang Senang Saja**\
+        \n  •  **Perintah :** `.kingalive` | `.kingon` | `.ualive` | `.uon` | `.xalive` | `.xon`\
+        \n\n  __Dingunakan Untuk Bersenang Senang Saja__\
     "
     }
 )
 
 CMD_HELP.update(
     {
-        "botver": "**✘ Plugin :** `Versi Userbot`\
+        "botver": "**✘ Plugin :** `Botver`\
         \n\n  •  **Perintah :** `.botver`\
         \n  •  **Function : **Menampilkan versi userbot\
     "
