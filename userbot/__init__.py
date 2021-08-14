@@ -688,11 +688,11 @@ with king:
                         [Button.url("Donasi Developer",
                                     "https://saweria.co/DonasiDeveloper"),
                             custom.Button.inline(
-                                "Menu Alive", data="alive_inline"),
-                            custom.Button.inline(
-                                "Menu Database", data="database_inline"),
-                            custom.Button.inline(
-                                "Menu Kembali", data="menu_inline")],
+                                "Menu Alive", data="alive_inline")],
+                        [custom.Button.inline(
+                            "Menu Database", data="database_inline")],
+                        [custom.Button.inline(
+                            "Menu Kembali", data="menu_inline")],
                     ]
                 )
             else:
