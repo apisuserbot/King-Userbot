@@ -48,17 +48,55 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+# Apis Gans
+
+@register(outgoing=True, pattern=r"^\.truth(?: |$)(.*)")
+async def _(event):
+    await event.edit("`Bot Sedang Mengirimi Pesan!`")
+    async with bot.conversation("@truthordares_bot") as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=1335899453)
+            )
+            await conv.send_message("/truth")
+            response = await response
+            await bot.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await event.edit("`Harap unblock @truthordares_bot dan coba lagi`")
+            return
+        await event.edit(f"**Pesan Truth**\n\n{response.message.message}")
+
+# Created Code By Apis
+
+@register(outgoing=True, pattern=r"^\.dare(?: |$)(.*)")
+async def _(event):
+    await event.edit("`Bot Sedang Mengirimi Pesan!`")
+    async with bot.conversation("@truthordares_bot") as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=1335899453)
+            )
+            await conv.send_message("/dare")
+            response = await response
+            await bot.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await event.edit("`Harap unblock @truthordares_bot dan coba lagi`")
+            return
+        await event.edit(f"**Pesan Dare**\n\n{response.message.message}")
+
 # Ported For King-Userbot By Apis
 
 CMD_HELP.update(
     {
-        "fun": "**✘ Plugin :** `Fun`\
+        "game": "**✘ Plugin :** `Game`\
         \n\n  •  **Perintah :** `.xogame`\
         \n  •  **Function : **Mainkan game XO bersama temanmu\
         \n\n  •  **Perintah :** `.mod` <nama app>\
         \n  •  **Function : **Dapatkan applikasi mod\
         \n\n  •  **Perintah :** `.wp` <teks> <username/ID>\
         \n  •  **Function : **Berikan pesan rahasia\
+        \n\n  •  **Perintah :** `.truth` dan `.dare`\
+        \n  •  **Function : **Mainkan Truth Or Dare Di Userbot Ini!\
     "
     }
 )
