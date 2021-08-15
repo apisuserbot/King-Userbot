@@ -58,9 +58,10 @@ async def _(event):
         f"\n__**(C) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
         f"\n\n**My King :** `{ALIVE_NAME}`")
 
-------------->
+------------ ->
 logo = " "
-------------->
+------------ ->
+
 
 @register(outgoing=True, pattern="^.repome$")
 async def repo_inline_here(event):
