@@ -46,7 +46,7 @@ async def yardim(event):
         )
 
 
-@register(outgoing=True, pattern=r"^.repome$")
+@register(outgoing=True, pattern=r"^\.repome")
 async def repo_inline_here(event):
     try:
         kingbotusername = BOT_USERNAME
