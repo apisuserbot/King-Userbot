@@ -2,6 +2,12 @@
 # Ported For King-Userbot By PacarFerdilla/Apis
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini Anjenggg!!!
 # Done!
+#
+# Fixed 
+
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
