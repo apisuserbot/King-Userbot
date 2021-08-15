@@ -50,6 +50,7 @@ async def _(event):
 
 # Apis Gans
 
+
 @register(outgoing=True, pattern=r"^\.truth(?: |$)(.*)")
 async def _(event):
     await event.edit("`Bot Sedang Mengirimi Pesan!`")
@@ -67,6 +68,7 @@ async def _(event):
         await event.edit(f"**Pesan Truth**\n\n{response.message.message}")
 
 # Created Code By Apis
+
 
 @register(outgoing=True, pattern=r"^\.dare(?: |$)(.*)")
 async def _(event):
