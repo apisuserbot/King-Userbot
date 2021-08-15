@@ -58,21 +58,22 @@ async def _(event):
         f"\n__**(C) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
         f"\n\n**My King :** `{ALIVE_NAME}`")
 
+
 @register(outgoing=True, pattern="^.repome$")
 async def repo_inline_here(event):
-     await event.edit(
-         f"**King-Userbot**\n\n"
-         f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport) \n"
-         f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot) \n\n"
-         f"**USERBOT TELEGRAM**\n",
-         buttons=[
-             [
-                 Button.url("Repository",
-                            "https://github.com/apisuserbot/King-Userbot"),
-                 Button.url("License",
-                            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-         ]
-     )
+    await event.edit(
+        f"**King-Userbot**\n\n"
+        f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport) \n"
+        f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot) \n\n"
+        f"**USERBOT TELEGRAM**\n",
+        buttons=[
+            [
+                Button.url("Repository",
+                           "https://github.com/apisuserbot/King-Userbot"),
+                Button.url("License",
+                           "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+        ]
+    )
 
 CMD_HELP.update(
     {
