@@ -71,7 +71,7 @@ async def repo_inline_here(event):
     if event.query.user_id == uid and query.startswith("@RepoMe"):
         result = builder.photo(
             file=logo,
-            text=f"**King-Userbot**\n\nf"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\nf"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\nf"**USERBOT TELEGRAM**\n",
+            text=f"**King-Userbot**\n\nf"• ** Support Chat: ** [KLIK DISINI](https: // t.me / KingUserbotSupport)\nf"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\nf"**USERBOT TELEGRAM **\n",
             buttons=[
                 [
                     Button.url("Repository",
