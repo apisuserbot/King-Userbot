@@ -13,13 +13,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# Thanks @Spechide
+# @Qulec tarafından yazılmıştır.
+# Thanks @Spechide.
 
 import logging
 
-
-from userbot import BOT_USERNAME
+from userbot import BOT_USERNAME, BOT_TOKEN
 from userbot.events import register
+from telethon.errors.rpcerrorlist import BotInlineDisabledError
+
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
@@ -28,39 +30,43 @@ logging.basicConfig(
 
 @register(outgoing=True, pattern=r"^\.helpme")
 async def yardim(event):
-    try:
-        kingbotusername = BOT_USERNAME
-        if kingbotusername is not None:
-            results = await event.client.inline_query(kingbotusername, "@KingUserbotSupport")
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+    kingbotusername = BOT_USERNAME
+    if kingbotusername and BOT_TOKEN:
+        try:
+            results = await event.client.inline_query(
+                kingbotusername,
+                "@KingUserbotSupport"
             )
-            await event.delete()
-        else:
-            await event.edit(
-                "`Botnya tidak berfungsi! Silahkan atur Bot Token dan Username di Bot father dengan benar, Plugin telah dihentikan`"
-            )
-    except Exception:
-        return await event.edit(
-            "`Anda tidak dapat mengirim hasil sebaris dalam hal ini ke chat (disebabkan oleh Mengirim Inline Sebaris)`"
+        except BotInlineDisabledError:
+            return await event.edit("`Bot tidak dapat digunakan dalam mode sebaris\nPastikan untuk mengaktifkan mode sebaris!`")
+        await results[0].click(
+            event.chat_id,
+            reply_to=event.reply_to_msg_id,
+            hide_via=False
         )
+        await event.delete()
+    else:
+        return await event.edit("`Botnya tidak berfungsi! Silakan atur Bot Token dan Nama Pengguna dengan benar`"
+                                "\n`Plugin telah dihentikan`")
 
 
 @register(outgoing=True, pattern=r"^\.repome")
-async def repo_inline_here(event):
-    try:
-        kingbotusername = BOT_USERNAME
-        if kingbotusername is not None:
-            results = await event.client.inline_query(kingbotusername, "@RepoMe")
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+async def repo_inline(event):
+    botusername = BOT_USERNAME
+    if botusername and BOT_TOKEN:
+        try:
+            resullt = await event.client.inline_query(
+                botusername,
+                "@RepoMe"
             )
-            await event.delete()
-        else:
-            await event.edit(
-                "`Botnya tidak berfungsi! Silahkan atur Bot Token dan Username di Bot father dengan benar, Plugin telah dihentikan`"
-            )
-    except Exception:
-        return await event.edit(
-            "`Anda tidak dapat mengirim hasil sebaris dalam hal ini ke chat (disebabkan oleh Mengirim Inline Sebaris)`"
+        except BotInlineDisabledError:
+            return await event.edit("`Bot tidak dapat digunakan dalam mode sebaris\nPastikan untuk mengaktifkan mode sebaris!`")
+        await resullt[0].click(
+            event.chat_id,
+            reply_to=event.reply_to_msg_id,
+            hide_via=False
         )
+        await event.delete()
+    else:
+        return await event.edit("`Botnya tidak berfungsi! Silakan atur Bot Token dan Bot Username dengan benar`"
+                                "\n`Plugin telah dihentikan`")
