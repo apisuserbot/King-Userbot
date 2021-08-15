@@ -392,8 +392,8 @@ def repo_inline():
         ),
         ),
         (custom.Button.inline(
-            "Menu Inline",
-            data="menu_inline",
+            "Menu Kembali",
+            data="_close",
         ),
         ),
     ]
@@ -871,6 +871,8 @@ with king:
                                 "Info Plugins", b"info"),
                             custom.Button.inline(
                                 "Menu Inline", data="menu_inline")],
+                        [custom.Button.inline(
+                            "Repo Inline", data="repo")],
                     ]
                 )
             else:
@@ -893,6 +895,22 @@ with king:
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"repo")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                _result = repo_inline()
+                await event.edit(_result[0], buttons=_result[1],
+                                 link_preview=False,
+                                 file=logo,
+                                 )
+            else:
+                reply_pop_up_alert = f"❌ Ini Adalah Menu Repo Inline ❌"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(events.CallbackQuery(data=b"info"))
