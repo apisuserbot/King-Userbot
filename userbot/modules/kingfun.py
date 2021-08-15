@@ -3,7 +3,7 @@
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini Anjenggg!!!
 # Done!
 #
-# Fixed 
+# Fixed
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
