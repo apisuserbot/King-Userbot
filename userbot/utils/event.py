@@ -1,9 +1,18 @@
 from telethon.tl.types import MessageEntityMentionName
-
+from userbot import SUDO_USERS
 from userbot.core.logger import logging
 from userbot.utils.tools import edit_delete
 
 LOGS = logging.getLogger("userbot")
+
+
+async def reply_id(event):
+    reply_to_id = None
+    if event.sender_id in SUDO_USERS:
+        reply_to_id = event.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    return reply_to_id
 
 
 async def get_user_from_event(
