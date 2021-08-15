@@ -851,7 +851,7 @@ with king:
                             custom.Button.url("License",
                                               "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                         [custom.Button.inline(
-                             "Menu Inline", data="menu_inline")],
+                            "Menu Inline", data="menu_inline")],
                     ]
                 )
             else:
