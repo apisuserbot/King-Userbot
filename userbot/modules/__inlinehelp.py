@@ -48,25 +48,3 @@ async def yardim(event):
     else:
         return await event.edit("`Botnya tidak berfungsi! Silakan atur Bot Token dan Nama Pengguna dengan benar`"
                                 "\n`Plugin telah dihentikan`")
-
-
-@register(outgoing=True, pattern=r"^\.repome")
-async def repo_inline(event):
-    botusername = BOT_USERNAME
-    if botusername and BOT_TOKEN:
-        try:
-            resullt = await event.client.inline_query(
-                botusername,
-                "@RepoMe"
-            )
-        except BotInlineDisabledError:
-            return await event.edit("`Bot tidak dapat digunakan dalam mode sebaris\nPastikan untuk mengaktifkan mode sebaris!`")
-        await resullt[0].click(
-            event.chat_id,
-            reply_to=event.reply_to_msg_id,
-            hide_via=False
-        )
-        await event.delete()
-    else:
-        return await event.edit("`Botnya tidak berfungsi! Silakan atur Bot Token dan Bot Username dengan benar`"
-                                "\n`Plugin telah dihentikan`")
