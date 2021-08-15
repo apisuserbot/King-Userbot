@@ -74,12 +74,13 @@ async def repo_inline_here(event):
             text=f"**King-Userbot**\n\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\n**USERBOT TELEGRAM**\n",
             buttons=[
                 [
-                    Button.url("Repository",
-                               "https://github.com/apisuserbot/King-Userbot"),
-                    Button.url("License",
-                               "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-            ]
-        )
+                    Button.url(
+                        "Repository",
+                        "https://github.com/apisuserbot/King-Userbot"),
+                    Button.url(
+                        "License",
+                        "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+            ])
 
 CMD_HELP.update(
     {
