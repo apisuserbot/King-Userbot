@@ -1,7 +1,7 @@
 # import userbot by apis
 
 from time import sleep
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, ALIVE_LOGO, CMD_HELP
 from userbot.events import register
 from telethon import Button
 
@@ -59,20 +59,19 @@ async def _(event):
         f"\n\n**My King :** `{ALIVE_NAME}`")
 
 # ------------->
-logo = " "
+logo = ALIVE_LOGO
 # ------------->
 
 
 @register(outgoing=True, pattern="^.repome$")
 async def repo_inline_here(event):
-    event.builder
-    query = event.edit
+    builder = event.builder
+    result = None
+    query = event.text
     if event.query.user_id == uid and query.startswith("@RepoMe"):
-        await event.edit(
-            f"**King-Userbot**\n\n"
-            f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport) \n"
-            f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot) \n\n"
-            f"**USERBOT TELEGRAM**\n",
+        result = builder.photo(
+            file=logo,
+            text=f"**King-Userbot**\n\nf"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\nf"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\nf"**USERBOT TELEGRAM**\n",
             buttons=[
                 [
                     Button.url("Repository",
