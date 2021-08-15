@@ -11,7 +11,8 @@ from userbot.utils import edit_delete, reply_id
 
 # regex obtained from :
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+BTN_URL_REGEX = re.compile(
+    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
 @register(outgoing=True, pattern="^.cbutton(?: |$)(.*)")
@@ -36,8 +37,12 @@ async def _(event):
         # if even, not escaped -> create button
         if n_escapes % 2 == 0:
             # create a thruple with button label, url, and newline status
-            buttons.append((match.group(2), match.group(3), bool(match.group(4))))
-            note_data += markdown_note[prev : match.start(1)]
+            buttons.append(
+                (match.group(2),
+                 match.group(3),
+                 bool(
+                    match.group(4))))
+            note_data += markdown_note[prev: match.start(1)]
             prev = match.end(1)
         # if odd, escaped -> move along
         elif n_escapes % 2 == 1:
@@ -92,6 +97,7 @@ def build_keyboard(buttons):
         else:
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
+
 
 CMD_HELP.update(
     {
