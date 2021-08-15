@@ -678,7 +678,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**Menu Pengaturan!**\n\n__Mode Inline__"
+                text = f"\n**Menu Pengaturan!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -792,7 +792,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**Menu Lainnya!**"
+                text = f"\n**Menu Inline!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -802,7 +802,7 @@ with king:
                             custom.Button.inline(
                                 "Info Plugins", b"info"),
                             custom.Button.inline(
-                                "Menu Lainnya", data="menu_inline")],
+                                "Menu Inline", data="menu_inline")],
                     ]
                 )
             else:
@@ -830,11 +830,10 @@ with king:
         @king.tgbot.on(events.CallbackQuery(data=b"info"))
         async def info(event):
             text = (
-                f"Info Plugins King \n"
+                f"Info Plugins \n\n"
                 f"plugins : {len(plugins)} \n"
-                f"help <nama plugin> : untuk melihat plugin \n"
-                f"help <nama perintah> : untuk melihat perintah \n"
-                f"cari <perintah> : mencari setiap perintah")
+                f"help <nama plugin> : untuk melihat perintah plugin \n\n"
+                f"Contoh : Ketik .help atau bisa juga .help <nama perintah>")
             await event.answer(text, cache_time=0, alert=True)
 
         @king.tgbot.on(
