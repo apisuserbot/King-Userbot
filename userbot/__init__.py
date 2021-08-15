@@ -688,6 +688,35 @@ with king:
                                        text=_result[0],
                                        buttons=_result[1],
                                        )
+            elif query.startswith("king_bot"):
+                result = builder.article(
+                    title="USERBOT TELEGRAM",
+                    description="King-Userbot | Telethon",
+                    url="https://heroku.com",
+                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
+                    buttons=[],
+                    link_preview=True)
+            else:
+                result = builder.article(
+                    title="USERBOT TELEGRAM",
+                    description="King-Userbot | Telethon",
+                    url="https://heroku.com",
+                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "Repository",
+                                "https://github.com/apisuserbot/King-Userbot"),
+                            custom.Button.url(
+                                "Developer",
+                                "t.me/PacarFerdilla")],
+                        [custom.Button.url(
+                            "License",
+                            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+                    ],
+                    link_preview=False,
+                )
+            await event.answer([result] if result else None)
 
 # =============================================Button========================================= #
 
