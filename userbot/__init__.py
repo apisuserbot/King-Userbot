@@ -800,6 +800,8 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
+                                "Info Plugins", b"info"),
+                            custom.Button.inline(
                                 "Menu Lainnya", data="menu_inline")],
                     ]
                 )
@@ -824,6 +826,16 @@ with king:
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(events.CallbackQuery(data=b"info"))
+        async def info(event):
+            text = (
+                f"Info Plugins King \n"
+                f"plugins : {len(plugins)} \n"
+                f"help <nama plugin> : untuk melihat plugin \n"
+                f"help <nama perintah> : untuk melihat perintah \n"
+                f"cari <perintah> : mencari setiap perintah")              
+            await event.answer(text, cache_time=0, alert=True)
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
