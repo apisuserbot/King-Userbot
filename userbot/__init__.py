@@ -834,7 +834,7 @@ with king:
                 f"plugins : {len(plugins)} \n"
                 f"help <nama plugin> : untuk melihat plugin \n"
                 f"help <nama perintah> : untuk melihat perintah \n"
-                f"cari <perintah> : mencari setiap perintah")              
+                f"cari <perintah> : mencari setiap perintah")
             await event.answer(text, cache_time=0, alert=True)
 
         @king.tgbot.on(
