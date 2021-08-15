@@ -800,11 +800,11 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Info Plugins", b"info"),
+                                "Info Plugins", b"info_plugins"),
                             custom.Button.inline(
                                 "Menu Inline", data="menu_inline")],
                         [custom.Button.inline(
-                            "Repo Inline", data="repo")],
+                            "Repo Inline", data="repo_inline")],
                     ]
                 )
             else:
@@ -831,16 +831,16 @@ with king:
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"repo")
+                data=re.compile(rb"repo_inline")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f" **King-Userbot** | Telethon \n\n"
+                    f" King-Userbot | Telethon \n\n"
                     f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n"
                     f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\n"
-                    f"         **USERBOT TELEGRAM** ")
+                    f"    **USERBOT TELEGRAM** ")
                 await event.edit(
                     text,
                     link_preview=True,
@@ -854,11 +854,8 @@ with king:
                             "Menu Inline", data="menu_inline")],
                     ]
                 )
-            else:
-                reply_pop_up_alert = f"Mode Tertutup\n\nAnda Tidak Bisa Menekannya!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @king.tgbot.on(events.CallbackQuery(data=b"info"))
+        @king.tgbot.on(events.CallbackQuery(data=b"info_plugins"))
         async def info(event):
             text = (
                 f"Info Plugins \n\n"
