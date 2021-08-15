@@ -65,8 +65,7 @@ logo = " "
 
 @register(outgoing=True, pattern="^.repome$")
 async def repo_inline_here(event):
-    builder = event.builder
-    result = None
+    event.builder
     query = event.edit
     if event.query.user_id == uid and query.startswith("@RepoMe"):
         await event.edit(
