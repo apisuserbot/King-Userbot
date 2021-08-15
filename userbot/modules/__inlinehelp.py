@@ -44,3 +44,23 @@ async def yardim(event):
         return await event.edit(
             "`Anda tidak dapat mengirim hasil sebaris dalam hal ini ke chat (disebabkan oleh Mengirim Inline Sebaris)`"
         )
+
+
+@register(outgoing=True, pattern=r"^.repome$")
+async def repo_inline_here(event):
+    try:
+        kingbotusername = BOT_USERNAME
+        if kingbotusername is not None:
+            results = await event.client.inline_query(kingbotusername, "@KingUserbotSupport")
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        else:
+            await event.edit(
+                "`Botnya tidak berfungsi! Silahkan atur Bot Token dan Username di Bot father dengan benar, Plugin telah dihentikan`"
+            )
+    except Exception:
+        return await event.edit(
+            "`Anda tidak dapat mengirim hasil sebaris dalam hal ini ke chat (disebabkan oleh Mengirim Inline Sebaris)`"
+        )
