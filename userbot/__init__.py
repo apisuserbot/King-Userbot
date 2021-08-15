@@ -376,30 +376,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # --------------------------------------------InlineBot---------------------------------->
 
 
-def repo_inline():
-    text = f"**King-Userbot** | Telethon\
-            \n• **Support Chat : [KLIK DISINI](https://t.me/KingUserbotSupport)\
-            \n• **Support Channel : [KLIK DISINI](https://t.me/TeamKingUserbot)\
-            \n**USERBOT TELEGRAM**"
-    buttons = [
-        (custom.Button.url(
-            "Repository",
-            "https://github.com/apisuserbot/King-Userbot",
-        ),
-            custom.Button.url(
-            "License",
-            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
-        ),
-        ),
-        (custom.Button.inline(
-            "Menu Kembali",
-            data="_close",
-        ),
-        ),
-    ]
-    return text, buttons
-
-
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
@@ -674,50 +650,6 @@ with king:
                 )
             await event.answer([result] if result else None)
 
-        @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
-        async def inline_handler(event):
-            builder = event.builder
-            result = None
-            query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@RepoMe"):
-                _result = repo_inline()
-                photo_repo = logo
-                result = builder.photo(photo_repo,
-                                       link_preview=False,
-                                       text=_result[0],
-                                       buttons=_result[1],
-                                       )
-            elif query.startswith("king_bot"):
-                result = builder.article(
-                    title="USERBOT TELEGRAM",
-                    description="King-Userbot | Telethon",
-                    url="https://heroku.com",
-                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
-                    buttons=[],
-                    link_preview=True)
-            else:
-                result = builder.article(
-                    title="USERBOT TELEGRAM",
-                    description="King-Userbot | Telethon",
-                    url="https://heroku.com",
-                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "Repository",
-                                "https://github.com/apisuserbot/King-Userbot"),
-                            custom.Button.url(
-                                "Developer",
-                                "t.me/PacarFerdilla")],
-                        [custom.Button.url(
-                            "License",
-                            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-                    ],
-                    link_preview=False,
-                )
-            await event.answer([result] if result else None)
-
 # =============================================Button========================================= #
 
         @king.tgbot.on(
@@ -904,13 +836,26 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                _result = repo_inline()
-                await event.edit(_result[0], buttons=_result[1],
-                                 link_preview=False,
-                                 file=logo,
-                                 )
+                text = (
+                    f" **King-Userbot** | Telethon \n\n"
+                    f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n"
+                    f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\n"
+                    f"         **USERBOT TELEGRAM** ")
+                await event.edit(
+                    text,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.url("Repository",
+                                              "https://github.com/apisuserbot/King-Userbot"),
+                            custom.Button.url("License",
+                                              "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+                        [custom.Button.inline(
+                             "Menu Inline", data="menu_inline")],
+                    ]
+                )
             else:
-                reply_pop_up_alert = f"❌ Ini Adalah Menu Repo Inline ❌"
+                reply_pop_up_alert = f"Mode Tertutup\n\nAnda Tidak Bisa Menekannya!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(events.CallbackQuery(data=b"info"))
@@ -919,7 +864,7 @@ with king:
                 f"Info Plugins \n\n"
                 f"plugins : {len(plugins)} \n"
                 f"help <nama plugin> : untuk melihat perintah plugin \n\n"
-                f"Contoh : Ketik .help atau bisa juga .help <nama perintah>")
+                f"Contoh : Ketik .help atau bisa juga .help <nama plugin>")
             await event.answer(text, cache_time=0, alert=True)
 
         @king.tgbot.on(
