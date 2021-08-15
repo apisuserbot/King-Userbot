@@ -620,16 +620,20 @@ with king:
                     ),
                     buttons=buttons,
                 )
-            elif query.startswith("tb_btn"):
+            elif query.startswith("king_bot"):
                 result = builder.article(
-                    "Bantuan ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
-                    text="◎› Daftar Plugins",
+                    title="USERBOT TELEGRAM",
+                    description="King-Userbot | Telethon",
+                    url="https://heroku.com",
+                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "USERBOT TELEGRAM",
-                    text="""⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n=============================\n**King-Userbot** Adalah Sebuah Repository Userbot Yang Dapat Membantu Akun Pengguna Telegram Melakukan Hal Apapun\n\n⚠️ DISCLAIMER ⚠️\nBacalah Peraturan Berikut [Disini](https://telegra.ph/Peraturan-08-04)\n\n**Gabung Grup Support Kami** [Disini](https://t.me/KingUserbotSupport)\n\n=============================\n\n**USERBOT TELEGRAM**""",
+                    title="USERBOT TELEGRAM",
+                    description="King-Userbot | Telethon",
+                    url="https://heroku.com",
+                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
                     buttons=[
                         [
                             custom.Button.url(
