@@ -376,6 +376,30 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # --------------------------------------------InlineBot---------------------------------->
 
 
+def repo_inline():
+    text = f"**King-Userbot** | Telethon\
+            \n• **Support Chat : [KLIK DISINI](https://t.me/KingUserbotSupport)\
+            \n• **Support Channel : [KLIK DISINI](https://t.me/TeamKingUserbot)\
+            \n**USERBOT TELEGRAM**"
+    buttons = [
+        (custom.Button.url(
+            "Repository",
+            "https://github.com/apisuserbot/King-Userbot",
+        ),
+            custom.Button.url(
+            "License",
+            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+        ),
+        ),
+        (custom.Button.inline(
+            "Menu Inline",
+            data="menu_inline",
+        ),
+        ),
+    ]
+    return text, buttons
+
+
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 4
