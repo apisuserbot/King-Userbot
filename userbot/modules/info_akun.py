@@ -22,12 +22,12 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("`Harap unblock @SpamBot dan coba lagi`")
             return
-        await event.edit(f"• Info Akun :\n{response.message.message}")
+        await event.edit(f"**Pesan Info Akunmu**\n\n{response.message.message}")
 
 
 CMD_HELP.update(
     {
-        "info": "**✘ Plugin :** `info akun`\
+        "info": "**✘ Plugin :** `Info`\
         \n\n  •  **Perintah :** `.info`\
         \n  •  **Function : **Untuk mengecek info akun Anda\
     "
