@@ -1,5 +1,5 @@
 # Yang Hapus Besok Mati Aminnn
-# Port By @Vckyouuu
+# Port By @PacarFerdilla
 # Apis Ganteng , Yang Hapus Meninggal Besok Aminn...
 # Gabut Doang Gw Tod
 
@@ -47,5 +47,11 @@ async def honkasays(event):
         await event.edit("Maaf King, saya tidak bisa mengirim stiker ke sini !!")
 
 
-CMD_HELP.update({"frog": "⚡𝘾𝙈𝘿⚡`.frog`\
-    \nPenjelasan: .frog <kata kata>."})
+CMD_HELP.update(
+    {  
+        "frog": "**✘ Plugin :** `Frog`\
+        \n\n  •  **Perintah :** `.frog`\
+        \n  •  **Function :** `.frog` <kata kata>\
+    "
+    }
+)
