@@ -48,7 +48,7 @@ async def honkasays(event):
 
 
 CMD_HELP.update(
-    {  
+    {
         "frog": "**✘ Plugin :** `Frog`\
         \n\n  •  **Perintah :** `.frog`\
         \n  •  **Function :** `.frog` <kata kata>\
