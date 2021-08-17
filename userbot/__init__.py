@@ -430,7 +430,7 @@ with king:
         uid = me.id
         logo = ALIVE_LOGO
 
-        donate = "https://telegra.ph/file/853dc168444ddf3222682.jpg"
+        donate = "https://telegra.ph/file/4f8964fdd184b76b7ec8a.jpg"
         string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
         plugins = CMD_HELP
 
@@ -803,8 +803,6 @@ with king:
                                 "Info Plugins", b"info_plugins"),
                             custom.Button.inline(
                                 "Menu Inline", data="menu_inline")],
-                        [custom.Button.inline(
-                            "Repo Inline", data="repo_inline")],
                     ]
                 )
             else:
@@ -828,32 +826,6 @@ with king:
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @king.tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"repo_inline")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f" King-Userbot | Telethon \n\n"
-                    f"• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n"
-                    f"• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n\n"
-                    f"    **USERBOT TELEGRAM** ")
-                await event.edit(
-                    text,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.url("Repository",
-                                              "https://github.com/apisuserbot/King-Userbot"),
-                            custom.Button.url("License",
-                                              "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-                        [custom.Button.inline(
-                            "Menu Inline", data="menu_inline")],
-                    ]
-                )
 
         @king.tgbot.on(events.CallbackQuery(data=b"info_plugins"))
         async def info(event):
@@ -880,7 +852,7 @@ with king:
                         [
                             custom.Button.inline(
                                 "Menu Pengaturan", data="settings")],
-                        [custom.Button.inline("Menu Buka", data="opener")],
+                        [custom.Button.inline("Menu Kembali", data="opener")],
                         [custom.Button.inline(
                             "Menu Tutup", b"close")],
                     ]
