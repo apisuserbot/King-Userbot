@@ -418,7 +418,7 @@ king = bot
 with king:
     try:
         king.tgbot = tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
+            "BOT_TOKEN",
             api_id=API_KEY,
             api_hash=API_HASH).start(
             bot_token=BOT_TOKEN)
