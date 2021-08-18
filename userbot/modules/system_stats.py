@@ -4,21 +4,23 @@
 # you may not use this file except in compliance with the License.
 #
 # Ported by Apis @PacarFerdilla
-""" Userbot module for getting information about the server. """
+""" Userbot module for getting information about the server"""
 
-
+import platform
 import asyncio
+import sys
+import time
+import psutil
+
+from time import sleep
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import __version__, version
-import platform
-import sys
-import time
+
 from datetime import datetime
-import psutil
 from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, KING_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
@@ -164,12 +166,13 @@ async def bot_ver(event):
         stdout, stderr = await rev.communicate()
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
+        await event.edit("`Memeriksa Versi Userbot...`")
+        sleep(3)
         await event.edit(
             " ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ \n\n"
             f"**★ Versi Userbot :** v{BOT_VER} \n"
             f"**★ heads :** heads/King-Userbot-0-x634i7u1 \n"
-            f"**★Revisi :**\n"
-            f"{revout}"
+            f"**★ Revisi :** {revout}"
         )
     else:
         await event.edit(
@@ -183,7 +186,7 @@ async def pipcheck(pip):
         return
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
-        await pip.edit("`Mencari...`")
+        await pip.edit("`Sedang Mencari...`")
         pipc = await asyncrunapp(
             "pip3",
             "search",
@@ -209,17 +212,15 @@ async def pipcheck(pip):
                 remove("output.txt")
                 return
             await pip.edit(
-                "**Query :**\n`"
-                f"pip3 search {pipmodule}"
-                "`\n**Result :**\n`"
-                f"{pipout}"
-                "`"
+                "**Query :** \n"
+                f"pip3 search `{pipmodule}` \n"
+                f"**Result :** `{pipout}`"
             )
         else:
             await pip.edit(
-                "**Query :**\n`"
-                f"pip3 search {pipmodule}"
-                "`\n**Result :**\n`No Result Returned/False`"
+                "**Query :** \n"
+                f"pip3 search {pipmodule} \n"
+                "**Result :**\n`No Result Returned/False`"
             )
     else:
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
