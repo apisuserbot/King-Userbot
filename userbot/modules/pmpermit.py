@@ -17,18 +17,15 @@ from userbot import (
     COUNT_PM,
     LASTMSG,
     LOGS,
-    ALIVE_LOGO,
     PM_AUTO_BAN,
     PMPERMIT_TEXT,
     PMPERMIT_PIC,
     ALIVE_NAME,
 )
 
-
-if PMPERMIT_PIC is None:
-    CUSTOM_PIC = ALIVE_LOGO
-else:
-    CUSTOM_PIC = str(PMPERMIT_PIC)
+# -------------------------->
+CUSTOM_PIC = PMPERMIT_PIC
+# ---------------------+---->
 
 COUNT_PM = {}
 LASTMSG = {}
