@@ -325,11 +325,11 @@ async def redis(alive):
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"**╭╼═✯══════════════✯═╾╮**\n"
+        f"**╭╼═★══════════════★═╾╮**\n"
         f" ㅤ     ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
-        f"**╰╼═✯══════════════✯═╾╯**\n"
+        f"**╰╼═★══════════════★═╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
-        f"│ ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
+        f"│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 🤴 `King     :` {DEFAULTUSER} \n"
         f"╟◈ 🔎 `Username :` @{user.username} \n"
@@ -378,10 +378,10 @@ async def redis(alive):
         f"__**{KING_TEKS_KUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
         f"{ALIVE_EMOJI} **Plugins :** `{len(plugins)} Plugin` \n"
-        f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
-        f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
-        f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n\n"
-        f"[Support Chat](https://t.me/KingUserbotSupport) | [Support Channel](https://t.me/TeamKingUserbot) | [License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")
+        f"{ALIVE_EMOJI} **Userbot Version :** `v{BOT_VER}` \n"
+        f"{ALIVE_EMOJI} **Python Version :** `v{python_version()}` \n"
+        f"{ALIVE_EMOJI} **Telethon Version :** `v{version.__version__}` \n\n"
+        f"[Support Chat](https://t.me/KingUserbotSupport) | [Support Channel](https://t.me/TeamKingUserbot) | [License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -400,6 +400,23 @@ async def redis(alive):
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
+
+
+@register(outgoing=True, pattern="^.boton(?: |$)(.*)")
+async def alive(event): # created by Apis
+    await bot.get_me()
+    await get_readable_time((time.time() - StartTime))
+    await event.edit("__Userbot Aktif...__")
+    await asyncio.sleep(3)
+    text = (
+        f" **King-Userbot | Telethon** \n\n"
+        f"{ALIVE_EMOJI} **King :** __{DEFAULTUSER}__ \n"
+        f"{ALIVE_EMOJI} **Plugins :** __{len(plugins)} Plugin__ \n"
+        f"{ALIVE_EMOJI} **Versi Userbot :** __v{BOT_VER}__ \n"
+        f"{ALIVE_EMOJI} **Versi Python :** __v{python_version()}__ \n"
+        f"{ALIVE_EMOJI} **Versi Telethon :** __v{version.__version__}__ \n\n"
+        f"     **USERBOT TELEGRAM** ")
+    await event.edit(text)
 
 
 @register(outgoing=True, pattern="^.aliveu")
@@ -449,9 +466,15 @@ CMD_HELP.update(
         \n  •  **Function : **untuk melihat apakah bot Anda berfungsi atau tidak\
         \n\n  •  **Perintah :** `.resetalive`\
         \n  •  **Function : **Untuk Mereset Pengguna Alive\
-        \n\n  **Animasi Alive Lainnya :**\
-        \n  •  **Perintah :** `.kingalive` | `.kingon` | `.ualive` | `.uon` | `.xalive` | `.xon`\
-        \n\n  __Dingunakan Untuk Bersenang Senang Saja__\
+        \n\n\n  **Animasi Alive Lainnya :**\
+        \n\n  •  **Perintah :** `.kingalive` atau `.kingon`\
+        \n  •  **Function : **Untuk Melihat Animasi Alive\
+        \n\n  •  **Perintah :** `.xalive` atau `.xon`\
+        \n  •  **Function : **Untuk Melihat Animasi Alive\
+        \n\n  •  **Perintah :** `.ualive` atau `.uon`\
+        \n  •  **Function : **Untuk Melihat Animasi Alive\
+        \n\n  •  **Perintah :** `.boton`\
+        \n  •  **Function : **Untuk Mengecek Bot Aktif Atau Tidak\
     "
     }
 )
