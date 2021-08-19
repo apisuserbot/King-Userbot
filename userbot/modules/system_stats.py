@@ -213,17 +213,17 @@ async def pipcheck(pip):
                 return
             await pip.edit(
                 "**Query :** \n"
-                f"pip3 search `{pipmodule}` \n"
+                f"pip3 dicari `{pipmodule}` \n"
                 f"**Result :** `{pipout}`"
             )
         else:
             await pip.edit(
                 "**Query :** \n"
-                f"pip3 search {pipmodule} \n"
-                "**Result :**\n`No Result Returned/False`"
+                f"pip3 dicari {pipmodule} \n"
+                "**Result :** `Tidak Ada Hasil Kembali`"
             )
     else:
-        await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
+        await pip.edit("**Harap Gunakan** `.help pip` **Untuk Melihat Contoh**")
 
 
 @register(outgoing=True, pattern=r"^\.(?:kingalive|kingon)\s?(.)?")
@@ -256,8 +256,8 @@ async def amireallyalive(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n`Logo Yang Disediakan Tidak Valid`"
+                "\n`Pastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -296,8 +296,8 @@ async def amireallyalive(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n`Logo Yang Disediakan Tidak Valid`"
+                "\n`Pastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -329,7 +329,7 @@ async def redis(alive):
         f" ㅤ     ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
         f"**╰╼═✯══════════════✯═╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
-        f"│  ⇱ **SISTEM ALIVE BOT** ⇲ \n"
+        f"│ ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 🤴 `King     :` {DEFAULTUSER} \n"
         f"╟◈ 🔎 `Username :` @{user.username} \n"
@@ -339,8 +339,9 @@ async def redis(alive):
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **{KING_TEKS_KUSTOM}** \n\n"
-        f"│   **USERBOT TELEGRAM** \n"
+        f"├◈ **{KING_TEKS_KUSTOM}** \n"
+        f"│                         \n"
+        f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
         f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
         f"[Support Channel](t.me/TeamKingUserbot)")
@@ -353,8 +354,8 @@ async def redis(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n`Logo Yang Disediakan Tidak Valid`"
+                "\n`Pastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -390,8 +391,8 @@ async def redis(alive):
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n`Logo Yang Disediakan Tidak Valid`"
+                "\n`Pastikan Tautan Yang Anda Gunakan Valid`"
             )
             await asyncio.sleep(100)
             await alive.delete()
@@ -423,22 +424,29 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update(
     {
-        "sistem": "**✘ Plugin :** `Sistem Userbot`\
+        "sistem": "**✘ Plugin :** `Sistem`\
         \n\n  •  **Perintah :** `.sysd`\
-        \n  •  **Function : **Menampilkan informasi sis tem menggunak an neofetch\
-        \n\n  •  **Perintah :** `.pip` <plugin(s)>\
-        \n  •  **Function : **Melakukan pencarian modul pip\
+        \n  •  **Function : **Menampilkan informasi sistem menggunak an neofetch\
         \n\n  •  **Perintah :** `.spc`\
-        \n  •  **Function : **Show system specification\
+        \n  •  **Function : **Menampilkan spesifikasi sistem\
     "
     }
 )
 
 CMD_HELP.update(
     {
-        "alive": "**✘ Plugin :** `Alive Userbot`\
+        "pip": "**✘ Plugin :** `Pip`\
+        \n\n  •  **Perintah :** `.pip` <plugin(s)>\
+        \n  •  **Function : **Melakukan pencarian plugin pip\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "alive": "**✘ Plugin :** `Alive`\
         \n\n  •  **Perintah :** `.alive` atau `.on`\
-        \n  •  **Function : **Ketik `.alive` untuk melihat apakah bot Anda berfungsi atau tidak\
+        \n  •  **Function : **untuk melihat apakah bot Anda berfungsi atau tidak\
         \n\n  •  **Perintah :** `.resetalive`\
         \n  •  **Function : **Untuk Mereset Pengguna Alive\
         \n\n  **Animasi Alive Lainnya :**\
