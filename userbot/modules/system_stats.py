@@ -403,7 +403,7 @@ async def redis(alive):
 
 
 @register(outgoing=True, pattern="^.boton(?: |$)(.*)")
-async def alive(event): # created by Apis
+async def alive(event):  # created by Apis
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     await event.edit("__Userbot Aktif...__")
