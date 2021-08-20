@@ -325,9 +325,9 @@ async def redis(alive):
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"**╭╼═★══════════════★═╾╮**\n"
-        f" ㅤ     ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
-        f"**╰╼═★══════════════★═╾╯**\n"
+        f"**╭╼══════════════════╾╮**\n"
+        f" ㅤ    ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
+        f"**╰╼══════════════════╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
@@ -474,7 +474,7 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.ualive` atau `.uon`\
         \n  •  **Function : **Untuk Melihat Animasi Alive\
         \n\n  •  **Perintah :** `.boton`\
-        \n  •  **Function : **Untuk Mengecek Bot Aktif Atau Tidak\
+        \n  •  **Function : **Animasi Alive Tetapi Tidak Ada Logo\
     "
     }
 )
