@@ -190,5 +190,5 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.count`\
         \n  •  **Function : **Menghitung Grup, Chat, Bot etc\
    "
-   }
+    }
 )
