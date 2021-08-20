@@ -8,15 +8,9 @@
 import os
 
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
-
-from telethon.errors.rpcerrorlist import (PhotoExtInvalidError,
-                                          UsernameOccupiedError)
-
-from telethon.tl.functions.account import (UpdateProfileRequest,
-                                           UpdateUsernameRequest)
-
+from telethon.errors.rpcerrorlist import PhotoExtInvalidError, UsernameOccupiedError
+from telethon.tl.functions.account import UpdateProfileRequest, UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-
 from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
@@ -196,5 +190,5 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.count`\
         \n  •  **Function : **Menghitung Grup, Chat, Bot etc\
    "
-    }
+   }
 )
