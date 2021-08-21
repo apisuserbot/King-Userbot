@@ -266,8 +266,8 @@ async def fetch_info(chat, event):
         msg_info = None
         print("Exception:", e)
     # No chance for IndexError as it checks for msg_info.messages first
-    first_msg_valid = bool(msg_info and msg_info.messages and msg_info.messages[
-        0].id == 1)
+    first_msg_valid = bool(
+        msg_info and msg_info.messages and msg_info.messages[0].id == 1)
     # Same for msg_info.users
     creator_valid = bool(first_msg_valid and msg_info.users)
     creator_id = msg_info.users[0].id if creator_valid else None

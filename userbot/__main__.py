@@ -30,7 +30,6 @@ LOGS.info(
     f"⚡Lord-Userbot⚡ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!] ketik .alive")
 
 
-
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
