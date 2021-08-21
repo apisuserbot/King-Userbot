@@ -11,7 +11,7 @@ from userbot import CMD_HELP, bot
 async def gcast(event):
     kinguser = event.pattern_match.group(1)
     if not kinguser:
-        return await event.edit("`King, Mohon Berikan Sebuah Pesan`")
+        return await event.edit("`Lord, Mohon Berikan Sebuah Pesan`")
     tt = event.text
     msg = tt[6:]
     kingget = await event.edit("`Sedang Mengirim Pesan Secara Global...⚡️`")
@@ -25,14 +25,14 @@ async def gcast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kingget.edit(f"**Sukses Mengirim Pesan Ke** `{done}` **Grup , Gagal Mengirim Pesan Ke** `{er}` **Grup**")
+    await kingget.edit(f"**Keyenn Sukses Mengirim Pesan Ke** `{done}` **Grup , Hadehh Gagal Mengirim Pesan Ke** `{er}` **Grup**")
 
 
 @register(outgoing=True, pattern="^.pcast (.*)")
 async def gucast(event):
     kinguser = event.pattern_match.group(1)
     if not kinguser:
-        return await event.edit("`Mohon Berikan Sebuah Pesan`")
+        return await event.edit("`Lord, Mohon Berikan Sebuah Pesan`")
     tt = event.text
     msg = tt[7:]
     kingget = await event.edit("`Sedang Mengirim Pesan Pribadi Secara Global...⚡️`")
@@ -46,7 +46,7 @@ async def gucast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kingget.edit(f"**Sukses Mengirim Pesan Ke** `{done}` **Orang , Gagal Mengirim Pesan Ke** `{er}` **Orang.**")
+    await kingget.edit(f"**Keyenn Sukses Mengirim Pesan Ke** `{done}` **Orang , Hadehh Gagal Mengirim Pesan Ke** `{er}` **Orang.**")
 
 
 CMD_HELP.update(
