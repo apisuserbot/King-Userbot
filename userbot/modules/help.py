@@ -34,8 +34,8 @@ async def help(event):
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "`\t|  "
-        await event.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n"
-                         f"**◑» King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n\n"
+        await event.edit("⚡**『AB』**-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n"
+                         f"**◑» Lord** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n\n"
                          "**❒ Main Menu ↯**\n"
                          f"╰►| {string} ◄─")
         await event.reply(
