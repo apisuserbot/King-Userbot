@@ -30,7 +30,7 @@ async def _(event):
     else:
         uid = reply_message.sender_id
     chat = "@tgscanrobot"
-    event = await event.edit("`𝙈𝙚𝙣𝙙𝙚𝙩𝙚𝙠𝙨𝙞 𝙂𝙧𝙤𝙪𝙥 𝙋𝙚𝙣𝙜𝙜𝙪𝙣𝙖 𝙞𝙣𝙞...🔍`")
+    event = await event.edit("`Mendeteksi Group Pengguna Ini...🔍`")
     async with bot.conversation(chat) as conv:
         try:
             await conv.send_message(f"{uid}")
@@ -54,9 +54,13 @@ def user_full_name(user):
     return " ".join(names)
 
 
-# Apis Ganteng
-CMD_HELP.update({
-    "deteksi":
-        "⚡𝘾𝙈𝘿⚡`.deteksi`\
-          \nPenjelasan: Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
-})
+# Created By Apis
+
+CMD_HELP.update(
+    {
+        "deteksi": "**✘ Plugin :** `Deteksi`\
+        \n\n  •  **Perintah :** `.deteksi` <reply>\
+        \n  •  **Function : **Melihat Riwayat Grup Yang Pengguna Pernah/Sedang dimasuki\
+    "
+    }
+)
