@@ -23,7 +23,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.Ass(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit(f"**Halo bro saya {DEFAULTUSER} salam kenal 😁**")
+    await typew.edit(f"**Halo bro,kak saya {DEFAULTUSER} salam kenal 😁😎**")
     sleep(2)
     await typew.edit("`Assalamualaikum Waruhmatulahi Wabarukatuh...`")
 
@@ -31,7 +31,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.Waa(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**iyaa bro**")
+    await typew.edit("**Iyaa bro,kak**")
     sleep(2)
     await typew.edit("`Walaikumsalam Waruhmatulahi Wabarukatuh...`")
 
