@@ -33,7 +33,7 @@ async def tmeme(e):
     if BOTLOG:
         await e.client.send_message(
             BOTLOG_CHATID, "#WSPAM\n"
-            "WSpam was executed successfully")
+            "sukses dieksekusi ")
 
 
 @register(outgoing=True, pattern="^.spam (.*)")
@@ -44,7 +44,7 @@ async def spammer(e):
     await asyncio.wait([e.respond(spam_message) for i in range(counter)])
     if BOTLOG:
         await e.client.send_message(BOTLOG_CHATID, "#SPAM\n"
-                                    "Spam was executed successfully")
+                                    "sukses dieksekusi")
 
 
 @register(outgoing=True, pattern="^.picspam")
@@ -59,7 +59,7 @@ async def tiny_pic_spam(e):
     if BOTLOG:
         await e.client.send_message(
             BOTLOG_CHATID, "#PICSPAM\n"
-            "PicSpam was executed successfully")
+            "sukses dieksekusi")
 
 
 @register(outgoing=True, pattern="^.delayspam (.*)")
@@ -74,20 +74,23 @@ async def spammer(e):
     if BOTLOG:
         await e.client.send_message(
             BOTLOG_CHATID, "#DelaySPAM\n"
-            "DelaySpam was executed successfully")
+            "sukses dieksekusi")
 
 
-CMD_HELP.update({
-    "spam":
-    "`.cspam` <text>\
-\nUsage: Spam the text letter by letter.\
-\n\n`.spam` <count> <text>\
-\nUsage: Floods text in the chat !!\
-\n\n`.wspam` <text>\
-\nUsage: Spam the text word by word.\
-\n\n`.picspam` <count> <link to image/gif>\
-\nUsage: As if text spam was not enough !!\
-\n\n`.delayspam` <delay> <count> <text>\
-\nUsage: `.bigspam` but with custom delay.\
-\n\n\nNOTE : Spam at your own risk !!"
-})
+CMD_HELP.update(
+    {
+        "spam": "**✘ Plugin :** `Spam`\
+        \n\n  •  **Perintah :** `.cspam` <text>\
+        \n  •  **Function : **Spam teks huruf demi huruf\
+        \n\n  •  **Perintah :** `.spam` <angka> <text>\
+        \n  •  **Function : **Membanjiri teks dalam obrolan !!\
+        \n\n  •  **Perintah :** `.wspam` <text>\
+        \n  •  **Function : **Spam teks kata demi kata\
+        \n\n  •  **Perintah :** `.picspam` <angka> <link dari gambar/gif>\
+        \n  •  **Function : **Seolah-olah spam teks tidak cukup !!\
+        \n\n  •  **Perintah :** `.delayspam` <delay> <angka> <text>\
+        \n  •  **Function : **spam besar tetapi dengan penundaan khusus\
+        \n\n\n  **Notes :** Spam dengan risiko Anda sendiri !!\
+    "
+    }
+)
