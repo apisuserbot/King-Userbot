@@ -42,8 +42,8 @@ DEF_UNAPPROVED_MSG = (
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"⎆ **Dilarang Spam** \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
-    f"◈ **KING** : {DEFAULTUSER}\n"
-    f"◈ **SUPPORT** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
+    f"◈ **Lord** : {DEFAULTUSER}\n"
+    f"◈ **GREATEST** ⚡️LORD-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
 # =================================================================
 
 
