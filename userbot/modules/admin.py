@@ -249,22 +249,22 @@ async def ban(bon):
     if reason:
         await bon.edit(
             r"༺𖣐**#Banned_Pengguna**𖣐༻"
-            f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+            f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
             f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**Pengguna ID:** `{str(user.id)}`\n"
             f"**Alasan:** `{reason}`"
             f"**Yahaha Wahyoedik Nheri Diben**`"
-            f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+            f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"
         )
     else:
         await bon.edit(
             r"༺𖣐**#Banned_Pengguna**𖣐༻"
-            f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+            f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
             f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**Pengguna ID:** `{str(user.id)}`\n"
             f"**Aksi:** `Banned Pengguna by {ALIVE_NAME}`"
             f"**Yahaha Wahyoedik Nheri Diben**`"
-            f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+            f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n`"
         )
     # Announce to the logging group if we have banned the person
     # successfully!
@@ -345,12 +345,12 @@ async def spider(spdr):
     # If everything goes well, do announcing and mute
     await spdr.edit(
         r"༺𖣐**#Mute_Pengguna**𖣐༻"
-        f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+        f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
         f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**Pengguna ID:** `{user.id}`\n"
         f"**Aksi:** `Mute by {ALIVE_NAME}`"
         f"**Yahaha Wahyoedik Dimure**`"
-        f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+        f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"
     )
     if mute(spdr.chat_id, user.id) is False:
         return await spdr.edit("`Error! Pengguna Sudah Dibisukan.`")
@@ -362,21 +362,21 @@ async def spider(spdr):
             if reason:
                 await spdr.edit(
                     r"༺𖣐**#Mute_Pengguna**𖣐༻"
-                    f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+                    f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
                     f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**Pengguna ID:** `{user.id}`\n"
                     f"**Alasan:** `{reason}`"
                     f"**Yahaha Wahyoedik Dimure**`"
-                    f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+                    f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"
                 )
             else:
                 await spdr.edit(
                     r"༺𖣐**#Mute_Pengguna**𖣐༻"
-                    f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+                    f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
                     f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**Pengguna ID:** `{user.id}`\n"
                     f"**Aksi:** `Mute by {ALIVE_NAME}`"
-                    f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"                    f"**Yahaha Wahyoedik Dimure**`"
+                    f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"                    f"**Yahaha Wahyoedik Dimure**`"
 
                 )
 
@@ -549,22 +549,22 @@ async def gspider(gspdr):
         if reason:
             await gspdr.edit(
                 r"༺𖣐**#GMuted_Pengguna**𖣐༻"
-                f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+                f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
                 f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**Pengguna ID:** `{user.id}`\n"
                 f"**Alasan:** `{reason}`"
                 f"**Yahaha Wahyoedik Dimure**`"
-                f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+                f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"
             )
         else:
             await gspdr.edit(
                 r"༺𖣐**#GMuted_Pengguna**𖣐༻"
-                f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
+                f"╭━━━━━━𖣐━✠━𖣐━━━━━━╮`\n"
                 f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**Pengguna ID:** `{user.id}`\n"
                 f"**Aksi:** `Global Muted by {ALIVE_NAME}`"
                 f"**Yahaha Wahyoedik Dimure**`"
-                f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
+                f"╰𖣐━━━━━━━✠━━━━━━━𖣐╯`\n"
             )
 
         if BOTLOG:
