@@ -70,11 +70,7 @@ async def permitpm(event):
 
         # Use user custom unapproved message
         getmsg = gvarstatus("unapproved_msg")
-        if getmsg is not None:
-            UNAPPROVED_MSG = getmsg
-        else:
-            UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
-
+        UNAPPROVED_MSG = getmsg if getmsg is not None else DEF_UNAPPROVED_MSG
         # This part basically is a sanity check
         # If the message that sent before is Unapproved Message
         # then stop sending it again to prevent FloodHit
@@ -153,11 +149,7 @@ async def auto_accept(event):
 
         # Use user custom unapproved message
         get_message = gvarstatus("unapproved_msg")
-        if get_message is not None:
-            UNAPPROVED_MSG = get_message
-        else:
-            UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
-
+        UNAPPROVED_MSG = get_message if get_message is not None else DEF_UNAPPROVED_MSG
         chat = await event.get_chat()
         if isinstance(chat, User):
             if is_approved(event.chat_id) or chat.bot:
@@ -228,11 +220,7 @@ async def approvepm(apprvpm):
 
     # Get user custom msg
     getmsg = gvarstatus("unapproved_msg")
-    if getmsg is not None:
-        UNAPPROVED_MSG = getmsg
-    else:
-        UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
-
+    UNAPPROVED_MSG = getmsg if getmsg is not None else DEF_UNAPPROVED_MSG
     async for message in apprvpm.client.iter_messages(
         apprvpm.chat_id, from_user="me", search=UNAPPROVED_MSG
     ):
@@ -358,15 +346,14 @@ async def add_pmsg(cust_msg):
             sql.delgvar("unapproved_msg")
             status = "Pesan"
 
-        if message:
-            # TODO: allow user to have a custom text formatting
-            # eg: bold, underline, striketrough, link
-            # for now all text are in monoscape
-            msg = message.message  # get the plain text
-            sql.addgvar("unapproved_msg", msg)
-        else:
+        if not message:
             return await cust_msg.edit("`Mohon Balas Ke Pesan`")
 
+        # TODO: allow user to have a custom text formatting
+        # eg: bold, underline, striketrough, link
+        # for now all text are in monoscape
+        msg = message.message  # get the plain text
+        sql.addgvar("unapproved_msg", msg)
         await cust_msg.edit("`Pesan Sukses Disimpan Ke Room Chat`")
 
         if BOTLOG:
@@ -404,13 +391,12 @@ async def permitpm(event):
     if event.fwd_from:
         return
     chats = await event.get_chat()
-    if event.is_private:
-        if not pm_permit_sql.is_approved(chats.id):
-            pm_permit_sql.approve(
-                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan :)`")
-            await borg.send_message(
-                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**"
-            )
+    if event.is_private and not pm_permit_sql.is_approved(chats.id):
+        pm_permit_sql.approve(
+            chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan :)`")
+        await borg.send_message(
+            chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**"
+        )
 
 
 CMD_HELP.update(

@@ -266,10 +266,10 @@ async def fetch_info(chat, event):
         msg_info = None
         print("Exception:", e)
     # No chance for IndexError as it checks for msg_info.messages first
-    first_msg_valid = True if msg_info and msg_info.messages and msg_info.messages[
-        0].id == 1 else False
+    first_msg_valid = bool(msg_info and msg_info.messages and msg_info.messages[
+        0].id == 1)
     # Same for msg_info.users
-    creator_valid = True if first_msg_valid and msg_info.users else False
+    creator_valid = bool(first_msg_valid and msg_info.users)
     creator_id = msg_info.users[0].id if creator_valid else None
     creator_firstname = msg_info.users[0].first_name if creator_valid and msg_info.users[
         0].first_name is not None else "Akun Terhapus"
@@ -334,7 +334,7 @@ async def fetch_info(chat, event):
         except Exception as e:
             print("Exception:", e)
     if bots_list:
-        for bot in bots_list:
+        for _ in bots_list:
             bots += 1
 
     caption = "<b>🤖 INFORMASI OBROLAN:</b>\n"
@@ -389,7 +389,6 @@ async def fetch_info(chat, event):
             caption += f", <code>{slowmode_time}s</code>\n\n"
         else:
             caption += "\n\n"
-    if not broadcast:
         caption += f"Supergrup: {supergroup}\n\n"
     if hasattr(chat_obj_info, "Terbatas"):
         caption += f"Terbatas: {restricted}\n"
@@ -427,7 +426,6 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`Sukses Menambahkan Pengguna Ke Obrolan`")
         else:
             # https://lonamiwebs.github.io/Telethon/methods/channels/invite_to_channel.html
             for user_id in to_add_users.split(" "):
@@ -438,7 +436,8 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`Sukses Menambahkan Pengguna Ke Obrolan`")
+
+        await event.edit("`Sukses Menambahkan Pengguna Ke Obrolan`")
 
 CMD_HELP.update(
     {

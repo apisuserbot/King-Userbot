@@ -71,8 +71,6 @@ async def set_not_afk(event):
                 f"🔥 __**Sudah Kembali Online...**__\n**Kembali Chat Sejak :** `{total_afk_time}` **Yang Lalu**",
             )
 
-        except BaseException:
-            pass
         await asyncio.sleep(6)
         await shite.delete()
         try:
@@ -164,10 +162,7 @@ async def _(event):
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
-    if reply:
-        pic = await event.client.download_media(reply)
-    else:
-        pic = None
+    pic = await event.client.download_media(reply) if reply else None
     if not USER_AFK:
         last_seen_status = await bot(
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
