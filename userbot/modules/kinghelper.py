@@ -13,9 +13,9 @@ async def usit(e):
     await e.edit(
         f"      ╔════════════╗\n     **__⚡️BANTUAN⚡️__**     \n╚════════════╝ \n"
         f"**Hai King {DEFAULTUSER} Kalau Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "═⎆ developer  : [King Apis](t.me/PacarFerdilla) \n"
+        "═⎆ developer  : [Lord A B](t.me/yangmutebabi) \n"
         "═⎆ Repository : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
-        "═⎆ Instragam  : [Instagram King Apis](Instagram.com/apis_goodboy) \n"
+        "═⎆ Instragam  : [Instagram Lord A B](Instagram.com/ZulfhanMT) \n"
         "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport)")
 
 
