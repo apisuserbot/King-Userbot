@@ -248,7 +248,7 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            r"𖣐**#Banned_Pengguna**𖣐"
+            r"༺𖣐**#Banned_Pengguna**𖣐༻"
             f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
             f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**Pengguna ID:** `{str(user.id)}`\n"
@@ -258,7 +258,7 @@ async def ban(bon):
         )
     else:
         await bon.edit(
-            r"𖣐**#Banned_Pengguna**𖣐"
+            r"༺𖣐**#Banned_Pengguna**𖣐༻"
             f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
             f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**Pengguna ID:** `{str(user.id)}`\n"
@@ -344,11 +344,13 @@ async def spider(spdr):
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
-        r"\\**#Mute_Pengguna**//"
+        r"༺𖣐**#Mute_Pengguna**𖣐༻"
+        f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
         f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**Pengguna ID:** `{user.id}`\n"
         f"**Aksi:** `Mute by {ALIVE_NAME}`"
         f"**Yahaha Wahyoedik Dimure**`"
+        f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
     )
     if mute(spdr.chat_id, user.id) is False:
         return await spdr.edit("`Error! Pengguna Sudah Dibisukan.`")
@@ -359,19 +361,23 @@ async def spider(spdr):
             # Announce that the function is done
             if reason:
                 await spdr.edit(
-                    r"\\**#Mute_Pengguna**//"
+                    r"༺𖣐**#Mute_Pengguna**𖣐༻"
+                    f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
                     f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**Pengguna ID:** `{user.id}`\n"
                     f"**Alasan:** `{reason}`"
                     f"**Yahaha Wahyoedik Dimure**`"
+                    f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
                 )
             else:
                 await spdr.edit(
-                    r"\\**#Mute_Pengguna**//"
+                    r"༺𖣐**#Mute_Pengguna**𖣐༻"
+                    f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
                     f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**Pengguna ID:** `{user.id}`\n"
                     f"**Aksi:** `Mute by {ALIVE_NAME}`"
-                    f"**Yahaha Wahyoedik Dimure**`"
+                    f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"                    f"**Yahaha Wahyoedik Dimure**`"
+
                 )
 
             # Announce to logging group
@@ -542,19 +548,23 @@ async def gspider(gspdr):
     else:
         if reason:
             await gspdr.edit(
-                r"\\**#GMuted_Pengguna**//"
+                r"༺𖣐**#GMuted_Pengguna**𖣐༻"
+                f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
                 f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**Pengguna ID:** `{user.id}`\n"
                 f"**Alasan:** `{reason}`"
                 f"**Yahaha Wahyoedik Dimure**`"
+                f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
             )
         else:
             await gspdr.edit(
-                r"\\**#GMuted_Pengguna**//"
+                r"༺𖣐**#GMuted_Pengguna**𖣐༻"
+                f"**╭━━━━━━𖣐━✠━𖣐━━━━━━╮**`"
                 f"\n\n**Nama depan:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**Pengguna ID:** `{user.id}`\n"
                 f"**Aksi:** `Global Muted by {ALIVE_NAME}`"
                 f"**Yahaha Wahyoedik Dimure**`"
+                f"**╰𖣐━━━━━━━✠━━━━━━━𖣐╯**`"
             )
 
         if BOTLOG:
@@ -712,7 +722,7 @@ async def kick(usr):
     if not user:
         return await usr.edit("`Tidak Dapat Menemukan Pengguna.`")
 
-    await usr.edit("`Melakukan Kick....`")
+    await usr.edit("`Melakukan Kick Bwahahaha....`")
 
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
