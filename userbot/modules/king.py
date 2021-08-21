@@ -51,11 +51,12 @@ async def typewriter(typew):
 async def _(event):
     event.pattern_match.group(1)
     await event.edit(
-        f"`Halo {ALIVE_NAME} Saya Adalah Bot King Yang Menjaga Akun ini`"
-        f"`Agar Terhindar Dari Orang Orang Jahat Di Telegram`"
+        f"`Halo {ALIVE_NAME} Saya Adalah Bot Lord Yang Berada diAkun ini`"
+        f"`Agar Terhindar Dari Orang Orang Random Di Telegram`"
+        f"`Hai kakak manis, bolehkah mengirimkan pap tengktop xD`"
         f"\n---------------------------------------------------"
-        f"\n__**(C) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
         f"\n\n**My King :** `{ALIVE_NAME}`")
+        f"\n\n**My Lord :** `{ID} `")
 
 CMD_HELP.update(
     {
