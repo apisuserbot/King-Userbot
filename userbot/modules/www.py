@@ -73,7 +73,7 @@ async def pingme(pong):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit("⚡")
-    await pong.edit("__**...💠KING💠...**__")
+    await pong.edit("__**...💠AB KING💠...**__")
     await pong.edit("__**.....USERBOT.....**__")
     await pong.edit("__**......MOHON MENUNGGU......**__")
     await pong.edit("**0% ▒▒▒▒▒▒▒▒▒▒**")
@@ -114,19 +114,22 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("**Memulai Test Sinyal**")
     await pong.edit("**..Mohon menunggu..**")
+    await pong.edit("**...❤️‍🔥『AB』 Ӄᴇꮯᴇꪎꤪ Lord❤️‍🔥...**")
     await pong.edit("**...................**")
-    await pong.edit("**DUARRR!**")
+    await pong.edit("**DUARRR MEMEK!**")
     await pong.edit("**................**")
+    await pong.edit("**¸„.-•~¹°”¹⁸⁺ˆ˜¨『A̶̢̹̩̯̗̰̣͔̠͛̐͒͛̐̒̐̌ ̸̝͎̦́̔͠Β̸͌͂̑̆𖣘』×፝֟͜×◦𖤍𝙰͠ɴᴛͫʜͣ𒆜𓆩ɴʀᵈ᭄𓆪ꗄ¨˜ˆ¹⁸⁺”°¹~•-.„¸**")
+    await pomg.edit("**....Sabar Lord.......**")
     await pong.edit("⚡️")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"卍════〠 **TEST PING** 〠════卍\n"
+    await pong.edit(f"卍════〠 **TEST PING TOD** 〠════卍\n"
                     f"═⎆ **Ping:** "
                     f"`%sms` \n"
                     f"═⎆ **Sisa Waktu:** "
                     f"`{uptime}` \n"
-                    f"**✠➲ King:** `{ALIVE_NAME}`" % (duration))
-
+                    f"**✠➲ Lord:** `{ALIVE_NAME}`" % (duration))
+                    f"═⎆ **Pesan:Pap Tengktopnya Kakak🥰🥰** "
 
 @register(outgoing=True, pattern="^.sinyal$")
 async def pingme(pong):
@@ -148,7 +151,6 @@ async def pingme(pong):
                     f"**☞ i'm online  :** "
                     f"`{uptime}` \n"
                     f"__|━|⎆__ **My king  :** `{ALIVE_NAME}`" % (duration))
-
 
 @register(outgoing=True, pattern="^.uping$")
 async def pingme(pong):
