@@ -81,7 +81,7 @@ async def app_search(event):
         app_details += f"\n\n===> {ALIVE_NAME} <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
-        await event.edit("Tidak ada hasil yang ditemukan dalam pencarian, Silahkan mencari app **Yang Valid**")
+        await event.edit("Tidak ada hasil yang ditemukan dalam pencarian, Silahkan mencari aplikasi **Yang Valid**")
     except Exception as err:
         await event.edit("Pengecualian Terjadi :- " + str(err))
 
