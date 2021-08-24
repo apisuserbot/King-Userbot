@@ -1,9 +1,8 @@
 # Animasi 4 file
 # Created by Apis
 
-import sleep
 
-from userbot import CMD_HELP 
+from userbot import CMD_HELP
 from userbot.events import register
 
 
@@ -24,7 +23,7 @@ async def woi(event):
 
 @register(outgoing=True, pattern="^.ngatur(?: |$)(.*)")
 async def ngatur(event):
-     await event.edit("**WOI ANJING , DENGER YA , JADI ORANG GAK USAH NGATUR NGATUR HIDUP ORANG YA NGENTOT , URUS AJA HIDUP LU SENDIRI BANGSAT , UDAH BENER APA KAGAK**")
+    await event.edit("**WOI ANJING , DENGER YA , JADI ORANG GAK USAH NGATUR NGATUR HIDUP ORANG YA NGENTOT , URUS AJA HIDUP LU SENDIRI BANGSAT , UDAH BENER APA KAGAK**")
 
 
 CMD_HELP.update(
