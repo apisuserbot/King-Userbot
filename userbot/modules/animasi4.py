@@ -1,7 +1,7 @@
 # Ported by Apis (King-Userbot)
 # animasi 4 file
 
-import sleep
+from time import sleep
 
 from userbot import CMD_HELP
 from userbot.events import register
