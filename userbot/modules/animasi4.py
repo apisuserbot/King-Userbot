@@ -1,5 +1,5 @@
 # Ported by Apis (King-Userbot)
-# animasi 3 file
+# animasi 4 file
 
 import sleep
 
@@ -38,6 +38,15 @@ async def berantem(event):
     await event.edit("**JANGAN MENTAL SOSMED DOANG LU**")
 
 
+@register(outgoing=True, pattern="^.rp(?: |$)(.*)")
+async def rp(event):
+    await event.edit("**WOI ANAK RP NGENTOT , DENGER NI YA , PLASTIK MAH UDAH PLASTIK AJA**")
+    sleep(3)
+    await event.edit("**GOBLOK KOK DI RAWAT , UDAH NYEMBAH PLASTIK SAMPAH LAGI HAHAHAHA**")
+    sleep(3)
+    await event.edit("**MAKAN TUH PLASTIK AWOKAWOKAWOK**")
+
+
 CMD_HELP.update(
     {
         "roasting": "**✘ Plugin :** `Roasting`\
@@ -51,6 +60,8 @@ CMD_HELP.update(
         \n  •  **Function : **Animasi Ngatur\
         \n\n  •  **Perintah :** `.berantem`\
         \n  •  **Function : **Animasi Berantem\
+        \n\n  •  **Perintah :** `.rp`\
+        \n  •  **Function : **Animasi rp\
     "
     }
 )
