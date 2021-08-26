@@ -26,6 +26,17 @@ async def ngatur(event):
     await event.edit("**WOI ANJING , DENGER YA , JADI ORANG GAK USAH NGATUR NGATUR HIDUP ORANG YA NGENTOT , URUS AJA HIDUP LU SENDIRI BANGSAT , UDAH BENER APA KAGAK**")
 
 
+@register(outgoing=True, pattern="^.berantem(?: |$)(.*)")
+async def berantem(event):
+    await event.edit("**WOI ANJING**")
+    sleep(3)
+    await event.edit("**BERANTEM YO NGENTOT**")
+    sleep(3)
+    await event.edit("**JANGAN JADI BANCI KETAKUTAN YA ANJING , SHARE LOCK SEKARANG BANGSAT**")
+    sleep(5)
+    await event.edit("**JANGAN MENTAL SOSMED DOANG LU**")
+
+
 CMD_HELP.update(
     {
         "roasting": "**✘ Plugin :** `Roasting`\
@@ -37,6 +48,8 @@ CMD_HELP.update(
         \n  •  **Function : **Animasi Woi\
         \n\n  •  **Perintah :** `.ngatur`\
         \n  •  **Function : **Animasi Ngatur\
+        \n\n  •  **Perintah :** `.berantem`\
+        \n  •  **Function : **Animasi Berantem\
     "
     }
 )
