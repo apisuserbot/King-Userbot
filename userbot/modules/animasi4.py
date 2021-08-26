@@ -1,6 +1,7 @@
-# Animasi 4 file
-# Created by Apis
+# Ported by Apis (King-Userbot)
+# animasi 3 file
 
+import sleep
 
 from userbot import CMD_HELP
 from userbot.events import register
