@@ -2,6 +2,7 @@
 # Improve by @aidilaryanto
 # Apis Ganteng Banget
 # Yang Ubah Kena Azab
+
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
@@ -71,7 +72,9 @@ async def _(hazmat):
 
 CMD_HELP.update(
     {
-        "hazmat": ">⚡𝘾𝙈𝘿⚡`.hz` atau >⚡𝘾𝙈𝘿⚡`.hz [flip, x2, rotate (level), background (nomer), black]`"
-        "\nUsage: Balas ke gambar/sticker untuk menyesuaikan!"
+        "hazmat": "**✘ Plugin :** `Hazmat`\
+        \n\n  •  **Perintah :** `.hz` atau `.hz` [flip, x2, rotate (level), background (nomer), black]\
+        \n  •  **Function :** Balas ke gambar/sticker untuk menyesuaikan!\
+    "
     }
 )
