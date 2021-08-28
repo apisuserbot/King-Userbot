@@ -688,18 +688,12 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Support Channel",
-                                       "t.me/TeamKingUserbot"),
-                            Button.url("Support Chat",
-                                       "t.me/KingUserbotSupport")],
-                        [Button.url("Donasi Developer",
-                                    "https://saweria.co/DonasiDeveloper"),
                             custom.Button.inline(
                                 "Menu Alive", data="alive_inline")],
                         [custom.Button.inline(
                             "Menu Database", data="database_inline")],
                         [custom.Button.inline(
-                            "Menu Kembali", data="menu_inline")],
+                            "Kembali", data="menu_inline")],
                     ]
                 )
             else:
@@ -718,7 +712,7 @@ with king:
                     "============================\n"
                     f"      **Alive Inline** \n"
                     "============================\n"
-                    f"`Pengguna  :` {DEFAULTUSER} \n"
+                    f"`King      :` {DEFAULTUSER} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
@@ -738,7 +732,7 @@ with king:
                             Button.url("License",
                                        "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "Menu Kembali", data="settings")],
+                            "Kembali", data="settings")],
                     ]
                 )
             else:
@@ -764,7 +758,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Menu Kembali", data="settings")],
+                                "Kembali", data="settings")],
                     ]
                 )
             else:
@@ -795,7 +789,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**Menu Inline!**"
+                text = "**Menu Inline!**"
                 await event.edit(
                     text,
                     file=logo,
@@ -846,16 +840,139 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = f"\n**USERBOT TELEGRAM**"
+                text = "**USERBOT TELEGRAM**"
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("Menu Pengaturan", data="settings"),
+                            custom.Button.inline("Menu Set Vars" data="menu_vars")],
+                        [custom.Button.inline("Menu Buka", data="opener")],
+                        [custom.Button.inline("Menu Tutup", b"close")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(
+                data=re.compile(rb"menu_vars")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = "**Menu Set Vars!**"
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline("Menu Pengaturan", data="settings")],
-                        [custom.Button.inline("Menu Kembali", data="opener")],
-                        [custom.Button.inline("Menu Tutup", b"close")],
+                            custom.Button.inline("Alive", data="alive_vars")],
+                        [custom.Button.inline("Pmpermit", data="pmpermit_vars")],
+                        [custom.Button.inline("Inline", data="inline_vars")],
+                        [custom.Button.inline("Kembali", data="menu_inline")],
+                    ]
+                )
+            else:
+            reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive_vars")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**✘ Plugins :** `alive`\n"
+                    f"** King : ** {DEFAULTUSER}\n\n"
+                    f"✘ **Penjelasan :**\n"
+                    f"__Menampilkan Alive Punya Kamu, Dengan Teks Dan Foto Yang Bagus Dan Meriah__\n\n"
+                    f"✘ **Deskripsi :**\n"
+                    f"__Kamu Juga Dapat Mengubah Foto Dan Teks Custom Sesuka Hatimu Perintah Dibawah__\n\n"
+                    f"✘ **Perintah :**\n"
+                    f"`.kingalive` || `.kingon` || `.alive` || `.xalive` || `.xon` || `.ualive` || `.uon` \n\n"
+                    f"✘ **Set Vars :**\n"
+                    f"`.set var ALIVE_LOGO` <link telegprah>\n"
+                    f"`.set var KING_TEKS_KUSTOM` <teks>")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "Kembali", data="menu_vars")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"pmpermit_vars")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**✘ Plugins :** `pmpermit`\n"
+                    f"** King : ** {DEFAULTUSER}\n\n"
+                    f"✘ **Penjelasan :**\n"
+                    f"__Untuk Pesan Pribadi (Pmpermit) Kamu , Dan Bisa Set Dengan Foto Dan Teks Sesuka Hatimu__\n\n"
+                    f"✘ **Deskripsi :**\n"
+                    f"__Pesan Security Pribadi Kepada Pengguna , Jika Ada Yang Pm Anda King__\n\n"
+                    f"✘ **Perintah :**\n"
+                    f"`.ok` || `.terima` || `.tolak` || `.tidak`\n\n"
+                    f"✘ **Set Vars :**\n"
+                    f"`.set var PMPERMIT_PIC` <link telegprah>\n"
+                    f"`.set var PMPERMIT_TEXT` <teks>")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "Kembali", data="menu_vars")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @king.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"inline_vars")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**✘ Menu Help Inline**\n"
+                    f"** King : ** {DEFAULTUSER}\n\n"
+                    f"✘ **Penjelasan :**\n"
+                    f"__Menampilkan Foto Dan Emoji Menu Help Inlinemu__\n\n"
+                    f"✘ **Deskripsi :**\n"
+                    f"__Untuk Menu Help Inline Anda King__\n\n"
+                    f"✘ **Perintah :**\n"
+                    f"`.helpme` \n\n"
+                    f"✘ **Set Vars :**\n"
+                    f"`.set var INLINE_PIC` <link telegprah>\n"
+                    f"`.set var EMOJI_HELP` <emoji>")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "Kembali", data="menu_vars")],
                     ]
                 )
             else:
@@ -865,7 +982,7 @@ with king:
         @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
-                text = f"\n**Menu Ditutup!**"
+                text = "**Menu Ditutup!**"
                 await event.edit(
                     text,
                     file=logo,
