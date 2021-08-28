@@ -846,8 +846,9 @@ with king:
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("Menu Pengaturan", data="settings"),
-                            custom.Button.inline("Menu Set Vars" data="menu_vars")],
+                        [custom.Button.inline("Menu Pengaturan", data="settings")],
+                        [custom.Button.inline(
+                            "Menu Set Vars" data="menu_vars")],
                         [custom.Button.inline("Menu Buka", data="opener")],
                         [custom.Button.inline("Menu Tutup", b"close")],
                     ]
