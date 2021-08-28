@@ -210,6 +210,10 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
 
+# Default .helpme logo
+INLINE_PIC = os.environ.get(
+    "INLINE_PIC") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -427,7 +431,8 @@ with king:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = ALIVE_LOGO
+        logo = INLINE_PIC
+        alive = ALIVE_LOGO
 
         donate = "https://telegra.ph/file/4f8964fdd184b76b7ec8a.jpg"
         string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
@@ -530,15 +535,14 @@ with king:
                     "=============================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
-                    f"`Versi Bot :` {BOT_VER} \n"
+                    f"`Versi Bot :` v{BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n\n"
-                    f"• **Bot By :** {DEFAULTUSER} \n\n"
                     "=============================\n"
                     f"    **USERBOT TELEGRAM** \n"
                     "=============================")
-                await king.tgbot.send_file(event.chat_id, file=logo,
+                await king.tgbot.send_file(event.chat_id, file=alive,
                                            caption=text,
                                            buttons=[
                                                [
@@ -849,11 +853,9 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline(
-                                "Menu Pengaturan", data="settings")],
+                            custom.Button.inline("Menu Pengaturan", data="settings")],
                         [custom.Button.inline("Menu Kembali", data="opener")],
-                        [custom.Button.inline(
-                            "Menu Tutup", b"close")],
+                        [custom.Button.inline("Menu Tutup", b"close")],
                     ]
                 )
             else:
