@@ -33,7 +33,7 @@ from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
-from requests import get, post, exceptions
+from requests import get
 from search_engine_parser import YahooSearch as GoogleSearch
 from googletrans import LANGUAGES, Translator
 from gtts import gTTS
@@ -1167,6 +1167,7 @@ def useragent():
         'lxml').findAll('td', {'class': 'useragent'})
     user_agent = choice(useragents)
     return user_agent.text
+
 
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
