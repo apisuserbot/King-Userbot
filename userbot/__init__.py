@@ -198,7 +198,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "King-Userbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "0.5.4")
+BOT_VER = os.environ.get("BOT_VER", "0.5.5")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -698,11 +698,11 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Menu Alive", data="alive_inline")],
+                                "🤖 Menu Alive 🤖", data="alive_inline"),
+                            custom.Button.inline(
+                                "🤖 Menu Database 🤖", data="database_inline")],
                         [custom.Button.inline(
-                            "Menu Database", data="database_inline")],
-                        [custom.Button.inline(
-                            "Kembali", data="menu_inline")],
+                            "⬅️ Kembali", data="menu_inline")],
                     ]
                 )
             else:
@@ -741,7 +741,7 @@ with king:
                             Button.url("License",
                                        "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "Kembali", data="settings")],
+                            "⬅️ Kembali", data="settings")],
                     ]
                 )
             else:
@@ -767,7 +767,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Kembali", data="settings")],
+                                "⬅️ Kembali", data="settings")],
                     ]
                 )
             else:
@@ -806,9 +806,9 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Info Plugins", b"info_plugins"),
+                                "🔒 Info Plugins 🔒", b"info_plugins"),
                             custom.Button.inline(
-                                "Menu Inline", data="menu_inline")],
+                                "📚 Menu Inline 📚", data="menu_inline")],
                     ]
                 )
             else:
@@ -855,11 +855,10 @@ with king:
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("Menu Pengaturan", data="settings")],
-                        [custom.Button.inline(
-                            "Menu Set Vars", data="menu_vars")],
-                        [custom.Button.inline("Menu Buka", data="opener")],
-                        [custom.Button.inline("Menu Tutup", b"close")],
+                        [custom.Button.inline("📍 Menu Pengaturan 📍", data="settings")],
+                        [custom.Button.inline("🔐 Menu Set Vars 🔐", data="menu_vars")],
+                        [custom.Button.inline("📚 Menu Buka 📚", data="opener")],
+                        [custom.Button.inline("🗑 Menu Tutup 🗑", b"close")],
                     ]
                 )
             else:
@@ -880,10 +879,10 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline("Alive", data="alive_vars")],
-                        [custom.Button.inline("Pmpermit", data="pmpermit_vars")],
-                        [custom.Button.inline("Inline", data="inline_vars")],
-                        [custom.Button.inline("Kembali", data="menu_inline")],
+                            custom.Button.inline("🤖 Vars Alive 🤖", data="alive_vars")],
+                        [custom.Button.inline("🤖 Vars Pmpermit 🤖", data="pmpermit_vars")],
+                        [custom.Button.inline("🤖 Vars Inline 🤖", data="inline_vars")],
+                        [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
                     ]
                 )
             else:
@@ -916,7 +915,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Kembali", data="menu_vars")],
+                                "⬅️ Kembali", data="menu_vars")],
                     ]
                 )
             else:
@@ -949,7 +948,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Kembali", data="menu_vars")],
+                                "⬅️ Kembali", data="menu_vars")],
                     ]
                 )
             else:
@@ -982,7 +981,7 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Kembali", data="menu_vars")],
+                                "⬅️ Kembali", data="menu_vars")],
                     ]
                 )
             else:
@@ -999,7 +998,7 @@ with king:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline(
-                            "Menu Kembali", data="menu_inline")],
+                            "⬅️ Kembali", data="menu_inline")],
                     ]
                 )
             else:
