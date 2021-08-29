@@ -13,7 +13,7 @@ async def get_adzan(adzan):
     if not adzan.pattern_match.group(1):
         LOCATION = PLACE
         if not LOCATION:
-            await adzan.edit("`Harap Menentukan Kota Atau Negara Anda`\n**Contoh :** `.adzan Jakarta` Ketik Sesuai Nama Kotamu atau Negara Masing Masing")
+            await adzan.edit("`Harap Menentukan Kota Atau Negara Anda`\n\n**Contoh :** `.adzan Jakarta` Ketik Sesuai Nama Kotamu atau Negara Masing Masing")
             return
     else:
         LOCATION = adzan.pattern_match.group(1)
