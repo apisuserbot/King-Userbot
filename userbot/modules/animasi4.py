@@ -47,6 +47,10 @@ async def rp(event):
     await event.edit("**MAKAN TUH PLASTIK AWOKAWOKAWOK**")
 
 
+@register(outgoing=True, pattern="^.ubot(?: |$)(.*)")
+async def ubot(event):
+    await event.edit("**GW TAU LU USERBOT TAPI GAUSAH NORAK NGENTOT**")
+
 CMD_HELP.update(
     {
         "roasting": "**✘ Plugin :** `Roasting`\
@@ -62,6 +66,8 @@ CMD_HELP.update(
         \n  •  **Function : **Animasi Berantem\
         \n\n  •  **Perintah :** `.rp`\
         \n  •  **Function : **Animasi rp\
+        \n\n  •  **Perintah :** `.ubot`\
+        \n  •  **Function : **Animasi Ubot\
     "
     }
 )
