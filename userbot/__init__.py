@@ -540,7 +540,7 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
                     f"__**{KING_TEKS_KUSTOM}**__ \n\n"
                     "=============================\n"
-                    f"     **Alive Bot** \n"
+                    f"       **Alive Bot** \n"
                     "=============================\n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
@@ -635,9 +635,6 @@ with king:
             elif query.startswith("king_bot"):
                 result = builder.article(
                     title="USERBOT TELEGRAM",
-                    description="King-Userbot | Telethon",
-                    url="https://heroku.com",
-                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
                     buttons=[],
                     link_preview=True)
             else:
@@ -879,8 +876,8 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline("🤖 Vars Alive 🤖", data="alive_vars")],
-                        [custom.Button.inline("🤖 Vars Pmpermit 🤖", data="pmpermit_vars")],
+                            custom.Button.inline("🤖 Vars Alive 🤖", data="alive_vars"),
+                            custom.Button.inline("🤖 Vars Pmpermit 🤖", data="pmpermit_vars")],
                         [custom.Button.inline("🤖 Vars Inline 🤖", data="inline_vars")],
                         [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
                     ]
@@ -897,7 +894,7 @@ with king:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**✘ Plugins :** `alive`\n"
+                    f"**✘ Plugins :** `Alive`\n"
                     f"** King : ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Menampilkan Alive Punya Kamu, Dengan Teks Dan Foto Yang Bagus Dan Meriah__\n\n"
@@ -906,8 +903,9 @@ with king:
                     f"✘ **Perintah :**\n"
                     f"`.kingalive` || `.kingon` || `.alive` || `.xalive` || `.xon` || `.ualive` || `.uon` \n\n"
                     f"✘ **Set Vars :**\n"
-                    f"`.set var ALIVE_LOGO` <link telegprah>\n"
-                    f"`.set var KING_TEKS_KUSTOM` <teks>")
+                    f"`.set var ALIVE_LOGO` <link>\n"
+                    f"`.set var KING_TEKS_KUSTOM` <teks>\n"
+                    f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
                     file=logo,
@@ -930,7 +928,7 @@ with king:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**✘ Plugins :** `pmpermit`\n"
+                    f"**✘ Plugins :** `Pmpermit`\n"
                     f"** King : ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Untuk Pesan Pribadi (Pmpermit) Kamu , Dan Bisa Set Dengan Foto Dan Teks Sesuka Hatimu__\n\n"
@@ -939,8 +937,9 @@ with king:
                     f"✘ **Perintah :**\n"
                     f"`.ok` || `.terima` || `.tolak` || `.tidak`\n\n"
                     f"✘ **Set Vars :**\n"
-                    f"`.set var PMPERMIT_PIC` <link telegprah>\n"
-                    f"`.set var PMPERMIT_TEXT` <teks>")
+                    f"`.set var PMPERMIT_PIC` <link>\n"
+                    f"`.set var PMPERMIT_TEXT` <teks>\n"
+                    f"`.set var PMPERMIT_PIC None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
                     file=logo,
@@ -972,8 +971,9 @@ with king:
                     f"✘ **Perintah :**\n"
                     f"`.helpme` \n\n"
                     f"✘ **Set Vars :**\n"
-                    f"`.set var INLINE_PIC` <link telegprah>\n"
-                    f"`.set var EMOJI_HELP` <emoji>")
+                    f"`.set var INLINE_PIC` <link>\n"
+                    f"`.set var EMOJI_HELP` <emoji>\n"
+                    f"`.set var INLINE_PIC None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
                     file=logo,
