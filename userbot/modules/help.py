@@ -33,10 +33,10 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t|  "
+            string += f"`\t{EMOJI_HELP}  "
         await event.edit("**📙 Menu Help!**\n\n"
                          f"**King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __King-Userbot__\n\n"
-                         f"**📚 Menu Help Inline** `helpme` \n\n"
+                         f"**📚 Menu Help Inline** `.helpme` \n\n"
                          "**❒ Main Menu ↯**\n"
                          f"╰►{EMOJI_HELP} {string} ◄─")
         await event.reply("\n**Contoh : ketik** `.help` <nama perintah> **Yang Sesuai Dengan Perintah Di Atas**\n\n**USERBOT TELEGRAM**")
