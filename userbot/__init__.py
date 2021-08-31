@@ -975,7 +975,7 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var INLINE_PIC` <link>\n"
                     f"`.set var EMOJI_HELP` <emoji>\n"
-                    f.`.set var EMOJI_INLINE` < emoji >\n"
+                    f"`.set var EMOJI_INLINE` <emoji>\n"
                     f"`.set var INLINE_PIC None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
