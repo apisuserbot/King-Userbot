@@ -218,7 +218,11 @@ INLINE_PIC = os.environ.get(
 EMOJI_HELP = os.environ.get(
     "EMOJI_HELP") or "|"
 
-# Last.fm Module
+# Default Emoji Inline
+EMOJI_INLINE = os.environ.get(
+    "EMOJI_INLINE") or "•"
+
+# Last.fm Plugin
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
@@ -692,9 +696,9 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "🤖 Menu Alive 🤖", data="alive_inline"),
+                                f"{EMOJI_INLINE} Menu Alive {EMOJI_INLINE}", data="alive_inline"),
                             custom.Button.inline(
-                                "🤖 Menu Database 🤖", data="database_inline")],
+                                f"{EMOJI_INLINE} Menu Database {EMOJI_INLINE}", data="database_inline")],
                         [custom.Button.inline(
                             "⬅️ Kembali", data="menu_inline")],
                     ]
@@ -800,9 +804,9 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "🔒 Info Plugins 🔒", b"info_plugins"),
+                                f"{EMOJI_INLINE} Info Plugins {EMOJI_INLINE}", b"info_plugins"),
                             custom.Button.inline(
-                                "📚 Menu Inline 📚", data="menu_inline")],
+                                f"{EMOJI_INLINE} Menu Inline {EMOJI_INLINE}", data="menu_inline")],
                     ]
                 )
             else:
@@ -849,9 +853,10 @@ with king:
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("📍 Menu Pengaturan 📍", data="settings")],
-                        [custom.Button.inline("🔐 Menu Set Vars 🔐", data="menu_vars")],
-                        [custom.Button.inline("📚 Menu Buka 📚", data="opener")],
+                        [
+                            custom.Button.inline(f"{EMOJI_INLINE} Menu Pengaturan {EMOJI_INLINE}", data="settings"),
+                            custom.Button.inline(f"{EMOJI_INLINE} Menu Set Vars {EMOJI_INLINE}", data="menu_vars")],
+                        [custom.Button.inline(f"{EMOJI_INLINE} Menu Buka {EMOJI_INLINE}", data="opener")],
                         [custom.Button.inline("🗑 Menu Tutup 🗑", b"close")],
                     ]
                 )
@@ -873,9 +878,9 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline("🤖 Vars Alive 🤖", data="alive_vars"),
-                            custom.Button.inline("🤖 Vars Pmpermit 🤖", data="pmpermit_vars")],
-                        [custom.Button.inline("🤖 Vars Inline 🤖", data="inline_vars")],
+                            custom.Button.inline(f"{EMOJI_INLINE} Vars Alive {EMOJI_INLINE}", data="alive_vars"),
+                            custom.Button.inline(f"{EMOJI_INLINE} Vars Pmpermit {EMOJI_INLINE}", data="pmpermit_vars")],
+                        [custom.Button.inline(f"{EMOJI_INLINE} Vars Inline {EMOJI_INLINE}", data="inline_vars")],
                         [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
                     ]
                 )
@@ -970,6 +975,7 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var INLINE_PIC` <link>\n"
                     f"`.set var EMOJI_HELP` <emoji>\n"
+                    f.`.set var EMOJI_INLINE` <emoji>\n"
                     f"`.set var INLINE_PIC None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
