@@ -627,7 +627,7 @@ with king:
                 result = builder.photo(
                     file=logo,
                     link_preview=False,
-                    text=f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**".format(
+                    text=f"\n📚 **Menu Help Inline!**\n\n**King** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -649,11 +649,8 @@ with king:
                                 "Repository",
                                 "https://github.com/apisuserbot/King-Userbot"),
                             custom.Button.url(
-                                "Developer",
-                                "t.me/PacarFerdilla")],
-                        [custom.Button.url(
-                            "License",
-                            "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+                                "License",
+                                "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                     ],
                     link_preview=False,
                 )
@@ -670,7 +667,7 @@ with king:
             if event.query.user_id == uid:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, plugins, "helpme")
-                text = f"\n⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n◎› **King** {DEFAULTUSER}\n\n◎› **Branch :** __King-Userbot__\n◎› **Versi Bot :** `v{BOT_VER}`\n◎› **Plugins :** `{len(plugins)}`\n\n**USERBOT TELEGRAM**"
+                text = f"\n📚 **Menu Help Inline!**\n\n**King** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
                                  file=logo,
                                  buttons=buttons,
