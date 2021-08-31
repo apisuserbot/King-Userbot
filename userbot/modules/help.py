@@ -6,7 +6,7 @@
 """ Userbot help command """
 
 import asyncio
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, EMOJI_HELP, CMD_HELP
 from userbot.events import register
 from platform import uname
 
@@ -37,12 +37,10 @@ async def help(event):
         await event.edit("⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n"
                          f"**◑» King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n\n"
                          "**❒ Main Menu ↯**\n"
-                         f"╰►| {string} ◄─")
-        await event.reply(
-            f"**◑» Perintah Plugin** \n\n"
-            f"**Contoh : Ketik** `.help afk` **Untuk Informasi Pengunaan Plugin Afk\nAtau Bisa Juga Ketik** `.helpme` **Untuk Help Button Lain-Nya** \n\n"
-            f"**USERBOT TELEGRAM** ")
-        await asyncio.sleep(1000)
+                         f"╰►{EMOJI_HELP} {string} ◄─ \n"
+        await event.reply(**◑» Perintah Plugin**\n\n**Contoh : Ketik** `.help afk` **Help Penggunaan Perintah\nAtau Bisa Juga Ketik** `.helpme` **Help Button Inline**\n\n**USERBOT TELEGRAM**")
+        await asyncio.sleep(2000)
         await event.delete()
+
 # fixes by apis
 # Jan Di Clone Help Nya , Usaha Lah Asu :)
