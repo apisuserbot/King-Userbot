@@ -35,11 +35,11 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t|  "
         await event.edit("**📙 Menu Help!**\n\n"
-                         f"**King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n\n"
+                         f"**King** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __King-Userbot__\n\n"
+                         f"**📚 Menu Help Inline** `helpme` \n\n"
                          "**❒ Main Menu ↯**\n"
                          f"╰►{EMOJI_HELP} {string} ◄─\n"
-                         f"**📚 Menu Help Inline** `helpme`")
-        await event.reply("\n**Contoh : ketik** `.help` <nama perintah> **Yang Sesuai Dengan Perintah Di Atas**\n**USERBOT TELEGRAM**")
+        await event.reply("\n**Contoh : ketik** `.help` <nama perintah> **Yang Sesuai Dengan Perintah Di Atas**\n\n**USERBOT TELEGRAM**")
         await asyncio.sleep(2000)
         await event.delete()
 
