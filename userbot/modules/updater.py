@@ -63,11 +63,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy King Userbot dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ dyno`'
             )
             return repo.__del__()
-        await event.edit('`[HEROKU] :'
-                         '\nDyno Userbot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
+        await event.edit('`[UPDATE DEPLOY] :'
+                         '\nDyno Userbot Sedang Dalam Proses, Mohon Menunggu 5-6 Menit`\n\n**Update Deploy** __(Bersifat Update Permanen)__'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sukses Di Deploy!`\n" "`Memulai Ulang, Mohon Menunggu King.....⚡`")
+            await event.edit("`⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sukses Di Deploy!`\n" "`Restart Userbot, Mohon Menunggu King.....⚡`")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -101,7 +101,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 "`King-Userbot Sukses Di Update`")
 
     else:
-        await event.edit('`[HEROKU]:'
+        await event.edit('`[HEROKU] :'
                          '\nHarap Siapkan Vars` **HEROKU_API_KEY** `.`'
                          )
         await asyncio.sleep(10)
@@ -117,16 +117,16 @@ async def update(event, repo, ups_rem, ac_br):
     await update_requirements()
     await event.edit('⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ `Sukses Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ `Di Mulai Ulang....`')
+    await event.edit('⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ `Di Restart...`')
     await asyncio.sleep(1)
-    await event.edit('`Mohon Menunggu Beberapa Detik King`')
+    await event.edit('`[UPDATE NOW] :`\n`Dyno Userbot Sedang Dalam Proses, Mohon Menunggu Beberapa Detik`\n\n**Update Now** __(Bersifat Update Sementara)__`')
     await asyncio.sleep(10)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#PERBARUI \n"
-            "**King-Userbot Telah Di Perbarui**")
+            BOTLOG_CHATID, "#UPDATE \n"
+            "**King-Userbot Telah Di Update**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -170,10 +170,10 @@ async def upstream(event):
     ac_br = repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
-            '**[UPDATER]:**\n'
-            f'`Sepertinya Anda menggunakan repo kustom Anda sendiri ({ac_br}). '
-            'dalam hal ini, Updater tidak dapat mengidentifikasi '
-            'repo mana yang akan digabungkan. '
+            '**[UPDATER] :**\n'
+            f'`Sepertinya Anda menggunakan repo kustom Anda sendiri ({ac_br})'
+            'dalam hal ini, Updater tidak dapat mengidentifikasi'
+            'repo mana yang akan digabungkan'
             'silakan checkout ke repo resmi mana pun`')
         return repo.__del__()
     try:
@@ -196,7 +196,7 @@ async def upstream(event):
     if conf is None and force_update is False:
         changelog_str = f'**✣ Pembaruan Untuk perintah [{ac_br}] :**\n\n**⎆ Pembaruan :**\n`{changelog}`'
         if len(changelog_str) > 4096:
-            await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
+            await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya`")
             file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
@@ -208,18 +208,18 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now`\n• **Perintah** `.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__')
+        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now` **[Update Sementara]**\n• **Perintah** `.update deploy` **[Update Permanen]**\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__')
 
     if force_update:
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....1%`')
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....20%`')
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....35%`')
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Loading....77%`')
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Updating...90%`')
-        await event.edit('`⎆ Proses Update ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡, Mohon Menunggu King....100%`')
+        await event.edit('`Userbot Update...1%`')
+        await event.edit('`Userbot Update...20%`')
+        await event.edit('`Userbot Update...35%`')
+        await event.edit('`Userbot Update...77%`')
+        await event.edit('`Userbot Update...90%`')
+        await event.edit('`Userbot Update...100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
@@ -233,13 +233,13 @@ async def upstream(event):
 
 CMD_HELP.update(
     {
-        "update": "**✘ Plugin : **`update`\
+        "update": "**✘ Plugin :** `Update`\
         \n\n  •  **Perintah :** `.update`\
-        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡.\
+        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\
         \n\n  •  **Perintah :** `.update now`\
-        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡.\
+        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sementara\
         \n\n  •  **Perintah :** `.update deploy`\
-        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Dengan Cara Deploy Ulang.\
+        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Permanen\
     "
     }
 )
