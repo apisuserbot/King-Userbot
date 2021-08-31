@@ -4,6 +4,9 @@
 # you may not use this file except in compliance with the License.
 #
 # Port to userbot by @MoveAngel
+# All Fixes
+#
+# Done!
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
@@ -62,8 +65,11 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit King Maaf:(`")
 
 
-CMD_HELP.update({
-    "sangmata":
-        "`.sa`\
-          \nUsage: Mendapatkan Riwayat Nama Pengguna."
-})
+CMD_HELP.update(
+    {
+        "sangmata": "**✘ Plugin :** `Sangmata`\
+        \n\n  •  **Perintah :** `.sa`\
+        \n  •  **Function : **Mendapatkan Riwayat Nama Pengguna\
+    "
+    }
+)
