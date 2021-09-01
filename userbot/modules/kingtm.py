@@ -1,5 +1,5 @@
-# from ultroid 
-# 
+# from ultroid
+#
 # fixes by Apis
 
 from telethon import events
