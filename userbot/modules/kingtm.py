@@ -1,8 +1,6 @@
-# BASED FROM ULTROID PORTED FOR LORD USERBOT BY ALVIN / @LIUALVINAS
-# THANKS ULTROID
-# DONT REMOVE THIS
-# APIS GANTENG
-# @USERBOT_GROUP
+# from ultroid 
+# 
+# fixes by Apis
 
 from telethon import events
 from userbot import CMD_HELP, bot
@@ -29,7 +27,7 @@ async def _(event):
             ((response).reply_markup.rows[2].buttons[0].url)
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await king.edit("`Mohon buka blokir` @TempMailBot `lalu coba lagi`")
+            await event.edit("`Mohon buka blokir` @TempMailBot `lalu coba lagi`")
             return
         await event.edit(f"**KING TEMPMAIL** ~ `{response.message.message}`\n\n[KLIK DISINI UNTUK VERIFIKASI]({kinguserbot})")
 
@@ -37,5 +35,11 @@ async def _(event):
 # Apis Ganteng
 # Ported For King Userbot From Ultroid
 
-CMD_HELP.update({"tempmail": "**Modules:** __Temp Mail__\n\n⚡𝘾𝙈𝘿⚡: `.tm`"
-                 "\n**Penjelasan:** Mendapatkan Email Gratis Dari Temp Mail"})
+CMD_HELP.update(
+    {
+        "tempmail": "**✘ Plugin :** __Tempmail__\
+        \n\n  •  **Perintah :** `.tm`\
+        \n  •  **Function : **Mendapatkan Email Gratis Dari Temp Mail\
+    "
+    }
+)
