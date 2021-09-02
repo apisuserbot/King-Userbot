@@ -2,6 +2,7 @@
 This module updates the userbot based on upstream revision
 """
 
+from time import sleep
 from os import remove, execle, path, environ
 import asyncio
 import sys
@@ -63,7 +64,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ dyno`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡`'
             )
             return repo.__del__()
         await event.edit('`[UPDATE DEPLOY] :'
@@ -86,13 +87,15 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         build = app.builds(order_by="created_at", sort="desc")[0]
         if build.status == "failed":
             await event.edit(
-                "`Build Gagal!`\n" "`Dibatalkan atau ada beberapa kesalahan...`"
+                "`Update Gagal!`\n" "`Dibatalkan atau ada beberapa kesalahan...`"
             )
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sukses Di Deploy!`\n" "`Restart Userbot, Mohon Menunggu King.....⚡`")
+            await event.edit("`Userbot Sukses Di Update!...`")
             await asyncio.sleep(15)
+            await event.edit("**Userbot Siap Digunakan Kembali!**\n\n__Ketik__ `.alive` atau `.ping` __Untuk Mengetes Userbot Anda Menyala Atau Tidak__")
+            sleep(10)
             await event.delete()
 
         if BOTLOG:
@@ -102,7 +105,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
     else:
         await event.edit('`[HEROKU] :'
-                         '\nHarap Siapkan Vars` **HEROKU_API_KEY** `.`'
+                         '\nHarap Siapkan Vars` **HEROKU_API_KEY**'
                          )
         await asyncio.sleep(10)
         await event.delete()
@@ -115,9 +118,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ `Sukses Di Update!`')
+    await event.edit('Userbot `Sukses Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ `Di Restart...`')
+    await event.edit('Userbot `Di Restart...`')
     await asyncio.sleep(1)
     await event.edit('`[UPDATE NOW] :`\n`Dyno Userbot Sedang Dalam Proses, Mohon Menunggu Beberapa Detik`\n\n**Update Now** __(Bersifat Update Sementara)__`')
     await asyncio.sleep(10)
@@ -208,11 +211,11 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now` **[Sementara]**\n• **Perintah** `.update deploy` **[Permanen]**\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__')
+        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now`\n• **Perintah** `.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__\n\n**Update Now** __Untuk Update Sementara__\n\n**Update Deploy** __Untuk Update Permanen__')
 
     if force_update:
         await event.edit(
-            '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
+            '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu ...`')
     else:
         await event.edit('`Userbot Update...1%`')
         await event.edit('`Userbot Update...20%`')
@@ -235,11 +238,11 @@ CMD_HELP.update(
     {
         "update": "**✘ Plugin :** `Update`\
         \n\n  •  **Perintah :** `.update`\
-        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\
+        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru Userbot\
         \n\n  •  **Perintah :** `.update now`\
-        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Sementara\
+        \n  •  **Function : **Memperbarui Userbot Sementara\
         \n\n  •  **Perintah :** `.update deploy`\
-        \n  •  **Function : **Memperbarui ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Permanen\
+        \n  •  **Function : **Memperbarui Userbot Permanen\
     "
     }
 )
