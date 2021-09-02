@@ -27,7 +27,7 @@ async def gen_chlog(repo, diff):
     ch_log = ''
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
+        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n\n📌 **Note :** __Commit Dari Github Repository Ini__\n'
     return ch_log
 
 
@@ -156,8 +156,8 @@ async def upstream(event):
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"`Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
-                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan .update now.`"
+                f"__Sayangnya, Directory {error} Tampaknya Bukan Dari Repo"
+                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan__ `.update now`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
@@ -194,7 +194,7 @@ async def upstream(event):
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**✣ Pembaruan Untuk perintah [{ac_br}] :**\n\n**⎆ Pembaruan :**\n`{changelog}`'
+        changelog_str = f'**✣ Pembaruan Terbaru Untuk perintah [{ac_br}] :**\n\n**⎆ Pembaruan Userbot :**\n\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya`")
             file = open("output.txt", "w+")
