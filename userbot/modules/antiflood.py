@@ -37,21 +37,21 @@ async def _(event):
     except Exception as e:  # pylint:disable=C0103,W0703
         no_admin_privilege_message = await event.client.send_message(
             entity=event.chat_id,
-            message="""**Automatic AntiFlooder**
-@admin [User](tg://user?id={}) is flooding this chat.
+            message="""**Anti Banjir Otomatis**
+@admin [User](tg://user?id={}) membanjiri obrolan ini
 
 `{}`""".format(event.message.from_id, str(e)),
             reply_to=event.message.id
         )
         await asyncio.sleep(10)
         await no_admin_privilege_message.edit(
-            "Sadly u don't have admin privilege")
+            "Sayangnya kamu tidak punya admin hak istimewa")
     else:
         await event.client.send_message(
             entity=event.chat_id,
-            message="""**Automatic AntiFlooder**
-[User](tg://user?id={}) has been automatically restricted
-because he reached the defined flood limit.""".format(event.message.from_id),
+            message="""**Anti Banjir Otomatis**
+[User](tg://user?id={}) telah dibatasi secara otomatis
+karena dia mencapai batas banjir yang ditentukan""".format(event.message.from_id),
             reply_to=event.message.id
         )
 
@@ -64,6 +64,6 @@ async def _(event):
     try:
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
-        await event.edit("Antiflood updated to {} in the current chat".format(input_str))
+        await event.edit("Antiflood diupdate ke {} dalam obrolan saat ini".format(input_str))
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
