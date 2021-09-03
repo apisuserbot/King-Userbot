@@ -4,7 +4,6 @@ This module updates the userbot based on upstream revision
 
 from time import sleep
 from os import remove, execle, path, environ
-import asyncio
 import sys
 
 from git import Repo
@@ -93,9 +92,9 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit("`Userbot Sukses Di Update!...`")
-            await asyncio.sleep(15)
+            sleep(3)
             await event.edit("**Userbot Siap Digunakan Kembali!**\n\n__Ketik__ `.alive` atau `.ping` __Untuk Mengetes Userbot Anda Menyala Atau Tidak__")
-            sleep(10)
+            sleep(1000)
             await event.delete()
 
         if BOTLOG:
@@ -211,7 +210,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now`\n• **Perintah** `.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__\n\n**Update Now** __Untuk Update Sementara__\n\n**Update Deploy** __Untuk Update Permanen__')
+        return await event.respond('✣ **Perintah Update :**\n\n• **Perintah** `.update now`\n• **Perintah** `.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Userbot__\n\n**Update Now** __(Bersifat Update Sementara)__\n\n**Update Deploy** __(Bersifat Update Permanen)__')
 
     if force_update:
         await event.edit(
