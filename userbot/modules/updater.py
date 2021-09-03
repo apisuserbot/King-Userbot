@@ -28,7 +28,7 @@ async def gen_chlog(repo, diff):
     ch_log = ''
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n\n📌 **Note :** __Commit Dari Github Repository Ini__\n'
+        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
     return ch_log
 
 
@@ -197,7 +197,7 @@ async def upstream(event):
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**✣ Pembaruan Terbaru Untuk perintah [{ac_br}] :**\n\n**⎆ Pembaruan Userbot :**\n\n`{changelog}`'
+        changelog_str = f'**✣ Pembaruan Terbaru Untuk perintah [{ac_br}] :**\n\n**⎆ Pembaruan Userbot :**\n\n`{changelog}`\n\n📌 **Note :** __Commit Dari Github Repository Ini__'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya`")
             file = open("output.txt", "w+")
