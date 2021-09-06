@@ -85,9 +85,9 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**╰━❖  king ping ❖━╯**\n"
-                    f"☞ __ping:__ "
+                    f"☞ __ping :__ "
                     f"`%sms` \n"
-                    f"☞ __i'm online:__ "
+                    f"☞ __i'm online :__ "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -101,9 +101,9 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"•⎚• ⎆ __King__ **Pong!**\n"
-                    f"☞  __Ping:__ "
+                    f"☞  __Ping :__ "
                     f"`%sms` \n"
-                    f"☞  __Sisa Waktu:__ "
+                    f"☞  __Sisa Waktu :__ "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -121,11 +121,11 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"卍════〠 **TEST PING** 〠════卍\n"
-                    f"═⎆ **Ping:** "
+                    f"═⎆ **Ping :** "
                     f"`%sms` \n"
-                    f"═⎆ **Sisa Waktu:** "
+                    f"═⎆ **Sisa Waktu :** "
                     f"`{uptime}` \n"
-                    f"**✠➲ King:** `{ALIVE_NAME}`" % (duration))
+                    f"**✠➲ King :** `{ALIVE_NAME}`" % (duration))
 
 
 @register(outgoing=True, pattern="^.sinyal$")
@@ -160,9 +160,9 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"┏━━| **KING PONG** |━━卍\n"
-                    f"┣|•  __Ping:__ "
+                    f"┣|•  __Ping :__ "
                     f"`%sms` \n"
-                    f"┗|• __Uptime:__ "
+                    f"┗|• __Uptime :__ "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -193,20 +193,20 @@ async def speedtst(spd):
     test.results.share()
     result = test.results.dict()
 
-    await spd.edit("**Hasil jaringan:\n**"
-                   "🛠 **Dimulai Pada:** "
+    await spd.edit("**Hasil jaringan :\n**"
+                   "🛠 **Dimulai Pada :** "
                    f"`{result['timestamp']}` \n"
-                   f" ━━━━━━━━━━━━━━━━━\n\n"
-                   "✧ **Download:** "
+                   f" ━━━━━━━━━━━━━━━━━━━━━\n\n"
+                   "✧ **Download :** "
                    f"`{speed_convert(result['download'])}` \n"
-                   "✧ **Upload:** "
+                   "✧ **Upload :** "
                    f"`{speed_convert(result['upload'])}` \n"
-                   "✧ **Ping:** "
+                   "✧ **Ping :** "
                    f"`{result['ping']}` \n"
-                   "✧ **ISP:** "
+                   "✧ **ISP :** "
                    f"`{result['client']['isp']}` \n"
-                   "✧ **BOT:** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n\n"
-                   f" ━━━━━━━━━━━━━━━━━ ")
+                   "✧ ** USERBOT TELEGRAM **\n\n"
+                   f" ━━━━━━━━━━━━━━━━━━━━━")
 
 
 # Port WeebProject
