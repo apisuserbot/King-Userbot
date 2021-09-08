@@ -444,7 +444,6 @@ with king:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        user = user.id
         logo = INLINE_PIC
         alive = ALIVE_LOGO
 
@@ -595,7 +594,7 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
-            if event.message.from_id != user:
+            if event.user_id:
                 u = await event.client.get_entity(event.user_id)
                 await event.message.get_sender()
                 text = (
