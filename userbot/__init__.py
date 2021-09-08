@@ -595,7 +595,7 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
-            if event.message.user_id != uid:
+            if event.message.from_id != user:
                 u = await event.client.get_entity(event.user_id)
                 await event.message.get_sender()
                 text = (
