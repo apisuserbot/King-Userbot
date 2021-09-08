@@ -594,7 +594,7 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
-            if event.user_id:
+            if event.message.user_id:
                 u = await event.client.get_entity(event.user_id)
                 await event.message.get_sender()
                 text = (
@@ -602,7 +602,7 @@ with king:
                     f"Ingin Mengambil String Session Ini Di Bot\n\n"
                     f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
                     f"⚠️ **Gunakan String Session Dengan Bijak**")
-                await king.tgbot.send_file(event.chat_id, file=string,
+                await king.tgbot.send_file(event.user_id, file=string,
                                            caption=text,
                                            buttons=[
                                                [
