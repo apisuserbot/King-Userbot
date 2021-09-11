@@ -448,7 +448,6 @@ with king:
         alive = ALIVE_LOGO
 
         donate = "https://telegra.ph/file/4f8964fdd184b76b7ec8a.jpg"
-        string = "https://telegra.ph/file/aeb56a08420e39cc8e07b.jpg"
         plugins = CMD_HELP
 
 # ------------------------------ChatAction--------------->
@@ -519,8 +518,8 @@ with king:
                         [
                             Button.url("Repository",
                                        "https://github.com/apisuserbot/King-Userbot"),
-                            Button.url("Tutorial Deploy",
-                                       "https://t.me/TeamKingUserbot/16")],
+                            Button.url("License",
+                                       "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
                     ]
                 )
 
@@ -594,25 +593,19 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
-            if event.message.user_id:
+            if event.reply.user_id:
                 u = await event.client.get_entity(event.user_id)
-                await event.message.get_sender()
-                text = (
+                await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin Mengambil String Session Ini Di Bot\n\n"
                     f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
-                    f"⚠️ **Gunakan String Session Dengan Bijak**")
-                await king.tgbot.send_file(event.user_id, file=string,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="String Session",
-                                                       url="https://replit.com/@apisuserbot/String-Session?v=1"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                    f"⚠️ **Gunakan String Session Dengan Bijak**\n",
+                    buttons=[
+                        [
+                            Button.url("String Session",
+                                       "https://replit.com/@apisuserbot/String-Session?v=1")],
+                    ]
+                )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
