@@ -540,7 +540,7 @@ with king:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) **Ini Adalah Alive**\n\n"
+                    f"**Pesan Alive**\n\n"
                     f"__**{KING_TEKS_KUSTOM}**__ \n\n"
                     "=============================\n"
                     f"       **Alive Bot** \n"
@@ -593,13 +593,14 @@ with king:
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
-            if event.reply.user_id:
-                u = await event.client.get_entity(event.user_id)
+            if event.message.from_id != uid:
+                reply = "**STRING SESSION**"
                 await event.reply(
-                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
-                    f"Ingin Mengambil String Session Ini Di Bot\n\n"
-                    f"Tanpa Harus Anda Bergabung Ke Grup Support Kami\n\n"
-                    f"⚠️ **Gunakan String Session Dengan Bijak**\n",
+                    f"**Hai Kamu!**\n\n"
+                    f"Ingin Mengambil String Session Ini Di Bot?\n\n"
+                    f"Cukup Ambil Dibawah Button URL Ini\n\n"
+                    f"⚠️ **Gunakan String Session Dengan Bijak**\n\n"
+                    f"{reply}\n",
                     buttons=[
                         [
                             Button.url("String Session",
