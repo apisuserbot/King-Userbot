@@ -39,9 +39,9 @@ async def help(event):
                          "**❒ Main Menu ↯**\n"
                          f"╰►| {string} ◄─")
         await event.reply(
-            f"**◑» Perintah Plugin** \n\n"
-            f"**Contoh : Ketik** `.help afk` **Untuk Informasi Pengunaan Plugin Afk\nAtau Bisa Juga Ketik** `.helpme` **Untuk Help Button Lain-Nya** \n\n"
-            f"**USERBOT TELEGRAM** ")
+            '**◑» Perintah Plugin** \n\n**Contoh : Ketik** `.help afk` **Untuk Informasi Pengunaan Plugin Afk\nAtau Bisa Juga Ketik** `.helpme` **Untuk Help Button Lain-Nya** \n\n**USERBOT TELEGRAM** '
+        )
+
         await asyncio.sleep(1000)
         await event.delete()
 # fixes by apis
