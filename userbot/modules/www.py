@@ -129,7 +129,8 @@ async def pingme(pong):
                     f"═⎆ **Sisa Waktu:** "
                     f"`{uptime}` \n"
                     f"**✠➲ Lord:** `{ALIVE_NAME}`" % (duration))
-                    f"═⎆ **Pesan:Pap Tengktopnya Kakak🥰🥰** "
+    f"═⎆ **Pesan:Pap Tengktopnya Kakak🥰🥰** "
+
 
 @register(outgoing=True, pattern="^.sinyal$")
 async def pingme(pong):
@@ -151,6 +152,7 @@ async def pingme(pong):
                     f"**☞ i'm online  :** "
                     f"`{uptime}` \n"
                     f"__|━|⎆__ **My king  :** `{ALIVE_NAME}`" % (duration))
+
 
 @register(outgoing=True, pattern="^.uping$")
 async def pingme(pong):
