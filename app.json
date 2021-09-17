@@ -1,7 +1,7 @@
 {
-  "name": "King-Userbot",
-  "description": "[King-Userbot] USERBOT TELEGRAM.",
-  "logo": "https://telegra.ph/file/632a843c5fbb0756e5b4e.jpg",
+  "name": "Cok-Userbot",
+  "description": "[Cok-Userbot] USERBOT TELEGRAM.",
+  "logo": "https://telegra.ph/file/1cdbbd432ccb206eb4c9b.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/apisuserbot/King-Userbot",
   "telegram": "https://t.me/PacarFerdilla",
-  "success_url": "https://t.me/KingUserbotSupport",
+  "success_url": "https://t.me/yangmutebabi",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di repl caranya ada di repo, jika tidak tau bisa ke @KingUserbotSupport lalu ketik #string",
+      "description": "Dapatkan String Session di repl caranya ada di repo, jika tidak tau bisa ke @yangmutebabi",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -151,7 +151,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️",
+      "value": "<b>𖣘COK-𝙐𝙎𝙀𝙍𝘽𝙊𝙏𖣘<b>",
       "required": false
     },
     "ALIVE_NAME": {
