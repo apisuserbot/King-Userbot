@@ -49,8 +49,8 @@ Terimakasih telah menggunakan repository ini!
   Jangan pernah sekali sekali menyalah gunakan repository ini
 ```
 
-### Repo King Userbot 🚀
-Repo Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repo Userbot yg ada diGithub 
+### Repository King Userbot 🚀
+Repository Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repository Userbot yg ada diGithub 
 
 `
 Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mungkin dapat membantu kamu tanpa harus mengakses apk lain`
@@ -79,7 +79,7 @@ Klik tombol di bawah untuk join ke group support kami`
 Klik tombol di samping untuk membuat string milikmu`
    [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://replit.com/@apisuserbot/String-Session?v=1)
 
-### <p align="left">DEPLOY KING-USERBOT 🛰</p>
+### <p align="left">📍 Deploy King-Userbot 📍</p>
 `
 Klik tombol dibawah untuk deploy King Userbot milikmu`
 
@@ -110,7 +110,6 @@ DAN LAINNYA
 
 *  [Apis](https://github.com/apisuserbot) - Developer
 *  [Alvin](https://github.com/Zora24) - Contributor
-*  [Axel](https://github.com/KENZO-404) - Contributor
 *  [Yunus](https://github.com/Yunus-Zend) - Contributor
 *  [Ridho](https://github.com/ridho17-ind) - Contributor
 
