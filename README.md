@@ -49,8 +49,8 @@ Terimakasih telah menggunakan repository ini!
   Jangan pernah sekali sekali menyalah gunakan repository ini
 ```
 
-### Repository King Userbot 🚀
-Repository Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repository Userbot yg ada diGithub 
+### Repository King Userbot 👑
+Repository Yang Dikelola oleh [Apis](https://t.me/PacarFerdilla) Dari Berbagai Repository Userbot yang ada di Github 
 
 `
 Userbot digunakan untuk bersenang senang di telegram, ada beberapa fitur yg mungkin dapat membantu kamu tanpa harus mengakses apk lain`
