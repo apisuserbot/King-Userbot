@@ -107,7 +107,7 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**KING USERBOT ERROR REPORT**\n"
+                    text = "**HATSUNE MIKU USERBOT ERROR REPORT**\n"
                     text += "Tidak ada yang dicatat kecuali fakta kesalahan dan tanggal\n\n"
 
                     ftext = "========== DISCLAIMER =========="

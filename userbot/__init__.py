@@ -169,14 +169,14 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# untuk perintah .kingon
-KING_TEKS_KUSTOM = os.environ.get("KING_TEKS_KUSTOM", None)
+# untuk perintah .hatsuneon
+HATSUNE_TEKS_KUSTOM = os.environ.get("HATSUNE_TEKS_KUSTOM", None)
 
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "❀")
 
 # Custom Umur
 UMUR = os.environ.get("UMUR", None)
@@ -195,7 +195,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "King-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "HatsuneMiku-Userbot")
 
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "0.5.5")
@@ -465,7 +465,7 @@ with king:
                     buttons=[
                         [
                             Button.url("Tutorial Userbot",
-                                       "https://t.me/KingUserbotSupport")],
+                                       "https://t.me/hatsuneMikuBotSupport")],
                     ]
                 )
 
@@ -496,10 +496,10 @@ with king:
                                                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                                                [custom.Button.url(
                                                    text="Support Chat",
-                                                   url="https://t.me/KingUserbotSupport"),
+                                                   url="https://t.me/hatsuneMikuBotSupport"),
                                                    custom.Button.url(
                                                        text="Support Channel",
-                                                       url="https://t.me/TeamKingUserbot"
+                                                       url="https://t.me/hatsuneMikuBotSupport"
                                                )
                                                ]
                                            ]
@@ -541,7 +541,7 @@ with king:
                 await event.message.get_sender()
                 text = (
                     f"**Pesan Alive**\n\n"
-                    f"__**{KING_TEKS_KUSTOM}**__ \n\n"
+                    f"__**{HATSUNE_TEKS_KUSTOM}**__ \n\n"
                     "=============================\n"
                     f"       **Alive Bot** \n"
                     "=============================\n"
@@ -559,7 +559,7 @@ with king:
                                            buttons=[
                                                [
                                                    custom.Button.url(
-                                                       text="Repository",
+                                                       text="Developer",
                                                        url="https://github.com/apisuserbot/King-Userbot"),
                                                    custom.Button.url(
                                                        text="License",
