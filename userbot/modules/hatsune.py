@@ -47,14 +47,14 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern="^.king(?: |$)(.*)")
+@register(outgoing=True, pattern="^.hatsune(?: |$)(.*)")
 async def _(event):
     event.pattern_match.group(1)
     await event.edit(
         f"`Halo {ALIVE_NAME} Saya Adalah Hatsune Miku Bot Yang Menjaga Akun ini`"
         f"`Agar Terhindar Dari Orang Orang Jahat Di Telegram`"
         f"\n---------------------------------------------------"
-        f"\n__**(C) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
+        f"\n__**(C) copyright 2021 Hatsune Miku-Userbot USERBOT TELEGRAM**__"
         f"\n\n**Pemilik :** `{ALIVE_NAME}`")
 
 CMD_HELP.update(
@@ -67,7 +67,7 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.punten` | `.pantau`\
         \n  •  **Function : **Untuk punten dan pantau\
         \n\n  ** Perintah kosong **\
-        \n  ** Harap chat developer king @ZenitsuID Jika ingin mengidekan sesuatu yang menarik **\
+        \n  ** Harap chat developer Hatsune Miku @ZenitsuID Jika ingin mengidekan sesuatu yang menarik **\
         \n\n  ** Perintah kosong **\
         \n  ** Harap chat developer Hatsune Miku @ZenitsuID Jika ingin mengidekan sesuatu yang menarik **\
     "
