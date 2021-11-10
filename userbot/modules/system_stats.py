@@ -317,9 +317,9 @@ async def redis(alive):
     await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
     await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
     await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑.__")
+    await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑..__")
     await alive.edit("__𝐌𝐄𝐌𝐄𝐊.__")
-    await alive.edit("⚡")
-    await asyncio.sleep(3)
+    await alive.edit("__𝐌𝐄𝐌𝐄𝐊..__")
     await alive.edit("🤡")
     await asyncio.sleep(3)
     output = (
