@@ -163,10 +163,7 @@ async def _(event):
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
-    if reply:
-        pic = await event.client.download_media(reply)
-    else:
-        pic = None
+    pic = await event.client.download_media(reply) if reply else None
     if not USER_AFK:
         last_seen_status = await bot(
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
