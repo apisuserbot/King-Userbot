@@ -234,7 +234,7 @@ async def amireallyalive(alive):
         f"┗┓❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀┏┛\n"
         f"\n__**{HATSUNE_TEKS_KUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━━━━━━━**\n"
-        f"★ ** Hatsune Miku ** \n"
+        f"★ ** HatsuneMiku-Userbot ** \n"
         f"☇ : `{DEFAULTUSER}` \n"
         f"★ ** Username ** \n"
         f"☇ : `@{user.username}` \n"
@@ -244,9 +244,9 @@ async def amireallyalive(alive):
         f"|✶ 👾 `Versi Userbot  :` v{BOT_VER} \n"
         f"|✶ 📂 `Plugins        :` {len(plugins)} Plugin\n"
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Copyright :** [Hatsune Miku Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
-        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
+        f"• **Copyright :** [Hatsune Miku Userbot Company](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) \n"
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/HatsuneMikuUserbot) ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -272,20 +272,19 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"  𝗫 ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀ 𝗫 \n"
+        f"      ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀ \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"╟ 🤴 Hatsune Miku     : {DEFAULTUSER}\n"
-        f"╟ 🔎 Username : @{user.username}\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+        f"╟◈ 🔎 Username : @{user.username}\n"
         f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
         f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
         f"╟◈ 💻 `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 🛠 `Version  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"• **Copyright :** [Hatsune Miku Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
-        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) \n"
+        f"• **Copyright :** [HatsuneMiku-Userbot Company LLC](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) \n"
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/HatsuneMikuUserbot) \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -311,18 +310,17 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐗...𝐒𝐈𝐒𝐓𝐄𝐌...𝐗__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒.__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒.__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
+    await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑.__")
+    await alive.edit("__𝐌𝐄𝐌𝐄𝐊.__")
     await alive.edit("⚡")
     await asyncio.sleep(3)
-    await alive.edit("😈")
+    await alive.edit("🤡")
     await asyncio.sleep(3)
     output = (
         f"**╭╼══════════════════╾╮**\n"
@@ -336,14 +334,14 @@ async def redis(alive):
         f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
         f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
-        f"╟◈ 📂 `Plugins   :` {len(plugins)} Plugin \n"
-        f"╟◈ 🤴 'Developer : @ZenitsuID \n"
+        f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
+        f"╟◈ 🤴 'Developer  :' ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ #𝙈•𝙍•𝙏™\n"
         f"┞╼════════════════════╾┤ \n"
         f"├◈ **{HATSUNE_TEKS_KUSTOM}** \n"
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[License](https://github.com/ZenitsuXD/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
+        f"[License](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
         f"[Support Channel](t.me/TeamKingUserbot)")
     if ALIVE_LOGO:
         try:
@@ -374,9 +372,8 @@ async def redis(alive):
     await alive.edit("⚡")
     await asyncio.sleep(3)
     output = (
-        f"★ [HatsuneMiku-Userbot](https://github.com/apisuserbot/King-Userbot) **Running Userbot Active!** ★\n\n"
-        f"__**{KING_TEKS_KUSTOM}**__\n\n"
-        f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
+        f"★ [HatsuneMiku-Userbot](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) **Running Userbot Active!** ★\n\n"
+        f"__**{HATSUNE_TEKS_KUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **Plugins :** `{len(plugins)} Plugin` \n"
         f"{ALIVE_EMOJI} **Userbot Version :** `v{BOT_VER}` \n"
         f"{ALIVE_EMOJI} **Python Version :** `v{python_version()}` \n"
@@ -410,7 +407,7 @@ async def alive(event):  # created by Apis
     await asyncio.sleep(3)
     text = (
         f" **HatsuneMiku-Userbot | Telethon** \n\n"
-        f"{ALIVE_EMOJI} **Hatsune :** __{DEFAULTUSER}__ \n"
+        f"{ALIVE_EMOJI} **Pengguna :** __{DEFAULTUSER}__ \n"
         f"{ALIVE_EMOJI} **Plugins :** __{len(plugins)} Plugin__ \n"
         f"{ALIVE_EMOJI} **Versi Userbot :** __v{BOT_VER}__ \n"
         f"{ALIVE_EMOJI} **Versi Python :** __v{python_version()}__ \n"
