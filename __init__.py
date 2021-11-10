@@ -98,7 +98,7 @@ PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
 # Custom Pmpermit pic
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/0f264a1d2585c9b6d0f28.jpg"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
 
 # Bleep Blop, this is a bot :)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
@@ -125,7 +125,7 @@ UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
     "https://github.com/apisuserbot/King-Userbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "HatsuneMiku-Userbot")
+    "UPSTREAM_REPO_BRANCH", "King-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -176,7 +176,7 @@ HATSUNE_TEKS_KUSTOM = os.environ.get("HATSUNE_TEKS_KUSTOM", None)
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "❀")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
 
 # Custom Umur
 UMUR = os.environ.get("UMUR", None)
@@ -195,7 +195,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "HatsuneMiku-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "King-Userbot")
 
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "0.5.5")
@@ -208,11 +208,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/0f264a1d2585c9b6d0f28.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
 
 # Default .helpme logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/0f264a1d2585c9b6d0f28.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
 
 # Default Emoji Help Inline
 EMOJI_HELP = os.environ.get(
@@ -432,7 +432,7 @@ def paginate_help(page_number, loaded_modules, prefix):
 # -----------------------------------------------File------------------------------------>
 king = bot
 
-with king:
+with HatsuneMiku:
     try:
         king.tgbot = tgbot = TelegramClient(
             "BOT_TOKEN",
@@ -465,7 +465,7 @@ with king:
                     buttons=[
                         [
                             Button.url("Tutorial Userbot",
-                                       "https://t.me/hatsuneMikuBotSupport")],
+                                       "https://t.me/KingUserbotSupport")],
                     ]
                 )
 
@@ -496,10 +496,10 @@ with king:
                                                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                                                [custom.Button.url(
                                                    text="Support Chat",
-                                                   url="https://t.me/hatsuneMikuBotSupport"),
+                                                   url="https://t.me/KingUserbotSupport"),
                                                    custom.Button.url(
                                                        text="Support Channel",
-                                                       url="https://t.me/hatsuneMikuBotSupport"
+                                                       url="https://t.me/TeamKingUserbot"
                                                )
                                                ]
                                            ]
@@ -559,7 +559,7 @@ with king:
                                            buttons=[
                                                [
                                                    custom.Button.url(
-                                                       text="Developer",
+                                                       text="Repository",
                                                        url="https://github.com/apisuserbot/King-Userbot"),
                                                    custom.Button.url(
                                                        text="License",
@@ -620,12 +620,12 @@ with king:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith(
-                    "@HatsuneMikuUserbotSupport"):
+                    "@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logo,
                     link_preview=False,
-                    text=f"\n📚 **Menu Help Inline!**\n\n**Hatsune Miku** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**".format(
+                    text=f"\n📚 **Menu Help Inline!**\n\n**King** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -638,9 +638,9 @@ with king:
             else:
                 result = builder.article(
                     title="USERBOT TELEGRAM",
-                    description="Hatsune Miku-Userbot | Telethon",
+                    description="King-Userbot | Telethon",
                     url="https://heroku.com",
-                    text="**Hatsune Miku-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/HatsuneMikuUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamHatsuneMikuUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
+                    text="**King-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n• **Support Chat :** [KLIK DISINI](https://t.me/KingUserbotSupport)\n• **Support Channel :** [KLIK DISINI](https://t.me/TeamKingUserbot)\n➖➖➖➖➖➖➖➖➖➖\n\n⚠️ DISCLAIMER ⚠️\n\n• Baca Peraturan [Disini](https://telegra.ph/Peraturan-08-04)",
                     buttons=[
                         [
                             custom.Button.url(
@@ -665,7 +665,7 @@ with king:
             if event.query.user_id == uid:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, plugins, "helpme")
-                text = f"\n📚 **Menu Help Inline!**\n\n**Hatsune Miku** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**"
+                text = f"\n📚 **Menu Help Inline!**\n\n**King** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**"
                 await event.edit(text,
                                  file=logo,
                                  buttons=buttons,
@@ -710,11 +710,11 @@ with king:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"__**{HATSUNE_TEKS_KUSTOM}**__ \n\n"
+                    f"__**{KING_TEKS_KUSTOM}**__ \n\n"
                     "============================\n"
                     f"      **Alive Inline** \n"
                     "============================\n"
-                    f"`Hatsune Miku      :` {DEFAULTUSER} \n"
+                    f"`King      :` {DEFAULTUSER} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
@@ -897,16 +897,16 @@ with king:
             if event.query.user_id == uid:
                 text = (
                     f"**✘ Plugins :** `Alive`\n"
-                    f"** HATSUNE MIKU : ** {DEFAULTUSER}\n\n"
+                    f"** King : ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Menampilkan Alive Punya Kamu, Dengan Teks Dan Foto Yang Bagus Dan Meriah__\n\n"
                     f"✘ **Deskripsi :**\n"
                     f"__Kamu Juga Dapat Mengubah Foto Dan Teks Custom Sesuka Hatimu Perintah Dibawah__\n\n"
                     f"✘ **Perintah :**\n"
-                    f"`.hatsunealive` || `.hatsuneon` || `.alive` || `.xalive` || `.xon` || `.ualive` || `.uon` \n\n"
+                    f"`.kingalive` || `.kingon` || `.alive` || `.xalive` || `.xon` || `.ualive` || `.uon` \n\n"
                     f"✘ **Set Vars :**\n"
                     f"`.set var ALIVE_LOGO` <link>\n"
-                    f"`.set var HATSUNE_TEKS_KUSTOM` <teks>\n"
+                    f"`.set var KING_TEKS_KUSTOM` <teks>\n"
                     f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,

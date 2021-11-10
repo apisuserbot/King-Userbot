@@ -61,11 +61,7 @@ def register(**args):
                 # Messages sent in channels can be edited by other users.
                 # Ignore edits that take place in channels.
                 return
-            if not LOGSPAMMER:
-                send_to = check.chat_id
-            else:
-                send_to = BOTLOG_CHATID
-
+            send_to = check.chat_id if not LOGSPAMMER else BOTLOG_CHATID
             if not trigger_on_fwd and check.fwd_from:
                 return
 
@@ -88,14 +84,8 @@ def register(**args):
             try:
                 await func(check)
 
-            # Thanks to @kandnub for this HACK.
-            # Raise StopPropagation to Raise StopPropagation
-            # This needed for AFK to working properly
-
             except events.StopPropagation:
                 raise events.StopPropagation
-            # This is a gay exception and must be passed out. So that it doesnt
-            # spam chats
             except KeyboardInterrupt:
                 pass
             except BaseException:
@@ -107,7 +97,7 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**KING USERBOT ERROR REPORT**\n"
+                    text = "**HATSUNE MIKU USERBOT ERROR REPORT**\n"
                     text += "Tidak ada yang dicatat kecuali fakta kesalahan dan tanggal\n\n"
 
                     ftext = "========== DISCLAIMER =========="
@@ -167,8 +157,6 @@ def register(**args):
 
                         await check.client.send_file(send_to, "error.txt", caption=anu)
                         remove("error.txt")
-            else:
-                pass
 
         if not disable_edited:
             bot.add_event_handler(wrapper, events.MessageEdited(**args))

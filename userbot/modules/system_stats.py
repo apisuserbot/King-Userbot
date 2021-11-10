@@ -21,7 +21,7 @@ from os import remove
 from telethon import __version__, version
 
 from datetime import datetime
-from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, KING_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, HATSUNE_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 
@@ -101,10 +101,10 @@ async def psu(event):
     bw = "**Bandwith Digunakan**\n"
     bw += f"`Unggah  : {get_size(psutil.net_io_counters().bytes_sent)}`\n"
     bw += f"`Download: {get_size(psutil.net_io_counters().bytes_recv)}`\n"
-    help_string = f"{str(softw)}\n"
-    help_string += f"{str(cpuu)}\n"
-    help_string += f"{str(memm)}\n"
-    help_string += f"{str(bw)}\n"
+    help_string = f'{softw}\n'
+    help_string += f'{cpuu}\n'
+    help_string += f'{memm}\n'
+    help_string += f'{bw}\n'
     help_string += "**Informasi Mesin**\n"
     help_string += f"`Python {sys.version}`\n"
     help_string += f"`Telethon {__version__}`"
@@ -169,9 +169,9 @@ async def bot_ver(event):
         await event.edit("`Memeriksa Versi Userbot...`")
         sleep(3)
         await event.edit(
-            " ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ \n\n"
+            " ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀ \n\n"
             f"**★ Versi Userbot :** v{BOT_VER} \n"
-            f"**★ heads :** heads/King-Userbot-0-x634i7u1 \n"
+            f"**★ heads :** heads/HatsuneMiku-Userbot-0-x634i7u1 \n"
             f"**★ Revisi :** {revout}"
         )
     else:
@@ -201,9 +201,8 @@ async def pipcheck(pip):
         if pipout:
             if len(pipout) > 4096:
                 await pip.edit("`Output Terlalu Besar, Dikirim Sebagai File`")
-                file = open("output.txt", "w+")
-                file.write(pipout)
-                file.close()
+                with open("output.txt", "w+") as file:
+                    file.write(pipout)
                 await pip.client.send_file(
                     pip.chat_id,
                     "output.txt",
@@ -226,15 +225,15 @@ async def pipcheck(pip):
         await pip.edit("**Harap Gunakan** `.help pip` **Untuk Melihat Contoh**")
 
 
-@register(outgoing=True, pattern=r"^\.(?:kingalive|kingon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:hatsunealive|hatsuneon)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"┗┓★ ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ★┏┛\n"
-        f"\n__**{KING_TEKS_KUSTOM}**__\n"
+        f"┗┓❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀┏┛\n"
+        f"\n__**{HATSUNE_TEKS_KUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━━━━━━━**\n"
-        f"★ ** King ** \n"
+        f"★ ** HatsuneMiku-Userbot ** \n"
         f"☇ : `{DEFAULTUSER}` \n"
         f"★ ** Username ** \n"
         f"☇ : `@{user.username}` \n"
@@ -244,9 +243,9 @@ async def amireallyalive(alive):
         f"|✶ 👾 `Versi Userbot  :` v{BOT_VER} \n"
         f"|✶ 📂 `Plugins        :` {len(plugins)} Plugin\n"
         f"╰╼━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
-        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
+        f"• **Copyright :** [Hatsune Miku Userbot Company](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) \n"
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/HatsuneMikuUserbot) ")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -272,20 +271,19 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"  𝗫 ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ 𝗫 \n"
+        f"      ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀ \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"╟ 🤴 KING     : {DEFAULTUSER}\n"
-        f"╟ 🔎 Username : @{user.username}\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+        f"╟◈ 🔎 Username : @{user.username}\n"
         f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
         f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
         f"╟◈ 💻 `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 🛠 `Version  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-        f"• **Copyright :** [King Userbot Company LLC](https://github.com/apisuserbot/King-Userbot) \n"
-        f"• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
-        f"• **Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) \n"
+        f"• **Copyright :** [HatsuneMiku-Userbot Company LLC](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) \n"
+        f"• **License :** [Raphielscape Version 1.d](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) \n"
+        f"• **Support :** [USERBOT TELEGRAM](https://t.me/HatsuneMikuUserbot) \n"
         f"━━━━━━━━━━━━━━━━━━━━━╯")
     if ALIVE_LOGO:
         try:
@@ -311,40 +309,39 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑...__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑..__")
-    await alive.edit("__𝐄 𝐑 𝐑 𝐎 𝐑.__")
-    await alive.edit("__𝐗...𝐒𝐈𝐒𝐓𝐄𝐌...𝐗__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒.__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒.__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
+    await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
+    await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑.__")
+    await alive.edit("__𝐌𝐄𝐌𝐄𝐊..__")
     await alive.edit("⚡")
     await asyncio.sleep(3)
-    await alive.edit("😈")
+    await alive.edit("🤡")
     await asyncio.sleep(3)
     output = (
         f"**╭╼══════════════════╾╮**\n"
-        f" ㅤ    ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
+        f" ㅤ      ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀    \n"
         f"**╰╼══════════════════╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 🤴 `King     :` {DEFAULTUSER} \n"
         f"╟◈ 🔎 `Username :` @{user.username} \n"
         f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
         f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
         f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
+        f"╟◈ 🤴 `Developer :` ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ \n"
         f"┞╼════════════════════╾┤ \n"
-        f"├◈ **{KING_TEKS_KUSTOM}** \n"
+        f"├◈ **{HATSUNE_TEKS_KUSTOM}** \n"
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
-        f"[Support Channel](t.me/TeamKingUserbot)")
+        f"[License](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) | [Support Chat](t.me/HatsuneMikuUserbotSupport) | "
+        f"[Gbanned Logsl](t.me/HatsuneMikuBannedLogs)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -374,9 +371,8 @@ async def redis(alive):
     await alive.edit("⚡")
     await asyncio.sleep(3)
     output = (
-        f"★ [King-Userbot](https://github.com/apisuserbot/King-Userbot) **Running Userbot Active!** ★\n\n"
-        f"__**{KING_TEKS_KUSTOM}**__\n\n"
-        f"{ALIVE_EMOJI} **King :** `{DEFAULTUSER}` \n"
+        f"★ [HatsuneMiku-Userbot](https://github.com/ZenitsuXD/HatsuneMiku-Userbot) **Running Userbot Active!** ★\n\n"
+        f"__**{HATSUNE_TEKS_KUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **Plugins :** `{len(plugins)} Plugin` \n"
         f"{ALIVE_EMOJI} **Userbot Version :** `v{BOT_VER}` \n"
         f"{ALIVE_EMOJI} **Python Version :** `v{python_version()}` \n"
@@ -409,8 +405,8 @@ async def alive(event):  # created by Apis
     await event.edit("__Userbot Aktif...__")
     await asyncio.sleep(3)
     text = (
-        f" **King-Userbot | Telethon** \n\n"
-        f"{ALIVE_EMOJI} **King :** __{DEFAULTUSER}__ \n"
+        f" **HatsuneMiku-Userbot | Telethon** \n\n"
+        f"{ALIVE_EMOJI} **Pengguna :** __{DEFAULTUSER}__ \n"
         f"{ALIVE_EMOJI} **Plugins :** __{len(plugins)} Plugin__ \n"
         f"{ALIVE_EMOJI} **Versi Userbot :** __v{BOT_VER}__ \n"
         f"{ALIVE_EMOJI} **Versi Python :** __v{python_version()}__ \n"
@@ -424,7 +420,7 @@ async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
     output = ".aliveu [new username] tidak boleh kosong"
-    if not (message == ".aliveu" and message[7:8] != " "):
+    if message != ".aliveu" or message[7:8] == " ":
         newuser = message[8:]
         global DEFAULTUSER  # global statement
         DEFAULTUSER = username
@@ -467,7 +463,7 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.resetalive`\
         \n  •  **Function : **Untuk Mereset Pengguna Alive\
         \n\n\n  **Animasi Alive Lainnya :**\
-        \n\n  •  **Perintah :** `.kingalive` atau `.kingon`\
+        \n\n  •  **Perintah :** `.hatsunealive` atau `.hatsuneon`\
         \n  •  **Function : **Untuk Melihat Animasi Alive\
         \n\n  •  **Perintah :** `.xalive` atau `.xon`\
         \n  •  **Function : **Untuk Melihat Animasi Alive\
