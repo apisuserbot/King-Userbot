@@ -341,6 +341,8 @@ async def redis(alive):
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
+        f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
+        f"[Support Channel](t.me/TeamKingUserbot)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
