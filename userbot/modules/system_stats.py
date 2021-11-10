@@ -171,7 +171,7 @@ async def bot_ver(event):
         await event.edit(
             " ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀ \n\n"
             f"**★ Versi Userbot :** v{BOT_VER} \n"
-            f"**★ heads :** heads/King-Userbot-0-x634i7u1 \n"
+            f"**★ heads :** heads/HatsuneMiku-Userbot-0-x634i7u1 \n"
             f"**★ Revisi :** {revout}"
         )
     else:
@@ -326,24 +326,24 @@ async def redis(alive):
     await asyncio.sleep(3)
     output = (
         f"**╭╼══════════════════╾╮**\n"
-        f" ㅤ    ⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡    \n"
+        f" ㅤ      ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀    \n"
         f"**╰╼══════════════════╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
         f"│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 🤴 `Hatsune Miku     :` {DEFAULTUSER} \n"
         f"╟◈ 🔎 `Username :` @{user.username} \n"
         f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
         f"╟◈ 🐍 `Python   :` v.{python_version()} \n"
         f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
-        f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
+        f"╟◈ 📂 `Plugins   :` {len(plugins)} Plugin \n"
+        f"╟◈ 🤴 'Developer : @ZenitsuID \n"
         f"┞╼════════════════════╾┤ \n"
         f"├◈ **{HATSUNE_TEKS_KUSTOM}** \n"
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
+        f"[License](https://github.com/ZenitsuXD/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
         f"[Support Channel](t.me/TeamKingUserbot)")
     if ALIVE_LOGO:
         try:
