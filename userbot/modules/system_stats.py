@@ -317,9 +317,9 @@ async def redis(alive):
     await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒..__")
     await alive.edit("__𝐒𝐄𝐃𝐀𝐍𝐆 𝐌𝐄𝐌𝐏𝐑𝐎𝐒𝐄𝐒...__")
     await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑.__")
-    await alive.edit("__𝐃𝐔𝐀𝐑𝐑𝐑𝐑𝐑..__")
-    await alive.edit("__𝐌𝐄𝐌𝐄𝐊.__")
     await alive.edit("__𝐌𝐄𝐌𝐄𝐊..__")
+    await alive.edit("⚡")
+    await asyncio.sleep(3)
     await alive.edit("🤡")
     await asyncio.sleep(3)
     output = (
@@ -335,14 +335,14 @@ async def redis(alive):
         f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
-        f"╟◈ 🤴 `Developer  :` ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ #𝙈•𝙍•𝙏™\n"
+        f"╟◈ 🤴 `Developer :` ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ \n"
         f"┞╼════════════════════╾┤ \n"
         f"├◈ **{HATSUNE_TEKS_KUSTOM}** \n"
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[License](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
-        f"[Support Channel](t.me/TeamKingUserbot)")
+        f"[License](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) | [Support Chat](t.me/HatsuneMikuUserbotSupport) | "
+        f"[Gbanned Logsl](t.me/HatsuneMikuBannedLogs)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
