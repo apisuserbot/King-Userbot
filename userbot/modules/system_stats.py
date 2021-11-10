@@ -323,11 +323,8 @@ async def redis(alive):
     await alive.edit("🤡")
     await asyncio.sleep(3)
     output = (
-        f"**╭╼══════════════════╾╮**\n"
-        f" ㅤ      ❀𝐇𝐀𝐓𝐒𝐔𝐍𝐄 𝐌𝐈𝐊𝐔❀    \n"
-        f"**╰╼══════════════════╾╯**\n"
         f"╭╼════════════════════╾╮ \n"
-        f"│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
+        f"│  ⇲ **❀HatsuneMiku-USERBOT❀** ⇲ \n"
         f"┟╼════════════════════╾┤ \n"
         f"╟◈ 🔎 `Username :` @{user.username} \n"
         f"╟◈ ⚙️ `Telethon :` v.{version.__version__} \n"
@@ -335,14 +332,12 @@ async def redis(alive):
         f"╟◈ 🛠️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"╟◈ 👾 `Bot Ver  :` v{BOT_VER} \n"
         f"╟◈ 📂 `Plugins  :` {len(plugins)} Plugin \n"
-        f"╟◈ 🤴 'Developer  :' ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ #𝙈•𝙍•𝙏™\n"
+        f"╟◈ 🤴 `Developer  :` ❀𝐙𝐞𝐧𝐢𝐭𝐬𝐮❀ #𝙈•𝙍•𝙏™\n"
         f"┞╼════════════════════╾┤ \n"
         f"├◈ **{HATSUNE_TEKS_KUSTOM}** \n"
         f"│                         \n"
         f"│   **USERBOT TELEGRAM**  \n"
         f"╰╼════════════════════╾╯ \n"
-        f"[License](https://github.com/ZenitsuXD/HatsuneMiku-Userbot/blob/HatsuneMiku-Userbot/LICENSE) | [Support Chat](t.me/KingUserbotSupport) | "
-        f"[Support Channel](t.me/TeamKingUserbot)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
