@@ -39,13 +39,7 @@ async def echo(event):
     if is_echo(chat_id, user_id):
         return await edit_or_reply(event, "**Pengguna Sudah Diaktifkan Dengan Echo**")
     try:
-        addecho(
-            chat_id,
-            user_id,
-            chat_name,
-            user_name,
-            user_username,
-            chat_type)
+        addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
         await edit_delete(kingevent, f"**Error :**\n`{str(e)}`")
     else:
@@ -156,8 +150,9 @@ async def echo(event):  # sourcery no-metrics
                     f"⎆ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
         output_str = (
-            f"**Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini Adalah :**\n" +
-            private_chats)
+            f"**Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini Adalah :**\n"
+            + private_chats
+        )
 
     await edit_or_reply(event, output_str)
 

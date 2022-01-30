@@ -11,10 +11,11 @@ def paste_text(text):
         text = re.sub(rf"\{i}", "", text)
     try:
         nekokey = (
-            requests.post(
-                "https://nekobin.com/api/documents",
-                json={
-                    "content": text}) .json() .get("result") .get("key"))
+            requests.post("https://nekobin.com/api/documents", json={"content": text})
+            .json()
+            .get("result")
+            .get("key")
+        )
         link = f"https://nekobin.com/{nekokey}"
     except Exception:
         url = "https://del.dog/documents"
@@ -38,15 +39,7 @@ def htmlmentionuser(name, userid):
 
 
 def reformattext(text):
-    return text.replace(
-        "~",
-        "").replace(
-        "_",
-        "").replace(
-            "*",
-            "").replace(
-                "`",
-        "")
+    return text.replace("~", "").replace("_", "").replace("*", "").replace("`", "")
 
 
 def replacetext(text):
@@ -73,7 +66,6 @@ def replacetext(text):
 def parse_pre(text):
     text = text.strip()
     return (
-        text, [
-            MessageEntityPre(
-                offset=0, length=len(
-                    add_surrogate(text)), language="")], )
+        text,
+        [MessageEntityPre(offset=0, length=len(add_surrogate(text)), language="")],
+    )

@@ -452,8 +452,7 @@ async def _(event):
 
 @register(outgoing=True, pattern="^.gangstar(?: |$)(.*)")
 async def _(event):
-    if not event.text[0].isalpha() and event.text[0] not in (
-            "/", "#", "@", "!"):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit("EVERyBOdy")
         await asyncio.sleep(0.3)
         await event.edit("wAs")
@@ -2414,8 +2413,7 @@ async def _(event):
 
         await event.edit(input_str)
 
-        animation_chars = ["🐵", "🙉", "🙈", "🙊",
-                           "🖕‎🐵🖕", "**OPPA MONKEYY Style....**"]
+        animation_chars = ["🐵", "🙉", "🙈", "🙊", "🖕‎🐵🖕", "**OPPA MONKEYY Style....**"]
 
         animation_interval = 2
 

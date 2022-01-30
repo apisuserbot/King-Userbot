@@ -318,7 +318,8 @@ async def get_pack_info(event):
         f"**Official :** `{get_stickerset.set.official}`\n"
         f"**Arsip :** `{get_stickerset.set.archived}`\n"
         f"**Sticker Dalam :** `{len(get_stickerset.packs)}`\n"
-        f"**Emoji Sticker ↯**\n{' '.join(pack_emojis)}")
+        f"**Emoji Sticker ↯**\n{' '.join(pack_emojis)}"
+    )
 
     await event.edit(OUTPUT)
 

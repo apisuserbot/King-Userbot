@@ -29,12 +29,15 @@ from userbot import CMD_HELP, DEFAULTUSER
 
 
 # Based Code by @Spidy
-a1 = base64.b64decode(
-    "QUl6YVN5QXlEQnNZM1dSdEI1WVBDNmFCX3c4SkF5NlpkWE5jNkZV").decode("ascii")
-a2 = base64.b64decode(
-    "QUl6YVN5QkYwenhMbFlsUE1wOXh3TVFxVktDUVJxOERnZHJMWHNn").decode("ascii")
-a3 = base64.b64decode(
-    "QUl6YVN5RGRPS253blB3VklRX2xiSDVzWUU0Rm9YakFLSVFWMERR").decode("ascii")
+a1 = base64.b64decode("QUl6YVN5QXlEQnNZM1dSdEI1WVBDNmFCX3c4SkF5NlpkWE5jNkZV").decode(
+    "ascii"
+)
+a2 = base64.b64decode("QUl6YVN5QkYwenhMbFlsUE1wOXh3TVFxVktDUVJxOERnZHJMWHNn").decode(
+    "ascii"
+)
+a3 = base64.b64decode("QUl6YVN5RGRPS253blB3VklRX2xiSDVzWUU0Rm9YakFLSVFWMERR").decode(
+    "ascii"
+)
 
 
 @register(outgoing=True, pattern=r"^\.music (.*)")

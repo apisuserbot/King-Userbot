@@ -143,9 +143,7 @@ async def carbon_api(e):
     chrome_options.add_argument("--disable-gpu")
     prefs = {"download.default_directory": "/root/userbot/.bin"}
     chrome_options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(
-        executable_path=CHROME_DRIVER,
-        options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
     driver.get(url)
     await e.edit("`Memproses..\n50%`")
     download_path = "/root/userbot/.bin"
@@ -225,7 +223,8 @@ async def moni(event):
             currency_from = input_sgra[1].upper()
             currency_to = input_sgra[2].upper()
             request_url = "https://api.exchangeratesapi.io/latest?base={}".format(
-                currency_from)
+                currency_from
+            )
             current_response = get(request_url).json()
             if currency_to in current_response["rates"]:
                 current_rate = float(current_response["rates"][currency_to])
@@ -460,10 +459,7 @@ async def yt_search(event):
     await event.edit("`Processing...`")
 
     try:
-        results = json.loads(
-            YoutubeSearch(
-                query,
-                max_results=counter).to_json())
+        results = json.loads(YoutubeSearch(query, max_results=counter).to_json())
     except KeyError:
         return await event.edit(
             "`Youtube Search gone retard.\nCan't search this query!`"
@@ -574,11 +570,7 @@ async def download_video(v_url):
             f"`Preparing to upload song:`\n**{rip_data.get('title')}**"
             f"\nby **{rip_data.get('uploader')}**"
         )
-        f_name = glob(
-            os.path.join(
-                TEMP_DOWNLOAD_DIRECTORY,
-                str(s_time),
-                "*"))[0]
+        f_name = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
         with open(f_name, "rb") as f:
             result = await upload_file(
                 client=v_url.client,
@@ -619,20 +611,12 @@ async def download_video(v_url):
             f"`Preparing to upload video:`\n**{rip_data.get('title')}**"
             f"\nby **{rip_data.get('uploader')}**"
         )
-        f_path = glob(
-            os.path.join(
-                TEMP_DOWNLOAD_DIRECTORY,
-                str(s_time),
-                "*"))[0]
+        f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
         # Noob way to convert from .mkv to .mp4
         if f_path.endswith(".mkv"):
             base = os.path.splitext(f_path)[0]
             os.rename(f_path, base + ".mp4")
-            f_path = glob(
-                os.path.join(
-                    TEMP_DOWNLOAD_DIRECTORY,
-                    str(s_time),
-                    "*"))[0]
+            f_path = glob(os.path.join(TEMP_DOWNLOAD_DIRECTORY, str(s_time), "*"))[0]
         f_name = os.path.basename(f_path)
         with open(f_path, "rb") as f:
             result = await upload_file(
@@ -850,8 +834,7 @@ async def bq(event):
 
     bar_code_type = "code128"
     try:
-        bar_code_mode_f = barcode.get(
-            bar_code_type, message, writer=ImageWriter())
+        bar_code_mode_f = barcode.get(bar_code_type, message, writer=ImageWriter())
         filename = bar_code_mode_f.save(bar_code_type)
         await event.client.send_file(event.chat_id, filename, reply_to=reply_msg_id)
         os.remove(filename)
@@ -876,9 +859,7 @@ async def make_qr(makeqr):
             m_list = None
             with open(downloaded_file_name, "rb") as file:
                 m_list = file.readlines()
-            message = "".join(
-                media.decode("UTF-8") +
-                "\r\n" for media in m_list)
+            message = "".join(media.decode("UTF-8") + "\r\n" for media in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
@@ -938,8 +919,7 @@ async def direct_link_generator(request):
         elif "androidfilehost.com" in link:
             reply += androidfilehost(link)
         else:
-            reply += re.findall(r"\bhttps?://(.*?[^/]+)",
-                                link)[0] + "is not supported"
+            reply += re.findall(r"\bhttps?://(.*?[^/]+)", link)[0] + "is not supported"
     await request.edit(reply)
 
 
@@ -1110,11 +1090,7 @@ def osdn(url: str) -> str:
     except IndexError:
         reply = "`No OSDN links found`\n"
         return reply
-    page = BeautifulSoup(
-        requests.get(
-            link,
-            allow_redirects=True).content,
-        "lxml")
+    page = BeautifulSoup(requests.get(link, allow_redirects=True).content, "lxml")
     info = page.find("a", {"class": "mirror_link"})
     link = urllib.parse.unquote(osdn_link + info["href"])
     reply = f"Mirrors for __{link.split('/')[-1]}__\n"
@@ -1170,10 +1146,7 @@ def androidfilehost(url: str) -> str:
         "authority": "androidfilehost.com",
         "x-requested-with": "XMLHttpRequest",
     }
-    data = {
-        "submit": "submit",
-        "action": "getdownloadmirrors",
-        "fid": f"{fid}"}
+    data = {"submit": "submit", "action": "getdownloadmirrors", "fid": f"{fid}"}
     mirrors = None
     reply = ""
     error = "`Error: Can't find Mirrors for the link`\n"
@@ -1231,11 +1204,13 @@ async def capture(url):
     height = driver.execute_script(
         "return Math.max(document.body.scrollHeight, document.body.offsetHeight, "
         "document.documentElement.clientHeight, document.documentElement.scrollHeight, "
-        "document.documentElement.offsetHeight);")
+        "document.documentElement.offsetHeight);"
+    )
     width = driver.execute_script(
         "return Math.max(document.body.scrollWidth, document.body.offsetWidth, "
         "document.documentElement.clientWidth, document.documentElement.scrollWidth, "
-        "document.documentElement.offsetWidth);")
+        "document.documentElement.offsetWidth);"
+    )
     driver.set_window_size(width + 125, height + 125)
     wait_for = height / 1000
     await url.edit(
@@ -1304,4 +1279,5 @@ CMD_HELP.update(
         "screenshot": "`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
 \n\nExample of a valid URL : `https://www.google.com`",
-    })
+    }
+)

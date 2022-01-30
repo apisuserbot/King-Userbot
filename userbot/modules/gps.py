@@ -33,5 +33,4 @@ async def gps(event):
         await event.edit("`King Saya Tidak Dapat Menemukannya`")
 
 
-CMD_HELP.update({"gps": ">⚡𝘾𝙈𝘿⚡`.gps`"
-                 "\nUsage: Untuk Mendapatkan Lokasi Map"})
+CMD_HELP.update({"gps": ">⚡𝘾𝙈𝘿⚡`.gps`" "\nUsage: Untuk Mendapatkan Lokasi Map"})
