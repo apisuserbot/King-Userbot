@@ -12,8 +12,7 @@ from userbot.events import register
 from userbot.utils.pastebin import PasteBin
 
 
-@register(outgoing=True,
-          pattern=r"^\.paste(?: (-d|-n|-h|-k)|$)?(?: ([\s\S]+)|$)")
+@register(outgoing=True, pattern=r"^\.paste(?: (-d|-n|-h|-k)|$)?(?: ([\s\S]+)|$)")
 async def paste(pstl):
     """For .paste command, pastes the text directly to a pastebin."""
     service = pstl.pattern_match.group(1)

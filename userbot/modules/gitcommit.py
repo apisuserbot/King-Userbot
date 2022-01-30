@@ -80,10 +80,8 @@ async def git_commit(file_name, mone):
         print(file_name)
         try:
             repo.create_file(
-                file_name,
-                "Uploaded New Plugin",
-                commit_data,
-                branch="King-Userbot")
+                file_name, "Uploaded New Plugin", commit_data, branch="King-Userbot"
+            )
             print("Committed File")
             ccess = GIT_REPO_NAME
             ccess = ccess.strip()

@@ -9,9 +9,10 @@ from userbot import CMD_HELP, bot
 from userbot import TEMP_DOWNLOAD_DIRECTORY
 
 
-@register(outgoing=True,
-          pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)",
-          )
+@register(
+    outgoing=True,
+    pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)",
+)
 async def _(event):
     if event.fwd_from:
         return
