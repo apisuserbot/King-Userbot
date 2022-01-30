@@ -61,6 +61,7 @@ XBOT_STRINGS = [
 async def xbot(xbotpis):
     await xbotpis.edit(choice(XBOT_STRINGS))
 
+
 CMD_HELP.update(
     {
         "xbot": "**✘ Plugin :** `xbot`\

@@ -17,12 +17,7 @@ from userbot.utils import humanbytes
 
 
 def subprocess_run(cmd):
-    subproc = Popen(
-        cmd,
-        stdout=PIPE,
-        stderr=PIPE,
-        shell=True,
-        universal_newlines=True)
+    subproc = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True, universal_newlines=True)
     talk = subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
@@ -57,11 +52,7 @@ if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
     os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
 download_path = os.getcwd() + TEMP_DOWNLOAD_DIRECTORY.strip(".")
 
-aria2 = aria2p.API(
-    aria2p.Client(
-        host="http://localhost",
-        port=8210,
-        secret=""))
+aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=8210, secret=""))
 
 aria2.set_global_options({"dir": download_path})
 
@@ -206,17 +197,8 @@ async def check_progress_for_dl(gid, event, previous):
                 percentage = int(file.progress)
                 downloaded = percentage * int(file.total_length) / 100
                 prog_str = "[{0}{1}] `{2}`".format(
-                    "".join(
-                        "█" for i in range(
-                            math.floor(
-                                percentage /
-                                10))),
-                    "".join(
-                        "░" for i in range(
-                            10 -
-                            math.floor(
-                                percentage /
-                                10))),
+                    "".join("█" for i in range(math.floor(percentage / 10))),
+                    "".join("░" for i in range(10 - math.floor(percentage / 10))),
                     file.progress_string(),
                 )
                 msg = (
@@ -224,7 +206,8 @@ async def check_progress_for_dl(gid, event, previous):
                     f"{prog_str}\n"
                     f"`Size` : {humanbytes(downloaded)} of {file.total_length_string()}\n"
                     f"`Speed` : {file.download_speed_string()}\n"
-                    f"`ETA` : {file.eta_string()}\n")
+                    f"`ETA` : {file.eta_string()}\n"
+                )
                 if msg != previous:
                     await event.edit(msg)
                     msg = previous

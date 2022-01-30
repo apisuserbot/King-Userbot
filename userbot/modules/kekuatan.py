@@ -39,7 +39,7 @@ from userbot.events import register
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
 
-@register(outgoing=True, pattern=r'^.kekuatan(:? |$)([1-8])?')
+@register(outgoing=True, pattern=r"^.kekuatan(:? |$)([1-8])?")
 async def _(fry):
     await fry.edit("`King Mengaktifkan Kekuatan Telegram...⚡`")
     level = fry.pattern_match.group(2)
@@ -62,9 +62,7 @@ async def _(fry):
             msg = await conv.send_message(reply_message)
             if level:
                 m = f"/deepfry {level}"
-                msg_level = await conv.send_message(
-                    m,
-                    reply_to=msg.id)
+                msg_level = await conv.send_message(m, reply_to=msg.id)
                 r = await conv.get_response()
                 response = await conv.get_response()
             else:
@@ -78,25 +76,23 @@ async def _(fry):
             await fry.edit("`King Mohon Matikan Setelan Forward Privasi...`")
         else:
             downloaded_file_name = await fry.client.download_media(
-                response.media,
-                TEMP_DOWNLOAD_DIRECTORY
+                response.media, TEMP_DOWNLOAD_DIRECTORY
             )
             await fry.client.send_file(
                 fry.chat_id,
                 downloaded_file_name,
                 force_document=False,
-                reply_to=message_id_to_reply
+                reply_to=message_id_to_reply,
             )
             """ - cleanup chat after completed - """
             try:
                 msg_level
             except NameError:
-                await fry.client.delete_messages(conv.chat_id,
-                                                 [msg.id, response.id])
+                await fry.client.delete_messages(conv.chat_id, [msg.id, response.id])
             else:
                 await fry.client.delete_messages(
-                    conv.chat_id,
-                    [msg.id, response.id, r.id, msg_level.id])
+                    conv.chat_id, [msg.id, response.id, r.id, msg_level.id]
+                )
     await fry.delete()
     return os.remove(downloaded_file_name)
 

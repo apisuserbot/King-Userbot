@@ -34,12 +34,22 @@ if 1 == 1:
         "admin": "admin",
         "creator": "creator",
         "hidden": "hidden",
-        "channel": "Channel"}
+        "channel": "Channel",
+    }
 
-    config = {"api_url": "http://api.antiddos.systems",
-              "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
-                                  "#62d4e3", "#65bdf3", "#ff5694"],
-              "default_username_color": "#b48bf2"}
+    config = {
+        "api_url": "http://api.antiddos.systems",
+        "username_colors": [
+            "#fb6169",
+            "#faa357",
+            "#b48bf2",
+            "#85de85",
+            "#62d4e3",
+            "#65bdf3",
+            "#ff5694",
+        ],
+        "default_username_color": "#b48bf2",
+    }
 
 
 @register(outgoing=True, pattern=r"^\.q")
@@ -59,24 +69,26 @@ async def quotess(qotli):
         async with bot.conversation(chat) as conv:
             try:
                 response = conv.wait_event(
-                    events.NewMessage(
-                        incoming=True,
-                        from_users=1031952739))
+                    events.NewMessage(incoming=True, from_users=1031952739)
+                )
                 msg = await bot.forward_messages(chat, reply_message)
                 response = await response
                 """ - don't spam notif - """
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
-                return await qotli.reply("```Harap Jangan Blockir @QuotLyBot Buka Blokir Lalu Coba Lagi```")
+                return await qotli.reply(
+                    "```Harap Jangan Blockir @QuotLyBot Buka Blokir Lalu Coba Lagi```"
+                )
             if response.text.startswith("Hi!"):
-                await qotli.edit("```Mohon Menonaktifkan Pengaturan Privasi Forward Anda```")
+                await qotli.edit(
+                    "```Mohon Menonaktifkan Pengaturan Privasi Forward Anda```"
+                )
             else:
                 await qotli.delete()
                 await bot.forward_messages(qotli.chat_id, response.message)
                 await bot.send_read_acknowledge(qotli.chat_id)
                 """ - cleanup chat after completed - """
-                await qotli.client.delete_messages(conv.chat_id,
-                                                   [msg.id, response.id])
+                await qotli.client.delete_messages(conv.chat_id, [msg.id, response.id])
     except TimeoutError:
         await qotli.edit()
 
@@ -88,15 +100,17 @@ async def quote_search(event):
     await event.edit("`Sedang Memproses...`")
     search_string = event.pattern_match.group(1)
     input_url = "https://bots.shrimadhavuk.me/Telegram/GoodReadsQuotesBot/?q={}".format(
-        search_string)
+        search_string
+    )
     headers = {"USER-AGENT": "Uniborg"}
     try:
         response = requests.get(input_url, headers=headers).json()
     except BaseException:
         response = None
     if response is not None:
-        result = random.choice(response).get(
-            "input_message_content").get("message_text")
+        result = (
+            random.choice(response).get("input_message_content").get("message_text")
+        )
     else:
         result = None
     if result:
@@ -105,10 +119,11 @@ async def quote_search(event):
         await event.edit("`Tidak Ada Hasil Yang Ditemukan`")
 
 
-CMD_HELP.update({
-    "quotly":
-    "⚡𝘾𝙈𝘿⚡`.q`\
+CMD_HELP.update(
+    {
+        "quotly": "⚡𝘾𝙈𝘿⚡`.q`\
 \nUsage: Membuat pesan mu menjadi sticker.\
 \n\n⚡𝘾𝙈𝘿⚡`.xquote`\
 \nUsage: membuat pesan mu menjadi sticker."
-})
+    }
+)

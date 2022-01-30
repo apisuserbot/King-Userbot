@@ -23,12 +23,11 @@ async def _(event):
 
     animation_ttl = range(0, 22)
 
-   # input_str = event.pattern_match.group(1)
+    # input_str = event.pattern_match.group(1)
 
     await event.edit("Deploying...")
 
     animation_chars = [
-
         "Heroku Connecting To Latest Github Build (apisuserbot/King-Userbot)",
         f"Build started by user `{DEFAULTUSER}`",
         f"Deploy `535a74f0` by user `{DEFAULTUSER}`",
@@ -51,8 +50,7 @@ async def _(event):
         "INFO - King-Userbot: Successfully...",
         "919852+00:00 app[worker.1]: 919 - King-Userbot -",
         f"INFO - ⚡️ King-Userbot ⚡️ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]",
-        "**Build Succeeded**"
-
+        "**Build Succeeded**",
     ]
 
     for i in animation_ttl:

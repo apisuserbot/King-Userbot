@@ -86,14 +86,8 @@ async def run(run_q):
     else:
         clines = code.splitlines()
         codepre = (
-            clines[0] +
-            "\n" +
-            clines[1] +
-            "\n" +
-            clines[2] +
-            "\n" +
-            clines[3] +
-            "...")
+            clines[0] + "\n" + clines[1] + "\n" + clines[2] + "\n" + clines[3] + "..."
+        )
 
     command = "".join(f"\n {l}" for l in code.split("\n.strip()"))
     process = await asyncio.create_subprocess_exec(
@@ -124,7 +118,9 @@ async def run(run_q):
         )
     else:
         await run_q.edit(
-            "**Query : **\n`" f"{codepre}" "`\n**Result : **\n`Tidak Ada Hasil yang Dikembalikan/Salah`"
+            "**Query : **\n`"
+            f"{codepre}"
+            "`\n**Result : **\n`Tidak Ada Hasil yang Dikembalikan/Salah`"
         )
 
     if BOTLOG:
@@ -181,8 +177,7 @@ async def terminal_runner(term):
 
     if BOTLOG:
         await term.client.send_message(
-            BOTLOG_CHATID,
-            "Terminal Perintah " + command + " sukses dieksekusi"
+            BOTLOG_CHATID, "Terminal Perintah " + command + " sukses dieksekusi"
         )
 
 

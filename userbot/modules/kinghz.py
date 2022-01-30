@@ -41,7 +41,9 @@ async def _(hazmat):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await hazmat.reply("`King, Mohon Buka Blokir` @hazmat_suit_bot `Lalu Coba Lagi`")
+            await hazmat.reply(
+                "`King, Mohon Buka Blokir` @hazmat_suit_bot `Lalu Coba Lagi`"
+            )
             return
         if response.text.startswith("I can't"):
             await hazmat.edit("`Mohon Maaf King, GIF Tidak Bisa...`")

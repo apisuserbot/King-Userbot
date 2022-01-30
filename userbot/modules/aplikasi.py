@@ -23,21 +23,13 @@ async def app_search(event):
         soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utf-8")
         results = soup.findAll("div", "ZmHEEd")
         app_name = (
-            results[0].findNext(
-                "div",
-                "Vpfmgd").findNext(
-                "div",
-                "WsMG1c nnK0zc").text)
-        app_dev = results[0].findNext(
-            "div", "Vpfmgd").findNext(
-            "div", "KoLSrc").text
+            results[0].findNext("div", "Vpfmgd").findNext("div", "WsMG1c nnK0zc").text
+        )
+        app_dev = results[0].findNext("div", "Vpfmgd").findNext("div", "KoLSrc").text
         app_dev_link = (
-            "https://play.google.com" +
-            results[0].findNext(
-                "div",
-                "Vpfmgd").findNext(
-                "a",
-                "mnKHRc")["href"])
+            "https://play.google.com"
+            + results[0].findNext("div", "Vpfmgd").findNext("a", "mnKHRc")["href"]
+        )
         app_rating = (
             results[0]
             .findNext("div", "Vpfmgd")
@@ -81,9 +73,12 @@ async def app_search(event):
         app_details += f"\n\n===> {ALIVE_NAME} <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
-        await event.edit("Tidak ada hasil yang ditemukan dalam pencarian, Silahkan mencari aplikasi **Yang Valid**")
+        await event.edit(
+            "Tidak ada hasil yang ditemukan dalam pencarian, Silahkan mencari aplikasi **Yang Valid**"
+        )
     except Exception as err:
         await event.edit("Pengecualian Terjadi :- " + str(err))
+
 
 CMD_HELP.update(
     {

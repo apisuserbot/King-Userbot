@@ -29,7 +29,9 @@ async def _(event):
             except YouBlockedUserError:
                 return await event.reply("`Maaf Tidak Bisa`")
             if r1.text.startswith("No"):
-                return await event.edit(f"`Saya Tidak Menemukan Wallpaper Yang Anda Cari`")
+                return await event.edit(
+                    f"`Saya Tidak Menemukan Wallpaper Yang Anda Cari`"
+                )
             else:
                 img = await event.client.download_media(r1)
                 img2 = await event.client.download_media(r2)
@@ -57,5 +59,6 @@ async def _(event):
         return await event.edit("`Saya Tidak Menemukan Wallpaper Yang Anda Cari`")
 
 
-CMD_HELP.update({"wallpaper": ">⚡𝘾𝙈𝘿⚡`.wall <query>`"
-                 "\nUsage: Mencari Wallpaper Bagus."})
+CMD_HELP.update(
+    {"wallpaper": ">⚡𝘾𝙈𝘿⚡`.wall <query>`" "\nUsage: Mencari Wallpaper Bagus."}
+)

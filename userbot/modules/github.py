@@ -10,8 +10,9 @@ async def github(event):
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await event.reply("`" + event.pattern_match.group(1) +
-                                         " not found`")
+                return await event.reply(
+                    "`" + event.pattern_match.group(1) + " not found`"
+                )
 
             result = await request.json()
 
@@ -27,7 +28,8 @@ async def github(event):
                 f"`Bio           :` {bio} \n"
                 f"`URL           :` {url} \n"
                 f"`Perusahaan    :` {company}\n"
-                f"`Dibuat pada   :` {created_at} ")
+                f"`Dibuat pada   :` {created_at} "
+            )
 
             if not result.get("repos_url", None):
                 return await event.edit(REPLY)

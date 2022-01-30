@@ -31,13 +31,13 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 opener = urllib.request.build_opener()
-useragent = 'Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.70 Mobile Safari/537.36'
-opener.addheaders = [('User-agent', useragent)]
+useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.70 Mobile Safari/537.36"
+opener.addheaders = [("User-agent", useragent)]
 
 
 @register(outgoing=True, pattern="^.random")
 async def randomise(items):
-    """ For .random command, get a random item from the list of items. """
+    """For .random command, get a random item from the list of items."""
     itemo = (items.text[8:]).split()
     if len(itemo) < 2:
         await items.edit(
@@ -45,13 +45,14 @@ async def randomise(items):
         )
         return
     index = randint(1, len(itemo) - 1)
-    await items.edit("**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" +
-                     itemo[index] + "`")
+    await items.edit(
+        "**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" + itemo[index] + "`"
+    )
 
 
 @register(outgoing=True, pattern="^.sleep ([0-9]+)$")
 async def sleepybot(time):
-    """ For .sleep command, let the userbot snooze for a few second. """
+    """For .sleep command, let the userbot snooze for a few second."""
     counter = int(time.pattern_match.group(1))
     await time.edit("`Saya tidur dulu King...⚡️`")
     if BOTLOG:
@@ -66,13 +67,14 @@ async def sleepybot(time):
 
 @register(outgoing=True, pattern="^.shutdown$")
 async def killdabot(event):
-    """ For .shutdown command, shut the bot down."""
+    """For .shutdown command, shut the bot down."""
     await event.edit("`Mematikan King-Userbot....`")
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
-                                        "`King-Userbot Telah Dimatikan`")
+        await event.client.send_message(
+            BOTLOG_CHATID, "#SHUTDOWN \n" "`King-Userbot Telah Dimatikan`"
+        )
     await bot.disconnect()
 
 
@@ -82,8 +84,9 @@ async def killdabot(event):
     await asyncio.sleep(10)
     await event.delete()
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#RESTARTBOT \n"
-                                        "`King-Userbot Telah Di Mulai Ulang`")
+        await event.client.send_message(
+            BOTLOG_CHATID, "#RESTARTBOT \n" "`King-Userbot Telah Di Mulai Ulang`"
+        )
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -96,12 +99,13 @@ async def readme(e):
     await e.edit(
         "   **Readme Userbot** \n\n"
         "\n• **Repo** [King-Userbot](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/README.md)"
-        "\n• **Repo** [WeebProject-Apis](https://github.com/apisuserbot/WeebProject-Apis/blob/WeebProject-Apis/README.md)")
+        "\n• **Repo** [WeebProject-Apis](https://github.com/apisuserbot/WeebProject-Apis/blob/WeebProject-Apis/README.md)"
+    )
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")
 async def repeat(rep):
-    cnt, txt = rep.pattern_match.group(1).split(' ', 1)
+    cnt, txt = rep.pattern_match.group(1).split(" ", 1)
     replyCount = int(cnt)
     toBeRepeated = txt
 
@@ -115,32 +119,35 @@ async def repeat(rep):
 
 @register(outgoing=True, pattern="^.repo$")
 async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
+    """For .repo command, just returns the repo URL."""
     await wannasee.edit(
         f"   **Repository Userbot** \n\n"
         "• **Repo Userbot :** [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         f"• **Versi Userbot :** `{BOT_VER}` \n"
         "• **License :** [Raphielscape Version 1.d](https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE) \n"
         "• **Developer Project :** [Apis](https://t.me/PacarFerdilla) \n\n"
-        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) "
+    )
 
 
 @register(outgoing=True, pattern="^.string$")
 async def string_is_here(wannasee):
-    """ For .string command, just returns the string URL. """
+    """For .string command, just returns the string URL."""
     await wannasee.edit(
         f"   **String Session Userbot** \n\n"
         "• **Get string session :** [String Session](https://replit.com/@apisuserbot/String-Session?v=1) \n\n"
-        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) "
+    )
 
 
 @register(outgoing=True, pattern="^.tutorial$")
 async def tutorial_is_here(wannasee):
-    """ For .tutorial command, just returns the tutorial URL. """
+    """For .tutorial command, just returns the tutorial URL."""
     await wannasee.edit(
         "    **Tutorial Userbot** \n\n"
         "• **Tutorial :** [Tutorial Deploy](https://t.me/TeamKingUserbot/16) \n\n"
-        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) ")
+        "**Support :** [USERBOT TELEGRAM](https://t.me/KingUserbotSupport) "
+    )
 
 
 @register(outgoing=True, pattern="^.raw$")
@@ -156,20 +163,20 @@ async def raw(event):
         reply_to_id = event.message.id
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
-        await event.edit(
-            "`Periksa log userbot untuk data pesan yang didekodekan !!`")
+        await event.edit("`Periksa log userbot untuk data pesan yang didekodekan !!`")
         await event.client.send_file(
             BOTLOG_CHATID,
             out_file,
             force_document=True,
             allow_cache=False,
             reply_to=reply_to_id,
-            caption="`Inilah data pesan yang didekodekan !!`")
+            caption="`Inilah data pesan yang didekodekan !!`",
+        )
 
 
 @register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
 async def okgoogle(img):
-    """ For .reverse command, Google search images and stickers. """
+    """For .reverse command, Google search images and stickers."""
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
@@ -186,34 +193,30 @@ async def okgoogle(img):
         try:
             image = Image.open(photo)
         except OSError:
-            await img.edit('`Gambar tidak di dukung`')
+            await img.edit("`Gambar tidak di dukung`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
         image.close()
         # https://stackoverflow.com/questions/23270175/google-reverse-image-search-using-post-request#28792943
-        searchUrl = 'https://www.google.com/searchbyimage/upload'
-        multipart = {
-            'encoded_image': (name, open(name, 'rb')),
-            'image_content': ''
-        }
-        response = requests.post(searchUrl,
-                                 files=multipart,
-                                 allow_redirects=False)
-        fetchUrl = response.headers['Location']
+        searchUrl = "https://www.google.com/searchbyimage/upload"
+        multipart = {"encoded_image": (name, open(name, "rb")), "image_content": ""}
+        response = requests.post(searchUrl, files=multipart, allow_redirects=False)
+        fetchUrl = response.headers["Location"]
 
         if response != 400:
-            await img.edit("`Gambar berhasil diunggah ke Google. Mungkin.`"
-                           "\n`Sumber parsing sekarang. Mungkin.`")
+            await img.edit(
+                "`Gambar berhasil diunggah ke Google. Mungkin.`"
+                "\n`Sumber parsing sekarang. Mungkin.`"
+            )
         else:
             await img.edit("`Google menyuruhku pergi.`")
             return
 
         os.remove(name)
-        match = await ParseSauce(fetchUrl +
-                                 "&preferences?hl=en&fg=1#languages")
-        guess = match['best_guess']
-        imgspage = match['similar_images']
+        match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
+        guess = match["best_guess"]
+        imgspage = match["similar_images"]
 
         if guess and imgspage:
             await img.edit(f"[{guess}]({fetchUrl})\n\n`Sedang Mencari gambar...`")
@@ -231,48 +234,50 @@ async def okgoogle(img):
             k = requests.get(i)
             yeet.append(k.content)
         try:
-            await img.client.send_file(entity=await
-                                       img.client.get_input_entity(img.chat_id
-                                                                   ),
-                                       file=yeet,
-                                       reply_to=img)
+            await img.client.send_file(
+                entity=await img.client.get_input_entity(img.chat_id),
+                file=yeet,
+                reply_to=img,
+            )
         except TypeError:
             pass
         await img.edit(
-            f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})")
+            f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})"
+        )
 
 
 async def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
 
     source = opener.open(googleurl).read()
-    soup = BeautifulSoup(source, 'html.parser')
+    soup = BeautifulSoup(source, "html.parser")
 
-    results = {'similar_images': '', 'best_guess': ''}
+    results = {"similar_images": "", "best_guess": ""}
 
     try:
-        for similar_image in soup.findAll('input', {'class': 'gLFyf'}):
-            url = 'https://www.google.com/search?tbm=isch&q=' + \
-                urllib.parse.quote_plus(similar_image.get('value'))
-            results['similar_images'] = url
+        for similar_image in soup.findAll("input", {"class": "gLFyf"}):
+            url = "https://www.google.com/search?tbm=isch&q=" + urllib.parse.quote_plus(
+                similar_image.get("value")
+            )
+            results["similar_images"] = url
     except BaseException:
         pass
 
-    for best_guess in soup.findAll('div', attrs={'class': 'r5a77d'}):
-        results['best_guess'] = best_guess.get_text()
+    for best_guess in soup.findAll("div", attrs={"class": "r5a77d"}):
+        results["best_guess"] = best_guess.get_text()
 
     return results
 
 
 async def scam(results, lim):
 
-    single = opener.open(results['similar_images']).read()
-    decoded = single.decode('utf-8')
+    single = opener.open(results["similar_images"]).read()
+    decoded = single.decode("utf-8")
 
     imglinks = []
     counter = 0
 
-    pattern = r'^,\[\"(.*[.png|.jpg|.jpeg])\",[0-9]+,[0-9]+\]$'
+    pattern = r"^,\[\"(.*[.png|.jpg|.jpeg])\",[0-9]+,[0-9]+\]$"
     oboi = re.findall(pattern, decoded, re.I | re.M)
 
     for imglink in oboi:

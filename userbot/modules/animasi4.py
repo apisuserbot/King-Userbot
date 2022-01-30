@@ -24,7 +24,9 @@ async def woi(event):
 
 @register(outgoing=True, pattern="^.ngatur(?: |$)(.*)")
 async def ngatur(event):
-    await event.edit("**WOI ANJING , DENGER YA , JADI ORANG GAK USAH NGATUR NGATUR HIDUP ORANG YA NGENTOT , URUS AJA HIDUP LU SENDIRI BANGSAT , UDAH BENER APA KAGAK**")
+    await event.edit(
+        "**WOI ANJING , DENGER YA , JADI ORANG GAK USAH NGATUR NGATUR HIDUP ORANG YA NGENTOT , URUS AJA HIDUP LU SENDIRI BANGSAT , UDAH BENER APA KAGAK**"
+    )
 
 
 @register(outgoing=True, pattern="^.berantem(?: |$)(.*)")
@@ -33,16 +35,22 @@ async def berantem(event):
     sleep(3)
     await event.edit("**BERANTEM YO NGENTOT**")
     sleep(3)
-    await event.edit("**JANGAN JADI BANCI KETAKUTAN YA ANJING , SHARE LOCK SEKARANG BANGSAT**")
+    await event.edit(
+        "**JANGAN JADI BANCI KETAKUTAN YA ANJING , SHARE LOCK SEKARANG BANGSAT**"
+    )
     sleep(5)
     await event.edit("**JANGAN MENTAL SOSMED DOANG LU**")
 
 
 @register(outgoing=True, pattern="^.rp(?: |$)(.*)")
 async def rp(event):
-    await event.edit("**WOI ANAK RP NGENTOT , DENGER NI YA , PLASTIK MAH UDAH PLASTIK AJA**")
+    await event.edit(
+        "**WOI ANAK RP NGENTOT , DENGER NI YA , PLASTIK MAH UDAH PLASTIK AJA**"
+    )
     sleep(3)
-    await event.edit("**GOBLOK KOK DI RAWAT , UDAH NYEMBAH PLASTIK SAMPAH LAGI HAHAHAHA**")
+    await event.edit(
+        "**GOBLOK KOK DI RAWAT , UDAH NYEMBAH PLASTIK SAMPAH LAGI HAHAHAHA**"
+    )
     sleep(3)
     await event.edit("**MAKAN TUH PLASTIK AWOKAWOKAWOK**")
 
@@ -50,6 +58,7 @@ async def rp(event):
 @register(outgoing=True, pattern="^.ubot(?: |$)(.*)")
 async def ubot(event):
     await event.edit("**GW TAU LU USERBOT TAPI GAUSAH NORAK NGENTOT**")
+
 
 CMD_HELP.update(
     {

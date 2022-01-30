@@ -35,8 +35,8 @@ from userbot.events import register
 from userbot.utils import progress
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
-    level=logging.WARNING)
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 logger = logging.getLogger(__name__)
 
 # setup the gPhotos v1 API
@@ -129,14 +129,17 @@ async def upload_google_photos(event):
 
     if not event.reply_to_msg_id and not input_str:
         await event.edit(
-            "(C) <b>King-Userbot</b>\nTidak Ada Yang Akan Membantu Anda", parse_mode="html"
+            "(C) <b>King-Userbot</b>\nTidak Ada Yang Akan Membantu Anda",
+            parse_mode="html",
         )
         return
 
     token_file = TOKEN_FILE_NAME
     is_cred_exists, creds = await check_creds(token_file, event)
     if not is_cred_exists:
-        await event.edit("Pertama Jalankan <code>.gpsetup</code> Dulu King", parse_mode="html")
+        await event.edit(
+            "Pertama Jalankan <code>.gpsetup</code> Dulu King", parse_mode="html"
+        )
 
     service = build("photoslibrary", "v1", http=creds.authorize(Http()))
 
@@ -183,7 +186,8 @@ async def upload_google_photos(event):
         }
         # Step 1: Initiating an upload session
         step_one_response = await session.post(
-            f"{PHOTOS_BASE_URI}/v1/uploads", headers=headers,
+            f"{PHOTOS_BASE_URI}/v1/uploads",
+            headers=headers,
         )
 
         if step_one_response.status != 200:
@@ -279,7 +283,9 @@ async def upload_google_photos(event):
             .get("mediaItem")
             .get("productUrl")
         )
-        await event.edit(f"`Sukses`\n\nMengunggah Foto Ke Google [Lihat Disini]({photo_url})")
+        await event.edit(
+            f"`Sukses`\n\nMengunggah Foto Ke Google [Lihat Disini]({photo_url})"
+        )
     except Exception as e:
         await event.edit(str(e))
 

@@ -24,6 +24,7 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 # Apis Gans
 
 
@@ -39,6 +40,7 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 # Apis Gans
 
 
@@ -53,6 +55,7 @@ async def _(event):
     tap = await bot.inline_query(botusername, modr)
     await tap[0].click(event.chat_id)
     await event.delete()
+
 
 # Apis Gans
 
@@ -73,6 +76,7 @@ async def _(event):
             return
         await event.edit(f"**Pesan Truth**\n\n{response.message.message}")
 
+
 # Created Code By Apis
 
 
@@ -91,6 +95,7 @@ async def _(event):
             await event.edit("`Harap unblock @truthordares_bot dan coba lagi`")
             return
         await event.edit(f"**Pesan Dare**\n\n{response.message.message}")
+
 
 # Ported For King-Userbot By Apis
 

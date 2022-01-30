@@ -9,9 +9,7 @@ from userbot.events import register
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
 ANTI_FLOOD_WARN_MODE = ChatBannedRights(
-    until_date=None,
-    view_messages=None,
-    send_messages=True
+    until_date=None, view_messages=None, send_messages=True
 )
 
 
@@ -29,30 +27,35 @@ async def _(event):
     if not should_ban:
         return
     try:
-        await event.client(EditBannedRequest(
-            event.chat_id,
-            event.message.from_id,
-            ANTI_FLOOD_WARN_MODE
-        ))
+        await event.client(
+            EditBannedRequest(
+                event.chat_id, event.message.from_id, ANTI_FLOOD_WARN_MODE
+            )
+        )
     except Exception as e:  # pylint:disable=C0103,W0703
         no_admin_privilege_message = await event.client.send_message(
             entity=event.chat_id,
             message="""**Anti Banjir Otomatis**
 @admin [User](tg://user?id={}) membanjiri obrolan ini
 
-`{}`""".format(event.message.from_id, str(e)),
-            reply_to=event.message.id
+`{}`""".format(
+                event.message.from_id, str(e)
+            ),
+            reply_to=event.message.id,
         )
         await asyncio.sleep(10)
         await no_admin_privilege_message.edit(
-            "Sayangnya kamu tidak punya admin hak istimewa")
+            "Sayangnya kamu tidak punya admin hak istimewa"
+        )
     else:
         await event.client.send_message(
             entity=event.chat_id,
             message="""**Anti Banjir Otomatis**
 [User](tg://user?id={}) telah dibatasi secara otomatis
-karena dia mencapai batas banjir yang ditentukan""".format(event.message.from_id),
-            reply_to=event.message.id
+karena dia mencapai batas banjir yang ditentukan""".format(
+                event.message.from_id
+            ),
+            reply_to=event.message.id,
         )
 
 
@@ -64,6 +67,8 @@ async def _(event):
     try:
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
-        await event.edit("Antiflood diupdate ke {} dalam obrolan saat ini".format(input_str))
+        await event.edit(
+            "Antiflood diupdate ke {} dalam obrolan saat ini".format(input_str)
+        )
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))

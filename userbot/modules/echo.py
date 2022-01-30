@@ -20,9 +20,7 @@ from userbot.utils.event import get_user_from_event
 @register(outgoing=True, pattern=r"^\.addecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await edit_or_reply(
-            event, "`Balas pesan Pengguna Untuk Echo Pengguna`"
-        )
+        return await edit_or_reply(event, "`Balas pesan Pengguna Untuk Echo Pengguna`")
     kingevent = await edit_or_reply(event, "`Menambahkan Echo ke pengguna...`")
     user, rank = await get_user_from_event(event, kingevent, nogroup=True)
     if not user:
@@ -41,13 +39,7 @@ async def echo(event):
     if is_echo(chat_id, user_id):
         return await edit_or_reply(event, "**Pengguna Sudah Diaktifkan Dengan Echo**")
     try:
-        addecho(
-            chat_id,
-            user_id,
-            chat_name,
-            user_name,
-            user_username,
-            chat_type)
+        addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
         await edit_delete(kingevent, f"**Error :**\n`{str(e)}`")
     else:
@@ -57,9 +49,7 @@ async def echo(event):
 @register(outgoing=True, pattern=r"^\.rmecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await edit_or_reply(
-            event, "`Balas pesan Pengguna Untuk Echo Pengguna`"
-        )
+        return await edit_or_reply(event, "`Balas pesan Pengguna Untuk Echo Pengguna`")
     reply_msg = await event.get_reply_message()
     user_id = reply_msg.sender_id
     chat_id = event.chat_id
@@ -81,7 +71,8 @@ async def echo(event):
         lecho = get_all_echos()
         if len(lecho) == 0:
             return await edit_delete(
-                event, "Anda Belum Mengaktifkan Echo Pengguna Setidaknya Untuk Satu Pengguna Di Obrolan Apa Pun"
+                event,
+                "Anda Belum Mengaktifkan Echo Pengguna Setidaknya Untuk Satu Pengguna Di Obrolan Apa Pun",
             )
         try:
             remove_all_echos()
@@ -89,13 +80,15 @@ async def echo(event):
             await edit_delete(event, f"**Error :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "**Echo Pengguna Telah Dihapus Untuk Semua Pengguna Yang Diaktifkan Di Semua Obrolan**"
+                event,
+                "**Echo Pengguna Telah Dihapus Untuk Semua Pengguna Yang Diaktifkan Di Semua Obrolan**",
             )
     else:
         lecho = get_echos(event.chat_id)
         if len(lecho) == 0:
             return await edit_delete(
-                event, "Anda Belum Mengaktifkan Echo Pengguna Setidaknya Untuk Satu Pengguna Dalam Obrolan Ini"
+                event,
+                "Anda Belum Mengaktifkan Echo Pengguna Setidaknya Untuk Satu Pengguna Dalam Obrolan Ini",
             )
         try:
             remove_echos(event.chat_id)
@@ -103,7 +96,8 @@ async def echo(event):
             await edit_delete(event, f"**Error :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "**Echo Pengguna Telah Dihapus Untuk Semua Pengguna Yang Diaktifkan Dalam Obrolan Ini**"
+                event,
+                "**Echo Pengguna Telah Dihapus Untuk Semua Pengguna Yang Diaktifkan Dalam Obrolan Ini**",
             )
 
 
@@ -131,7 +125,9 @@ async def echo(event):  # sourcery no-metrics
                         group_chats += f"⎆ [{echos.user_name}](tg://user?id={echos.user_id}) in chat {echos.chat_name} of chat id `{echos.chat_id}`\n"
 
         else:
-            return await edit_or_reply(event, "**Tidak Ada Pengguna Yang Mengaktifkan Echo Pengguna**")
+            return await edit_or_reply(
+                event, "**Tidak Ada Pengguna Yang Mengaktifkan Echo Pengguna**"
+            )
         if private_chats != "":
             output_str += "**Chat Pribadi**\n" + private_chats + "\n\n"
         if group_chats != "":
@@ -140,7 +136,8 @@ async def echo(event):  # sourcery no-metrics
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
             return await edit_or_reply(
-                event, "**Tidak Ada Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini**"
+                event,
+                "**Tidak Ada Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini**",
             )
 
         for echos in lsts:
@@ -152,7 +149,10 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"⎆ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = f"**Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini Adalah :**\n" + private_chats
+        output_str = (
+            f"**Pengguna Yang Mengaktifkan Echo Pengguna Dalam Obrolan Ini Adalah :**\n"
+            + private_chats
+        )
 
     await edit_or_reply(event, output_str)
 
@@ -163,6 +163,7 @@ async def samereply(event):
         event.message.text or event.message.sticker
     ):
         await event.reply(event.message)
+
 
 CMD_HELP.update(
     {

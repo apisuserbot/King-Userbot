@@ -33,8 +33,10 @@ async def fastpurger(purg):
     if msgs:
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
-        purg.chat_id, f"`Berhasil Menghapus Pesan King`\
-        \nJumlah Pesan Yang Dihapus {str(count)} Pesan")
+        purg.chat_id,
+        f"`Berhasil Menghapus Pesan King`\
+        \nJumlah Pesan Yang Dihapus {str(count)} Pesan",
+    )
     """
     if BOTLOG:
         await purg.client.send_message(
@@ -129,15 +131,17 @@ async def selfdestruct(destroy):
     """
 
 
-CMD_HELP.update({"purge": ">⚡𝘾𝙈𝘿⚡`.purge`"
-                 "\nUsage: Membersihkan semua pesan mulai dari pesan yang dibalas.",
-                 "purgeme": ">⚡𝘾𝙈𝘿⚡`.purgeme <angka>`"
-                 "\nUsage: Menghapus jumlah pesan anda, yang mau anda hapus.",
-                 "del": ">⚡𝘾𝙈𝘿⚡`.del`"
-                 "\nUsage: Menghapus pesan, balas ke pesan.",
-                 "edit": ">⚡𝘾𝙈𝘿⚡`.edit <pesan baru>`"
-                 "\nUsage: Ganti pesan terakhir Anda dengan <pesan baru>.",
-                 "sd": ">⚡𝘾𝙈𝘿⚡`.sd <x> <pesan>`"
-                 "\nUsage: Membuat pesan yang hancur sendiri dalam x detik."
-                 "\nJaga agar detik di bawah 100 karena bot Anda akan tidur.",
-                 })
+CMD_HELP.update(
+    {
+        "purge": ">⚡𝘾𝙈𝘿⚡`.purge`"
+        "\nUsage: Membersihkan semua pesan mulai dari pesan yang dibalas.",
+        "purgeme": ">⚡𝘾𝙈𝘿⚡`.purgeme <angka>`"
+        "\nUsage: Menghapus jumlah pesan anda, yang mau anda hapus.",
+        "del": ">⚡𝘾𝙈𝘿⚡`.del`" "\nUsage: Menghapus pesan, balas ke pesan.",
+        "edit": ">⚡𝘾𝙈𝘿⚡`.edit <pesan baru>`"
+        "\nUsage: Ganti pesan terakhir Anda dengan <pesan baru>.",
+        "sd": ">⚡𝘾𝙈𝘿⚡`.sd <x> <pesan>`"
+        "\nUsage: Membuat pesan yang hancur sendiri dalam x detik."
+        "\nJaga agar detik di bawah 100 karena bot Anda akan tidur.",
+    }
+)

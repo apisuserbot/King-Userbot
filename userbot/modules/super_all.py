@@ -16,16 +16,22 @@ async def allban(event):
         await event.edit("`Anda Tidak Mempunyai Hak`")
         return
     await event.edit("`Sedang Membanned Semua Member Dalam Grup Ini...`")
-# Thank for Dark_Cobra
+    # Thank for Dark_Cobra
     everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
         if user.id == chutiya.id:
             pass
         try:
-            await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None, view_messages=True)))
+            await event.client(
+                EditBannedRequest(
+                    event.chat_id,
+                    int(user.id),
+                    ChatBannedRights(until_date=None, view_messages=True),
+                )
+            )
         except Exception as e:
             await event.edit(str(e))
-        await sleep(.5)
+        await sleep(0.5)
     await event.edit("**Sukses, Anda Telah Membanned Semua Member Disini**")
 
 
@@ -45,11 +51,18 @@ async def allkick(event):
         if user.id == kingget.id:
             pass
         try:
-            await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None, view_messages=True)))
+            await event.client(
+                EditBannedRequest(
+                    event.chat_id,
+                    int(user.id),
+                    ChatBannedRights(until_date=None, view_messages=True),
+                )
+            )
         except Exception as e:
             await event.edit(str(e))
-        await sleep(.5)
+        await sleep(0.5)
     await event.edit("**Sukses, Anda Telah Menendang Semua Member Disini**")
+
 
 CMD_HELP.update(
     {

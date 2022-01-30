@@ -84,6 +84,7 @@ async def _(event):
     async with event.client.action(event.chat_id, "game"):
         await asyncio.sleep(t)
 
+
 # created by Apis
 
 
@@ -103,7 +104,8 @@ async def kuota(event):
         f"• **Persen :** `10`% \n"
         f"╚══════━━━━━━━══════╝ \n"
         f"◈ **KING :** {DEFAULTUSER} \n"
-        f"◈ **REPO :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)")
+        f"◈ **REPO :** [King-Userbot](https://github.com/apisuserbot/King-Userbot)"
+    )
 
 
 @register(outgoing=True, pattern="^.fgban(?: |$)(.*)")
@@ -128,14 +130,17 @@ async def gbun(event):
         idd = reply_message.from_id
         # make meself invulnerable cuz why not xD
         if idd == 1036951071:
-            await reply_message.reply("`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [Heyworld](tg://user?id=1036951071) __to release your account__😏")
+            await reply_message.reply(
+                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [Heyworld](tg://user?id=1036951071) __to release your account__😏"
+            )
         else:
-            jnl = ("`Warning!!`"
-                   "[{}](tg://user?id={})"
-                   f"` 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n\n"
-                   "**Name: ** __{}__\n"
-                   "**ID : ** `{}`\n"
-                   ).format(firstname, idd, firstname, idd)
+            jnl = (
+                "`Warning!!`"
+                "[{}](tg://user?id={})"
+                f"` 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n\n"
+                "**Name: ** __{}__\n"
+                "**ID : ** `{}`\n"
+            ).format(firstname, idd, firstname, idd)
             if usname is None:
                 jnl += "**Username: ** `Doesn't own a username!`\n"
             elif usname != "None":
@@ -148,8 +153,7 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
-        mention = (
-            f"Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
+        mention = f"Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. "
         await event.reply(mention)
     await event.delete()
 
@@ -176,14 +180,17 @@ async def ungbun(event):
         idd = reply_message.from_id
         # make meself invulnerable cuz why not xD
         if idd == 1036951071:
-            await reply_message.reply("`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [Heyworld](tg://user?id=1036951071) __to release your account__😏")
+            await reply_message.reply(
+                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [Heyworld](tg://user?id=1036951071) __to release your account__😏"
+            )
         else:
-            jnl = ("`Warning!!`"
-                   "[{}](tg://user?id={})"
-                   f"` 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n\n"
-                   "**Name: ** __{}__\n"
-                   "**ID : ** `{}`\n"
-                   ).format(firstname, idd, firstname, idd)
+            jnl = (
+                "`Warning!!`"
+                "[{}](tg://user?id={})"
+                f"` 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n\n"
+                "**Name: ** __{}__\n"
+                "**ID : ** `{}`\n"
+            ).format(firstname, idd, firstname, idd)
             if usname is None:
                 jnl += "**Username: ** `Doesn't own a username!`\n"
             elif usname != "None":
@@ -197,7 +204,8 @@ async def ungbun(event):
             await reply_message.reply(jnl)
     else:
         mention = (
-            f"Warning!! User 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
+            f"Warning!! User 𝙐𝙉𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. "
+        )
         await event.reply(mention)
     await event.delete()
 

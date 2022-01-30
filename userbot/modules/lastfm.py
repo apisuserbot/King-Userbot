@@ -60,16 +60,14 @@ LastLog = False
 
 @register(outgoing=True, pattern="^.lastfm$")
 async def last_fm(lastFM):
-    """ For .lastfm command, fetch scrobble data from last.fm. """
+    """For .lastfm command, fetch scrobble data from last.fm."""
     await lastFM.edit("`Sedang Memproses...`")
     preview = None
     playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
     username = f"https://www.last.fm/user/{LASTFM_USERNAME}"
     if playing is not None:
         try:
-            image = User(
-                LASTFM_USERNAME,
-                lastfm).get_now_playing().get_cover_image()
+            image = User(LASTFM_USERNAME, lastfm).get_now_playing().get_cover_image()
         except IndexError:
             image = None
         tags = await gettags(isNowPlaying=True, playing=playing)
@@ -100,6 +98,7 @@ async def last_fm(lastFM):
         await lastFM.edit(f"{output}", parse_mode="md", link_preview=True)
     else:
         await lastFM.edit(f"{output}", parse_mode="md")
+
 
 # run
 
@@ -180,15 +179,22 @@ async def get_curr_track(lfmbio):
                         )
             except FloodWaitError as err:
                 if BOTLOG and LastLog:
-                    await bot.send_message(BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}")
+                    await bot.send_message(
+                        BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}"
+                    )
         except FloodWaitError as err:
             if BOTLOG and LastLog:
-                await bot.send_message(BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}")
+                await bot.send_message(
+                    BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}"
+                )
         except WSError as err:
             if BOTLOG and LastLog:
-                await bot.send_message(BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}")
+                await bot.send_message(
+                    BOTLOG_CHATID, f"Terjadi kesalahan saat mengubah bio:\n{err}"
+                )
         await sleep(2)
     RUNNING = False
+
 
 # run
 
@@ -230,6 +236,7 @@ async def lastlog(lstlog):
         await lstlog.edit(LFM_LOG_DISABLED)
     else:
         await lstlog.edit(LFM_LOG_ERR)
+
 
 # end
 

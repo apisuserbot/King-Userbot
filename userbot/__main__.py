@@ -12,9 +12,11 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
 
-INVALID_PH = '\nERROR : Nomor Telepon yang Anda dimasukkan Tidak Valid' \
-             '\n Tips : Gunakan Kode Negara beserta nomornya dengan benar' \
-             '\n atau periksa nomor telepon Anda dan coba lagi !'
+INVALID_PH = (
+    "\nERROR : Nomor Telepon yang Anda dimasukkan Tidak Valid"
+    "\n Tips : Gunakan Kode Negara beserta nomornya dengan benar"
+    "\n atau periksa nomor telepon Anda dan coba lagi !"
+)
 
 try:
     bot.start()
@@ -26,8 +28,7 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 
-LOGS.info(
-    f"⚡King-Userbot⚡ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
+LOGS.info(f"⚡King-Userbot⚡ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
 
 
 if len(argv) not in (1, 3, 4):

@@ -5,7 +5,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern='^.sadboy(?: |$)(.*)')
+@register(outgoing=True, pattern="^.sadboy(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(2)
@@ -15,33 +15,38 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
 
+
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.punten(?: |$)(.*)')
+@register(outgoing=True, pattern="^.punten(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`\n┻┳|―-∩`"
-                     "`\n┳┻|     ヽ`"
-                     "`\n┻┳|    ● |`"
-                     "`\n┳┻|▼) _ノ`"
-                     "`\n┻┳|￣  )`"
-                     "`\n┳ﾐ(￣ ／`"
-                     "`\n┻┳T￣|`"
-                     "\n**Punten**")
+    await typew.edit(
+        "`\n┻┳|―-∩`"
+        "`\n┳┻|     ヽ`"
+        "`\n┻┳|    ● |`"
+        "`\n┳┻|▼) _ノ`"
+        "`\n┻┳|￣  )`"
+        "`\n┳ﾐ(￣ ／`"
+        "`\n┻┳T￣|`"
+        "\n**Punten**"
+    )
 
 
-@register(outgoing=True, pattern='^.pantau(?: |$)(.*)')
+@register(outgoing=True, pattern="^.pantau(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`\n┻┳|―-∩`"
-                     "`\n┳┻|     ヽ`"
-                     "`\n┻┳|    ● |`"
-                     "`\n┳┻|▼) _ノ`"
-                     "`\n┻┳|￣  )`"
-                     "`\n┳ﾐ(￣ ／`"
-                     "`\n┻┳T￣|`"
-                     "\n**Masih Ku Pantau**")
+    await typew.edit(
+        "`\n┻┳|―-∩`"
+        "`\n┳┻|     ヽ`"
+        "`\n┻┳|    ● |`"
+        "`\n┳┻|▼) _ノ`"
+        "`\n┻┳|￣  )`"
+        "`\n┳ﾐ(￣ ／`"
+        "`\n┻┳T￣|`"
+        "\n**Masih Ku Pantau**"
+    )
 
 
 # Create by myself @localheart
@@ -55,7 +60,9 @@ async def _(event):
         f"`Agar Terhindar Dari Orang Orang Jahat Di Telegram`"
         f"\n---------------------------------------------------"
         f"\n__**(C) copyright 2021 King-Userbot USERBOT TELEGRAM**__"
-        f"\n\n**My King :** `{ALIVE_NAME}`")
+        f"\n\n**My King :** `{ALIVE_NAME}`"
+    )
+
 
 CMD_HELP.update(
     {

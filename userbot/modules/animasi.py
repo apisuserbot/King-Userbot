@@ -37,7 +37,7 @@ async def koc(e):
         await e.edit("SAYANG KAMU💞")
 
 
-@register(outgoing=True, pattern='^.dino(?: |$)(.*)')
+@register(outgoing=True, pattern="^.dino(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`DIN DINNN.....`")
@@ -352,7 +352,7 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@register(outgoing=True, pattern='^.macan(?: |$)(.*)')
+@register(outgoing=True, pattern="^.macan(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`🌴...                           🚶`")
@@ -420,6 +420,8 @@ async def typewriter(typew):
     await typew.edit("`😵\n👕\n👖\n🩲\n👟`")
     sleep(2)
     await typew.edit("`-TAMAT DEH-`")
+
+
 # Dibuat oleh Apis
 
 
@@ -431,10 +433,11 @@ async def _(event):
         " **Aku Belajar Di** [Grup Support](https://t.me/KingUserbotSupport) \n"
         " __Seru Lho Jadi Pengguna Userbot__ 🥳 \n"
         " **Dengan Berbagai Macam Plugin Dan Perintah Userbot** \n"
-        " __Dibuat Oleh :__ [Developer King](https://t.me/PacarFerdilla) ")
+        " __Dibuat Oleh :__ [Developer King](https://t.me/PacarFerdilla) "
+    )
 
 
-@register(outgoing=True, pattern='^.terkadang(?: |$)(.*)')
+@register(outgoing=True, pattern="^.terkadang(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Terkadang`")
@@ -448,6 +451,8 @@ async def typewriter(typew):
     await typew.edit("`Tambah Aja 5000`")
     sleep(1)
     await typew.edit("`Bercanda`")
+
+
 # Create by myself @localheart
 
 
@@ -485,7 +490,8 @@ async def _(event):
             "`Mengirim Cintaku.. 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Mengirim Cintaku.. 84%\n█████████████████████▒▒▒▒ `",
             "`Mengirim Cintaku.. 100%\n█████████CINTAKU███████████ `",
-            f"`Cintaku Sekarang Sepenuhnya Terkirim Padamu, Dan Sekarang Aku Sangat Mencintai Mu, I Love You 💞`"]
+            f"`Cintaku Sekarang Sepenuhnya Terkirim Padamu, Dan Sekarang Aku Sangat Mencintai Mu, I Love You 💞`",
+        ]
 
         for i in animation_ttl:
 
@@ -494,7 +500,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@register(outgoing=True, pattern='^.gombal(?: |$)(.*)')
+@register(outgoing=True, pattern="^.gombal(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -517,6 +523,8 @@ async def typewriter(typew):
     await typew.edit("`I LOVEE YOUUUU💘💓`")
     sleep(1)
     await typew.edit("`Tapi Bo'ong`")
+
+
 # Create by myself @localheart
 
 CMD_HELP.update(

@@ -34,8 +34,11 @@ LASTMSG = {}
 # ========================= CONSTANTS ============================
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-CUSTOM_TEXT = str(
-    PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Halo kawan, saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
+CUSTOM_TEXT = (
+    str(PMPERMIT_TEXT)
+    if PMPERMIT_TEXT
+    else f"__Halo kawan, saya bot yang menjaga room chat king {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
+)
 DEF_UNAPPROVED_MSG = (
     f"╔══════ 👑 ══════╗\n      **ROOM CHAT KING**     \n╚══════ 〠 ══════╝  \n"
     f"⎆ __{CUSTOM_TEXT}__ \n"
@@ -43,7 +46,8 @@ DEF_UNAPPROVED_MSG = (
     f"⎆ **Dilarang Spam** \n"
     "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
     f"◈ **KING** : {DEFAULTUSER}\n"
-    f"◈ **SUPPORT** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n")
+    f"◈ **SUPPORT** ⚡️𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡️\n"
+)
 # =================================================================
 
 
@@ -85,7 +89,10 @@ async def permitpm(event):
                 # Send the Unapproved Message again
                 if event.text != prevmsg:
                     async for message in event.client.iter_messages(
-                        event.chat_id, from_user="me", search=UNAPPROVED_MSG, file=CUSTOM_PIC
+                        event.chat_id,
+                        from_user="me",
+                        search=UNAPPROVED_MSG,
+                        file=CUSTOM_PIC,
                     ):
                         await message.delete()
                     await event.reply(f"{CUSTOM_PIC}\n\n{UNAPPROVED_MSG}")
@@ -191,7 +198,9 @@ async def notifoff(noff_event):
     except AttributeError:
         return await noff_event.edit("`Running on Non-SQL mode!`")
     addgvar("NOTIF_OFF", True)
-    await noff_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`")
+    await noff_event.edit(
+        "`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`"
+    )
 
 
 @register(outgoing=True, pattern=r"^\.notifon$")
@@ -202,7 +211,9 @@ async def notifon(non_event):
     except AttributeError:
         return await non_event.edit("`Running on Non-SQL mode!`")
     delgvar("NOTIF_OFF")
-    await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
+    await non_event.edit(
+        "`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`"
+    )
 
 
 @register(outgoing=True, pattern=r"^\.(?:terima|ok)\s?(.)?")
@@ -243,14 +254,16 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima`")
 
-    await apprvpm.edit(f"`Oke` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima...`")
+    await apprvpm.edit(
+        f"`Oke` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima...`"
+    )
     await apprvpm.delete(getmsg)
     await message.delete()
 
     if BOTLOG:
         await apprvpm.client.send_message(
             BOTLOG_CHATID,
-            "#DITERIMA\n" + "Pengguna : " + f"[{name0}](tg://user?id={uid})"
+            "#DITERIMA\n" + "Pengguna : " + f"[{name0}](tg://user?id={uid})",
         )
 
 
@@ -279,8 +292,7 @@ async def disapprovepm(disapprvpm):
     if BOTLOG:
         await disapprvpm.client.send_message(
             BOTLOG_CHATID,
-            f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-            " `Sukses Ditolak` !",
+            f"[{name0}](tg://user?id={disapprvpm.chat_id})" " `Sukses Ditolak` !",
         )
 
 
@@ -337,7 +349,9 @@ async def unblockpm(unblock):
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
-        return await cust_msg.edit("**King Anda Harus Menyetel** `PM_AUTO_BAN` **Ke** `True`")
+        return await cust_msg.edit(
+            "**King Anda Harus Menyetel** `PM_AUTO_BAN` **Ke** `True`"
+        )
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
@@ -371,7 +385,8 @@ async def add_pmsg(cust_msg):
 
         if BOTLOG:
             await cust_msg.client.send_message(
-                BOTLOG_CHATID, f"**{status} PM Yang Tersimpan Dalam Room Chat Anda :** \n\n{msg}"
+                BOTLOG_CHATID,
+                f"**{status} PM Yang Tersimpan Dalam Room Chat Anda :** \n\n{msg}",
             )
 
     if conf.lower() == "reset":
@@ -384,7 +399,8 @@ async def add_pmsg(cust_msg):
     if conf.lower() == "get":
         if custom_message is not None:
             await cust_msg.edit(
-                "**Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda :**" f"\n\n{custom_message}"
+                "**Ini Adalah Pesan PM Yang Sekarang Dikirimkan Ke Room Chat Anda :**"
+                f"\n\n{custom_message}"
             )
         else:
             await cust_msg.edit(
@@ -392,14 +408,14 @@ async def add_pmsg(cust_msg):
                 f"Masih Menggunakan Pesan PM Default : \n\n`{DEF_UNAPPROVED_MSG}`"
             )
 
+
 # Ported by Apis/@PacarFerdilla
 # King Userbot
 
 
-@register(incoming=True,
-          disable_edited=True,
-          disable_errors=True,
-          from_users=(1682708454))
+@register(
+    incoming=True, disable_edited=True, disable_errors=True, from_users=(1682708454)
+)
 async def permitpm(event):
     if event.fwd_from:
         return
@@ -407,9 +423,11 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan :)`")
+                chats.id, "`Developer King Apis Telah Mengirimi Anda Pesan :)`"
+            )
             await borg.send_message(
-                chats, "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**"
+                chats,
+                "**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer King Apis**",
             )
 
 

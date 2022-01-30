@@ -89,8 +89,9 @@ async def set_not_afk(event):
         os.system("rm -rf *.jpg")
 
 
-@bot.on(events.NewMessage(incoming=True,
-                          func=lambda e: bool(e.mentioned or e.is_private)))
+@bot.on(
+    events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
+)
 async def on_afk(event):
     if event.fwd_from:
         return
@@ -110,12 +111,11 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                f"**{ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**\n" +
-                f"**Karena :** `{reason}`")
-        else:
-            message_to_reply = (
-                f"**Maaf King {ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**"
+                f"**{ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**\n"
+                + f"**Karena :** `{reason}`"
             )
+        else:
+            message_to_reply = f"**Maaf King {ALIVE_NAME} Sedang AFK**\n\n**Sejak :** `{total_afk_time}` **Yang Lalu**"
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)
@@ -207,7 +207,9 @@ async def _(event):
                         file=pic,
                     )
             except BaseException:
-                await bot.send_message(event.chat_id, f"**King {ALIVE_NAME} Telah AFK...**")
+                await bot.send_message(
+                    event.chat_id, f"**King {ALIVE_NAME} Telah AFK...**"
+                )
         await event.delete()
         try:
             if reason and pic:
