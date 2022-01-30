@@ -26,7 +26,9 @@ async def on_new_message(event):
             try:
                 await event.delete()
             except Exception:
-                await event.reply("`King, Anda Tidak Punya Izin Untuk Menghapus Pesan Disini`")
+                await event.reply(
+                    "`King, Anda Tidak Punya Izin Untuk Menghapus Pesan Disini`"
+                )
                 await sleep(1)
                 await reply.delete()
                 sql.rm_from_blacklist(event.chat_id, snip.lower())

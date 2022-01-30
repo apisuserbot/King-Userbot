@@ -5,14 +5,21 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
     Only dicts, lists and basic types are supported"""
 
-    items, _ = getsubitems(obj, itemkey="", islast=True,
-                           maxlinelength=maxlinelength - indent, indent=indent)
+    items, _ = getsubitems(
+        obj,
+        itemkey="",
+        islast=True,
+        maxlinelength=maxlinelength - indent,
+        indent=indent,
+    )
     return indentitems(items, indent, level=0)
 
 
 def getsubitems(obj, itemkey, islast, maxlinelength, indent):
     items = []
-    is_inline = True      # at first, assume we can concatenate the inner tokens into one line
+    is_inline = (
+        True  # at first, assume we can concatenate the inner tokens into one line
+    )
 
     isdict = isinstance(obj, dict)
     islist = isinstance(obj, list)
@@ -26,11 +33,7 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
         # render basic type
         keyseparator = "" if itemkey == "" else ": "
         itemseparator = "" if islast else ","
-        items.append(
-            itemkey +
-            keyseparator +
-            basictype2str(obj) +
-            itemseparator)
+        items.append(itemkey + keyseparator + basictype2str(obj) + itemseparator)
 
     else:
         # render lists/dicts/tuples
@@ -57,7 +60,8 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
             if isdict:
                 itemkey_ = basictype2str(k)
             inner, is_inner_inline = getsubitems(
-                obj[k], itemkey_, islast_, maxlinelength - indent, indent)
+                obj[k], itemkey_, islast_, maxlinelength - indent, indent
+            )
             # inner can be a string or a list
             subitems.extend(inner)
             # if a child couldn't be rendered inline, then we are not able
@@ -79,12 +83,12 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
 
             # this logic may need to be customized based on visualization
             # requirements:
-            if (isdict):
+            if isdict:
                 multiline = False
-            if (islist):
+            if islist:
                 multiline = True
 
-            if (multiline):
+            if multiline:
                 lines = []
                 current_line = ""
 
@@ -98,7 +102,7 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
                     else:
                         try_inline = item_text
 
-                    if (len(try_inline) > maxlinelength):
+                    if len(try_inline) > maxlinelength:
                         # push the current line to the list if maxlinelength is
                         # reached
                         if len(current_line) > 0:
@@ -111,20 +115,22 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
 
                     # Push the remainder of the content if end of list is
                     # reached
-                    if (i == len(subitems) - 1):
+                    if i == len(subitems) - 1:
                         lines.append(current_line)
 
                 subitems = lines
                 if len(subitems) > 1:
                     is_inline = False
             else:  # single-line mode
-                totallength = len(subitems) - 1   # spaces between items
+                totallength = len(subitems) - 1  # spaces between items
                 for item in subitems:
                     totallength += len(item)
-                if (totallength <= maxlinelength):
+                if totallength <= maxlinelength:
                     str = ""
                     for item in subitems:
-                        str += item + " "  # insert space between items, comma is already there
+                        str += (
+                            item + " "
+                        )  # insert space between items, comma is already there
                     # wrap concatenated content in a new list
                     subitems = [str.strip()]
                 else:
@@ -143,17 +149,17 @@ def getsubitems(obj, itemkey, islast, maxlinelength, indent):
         # if inner tokens are rendered in multiple lines already, then the
         # outer brackets remain in separate lines
         if not is_inline:
-            items.append(opening)       # opening brackets
+            items.append(opening)  # opening brackets
             # Append children to parent list as a nested list
             items.append(subitems)
-            items.append(closing)       # closing brackets
+            items.append(closing)  # closing brackets
 
     return items, is_inline
 
 
 def basictype2str(obj):
     if isinstance(obj, str):
-        strobj = "\"" + str(obj) + "\""
+        strobj = '"' + str(obj) + '"'
     elif isinstance(obj, bool):
         strobj = {True: "true", False: "false"}[obj]
     else:
@@ -169,7 +175,7 @@ def indentitems(items, indent, level):
         if isinstance(item, list):
             res += indentitems(item, indent, level + 1)
         else:
-            islast = (i == len(items) - 1)
+            islast = i == len(items) - 1
             # no new line character after the last rendered line
             if level == 0 and islast:
                 res += indentstr + item

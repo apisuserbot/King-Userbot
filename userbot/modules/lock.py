@@ -72,7 +72,9 @@ async def locks(event):
             await event.edit("`Mohon Maaf King, Apa Yang Harus Saya Kunci?..⚡`")
             return
         else:
-            await event.edit(f"`King Jenis Yang Mau Anda Kunci Tidak Valid` `{input_str}`")
+            await event.edit(
+                f"`King Jenis Yang Mau Anda Kunci Tidak Valid` `{input_str}`"
+            )
             return
 
     lock_rights = ChatBannedRights(
@@ -90,12 +92,13 @@ async def locks(event):
     )
     try:
         await event.client(
-            EditChatDefaultBannedRightsRequest(peer=peer_id,
-                                               banned_rights=lock_rights))
+            EditChatDefaultBannedRightsRequest(peer=peer_id, banned_rights=lock_rights)
+        )
         await event.edit(f"`King Telah Mengunci {what} Untuk Obrolan Ini`")
     except BaseException as e:
         await event.edit(
-            f"`Apakah King Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)}")
+            f"`Apakah King Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)}"
+        )
         return
 
 
@@ -160,7 +163,9 @@ async def rem_locks(event):
             await event.edit("`Apa Yang Harus Saya Buka King?..⚡`")
             return
         else:
-            await event.edit(f"`King Jenis Kunci Yang Mau Anda Buka Tidak Valid` `{input_str}`")
+            await event.edit(
+                f"`King Jenis Kunci Yang Mau Anda Buka Tidak Valid` `{input_str}`"
+            )
             return
 
     unlock_rights = ChatBannedRights(
@@ -178,20 +183,24 @@ async def rem_locks(event):
     )
     try:
         await event.client(
-            EditChatDefaultBannedRightsRequest(peer=peer_id,
-                                               banned_rights=unlock_rights))
+            EditChatDefaultBannedRightsRequest(
+                peer=peer_id, banned_rights=unlock_rights
+            )
+        )
         await event.edit(f"`King Telah Membuka Kunci {what} Untuk Obrolan Ini`")
     except BaseException as e:
         await event.edit(
-            f"`Apakah King Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)}")
+            f"`Apakah King Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)}"
+        )
         return
 
 
-CMD_HELP.update({
-    "locks":
-    "⚡𝘾𝙈𝘿⚡`.lock <all atau Jenis>` atau `.unlock <all atau Jenis>`\
+CMD_HELP.update(
+    {
+        "locks": "⚡𝘾𝙈𝘿⚡`.lock <all atau Jenis>` atau `.unlock <all atau Jenis>`\
 \nUsage: Memungkinkan anda kunci atau membuka kunci, beberapa jenis pesan dalam obrolan.\
 \n[Anda Harus Jadi Admin Grup Untuk Menggunakan Perintah!]\
 \n\nJenis pesan yang bisa dikunci atau dibuka adalah: \
 \n`all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`\n**Contoh:** ⚡𝘾𝙈𝘿⚡`.lock msg` atau ⚡𝘾𝙈𝘿⚡`.unlock msg`"
-})
+    }
+)

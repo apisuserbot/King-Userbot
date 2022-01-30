@@ -24,8 +24,8 @@ from telethon.errors.rpcerrorlist import BotInlineDisabledError
 
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
-    level=logging.WARNING)
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 
 
 @register(outgoing=True, pattern=r"^\.helpme")
@@ -34,17 +34,18 @@ async def yardim(event):
     if kingbotusername and BOT_TOKEN:
         try:
             results = await event.client.inline_query(
-                kingbotusername,
-                "@KingUserbotSupport"
+                kingbotusername, "@KingUserbotSupport"
             )
         except BotInlineDisabledError:
-            return await event.edit("`Bot tidak dapat digunakan dalam mode sebaris\nPastikan untuk mengaktifkan mode sebaris!`")
+            return await event.edit(
+                "`Bot tidak dapat digunakan dalam mode sebaris\nPastikan untuk mengaktifkan mode sebaris!`"
+            )
         await results[0].click(
-            event.chat_id,
-            reply_to=event.reply_to_msg_id,
-            hide_via=False
+            event.chat_id, reply_to=event.reply_to_msg_id, hide_via=False
         )
         await event.delete()
     else:
-        return await event.edit("`Botnya tidak berfungsi! Silakan atur Bot Token dan Nama Pengguna dengan benar`"
-                                "\n`Plugin telah dihentikan`")
+        return await event.edit(
+            "`Botnya tidak berfungsi! Silakan atur Bot Token dan Nama Pengguna dengan benar`"
+            "\n`Plugin telah dihentikan`"
+        )

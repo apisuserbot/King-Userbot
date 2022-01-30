@@ -55,28 +55,36 @@ if CONSOLE_LOGGER_VERBOSE:
         level=DEBUG,
     )
 else:
-    basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                level=INFO)
+    basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
+    )
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 9:
-    LOGS.info("Anda HARUS memiliki versi python minimal 3.9"
-              "Beberapa fitur bergantung pada ini, Bot berhenti.")
+    LOGS.info(
+        "Anda HARUS memiliki versi python minimal 3.9"
+        "Beberapa fitur bergantung pada ini, Bot berhenti."
+    )
     quit(1)
 
 # Periksa apakah konfigurasi telah diedit dengan menggunakan variabel yang sudah digunakan.
 # Pada dasarnya, ini adalah 'pemeriksaan keperawanan' untuk file konfigurasi :)
 CONFIG_CHECK = os.environ.get(
-    "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
+    "___________PLOX_______REMOVE_____THIS_____LINE__________", None
+)
 
 if CONFIG_CHECK:
-    LOGS.info(
-        "Harap hapus baris yang disebutkan dalam tagar pertama dari vars"
-    )
+    LOGS.info("Harap hapus baris yang disebutkan dalam tagar pertama dari vars")
     quit(1)
 
 # DEV and SUDO_USERS
-DEVS = 1682708454, 1448477501, 1510613960, 1712864821, 1856628847,
+DEVS = (
+    1682708454,
+    1448477501,
+    1510613960,
+    1712864821,
+    1856628847,
+)
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 
 # Telegram App KEY and HASH
@@ -97,8 +105,10 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
 # Custom Pmpermit pic
-PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
+PMPERMIT_PIC = (
+    os.environ.get("PMPERMIT_PIC")
+    or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
+)
 
 # Bleep Blop, this is a bot :)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
@@ -122,10 +132,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL",
-    "https://github.com/apisuserbot/King-Userbot.git")
-UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "King-Userbot")
+    "UPSTREAM_REPO_URL", "https://github.com/apisuserbot/King-Userbot.git"
+)
+UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "King-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -141,8 +150,7 @@ REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = os.environ.get(
-    "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
+GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
@@ -207,20 +215,20 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
-ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
+ALIVE_LOGO = (
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
+)
 
 # Default .helpme logo
-INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
+INLINE_PIC = (
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
+)
 
 # Default Emoji Help Inline
-EMOJI_HELP = os.environ.get(
-    "EMOJI_HELP") or "|"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "|"
 
 # Default Emoji Inline
-EMOJI_INLINE = os.environ.get(
-    "EMOJI_INLINE") or "•"
+EMOJI_INLINE = os.environ.get("EMOJI_INLINE") or "•"
 
 # Last.fm Plugin
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -232,10 +240,12 @@ LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
 LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
 LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
 if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
-    lastfm = LastFMNetwork(api_key=LASTFM_API,
-                           api_secret=LASTFM_SECRET,
-                           username=LASTFM_USERNAME,
-                           password_hash=LASTFM_PASS)
+    lastfm = LastFMNetwork(
+        api_key=LASTFM_API,
+        api_secret=LASTFM_SECRET,
+        username=LASTFM_USERNAME,
+        password_hash=LASTFM_PASS,
+    )
 else:
     lastfm = None
 
@@ -245,8 +255,7 @@ G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
 G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
-                                         "./downloads")
+TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads")
 # Google Photos
 G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
 G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
@@ -287,7 +296,7 @@ def is_mongo_alive():
 # Init Redis
 # Redis will be hosted inside the docker container that hosts the bot
 # We need redis for just caching, so we just leave it to non-persistent
-REDIS = StrictRedis(host='localhost', port=6379, db=0)
+REDIS = StrictRedis(host="localhost", port=6379, db=0)
 
 
 def is_redis_alive():
@@ -300,14 +309,12 @@ def is_redis_alive():
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
-if not os.path.exists('bin'):
-    os.mkdir('bin')
+if not os.path.exists("bin"):
+    os.mkdir("bin")
 
 binaries = {
-    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown":
-    "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
+    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown": "bin/megadown",
+    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py": "bin/cmrudl",
 }
 
 for binary, path in binaries.items():
@@ -338,7 +345,8 @@ async def check_botlog_chatid():
     if entity.default_banned_rights.send_messages:
         LOGS.info(
             "Akun Anda Tidak Memiliki Hak Untuk Mengirim Pesan Ke BOTLOG_CHATID "
-            "Grup Pribadi Periksa Apakah Anda Mengetik ID Obrolan Benar")
+            "Grup Pribadi Periksa Apakah Anda Mengetik ID Obrolan Benar"
+        )
         quit(1)
 
 
@@ -349,13 +357,15 @@ with bot:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
             "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
-            "Masukan ID BOTLOG_CHATID Dengan Benar")
+            "Masukan ID BOTLOG_CHATID Dengan Benar"
+        )
         quit(1)
 
 
 async def check_alive():
     await bot.send_message(BOTLOG_CHATID, "```⚡𝗞𝗶𝗻𝗴-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ Telah Aktif```")
     return
+
 
 with bot:
     try:
@@ -364,7 +374,8 @@ with bot:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
             "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
-            "Masukan ID BOTLOG_CHATID Dengan Benar")
+            "Masukan ID BOTLOG_CHATID Dengan Benar"
+        )
         quit(1)
 
 # ==================================GlobalVariables================================= #
@@ -396,23 +407,25 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format(
-                f"{EMOJI_HELP}",
-                x,
-                f"{EMOJI_HELP}"),
-            data="ub_modul_{}".format(x))
+            "{} {} {}".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"),
+            data="ub_modul_{}".format(x),
+        )
         for x in helpable_modules
     ]
-    pairs = list(zip(modules[::number_of_cols],
-                     modules[1::number_of_cols],
-                     modules[2::number_of_cols]))
+    pairs = list(
+        zip(
+            modules[::number_of_cols],
+            modules[1::number_of_cols],
+            modules[2::number_of_cols],
+        )
+    )
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-            modulo_page * number_of_rows: number_of_rows * (modulo_page + 1)
+            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
         ] + [
             (
                 custom.Button.inline(
@@ -423,7 +436,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                 ),
                 custom.Button.inline(
                     "⌦", data="{}_next({})".format(prefix, modulo_page)
-                )
+                ),
             )
         ]
     return pairs
@@ -435,12 +448,10 @@ king = bot
 with king:
     try:
         king.tgbot = tgbot = TelegramClient(
-            "BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
+            "BOT_TOKEN", api_id=API_KEY, api_hash=API_HASH
+        ).start(bot_token=BOT_TOKEN)
 
-# -----------------------------------------------File------------------------------------>
+        # -----------------------------------------------File------------------------------------>
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
@@ -450,7 +461,7 @@ with king:
         donate = "https://telegra.ph/file/4f8964fdd184b76b7ec8a.jpg"
         plugins = CMD_HELP
 
-# ------------------------------ChatAction--------------->
+        # ------------------------------ChatAction--------------->
 
         @king.tgbot.on(events.ChatAction)
         async def handler(event):
@@ -464,12 +475,14 @@ with king:
                     f"🤖 __Gabung Grup Tutorial Userbot Kami Agar Anda Bisa Memahami Userbot Telegram__\n",
                     buttons=[
                         [
-                            Button.url("Tutorial Userbot",
-                                       "https://t.me/KingUserbotSupport")],
-                    ]
+                            Button.url(
+                                "Tutorial Userbot", "https://t.me/KingUserbotSupport"
+                            )
+                        ],
+                    ],
                 )
 
-# ====================================InlineHandler===================================== #
+        # ====================================InlineHandler===================================== #
 
         @king.tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
@@ -486,24 +499,31 @@ with king:
                     f"**Database :** Mongo db \n"
                     f"**Bahasa :** Python \n"
                     f"**Daftar Perintah Bot :** [KLIK DISINI](https://telegra.ph/Perintah-Penggunaan-08-05) \n"
-                    "========================================")
-                await king.tgbot.send_file(event.chat_id, file=logo,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="➕ Tambahkan Bot Ini Ke Grup ➕",
-                                                       url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-                                               [custom.Button.url(
-                                                   text="Support Chat",
-                                                   url="https://t.me/KingUserbotSupport"),
-                                                   custom.Button.url(
-                                                       text="Support Channel",
-                                                       url="https://t.me/TeamKingUserbot"
-                                               )
-                                               ]
-                                           ]
-                                           )
+                    "========================================"
+                )
+                await king.tgbot.send_file(
+                    event.chat_id,
+                    file=logo,
+                    caption=text,
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                text="➕ Tambahkan Bot Ini Ke Grup ➕",
+                                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                            )
+                        ],
+                        [
+                            custom.Button.url(
+                                text="Support Chat",
+                                url="https://t.me/KingUserbotSupport",
+                            ),
+                            custom.Button.url(
+                                text="Support Channel",
+                                url="https://t.me/TeamKingUserbot",
+                            ),
+                        ],
+                    ],
+                )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
@@ -516,11 +536,16 @@ with king:
                     f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
-                            Button.url("Repository",
-                                       "https://github.com/apisuserbot/King-Userbot"),
-                            Button.url("License",
-                                       "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-                    ]
+                            Button.url(
+                                "Repository",
+                                "https://github.com/apisuserbot/King-Userbot",
+                            ),
+                            Button.url(
+                                "License",
+                                "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+                            ),
+                        ],
+                    ],
                 )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/ping"))
@@ -553,21 +578,25 @@ with king:
                     f"`Database  :` Mongo db \n\n"
                     "=============================\n"
                     f"    **USERBOT TELEGRAM** \n"
-                    "=============================")
-                await king.tgbot.send_file(event.chat_id, file=alive,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Repository",
-                                                       url="https://github.com/apisuserbot/King-Userbot"),
-                                                   custom.Button.url(
-                                                       text="License",
-                                                       url="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                    "============================="
+                )
+                await king.tgbot.send_file(
+                    event.chat_id,
+                    file=alive,
+                    caption=text,
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                text="Repository",
+                                url="https://github.com/apisuserbot/King-Userbot",
+                            ),
+                            custom.Button.url(
+                                text="License",
+                                url="https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+                            ),
+                        ]
+                    ],
+                )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/donasi"))
         async def handler(event):
@@ -578,18 +607,21 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
-                    f"**Terimakasih** ")
-                await king.tgbot.send_file(event.chat_id, file=donate,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Donasi Developer",
-                                                       url="https://saweria.co/DonasiDeveloper"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                    f"**Terimakasih** "
+                )
+                await king.tgbot.send_file(
+                    event.chat_id,
+                    file=donate,
+                    caption=text,
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                text="Donasi Developer",
+                                url="https://saweria.co/DonasiDeveloper",
+                            )
+                        ]
+                    ],
+                )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
@@ -603,24 +635,28 @@ with king:
                     f"{reply}\n",
                     buttons=[
                         [
-                            Button.url("String Session",
-                                       "https://replit.com/@apisuserbot/String-Session?v=1")],
-                    ]
+                            Button.url(
+                                "String Session",
+                                "https://replit.com/@apisuserbot/String-Session?v=1",
+                            )
+                        ],
+                    ],
                 )
 
         @king.tgbot.on(events.NewMessage(pattern=r"/profile"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
-                await event.reply(f"**Profile Chat**\n\n**Nama Chat :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Chat :** {u.id}")
+                await event.reply(
+                    f"**Profile Chat**\n\n**Nama Chat :** [{get_display_name(u)}](tg://user?id={u.id})\n**ID Chat :** {u.id}"
+                )
 
         @king.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@KingUserbotSupport"):
+            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logo,
@@ -632,9 +668,8 @@ with king:
                 )
             elif query.startswith("king_bot"):
                 result = builder.article(
-                    title="USERBOT TELEGRAM",
-                    buttons=[],
-                    link_preview=True)
+                    title="USERBOT TELEGRAM", buttons=[], link_preview=True
+                )
             else:
                 result = builder.article(
                     title="USERBOT TELEGRAM",
@@ -645,16 +680,19 @@ with king:
                         [
                             custom.Button.url(
                                 "Repository",
-                                "https://github.com/apisuserbot/King-Userbot"),
+                                "https://github.com/apisuserbot/King-Userbot",
+                            ),
                             custom.Button.url(
                                 "License",
-                                "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
+                                "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+                            ),
+                        ],
                     ],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
 
-# =============================================Button========================================= #
+        # =============================================Button========================================= #
 
         @king.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -666,11 +704,12 @@ with king:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, plugins, "helpme")
                 text = f"\n📚 **Menu Help Inline!**\n\n**King** {DEFAULTUSER}\n◎› **Plugins :** `{len(plugins)}`\n◎› **Branch :** __{UPSTREAM_REPO_BRANCH}__\n◎› **Versi Userbot :** `v{BOT_VER}`\n\n📙 **Menu Help** `.help` <nama plugin>\n\n**USERBOT TELEGRAM**"
-                await event.edit(text,
-                                 file=logo,
-                                 buttons=buttons,
-                                 link_preview=False,
-                                 )
+                await event.edit(
+                    text,
+                    file=logo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
             else:
                 reply_pop_up_alert = f"🔒 Code Tersembunyi 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -690,12 +729,16 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                f"{EMOJI_INLINE} Menu Alive {EMOJI_INLINE}", data="alive_inline"),
+                                f"{EMOJI_INLINE} Menu Alive {EMOJI_INLINE}",
+                                data="alive_inline",
+                            ),
                             custom.Button.inline(
-                                f"{EMOJI_INLINE} Menu Database {EMOJI_INLINE}", data="database_inline")],
-                        [custom.Button.inline(
-                            "⬅️ Kembali", data="menu_inline")],
-                    ]
+                                f"{EMOJI_INLINE} Menu Database {EMOJI_INLINE}",
+                                data="database_inline",
+                            ),
+                        ],
+                        [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -721,20 +764,25 @@ with king:
                     f"`Database  :` Mongo db \n"
                     "============================\n"
                     f"    **USERBOT TELEGRAM** \n"
-                    "============================")
+                    "============================"
+                )
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Repository",
-                                       "https://github.com/apisuserbot/King-Userbot"),
-                            Button.url("License",
-                                       "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE")],
-                        [custom.Button.inline(
-                            "⬅️ Kembali", data="settings")],
-                    ]
+                            Button.url(
+                                "Repository",
+                                "https://github.com/apisuserbot/King-Userbot",
+                            ),
+                            Button.url(
+                                "License",
+                                "https://github.com/apisuserbot/King-Userbot/blob/King-Userbot/LICENSE",
+                            ),
+                        ],
+                        [custom.Button.inline("⬅️ Kembali", data="settings")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -751,16 +799,15 @@ with king:
                     f"**Database Mongo db** \n"
                     f"**Pengguna :** {DEFAULTUSER} \n"
                     f"**Branch :** {UPSTREAM_REPO_BRANCH} \n"
-                    f"**Versi Userbot :** {BOT_VER} ")
+                    f"**Versi Userbot :** {BOT_VER} "
+                )
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [
-                            custom.Button.inline(
-                                "⬅️ Kembali", data="settings")],
-                    ]
+                        [custom.Button.inline("⬅️ Kembali", data="settings")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -773,10 +820,8 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "helpme")
+                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
@@ -798,10 +843,15 @@ with king:
                     buttons=[
                         [
                             custom.Button.inline(
-                                f"{EMOJI_INLINE} Info Plugins {EMOJI_INLINE}", b"info_plugins"),
+                                f"{EMOJI_INLINE} Info Plugins {EMOJI_INLINE}",
+                                b"info_plugins",
+                            ),
                             custom.Button.inline(
-                                f"{EMOJI_INLINE} Menu Inline {EMOJI_INLINE}", data="menu_inline")],
-                    ]
+                                f"{EMOJI_INLINE} Menu Inline {EMOJI_INLINE}",
+                                data="menu_inline",
+                            ),
+                        ],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -814,8 +864,7 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
+                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
@@ -831,7 +880,8 @@ with king:
                 f"Info Plugins \n\n"
                 f"plugins : {len(plugins)} \n"
                 f"help <nama plugin> : untuk melihat perintah plugin \n\n"
-                f"Contoh : Ketik .help atau bisa juga .help <nama plugin>")
+                f"Contoh : Ketik .help atau bisa juga .help <nama plugin>"
+            )
             await event.answer(text, cache_time=0, alert=True)
 
         @king.tgbot.on(
@@ -848,20 +898,30 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline(f"{EMOJI_INLINE} Menu Pengaturan {EMOJI_INLINE}", data="settings"),
-                            custom.Button.inline(f"{EMOJI_INLINE} Menu Set Vars {EMOJI_INLINE}", data="menu_vars")],
-                        [custom.Button.inline(f"{EMOJI_INLINE} Menu Buka {EMOJI_INLINE}", data="opener")],
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Menu Pengaturan {EMOJI_INLINE}",
+                                data="settings",
+                            ),
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Menu Set Vars {EMOJI_INLINE}",
+                                data="menu_vars",
+                            ),
+                        ],
+                        [
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Menu Buka {EMOJI_INLINE}",
+                                data="opener",
+                            )
+                        ],
                         [custom.Button.inline("🗑 Menu Tutup 🗑", b"close")],
-                    ]
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @king.tgbot.on(
-            events.callbackquery.CallbackQuery(
-                data=re.compile(rb"menu_vars")
-            )
+            events.callbackquery.CallbackQuery(data=re.compile(rb"menu_vars"))
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
@@ -872,11 +932,23 @@ with king:
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline(f"{EMOJI_INLINE} Vars Alive {EMOJI_INLINE}", data="alive_vars"),
-                            custom.Button.inline(f"{EMOJI_INLINE} Vars Pmpermit {EMOJI_INLINE}", data="pmpermit_vars")],
-                        [custom.Button.inline(f"{EMOJI_INLINE} Vars Inline {EMOJI_INLINE}", data="inline_vars")],
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Vars Alive {EMOJI_INLINE}",
+                                data="alive_vars",
+                            ),
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Vars Pmpermit {EMOJI_INLINE}",
+                                data="pmpermit_vars",
+                            ),
+                        ],
+                        [
+                            custom.Button.inline(
+                                f"{EMOJI_INLINE} Vars Inline {EMOJI_INLINE}",
+                                data="inline_vars",
+                            )
+                        ],
                         [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
-                    ]
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -901,16 +973,15 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var ALIVE_LOGO` <link>\n"
                     f"`.set var KING_TEKS_KUSTOM` <teks>\n"
-                    f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>")
+                    f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>"
+                )
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [
-                            custom.Button.inline(
-                                "⬅️ Kembali", data="menu_vars")],
-                    ]
+                        [custom.Button.inline("⬅️ Kembali", data="menu_vars")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -935,16 +1006,15 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var PMPERMIT_PIC` <link>\n"
                     f"`.set var PMPERMIT_TEXT` <teks>\n"
-                    f"`.set var PMPERMIT_PIC None` <tidak memakai pic/foto>")
+                    f"`.set var PMPERMIT_PIC None` <tidak memakai pic/foto>"
+                )
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [
-                            custom.Button.inline(
-                                "⬅️ Kembali", data="menu_vars")],
-                    ]
+                        [custom.Button.inline("⬅️ Kembali", data="menu_vars")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -970,16 +1040,15 @@ with king:
                     f"`.set var INLINE_PIC` <link>\n"
                     f"`.set var EMOJI_HELP` <emoji>\n"
                     f"`.set var EMOJI_INLINE` <emoji>\n"
-                    f"`.set var INLINE_PIC None` <tidak memakai pic/foto>")
+                    f"`.set var INLINE_PIC None` <tidak memakai pic/foto>"
+                )
                 await event.edit(
                     text,
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [
-                            custom.Button.inline(
-                                "⬅️ Kembali", data="menu_vars")],
-                    ]
+                        [custom.Button.inline("⬅️ Kembali", data="menu_vars")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -994,9 +1063,8 @@ with king:
                     file=logo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline(
-                            "⬅️ Kembali", data="menu_inline")],
-                    ]
+                        [custom.Button.inline("⬅️ Kembali", data="menu_inline")],
+                    ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
@@ -1014,13 +1082,14 @@ with king:
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
+                        str(CMD_HELP[modul_name]).replace("`", "")[:150]
+                        + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace("`", "")
 
                 reply_pop_up_alert = (
                     help_string
@@ -1038,12 +1107,14 @@ with king:
         LOGS.info(
             "Mode Inline Bot Mu Nonaktif"
             "Harap Anda Mengaktifkannya"
-            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot >> pilih mode inline >> Turn On")
+            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot >> pilih mode inline >> Turn On"
+        )
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
             "Vars BOTLOG_CHATID Yang Anda Masukan"
             "Tidak Valid, Periksa Pada Vars BOTLOG_CHATID"
-            "Masukan ID BOTLOG_CHATID Dengan Benar")
+            "Masukan ID BOTLOG_CHATID Dengan Benar"
+        )
         quit(1)

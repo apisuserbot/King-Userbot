@@ -13,7 +13,7 @@ from userbot.events import register
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
-    """ Checks if the incoming message contains handler of a filter """
+    """Checks if the incoming message contains handler of a filter"""
     try:
         if not (await handler.get_sender()).bot:
             try:
@@ -26,12 +26,12 @@ async def filter_incoming_handler(handler):
             if not filters:
                 return
             for trigger in filters:
-                pattern = (
-                    r"( |^|[^\w])" + escape(trigger.keyword) + r"( |$|[^\w])")
+                pattern = r"( |^|[^\w])" + escape(trigger.keyword) + r"( |$|[^\w])"
                 pro = search(pattern, name, flags=IGNORECASE)
                 if pro and trigger.f_mesg_id:
                     msg_o = await handler.client.get_messages(
-                        entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id))
+                        entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id)
+                    )
                     await handler.reply(msg_o.message, file=msg_o.media)
                 elif pro and trigger.reply:
                     await handler.reply(trigger.reply)
@@ -41,7 +41,7 @@ async def filter_incoming_handler(handler):
 
 @register(outgoing=True, pattern=r"^.filter (.*)")
 async def add_new_filter(new_handler):
-    """ For .filter command, allows adding new filters in a chat """
+    """For .filter command, allows adding new filters in a chat"""
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
@@ -59,14 +59,16 @@ async def add_new_filter(new_handler):
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await new_handler.client.send_message(
-                BOTLOG_CHATID, f"#FILTER\nID OBROLAN: {new_handler.chat_id}\nTRIGGER: {keyword}"
-                "\n\n`Pesan Berikut Disimpan Sebagai Data Balasan Filter Untuk Obrolan, Mohon Jangan Menghapusnya King`"
+                BOTLOG_CHATID,
+                f"#FILTER\nID OBROLAN: {new_handler.chat_id}\nTRIGGER: {keyword}"
+                "\n\n`Pesan Berikut Disimpan Sebagai Data Balasan Filter Untuk Obrolan, Mohon Jangan Menghapusnya King`",
             )
             msg_o = await new_handler.client.forward_messages(
                 entity=BOTLOG_CHATID,
                 messages=msg,
                 from_peer=new_handler.chat_id,
-                silent=True)
+                silent=True,
+            )
             msg_id = msg_o.id
         else:
             return await new_handler.edit(
@@ -77,14 +79,14 @@ async def add_new_filter(new_handler):
         string = rep_msg.text
     success = "`Sukses Menambahkan Filter` **{}** `{}`."
     if add_filter(str(new_handler.chat_id), keyword, string, msg_id) is True:
-        await new_handler.edit(success.format(keyword, 'Disini'))
+        await new_handler.edit(success.format(keyword, "Disini"))
     else:
-        await new_handler.edit(success.format(keyword, 'Disini'))
+        await new_handler.edit(success.format(keyword, "Disini"))
 
 
 @register(outgoing=True, pattern=r"^.stop (.*)")
 async def remove_a_filter(r_handler):
-    """ For .stop command, allows you to remove a filter from a chat. """
+    """For .stop command, allows you to remove a filter from a chat."""
     try:
         from userbot.modules.sql_helper.filter_sql import remove_filter
     except AttributeError:
@@ -93,8 +95,7 @@ async def remove_a_filter(r_handler):
     if not remove_filter(r_handler.chat_id, filt):
         await r_handler.edit("`Filter` **{}** `Tidak Ada Disini`.".format(filt))
     else:
-        await r_handler.edit(
-            "`Sukses Menghapus Filter` **{}** `Disini`.".format(filt))
+        await r_handler.edit("`Sukses Menghapus Filter` **{}** `Disini`.".format(filt))
 
 
 @register(outgoing=True, pattern="^.bersihkanbotfilter (.*)")
@@ -112,19 +113,19 @@ async def kick_marie_filter(event):
         if bot_type.lower() == "marie":
             await event.reply("/stop %s" % (i.strip()))
         if bot_type.lower() == "rose":
-            i = i.replace('`', '')
+            i = i.replace("`", "")
             await event.reply("/stop %s" % (i.strip()))
         await sleep(0.3)
-    await event.respond(
-        "```Sukses Menghapus Semua Filter Bot!```")
+    await event.respond("```Sukses Menghapus Semua Filter Bot!```")
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "Saya Membersihkan Semua Filter Bot Di " + str(event.chat_id))
+            BOTLOG_CHATID, "Saya Membersihkan Semua Filter Bot Di " + str(event.chat_id)
+        )
 
 
 @register(outgoing=True, pattern="^.filters$")
 async def filters_active(event):
-    """ For .filters command, lists all of the active filters in a chat. """
+    """For .filters command, lists all of the active filters in a chat."""
     try:
         from userbot.modules.sql_helper.filter_sql import get_filters
     except AttributeError:
@@ -139,6 +140,7 @@ async def filters_active(event):
             transact += " ⎆ `{}`\n".format(filt.keyword)
 
     await event.edit(transact)
+
 
 # KING USERBOT
 

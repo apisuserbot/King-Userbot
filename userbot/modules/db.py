@@ -27,13 +27,15 @@ async def amireallydbs(dbs):
         db = "Redis Cache sepertinya gagal!"
     else:
         db = "Databases functioning normally!"
-    await dbs.edit(""
-                   f"**Database Mongo db** \n\n"
-                   f"**Pengguna :** `{DEFAULTUSER}` \n"
-                   f"**Status Database :** `{db}`\n"
-                   f"**Branch :** __King-Userbot__\n"
-                   f"**Versi Userbot :** `{BOT_VER}`"
-                   "")
+    await dbs.edit(
+        ""
+        f"**Database Mongo db** \n\n"
+        f"**Pengguna :** `{DEFAULTUSER}` \n"
+        f"**Status Database :** `{db}`\n"
+        f"**Branch :** __King-Userbot__\n"
+        f"**Versi Userbot :** `{BOT_VER}`"
+        ""
+    )
 
 
 CMD_HELP.update(

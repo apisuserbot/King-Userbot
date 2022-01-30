@@ -29,8 +29,7 @@ async def _(event):
         except YouBlockedUserError:
             await event.reply("```Harap buka blokir @nHentaiBot dan coba lagi```")
             return
-        if response.text.startswith(
-                "**Maaf, saya tidak bisa mendapatkan manga dari**"):
+        if response.text.startswith("**Maaf, saya tidak bisa mendapatkan manga dari**"):
             await event.edit("```Saya pikir ini bukan tautan yang tepat king!```")
         else:
             await event.delete()

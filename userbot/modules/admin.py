@@ -334,7 +334,9 @@ async def spider(spdr):
         return await spdr.edit("`Tidak Bisa Membisukan Diri Sendiri:)`")
 
     if user.id in DEVS:
-        return await spdr.edit("`Sepertinya Anda Tidak Bisa Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`")
+        return await spdr.edit(
+            "`Sepertinya Anda Tidak Bisa Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`"
+        )
 
     # If everything goes well, do announcing and mute
     await spdr.edit(
@@ -524,7 +526,9 @@ async def gspider(gspdr):
         return await gspdr.edit("`Tidak Bisa Membisukan Diri Sendiri:)`")
 
     if user.id in DEVS:
-        return await gspdr.edit("`Sepertinya Anda Tidak Bisa Gloabl Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`")
+        return await gspdr.edit(
+            "`Sepertinya Anda Tidak Bisa Gloabl Mute Pengguna Tersebut , Karena Dia Adalah Pembuat Saya 😈`"
+        )
 
     # If pass, inform and start gmuting
     await gspdr.edit("`Sukses Membisukan Pengguna!`")
@@ -572,7 +576,8 @@ async def rm_deletedacc(show):
         if del_u > 0:
             del_status = (
                 f"`Menemukan` **{del_u}** `Akun Hantu/Terhapus/Zombie Dalam Grup Ini,"
-                "\nBersihkan Itu Menggunakan Perintah .zombies clean`")
+                "\nBersihkan Itu Menggunakan Perintah .zombies clean`"
+            )
         return await show.edit(del_status)
 
     # Here laying the sanity check
@@ -795,9 +800,7 @@ async def get_user_from_event(event):
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
 
-            if isinstance(
-                    probable_user_mention_entity,
-                    MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
@@ -887,9 +890,7 @@ async def get_userdel_from_event(event):
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
 
-            if isinstance(
-                    probable_user_mention_entity,
-                    MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj

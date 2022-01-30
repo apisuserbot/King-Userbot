@@ -158,9 +158,7 @@ async def addf(event):
     try:
         add_flist(event.chat_id, fed_name)
     except IntegrityError:
-        return await event.edit(
-            "**Grup ini sudah terhubung ke daftar federasi.**"
-        )
+        return await event.edit("**Grup ini sudah terhubung ke daftar federasi.**")
 
     await event.edit("**Menambahkan grup ini ke daftar federasi!**")
 
@@ -221,4 +219,6 @@ CMD_HELP.update(
         "\n\n.delf"
         "\nPenjelasan: Menghapus grup saat ini dari federasi yang terhubung."
         "\n\n.listf"
-        "\nPenjelasan: Mencantumkan semua federasi yang terhubung dengan nama yang ditentukan."})
+        "\nPenjelasan: Mencantumkan semua federasi yang terhubung dengan nama yang ditentukan."
+    }
+)

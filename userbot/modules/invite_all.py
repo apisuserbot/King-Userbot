@@ -3,7 +3,8 @@ from telethon.tl.functions.messages import GetFullChatRequest
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
-    ChannelPublicGroupNaError)
+    ChannelPublicGroupNaError,
+)
 from telethon.tl.functions.channels import GetFullChannelRequest
 
 from userbot.events import register
@@ -34,7 +35,9 @@ async def get_chatinfo(event):
             await event.reply("`channel/group tidak valid`")
             return None
         except ChannelPrivateError:
-            await event.reply("`Ini adalah channel/group pribadi atau saya dibanned dari sana`")
+            await event.reply(
+                "`Ini adalah channel/group pribadi atau saya dibanned dari sana`"
+            )
             return None
         except ChannelPublicGroupNaError:
             await event.reply("`Channel atau supergroup tidak ada`")
@@ -59,20 +62,28 @@ async def get_users(event):
         return await king.edit("`Maaf, Tidak dapat menambahkan pengguna di sini`")
     s = 0
     f = 0
-    error = 'None'
+    error = "None"
 
     await king.edit("**TerminalStatus**\n\n`Mengumpulkan Pengguna...`")
     async for user in event.client.iter_participants(kingubot.full_chat.id):
         try:
             if error.startswith("Too"):
-                return await king.edit(f"**Terminal Kesalahan...**\n(`Mungkin Mendapat Kesalahan Batas dari telethon Tolong Coba Lagi`)\n**Error** : \n`{error}`\n\n• Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`")
-            await event.client(functions.channels.InviteToChannelRequest(channel=chat, users=[user.id]))
+                return await king.edit(
+                    f"**Terminal Kesalahan...**\n(`Mungkin Mendapat Kesalahan Batas dari telethon Tolong Coba Lagi`)\n**Error** : \n`{error}`\n\n• Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`"
+                )
+            await event.client(
+                functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
+            )
             s = s + 1
-            await king.edit(f"**Terminal Berjalan...**\n\n• Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`\n\n**Kesalahan Terakhir :** `{error}`")
+            await king.edit(
+                f"**Terminal Berjalan...**\n\n• Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`\n\n**Kesalahan Terakhir :** `{error}`"
+            )
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await king.edit(f"**Terminal Selesai** \n\n• Sukses Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`")
+    return await king.edit(
+        f"**Terminal Selesai** \n\n• Sukses Menambahkan Pengguna `{s}`\n• Gagal Menambahkan Pengguna `{f}`"
+    )
 
 
 CMD_HELP.update(

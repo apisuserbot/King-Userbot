@@ -283,9 +283,7 @@ async def resize_photo(photo):
 @register(outgoing=True, pattern=r"^\.stkrinfo$")
 async def get_pack_info(event):
     if not event.is_reply:
-        return await event.edit(
-            "`Mohon Balas Ke Sticker King`"
-        )
+        return await event.edit("`Mohon Balas Ke Sticker King`")
 
     rep_msg = await event.get_reply_message()
     if not rep_msg.document:
@@ -320,7 +318,8 @@ async def get_pack_info(event):
         f"**Official :** `{get_stickerset.set.official}`\n"
         f"**Arsip :** `{get_stickerset.set.archived}`\n"
         f"**Sticker Dalam :** `{len(get_stickerset.packs)}`\n"
-        f"**Emoji Sticker ↯**\n{' '.join(pack_emojis)}")
+        f"**Emoji Sticker ↯**\n{' '.join(pack_emojis)}"
+    )
 
     await event.edit(OUTPUT)
 
@@ -353,6 +352,7 @@ async def sticker_to_png(sticker):
         else:
             await sticker.delete()
     return
+
 
 # KING - USERBOT
 

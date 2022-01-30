@@ -83,11 +83,11 @@ async def ANTI_SPAMBOTS(welcm):
 
                     # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
                     print(
-                        f"Pengguna Telah Bergabung : {check_user.first_name} [ID: {check_user.id}]")
+                        f"Pengguna Telah Bergabung : {check_user.first_name} [ID: {check_user.id}]"
+                    )
                     print(f"Chat : {welcm.chat.title}")
                     print(f"Waktu : {join_time}")
-                    print(
-                        f"Pesan terkirim : {message.text}\n\nWaktu : {message_date}")
+                    print(f"Pesan terkirim : {message.text}\n\nWaktu : {message_date}")
                     ##############################################
 
                     try:
@@ -194,6 +194,7 @@ async def ANTI_SPAMBOTS(welcm):
                         )
     except ValueError:
         pass
+
 
 # Ported by Apis (King-Userbot)
 

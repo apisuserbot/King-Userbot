@@ -16,7 +16,8 @@ async def usit(e):
         "═⎆ developer  : [King Apis](t.me/PacarFerdilla) \n"
         "═⎆ Repository : [King-Userbot](https://github.com/apisuserbot/King-Userbot) \n"
         "═⎆ Instragam  : [Instagram King Apis](Instagram.com/apis_goodboy) \n"
-        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport)")
+        "═⎆ Grup Support : [King Userbot Support](https://t.me/KingUserbotSupport)"
+    )
 
 
 @register(outgoing=True, pattern="^.vars$")
@@ -24,7 +25,8 @@ async def var(m):
     await m.edit(
         f"      ╔════════════╗\n  **__⚡️DAFTAR VARS⚡️__**     \n╚════════════╝ \n"
         f"**Disini Daftar Vars Dari King** {DEFAULTUSER} :\n"
-        "═⎆ Daftar Vars : [DAFTAR VARS](https://raw.githubusercontent.com/apisuserbot/King-Userbot/King-Userbot/varshelper.txt)")
+        "═⎆ Daftar Vars : [DAFTAR VARS](https://raw.githubusercontent.com/apisuserbot/King-Userbot/King-Userbot/varshelper.txt)"
+    )
 
 
 CMD_HELP.update(

@@ -33,7 +33,11 @@ from PIL import Image
 from typing import Optional
 
 from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
+from telethon.tl.types import (
+    ChannelParticipantAdmin,
+    ChannelParticipantCreator,
+    DocumentAttributeFilename,
+)
 from userbot import SUDO_USERS
 
 
@@ -93,12 +97,12 @@ def time_formatter(seconds: int) -> str:
 
 def human_to_bytes(size: str) -> int:
     units = {
-        "M": 2 ** 20,
-        "MB": 2 ** 20,
-        "G": 2 ** 30,
-        "GB": 2 ** 30,
-        "T": 2 ** 40,
-        "TB": 2 ** 40,
+        "M": 2**20,
+        "MB": 2**20,
+        "G": 2**30,
+        "GB": 2**30,
+        "T": 2**40,
+        "TB": 2**40,
     }
 
     size = size.upper()
@@ -109,10 +113,7 @@ def human_to_bytes(size: str) -> int:
 
 
 async def is_admin(chat_id, user_id):
-    req_jo = await bot(GetParticipantRequest(
-        channel=chat_id,
-        user_id=user_id
-    ))
+    req_jo = await bot(GetParticipantRequest(channel=chat_id, user_id=user_id))
     chat_participant = req_jo.participant
     return isinstance(
         chat_participant, (ChannelParticipantCreator, ChannelParticipantAdmin)
@@ -120,27 +121,31 @@ async def is_admin(chat_id, user_id):
 
 
 async def runcmd(cmd: str) -> tuple[str, str, int, int]:
-    """ run command in terminal """
+    """run command in terminal"""
     args = shlex.split(cmd)
-    process = await asyncio.create_subprocess_exec(*args,
-                                                   stdout=asyncio.subprocess.PIPE,
-                                                   stderr=asyncio.subprocess.PIPE)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
     stdout, stderr = await process.communicate()
-    return (stdout.decode('utf-8', 'replace').strip(),
-            stderr.decode('utf-8', 'replace').strip(),
-            process.returncode,
-            process.pid)
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
 
 
-async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Optional[str]:
-    """ take a screenshot """
+async def take_screen_shot(
+    video_file: str, duration: int, path: str = ""
+) -> Optional[str]:
+    """take a screenshot"""
     LOGS.info(
-        '[[[Extracting a frame from %s ||| Video duration => %s]]]',
+        "[[[Extracting a frame from %s ||| Video duration => %s]]]",
         video_file,
-        duration)
+        duration,
+    )
     ttl = duration // 2
-    thumb_image_path = path or os.path.join(
-        "./temp/", f"{basename(video_file)}.jpg")
+    thumb_image_path = path or os.path.join("./temp/", f"{basename(video_file)}.jpg")
     command = f"ffmpeg -ss {ttl} -i '{video_file}' -vframes 1 '{thumb_image_path}'"
     err = (await runcmd(command))[1]
     if err:
@@ -316,7 +321,8 @@ async def media_to_pic(event, reply):
         await take_screen_shot(media, 0, file)
         if not os.path.exists(file):
             await edit_delete(
-                event, f"**Maaf. Saya tidak dapat mengekstrak gambar dari ini {mediatype}**"
+                event,
+                f"**Maaf. Saya tidak dapat mengekstrak gambar dari ini {mediatype}**",
             )
             return None
     else:

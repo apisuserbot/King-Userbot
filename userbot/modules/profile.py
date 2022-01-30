@@ -11,9 +11,11 @@ from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
 from telethon.errors.rpcerrorlist import PhotoExtInvalidError, UsernameOccupiedError
 from telethon.tl.functions.account import UpdateProfileRequest, UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-from telethon.tl.functions.photos import (DeletePhotosRequest,
-                                          GetUserPhotosRequest,
-                                          UploadProfilePhotoRequest)
+from telethon.tl.functions.photos import (
+    DeletePhotosRequest,
+    GetUserPhotosRequest,
+    UploadProfilePhotoRequest,
+)
 
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
 
@@ -36,7 +38,7 @@ USERNAME_TAKEN = "```Mohon Maaf King, Username Itu Sudah Ada Yang Menggunakannya
 
 @register(outgoing=True, pattern="^.reserved$")
 async def mine(event):
-    """ For .reserved command, get a list of your reserved usernames. """
+    """For .reserved command, get a list of your reserved usernames."""
     result = await bot(GetAdminedPublicChannelsRequest())
     output_str = ""
     for channel_obj in result.chats:
@@ -46,7 +48,7 @@ async def mine(event):
 
 @register(outgoing=True, pattern="^.name")
 async def update_name(name):
-    """ For .name command, change your name in Telegram. """
+    """For .name command, change your name in Telegram."""
     newname = name.text[6:]
     if " " not in newname:
         firstname = newname
@@ -56,20 +58,19 @@ async def update_name(name):
         firstname = namesplit[0]
         lastname = namesplit[1]
 
-    await name.client(
-        UpdateProfileRequest(first_name=firstname, last_name=lastname))
+    await name.client(UpdateProfileRequest(first_name=firstname, last_name=lastname))
     await name.edit(NAME_OK)
 
 
 @register(outgoing=True, pattern="^.setpfp$")
 async def set_profilepic(propic):
-    """ For .profilepic command, change your profile picture in Telegram. """
+    """For .profilepic command, change your profile picture in Telegram."""
     replymsg = await propic.get_reply_message()
     photo = None
     if replymsg.media:
         if isinstance(replymsg.media, MessageMediaPhoto):
             photo = await propic.client.download_media(message=replymsg.photo)
-        elif "image" in replymsg.media.document.mime_type.split('/'):
+        elif "image" in replymsg.media.document.mime_type.split("/"):
             photo = await propic.client.download_file(replymsg.media.document)
         else:
             await propic.edit(INVALID_MEDIA)
@@ -77,8 +78,8 @@ async def set_profilepic(propic):
     if photo:
         try:
             await propic.client(
-                UploadProfilePhotoRequest(await
-                                          propic.client.upload_file(photo)))
+                UploadProfilePhotoRequest(await propic.client.upload_file(photo))
+            )
             os.remove(photo)
             await propic.edit(PP_CHANGED)
         except PhotoCropSizeSmallError:
@@ -91,7 +92,7 @@ async def set_profilepic(propic):
 
 @register(outgoing=True, pattern="^.setbio (.*)")
 async def set_biograph(setbio):
-    """ For .setbio command, set a new bio for your profile in Telegram. """
+    """For .setbio command, set a new bio for your profile in Telegram."""
     newbio = setbio.pattern_match.group(1)
     await setbio.client(UpdateProfileRequest(about=newbio))
     await setbio.edit(BIO_SUCCESS)
@@ -99,7 +100,7 @@ async def set_biograph(setbio):
 
 @register(outgoing=True, pattern="^.username (.*)")
 async def update_username(username):
-    """ For .username command, set a new username in Telegram. """
+    """For .username command, set a new username in Telegram."""
     newusername = username.pattern_match.group(1)
     try:
         await username.client(UpdateUsernameRequest(newusername))
@@ -110,7 +111,7 @@ async def update_username(username):
 
 @register(outgoing=True, pattern="^.count$")
 async def count(event):
-    """ For .count command, get profile stats. """
+    """For .count command, get profile stats."""
     u = 0
     g = 0
     c = 0
@@ -147,9 +148,9 @@ async def count(event):
 
 @register(outgoing=True, pattern=r"^.delpfp")
 async def remove_profilepic(delpfp):
-    """ For .delpfp command, delete your current profile picture in Telegram. """
+    """For .delpfp command, delete your current profile picture in Telegram."""
     group = delpfp.text[8:]
-    if group == 'all':
+    if group == "all":
         lim = 0
     elif group.isdigit():
         lim = int(group)
@@ -157,19 +158,19 @@ async def remove_profilepic(delpfp):
         lim = 1
 
     pfplist = await delpfp.client(
-        GetUserPhotosRequest(user_id=delpfp.from_id,
-                             offset=0,
-                             max_id=0,
-                             limit=lim))
+        GetUserPhotosRequest(user_id=delpfp.from_id, offset=0, max_id=0, limit=lim)
+    )
     input_photos = []
     for sep in pfplist.photos:
         input_photos.append(
-            InputPhoto(id=sep.id,
-                       access_hash=sep.access_hash,
-                       file_reference=sep.file_reference))
+            InputPhoto(
+                id=sep.id,
+                access_hash=sep.access_hash,
+                file_reference=sep.file_reference,
+            )
+        )
     await delpfp.client(DeletePhotosRequest(id=input_photos))
-    await delpfp.edit(
-        f"`Sukses Menghapus {len(input_photos)} Foto Profil.`")
+    await delpfp.edit(f"`Sukses Menghapus {len(input_photos)} Foto Profil.`")
 
 
 CMD_HELP.update(

@@ -21,8 +21,7 @@ from userbot.events import register
 # run
 
 
-@register(outgoing=True,
-          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     """DeezLoader by @An0nimia
     Ported for UniBorg by @SpEcHlDe"""
@@ -125,6 +124,7 @@ async def _(event):
     else:
         await event.edit(strings["wrong_cmd_syntax"])
 
+
 # run
 
 
@@ -161,6 +161,7 @@ async def upload_track(track_location, message):
         attributes=document_attributes,
     )
     os.remove(track_location)
+
 
 # run
 # end

@@ -17,7 +17,7 @@ from userbot.events import register
 
 
 async def get_tz(con):
-    """ Dapatkan zona waktu dari negara tertentu. """
+    """Dapatkan zona waktu dari negara tertentu."""
     if "(Uk)" in con:
         con = con.replace("Uk", "UK")
     if "(Us)" in con:
@@ -43,10 +43,10 @@ async def get_tz(con):
 
 @register(outgoing=True, pattern="^.time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def time_func(tdata):
-    """ Untuk perintah .time, kembalikan waktu
-        1. Negara disahkan sebagai argumen,
-        2. Negara pengguna bot default (setel dengan menggunakan .settime),
-        3. Server tempat menjalankan bot pengguna.
+    """Untuk perintah .time, kembalikan waktu
+    1. Negara disahkan sebagai argumen,
+    2. Negara pengguna bot default (setel dengan menggunakan .settime),
+    3. Server tempat menjalankan bot pengguna.
     """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
@@ -94,28 +94,28 @@ async def time_func(tdata):
     dtnow = dt.now(tz(time_zone)).strftime(t_form)
 
     if c_name != COUNTRY:
-        await tdata.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+        await tdata.edit(f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
         return
 
     elif COUNTRY:
-        await tdata.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
-                         f"({time_zone} timezone).`")
+        await tdata.edit(
+            f"`It's`  **{dtnow}**  `here, in {COUNTRY}" f"({time_zone} timezone).`"
+        )
         return
 
 
 @register(outgoing=True, pattern="^.date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def date_func(dat):
-    """ Untuk perintah .date, kembalikan tanggal
-        1. Negara disahkan sebagai argumen,
-        2. Negara pengguna bot default (setel dengan menggunakan .settime),
-        3. Server tempat menjalankan bot pengguna.
+    """Untuk perintah .date, kembalikan tanggal
+    1. Negara disahkan sebagai argumen,
+    2. Negara pengguna bot default (setel dengan menggunakan .settime),
+    3. Server tempat menjalankan bot pengguna.
     """
     con = dat.pattern_match.group(1).title()
     tz_num = dat.pattern_match.group(2)
 
     d_form = "%d/%m/%y - %A"
-    c_name = ''
+    c_name = ""
 
     if len(con) > 4:
         try:
@@ -157,20 +157,21 @@ async def date_func(dat):
     dtnow = dt.now(tz(time_zone)).strftime(d_form)
 
     if c_name != COUNTRY:
-        await dat.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+        await dat.edit(f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
         return
 
     elif COUNTRY:
-        await dat.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
-                       f"({time_zone} timezone).`")
+        await dat.edit(
+            f"`It's`  **{dtnow}**  `here, in {COUNTRY}" f"({time_zone} timezone).`"
+        )
         return
 
 
-CMD_HELP.update({
-    "timedate":
-    "⚡𝘾𝙈𝘿⚡`.time` <country name/code> <timezone number>\
+CMD_HELP.update(
+    {
+        "timedate": "⚡𝘾𝙈𝘿⚡`.time` <country name/code> <timezone number>\
 \nUsage: Penggunaan: Dapatkan waktu suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan membiarkan Anda memilih satu.\
 \n\n`.date` <country name/code> <timezone number>\
 \nUsage: Dapatkan tanggal suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan membiarkan Anda memilih satu."
-})
+    }
+)

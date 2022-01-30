@@ -12,8 +12,7 @@ from userbot.events import register
 from userbot.utils.pastebin import PasteBin
 
 
-@register(outgoing=True,
-          pattern=r"^\.paste(?: (-d|-n|-h|-k)|$)?(?: ([\s\S]+)|$)")
+@register(outgoing=True, pattern=r"^\.paste(?: (-d|-n|-h|-k)|$)?(?: ([\s\S]+)|$)")
 async def paste(pstl):
     """For .paste command, pastes the text directly to a pastebin."""
     service = pstl.pattern_match.group(1)
@@ -21,7 +20,9 @@ async def paste(pstl):
     reply_id = pstl.reply_to_msg_id
 
     if not (match or reply_id):
-        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan`")
+        return await pstl.edit(
+            "`Elon Musk berkata saya tidak bisa menempelkan kekosongan`"
+        )
 
     if match:
         message = match.strip()

@@ -31,5 +31,5 @@ from .tools import (
     media_to_pic,
     edit_delete,
     edit_or_reply,
-    media_type
+    media_type,
 )

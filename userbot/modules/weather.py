@@ -25,7 +25,7 @@ else:
 
 
 async def get_tz(con):
-    """ Get time zone of the given country. """
+    """Get time zone of the given country."""
     """ Credits: @aragon12 and @zakaryan2004. """
     for c_code in c_n:
         if con == c_n[c_code]:
@@ -39,11 +39,10 @@ async def get_tz(con):
 
 @register(outgoing=True, pattern="^.weather(?: |$)(.*)")
 async def get_weather(weather):
-    """ For .weather command, gets the current weather of a city. """
+    """For .weather command, gets the current weather of a city."""
 
     if not OWM_API:
-        await weather.edit(
-            "`Get an API key from` https://openweathermap.org/ `first.`")
+        await weather.edit("`Get an API key from` https://openweathermap.org/ `first.`")
         return
 
     APPID = OWM_API
@@ -60,7 +59,8 @@ async def get_weather(weather):
 
     timezone_countries = {
         timezone: country
-        for country, timezones in c_tz.items() for timezone in timezones
+        for country, timezones in c_tz.items()
+        for timezone in timezones
     }
 
     if "," in CITY:
@@ -70,13 +70,13 @@ async def get_weather(weather):
         else:
             country = await get_tz((newcity[1].strip()).title())
             try:
-                countrycode = timezone_countries[f'{country}']
+                countrycode = timezone_countries[f"{country}"]
             except KeyError:
                 await weather.edit("`Invalid country.`")
                 return
             CITY = newcity[0].strip() + "," + countrycode.strip()
 
-    url = f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={APPID}'
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={APPID}"
     request = get(url)
     result = json.loads(request.text)
 
@@ -84,18 +84,18 @@ async def get_weather(weather):
         await weather.edit("`Invalid country.`")
         return
 
-    cityname = result['name']
-    curtemp = result['main']['temp']
-    humidity = result['main']['humidity']
-    min_temp = result['main']['temp_min']
-    max_temp = result['main']['temp_max']
-    desc = result['weather'][0]
-    desc = desc['main']
-    country = result['sys']['country']
-    sunrise = result['sys']['sunrise']
-    sunset = result['sys']['sunset']
-    wind = result['wind']['speed']
-    winddir = result['wind']['deg']
+    cityname = result["name"]
+    curtemp = result["main"]["temp"]
+    humidity = result["main"]["humidity"]
+    min_temp = result["main"]["temp_min"]
+    max_temp = result["main"]["temp_max"]
+    desc = result["weather"][0]
+    desc = desc["main"]
+    country = result["sys"]["country"]
+    sunrise = result["sys"]["sunrise"]
+    sunset = result["sys"]["sunset"]
+    wind = result["wind"]["speed"]
+    winddir = result["wind"]["deg"]
 
     ctimezone = tz(c_tz[country][0])
     time = datetime.now(ctimezone).strftime("%A, %I:%M %p")
@@ -103,7 +103,7 @@ async def get_weather(weather):
 
     dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
 
-    div = (360 / len(dirs))
+    div = 360 / len(dirs)
     funmath = int((winddir + (div / 2)) / div)
     findir = dirs[funmath % len(dirs)]
     kmph = str(wind * 3.6).split(".")
@@ -123,19 +123,21 @@ async def get_weather(weather):
 
     await weather.edit(
         f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
-        +
-        f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
-        +
-        f"**Max. Temp.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
-        + f"**Humidity:** `{humidity}%`\n" +
-        f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
-        f"**Sunrise:** `{sun(sunrise)}`\n" +
-        f"**Sunset:** `{sun(sunset)}`\n\n" + f"**{desc}**\n" +
-        f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
+        + f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
+        + f"**Max. Temp.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
+        + f"**Humidity:** `{humidity}%`\n"
+        + f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n"
+        + f"**Sunrise:** `{sun(sunrise)}`\n"
+        + f"**Sunset:** `{sun(sunset)}`\n\n"
+        + f"**{desc}**\n"
+        + f"`{cityname}, {fullc_n}`\n"
+        + f"`{time}`"
+    )
 
 
-CMD_HELP.update({
-    "weather":
-    "`.weather` <city> or `.weather` <city>, <country name/code>\
+CMD_HELP.update(
+    {
+        "weather": "`.weather` <city> or `.weather` <city>, <country name/code>\
     \nUsage: Gets the weather of a city."
-})
+    }
+)

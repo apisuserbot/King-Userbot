@@ -13,7 +13,15 @@ from telethon import events
 from telethon.tl import functions
 from urllib.parse import quote
 from datetime import datetime
-from telethon.tl.types import UserStatusEmpty, UserStatusLastMonth, UserStatusLastWeek, UserStatusOffline, UserStatusOnline, UserStatusRecently, ChatBannedRights
+from telethon.tl.types import (
+    UserStatusEmpty,
+    UserStatusLastMonth,
+    UserStatusLastWeek,
+    UserStatusOffline,
+    UserStatusOnline,
+    UserStatusRecently,
+    ChatBannedRights,
+)
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -22,59 +30,61 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 import logging
 
 normiefont = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z']
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+]
 weebyfont = [
-    '卂',
-    '乃',
-    '匚',
-    '刀',
-    '乇',
-    '下',
-    '厶',
-    '卄',
-    '工',
-    '丁',
-    '长',
-    '乚',
-    '从',
-    '𠘨',
-    '口',
-    '尸',
-    '㔿',
-    '尺',
-    '丂',
-    '丅',
-    '凵',
-    'リ',
-    '山',
-    '乂',
-    '丫',
-    '乙']
+    "卂",
+    "乃",
+    "匚",
+    "刀",
+    "乇",
+    "下",
+    "厶",
+    "卄",
+    "工",
+    "丁",
+    "长",
+    "乚",
+    "从",
+    "𠘨",
+    "口",
+    "尸",
+    "㔿",
+    "尺",
+    "丂",
+    "丅",
+    "凵",
+    "リ",
+    "山",
+    "乂",
+    "丫",
+    "乙",
+]
 
 
 logger = logging.getLogger(__name__)
@@ -93,7 +103,9 @@ async def _(event):
         return
     c = await event.get_chat()
     if c.admin_rights or c.creator:
-        a = await bot.get_admin_log(event.chat_id, limit=1, search="", edit=False, delete=True)
+        a = await bot.get_admin_log(
+            event.chat_id, limit=1, search="", edit=False, delete=True
+        )
         for i in a:
             await event.reply(i.original.action.message)
     else:
@@ -113,15 +125,17 @@ async def _(event):
     term1part1 = final_input[0]
     term1part2 = final_input[1]
     term1 = str(term1part1) + str(term1part2)
-    final_term1 = (int(term1))
+    final_term1 = int(term1)
     operator = str(final_input[2])
     term2part1 = final_input[3]
     term2part2 = final_input[4]
     term2 = str(term2part1) + str(term2part2)
-    final_term2 = (int(term2))
+    final_term2 = int(term2)
     # actual calculations go here
     if input == "help":
-        await event.edit("Syntax .calc <term1><operator><term2>\nFor eg .calc 02*02 or 99*99 (the zeros are important) (two terms and two digits max)")
+        await event.edit(
+            "Syntax .calc <term1><operator><term2>\nFor eg .calc 02*02 or 99*99 (the zeros are important) (two terms and two digits max)"
+        )
     elif operator == "*":
         await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 * final_term2))
     elif operator == "-":
@@ -148,11 +162,7 @@ async def _(event):
         else:
             xkcd_search_url = "https://relevantxkcd.appspot.com/process?"
             queryresult = requests.get(
-                xkcd_search_url,
-                params={
-                    "action": "xkcd",
-                    "query": quote(input_str)
-                }
+                xkcd_search_url, params={"action": "xkcd", "query": quote(input_str)}
             ).text
             xkcd_id = queryresult.split(" ")[2].lstrip("\n")
     if xkcd_id is None:
@@ -177,7 +187,9 @@ Title: {}
 Alt: {}
 Day: {}
 Month: {}
-Year: {}""".format(img, input_str, xkcd_link, safe_title, alt, day, month, year)
+Year: {}""".format(
+            img, input_str, xkcd_link, safe_title, alt, day, month, year
+        )
         await event.edit(output_str, link_preview=True)
     else:
         await event.edit("xkcd n.{} not found!".format(xkcd_id))
@@ -213,16 +225,15 @@ async def _(event):
         #
         # Note that it's "reversed". You must set to ``True`` the permissions
         # you want to REMOVE, and leave as ``None`` those you want to KEEP.
-        rights = ChatBannedRights(
-            until_date=None,
-            view_messages=True
-        )
+        rights = ChatBannedRights(until_date=None, view_messages=True)
         if isinstance(i.status, UserStatusEmpty):
             y = y + 1
             if "y" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -232,7 +243,9 @@ async def _(event):
             if "m" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -242,7 +255,9 @@ async def _(event):
             if "w" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -252,7 +267,9 @@ async def _(event):
             if "o" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -262,7 +279,9 @@ async def _(event):
             if "q" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -272,7 +291,9 @@ async def _(event):
             if "r" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -282,7 +303,9 @@ async def _(event):
             if "b" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                     break
                 else:
@@ -292,7 +315,9 @@ async def _(event):
             if "d" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await event.edit("`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`")
+                    await event.edit(
+                        "`Saya membutuhkan hak istimewa admin untuk tampil aksi ini!`"
+                    )
                     e.append(str(e))
                 else:
                     c = c + 1
@@ -311,7 +336,8 @@ Bots: {}
 None: {}"""
         await event.edit(required_string.format(c, p, d, y, m, w, o, q, r, b, n))
         await asyncio.sleep(5)
-    await event.edit("""Total= {} Pengguna
+    await event.edit(
+        """Total= {} Pengguna
 Jumlah Akun yang Dihapus= {}
 Status: Kosong= {}
       : Bulan lalu= {}
@@ -320,7 +346,10 @@ Status: Kosong= {}
       : Online= {}
       : Baru saja= {}
 Jumlah Bot= {}
-Tidak dikenal= {}""".format(p, d, y, m, w, o, q, r, b, n))
+Tidak dikenal= {}""".format(
+            p, d, y, m, w, o, q, r, b, n
+        )
+    )
 
 
 async def ban_user(chat_id, i, rights):
@@ -338,7 +367,9 @@ async def _(event):
     thumb = None
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
-    await event.edit("`Rename Dan Upload Dalam Proses, Ini Akan Memakan Waktu Lama Jika Ukuran File Besar`")
+    await event.edit(
+        "`Rename Dan Upload Dalam Proses, Ini Akan Memakan Waktu Lama Jika Ukuran File Besar`"
+    )
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -368,7 +399,9 @@ async def _(event):
             end_two = datetime.now()
             os.remove(downloaded_file_name)
             ms_two = (end_two - end).seconds
-            await event.edit("Download Dalam {} Detik. Upload Dalam {} Detik.".format(ms_one, ms_two))
+            await event.edit(
+                "Download Dalam {} Detik. Upload Dalam {} Detik.".format(ms_one, ms_two)
+            )
         else:
             await event.edit("File Tidak ditemukan {}".format(input_str))
     else:
@@ -425,9 +458,8 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(
-                    incoming=True,
-                    from_users=894227130))
+                events.NewMessage(incoming=True, from_users=894227130)
+            )
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
@@ -451,7 +483,9 @@ async def _(event):
         await event.edit(str(error_i_a))
         return False
     user_id = replied_user.user.id
-    profile_pic = await event.client.download_profile_photo(user_id, TEMP_DOWNLOAD_DIRECTORY)
+    profile_pic = await event.client.download_profile_photo(
+        user_id, TEMP_DOWNLOAD_DIRECTORY
+    )
     # some people have weird HTML in their names
     first_name = html.escape(replied_user.user.first_name)
     # https://stackoverflow.com/a/5072031/4723940
@@ -471,20 +505,12 @@ async def _(event):
     user_bio = replied_user.about
     if user_bio is not None:
         user_bio = html.escape(replied_user.about)
-    await bot(functions.account.UpdateProfileRequest(
-        first_name=first_name
-    ))
-    await bot(functions.account.UpdateProfileRequest(
-        last_name=last_name
-    ))
-    await bot(functions.account.UpdateProfileRequest(
-        about=user_bio
-    ))
+    await bot(functions.account.UpdateProfileRequest(first_name=first_name))
+    await bot(functions.account.UpdateProfileRequest(last_name=last_name))
+    await bot(functions.account.UpdateProfileRequest(about=user_bio))
     pfile = await bot.upload_file(profile_pic)  # pylint:disable=E060
-    await bot(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
-        pfile
-    ))
-    #message_id_to_reply = event.message.reply_to_msg_id
+    await bot(functions.photos.UploadProfilePhotoRequest(pfile))  # pylint:disable=E0602
+    # message_id_to_reply = event.message.reply_to_msg_id
     # if not message_id_to_reply:
     #    message_id_to_reply = event.message.id
     # await bot.send_message(
@@ -494,9 +520,7 @@ async def _(event):
     #  )
     await event.delete()
     await bot.send_message(
-        event.chat_id,
-        "`Clone Sukses Dilakukan`",
-        reply_to=reply_message
+        event.chat_id, "`Clone Sukses Dilakukan`", reply_to=reply_message
     )
 
 
@@ -506,15 +530,14 @@ async def get_full_user(event):
         if previous_message.forward:
             replied_user = await event.client(
                 GetFullUserRequest(
-                    previous_message.forward.from_id or previous_message.forward.channel_id
+                    previous_message.forward.from_id
+                    or previous_message.forward.channel_id
                 )
             )
             return replied_user, None
         else:
             replied_user = await event.client(
-                GetFullUserRequest(
-                    previous_message.from_id
-                )
+                GetFullUserRequest(previous_message.from_id)
             )
             return replied_user, None
     else:
@@ -526,9 +549,7 @@ async def get_full_user(event):
         if event.message.entities is not None:
             mention_entity = event.message.entities
             probable_user_mention_entity = mention_entity[0]
-            if isinstance(
-                    probable_user_mention_entity,
-                    MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 replied_user = await event.client(GetFullUserRequest(user_id))
                 return replied_user, None
@@ -569,38 +590,42 @@ def get_stream_data(query):
     # Cooking Data
     just_watch = JustWatch(country=country)
     results = just_watch.search_for_item(query=query)
-    movie = results['items'][0]
-    stream_data['title'] = movie['title']
-    stream_data['movie_thumb'] = "https://images.justwatch.com" + \
-        movie['poster'].replace("{profile}", "") + "s592"
-    stream_data['release_year'] = movie['original_release_year']
+    movie = results["items"][0]
+    stream_data["title"] = movie["title"]
+    stream_data["movie_thumb"] = (
+        "https://images.justwatch.com"
+        + movie["poster"].replace("{profile}", "")
+        + "s592"
+    )
+    stream_data["release_year"] = movie["original_release_year"]
     try:
-        print(movie['cinema_release_date'])
-        stream_data['release_date'] = movie['cinema_release_date']
+        print(movie["cinema_release_date"])
+        stream_data["release_date"] = movie["cinema_release_date"]
     except KeyError:
         try:
-            stream_data['release_date'] = movie['localized_release_date']
+            stream_data["release_date"] = movie["localized_release_date"]
         except KeyError:
-            stream_data['release_date'] = None
+            stream_data["release_date"] = None
 
-    stream_data['type'] = movie['object_type']
+    stream_data["type"] = movie["object_type"]
 
     available_streams = {}
-    for provider in movie['offers']:
-        provider_ = get_provider(provider['urls']['standard_web'])
-        available_streams[provider_] = provider['urls']['standard_web']
+    for provider in movie["offers"]:
+        provider_ = get_provider(provider["urls"]["standard_web"])
+        available_streams[provider_] = provider["urls"]["standard_web"]
 
-    stream_data['providers'] = available_streams
+    stream_data["providers"] = available_streams
 
     scoring = {}
-    for scorer in movie['scoring']:
-        if scorer['provider_type'] == "tmdb:score":
-            scoring['tmdb'] = scorer['value']
+    for scorer in movie["scoring"]:
+        if scorer["provider_type"] == "tmdb:score":
+            scoring["tmdb"] = scorer["value"]
 
-        if scorer['provider_type'] == "imdb:score":
-            scoring['imdb'] = scorer['value']
-    stream_data['score'] = scoring
+        if scorer["provider_type"] == "imdb:score":
+            scoring["imdb"] = scorer["value"]
+    stream_data["score"] = scoring
     return stream_data
+
 
 # Helper Functions
 
@@ -627,22 +652,22 @@ async def _(event):
     query = event.pattern_match.group(1)
     await event.edit("Sedang Memproses...")
     streams = get_stream_data(query)
-    title = streams['title']
-    thumb_link = streams['movie_thumb']
-    release_year = streams['release_year']
-    release_date = streams['release_date']
-    scores = streams['score']
+    title = streams["title"]
+    thumb_link = streams["movie_thumb"]
+    release_year = streams["release_year"]
+    release_date = streams["release_date"]
+    scores = streams["score"]
     try:
-        imdb_score = scores['imdb']
+        imdb_score = scores["imdb"]
     except KeyError:
         imdb_score = None
 
     try:
-        tmdb_score = scores['tmdb']
+        tmdb_score = scores["tmdb"]
     except KeyError:
         tmdb_score = None
 
-    stream_providers = streams['providers']
+    stream_providers = streams["providers"]
     if release_date is None:
         release_date = release_year
 
@@ -654,12 +679,20 @@ async def _(event):
 
     output_ = output_ + "\n\n**Tersedia di :**\n"
     for provider, link in stream_providers.items():
-        if 'sonyliv' in link:
+        if "sonyliv" in link:
             link = link.replace(" ", "%20")
         output_ += f"[{pretty(provider)}]({link})\n"
 
-    await bot.send_file(event.chat_id, caption=output_, file=thumb_link, force_document=False, allow_cache=False, silent=True)
+    await bot.send_file(
+        event.chat_id,
+        caption=output_,
+        file=thumb_link,
+        force_document=False,
+        allow_cache=False,
+        silent=True,
+    )
     await event.delete()
+
 
 # credits:
 # Ported from Saitama Bot.
@@ -677,7 +710,7 @@ async def weebify(event):
     if not args:
         await event.edit("`King, Teks Apa Yang Harus Saya Weebify Kan?`")
         return
-    string = ' '.join(args).lower()
+    string = " ".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             weebycharacter = weebyfont[normiefont.index(normiecharacter)]
@@ -686,32 +719,33 @@ async def weebify(event):
 
 
 boldfont = [
-    '𝗮',
-    '𝗯',
-    '𝗰',
-    '𝗱',
-    '𝗲',
-    '𝗳',
-    '𝗴',
-    '𝗵',
-    '𝗶',
-    '𝗷',
-    '𝗸',
-    '𝗹',
-    '𝗺',
-    '𝗻',
-    '𝗼',
-    '𝗽',
-    '𝗾',
-    '𝗿',
-    '𝘀',
-    '𝘁',
-    '𝘂',
-    '𝘃',
-    '𝘄',
-    '𝘅',
-    '𝘆',
-    '𝘇']
+    "𝗮",
+    "𝗯",
+    "𝗰",
+    "𝗱",
+    "𝗲",
+    "𝗳",
+    "𝗴",
+    "𝗵",
+    "𝗶",
+    "𝗷",
+    "𝗸",
+    "𝗹",
+    "𝗺",
+    "𝗻",
+    "𝗼",
+    "𝗽",
+    "𝗾",
+    "𝗿",
+    "𝘀",
+    "𝘁",
+    "𝘂",
+    "𝘃",
+    "𝘄",
+    "𝘅",
+    "𝘆",
+    "𝘇",
+]
 
 
 @register(outgoing=True, pattern="^.bold(?: |$)(.*)")
@@ -724,7 +758,7 @@ async def thicc(bolded):
     if not args:
         await bolded.edit("`King, Teks Apa Yang Harus Saya Bold Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             boldcharacter = boldfont[normiefont.index(normiecharacter)]
@@ -733,32 +767,33 @@ async def thicc(bolded):
 
 
 medievalbold = [
-    '𝖆',
-    '𝖇',
-    '𝖈',
-    '𝖉',
-    '𝖊',
-    '𝖋',
-    '𝖌',
-    '𝖍',
-    '𝖎',
-    '𝖏',
-    '𝖐',
-    '𝖑',
-    '𝖒',
-    '𝖓',
-    '𝖔',
-    '𝖕',
-    '𝖖',
-    '𝖗',
-    '𝖘',
-    '𝖙',
-    '𝖚',
-    '𝖛',
-    '𝖜',
-    '𝖝',
-    '𝖞',
-    '𝖟']
+    "𝖆",
+    "𝖇",
+    "𝖈",
+    "𝖉",
+    "𝖊",
+    "𝖋",
+    "𝖌",
+    "𝖍",
+    "𝖎",
+    "𝖏",
+    "𝖐",
+    "𝖑",
+    "𝖒",
+    "𝖓",
+    "𝖔",
+    "𝖕",
+    "𝖖",
+    "𝖗",
+    "𝖘",
+    "𝖙",
+    "𝖚",
+    "𝖛",
+    "𝖜",
+    "𝖝",
+    "𝖞",
+    "𝖟",
+]
 
 
 @register(outgoing=True, pattern="^.medibold(?: |$)(.*)")
@@ -771,7 +806,7 @@ async def mediv(medievalx):
     if not args:
         await medievalx.edit("`King, Teks Apa Yang Harus Saya Medibold Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             medievalcharacter = medievalbold[normiefont.index(normiecharacter)]
@@ -780,32 +815,33 @@ async def mediv(medievalx):
 
 
 doublestruckt = [
-    '𝕒',
-    '𝕓',
-    '𝕔',
-    '𝕕',
-    '𝕖',
-    '𝕗',
-    '𝕘',
-    '𝕙',
-    '𝕚',
-    '𝕛',
-    '𝕜',
-    '𝕝',
-    '𝕞',
-    '𝕟',
-    '𝕠',
-    '𝕡',
-    '𝕢',
-    '𝕣',
-    '𝕤',
-    '𝕥',
-    '𝕦',
-    '𝕧',
-    '𝕨',
-    '𝕩',
-    '𝕪',
-    '𝕫']
+    "𝕒",
+    "𝕓",
+    "𝕔",
+    "𝕕",
+    "𝕖",
+    "𝕗",
+    "𝕘",
+    "𝕙",
+    "𝕚",
+    "𝕛",
+    "𝕜",
+    "𝕝",
+    "𝕞",
+    "𝕟",
+    "𝕠",
+    "𝕡",
+    "𝕢",
+    "𝕣",
+    "𝕤",
+    "𝕥",
+    "𝕦",
+    "𝕧",
+    "𝕨",
+    "𝕩",
+    "𝕪",
+    "𝕫",
+]
 
 
 @register(outgoing=True, pattern="^.doublestruck(?: |$)(.*)")
@@ -818,7 +854,7 @@ async def doublex(doublestrucktx):
     if not args:
         await doublestrucktx.edit("`King, Teks Apa Yang Harus Saya Double Struck Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             strucktcharacter = doublestruckt[normiefont.index(normiecharacter)]
@@ -827,32 +863,33 @@ async def doublex(doublestrucktx):
 
 
 cursiveboldx = [
-    '𝓪',
-    '𝓫',
-    '𝓬',
-    '𝓭',
-    '𝓮',
-    '𝓯',
-    '𝓰',
-    '𝓱',
-    '𝓲',
-    '𝓳',
-    '𝓴',
-    '𝓵',
-    '𝓶',
-    '𝓷',
-    '𝓸',
-    '𝓹',
-    '𝓺',
-    '𝓻',
-    '𝓼',
-    '𝓽',
-    '𝓾',
-    '𝓿',
-    '𝔀',
-    '𝔁',
-    '𝔂',
-    '𝔃']
+    "𝓪",
+    "𝓫",
+    "𝓬",
+    "𝓭",
+    "𝓮",
+    "𝓯",
+    "𝓰",
+    "𝓱",
+    "𝓲",
+    "𝓳",
+    "𝓴",
+    "𝓵",
+    "𝓶",
+    "𝓷",
+    "𝓸",
+    "𝓹",
+    "𝓺",
+    "𝓻",
+    "𝓼",
+    "𝓽",
+    "𝓾",
+    "𝓿",
+    "𝔀",
+    "𝔁",
+    "𝔂",
+    "𝔃",
+]
 
 
 @register(outgoing=True, pattern="^.curbold(?: |$)(.*)")
@@ -865,42 +902,42 @@ async def cursive2(cursivebolded):
     if not args:
         await cursivebolded.edit("`King, Teks Apa Yang Harus Saya Cursive Bold Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            cursiveboldcharacter = cursiveboldx[normiefont.index(
-                normiecharacter)]
+            cursiveboldcharacter = cursiveboldx[normiefont.index(normiecharacter)]
             string = string.replace(normiecharacter, cursiveboldcharacter)
     await cursivebolded.edit(string)
 
 
 medival2 = [
-    '𝔞',
-    '𝔟',
-    '𝔠',
-    '𝔡',
-    '𝔢',
-    '𝔣',
-    '𝔤',
-    '𝔥',
-    '𝔦',
-    '𝔧',
-    '𝔨',
-    '𝔩',
-    '𝔪',
-    '𝔫',
-    '𝔬',
-    '𝔭',
-    '𝔮',
-    '𝔯',
-    '𝔰',
-    '𝔱',
-    '𝔲',
-    '𝔳',
-    '𝔴',
-    '𝔵',
-    '𝔶',
-    '𝔷']
+    "𝔞",
+    "𝔟",
+    "𝔠",
+    "𝔡",
+    "𝔢",
+    "𝔣",
+    "𝔤",
+    "𝔥",
+    "𝔦",
+    "𝔧",
+    "𝔨",
+    "𝔩",
+    "𝔪",
+    "𝔫",
+    "𝔬",
+    "𝔭",
+    "𝔮",
+    "𝔯",
+    "𝔰",
+    "𝔱",
+    "𝔲",
+    "𝔳",
+    "𝔴",
+    "𝔵",
+    "𝔶",
+    "𝔷",
+]
 
 
 @register(outgoing=True, pattern="^.medi(?: |$)(.*)")
@@ -913,7 +950,7 @@ async def medival22(medivallite):
     if not args:
         await medivallite.edit("`King, Teks Apa Yang Harus Saya Medival Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             medivalxxcharacter = medival2[normiefont.index(normiecharacter)]
@@ -922,32 +959,33 @@ async def medival22(medivallite):
 
 
 cursive = [
-    '𝒶',
-    '𝒷',
-    '𝒸',
-    '𝒹',
-    '𝑒',
-    '𝒻',
-    '𝑔',
-    '𝒽',
-    '𝒾',
-    '𝒿',
-    '𝓀',
-    '𝓁',
-    '𝓂',
-    '𝓃',
-    '𝑜',
-    '𝓅',
-    '𝓆',
-    '𝓇',
-    '𝓈',
-    '𝓉',
-    '𝓊',
-    '𝓋',
-    '𝓌',
-    '𝓍',
-    '𝓎',
-    '𝓏']
+    "𝒶",
+    "𝒷",
+    "𝒸",
+    "𝒹",
+    "𝑒",
+    "𝒻",
+    "𝑔",
+    "𝒽",
+    "𝒾",
+    "𝒿",
+    "𝓀",
+    "𝓁",
+    "𝓂",
+    "𝓃",
+    "𝑜",
+    "𝓅",
+    "𝓆",
+    "𝓇",
+    "𝓈",
+    "𝓉",
+    "𝓊",
+    "𝓋",
+    "𝓌",
+    "𝓍",
+    "𝓎",
+    "𝓏",
+]
 
 
 @register(outgoing=True, pattern="^.cur(?: |$)(.*)")
@@ -960,7 +998,7 @@ async def xcursive(cursivelite):
     if not args:
         await cursivelite.edit("`King, Teks Apa Yang Harus Saya Cursive Kan?`")
         return
-    string = ''.join(args).lower()
+    string = "".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             cursivecharacter = cursive[normiefont.index(normiecharacter)]
@@ -975,10 +1013,15 @@ async def _(event):
     name = f"{ALIVE_NAME}"
     bio = f"{DEFAULT_BIO}"
     n = 1
-    await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
+    await bot(
+        functions.photos.DeletePhotosRequest(
+            await event.client.get_profile_photos("me", limit=n)
+        )
+    )
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
     await event.edit("`Sukses Mengembalikan Akun Anda`")
+
 
 CMD_HELP.update(
     {
