@@ -35,8 +35,8 @@ from userbot.events import register
 from userbot.utils import progress
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
-)
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
+    level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
 # setup the gPhotos v1 API

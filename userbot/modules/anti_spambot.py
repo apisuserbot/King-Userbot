@@ -87,7 +87,8 @@ async def ANTI_SPAMBOTS(welcm):
                     )
                     print(f"Chat : {welcm.chat.title}")
                     print(f"Waktu : {join_time}")
-                    print(f"Pesan terkirim : {message.text}\n\nWaktu : {message_date}")
+                    print(
+                        f"Pesan terkirim : {message.text}\n\nWaktu : {message_date}")
                     ##############################################
 
                     try:

@@ -15,7 +15,8 @@ auth_url = r["auth_url"]
 @register(outgoing=True, pattern=r"^\.tg (m|t)$")
 async def telegraphs(graph):
     await graph.edit("`Sedang Memproses...⚡️`")
-    if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
+    if not graph.text[0].isalpha() and graph.text[0] not in (
+            "/", "#", "@", "!"):
         if graph.fwd_from:
             return
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):

@@ -171,7 +171,8 @@ async def dyno_usage(dyno):
             for apps in Apps:
                 if apps.get("app_uuid") == app.id:
                     AppQuotaUsed = apps.get("quota_used") / 60
-                    AppPercentage = math.floor(apps.get("quota_used") * 100 / quota)
+                    AppPercentage = math.floor(
+                        apps.get("quota_used") * 100 / quota)
                     break
             else:
                 AppQuotaUsed = 0
@@ -212,12 +213,8 @@ async def _(dyno):
         log.write(app.get_log())
     fd = codecs.open("logs.txt", "r", encoding="utf-8")
     data = fd.read()
-    key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": data})
-        .json()
-        .get("result")
-        .get("key")
-    )
+    key = (requests.post("https://nekobin.com/api/documents",
+                         json={"content": data}) .json() .get("result") .get("key"))
     url = f"https://nekobin.com/raw/{key}"
     await dyno.edit(f"`Ini Logs Heroku Anda King :`\n\nPaste Ke: [Nekobin]({url})")
     return os.remove("logs.txt")

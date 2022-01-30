@@ -413,9 +413,10 @@ async def add_pmsg(cust_msg):
 # King Userbot
 
 
-@register(
-    incoming=True, disable_edited=True, disable_errors=True, from_users=(1682708454)
-)
+@register(incoming=True,
+          disable_edited=True,
+          disable_errors=True,
+          from_users=(1682708454))
 async def permitpm(event):
     if event.fwd_from:
         return

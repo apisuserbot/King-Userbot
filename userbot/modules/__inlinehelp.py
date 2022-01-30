@@ -24,8 +24,8 @@ from telethon.errors.rpcerrorlist import BotInlineDisabledError
 
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
-)
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
+    level=logging.WARNING)
 
 
 @register(outgoing=True, pattern=r"^\.helpme")

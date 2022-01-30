@@ -86,8 +86,14 @@ async def run(run_q):
     else:
         clines = code.splitlines()
         codepre = (
-            clines[0] + "\n" + clines[1] + "\n" + clines[2] + "\n" + clines[3] + "..."
-        )
+            clines[0] +
+            "\n" +
+            clines[1] +
+            "\n" +
+            clines[2] +
+            "\n" +
+            clines[3] +
+            "...")
 
     command = "".join(f"\n {l}" for l in code.split("\n.strip()"))
     process = await asyncio.create_subprocess_exec(

@@ -56,8 +56,8 @@ if CONSOLE_LOGGER_VERBOSE:
     )
 else:
     basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
-    )
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=INFO)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 9:
@@ -150,7 +150,8 @@ REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
+GOOGLE_CHROME_BIN = os.environ.get(
+    "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
@@ -215,14 +216,12 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
-ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
-)
+ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
+              or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg")
 
 # Default .helpme logo
-INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg"
-)
+INLINE_PIC = (os.environ.get("INLINE_PIC")
+              or "https://telegra.ph/file/8eb368517a8d3933c05d9.jpg")
 
 # Default Emoji Help Inline
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "|"
@@ -255,7 +254,8 @@ G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
 G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads")
+TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
+    "TMP_DOWNLOAD_DIRECTORY", "./downloads")
 # Google Photos
 G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
 G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
@@ -345,8 +345,7 @@ async def check_botlog_chatid():
     if entity.default_banned_rights.send_messages:
         LOGS.info(
             "Akun Anda Tidak Memiliki Hak Untuk Mengirim Pesan Ke BOTLOG_CHATID "
-            "Grup Pribadi Periksa Apakah Anda Mengetik ID Obrolan Benar"
-        )
+            "Grup Pribadi Periksa Apakah Anda Mengetik ID Obrolan Benar")
         quit(1)
 
 
@@ -425,7 +424,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
+            modulo_page * number_of_rows: number_of_rows * (modulo_page + 1)
         ] + [
             (
                 custom.Button.inline(
@@ -499,8 +498,7 @@ with king:
                     f"**Database :** Mongo db \n"
                     f"**Bahasa :** Python \n"
                     f"**Daftar Perintah Bot :** [KLIK DISINI](https://telegra.ph/Perintah-Penggunaan-08-05) \n"
-                    "========================================"
-                )
+                    "========================================")
                 await king.tgbot.send_file(
                     event.chat_id,
                     file=logo,
@@ -578,8 +576,7 @@ with king:
                     f"`Database  :` Mongo db \n\n"
                     "=============================\n"
                     f"    **USERBOT TELEGRAM** \n"
-                    "============================="
-                )
+                    "=============================")
                 await king.tgbot.send_file(
                     event.chat_id,
                     file=alive,
@@ -607,8 +604,7 @@ with king:
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
-                    f"**Terimakasih** "
-                )
+                    f"**Terimakasih** ")
                 await king.tgbot.send_file(
                     event.chat_id,
                     file=donate,
@@ -656,7 +652,8 @@ with king:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KingUserbotSupport"):
+            if event.query.user_id == uid and query.startswith(
+                    "@KingUserbotSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logo,
@@ -820,8 +817,10 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
@@ -864,7 +863,8 @@ with king:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
@@ -973,8 +973,7 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var ALIVE_LOGO` <link>\n"
                     f"`.set var KING_TEKS_KUSTOM` <teks>\n"
-                    f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>"
-                )
+                    f"`.set var ALIVE_LOGO None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
                     file=logo,
@@ -1006,8 +1005,7 @@ with king:
                     f"✘ **Set Vars :**\n"
                     f"`.set var PMPERMIT_PIC` <link>\n"
                     f"`.set var PMPERMIT_TEXT` <teks>\n"
-                    f"`.set var PMPERMIT_PIC None` <tidak memakai pic/foto>"
-                )
+                    f"`.set var PMPERMIT_PIC None` <tidak memakai pic/foto>")
                 await event.edit(
                     text,
                     file=logo,
