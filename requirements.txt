@@ -17,7 +17,7 @@ cryptg
 patool
 gitpython
 asyncurban>=0.3.3
-google-api-python-client==2.22.0
+google-api-python-client==2.46.0
 google-auth-httplib2
 google-auth-oauthlib
 googletrans==4.0.0-rc1
