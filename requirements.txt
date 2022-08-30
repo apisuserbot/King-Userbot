@@ -101,7 +101,7 @@ pendulum
 rarfile
 natsort
 hentai
-Faker==9.8.0
+Faker==14.1.1
 js2py
 aiofile
 validators
